@@ -19,7 +19,7 @@ export const GET = () => {
 
 	const body = `# dvfonts
 
-> Free Dhivehi (Thaana script, language code "dv") fonts for the web, with a Google-Fonts-compatible CSS API and a drop-in Thaana phonetic keyboard. ${fams.length} families. Everything below is copy-paste ready; all URLs are absolute.
+> Free Dhivehi (Thaana script, language code "dv") fonts for the web, with a Google-Fonts-compatible CSS API, a drop-in Thaana phonetic keyboard, and the @yashau/thaana packages (vanilla, React, Svelte, Vue) that make Thaana display and input work correctly. ${fams.length} families. Everything below is copy-paste ready; all URLs are absolute.
 
 Machine-readable index of every family (names, weights, CSS URL, file URLs, license): ${O}/fonts.json
 Keyboard keymap as JSON: ${O}/keymap.json
@@ -66,21 +66,65 @@ const detach = attachKeyboard(document.querySelector('#name'), { enabled: () => 
 transliterate('divehi'); // "ދިވެހި"
 \`\`\`
 
-React / Vue / Svelte: call \`attachKeyboard(element)\` when the element mounts and call the returned function on unmount. Controlled inputs keep working: the module inserts text with the browser's own editing command, so normal \`input\` events fire and undo works.
+In an app, install the package instead of using the CDN script (same API, typed):
+
+\`\`\`sh
+npm i @yashau/thaana          # vanilla JS / any framework
+npm i @yashau/thaana-react    # React 18/19: useThaanaKeyboard, <ThaanaInput>, <ThaanaTextarea>, useDhivehiFont
+npm i @yashau/thaana-svelte   # Svelte 5: use:thaana action, {@attach thaanaKeyboard()}, <ThaanaInput bind:value>
+npm i @yashau/thaana-vue      # Vue 3: v-thaana directive, <ThaanaInput v-model>, useDhivehiFont, ThaanaPlugin
+\`\`\`
+
+The framework packages re-export everything from @yashau/thaana, so install only one.
+
+\`\`\`tsx
+// React
+import { ThaanaInput, useDhivehiFont, fontStack } from '@yashau/thaana-react';
+useDhivehiFont('Faruma');
+<ThaanaInput value={name} onChange={(e) => setName(e.target.value)} style={{ fontFamily: fontStack('Faruma') }} />
+\`\`\`
+
+\`\`\`svelte
+<!-- Svelte 5 -->
+<script>import { ThaanaInput } from '@yashau/thaana-svelte'; let name = $state('');</script>
+<ThaanaInput bind:value={name} />
+\`\`\`
+
+\`\`\`vue
+<!-- Vue 3 -->
+<script setup>import { ref } from 'vue'; import { ThaanaInput } from '@yashau/thaana-vue'; const name = ref('');</script>
+<template><ThaanaInput v-model="name" /></template>
+\`\`\`
+
+Rich-text editors (Lexical, TipTap/ProseMirror, Slate): in the editor's beforeinput handler call \`thaanaForInputEvent(event)\`; if it returns a string, preventDefault and insert it through the editor's API.
 
 Behaviour you can rely on:
 - Only single-character typing is rewritten. Paste, IME composition, autocorrect, deletion and text typed on a real Dhivehi keyboard pass through unchanged.
-- \`attach\` sets dir="rtl", lang="dv" and turns off autocorrect/autocapitalize/spellcheck unless you set them yourself.
-- \`data-thaana="off"\` opts a field out of auto-attach.
+- Text is inserted with the browser's own editing command, so normal \`input\` events fire (controlled inputs work) and undo works.
+- \`attachKeyboard\` sets dir="rtl", lang="dv" and turns off autocorrect/autocapitalize/spellcheck unless you set them yourself.
+- \`data-thaana="off"\` opts a field out of auto-attach; \`data-thaana="swap-brackets"\` mimics Microsoft's bracket swap.
 
 ## 3. Getting RTL text right (common mistakes)
 
-- Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs. Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
-- For text that may start with Latin or digits, add \`unicode-bidi: plaintext\` so each paragraph takes its direction from its first letter.
-- Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text, so they display correctly. Do NOT swap bracket pairs yourself. Some older Dhivehi keymaps do, and that makes brackets face outward and corrupts copied text.
-- Dhivehi punctuation: comma ، (U+060C), semicolon ؛ (U+061B), question mark ؟ (U+061F). Full stop and digits are the ASCII ones.
-- Fili (vowel marks, U+07A6–U+07B0) follow the consonant they sit on. A Thaana syllable is always consonant (or alifu އ) + fili; sukun ް marks no vowel.
-- \`transliterate()\` replays keystrokes in the Divehi Phonetic layout. It is not a romanisation converter: it maps character by character, so pass it what a user would type on that layout (e.g. "divehi" for ދިވެހި), not arbitrary English spellings.
+Full guide with live examples: ${O}/guide
+
+- Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs (or \`<html lang="dv" dir="rtl">\`). Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
+- \`dir="auto"\` turns "Apple ގެ ފޯނު" left-to-right because the first letter is Latin. If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For multi-paragraph user content use \`unicode-bidi: plaintext\`.
+- Numbers inside Thaana: phone numbers swap their groups and "-5" shows as "5-". Wrap them in \`<bdi dir="ltr">\`, or use \`isolateNumbers(text)\` for plain strings (titles, notifications, canvas). Remove the invisible isolates with \`stripBidiControls()\` before saving.
+- Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text. Do NOT swap bracket pairs yourself.
+- Dhivehi punctuation: comma ، (U+060C), semicolon ؛ (U+061B), question mark ؟ (U+061F). Full stop and digits are ASCII. No space before punctuation. \`normalizePunctuation(text)\` fixes both.
+- Fili (vowel marks, U+07A6–U+07B0) sit above/below letters: use line-height ≈ 1.75 and avoid \`overflow: hidden\` with tight line heights, or they get clipped.
+- Most Dhivehi fonts have no Latin letters: always give a Latin fallback. \`fontStack('Faruma')\` → "'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif".
+- No italics for Thaana (\`font-synthesis: none\`); emphasise with weight or colour.
+- Canvas: \`await loadFonts({ family })\` before drawing, set \`ctx.direction = 'rtl'\`. SVG: \`direction="rtl"\`.
+- \`@yashau/thaana/thaana.css\` (also ${O}/thaana.css) applies the CSS side of all this to \`:lang(dv)\`.
+- \`transliterate()\` replays keystrokes in the Divehi Phonetic layout. It is not a romanisation converter: pass what a user would type (e.g. "divehi" for ދިވެހި).
+
+## 3b. Repairing existing text
+
+- Text typed with old pre-Unicode A_ fonts shows as Latin gibberish (e.g. "cswb ihevid" for ދިވެހި ބަސް): \`convertLegacy(text, { layout: 'typewriter' })\`; for the older casual fonts (Thaana, Akko, Athu Casual) use \`layout: 'phonetic'\`.
+- Thaana copied out of a PDF has reversed dates/times ("2026/1/14" for 14/1/2026) and stray spaces: \`repairPdfText(text)\`. Never run it on typed text.
+- Interactive converter: ${O}/convert
 
 ## 4. Sample text
 

@@ -81,10 +81,41 @@ test('/thaana.js works as a drop-in module', async ({ page }) => {
 	expect(errors).toEqual([]);
 });
 
-test('no horizontal overflow on the home page', async ({ page }) => {
-	await page.goto('/');
-	const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-	expect(overflow).toBeLessThanOrEqual(0);
+// From small phones up to 2160p: no page may ever scroll sideways.
+const WIDTHS = [320, 360, 390, 768, 1024, 1366, 1920, 2560, 3840];
+const PAGES = ['/', '/fonts/faruma', '/fonts/bolhu', '/guide', '/convert', '/docs', '/downloads', '/about'];
+
+test('no horizontal scrolling at any width', async ({ page, isMobile }) => {
+	test.skip(isMobile, 'widths are set explicitly; run once');
+	test.setTimeout(180_000);
+	const problems: string[] = [];
+	for (const width of WIDTHS) {
+		await page.setViewportSize({ width, height: 900 });
+		for (const path of PAGES) {
+			await page.goto(path);
+			await page.evaluate(() => document.fonts.ready);
+			const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+			if (overflow > 0) problems.push(`${path} @ ${width}px: ${overflow}px too wide`);
+		}
+	}
+	expect(problems).toEqual([]);
+});
+
+test('screenshots at the extremes (320px and 2160p)', async ({ page, isMobile }) => {
+	test.skip(isMobile, 'widths are set explicitly; run once');
+	for (const [width, height] of [
+		[320, 700],
+		[3840, 2160]
+	] as const) {
+		await page.setViewportSize({ width, height });
+		for (const path of ['/', '/fonts/faruma', '/guide', '/docs']) {
+			await page.goto(path);
+			await page.waitForLoadState('networkidle');
+			await page.evaluate(() => document.fonts.ready);
+			const name = path === '/' ? 'home' : path.slice(1).replaceAll('/', '-');
+			await page.screenshot({ path: `screenshots/w${width}-${name}.png` });
+		}
+	}
 });
 
 test('fonts and downloads are served from R2', async ({ request }) => {
@@ -112,3 +143,42 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await expect(page.getByRole('heading', { name: 'Essentials', exact: true })).toBeVisible();
 	await expect(page.getByRole('heading', { name: 'Full suite', exact: true })).toBeVisible();
 });
+
+test('guide renders its demos', async ({ page }) => {
+	await page.goto('/guide');
+	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
+	// The "right" phone-number demo is isolated as one LTR unit.
+	await expect(page.locator('#numbers p').nth(2)).toHaveText(/⁦\+960 333-1234⁩/);
+	await expect(page.locator('#old-text p').nth(2)).toHaveText('ދިވެހި ބަސް');
+});
+
+test('converter turns old A_ text and PDF text into Unicode', async ({ page }) => {
+	await page.goto('/convert');
+	await page.getByLabel('Paste here').fill('cswb ihevid');
+	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ދިވެހި ބަސް');
+	await page.getByRole('radio', { name: 'Copied from a PDF' }).click();
+	await page.getByLabel('Paste here').fill('ތާރީޚް 2026/1/14');
+	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ތާރީޚް 14/1/2026');
+});
+
+test('mobile menu opens and navigates', async ({ page, isMobile }) => {
+	test.skip(!isMobile, 'mobile only');
+	await page.goto('/');
+	await page.getByRole('button', { name: 'Menu' }).click();
+	await page.getByRole('link', { name: 'Guide' }).click();
+	await expect(page).toHaveURL(/\/guide$/);
+});
+
+// Visual record for review (uploaded as a CI artifact): key pages, light and dark.
+for (const theme of ['light', 'dark'] as const) {
+	test(`screenshots (${theme})`, async ({ page }, info) => {
+		await page.emulateMedia({ colorScheme: theme });
+		for (const path of ['/', '/fonts/faruma', '/guide', '/convert', '/docs', '/downloads']) {
+			await page.goto(path);
+			await page.waitForLoadState('networkidle');
+			await page.evaluate(() => document.fonts.ready);
+			const name = path === '/' ? 'home' : path.slice(1).replaceAll('/', '-');
+			await page.screenshot({ path: `screenshots/${info.project.name}-${theme}-${name}.png`, fullPage: false });
+		}
+	});
+}
