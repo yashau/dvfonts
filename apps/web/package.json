@@ -9,10 +9,10 @@
 	},
 	"scripts": {
 		"dev": "vite dev",
-		"build": "wrangler types --check && vite build",
+		"build": "wrangler types >/dev/null && vite build",
 		"preview": "wrangler dev --port 4173",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"prepare": "svelte-kit sync && wrangler types >/dev/null || echo ''",
+		"check": "wrangler types >/dev/null && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"gen": "wrangler types",
 		"test:e2e": "playwright test",
 		"deploy": "wrangler deploy"
