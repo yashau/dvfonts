@@ -54,20 +54,35 @@ jobs:
           uv run --project fonts ruff check fonts/scripts
           uv run --project fonts ruff format --check fonts/scripts
 
+      # The build is byte-reproducible, so its output is fully determined by
+      # these inputs. The committed catalog data is part of the key: editing it
+      # by hand changes the key, forces a rebuild, and the check below catches it.
+      - name: Restore built fonts
+        id: cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: fonts/build/r2
+          key: fonts-r2-${{ hashFiles('fonts/**', 'packages/thaana/src/legacy-layouts.json', 'apps/web/src/lib/data/**') }}
+
       - name: Rebuild fonts and bundles
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           set -euo pipefail
           cd fonts
           uv run python scripts/build.py
           uv run python scripts/bundles.py
-          uv run python scripts/r2_manifest.py
 
       - name: Committed catalog data matches the pipeline
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           if ! git diff --exit-code --stat -- apps/web/src/lib/data; then
             echo "::error::apps/web/src/lib/data is stale. Run 'mise run fonts && mise run bundles' and commit the result."
             exit 1
           fi
+
+      - name: Fonts unchanged
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: echo "Font inputs unchanged; reused the cached build (rebuild and data check skipped)."
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
