@@ -1,7 +1,11 @@
 <br />
 
-<h1 align="center">dvfonts</h1>
-<p align="center"><b dir="rtl" lang="dv">ޑީވީފޮންޓްސް</b></p>
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg" />
+    <img alt="dvfonts — ޑީވީފޮންޓްސް" src=".github/assets/banner-light.svg" width="600" />
+  </picture>
+</h1>
 
 <p align="center">
   <b>Open Dhivehi fonts for the web, and one install that makes Thaana work everywhere.</b><br />
