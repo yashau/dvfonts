@@ -2,6 +2,7 @@
 	import type { Family } from '#lib/catalog.js';
 	import { previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
+	import { isolateNumbers, resolveDirection } from '@yashau/thaana';
 	import { SYMBOL_SAMPLE } from '#lib/thaana.js';
 	import { cn } from '#lib/utils.js';
 
@@ -19,15 +20,16 @@
 	const content = $derived(
 		text ?? (symbols ? (tester.text && !tester.dv ? tester.text : SYMBOL_SAMPLE) : tester.preview)
 	);
+	const dir = $derived(symbols ? 'ltr' : resolveDirection(content, null, 'rtl'));
 </script>
 
 <p
 	class={cn('preview-text text-foreground', className)}
-	dir={symbols ? 'ltr' : 'rtl'}
+	{dir}
 	lang={symbols ? undefined : 'dv'}
 	style:font-family="'{previewFamily(family)}', 'dv-ui', sans-serif"
 	style:font-weight={weight}
 	style:font-size="{size}px"
 >
-	{content}
+	{symbols ? content : isolateNumbers(content)}
 </p>

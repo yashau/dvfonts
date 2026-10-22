@@ -1,4 +1,5 @@
 import { BRACKET_SWAP, KEYMAP } from './keymap.js';
+import { resolveDirection } from './text.js';
 
 export interface KeyboardOptions {
 	/** Return false to let keystrokes through untouched (e.g. a DV/EN toggle). Default: always on. */
@@ -9,6 +10,9 @@ export interface KeyboardOptions {
 	/** Swap bracket pairs like Microsoft's Divehi Phonetic layout, so the key
 	 *  labelled "(" shows "(" on screen. Default: false (Unicode-correct order). */
 	swapBrackets?: boolean;
+	/** Keep `dir` in step with the text: RTL when it contains Thaana (or is
+	 *  empty / has no letters), LTR only for pure Latin. Default: true. */
+	autoDirection?: boolean;
 }
 
 type Editable = HTMLInputElement | HTMLTextAreaElement | HTMLElement;
@@ -41,7 +45,7 @@ export function thaanaForInputEvent(
  * @returns a function that detaches the keyboard.
  */
 export function attachKeyboard(el: Editable, options: KeyboardOptions = {}): () => void {
-	const { enabled = () => true, setAttributes = true, swapBrackets = false } = options;
+	const { enabled = () => true, setAttributes = true, swapBrackets = false, autoDirection = true } = options;
 	if (setAttributes) {
 		const defaults: [string, string][] = [
 			['dir', 'rtl'],
@@ -74,8 +78,20 @@ export function attachKeyboard(el: Editable, options: KeyboardOptions = {}): () 
 			inserting = false;
 		}
 	};
+	const fieldText = () =>
+		el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement ? el.value : (el.textContent ?? '');
+	const onInput = () => {
+		el.dir = resolveDirection(fieldText(), null, 'rtl');
+	};
 	el.addEventListener('beforeinput', onBeforeInput);
-	return () => el.removeEventListener('beforeinput', onBeforeInput);
+	if (autoDirection) {
+		el.addEventListener('input', onInput);
+		onInput();
+	}
+	return () => {
+		el.removeEventListener('beforeinput', onBeforeInput);
+		el.removeEventListener('input', onInput);
+	};
 }
 
 const attached = new WeakMap<Element, () => void>();

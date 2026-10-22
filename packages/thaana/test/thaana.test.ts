@@ -53,6 +53,12 @@ describe('keyboard', () => {
 		expect(el.getAttribute('lang')).toBe('dv');
 		type(el, 'bu (hi) ra?');
 		expect(el.value).toBe('ބު (ހި) ރަ؟');
+		el.value = 'Hello';
+		el.dispatchEvent(new Event('input'));
+		expect(el.dir).toBe('ltr'); // pure Latin follows the text
+		el.value = 'Apple ގެ';
+		el.dispatchEvent(new Event('input'));
+		expect(el.dir).toBe('rtl'); // any Thaana: RTL, even when Latin comes first
 		detach();
 		type(el, 'x');
 		expect(el.value.endsWith('x')).toBe(true);

@@ -1,4 +1,5 @@
 import { forwardRef, useMemo, type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react';
+import { resolveDirection } from '@yashau/thaana';
 import { useThaanaKeyboard, mergeRefs } from './keyboard.js';
 
 export interface ThaanaFieldProps {
@@ -19,7 +20,15 @@ export const ThaanaInput: React.ForwardRefExoticComponent<ThaanaInputProps & Rea
 	) {
 		const kb = useThaanaKeyboard<HTMLInputElement>({ enabled: dv, swapBrackets });
 		const merged = useMemo(() => mergeRefs(ref, kb), [ref, kb]);
-		return <input dir="rtl" lang="dv" {...props} ref={merged} style={{ unicodeBidi: 'plaintext', ...style }} />;
+		return (
+			<input
+				dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, 'rtl')}
+				lang="dv"
+				{...props}
+				ref={merged}
+				style={style}
+			/>
+		);
 	});
 
 /** <textarea> that types Thaana, right-to-left, with autocorrect off. */
@@ -31,5 +40,13 @@ export const ThaanaTextarea: React.ForwardRefExoticComponent<
 ) {
 	const kb = useThaanaKeyboard<HTMLTextAreaElement>({ enabled: dv, swapBrackets });
 	const merged = useMemo(() => mergeRefs(ref, kb), [ref, kb]);
-	return <textarea dir="rtl" lang="dv" {...props} ref={merged} style={{ unicodeBidi: 'plaintext', ...style }} />;
+	return (
+		<textarea
+			dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, 'rtl')}
+			lang="dv"
+			{...props}
+			ref={merged}
+			style={style}
+		/>
+	);
 });

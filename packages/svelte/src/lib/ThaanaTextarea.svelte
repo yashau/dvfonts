@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
+	import { resolveDirection } from '@yashau/thaana';
 	import { thaana } from './keyboard.js';
 
 	interface Props extends Omit<HTMLTextareaAttributes, 'value'> {
@@ -15,9 +16,8 @@
 </script>
 
 <textarea
-	dir="rtl"
+	dir={resolveDirection(value ?? '', null, 'rtl')}
 	lang="dv"
-	style:unicode-bidi="plaintext"
 	{...rest}
 	bind:this={ref}
 	bind:value

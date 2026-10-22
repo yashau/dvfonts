@@ -22,3 +22,9 @@ useDhivehiFont('Faruma');
 ```
 
 Or register globally: `app.use(ThaanaPlugin)`.
+
+Show Thaana text correctly (RTL even when it starts with a Latin word, numbers isolated):
+
+```vue
+<ThaanaText as="p" text="ގުޅާލައްވާ: +960 333-1234" />
+```

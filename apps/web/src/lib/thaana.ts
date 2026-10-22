@@ -44,5 +44,6 @@ export function randomPangram(): string {
 
 /** Wire the phonetic keyboard to an element whose on/off state lives elsewhere. */
 export function thaanaKeyboard(el: HTMLElement, enabled: () => boolean) {
-	return { destroy: attachKeyboard(el, { enabled, setAttributes: false }) };
+	// The site binds `dir` itself (resolveDirection), so no autoDirection here.
+	return { destroy: attachKeyboard(el, { enabled, setAttributes: false, autoDirection: false }) };
 }

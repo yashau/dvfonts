@@ -68,14 +68,20 @@ export function detectDirection(text: string): 'rtl' | 'ltr' | 'neutral' {
 }
 
 /**
- * Direction to render a piece of text with. An explicit choice always wins;
- * otherwise any right-to-left letter makes it RTL. This suits Dhivehi UIs
- * better than dir="auto", which turns "Apple ގެ ފޯނު" left-to-right because
- * the first letter is Latin.
+ * Direction to render a piece of text with (rihaPDF's rule). An explicit
+ * choice always wins; otherwise any right-to-left letter makes it RTL. This
+ * suits Dhivehi UIs better than dir="auto", which turns "Apple ގެ ފޯނު"
+ * left-to-right because the first letter is Latin. Text with no letters at all
+ * (digits, punctuation) gets `fallback`: pass 'rtl' in Thaana contexts.
  */
-export function resolveDirection(text: string, explicit?: 'rtl' | 'ltr' | null): 'rtl' | 'ltr' {
+export function resolveDirection(
+	text: string,
+	explicit?: 'rtl' | 'ltr' | null,
+	fallback: 'rtl' | 'ltr' = 'ltr'
+): 'rtl' | 'ltr' {
 	if (explicit) return explicit;
-	return hasRtl(text) ? 'rtl' : 'ltr';
+	if (hasRtl(text)) return 'rtl';
+	return detectDirection(text) === 'ltr' ? 'ltr' : fallback;
 }
 
 /** Unicode bidi isolates. Prefer the HTML <bdi> element when you control markup. */

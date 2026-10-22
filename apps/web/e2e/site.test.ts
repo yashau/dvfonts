@@ -184,3 +184,38 @@ for (const theme of ['light', 'dark'] as const) {
 		}
 	});
 }
+
+// The type tester must handle punctuation, brackets, numbers and mixed text.
+// Each case: keys typed on the phonetic keyboard (or pasted in EN mode), the
+// stored text, and what the first preview must show (\u2066/\u2069 isolates).
+const TESTER_CASES: [mode: 'dv' | 'en', keys: string, stored: string, preview: string, dir: 'rtl' | 'ltr'][] = [
+	['dv', 'divehi (bu) 2026.', 'ދިވެހި (ބު) 2026.', 'ދިވެހި (ބު) \u20662026\u2069.', 'rtl'],
+	['dv', 'gulAlwvA: +960 333-1234', 'ގުލާލއވާ: +960 333-1234', 'ގުލާލއވާ: \u2066+960 333-1234\u2069', 'rtl'],
+	['dv', 'fini -5, 50%', 'ފިނި -5، 50%', 'ފިނި \u2066-5\u2069، \u206650%\u2069', 'rtl'],
+	['dv', '"bu"? [bu (hi)]', '"ބު"؟ [ބު (ހި)]', '"ބު"؟ [ބު (ހި)]', 'rtl'],
+	['dv', 'gwRi 9:00; 14/1/2026', 'ގއޜި 9:00؛ 14/1/2026', 'ގއޜި \u20669:00\u2069؛ \u206614/1/2026\u2069', 'rtl'],
+	['en', 'Apple ގެ އާ ފޯނު!', 'Apple ގެ އާ ފޯނު!', 'Apple ގެ އާ ފޯނު!', 'rtl'],
+	['en', 'Hello world (2026).', 'Hello world (2026).', 'Hello world (2026).', 'ltr']
+];
+
+test('type tester: punctuation, brackets, numbers and mixed text', async ({ page }) => {
+	await page.goto('/');
+	const input = page.getByRole('textbox', { name: 'Preview text' });
+	const preview = page.locator('p.preview-text').first();
+	for (const [mode, keys, stored, shown, dir] of TESTER_CASES) {
+		await page
+			.getByRole('radio', { name: mode === 'dv' ? 'Dhivehi phonetic keyboard' : 'Your system keyboard' })
+			.click();
+		await input.fill('');
+		if (mode === 'dv') {
+			await input.click();
+			await page.keyboard.type(keys);
+		} else {
+			await input.fill(keys);
+		}
+		await expect(input, keys).toHaveValue(stored);
+		await expect(input, keys).toHaveAttribute('dir', dir);
+		await expect(preview, keys).toHaveAttribute('dir', dir);
+		await expect(preview, keys).toHaveText(shown);
+	}
+});

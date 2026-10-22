@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import { act, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ThaanaInput, transliterate } from '../src/index.js';
+import { ThaanaInput, ThaanaText, transliterate } from '../src/index.js';
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -39,5 +39,17 @@ describe('ThaanaInput', () => {
 	});
 	it('re-exports the core helpers', () => {
 		expect(transliterate('bu')).toBe('ބު');
+	});
+});
+
+describe('ThaanaText', () => {
+	it('renders RTL with numbers isolated, even when Latin comes first', async () => {
+		const host = document.createElement('div');
+		document.body.append(host);
+		await act(async () => createRoot(host).render(<ThaanaText as="p" text="Apple ފޯނު +960 333-1234" />));
+		const p = host.querySelector('p')!;
+		expect(p.dir).toBe('rtl');
+		expect(p.lang).toBe('dv');
+		expect(p.textContent).toBe('Apple ފޯނު \u2066+960 333-1234\u2069');
 	});
 });

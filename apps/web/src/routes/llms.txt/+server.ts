@@ -70,12 +70,14 @@ In an app, install the package instead of using the CDN script (same API, typed)
 
 \`\`\`sh
 npm i @yashau/thaana          # vanilla JS / any framework
-npm i @yashau/thaana-react    # React 18/19: useThaanaKeyboard, <ThaanaInput>, <ThaanaTextarea>, useDhivehiFont
-npm i @yashau/thaana-svelte   # Svelte 5: use:thaana action, {@attach thaanaKeyboard()}, <ThaanaInput bind:value>
-npm i @yashau/thaana-vue      # Vue 3: v-thaana directive, <ThaanaInput v-model>, useDhivehiFont, ThaanaPlugin
+npm i @yashau/thaana-react    # React 18/19: useThaanaKeyboard, <ThaanaInput>, <ThaanaTextarea>, <ThaanaText>, useDhivehiFont
+npm i @yashau/thaana-svelte   # Svelte 5: use:thaana action, {@attach thaanaKeyboard()}, <ThaanaInput bind:value>, <ThaanaText>
+npm i @yashau/thaana-vue      # Vue 3: v-thaana directive, <ThaanaInput v-model>, <ThaanaText>, useDhivehiFont, ThaanaPlugin
 \`\`\`
 
 The framework packages re-export everything from @yashau/thaana, so install only one.
+
+To DISPLAY Thaana (labels, titles, user content), use \`<ThaanaText text={value} as="p" />\` from the framework package: it applies dir (RTL if the text contains any Thaana, even when it starts with a Latin word), lang="dv", and isolates numbers/phone numbers/percentages so they don't scramble. Display-only: the stored text is never changed.
 
 \`\`\`tsx
 // React

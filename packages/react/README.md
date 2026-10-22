@@ -32,3 +32,9 @@ const ref = useThaanaKeyboard({ enabled: dv });
 ```
 
 Works with React 18 and 19, including Server Components apps (the entry is marked `'use client'`).
+
+Show Thaana text correctly (RTL even when it starts with a Latin word, numbers isolated):
+
+```tsx
+<ThaanaText as="p" text="ގުޅާލައްވާ: +960 333-1234" />
+```

@@ -27,6 +27,9 @@ describe('script detection', () => {
 		expect(detectDirection('Apple ގެ ފޯނު')).toBe('ltr'); // what dir="auto" would do
 		expect(resolveDirection('ދިވެހި', 'ltr')).toBe('ltr');
 		expect(resolveDirection('123')).toBe('ltr');
+		expect(resolveDirection('123', null, 'rtl')).toBe('rtl');
+		expect(resolveDirection('(2026).', null, 'rtl')).toBe('rtl');
+		expect(resolveDirection('Hello (2026).', null, 'rtl')).toBe('ltr');
 	});
 });
 

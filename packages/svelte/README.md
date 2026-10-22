@@ -20,3 +20,9 @@ npm i @yashau/thaana-svelte
 <textarea use:thaana={{ enabled: dv }}></textarea>
 <div contenteditable {@attach thaanaKeyboard({ enabled: dv })}></div>
 ```
+
+Show Thaana text correctly (RTL even when it starts with a Latin word, numbers isolated):
+
+```svelte
+<ThaanaText as="p" text="ގުޅާލައްވާ: +960 333-1234" />
+```

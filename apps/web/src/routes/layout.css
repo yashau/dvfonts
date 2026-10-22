@@ -158,10 +158,11 @@
 	}
 }
 
-/* Font previews: paragraph direction comes from the first strong character, so
-   Thaana text runs RTL (trailing punctuation on the left) and Latin text LTR. */
+/* Font previews. The direction is set explicitly (see font-preview.svelte):
+   any Thaana makes the whole preview RTL, as in the guide. `isolate` keeps it
+   from leaking into or being affected by surrounding text. */
 @utility preview-text {
-	unicode-bidi: plaintext;
+	unicode-bidi: isolate;
 	text-align: start;
 	overflow-wrap: anywhere;
 	line-height: 1.6;

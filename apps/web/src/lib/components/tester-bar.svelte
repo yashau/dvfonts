@@ -7,7 +7,8 @@
 	import { Slider } from '#lib/components/ui/slider/index.js';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import { tester } from '#lib/tester.svelte.js';
-	import { thaanaKeyboard, hasThaana } from '#lib/thaana.js';
+	import { resolveDirection } from '@yashau/thaana';
+	import { thaanaKeyboard } from '#lib/thaana.js';
 
 	let { extra }: { extra?: Snippet } = $props();
 
@@ -17,8 +18,10 @@
 		return thaanaKeyboard(inputEl, () => tester.dv).destroy;
 	});
 
-	// RTL while typing Thaana (or about to); otherwise follow the text.
-	const dir = $derived(tester.dv || hasThaana(tester.text) ? 'rtl' : 'auto');
+	// Same rule as the previews: RTL when typing Thaana (or about to), LTR only
+	// for pure Latin. Explicit, not unicode-bidi: plaintext, which would flip
+	// "Apple ގެ …" left-to-right because its first letter is Latin.
+	const dir = $derived(resolveDirection(tester.text, null, tester.dv ? 'rtl' : 'ltr'));
 
 	$effect(() => {
 		void tester.size;
@@ -66,7 +69,7 @@
 				{dir}
 				lang={tester.dv ? 'dv' : undefined}
 				placeholder={tester.dv ? 'އަކުރުތައް ލިޔެ ބައްލަވާ…' : 'Type to preview…'}
-				class="text-base [unicode-bidi:plaintext]"
+				class="text-base"
 				autocomplete="off"
 				autocapitalize="none"
 				spellcheck={false}

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { flushSync, mount } from 'svelte';
 import Harness from './Harness.svelte';
+import TextHarness from './TextHarness.svelte';
 
 function type(el: HTMLInputElement, text: string) {
 	for (const ch of text) {
@@ -28,5 +29,16 @@ describe('ThaanaInput', () => {
 		type(input, ' ok');
 		flushSync();
 		expect(document.querySelector('output')!.textContent).toBe('ދިވެހި ok');
+	});
+});
+
+describe('ThaanaText', () => {
+	it('renders RTL with the phone number isolated', () => {
+		document.body.innerHTML = '';
+		mount(TextHarness, { target: document.body });
+		flushSync();
+		const p = document.querySelector('p')!;
+		expect(p.getAttribute('dir')).toBe('rtl');
+		expect(p.textContent).toBe('ގުޅާލައްވާ: ⁦+960 333-1234⁩');
 	});
 });

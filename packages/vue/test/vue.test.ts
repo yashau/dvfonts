@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { createApp, defineComponent, h, nextTick, ref } from 'vue';
-import { ThaanaInput } from '../src/index.js';
+import { ThaanaInput, ThaanaText } from '../src/index.js';
 
 function type(el: HTMLInputElement, text: string) {
 	for (const ch of text) {
@@ -38,5 +38,16 @@ describe('ThaanaInput', () => {
 		await nextTick();
 		type(input, ' ok');
 		expect(value.value).toBe('ދިވެހި ok');
+	});
+});
+
+describe('ThaanaText', () => {
+	it('renders RTL with numbers isolated', () => {
+		const host = document.createElement('div');
+		document.body.append(host);
+		createApp(() => h(ThaanaText, { text: 'ފިނިމިން -5', as: 'p' })).mount(host);
+		const p = host.querySelector('p')!;
+		expect(p.dir).toBe('rtl');
+		expect(p.textContent).toBe('ފިނިމިން \u2066-5\u2069');
 	});
 });
