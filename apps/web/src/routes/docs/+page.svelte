@@ -112,6 +112,10 @@ ${SCRIPT_END}
 		],
 		['autoAttach() / import "@yashau/thaana/auto"', 'Attach to every [data-thaana] field, including ones added later.'],
 		[
+			'<ThaanaText text={…} />',
+			'React/Svelte/Vue: show Thaana right-to-left with lang="dv" and numbers isolated, even when it starts with a Latin word.'
+		],
+		[
 			'thaanaForInputEvent(event)',
 			'For rich-text editors (Lexical, TipTap, ProseMirror): the Thaana character to insert, or null.'
 		],
@@ -119,13 +123,13 @@ ${SCRIPT_END}
 		['convertLegacy(text, { layout })', 'Text typed in old A_ / phonetic fonts → Unicode Thaana.'],
 		['repairPdfText(text)', 'Fix Thaana copied out of PDFs: reversed dates and times, spacing, list markers.'],
 		['normalizePunctuation(text)', 'Latin , ; ? → ، ؛ ؟ after Thaana; no space before punctuation or inside brackets.'],
-		['isolateNumbers(text)', 'Keep -5, +960 333-1234, 9:00, 1,000, 50% intact inside RTL text.'],
+		['isolateNumbers(text)', 'Keep -5, +960 333-1234, 9:00, 1,000, 50% intact inside RTL text (display only).'],
 		['isolate(value, dir)', "Wrap a URL, email or name in a bidi isolate (when you can't use <bdi>)."],
 		['stripBidiControls(text)', 'Remove invisible bidi marks before saving or comparing.'],
 		['hasThaana · hasRtl · isMixedScript', 'Script detection.'],
 		[
-			'detectDirection(text) · resolveDirection(text, explicit)',
-			'First-strong (like dir="auto") vs "any Thaana → RTL".'
+			'detectDirection(text) · resolveDirection(text, explicit, fallback)',
+			'First-strong (like dir="auto") vs rihaPDF\'s rule: any Thaana → RTL; no letters → fallback.'
 		],
 		['loadFonts({ family, weights })', 'Load a dvfonts family; resolves when it can be drawn (canvas, SVG).'],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
