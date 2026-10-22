@@ -163,8 +163,10 @@
 		</section>
 	{/if}
 
-	<section class="mt-10 grid gap-8 lg:grid-cols-2">
-		<div>
+	<!-- min-w-0 on the columns: grid items default to min-width:auto, so the code
+	     blocks' long URLs would stretch the page instead of scrolling inside. -->
+	<section class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+		<div class="min-w-0">
 			<h2 class="mb-1 text-xl font-semibold tracking-tight">Use on the web</h2>
 			<p class="mb-4 text-sm text-muted-foreground">
 				Pick the weights you need. The stylesheet loads only the Thaana or Latin parts a page actually uses.
@@ -183,9 +185,9 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="min-w-0">
 			<h2 class="mb-4 text-xl font-semibold tracking-tight">About this font</h2>
-			<dl class="grid grid-cols-[8rem_1fr] gap-x-4 gap-y-2 text-sm">
+			<dl class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-2 text-sm sm:grid-cols-[8rem_minmax(0,1fr)]">
 				{#if family.designer}<dt class="text-muted-foreground">Designer</dt>
 					<dd>{family.designer}</dd>{/if}
 				{#if family.manufacturer}<dt class="text-muted-foreground">Manufacturer</dt>

@@ -147,9 +147,11 @@ test('downloads page lists the bundles', async ({ page }) => {
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/guide');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
-	// The "right" phone-number demo is isolated as one LTR unit.
-	await expect(page.locator('#numbers p').nth(2)).toHaveText(/⁦\+960 333-1234⁩/);
-	await expect(page.locator('#old-text p').nth(2)).toHaveText('ދިވެހި ބަސް');
+	// Each demo has a Wrong and a Right pane (.guide-sample); check the Right one.
+	const right = (section: string) => page.locator(`#${section} .guide-sample`).nth(1).locator('p');
+	await expect(right('numbers').first()).toHaveText(/\u2066\+960 333-1234\u2069/);
+	await expect(right('old-text').first()).toHaveText('ދިވެހި ބަސް');
+	await expect(right('old-text').nth(1)).toHaveText('ތާރީޚް 14/1/2026');
 });
 
 test('converter turns old A_ text and PDF text into Unicode', async ({ page }) => {
