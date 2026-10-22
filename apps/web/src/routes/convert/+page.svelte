@@ -22,19 +22,19 @@
 	const modes: { id: Mode; label: string; hint: string; example: string }[] = [
 		{
 			id: 'typewriter',
-			label: 'Old A_ font',
+			label: 'A_ fonts',
 			hint: 'Typed in A_Waheed, A_Faseyha, A_Randhoo and the other A_ fonts. Without the font it shows as Latin letters.',
 			example: 'cswb ihevid'
 		},
 		{
 			id: 'phonetic',
-			label: 'Old phonetic font',
+			label: 'Phonetic fonts',
 			hint: 'Typed in the older casual fonts: Thaana, Akko, Athu Casual, Avas Thaana and similar.',
 			example: 'qsab ihevid'
 		},
 		{
 			id: 'pdf',
-			label: 'From a PDF',
+			label: 'PDF text',
 			hint: 'Copied out of a PDF: fixes reversed dates and times, stray spaces and jumped list numbers.',
 			example: 'ތާރީޚް 2026/1/14 ، ހެނދުނު 00:9 ގައި'
 		}
@@ -77,9 +77,9 @@
 		}}
 		class="mt-8"
 	>
-		<Tabs.List aria-label="Where the text came from">
+		<Tabs.List aria-label="Where the text came from" class="w-full sm:w-auto">
 			{#each modes as m (m.id)}
-				<Tabs.Trigger value={m.id}>{m.label}</Tabs.Trigger>
+				<Tabs.Trigger value={m.id} class="flex-1 sm:flex-none">{m.label}</Tabs.Trigger>
 			{/each}
 		</Tabs.List>
 	</Tabs.Root>
