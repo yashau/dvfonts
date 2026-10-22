@@ -22,7 +22,7 @@
 
 <div class="mx-auto max-w-5xl px-4 py-10 sm:px-6">
 	<h1 class="text-3xl font-semibold tracking-tight">Downloads</h1>
-	<p class="mt-2 max-w-2xl text-muted-foreground">
+	<p class="mt-2 max-w-4xl text-pretty text-muted-foreground">
 		Whole collections in one zip. Every family folder carries its credits and license; individual families can be
 		downloaded from their own pages.
 	</p>

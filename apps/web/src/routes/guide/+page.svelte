@@ -57,7 +57,7 @@
 
 <article class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
 	<h1 class="text-3xl font-semibold tracking-tight">Displaying Thaana well</h1>
-	<p class="mt-2 max-w-2xl text-muted-foreground">
+	<p class="mt-2 max-w-4xl text-pretty text-muted-foreground">
 		Thaana is written right to left, its vowels are marks above and below the letters, and most Dhivehi fonts have no
 		Latin letters. Here's everything that goes wrong because of that, with a live example and the fix. The
 		<a class="underline underline-offset-4" href="/docs#packages">@yashau/thaana</a> packages and
