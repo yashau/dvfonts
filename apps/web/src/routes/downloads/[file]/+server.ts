@@ -8,7 +8,7 @@ export const prerender = false;
 
 const files = new Set(bundles.map((b) => b.file));
 
-export const GET: RequestHandler = ({ params, platform, request }) => {
+export const GET: RequestHandler = ({ params, request }) => {
 	if (!files.has(params.file)) error(404, 'No such download');
-	return serveR2(platform, request, `downloads/${params.file}`, { attachment: params.file, maxAge: 86400 });
+	return serveR2(request, `downloads/${params.file}`, { attachment: params.file, maxAge: 86400 });
 };

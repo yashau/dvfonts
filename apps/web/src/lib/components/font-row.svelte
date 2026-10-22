@@ -13,13 +13,17 @@
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
 </script>
 
-<div use:lazyFont={family} class="group relative min-w-0 border-b px-1 py-6 transition-colors hover:bg-muted/40 sm:px-3">
+<div
+	use:lazyFont={family}
+	class="group relative min-w-0 border-b px-1 py-6 transition-colors hover:bg-muted/40 sm:px-3"
+>
 	<div class="mb-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
 		<div class="flex min-w-0 items-baseline gap-2">
 			<h2 class="font-medium">
 				<!-- The stretched link makes the whole row clickable; the download button sits above it. -->
-				<a href="/fonts/{family.id}" class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4"
-					>{family.name}</a
+				<a
+					href="/fonts/{family.id}"
+					class="group-hover:underline group-hover:underline-offset-4 after:absolute after:inset-0">{family.name}</a
 				>
 			</h2>
 			<span class="truncate text-sm text-muted-foreground">{by ?? family.source ?? ''}</span>

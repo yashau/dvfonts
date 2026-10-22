@@ -56,8 +56,8 @@ run = "uv run python scripts/bundles.py"
 description = "Load fonts and bundles into wrangler's local R2, for `pnpm dev` / `pnpm preview` / e2e"
 depends = ["bundles"]
 run = [
-  "uv run --project fonts python fonts/scripts/r2_manifest.py",
-  "cd apps/web && pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --local --force",
+	"uv run --project fonts python fonts/scripts/r2_manifest.py",
+	"cd apps/web && pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --local --force"
 ]
 
 [tasks."release:site"]

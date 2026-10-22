@@ -70,7 +70,7 @@ test('/thaana.js works as a drop-in module on another site', async ({ page }) =>
 		route.fulfill({
 			contentType: 'text/html',
 			body: `<!doctype html><meta charset="utf-8"><input data-thaana id="f">
-				<script type="module" src="http://localhost:4173/thaana.js"></script>`
+				<script type="module" src="http://localhost:4174/thaana.js"></script>`
 		})
 	);
 	await page.goto('http://127.0.0.1:5999/');
@@ -110,5 +110,5 @@ test('fonts and downloads are served from R2', async ({ request }) => {
 test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
 	await expect(page.getByRole('heading', { name: 'Essentials', exact: true })).toBeVisible();
-	await expect(page.getByRole('heading', { name: 'Full suite' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Full suite', exact: true })).toBeVisible();
 });

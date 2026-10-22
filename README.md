@@ -124,16 +124,16 @@ useDhivehiFont('Faruma');
 
 ## What was done to the fonts
 
-| | |
-| --- | --- |
-| 🔁 **Unicode remapping** | 24 pre-Unicode fonts had Thaana on Latin keys. Their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs, then remapped. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. |
-| 🧹 **De-duplication** | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases. |
-| 📏 **Metrics repair** | 43 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers. All fonts now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. |
-| ◌ **Fili as marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too. |
-| 🏷️ **Clean names** | Names and weights are normalised so families install as one family on desktop. |
-| 📦 **Web formats** | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets: a Thaana-only page downloads only the Thaana part. |
-| ⚖️ **Licenses respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte. OFL fonts include `OFL.txt`. Every download carries its credits. |
-| ♻️ **Reproducible** | The build is byte-reproducible, and CI rebuilds it and checks it against the repo. |
+|                           |                                                                                                                                                                                                                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔁 **Unicode remapping**  | 24 pre-Unicode fonts had Thaana on Latin keys. Their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs, then remapped. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. |
+| 🧹 **De-duplication**     | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases.                                                                                                                                    |
+| 📏 **Metrics repair**     | 43 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers. All fonts now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux.                                                    |
+| ◌ **Fili as marks**       | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too.                                                                                                                                             |
+| 🏷️ **Clean names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                          |
+| 📦 **Web formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets: a Thaana-only page downloads only the Thaana part.                                                                                                                                                      |
+| ⚖️ **Licenses respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte. OFL fonts include `OFL.txt`. Every download carries its credits.                                                                                                                                   |
+| ♻️ **Reproducible**       | The build is byte-reproducible, and CI rebuilds it and checks it against the repo.                                                                                                                                                                                      |
 
 ## Repository
 
@@ -161,13 +161,13 @@ mise run r2:local       # build fonts + bundles and load them into local R2 (onc
 mise run dev            # http://localhost:5173
 ```
 
-| Task | What it does |
-| --- | --- |
-| `mise run test` | Unit tests for all packages (Vitest) |
-| `mise run check` | Type-check packages and site |
-| `mise run lint` / `format` | oxlint + oxfmt (JS/TS/Svelte), ruff (Python) |
-| `mise run fonts` | Rebuild the font library from `fonts/sources` |
-| `mise run bundles` | Build the download zips |
+| Task                                  | What it does                                            |
+| ------------------------------------- | ------------------------------------------------------- |
+| `mise run test`                       | Unit tests for all packages (Vitest)                    |
+| `mise run check`                      | Type-check packages and site                            |
+| `mise run lint` / `format`            | oxlint + oxfmt (JS/TS/Svelte), ruff (Python)            |
+| `mise run fonts`                      | Rebuild the font library from `fonts/sources`           |
+| `mise run bundles`                    | Build the download zips                                 |
 | `pnpm --filter @dvfonts/web test:e2e` | Playwright against the real Worker under `wrangler dev` |
 
 **Adding a font:**
@@ -179,10 +179,10 @@ mise run dev            # http://localhost:5173
 
 ## Releasing
 
-| Command | Tag | Workflow |
-| --- | --- | --- |
-| `mise run release:site` | `site-vYYYY.MMDD.N` | Builds the site, uploads fonts and bundles to R2, deploys the Worker, smoke-tests production |
-| `mise run release:packages` | `packages-vYYYY.MMDD.N` | Tests, packs and publishes all four npm packages with provenance |
+| Command                     | Tag                     | Workflow                                                                                     |
+| --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------- |
+| `mise run release:site`     | `site-vYYYY.MMDD.N`     | Builds the site, uploads fonts and bundles to R2, deploys the Worker, smoke-tests production |
+| `mise run release:packages` | `packages-vYYYY.MMDD.N` | Tests, packs and publishes all four npm packages with provenance                             |
 
 ## Credits and rights
 

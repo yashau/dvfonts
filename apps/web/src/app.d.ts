@@ -2,14 +2,8 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		interface Platform {
-			env: Env;
-			ctx: ExecutionContext;
-			// Workers' CacheStorage has a `default` cache the DOM type lacks.
-			caches: CacheStorage & { default: Cache };
-			cf?: IncomingRequestCfProperties;
-		}
-
+		// Bindings come from `import { env } from 'cloudflare:workers'` (see
+		// src/lib/server/r2.ts); SvelteKit 3's Cloudflare adapter passes no platform.
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}

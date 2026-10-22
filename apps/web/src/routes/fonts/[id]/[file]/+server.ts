@@ -7,10 +7,10 @@ export const prerender = false;
 
 const FILE_RE = /^[a-z0-9-]+(?:-\d{3})?(?:\.(?:thaana|latin))?\.(?:woff2|woff|ttf|otf|zip)$/;
 
-export const GET: RequestHandler = ({ params, platform, request, url }) => {
+export const GET: RequestHandler = ({ params, request, url }) => {
 	if (!FILE_RE.test(params.file) || !params.file.startsWith(`${params.id}`)) error(404, 'Not found');
 	const download = url.searchParams.has('download') || params.file.endsWith('.zip');
-	return serveR2(platform, request, `fonts/${params.id}/${params.file}`, {
-		attachment: download ? (url.searchParams.get('download') || params.file) : undefined
+	return serveR2(request, `fonts/${params.id}/${params.file}`, {
+		attachment: download ? url.searchParams.get('download') || params.file : undefined
 	});
 };
