@@ -139,6 +139,9 @@
 	}
 	html {
 		@apply font-sans;
+		/* Reserve the scrollbar's space on every page, so content doesn't shift
+		   sideways between short and long pages or when a menu locks scrolling. */
+		scrollbar-gutter: stable;
 	}
 }
 
