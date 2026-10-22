@@ -1,7 +1,7 @@
 <br />
 
 <h1 align="center">dvfonts</h1>
-<p align="center"><b dir="rtl" lang="dv">ދިވެހި ފޮންޓް</b></p>
+<p align="center"><b dir="rtl" lang="dv">ޑީވީފޮންޓްސް</b></p>
 
 <p align="center">
   <b>Open Dhivehi fonts for the web, and one install that makes Thaana work everywhere.</b><br />
@@ -20,7 +20,7 @@
   <a href="https://www.npmjs.com/package/@yashau/thaana-react"><img alt="@yashau/thaana-react" src="https://img.shields.io/npm/v/@yashau/thaana-react?style=for-the-badge&logo=react&logoColor=white&label=react&color=149eca" /></a>
   <a href="https://www.npmjs.com/package/@yashau/thaana-svelte"><img alt="@yashau/thaana-svelte" src="https://img.shields.io/npm/v/@yashau/thaana-svelte?style=for-the-badge&logo=svelte&logoColor=white&label=svelte&color=ff3e00" /></a>
   <a href="https://www.npmjs.com/package/@yashau/thaana-vue"><img alt="@yashau/thaana-vue" src="https://img.shields.io/npm/v/@yashau/thaana-vue?style=for-the-badge&logo=vuedotjs&logoColor=white&label=vue&color=42b883" /></a>
-  <a href="https://bundlephobia.com/package/@yashau/thaana"><img alt="size" src="https://img.shields.io/bundlephobia/minzip/@yashau/thaana?style=for-the-badge&label=core%20gzip" /></a>
+  <a href="https://bundlejs.com/?q=@yashau/thaana"><img alt="size" src="https://img.shields.io/bundlejs/size/@yashau/thaana?style=for-the-badge&label=core%20gzip" /></a>
 </p>
 
 <p align="center">

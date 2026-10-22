@@ -15,7 +15,7 @@
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
 		<a href="/" class="flex items-baseline gap-2 font-semibold tracking-tight">
 			<span class="text-lg">dvfonts</span>
-			<span class="text-base font-normal text-muted-foreground" dir="rtl" lang="dv">ދިވެހި ފޮންޓް</span>
+			<span class="text-base font-normal text-muted-foreground" dir="rtl" lang="dv">ޑީވީފޮންޓްސް</span>
 		</a>
 		<nav class="ml-auto flex items-center gap-1">
 			{#each links as link (link.href)}
