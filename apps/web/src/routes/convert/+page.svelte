@@ -77,7 +77,7 @@
 		}}
 		class="mt-8"
 	>
-		<Tabs.List aria-label="Where the text came from" class="w-full sm:w-auto">
+		<Tabs.List aria-label="Where the text came from" class="w-full sm:w-fit">
 			{#each modes as m (m.id)}
 				<Tabs.Trigger value={m.id} class="flex-1 sm:flex-none">{m.label}</Tabs.Trigger>
 			{/each}
