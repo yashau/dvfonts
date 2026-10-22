@@ -9,27 +9,8 @@
 
 [bundles.essentials]
 name = "Essentials"
-description = "The fonts most Dhivehi documents and sites use: Faruma, the MV classics, and the modern Thaana Type Foundry families."
-families = [
-	"faruma",
-	"mv-faseyha",
-	"mv-a-waheed",
-	"mv-typewriter",
-	"mv-randhoo",
-	"mv-utheemu",
-	"mv-ilham",
-	"mv-raadhavalhi",
-	"mv-kelaa",
-	"mv-vaadhoo",
-	"a-reethi",
-	"noto-sans-thaana",
-	"bolhu",
-	"kolhu",
-	"theras",
-	"zaana-thedhu",
-	"fanara-golhi",
-	"bismi"
-]
+description = "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi bismillah font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows."
+families = ["modfaruma", "faruma", "mv-ilham", "mv-faseyha", "mv-a-waheed", "bismi", "mv-randhoo", "noto-sans-thaana"]
 
 [bundles.full]
 name = "Full suite"
@@ -68,26 +49,7 @@ categories = ["handwriting"]
 [bundles.webfonts-essentials]
 name = "Webfont kit (Essentials)"
 description = "The Essentials as WOFF2 with a ready-made fonts.css, for self-hosting."
-families = [
-	"faruma",
-	"mv-faseyha",
-	"mv-a-waheed",
-	"mv-typewriter",
-	"mv-randhoo",
-	"mv-utheemu",
-	"mv-ilham",
-	"mv-raadhavalhi",
-	"mv-kelaa",
-	"mv-vaadhoo",
-	"a-reethi",
-	"noto-sans-thaana",
-	"bolhu",
-	"kolhu",
-	"theras",
-	"zaana-thedhu",
-	"fanara-golhi",
-	"bismi"
-]
+families = ["modfaruma", "faruma", "mv-ilham", "mv-faseyha", "mv-a-waheed", "bismi", "mv-randhoo", "noto-sans-thaana"]
 format = "woff2"
 
 [bundles.webfonts-full]

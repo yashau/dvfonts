@@ -79,7 +79,7 @@ def css_for(fams: list[dict]) -> str:
             )
     return (
         "/* Self-hosted Dhivehi fonts from dvfonts. Use with a Latin fallback:\n"
-        "   font-family: 'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif; */\n\n"
+        "   font-family: 'ModFaruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif; */\n\n"
         + "\n\n".join(rules)
         + "\n"
     )

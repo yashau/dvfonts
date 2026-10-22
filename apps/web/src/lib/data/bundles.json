@@ -2,13 +2,13 @@
  {
   "id": "essentials",
   "name": "Essentials",
-  "description": "The fonts most Dhivehi documents and sites use: Faruma, the MV classics, and the modern Thaana Type Foundry families.",
+  "description": "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi bismillah font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows.",
   "format": "ttf",
   "file": "dvfonts-essentials.zip",
-  "families": 18,
-  "styles": 60,
-  "size": 2797623,
-  "sha256": "43bd3ffd6b7479680d7acc15cf4e2ebf7008bb2fe93214edc135577970005f44"
+  "families": 8,
+  "styles": 10,
+  "size": 361470,
+  "sha256": "88437f22ad4871b2c56408ab629ed903c05397531f2f4bd3e2fa89b6d22e8c2d"
  },
  {
   "id": "full",
@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "dvfonts-full.zip",
-  "families": 135,
-  "styles": 193,
-  "size": 6077500,
-  "sha256": "892bed37ca0a0179fac973b9e3c4571752b94ea0f50447a2bb59891439402839"
+  "families": 136,
+  "styles": 194,
+  "size": 6103717,
+  "sha256": "758ef02c4cc2e5c2d58c0944745101d58165a6d8595b89633ca5b201607fd157"
  },
  {
   "id": "unicode-originals",
@@ -27,10 +27,10 @@
   "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "dvfonts-unicode-originals.zip",
-  "families": 111,
-  "styles": 168,
-  "size": 5572339,
-  "sha256": "bf3d19e8948d60b6f44db6bc3659607b0e2ccfb2fb05ecb33d8913fb97681055"
+  "families": 112,
+  "styles": 169,
+  "size": 5598608,
+  "sha256": "b5cc3d3a909e25f731e85db6784ceb6b6e643e9f1930a95a10bd0ddb93c2d3e9"
  },
  {
   "id": "open-licensed",
@@ -60,10 +60,10 @@
   "description": "Calligraphic, Waheed-style text faces.",
   "format": "ttf",
   "file": "dvfonts-traditional.zip",
-  "families": 47,
-  "styles": 56,
-  "size": 1667465,
-  "sha256": "a22940349536389e0984ef90b30ec7b8d88756515b56bb4b33adeb8a57e01931"
+  "families": 48,
+  "styles": 57,
+  "size": 1693709,
+  "sha256": "c5520407789ae378c691a7861b5216148b9803a35f190d921bd9075c7cf1d6ab"
  },
  {
   "id": "display",
@@ -93,10 +93,10 @@
   "description": "The Essentials as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-essentials.zip",
-  "families": 18,
-  "styles": 60,
-  "size": 2151159,
-  "sha256": "3e5df706ec8e4e1e5b4717a5af16fc6b4d98efc9b694bd4a33c8fe401af7f92b"
+  "families": 8,
+  "styles": 10,
+  "size": 297393,
+  "sha256": "e004a78c25ba844374d558a580ce3a151d375019454f66a730b0371b0a7bf181"
  },
  {
   "id": "webfonts-full",
@@ -104,9 +104,9 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-full.zip",
-  "families": 135,
-  "styles": 193,
-  "size": 4764393,
-  "sha256": "824802be30556ab0059a5e3afaed29c730c9c206c14b83eba6e9d848efb9df9a"
+  "families": 136,
+  "styles": 194,
+  "size": 4785203,
+  "sha256": "be3b97c405c52ae431fc4b404b9d72a3903067247c7f5117867fe6aea8c231b3"
  }
 ]

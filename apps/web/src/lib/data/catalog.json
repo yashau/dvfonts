@@ -1031,7 +1031,8 @@
    "name": "Bismi",
    "category": "symbols",
    "aliases": [
-    "A_Bismillah"
+    "A_Bismillah",
+    "ABismillah"
    ],
    "notes": "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives.",
    "license": "Unspecified",
@@ -2287,7 +2288,8 @@
    "name": "Faruma",
    "category": "traditional",
    "aliases": [
-    "ModFaruma"
+    "A_Faruma",
+    "AFaruma"
    ],
    "notes": null,
    "license": "Unspecified",
@@ -2925,6 +2927,57 @@
     }
    ],
    "zipSize": 54422
+  },
+  {
+   "id": "modfaruma",
+   "name": "ModFaruma",
+   "category": "traditional",
+   "aliases": [],
+   "notes": null,
+   "license": "Unspecified",
+   "unmodified": false,
+   "source": "dhivehi.mv archive",
+   "upstream": null,
+   "attribution": "Faruma by Mustafa Muhammad, Ibrahim Yasir and Ahmed Aasif (2002); rufiyaa symbol on '$' added by Kudanai (2023)",
+   "copyright": "Created by Ibrahim Yasir,Calligraphy by Musthafa Mohamed, Assisted by Ahmed Asif. The President's Office 2002. All rights reserved\n\nModified for rufiyaa symbol by Kudanai, 2023",
+   "designer": "Ibrahim Yasir",
+   "manufacturer": "Ibrahim Yasir",
+   "description": "The english letters used in font Faruma® is Times New Roman® Trademark of The Monotype Corporation plc registered in the US Pat & TM Off. and elsewhere.",
+   "vendorUrl": null,
+   "designerUrl": null,
+   "licenseText": null,
+   "licenseUrl": null,
+   "version": "Version 2.0 Official release; dvfonts",
+   "styles": [
+    {
+     "weight": 400,
+     "source": "modfaruma.ttf",
+     "desktopFile": "ModFaruma-Regular.ttf",
+     "sizes": {
+      "ttf": 41848,
+      "woff2": 20108,
+      "woff": 25832
+     },
+     "subsets": {
+      "thaana": 13540,
+      "latin": 14328
+     },
+     "upstream": null,
+     "legacyLayout": null,
+     "metrics": {
+      "repaired": false,
+      "ascent": 0.927734375,
+      "descent": -0.537109375,
+      "lineGap": 0.0
+     },
+     "glyphs": 179,
+     "thaana": 50,
+     "latin": 52,
+     "codepoints": 161,
+     "cssOverrides": null
+    }
+   ],
+   "zipSize": 26183
   },
   {
    "id": "motaru-dhigu",
@@ -3669,6 +3722,7 @@
    "category": "traditional",
    "aliases": [
     "A_Faseyha",
+    "AFaseyha",
     "Dhivehi",
     "Mv Amaan XP"
    ],
@@ -4103,7 +4157,8 @@
    "name": "MV Ilham",
    "category": "traditional",
    "aliases": [
-    "A_Ilham"
+    "A_Ilham",
+    "AIlham"
    ],
    "notes": null,
    "license": "Author's terms",
@@ -6367,7 +6422,8 @@
    "name": "MV Randhoo",
    "category": "traditional",
    "aliases": [
-    "A_Randhoo"
+    "A_Randhoo",
+    "RandhooP"
    ],
    "notes": null,
    "license": "Unspecified",

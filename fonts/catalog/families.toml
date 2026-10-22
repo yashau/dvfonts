@@ -115,10 +115,15 @@ fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
 
 # ─── Traditional / calligraphic ─────────────────────────────────────────────
 
+[families.modfaruma]
+name = "ModFaruma"
+category = "traditional"
+fonts = { 400 = "modfaruma.ttf" }
+
 [families.faruma]
 name = "Faruma"
 category = "traditional"
-aliases = ["ModFaruma"]
+aliases = ["A_Faruma", "AFaruma"]
 fonts = { 400 = "faruma.ttf" }
 
 [families.a-waheed-college]
@@ -135,7 +140,7 @@ fonts = { 400 = "mvawaheed.ttf" }
 [families.mv-faseyha]
 name = "MV Faseyha"
 category = "traditional"
-aliases = ["A_Faseyha", "Dhivehi", "Mv Amaan XP"]
+aliases = ["A_Faseyha", "AFaseyha", "Dhivehi", "Mv Amaan XP"]
 fonts = { 400 = "faseyha-reg-hinted-v2.ttf", 700 = "faseyha-bld-hinted-v2.ttf" }
 
 [families.mv-faseyha-au]
@@ -147,13 +152,13 @@ fonts = { 400 = "mv-faseyha-au-rgl-h.ttf" }
 [families.mv-ilham]
 name = "MV Ilham"
 category = "traditional"
-aliases = ["A_Ilham"]
+aliases = ["A_Ilham", "AIlham"]
 fonts = { 400 = "mvilhamregular.ttf", 700 = "mvilhambold.ttf" }
 
 [families.mv-randhoo]
 name = "MV Randhoo"
 category = "traditional"
-aliases = ["A_Randhoo"]
+aliases = ["A_Randhoo", "RandhooP"]
 fonts = { 400 = "randhoo-reg-hinted.ttf" }
 
 [families.mv-utheemu]
@@ -709,7 +714,7 @@ fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 [families.bismi]
 name = "Bismi"
 category = "symbols"
-aliases = ["A_Bismillah"]
+aliases = ["A_Bismillah", "ABismillah"]
 notes = "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives."
 fonts = { 400 = "bismi.ttf" }
 
@@ -731,7 +736,6 @@ fonts = { 400 = "bismi.ttf" }
 "ilham.ttf" = "Legacy A_ font; the modern Unicode MV Ilham is the same design."
 "faseyha.ttf" = "Legacy A_ font; the modern Unicode MV Faseyha is the same design."
 "waheed.ttf" = "Legacy A_ font; the modern Unicode MV A Waheed is the same design."
-"modfaruma.ttf" = "Faruma with a rufiyaa glyph on '$'; listed as an alias of Faruma."
 "a-nishan.ttf" = "Single state-emblem dingbat, not a text font."
 "dhives.ttf" = "Dhives Akuru (historic script) in a legacy encoding; needs its own remap to U+11900."
 "aa-randhoo.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
