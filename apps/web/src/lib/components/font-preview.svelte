@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Family } from '#lib/catalog.js';
+	import { previewLineHeight, type Family } from '#lib/catalog.js';
 	import { previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { isolateNumbers, resolveDirection } from '@yashau/thaana';
@@ -20,6 +20,7 @@
 	const content = $derived(
 		text ?? (symbols ? (tester.text && !tester.dv ? tester.text : SYMBOL_SAMPLE) : tester.preview)
 	);
+	const lineHeight = $derived(previewLineHeight(family.styles.find((s) => s.weight === weight)));
 	const dir = $derived(symbols ? 'ltr' : resolveDirection(content, null, 'rtl'));
 </script>
 
@@ -30,6 +31,7 @@
 	style:font-family="'{previewFamily(family)}', 'dv-ui', sans-serif"
 	style:font-weight={weight}
 	style:font-size="{size}px"
+	style:line-height={lineHeight}
 >
 	{symbols ? content : isolateNumbers(content)}
 </p>

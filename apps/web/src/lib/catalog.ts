@@ -16,7 +16,8 @@ export interface Style {
 	subsets: Partial<Record<'thaana' | 'latin', number>>;
 	upstream: string | null;
 	legacyLayout: 'typewriter' | 'phonetic' | null;
-	metrics: { repaired: boolean };
+	/** Vertical metrics in em (absent for fonts without usable ones). */
+	metrics: { repaired: boolean } & Partial<MetricOverrides>;
 	cssOverrides: MetricOverrides | null;
 	glyphs: number;
 	thaana: number;
@@ -117,4 +118,21 @@ export function fontUrl(f: Family, weight: number, kind: string): string {
 
 export function formatBytes(n: number): string {
 	return n < 1024 * 1024 ? `${Math.round(n / 1024)} KB` : `${(n / 1024 / 1024).toFixed(1)} MB`;
+}
+
+/** Default line height for previews; Thaana needs room for fili above and below. */
+export const PREVIEW_LINE_HEIGHT = 1.6;
+
+/**
+ * Line height for previewing a style: the default, or the font's own height
+ * (ascent + descent + gap, as the browser will use it) when that is taller.
+ * Fonts with very tall fili, like Faiy, are otherwise clipped where previews
+ * hide overflow (line clamping).
+ */
+export function previewLineHeight(s: Style | undefined): number {
+	const m = s?.cssOverrides ?? s?.metrics;
+	if (m?.ascent === undefined || m.descent === undefined) return PREVIEW_LINE_HEIGHT;
+	const natural = m.ascent - m.descent + (m.lineGap ?? 0);
+	// A little extra so antialiased edges of the tallest marks aren't shaved off.
+	return Math.max(PREVIEW_LINE_HEIGHT, Math.round((natural + 0.05) * 100) / 100);
 }
