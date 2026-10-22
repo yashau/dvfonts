@@ -18,7 +18,7 @@ test('catalogue lists fonts and previews the typed Thaana', async ({ page }) => 
 
 test('EN mode leaves Latin keys alone', async ({ page }) => {
 	await page.goto('/');
-	await page.getByRole('radio', { name: 'Your system keyboard' }).click();
+	await page.getByRole('tab', { name: 'Your system keyboard' }).click();
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	await input.click();
 	await page.keyboard.type('hello');
@@ -203,9 +203,7 @@ test('type tester: punctuation, brackets, numbers and mixed text', async ({ page
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	const preview = page.locator('p.preview-text').first();
 	for (const [mode, keys, stored, shown, dir] of TESTER_CASES) {
-		await page
-			.getByRole('radio', { name: mode === 'dv' ? 'Dhivehi phonetic keyboard' : 'Your system keyboard' })
-			.click();
+		await page.getByRole('tab', { name: mode === 'dv' ? 'Dhivehi phonetic keyboard' : 'Your system keyboard' }).click();
 		await input.fill('');
 		if (mode === 'dv') {
 			await input.click();

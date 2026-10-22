@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
-	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import * as Tabs from '#lib/components/ui/tabs/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { Slider } from '#lib/components/ui/slider/index.js';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
@@ -38,22 +38,19 @@
 					<Tooltip.Root>
 						<Tooltip.Trigger>
 							{#snippet child({ props })}
-								<ToggleGroup.Root
-									{...props}
-									type="single"
-									variant="outline"
-									size="sm"
+								<Tabs.Root
 									value={tester.dv ? 'dv' : 'en'}
 									onValueChange={(v) => {
 										if (v) tester.dv = v === 'dv';
 									}}
-									aria-label="Keyboard"
 								>
-									<ToggleGroup.Item value="dv" aria-label="Dhivehi phonetic keyboard" class="px-2.5" lang="dv"
-										>ދިވެހި</ToggleGroup.Item
-									>
-									<ToggleGroup.Item value="en" aria-label="Your system keyboard" class="px-2.5">EN</ToggleGroup.Item>
-								</ToggleGroup.Root>
+									<Tabs.List {...props} aria-label="Keyboard" class="h-8 p-0.5">
+										<Tabs.Trigger value="dv" aria-label="Dhivehi phonetic keyboard" lang="dv" class="px-2.5 text-base"
+											>ދިވެހި</Tabs.Trigger
+										>
+										<Tabs.Trigger value="en" aria-label="Your system keyboard" class="px-2.5">EN</Tabs.Trigger>
+									</Tabs.List>
+								</Tabs.Root>
 							{/snippet}
 						</Tooltip.Trigger>
 						<Tooltip.Content class="max-w-64">
