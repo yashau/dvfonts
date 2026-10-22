@@ -10,10 +10,10 @@ on:
 permissions:
   contents: read
 
-# Cancel superseded runs on pull requests, never on main.
+# A newer push makes the older run pointless: cancel it, on main too.
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: true
 
 env:
   # mise itself, pinned: mise-action downloads a recent release unless told
