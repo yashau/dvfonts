@@ -46,14 +46,6 @@ jobs:
         with:
           version: ${{ env.PINNED_MISE_VERSION }}
 
-      - name: Install
-        run: uv sync --project fonts --frozen
-
-      - name: Lint (ruff)
-        run: |
-          uv run --project fonts ruff check fonts/scripts
-          uv run --project fonts ruff format --check fonts/scripts
-
       # The build is byte-reproducible, so its output is fully determined by
       # these inputs. The committed catalog data is part of the key: editing it
       # by hand changes the key, forces a rebuild, and the check below catches it.
@@ -62,7 +54,17 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: fonts/build/r2
-          key: fonts-r2-${{ hashFiles('fonts/**', 'packages/thaana/src/legacy-layouts.json', 'apps/web/src/lib/data/**') }}
+          # Only the real inputs: hashing all of fonts/ also picked up the
+          # .venv that `uv sync` creates, so the key changed on every run.
+          key: fonts-r2-${{ hashFiles('fonts/sources/**', 'fonts/catalog/**', 'fonts/scripts/**', 'fonts/pyproject.toml', 'fonts/uv.lock', 'packages/thaana/src/legacy-layouts.json', 'apps/web/src/lib/data/**') }}
+
+      - name: Install
+        run: uv sync --project fonts --frozen
+
+      - name: Lint (ruff)
+        run: |
+          uv run --project fonts ruff check fonts/scripts
+          uv run --project fonts ruff format --check fonts/scripts
 
       - name: Rebuild fonts and bundles
         if: steps.cache.outputs.cache-hit != 'true'
