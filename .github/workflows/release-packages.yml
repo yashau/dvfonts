@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PINNED_MISE_VERSION: '2026.9.18'
+  PINNED_MISE_VERSION: '2026.10.17'
   TZ: UTC
 
 defaults:
@@ -44,7 +44,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: jdx/mise-action@3c2e0cf82a5b2e5249f0d3635a4d83d0ae861518 # v4.2.5
+      - uses: jdx/mise-action@8418fedb1110381a0d3ba51a7a415d7c1b884550 # v5.2.2
         with:
           version: ${{ env.PINNED_MISE_VERSION }}
           # Holds id-token: write. No cache in either direction.
@@ -101,8 +101,8 @@ jobs:
 
       - name: Use a publish-capable npm # zizmor: ignore[adhoc-packages]
         run: |
-          # OIDC trusted publishing needs npm >= 11.5.1. Exact pin, same as prick.
-          npm install --global npm@11.19.1
+          # OIDC trusted publishing needs npm >= 11.5.1. Exact pin, so the client that publishes is never "whatever is newest today".
+          npm install --global npm@12.2.1
           npm --version
 
       - name: Publish

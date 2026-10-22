@@ -31,7 +31,7 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 
 - **pnpm only** for JS, **uv only** for Python (`uv add`, `uv run`). Never use npm/yarn/pip or `python -m venv`.
 - **oxlint + oxfmt**, not ESLint or Prettier. Config is in `.oxlintrc.json` and `.oxfmtrc.json` at the root.
-- Keep dependencies on their latest versions. The exception is `packages/svelte`, which pins TypeScript 6 because `svelte-package`'s declaration emitter doesn't support TS 7 yet.
+- Keep dependencies on their latest versions. Exceptions: `apps/web` and `packages/svelte` pin TypeScript 6, because SvelteKit 3.1 (`svelte-kit sync`) and `svelte-package` use the TypeScript JS API that TS 7's native compiler doesn't provide yet. Revisit when they support TS 7.
 
 ### Site (`apps/web`)
 
