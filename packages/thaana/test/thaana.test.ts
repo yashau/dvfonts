@@ -110,7 +110,11 @@ describe('text helpers', () => {
 	it('normalizes punctuation', () => {
 		expect(normalizePunctuation('ބަސް , ބުދަ ? ( ހި )')).toBe('ބަސް، ބުދަ؟ (ހި)');
 	});
-	it('ships pangrams with every native letter', () => {
-		for (const p of PANGRAMS) for (const l of LETTERS) expect(p).toContain(l);
+	it('ships pangrams that each use every native letter', () => {
+		for (const p of PANGRAMS)
+			expect(
+				LETTERS.filter((l) => !p.includes(l)),
+				p
+			).toEqual([]);
 	});
 });
