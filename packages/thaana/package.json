@@ -49,7 +49,7 @@
 		"./package.json": "./package.json"
 	},
 	"scripts": {
-		"build": "rm -rf dist && tsdown",
+		"build": "rm -rf dist && tsdown && node scripts/check-build.mjs",
 		"test": "vitest run",
 		"lint": "publint"
 	},
