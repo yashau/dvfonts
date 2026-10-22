@@ -7,6 +7,10 @@
 	import { Switch } from '#lib/components/ui/switch/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
 	import * as Tabs from '#lib/components/ui/tabs/index.js';
+	import * as Card from '#lib/components/ui/card/index.js';
+	import * as Table from '#lib/components/ui/table/index.js';
+	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
+	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import { thaanaKeyboard, KEYMAP } from '#lib/thaana.js';
 	import { origin, SITE_ORIGIN } from '#lib/site.js';
 
@@ -170,23 +174,28 @@ ${SCRIPT_END}
 		Most people have no Dhivehi keyboard installed. One script turns Latin keystrokes into Thaana with the Divehi
 		Phonetic layout (Microsoft's standard layout, used across Maldivian sites). Try it:
 	</p>
-	<div class="rounded-xl border p-4">
-		<div class="mb-3 flex items-center gap-2">
-			<Switch id="demo-on" bind:checked={demoOn} />
-			<Label for="demo-on">Phonetic keyboard {demoOn ? 'on' : 'off'}</Label>
-		</div>
-		<Textarea
-			bind:ref={demoEl}
-			bind:value={demoText}
-			dir="rtl"
-			lang="dv"
-			rows={3}
-			placeholder="Type “divehi” → ދިވެހި"
-			class="text-lg [unicode-bidi:plaintext]"
-			autocomplete="off"
-			spellcheck={false}
-		/>
-	</div>
+	<Card.Root>
+		<Card.Header>
+			<Card.Title>Try it</Card.Title>
+			<Card.Action class="flex items-center gap-2">
+				<Switch id="demo-on" bind:checked={demoOn} />
+				<Label for="demo-on">Phonetic keyboard {demoOn ? 'on' : 'off'}</Label>
+			</Card.Action>
+		</Card.Header>
+		<Card.Content>
+			<Textarea
+				bind:ref={demoEl}
+				bind:value={demoText}
+				dir="rtl"
+				lang="dv"
+				rows={3}
+				placeholder="Type “divehi” → ދިވެހި"
+				class="text-lg [unicode-bidi:plaintext]"
+				autocomplete="off"
+				spellcheck={false}
+			/>
+		</Card.Content>
+	</Card.Root>
 	<div class="mt-4">
 		<CodeBlock
 			title="No build step"
@@ -205,19 +214,21 @@ ${SCRIPT_END}
 	</ul>
 
 	<h3 class="mt-6 mb-2 font-medium">Layout</h3>
-	<div class="flex flex-col gap-1.5 overflow-x-auto pb-2">
-		{#each keyRows as row, i (row)}
-			<div class="flex gap-1.5" style:padding-left="{i * 1.25}rem">
-				{#each row.split('') as k (k)}
-					<div class="flex w-12 shrink-0 flex-col items-center rounded-md border py-1.5">
-						<span class="text-xl leading-tight" dir="rtl" lang="dv">{KEYMAP[k.toUpperCase()] ?? ''}</span>
-						<span class="text-2xl leading-tight" dir="rtl" lang="dv">{KEYMAP[k]}</span>
-						<span class="text-[11px] text-muted-foreground uppercase">{k}</span>
-					</div>
-				{/each}
-			</div>
-		{/each}
-	</div>
+	<ScrollArea orientation="horizontal" class="pb-3">
+		<div class="flex flex-col gap-1.5">
+			{#each keyRows as row, i (row)}
+				<KbdGroup class="gap-1.5" style="padding-left: {i * 1.25}rem">
+					{#each row.split('') as k (k)}
+						<Kbd class="h-auto w-12 shrink-0 flex-col gap-0 py-1.5">
+							<span class="text-lg leading-tight" dir="rtl" lang="dv">{KEYMAP[k.toUpperCase()] ?? ''}</span>
+							<span class="text-2xl leading-tight text-foreground" dir="rtl" lang="dv">{KEYMAP[k]}</span>
+							<span class="text-[11px] uppercase">{k}</span>
+						</Kbd>
+					{/each}
+				</KbdGroup>
+			{/each}
+		</div>
+	</ScrollArea>
 	<p class="text-sm text-muted-foreground">
 		Top: with Shift. The raw map is at <a class="underline underline-offset-4" href="/keymap.json">/keymap.json</a>.
 	</p>
@@ -242,18 +253,24 @@ ${SCRIPT_END}
 	</Tabs.Root>
 
 	<h2 id="helpers" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Helpers</h2>
-	<div class="overflow-x-auto rounded-lg border">
-		<table class="w-full text-sm">
-			<tbody class="divide-y">
+	<Card.Root class="py-0">
+		<Table.Root>
+			<Table.Header>
+				<Table.Row>
+					<Table.Head class="pl-4">Function</Table.Head>
+					<Table.Head>What it's for</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each helpers as [fn, what] (fn)}
-					<tr>
-						<td class="p-3 align-top font-mono text-[13px] whitespace-nowrap">{fn}</td>
-						<td class="p-3 text-muted-foreground">{what}</td>
-					</tr>
+					<Table.Row>
+						<Table.Cell class="pl-4 align-top font-mono text-[13px]">{fn}</Table.Cell>
+						<Table.Cell class="whitespace-normal text-muted-foreground">{what}</Table.Cell>
+					</Table.Row>
 				{/each}
-			</tbody>
-		</table>
-	</div>
+			</Table.Body>
+		</Table.Root>
+	</Card.Root>
 	<p class="mt-3 text-sm text-muted-foreground">
 		Plus <code>@yashau/thaana/thaana.css</code>: right-to-left, a line height that doesn't clip fili, no fake italics,
 		and per-paragraph direction for <code>:lang(dv)</code>. Also at

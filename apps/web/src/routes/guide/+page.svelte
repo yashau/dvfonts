@@ -7,6 +7,7 @@
 	import ThaanaDemo from '#lib/components/thaana-demo.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Input } from '#lib/components/ui/input/index.js';
+	import { Button } from '#lib/components/ui/button/index.js';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -63,11 +64,9 @@
 		<a class="underline underline-offset-4" href="/thaana.css">thaana.css</a> handle most of it for you.
 	</p>
 
-	<nav class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+	<nav class="mt-6 flex flex-wrap gap-1" aria-label="Contents">
 		{#each toc as [id, label], i (id)}
-			<a class="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline" href="#{id}"
-				>{i + 1}. {label}</a
-			>
+			<Button href="#{id}" variant="outline" size="sm">{i + 1}. {label}</Button>
 		{/each}
 	</nav>
 

@@ -2,6 +2,9 @@
 	import bundles from '#lib/data/bundles.json';
 	import { formatBytes } from '#lib/catalog.js';
 	import { Button } from '#lib/components/ui/button/index.js';
+	import * as Card from '#lib/components/ui/card/index.js';
+	import * as Item from '#lib/components/ui/item/index.js';
+	import PackageIcon from '@lucide/svelte/icons/package';
 	import { Badge } from '#lib/components/ui/badge/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
 
@@ -27,22 +30,28 @@
 	{#each [{ title: 'For your computer', note: 'TrueType/OpenType fonts to install.', list: desktop }, { title: 'For self-hosting on the web', note: 'WOFF2 files with a ready-made fonts.css.', list: web }] as group (group.title)}
 		<h2 class="mt-10 text-xl font-semibold tracking-tight">{group.title}</h2>
 		<p class="mb-4 text-sm text-muted-foreground">{group.note}</p>
-		<div class="divide-y rounded-xl border">
-			{#each group.list as b (b.id)}
-				<div class="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
-					<div class="min-w-0">
-						<div class="flex items-center gap-2">
-							<h3 class="font-medium">{b.name}</h3>
-							<Badge variant="secondary">{b.families} families</Badge>
-						</div>
-						<p class="mt-1 text-sm text-muted-foreground">{b.description}</p>
-					</div>
-					<Button href="/downloads/{b.file}" variant="outline" class="shrink-0" download>
-						<DownloadIcon />
-						{formatBytes(b.size)}
-					</Button>
-				</div>
-			{/each}
-		</div>
+		<Card.Root class="py-0">
+			<Item.Group>
+				{#each group.list as b, i (b.id)}
+					{#if i > 0}<Item.Separator />{/if}
+					<Item.Root class="flex-wrap">
+						<Item.Media variant="icon"><PackageIcon /></Item.Media>
+						<Item.Content class="min-w-48">
+							<Item.Title>
+								{b.name}
+								<Badge variant="secondary">{b.families} families</Badge>
+							</Item.Title>
+							<Item.Description class="line-clamp-none">{b.description}</Item.Description>
+						</Item.Content>
+						<Item.Actions>
+							<Button href="/downloads/{b.file}" variant="outline" download>
+								<DownloadIcon />
+								{formatBytes(b.size)}
+							</Button>
+						</Item.Actions>
+					</Item.Root>
+				{/each}
+			</Item.Group>
+		</Card.Root>
 	{/each}
 </div>

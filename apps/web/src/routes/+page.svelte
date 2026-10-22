@@ -2,7 +2,11 @@
 	import { CATEGORIES, FEATURED, credit, type Category } from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
 	import TesterBar from '#lib/components/tester-bar.svelte';
-	import { Input } from '#lib/components/ui/input/index.js';
+	import * as InputGroup from '#lib/components/ui/input-group/index.js';
+	import * as Item from '#lib/components/ui/item/index.js';
+	import * as Empty from '#lib/components/ui/empty/index.js';
+	import { Button } from '#lib/components/ui/button/index.js';
+	import SearchXIcon from '@lucide/svelte/icons/search-x';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
 	import * as Select from '#lib/components/ui/select/index.js';
 	import SearchIcon from '@lucide/svelte/icons/search';
@@ -66,12 +70,12 @@
 	<div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6">
 		<TesterBar />
 		<div class="flex flex-col gap-3 md:flex-row md:items-center">
-			<div class="relative md:w-72">
-				<SearchIcon
-					class="pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2 text-muted-foreground"
-				/>
-				<Input bind:value={query} placeholder="Search fonts, designers, old names…" class="pl-8" aria-label="Search" />
-			</div>
+			<InputGroup.Root class="md:w-72">
+				<InputGroup.Addon>
+					<SearchIcon />
+				</InputGroup.Addon>
+				<InputGroup.Input bind:value={query} placeholder="Search fonts, designers, old names…" aria-label="Search" />
+			</InputGroup.Root>
 			<ToggleGroup.Root
 				type="multiple"
 				variant="outline"
@@ -104,12 +108,27 @@
 
 <section class="mx-auto max-w-7xl px-4 pt-2 pb-10 sm:px-6">
 	{#if visible.length}
-		<div class="border-t">
+		<Item.Group class="gap-0 border-t">
 			{#each visible as family (family.id)}
 				<FontRow {family} />
 			{/each}
-		</div>
+		</Item.Group>
 	{:else}
-		<p class="py-20 text-center text-muted-foreground">No fonts match “{query}”.</p>
+		<Empty.Root class="py-20">
+			<Empty.Header>
+				<Empty.Media variant="icon"><SearchXIcon /></Empty.Media>
+				<Empty.Title>No fonts match “{query}”</Empty.Title>
+				<Empty.Description>Try another name. Old names like A_Waheed work too.</Empty.Description>
+			</Empty.Header>
+			<Empty.Content>
+				<Button
+					variant="outline"
+					onclick={() => {
+						query = '';
+						categories = [];
+					}}>Clear search and filters</Button
+				>
+			</Empty.Content>
+		</Empty.Root>
 	{/if}
 </section>

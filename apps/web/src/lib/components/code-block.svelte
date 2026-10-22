@@ -1,13 +1,21 @@
 <script lang="ts">
+	import * as Card from '#lib/components/ui/card/index.js';
+	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import CopyButton from '#lib/components/copy-button.svelte';
 
 	let { code, title }: { code: string; title: string } = $props();
 </script>
 
-<div class="overflow-hidden rounded-lg border">
-	<div class="flex items-center justify-between gap-2 border-b bg-muted/40 px-3 py-1.5">
-		<span class="text-sm font-medium">{title}</span>
-		<CopyButton text={code} />
-	</div>
-	<pre class="overflow-x-auto p-3 text-[13px] leading-relaxed"><code>{code}</code></pre>
-</div>
+<Card.Root size="sm" class="min-w-0 gap-0 py-0">
+	<Card.Header class="border-b py-2 [.border-b]:pb-2">
+		<Card.Title class="text-sm">{title}</Card.Title>
+		<Card.Action>
+			<CopyButton text={code} />
+		</Card.Action>
+	</Card.Header>
+	<Card.Content class="px-0">
+		<ScrollArea orientation="horizontal">
+			<pre class="p-4 text-[13px] leading-relaxed"><code>{code}</code></pre>
+		</ScrollArea>
+	</Card.Content>
+</Card.Root>

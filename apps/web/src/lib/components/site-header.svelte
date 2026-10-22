@@ -2,6 +2,8 @@
 	import { page } from '$app/state';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
+	import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.js';
+	import { navigationMenuTriggerStyle } from '#lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 	import ThemeMenu from '#lib/components/theme-menu.svelte';
 	import Logo from '#lib/components/logo.svelte';
 	import MenuIcon from '@lucide/svelte/icons/menu';
@@ -24,13 +26,20 @@
 		<a href="/" class="shrink-0" aria-label="dvfonts home">
 			<Logo class="h-7 w-auto" />
 		</a>
-		<nav class="ml-auto hidden items-center gap-1 md:flex">
-			{#each links as link (link.href)}
-				<Button href={link.href} variant="ghost" size="sm" class={active(link.href) ? 'bg-muted' : ''}
-					>{link.label}</Button
-				>
-			{/each}
-		</nav>
+		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
+			<NavigationMenu.List>
+				{#each links as link (link.href)}
+					<NavigationMenu.Item>
+						<NavigationMenu.Link
+							href={link.href}
+							active={active(link.href)}
+							class={navigationMenuTriggerStyle()}
+							aria-current={active(link.href) ? 'page' : undefined}>{link.label}</NavigationMenu.Link
+						>
+					</NavigationMenu.Item>
+				{/each}
+			</NavigationMenu.List>
+		</NavigationMenu.Root>
 		<div class="ml-auto flex items-center gap-1 md:ml-0">
 			<ThemeMenu />
 			<Sheet.Root bind:open>

@@ -10,7 +10,11 @@
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
-	import { Separator } from '#lib/components/ui/separator/index.js';
+	import * as Card from '#lib/components/ui/card/index.js';
+	import * as Item from '#lib/components/ui/item/index.js';
+	import * as Table from '#lib/components/ui/table/index.js';
+	import * as Alert from '#lib/components/ui/alert/index.js';
+	import WrenchIcon from '@lucide/svelte/icons/wrench';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
 	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
@@ -59,6 +63,23 @@
 		return out;
 	});
 
+	const details = $derived(
+		(
+			[
+				['Designer', family.designer],
+				['Manufacturer', family.manufacturer],
+				['Copyright', family.copyright],
+				[
+					'License',
+					family.licenseText && family.license !== 'OFL-1.1'
+						? `${family.license}: ${family.licenseText}`
+						: family.license
+				],
+				['Version', family.version]
+			] as [string, string | null][]
+		).filter((d): d is [string, string] => Boolean(d[1]))
+	);
+
 	const glyphSets = $derived([
 		{ title: 'Letters', chars: LETTERS_NATIVE },
 		{ title: 'Arabic-derived letters', chars: LETTERS_ARABIC },
@@ -100,22 +121,22 @@
 		</Button>
 	</header>
 
-	<div class="mt-8 rounded-xl border p-6 sm:p-10">
-		<FontPreview {family} weight={main.weight} size={Math.max(tester.size, 48)} />
-	</div>
+	<Card.Root class="mt-8">
+		<Card.Content class="sm:px-10 sm:py-4">
+			<FontPreview {family} weight={main.weight} size={Math.max(tester.size, 48)} />
+		</Card.Content>
+	</Card.Root>
 
 	<section class="mt-10">
 		<h2 class="mb-4 text-xl font-semibold tracking-tight">Styles</h2>
 		<TesterBar />
-		<div class="mt-2 divide-y">
-			{#each family.styles as style (style.weight)}
-				<div class="py-5">
-					<div class="mb-2 flex flex-wrap items-center justify-between gap-2">
-						<p class="text-sm text-muted-foreground">
-							{WEIGHT_NAMES[style.weight]}
-							{style.weight}
-						</p>
-						<div class="flex items-center gap-1">
+		<Item.Group class="mt-2 gap-0">
+			{#each family.styles as style, i (style.weight)}
+				{#if i > 0}<Item.Separator />{/if}
+				<Item.Root class="flex-col items-stretch px-0 py-5">
+					<Item.Header class="flex-wrap">
+						<Item.Description>{WEIGHT_NAMES[style.weight]} {style.weight}</Item.Description>
+						<Item.Actions>
 							{#each Object.keys(style.sizes).filter((k) => k !== 'woff') as kind (kind)}
 								<Button
 									href="{fontUrl(family, style.weight, kind)}?download={encodeURIComponent(
@@ -129,12 +150,14 @@
 									{kind.toUpperCase()}
 								</Button>
 							{/each}
-						</div>
-					</div>
-					<FontPreview {family} weight={style.weight} />
-				</div>
+						</Item.Actions>
+					</Item.Header>
+					<Item.Content class="min-w-0">
+						<FontPreview {family} weight={style.weight} />
+					</Item.Content>
+				</Item.Root>
 			{/each}
-		</div>
+		</Item.Group>
 	</section>
 
 	{#if !symbols}
@@ -142,96 +165,121 @@
 			<h2 class="mb-4 text-xl font-semibold tracking-tight">Glyphs</h2>
 			{#each glyphSets as set (set.title)}
 				<h3 class="mt-6 mb-2 text-sm font-medium text-muted-foreground">{set.title}</h3>
-				<div
-					class="grid grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] gap-px overflow-hidden rounded-lg border bg-border"
-				>
+				<div class="grid grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] gap-2">
 					{#each set.chars as ch (ch)}
-						<div
-							class="flex aspect-square items-center justify-center bg-background text-4xl"
-							dir="rtl"
-							style:font-family="'{previewFamily(family)}', 'dv-ui', sans-serif"
-							style:font-weight={main.weight}
-						>
-							{ch}
-						</div>
+						<Card.Root size="sm" class="aspect-square justify-center py-0">
+							<Card.Content
+								class="flex items-center justify-center px-0 text-4xl"
+								dir="rtl"
+								style="font-family: '{previewFamily(family)}', 'dv-ui', sans-serif; font-weight: {main.weight}"
+							>
+								{ch}
+							</Card.Content>
+						</Card.Root>
 					{/each}
 				</div>
 			{/each}
-			<div class="mt-6 rounded-lg border p-5">
-				<FontPreview {family} weight={main.weight} size={28} text={ARABIC_LETTERS_SAMPLE} />
-			</div>
+			<Card.Root class="mt-6">
+				<Card.Content>
+					<FontPreview {family} weight={main.weight} size={28} text={ARABIC_LETTERS_SAMPLE} />
+				</Card.Content>
+			</Card.Root>
 		</section>
 	{/if}
 
 	<!-- min-w-0 on the columns: grid items default to min-width:auto, so the code
 	     blocks' long URLs would stretch the page instead of scrolling inside. -->
-	<section class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
-		<div class="min-w-0">
-			<h2 class="mb-1 text-xl font-semibold tracking-tight">Use on the web</h2>
-			<p class="mb-4 text-sm text-muted-foreground">
-				Pick the weights you need. The stylesheet loads only the Thaana or Latin parts a page actually uses.
-			</p>
-			{#if family.styles.length > 1}
-				<ToggleGroup.Root type="multiple" variant="outline" size="sm" bind:value={selected} class="mb-4 flex-wrap">
-					{#each family.styles as style (style.weight)}
-						<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
-					{/each}
-				</ToggleGroup.Root>
-			{/if}
-			<div class="flex flex-col gap-3">
+	<section class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+		<Card.Root class="min-w-0">
+			<Card.Header>
+				<Card.Title class="text-xl">Use on the web</Card.Title>
+				<Card.Description>
+					Pick the weights you need. The stylesheet loads only the Thaana or Latin parts a page actually uses.
+				</Card.Description>
+			</Card.Header>
+			<Card.Content class="flex flex-col gap-3">
+				{#if family.styles.length > 1}
+					<ToggleGroup.Root type="multiple" variant="outline" size="sm" bind:value={selected} class="flex-wrap">
+						{#each family.styles as style (style.weight)}
+							<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
+						{/each}
+					</ToggleGroup.Root>
+				{/if}
 				<CodeBlock title="In <head>" code={linkSnippet} />
 				<CodeBlock title="Or in CSS" code={importSnippet} />
 				<CodeBlock title="Then use" code={cssSnippet} />
-			</div>
-		</div>
+			</Card.Content>
+		</Card.Root>
 
-		<div class="min-w-0">
-			<h2 class="mb-4 text-xl font-semibold tracking-tight">About this font</h2>
-			<dl class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-2 text-sm sm:grid-cols-[8rem_minmax(0,1fr)]">
-				{#if family.designer}<dt class="text-muted-foreground">Designer</dt>
-					<dd>{family.designer}</dd>{/if}
-				{#if family.manufacturer}<dt class="text-muted-foreground">Manufacturer</dt>
-					<dd class="break-words">{family.manufacturer}</dd>{/if}
-				{#if family.copyright}<dt class="text-muted-foreground">Copyright</dt>
-					<dd class="break-words">{family.copyright}</dd>{/if}
-				<dt class="text-muted-foreground">License</dt>
-				<dd class="break-words">
-					{family.license}{#if family.licenseText && family.license !== 'OFL-1.1'}
-						<span class="block text-muted-foreground">{family.licenseText}</span>{/if}
-				</dd>
-				{#if family.source}<dt class="text-muted-foreground">Source</dt>
-					<dd>
-						{#if family.upstream}<a
-								class="inline-flex items-center gap-1 underline underline-offset-4"
-								href={family.upstream}
-								rel="noopener noreferrer"
-								target="_blank">{family.source} <ExternalLinkIcon class="size-3.5" /></a
-							>{:else}{family.source}{/if}
-					</dd>{/if}
-				{#if family.version}<dt class="text-muted-foreground">Version</dt>
-					<dd class="break-words">{family.version}</dd>{/if}
-			</dl>
-			{#if family.notes}<p class="mt-4 text-sm">{family.notes}</p>{/if}
-
-			<h3 class="mt-6 mb-2 font-medium">What dvfonts changed</h3>
-			<ul class="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-				{#each changes as c (c)}<li>{c}</li>{/each}
-			</ul>
-
-			<h3 class="mt-6 mb-2 font-medium">Files</h3>
-			<ul class="space-y-1 text-sm">
-				{#each family.styles as s (s.weight)}
-					<li class="flex flex-wrap items-baseline gap-x-3">
-						<span class="w-28 text-muted-foreground">{WEIGHT_NAMES[s.weight]}</span>
-						{#each Object.entries(s.sizes) as [kind, size] (kind)}
-							<a class="underline underline-offset-4" href={fontUrl(family, s.weight, kind)} download
-								>{kind.toUpperCase()}</a
-							>
-							<span class="text-xs text-muted-foreground">{formatBytes(size)}</span>
+		<Card.Root class="min-w-0">
+			<Card.Header>
+				<Card.Title class="text-xl">About this font</Card.Title>
+				{#if family.notes}<Card.Description>{family.notes}</Card.Description>{/if}
+			</Card.Header>
+			<Card.Content class="flex flex-col gap-6">
+				<Table.Root class="table-fixed">
+					<Table.Body>
+						{#each details as [label, value] (label)}
+							<Table.Row>
+								<Table.Head class="w-28 align-top text-muted-foreground">{label}</Table.Head>
+								<Table.Cell class="break-words whitespace-normal">{value}</Table.Cell>
+							</Table.Row>
 						{/each}
-					</li>
-				{/each}
-			</ul>
-		</div>
+						{#if family.source}
+							<Table.Row>
+								<Table.Head class="w-28 align-top text-muted-foreground">Source</Table.Head>
+								<Table.Cell class="whitespace-normal">
+									{#if family.upstream}
+										<Button
+											href={family.upstream}
+											variant="link"
+											size="sm"
+											class="h-auto px-0"
+											rel="noopener noreferrer"
+											target="_blank">{family.source} <ExternalLinkIcon /></Button
+										>
+									{:else}{family.source}{/if}
+								</Table.Cell>
+							</Table.Row>
+						{/if}
+					</Table.Body>
+				</Table.Root>
+
+				<Alert.Root>
+					<WrenchIcon />
+					<Alert.Title>What dvfonts changed</Alert.Title>
+					<Alert.Description>
+						<ul class="list-disc space-y-1 pl-4">
+							{#each changes as c (c)}<li>{c}</li>{/each}
+						</ul>
+					</Alert.Description>
+				</Alert.Root>
+
+				<Table.Root>
+					<Table.Header>
+						<Table.Row>
+							<Table.Head>Style</Table.Head>
+							<Table.Head>Files</Table.Head>
+						</Table.Row>
+					</Table.Header>
+					<Table.Body>
+						{#each family.styles as s (s.weight)}
+							<Table.Row>
+								<Table.Cell class="text-muted-foreground">{WEIGHT_NAMES[s.weight]}</Table.Cell>
+								<Table.Cell class="whitespace-normal">
+									<div class="flex flex-wrap gap-1">
+										{#each Object.entries(s.sizes) as [kind, size] (kind)}
+											<Button href={fontUrl(family, s.weight, kind)} download variant="outline" size="xs">
+												{kind.toUpperCase()} <span class="text-muted-foreground">{formatBytes(size)}</span>
+											</Button>
+										{/each}
+									</div>
+								</Table.Cell>
+							</Table.Row>
+						{/each}
+					</Table.Body>
+				</Table.Root>
+			</Card.Content>
+		</Card.Root>
 	</section>
 </div>

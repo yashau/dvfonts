@@ -1,3 +1,8 @@
+<script lang="ts">
+	import * as Alert from '#lib/components/ui/alert/index.js';
+	import ShieldIcon from '@lucide/svelte/icons/shield-check';
+</script>
+
 <svelte:head>
 	<title>About — dvfonts</title>
 </svelte:head>
@@ -22,12 +27,18 @@
 				Glyph outlines are never changed. Fonts whose license forbids derivatives are shipped exactly as published.
 			</li>
 		</ul>
-		<h2 id="takedown" class="pt-4 text-xl font-semibold tracking-tight text-foreground">Rights holders</h2>
-		<p>
-			These fonts are listed because they have circulated freely for years, with credit to their makers wherever the
-			files or their sources name one. If you hold rights to a font here and want it credited differently, relicensed or
-			removed, email <a class="underline underline-offset-4" href="mailto:ibrahim@yashau.com">ibrahim@yashau.com</a>.
-			Removal requests are honoured without argument.
-		</p>
+		<Alert.Root id="takedown" class="scroll-mt-20">
+			<ShieldIcon />
+			<Alert.Title>Rights holders</Alert.Title>
+			<Alert.Description>
+				<p>
+					These fonts are listed because they have circulated freely for years, with credit to their makers wherever the
+					files or their sources name one. If you hold rights to a font here and want it credited differently,
+					relicensed or removed, email
+					<a class="underline underline-offset-4" href="mailto:ibrahim@yashau.com">ibrahim@yashau.com</a>. Removal
+					requests are honoured without argument.
+				</p>
+			</Alert.Description>
+		</Alert.Root>
 	</div>
 </article>

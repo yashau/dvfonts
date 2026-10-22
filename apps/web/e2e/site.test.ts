@@ -140,8 +140,8 @@ test('fonts and downloads are served from R2', async ({ request }) => {
 
 test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
-	await expect(page.getByRole('heading', { name: 'Essentials', exact: true })).toBeVisible();
-	await expect(page.getByRole('heading', { name: 'Full suite', exact: true })).toBeVisible();
+	await expect(page.getByText('Essentials', { exact: true })).toBeVisible();
+	await expect(page.getByText('Full suite', { exact: true })).toBeVisible();
 });
 
 test('guide renders its demos', async ({ page }) => {

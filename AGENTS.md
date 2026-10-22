@@ -35,7 +35,7 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 
 ### Site (`apps/web`)
 
-- **shadcn-svelte components come from the registry CLI** (`pnpm dlx shadcn-svelte@latest add <name>` in `apps/web`). Never hand-write or edit files in `src/lib/components/ui/`; they're excluded from lint and format on purpose. Build custom UI by composing them in `src/lib/components/`.
+- **No hand-rolled UI anywhere.** Every visible control and surface is a shadcn-svelte registry component added with the CLI (`pnpm dlx shadcn-svelte@latest add <name>` in `apps/web`): Card, Item, Table, InputGroup, Tabs, ToggleGroup, Empty, Alert, Kbd, ScrollArea, NavigationMenu, Sheet, etc. Don't build bordered boxes, lists, tables, inputs or buttons from raw elements; compose registry components in `src/lib/components/` instead. Never edit files in `src/lib/components/ui/` (excluded from lint/format on purpose); if something is missing, add the registry component.
 - Imports use SvelteKit 3 subpath imports **with explicit `.js` extensions**: `#lib/catalog.js`, `#lib/components/ui/button/index.js`. Use `$app/env`, not the deprecated `$app/environment`.
 - Svelte 5 runes only (`$state`, `$derived`, `$effect`, `$props`). No legacy stores or `export let`.
 - Theme: light/dark/system via `mode-watcher`. Colours are tokens on `:root` / `.dark` in `src/routes/layout.css`. Don't add `prefers-color-scheme` rules: an explicit user choice must always win over the OS.
