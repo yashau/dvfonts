@@ -83,6 +83,7 @@
 			{/each}
 		</Tabs.List>
 	</Tabs.Root>
+	<p class="mt-3 text-sm text-muted-foreground">{current.hint}</p>
 
 	<div class="mt-4 grid items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
 		<Card.Root class="min-w-0">
@@ -90,7 +91,7 @@
 				<Card.Title>
 					<Label for="convert-in">Paste here</Label>
 				</Card.Title>
-				<Card.Description>{current.hint}</Card.Description>
+				<Card.Description class="line-clamp-1">The text as it is now.</Card.Description>
 				<Card.Action class="flex gap-1">
 					<Button variant="outline" size="sm" onclick={() => (input = current.example)}>
 						<SparklesIcon /> Example
@@ -122,7 +123,7 @@
 				<Card.Title>
 					<Label for="convert-out">Unicode Thaana</Label>
 				</Card.Title>
-				<Card.Description>Ready to paste into any app, website or document.</Card.Description>
+				<Card.Description class="line-clamp-1">Ready to paste anywhere.</Card.Description>
 				<Card.Action>
 					<CopyButton text={output} />
 				</Card.Action>
