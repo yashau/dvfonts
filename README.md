@@ -137,7 +137,7 @@ useDhivehiFont('Faruma');
 | 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                          |
 | 📦&nbsp;**Web&nbsp;formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets: a Thaana-only page downloads only the Thaana part.                                                                                                                                                      |
 | ⚖️&nbsp;**Licenses&nbsp;respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte. OFL fonts include `OFL.txt`. Every download carries its credits.                                                                                                                                   |
-| ♻️&nbsp;**Reproducible**            | The build is byte-reproducible, and CI rebuilds it and checks it against the repo.                                                                                                                                                                                      |
+| ♻️&nbsp;**Reproducible**            | The build is byte-reproducible: whenever its inputs change, CI rebuilds it and checks the result against the repo.                                                                                                                                                      |
 
 ## Repository
 
