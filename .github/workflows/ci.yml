@@ -117,6 +117,7 @@ jobs:
           path: fonts/build/r2
 
       - name: Load fonts into local R2
+        timeout-minutes: 5
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -129,11 +130,13 @@ jobs:
           cd apps/web
           pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --local --force
 
-      - name: Install Chromium for e2e
-        run: pnpm --filter @dvfonts/web exec playwright install --with-deps chromium
-
+      # No browser install: Playwright drives the Google Chrome that GitHub's
+      # ubuntu-24.04 image already has (channel: 'chrome' in playwright.config.ts).
       - name: End-to-end tests
-        run: pnpm --filter @dvfonts/web run test:e2e
+        timeout-minutes: 8
+        run: |
+          google-chrome --version
+          pnpm --filter @dvfonts/web run test:e2e
 
       - name: Upload Playwright report
         if: failure()

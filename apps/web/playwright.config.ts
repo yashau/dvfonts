@@ -16,8 +16,10 @@ export default defineConfig({
 		reuseExistingServer: false,
 		timeout: 120_000
 	},
+	// In CI use the Google Chrome preinstalled on GitHub's runners instead of
+	// downloading a browser (`playwright install --with-deps` hangs on apt).
 	projects: [
-		{ name: 'desktop', use: { ...devices['Desktop Chrome'] } },
-		{ name: 'mobile', use: { ...devices['Pixel 7'] } }
+		{ name: 'desktop', use: { ...devices['Desktop Chrome'], channel: process.env.CI ? 'chrome' : undefined } },
+		{ name: 'mobile', use: { ...devices['Pixel 7'], channel: process.env.CI ? 'chrome' : undefined } }
 	]
 });
