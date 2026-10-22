@@ -59,7 +59,7 @@
 
 <section class="mx-auto max-w-7xl px-4 pt-10 pb-6 sm:px-6">
 	<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Open Dhivehi fonts</h1>
-	<p class="mt-2 max-w-4xl text-pretty text-muted-foreground">
+	<p class="mt-2 text-pretty text-muted-foreground">
 		{data.families.length} families and {totalStyles} styles that have circulated freely in the Maldives for years — now Unicode,
 		web-ready and easy to embed.
 	</p>
