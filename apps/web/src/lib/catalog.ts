@@ -63,7 +63,6 @@ export const CATEGORIES: { id: Category; label: string; thaana: string }[] = [
 /** Families surfaced first on the home page (the rest follow alphabetically). */
 export const FEATURED = [
 	'modfaruma',
-	'faruma',
 	'mv-ilham',
 	'mv-faseyha',
 	'mv-a-waheed',
