@@ -1,0 +1,66 @@
+{
+	"name": "@yashau/thaana-svelte",
+	"version": "0.1.0",
+	"description": "Svelte 5 action, attachment and inputs for Thaana (Dhivehi): phonetic keyboard on any field, Dhivehi web fonts, RTL done right.",
+	"keywords": [
+		"dhivehi",
+		"divehi",
+		"fonts",
+		"keyboard",
+		"maldives",
+		"rtl",
+		"svelte",
+		"sveltekit",
+		"thaana"
+	],
+	"homepage": "https://dvfonts.yashau.com/docs",
+	"license": "MIT",
+	"author": "Ibrahim Yashau",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yashau/dvfonts.git",
+		"directory": "packages/svelte"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"README.md",
+		"LICENSE"
+	],
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"types": "./dist/index.d.ts",
+	"svelte": "./dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "svelte-package -i src/lib -o dist && publint",
+		"test": "vitest run"
+	},
+	"dependencies": {
+		"@yashau/thaana": "workspace:^"
+	},
+	"devDependencies": {
+		"@sveltejs/kit": "^3.1.0",
+		"@sveltejs/package": "^3.0.1",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"jsdom": "^30.1.3",
+		"publint": "^0.3.25",
+		"svelte": "^5.29.0",
+		"svelte-check": "^4.7.7",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.5",
+		"vitest": "^5.0.5"
+	},
+	"peerDependencies": {
+		"svelte": "^5.29.0"
+	}
+}

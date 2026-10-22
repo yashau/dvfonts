@@ -1,0 +1,60 @@
+{
+	"name": "@yashau/thaana-react",
+	"version": "0.1.0",
+	"description": "React hooks and inputs for Thaana (Dhivehi): phonetic keyboard on any field, Dhivehi web fonts, RTL done right.",
+	"keywords": [
+		"dhivehi",
+		"divehi",
+		"fonts",
+		"keyboard",
+		"maldives",
+		"react",
+		"rtl",
+		"thaana"
+	],
+	"homepage": "https://dvfonts.yashau.com/docs",
+	"license": "MIT",
+	"author": "Ibrahim Yashau",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yashau/dvfonts.git",
+		"directory": "packages/react"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "rm -rf dist && tsdown",
+		"test": "vitest run",
+		"lint": "publint"
+	},
+	"dependencies": {
+		"@yashau/thaana": "workspace:^"
+	},
+	"devDependencies": {
+		"@testing-library/react": "^16.3.3",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"jsdom": "^30.1.3",
+		"publint": "^0.3.25",
+		"react": ">=18",
+		"react-dom": "^19.3.1",
+		"tsdown": "^0.23.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.5"
+	},
+	"peerDependencies": {
+		"react": ">=18"
+	}
+}

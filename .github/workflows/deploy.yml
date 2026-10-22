@@ -1,0 +1,119 @@
+name: Deploy site
+
+# Pushing a site-vYYYY.MMDD.N tag (`mise run release:site`) is the only way the
+# site ships, so every deployed state has a version and an author.
+on:
+  push:
+    tags:
+      - 'site-v*'
+
+permissions:
+  contents: read
+
+# Serialise deploys and never cancel one: killing `wrangler deploy` between the
+# asset manifest and the asset upload publishes a broken version.
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+env:
+  PINNED_MISE_VERSION: '2026.9.18'
+  TZ: UTC
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://dvfonts.yashau.com
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: jdx/mise-action@3c2e0cf82a5b2e5249f0d3635a4d83d0ae861518 # v4.2.5
+        with:
+          version: ${{ env.PINNED_MISE_VERSION }}
+          # This job holds Cloudflare credentials: no cache in either direction,
+          # so a lower-privilege run can't poison what gets deployed.
+          cache: false
+
+      - name: Validate tag
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          version="${REF_NAME#site-v}"
+          if ! printf '%s' "$version" | grep -Eq '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'; then
+            echo "::error::${REF_NAME} is not a site-vYYYY.MMDD.N tag."
+            exit 1
+          fi
+
+      - name: Install
+        run: |
+          pnpm install --frozen-lockfile
+          uv sync --project fonts --frozen
+
+      - name: Build site
+        run: pnpm build
+
+      - name: Build fonts and bundles (binaries go to R2, data must match git)
+        run: |
+          set -euo pipefail
+          cd fonts
+          uv run python scripts/build.py
+          uv run python scripts/bundles.py
+          uv run python scripts/r2_manifest.py
+          cd ..
+          if ! git diff --exit-code --stat -- apps/web/src/lib/data; then
+            echo "::error::Committed catalog data doesn't match the pipeline; refusing to deploy."
+            exit 1
+          fi
+
+      - name: Upload fonts and bundles to R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        working-directory: apps/web
+        # Uploaded BEFORE the Worker deploy, so the new site never references a
+        # file that isn't there yet. Unchanged files are simply overwritten.
+        run: pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force
+
+      - name: Deploy Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          REF_NAME: ${{ github.ref_name }}
+        working-directory: apps/web
+        run: pnpm exec wrangler deploy --tag "$REF_NAME" --message "$REF_NAME"
+
+      - name: Smoke-test production
+        run: |
+          set -euo pipefail
+          base=https://dvfonts.yashau.com
+          for path in / /fonts/faruma /docs /llms.txt /fonts.json /thaana.js "/css2?family=Faruma" /fonts/faruma/faruma-400.thaana.woff2 /downloads; do
+            code="$(curl -s -o /dev/null -w '%{http_code}' "${base}${path}")"
+            echo "${code} ${path}"
+            [ "$code" = 200 ]
+          done
+          first="$(jq -r '.[0].file' apps/web/src/lib/data/bundles.json)"
+          curl -sfI "${base}/fonts/faruma/faruma.zip" | grep -i '^content-type: application/zip'
+          curl -sfI "${base}/downloads/${first}" | grep -i '^content-type: application/zip'
+
+      - name: Summary
+        env:
+          REF_NAME: ${{ github.ref_name }}
+          COMMIT: ${{ github.sha }}
+        run: |
+          {
+            echo "### Site ${REF_NAME#site-v} deployed"
+            echo
+            echo "- commit: \`${COMMIT}\`"
+            echo "- url: https://dvfonts.yashau.com"
+          } >> "$GITHUB_STEP_SUMMARY"

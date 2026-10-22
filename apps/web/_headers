@@ -1,0 +1,22 @@
+# The drop-in scripts and data are meant to be used from any site. (Fonts are
+# served by the Worker from R2 with their own headers: src/lib/server/r2.ts.)
+/thaana.js
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/thaana.iife.js
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/thaana.css
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/keymap.json
+  Access-Control-Allow-Origin: *
+
+/fonts.json
+  Access-Control-Allow-Origin: *
+
+/llms.txt
+  Access-Control-Allow-Origin: *

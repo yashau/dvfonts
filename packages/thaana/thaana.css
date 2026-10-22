@@ -1,0 +1,45 @@
+/*
+ * @yashau/thaana — sane defaults for Thaana (Dhivehi) text.
+ * Applies only to elements marked lang="dv" (put it on <html> for Dhivehi
+ * sites). https://dvfonts.yashau.com/guide
+ */
+
+/* Right-to-left by default. dir="rtl" in the HTML is still the most robust
+   (it also flips layout before CSS loads); this is the safety net. */
+:where(:lang(dv)) {
+	direction: rtl;
+	/* Fili sit above and below the letters: tight line-heights clip them. */
+	line-height: 1.75;
+	/* Thaana fonts have no italics; synthesized slant and fake bold look broken. */
+	font-synthesis: none;
+	/* No hyphenation dictionaries exist for Dhivehi. */
+	hyphens: manual;
+	/* Thaana is not cursive, but tracking breaks fili alignment in many fonts. */
+	letter-spacing: normal;
+	text-align: start;
+}
+
+/* User-generated content: each paragraph takes its direction from its first
+   letter, so a Latin-first line is LTR and a Thaana-first line is RTL. */
+:where(:lang(dv))
+	:where(p, li, td, th, dd, blockquote, figcaption, h1, h2, h3, h4, h5, h6, input, textarea, [contenteditable]) {
+	unicode-bidi: plaintext;
+}
+
+/* Inputs: keep the caret and placeholder on the right for Thaana. */
+:where(input, textarea):where(:lang(dv), [data-thaana]) {
+	direction: rtl;
+	text-align: start;
+	unicode-bidi: plaintext;
+}
+
+/* Things that are always left-to-right inside Thaana text. */
+:where(:lang(dv)) :where(code, kbd, samp, pre, var, [type='email'], [type='url'], [type='tel'], [type='number']) {
+	direction: ltr;
+	unicode-bidi: isolate;
+}
+
+/* Never italicise Thaana (emphasis = bold or colour instead). */
+:where(:lang(dv)) :where(em, i, cite, dfn, address) {
+	font-style: normal;
+}

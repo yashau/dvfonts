@@ -1,0 +1,25 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "unicorn", "oxc", "import"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"env": {
+		"browser": true,
+		"es2024": true
+	},
+	"ignorePatterns": [
+		"**/dist/**",
+		"**/.svelte-kit/**",
+		"apps/web/static/**",
+		"apps/web/src/lib/components/ui/**",
+		"apps/web/worker-configuration.d.ts",
+		"fonts/**"
+	],
+	"rules": {
+		"import/no-unassigned-import": "off",
+		"unicorn/require-module-specifiers": "off",
+		"import/default": "off"
+	}
+}

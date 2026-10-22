@@ -1,0 +1,20 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"useTabs": true,
+	"singleQuote": true,
+	"printWidth": 120,
+	"trailingComma": "none",
+	"svelte": true,
+	"sortTailwindcss": { "stylesheet": "apps/web/src/routes/layout.css" },
+	"ignorePatterns": [
+		"pnpm-lock.yaml",
+		"**/dist/**",
+		"**/.svelte-kit/**",
+		"apps/web/static/fonts/**",
+		"apps/web/src/lib/data/**",
+		"apps/web/src/lib/components/ui/**",
+		"apps/web/worker-configuration.d.ts",
+		"fonts/sources/**",
+		"fonts/.venv/**"
+	]
+}

@@ -1,0 +1,153 @@
+name: Release packages
+
+# Pushing a packages-vYYYY.MMDD.N tag (`mise run release:packages`) publishes
+# @yashau/thaana, @yashau/thaana-react, @yashau/thaana-svelte and
+# @yashau/thaana-vue at that version, with npm provenance.
+on:
+  push:
+    tags:
+      - 'packages-v*'
+
+permissions:
+  contents: read
+
+# Never cancel a release: npm versions are immutable, and a run killed halfway
+# leaves some packages published and others not.
+concurrency:
+  group: release-packages
+  cancel-in-progress: false
+
+env:
+  PINNED_MISE_VERSION: '2026.9.18'
+  TZ: UTC
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    name: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/@yashau/thaana
+    permissions:
+      contents: read
+      # npm trusted publishing (OIDC) + provenance attestations.
+      id-token: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: jdx/mise-action@3c2e0cf82a5b2e5249f0d3635a4d83d0ae861518 # v4.2.5
+        with:
+          version: ${{ env.PINNED_MISE_VERSION }}
+          # Holds id-token: write. No cache in either direction.
+          cache: false
+
+      - name: Read the version from the tag
+        id: version
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          version="${REF_NAME#packages-v}"
+          if ! printf '%s' "$version" | grep -Eq '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'; then
+            echo "::error::${REF_NAME} is not a packages-vYYYY.MMDD.N tag."
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Stamp the version into every package
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          for dir in packages/*/; do
+            jq --arg v "$VERSION" '.version = $v' "${dir}package.json" > "${dir}package.json.tmp"
+            mv "${dir}package.json.tmp" "${dir}package.json"
+          done
+
+      - name: Build and test
+        run: |
+          pnpm build:packages
+          pnpm test
+          pnpm --filter '@yashau/*' exec publint
+
+      - name: Pack
+        run: |
+          set -euo pipefail
+          mkdir -p dist-pack
+          # pnpm pack rewrites `workspace:^` to a real version range; npm would
+          # publish it verbatim and consumers could not install the package.
+          for dir in packages/thaana packages/react packages/svelte packages/vue; do
+            (cd "$dir" && pnpm pack --pack-destination ../../dist-pack)
+          done
+          ls -l dist-pack
+          for tgz in dist-pack/*.tgz; do
+            if tar -xOzf "$tgz" package/package.json | grep -Eq '"(workspace|catalog|link):'; then
+              echo "::error::${tgz} still contains a workspace: dependency spec."
+              exit 1
+            fi
+          done
+
+      - name: Use a publish-capable npm # zizmor: ignore[adhoc-packages]
+        run: |
+          # OIDC trusted publishing needs npm >= 11.5.1. Exact pin, same as prick.
+          npm install --global npm@11.19.1
+          npm --version
+
+      - name: Publish
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          # Only needed for the very first publish of a package: npm lets you
+          # add a trusted publisher only to a package that already exists. Leave
+          # the secret unset afterwards and OIDC does the rest.
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -n "${NPM_TOKEN:-}" ]; then
+            npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
+          fi
+          # Core first: the framework packages depend on it.
+          for name in thaana thaana-react thaana-svelte thaana-vue; do
+            tgz="dist-pack/yashau-${name}-${VERSION}.tgz"
+            if npm view "@yashau/${name}@${VERSION}" version >/dev/null 2>&1; then
+              echo "@yashau/${name}@${VERSION} already published, skipping"
+              continue
+            fi
+            echo "publishing @yashau/${name}@${VERSION}"
+            npm publish "$tgz" --access public --provenance
+          done
+
+  github-release:
+    name: github release
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REF_NAME: ${{ github.ref_name }}
+          VERSION: ${{ needs.publish.outputs.version }}
+        run: |
+          gh release create "$REF_NAME" --repo "$GITHUB_REPOSITORY" --title "Packages ${VERSION}" --notes "$(cat <<NOTES
+          Published to npm:
+
+          - [@yashau/thaana@${VERSION}](https://www.npmjs.com/package/@yashau/thaana/v/${VERSION})
+          - [@yashau/thaana-react@${VERSION}](https://www.npmjs.com/package/@yashau/thaana-react/v/${VERSION})
+          - [@yashau/thaana-svelte@${VERSION}](https://www.npmjs.com/package/@yashau/thaana-svelte/v/${VERSION})
+          - [@yashau/thaana-vue@${VERSION}](https://www.npmjs.com/package/@yashau/thaana-vue/v/${VERSION})
+          NOTES
+          )"

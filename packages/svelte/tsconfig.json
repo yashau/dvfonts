@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"lib": ["es2023", "dom", "dom.iterable"],
+		"strict": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"verbatimModuleSyntax": true
+	},
+	"include": ["src", "test"]
+}

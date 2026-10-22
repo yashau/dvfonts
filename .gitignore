@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# SvelteKit / Cloudflare (apps/web)
+.svelte-kit/
+.wrangler/
+.dev.vars*
+test-results/
+playwright-report/
+
+# Font pipeline (fonts/)
+.venv/
+__pycache__/
+fonts/build/
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Font binaries live in R2, never in git
+apps/web/static/fonts/

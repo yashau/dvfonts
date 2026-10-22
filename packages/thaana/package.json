@@ -1,0 +1,63 @@
+{
+	"name": "@yashau/thaana",
+	"version": "0.1.0",
+	"description": "Everything to make Thaana (Dhivehi) work on the web: phonetic keyboard for any input, legacy A_-font text converter, bidi helpers, font loading and sane CSS defaults.",
+	"keywords": [
+		"bidi",
+		"dhivehi",
+		"divehi",
+		"fonts",
+		"keyboard",
+		"maldives",
+		"rtl",
+		"thaana"
+	],
+	"homepage": "https://dvfonts.yashau.com/docs",
+	"license": "MIT",
+	"author": "Ibrahim Yashau",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yashau/dvfonts.git",
+		"directory": "packages/thaana"
+	},
+	"files": [
+		"dist",
+		"thaana.css",
+		"README.md",
+		"LICENSE"
+	],
+	"type": "module",
+	"sideEffects": [
+		"./dist/auto.js",
+		"./dist/thaana.iife.js",
+		"*.css"
+	],
+	"unpkg": "./dist/thaana.iife.js",
+	"jsdelivr": "./dist/thaana.iife.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./auto": {
+			"types": "./dist/auto.d.ts",
+			"default": "./dist/auto.js"
+		},
+		"./thaana.css": "./thaana.css",
+		"./cdn": "./dist/cdn/thaana.js",
+		"./iife": "./dist/thaana.iife.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "rm -rf dist && tsdown",
+		"test": "vitest run",
+		"lint": "publint"
+	},
+	"devDependencies": {
+		"jsdom": "^30.1.3",
+		"publint": "^0.3.25",
+		"tsdown": "^0.23.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.5"
+	}
+}

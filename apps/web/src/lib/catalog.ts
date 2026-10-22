@@ -1,0 +1,120 @@
+import subsetRanges from '#lib/data/subsets.json';
+
+export type Category = 'modern' | 'traditional' | 'display' | 'handwriting' | 'mono' | 'symbols';
+
+export interface MetricOverrides {
+	ascent: number;
+	descent: number;
+	lineGap: number;
+}
+
+export interface Style {
+	weight: number;
+	source: string;
+	desktopFile: string;
+	sizes: Record<string, number>;
+	subsets: Partial<Record<'thaana' | 'latin', number>>;
+	upstream: string | null;
+	legacyLayout: 'typewriter' | 'phonetic' | null;
+	metrics: { repaired: boolean };
+	cssOverrides: MetricOverrides | null;
+	glyphs: number;
+	thaana: number;
+	latin: number;
+	codepoints: number;
+}
+
+export interface Family {
+	id: string;
+	name: string;
+	category: Category;
+	aliases: string[];
+	notes: string | null;
+	license: string;
+	unmodified: boolean;
+	source: string | null;
+	upstream: string | null;
+	attribution: string | null;
+	copyright: string | null;
+	designer: string | null;
+	manufacturer: string | null;
+	description: string | null;
+	vendorUrl: string | null;
+	designerUrl: string | null;
+	licenseText: string | null;
+	licenseUrl: string | null;
+	version: string | null;
+	styles: Style[];
+	zipSize: number;
+}
+
+/** unicode-range values for the subset files, as emitted by scripts/build.py. */
+export const SUBSET_RANGES = subsetRanges as Record<'thaana' | 'latin', string>;
+
+export const CATEGORIES: { id: Category; label: string; thaana: string }[] = [
+	{ id: 'modern', label: 'Modern', thaana: 'މޮޑަން' },
+	{ id: 'traditional', label: 'Traditional', thaana: 'ކުރީގެ' },
+	{ id: 'display', label: 'Display', thaana: 'ޑިސްޕްލޭ' },
+	{ id: 'handwriting', label: 'Handwriting', thaana: 'އަތްލިޔުން' },
+	{ id: 'mono', label: 'Monospace', thaana: 'މޮނޯ' },
+	{ id: 'symbols', label: 'Symbols', thaana: 'ނިޝާން' }
+];
+
+/** Families surfaced first on the home page (the rest follow alphabetically). */
+export const FEATURED = [
+	'faruma',
+	'mv-faseyha',
+	'bolhu',
+	'kolhu',
+	'theras',
+	'noto-sans-thaana',
+	'mv-typewriter',
+	'mv-a-waheed',
+	'zaana-thedhu',
+	'fanara-golhi',
+	'mv-randhoo',
+	'mv-utheemu',
+	'mv-ilham',
+	'mv-raadhavalhi',
+	'a-reethi',
+	'mv-kelaa',
+	'mv-vaadhoo',
+	'fanara',
+	'masnooee-mono',
+	'bismi'
+];
+
+export const WEIGHT_NAMES: Record<number, string> = {
+	100: 'Thin',
+	200: 'ExtraLight',
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	600: 'SemiBold',
+	700: 'Bold',
+	800: 'ExtraBold',
+	900: 'Black'
+};
+
+/** The style a card previews: Regular if present, else the closest weight. */
+export function defaultStyle(f: Family): Style {
+	return f.styles.toSorted((a, b) => Math.abs(a.weight - 400) - Math.abs(b.weight - 400))[0];
+}
+
+/** Best-effort credit line: designer, else manufacturer, else copyright. */
+export function credit(f: Family): string | null {
+	return meaningful(f.designer) ?? meaningful(f.manufacturer) ?? meaningful(f.copyright);
+}
+
+/** Drop font-editor boilerplate that some files carry instead of a real credit. */
+function meaningful(s: string | null): string | null {
+	return s && !/fontographer|fontlab|copyright info pending/i.test(s) ? s : null;
+}
+
+export function fontUrl(f: Family, weight: number, kind: string): string {
+	return `/fonts/${f.id}/${f.id}-${weight}.${kind}`;
+}
+
+export function formatBytes(n: number): string {
+	return n < 1024 * 1024 ? `${Math.round(n / 1024)} KB` : `${(n / 1024 / 1024).toFixed(1)} MB`;
+}

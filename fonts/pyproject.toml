@@ -1,0 +1,24 @@
+[project]
+name = "dvfonts-fonts"
+version = "0.1.0"
+description = "Font pipeline for dvfonts: cleans, remaps and packages the Dhivehi fonts in sources/"
+requires-python = ">=3.12"
+dependencies = ["fonttools[woff]>=4.60", "uharfbuzz>=0.50", "skia-pathops>=0.8"]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = ["freetype-py>=2.5.1", "numpy>=2.5.4", "pillow>=13.0.0", "ruff>=0.17.2"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E701", "E702", "E741"]
+
+[tool.ruff.lint.per-file-ignores]
+# Throwaway research tools embed whole HTML/CSS templates on one line.
+"scripts/research/*" = ["E501", "B007", "B905"]

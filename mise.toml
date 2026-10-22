@@ -1,0 +1,69 @@
+# Toolchain for the whole repo. `mise install` once, then `mise run <task>`.
+[tools]
+node = "26.12.1"
+pnpm = "12.15.0"
+uv = "0.11.11"
+
+[tasks.install]
+description = "Install JS and Python dependencies"
+run = ["pnpm install", "uv sync --project fonts"]
+
+[tasks.fonts]
+description = "Rebuild the font library (fonts/build/r2/fonts + apps/web/src/lib/data/catalog.json)"
+dir = "fonts"
+run = "uv run python scripts/build.py"
+
+[tasks."fonts:check"]
+description = "Fail if the committed catalog data differs from what the pipeline produces"
+depends = ["bundles"]
+run = "git diff --exit-code --stat -- apps/web/src/lib/data"
+
+[tasks.dev]
+description = "Run the site locally (run `mise run r2:local` once first so fonts load)"
+run = "pnpm dev"
+
+[tasks.build]
+description = "Build the packages and the site"
+run = "pnpm build"
+
+[tasks.test]
+description = "Unit-test every package"
+run = "pnpm test"
+
+[tasks.check]
+description = "Type-check everything"
+run = "pnpm check"
+
+[tasks.lint]
+description = "oxlint + oxfmt --check (JS/TS/Svelte), ruff (Python)"
+run = [
+	"pnpm lint",
+	"uv run --project fonts ruff check fonts/scripts",
+	"uv run --project fonts ruff format --check fonts/scripts"
+]
+
+[tasks.format]
+description = "Format everything"
+run = ["pnpm format", "uv run --project fonts ruff format fonts/scripts"]
+
+[tasks.bundles]
+description = "Build the download bundles (fonts/build/r2/downloads + apps/web/src/lib/data/bundles.json)"
+depends = ["fonts"]
+dir = "fonts"
+run = "uv run python scripts/bundles.py"
+
+[tasks."r2:local"]
+description = "Load fonts and bundles into wrangler's local R2, for `pnpm dev` / `pnpm preview` / e2e"
+depends = ["bundles"]
+run = [
+  "uv run --project fonts python fonts/scripts/r2_manifest.py",
+  "cd apps/web && pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --local --force",
+]
+
+[tasks."release:site"]
+description = "Tag and deploy the site (site-vYYYY.MMDD.N)"
+run = "node scripts/release.mjs site"
+
+[tasks."release:packages"]
+description = "Tag and publish the npm packages (packages-vYYYY.MMDD.N)"
+run = "node scripts/release.mjs packages"

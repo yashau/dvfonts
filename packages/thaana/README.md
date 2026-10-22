@@ -1,0 +1,69 @@
+# @yashau/thaana
+
+Everything to make Thaana (Dhivehi) work on the web, in ~3 KB. No dependencies.
+
+```sh
+npm i @yashau/thaana
+```
+
+React, Svelte or Vue? Use [`@yashau/thaana-react`](https://www.npmjs.com/package/@yashau/thaana-react), [`@yashau/thaana-svelte`](https://www.npmjs.com/package/@yashau/thaana-svelte) or [`@yashau/thaana-vue`](https://www.npmjs.com/package/@yashau/thaana-vue). They re-export everything below.
+
+## Keyboard: type Thaana on any keyboard
+
+Most people have no Dhivehi keyboard installed. This rewrites Latin keystrokes to Thaana with the standard **Divehi Phonetic** layout (Microsoft's kbddiv1, the one Maldivian sites use): `h`→ހ, `a`→ަ, `q`→ް, `w`→އ, `,`→،, `?`→؟.
+
+```js
+import { attachKeyboard } from '@yashau/thaana';
+
+let dv = true; // e.g. bound to a DV/EN toggle
+const detach = attachKeyboard(document.querySelector('#name'), { enabled: () => dv });
+```
+
+Or with no JS of your own:
+
+```html
+<script type="module">
+	import '@yashau/thaana/auto';
+</script>
+<input data-thaana />
+<textarea data-thaana></textarea>
+```
+
+Or with no build step at all:
+
+```html
+<script src="https://dvfonts.yashau.com/thaana.iife.js"></script>
+<!-- window.Thaana -->
+```
+
+- Only single typed characters are rewritten. Paste, IME composition, autocorrect, deletion and real Dhivehi keyboards pass through.
+- Inserts through the browser's editing command, so `input` events fire (controlled inputs keep working) and undo works.
+- Sets `dir="rtl"`, `lang="dv"` and turns off autocorrect/autocapitalize/spellcheck unless you set them.
+- Brackets are stored in logical order (`(` before the text) and mirrored by the browser. `swapBrackets: true` mimics Microsoft's layout, which swaps them.
+- Rich-text editors (Lexical, TipTap, ProseMirror): call `thaanaForInputEvent(event)` in the editor's `beforeinput` hook and insert the result through the editor's API.
+
+## Text helpers
+
+| Function                                                                      | What it's for                                                                              |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `transliterate('divehi')`                                                     | `"ދިވެހި"`: replays keystrokes in the layout.                                                 |
+| `convertLegacy(text, { layout })`                                             | Converts text typed in old pre-Unicode A_ fonts (it looks like `ihevid`) to Unicode.       |
+| `repairPdfText(text)`                                                         | Fixes Thaana copied out of PDFs: reversed dates/times, stray spaces, jumped list markers.  |
+| `normalizePunctuation(text)`                                                  | `"ބަސް ، ބުދަ ?"` → `"ބަސް، ބުދަ؟"`, tightens brackets.                                            |
+| `isolateNumbers(text)`                                                        | Keeps `-5`, `+960 333-1234`, `9:00`, `1,000`, `50%` readable inside RTL text.              |
+| `isolate(value)`                                                              | Wraps a URL, email or name so it can't scramble the sentence around it.                    |
+| `stripBidiControls(text)`                                                     | Removes bidi controls before saving or comparing.                                          |
+| `hasThaana`, `hasRtl`, `isMixedScript`, `detectDirection`, `resolveDirection` | Script and direction detection.                                                            |
+| `fontStack('Faruma')`                                                         | `'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif`                           |
+| `loadFonts({ family: 'Faruma' })`                                             | Loads a font from [dvfonts](https://dvfonts.yashau.com) and resolves when it can be drawn. |
+| `PANGRAMS`, `LETTERS`, `FILI`, …                                              | Sample text and the alphabet.                                                              |
+
+## CSS defaults
+
+```js
+import '@yashau/thaana/thaana.css';
+```
+
+Applies to `:lang(dv)`: RTL, line height that doesn't clip fili, no synthetic italics/bold, `unicode-bidi: plaintext` for user content, LTR for code/URLs/emails.
+
+Guide: https://dvfonts.yashau.com/docs · Agent guide: https://dvfonts.yashau.com/llms.txt

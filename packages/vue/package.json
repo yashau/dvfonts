@@ -1,0 +1,56 @@
+{
+	"name": "@yashau/thaana-vue",
+	"version": "0.1.0",
+	"description": "Vue 3 directive, inputs and composables for Thaana (Dhivehi): phonetic keyboard on any field, Dhivehi web fonts, RTL done right.",
+	"keywords": [
+		"dhivehi",
+		"divehi",
+		"fonts",
+		"keyboard",
+		"maldives",
+		"nuxt",
+		"rtl",
+		"thaana",
+		"vue"
+	],
+	"homepage": "https://dvfonts.yashau.com/docs",
+	"license": "MIT",
+	"author": "Ibrahim Yashau",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yashau/dvfonts.git",
+		"directory": "packages/vue"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "rm -rf dist && tsdown && publint",
+		"test": "vitest run"
+	},
+	"dependencies": {
+		"@yashau/thaana": "workspace:^"
+	},
+	"devDependencies": {
+		"jsdom": "^30.1.3",
+		"publint": "^0.3.25",
+		"tsdown": "^0.23.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.5",
+		"vue": "^3.3.0"
+	},
+	"peerDependencies": {
+		"vue": "^3.3.0"
+	}
+}

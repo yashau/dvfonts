@@ -1,0 +1,21 @@
+{
+	"name": "dvfonts",
+	"private": true,
+	"description": "Open Dhivehi fonts for the web, and the @yashau/thaana packages that make Thaana work everywhere.",
+	"type": "module",
+	"scripts": {
+		"build": "pnpm -r --filter './packages/*' run build && pnpm --filter @dvfonts/web run build",
+		"build:packages": "pnpm -r --filter './packages/*' run build",
+		"check": "pnpm run build:packages && pnpm --filter @dvfonts/web run check",
+		"test": "pnpm -r --filter './packages/*' run test",
+		"lint": "oxlint && oxfmt --check",
+		"format": "oxfmt",
+		"dev": "pnpm run build:packages && pnpm --filter @dvfonts/web run dev",
+		"deploy": "pnpm run build && pnpm --filter @dvfonts/web run deploy"
+	},
+	"devDependencies": {
+		"oxfmt": "^0.74.0",
+		"oxlint": "^1.89.0",
+		"svelte": "^5.57.2"
+	}
+}

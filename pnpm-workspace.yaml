@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Native build scripts allowed to run on install.
+allowBuilds:
+  workerd: true
+  esbuild: true

@@ -1,0 +1,760 @@
+# dvfonts catalogue — the single hand-curated source of truth.
+#
+# Each [families.<id>] is one family on the site. `fonts` maps a CSS weight to a
+# file in sources/. Legacy (pre-Unicode, ASCII-slot) fonts are detected from
+# scripts/legacy.py and remapped to Unicode Thaana at build time.
+#
+# category: modern | traditional | display | handwriting | mono | symbols
+# aliases:  other names the same design circulates under (searchable on the site)
+
+# ─── Modern / geometric ──────────────────────────────────────────────────────
+
+[families.bolhu]
+name = "Bolhu"
+category = "modern"
+fonts = { 100 = "bolhu-thin.ttf", 200 = "bolhu-extralight.ttf", 300 = "bolhu-light.ttf", 400 = "bolhu-regular.ttf", 500 = "bolhu-medium.ttf", 600 = "bolhu-semibold.ttf", 700 = "bolhu-bold.ttf", 800 = "bolhu-extrabold.ttf" }
+
+[families.kolhu]
+name = "Kolhu"
+category = "modern"
+fonts = { 100 = "kolhu-thin.ttf", 200 = "kolhu-extralight.ttf", 300 = "kolhu-light.ttf", 400 = "kolhu-regular.ttf", 500 = "kolhu-medium.ttf", 600 = "kolhu-semibold.ttf", 700 = "kolhu-bold.ttf", 800 = "kolhu-extrabold.ttf" }
+
+[families.theras]
+name = "Theras"
+category = "modern"
+fonts = { 100 = "theras-thin.ttf", 200 = "theras-extralight.ttf", 300 = "theras-light.ttf", 400 = "theras-regular.ttf", 500 = "theras-medium.ttf", 600 = "theras-semibold.ttf", 700 = "theras-bold.ttf", 800 = "theras-extrabold.ttf" }
+
+[families.zaana-thedhu]
+name = "Zaana Thedhu"
+category = "modern"
+fonts = { 100 = "zaanathedhu-thin.ttf", 200 = "zaanathedhu-extralight.ttf", 300 = "zaanathedhu-light.ttf", 400 = "zaanathedhu-regular.ttf", 500 = "zaanathedhu-medium.ttf", 600 = "zaanathedhu-semibold.ttf", 700 = "zaanathedhu-bold.ttf", 800 = "zaanathedhu-extrabold.ttf" }
+
+[families.fanara]
+name = "Fanara"
+category = "modern"
+fonts = { 100 = "fanara-thin.ttf", 400 = "fanara-regular.ttf", 700 = "fanara-bold.ttf", 900 = "fanara-black.ttf" }
+
+[families.fanara-golhi]
+name = "Fanara Golhi"
+category = "modern"
+fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 = "fanaragolhi-light.ttf", 400 = "fanaragolhi-regular.ttf", 500 = "fanaragolhi-medium.ttf", 600 = "fanaragolhi-semibold.ttf", 700 = "fanaragolhi-bold.ttf", 800 = "fanaragolhi-extrabold.ttf" }
+
+[families.noto-sans-thaana]
+name = "Noto Sans Thaana"
+category = "modern"
+license = "OFL-1.1"
+fonts = { 400 = "noto-sans-thaana.ttf" }
+
+[families.mv-koagannu]
+name = "MV Koagannu"
+category = "modern"
+aliases = ["A_Koagannu"]
+fonts = { 700 = "mvkoagannu.ttf" }
+
+[families.a-kaani]
+name = "A Kaani"
+category = "modern"
+fonts = { 700 = "a-kaani.otf" }
+
+[families.mv-midhili]
+name = "MV Midhili"
+category = "modern"
+aliases = ["A_Midhili"]
+fonts = { 700 = "midhilibold.ttf" }
+
+[families.a-uni]
+name = "A Uni"
+category = "modern"
+fonts = { 700 = "a-uni.otf" }
+
+[families.a-lakudi]
+name = "A Lakudi"
+category = "modern"
+fonts = { 400 = "a-lakudi.otf" }
+
+[families.a-lakudi-college]
+name = "A Lakudi College"
+category = "modern"
+fonts = { 400 = "a-lakudi-college.otf" }
+
+[families.mv-raadhavalhi]
+name = "MV Raadhavalhi"
+category = "modern"
+aliases = ["A_Raadhavalhi"]
+fonts = { 400 = "mvraadha-regular.ttf", 700 = "mvraadha-bold.ttf" }
+
+[families.mv-nasri]
+name = "MV Nasri"
+category = "modern"
+fonts = { 400 = "mvnasri-reg.ttf", 700 = "mvnasri-bld.ttf" }
+
+[families.mv-uligamu]
+name = "MV Uligamu"
+category = "modern"
+fonts = { 400 = "mvuligamu.ttf" }
+
+[families.mv-open-condensed]
+name = "MV Open Condensed"
+category = "modern"
+fonts = { 700 = "mvopencondensed-bold.ttf" }
+
+[families.mv-aka-light]
+name = "MV Aka Light"
+category = "modern"
+fonts = { 300 = "mv-akalight-regular.ttf" }
+
+[families.mv-oswald]
+name = "MV Oswald"
+category = "modern"
+fonts = { 400 = "mv-oswald-reg.ttf" }
+
+[families.mv-thuththu-neo]
+name = "MV Thuththu Neo"
+category = "modern"
+fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
+
+# ─── Traditional / calligraphic ─────────────────────────────────────────────
+
+[families.faruma]
+name = "Faruma"
+category = "traditional"
+aliases = ["ModFaruma"]
+fonts = { 400 = "faruma.ttf" }
+
+[families.a-waheed-college]
+name = "A Waheed College"
+category = "traditional"
+fonts = { 400 = "a-waheed-college.otf" }
+
+[families.mv-a-waheed]
+name = "MV A Waheed"
+category = "traditional"
+aliases = ["A_Waheed", "MV Waheed", "Mv Eamaan XP"]
+fonts = { 400 = "mvawaheed.ttf" }
+
+[families.mv-faseyha]
+name = "MV Faseyha"
+category = "traditional"
+aliases = ["A_Faseyha", "Dhivehi", "Mv Amaan XP"]
+fonts = { 400 = "faseyha-reg-hinted-v2.ttf", 700 = "faseyha-bld-hinted-v2.ttf" }
+
+[families.mv-faseyha-au]
+name = "MV Faseyha Au"
+category = "traditional"
+notes = "Hassan Hameed's revision of MV Faseyha with an improved fili system."
+fonts = { 400 = "mv-faseyha-au-rgl-h.ttf" }
+
+[families.mv-ilham]
+name = "MV Ilham"
+category = "traditional"
+aliases = ["A_Ilham"]
+fonts = { 400 = "mvilhamregular.ttf", 700 = "mvilhambold.ttf" }
+
+[families.mv-randhoo]
+name = "MV Randhoo"
+category = "traditional"
+aliases = ["A_Randhoo"]
+fonts = { 400 = "randhoo-reg-hinted.ttf" }
+
+[families.mv-utheemu]
+name = "MV Utheemu"
+category = "traditional"
+aliases = ["A_Utheem"]
+fonts = { 400 = "mvutheemuregular.ttf", 700 = "mvutheemubold.ttf" }
+
+[families.a-reethi]
+name = "A Reethi"
+category = "traditional"
+aliases = ["MV Reethi"]
+fonts = { 400 = "reethi.ttf" }
+
+[families.mv-aammu-fk]
+name = "MV Aammu FK"
+category = "traditional"
+aliases = ["AammuFK", "Aammu F Thedhu", "Aammu F Rasmy"]
+fonts = { 700 = "aammufkf.ttf" }
+
+[families.aammu-hima-thedhu]
+name = "Aammu Hima Thedhu"
+category = "traditional"
+fonts = { 400 = "aammu-h-thedhu.ttf" }
+
+[families.mv-kelaa]
+name = "MV Kelaa"
+category = "traditional"
+fonts = { 400 = "mv-kelaa-reg-v1-h.ttf", 700 = "mv-kelaa-bold-v1-h.ttf" }
+
+[families.mv-vaadhoo]
+name = "MV Vaadhoo"
+category = "traditional"
+fonts = { 400 = "mv-vaadhoo-reg-v1.0-hinted.ttf", 700 = "mv-vaadhoo-bd-v1.0-hinted.ttf" }
+
+[families.mv-typewriter]
+name = "MV Typewriter"
+category = "traditional"
+fonts = { 400 = "mvtyper.ttf", 700 = "mvtypebold.ttf" }
+
+[families.thaana-unicode-akeh]
+name = "Thaana Unicode Akeh"
+category = "traditional"
+fonts = { 400 = "thaana-1u.ttf" }
+
+[families.mv-iyyu]
+name = "MV Iyyu"
+category = "traditional"
+fonts = { 400 = "iyyu-normal.ttf" }
+
+[families.mv-iyyu-formal]
+name = "MV Iyyu Formal"
+category = "traditional"
+fonts = { 400 = "iyyu-formal.ttf" }
+
+[families.mv-iyyu-nala]
+name = "MV Iyyu Nala"
+category = "traditional"
+fonts = { 400 = "iyyu-nala.ttf" }
+
+[families.mv-elaaf]
+name = "MV Elaaf"
+category = "traditional"
+fonts = { 300 = "elaaf-lite.ttf", 400 = "elaaf-normal.ttf" }
+
+[families.mv-galan]
+name = "MV Galan"
+category = "traditional"
+fonts = { 400 = "mv-galan-normal.otf" }
+
+[families.mv-radhun]
+name = "MV Radhun"
+category = "traditional"
+fonts = { 400 = "radhun.ttf" }
+
+[families.dam-kalhi]
+name = "DAM Kalhi"
+category = "traditional"
+fonts = { 700 = "dam-kalhi.otf" }
+
+[families.dam-madheeh]
+name = "DAM Madheeh"
+category = "traditional"
+fonts = { 700 = "dam-madheeh.otf" }
+
+[families.dam-kathivalhi]
+name = "DAM Kathivalhi"
+category = "traditional"
+fonts = { 400 = "dam-kathivalhi.otf" }
+
+[families.mv-izy-pro]
+name = "MV Izy Pro"
+category = "traditional"
+fonts = { 400 = "mv-izy-pro.ttf" }
+
+[families.mv-izyan]
+name = "MV Izyan"
+category = "traditional"
+fonts = { 400 = "mv-izyannormal.ttf" }
+
+[families.mv-izyan-thin]
+name = "MV Izyan Thin"
+category = "traditional"
+fonts = { 100 = "mv-izyan-thin.ttf" }
+
+[families.mv-izyan-light]
+name = "MV Izyan Light"
+category = "traditional"
+fonts = { 300 = "mv-izyan-light.ttf" }
+
+[families.mv-izyan-regular]
+name = "MV Izyan Regular"
+category = "traditional"
+fonts = { 400 = "mvizyaregular.ttf" }
+
+[families.mv-izyan-thaana]
+name = "MV Izyan Thaana"
+category = "traditional"
+fonts = { 400 = "mv-izyanthaana.ttf" }
+
+[families.mv-izyan-athuliyun]
+name = "MV Izyan Athuliyun"
+category = "traditional"
+fonts = { 300 = "mv-izyan-athuliyun-light.ttf", 400 = "mv-izyan-athuliyun.ttf" }
+
+[families.mv-izyan-liyun]
+name = "MV Izyan Liyun"
+category = "traditional"
+fonts = { 400 = "mv-izyan-liyun-regular.ttf" }
+
+[families.mv-izyan-lhohi]
+name = "MV Izyan Lhohi"
+category = "traditional"
+fonts = { 700 = "mv-izyan-lhohi.ttf" }
+
+[families.mv-izyan-suruhee]
+name = "MV Izyan Suruhee"
+category = "traditional"
+fonts = { 400 = "mv-izyan-suruhee.ttf" }
+
+[families.mv-izyan-bodu-akuru]
+name = "MV Izyan Bodu Akuru"
+category = "traditional"
+fonts = { 700 = "mv-izyan-bodu-akuru.ttf" }
+
+[families.mv-lhohi]
+name = "MV Lhohi"
+category = "traditional"
+fonts = { 400 = "mvlhohi.ttf", 700 = "mvlhohi-bold.ttf" }
+
+[families.mv-gaa-lhohi]
+name = "MV Gaa Lhohi"
+category = "traditional"
+fonts = { 400 = "mv-gaa-lhohi.ttf" }
+
+[families.mv-kashi]
+name = "MV Kashi"
+category = "traditional"
+fonts = { 400 = "mv-kashi.ttf" }
+
+[families.mv-maryam]
+name = "MV Maryam"
+category = "traditional"
+fonts = { 400 = "mv-maryam.ttf" }
+
+[families.mv-fathimath]
+name = "MV Fathimath"
+category = "traditional"
+fonts = { 700 = "mv-fathimath.ttf" }
+
+[families.mv-nevi-raheem]
+name = "MV Nevi Raheem"
+category = "traditional"
+fonts = { 400 = "mv-nevi-raheem.ttf" }
+
+[families.mv-alram]
+name = "MV Alram"
+category = "traditional"
+fonts = { 400 = "mv-alram.ttf" }
+
+[families.mv-dheli-fihi]
+name = "MV Dheli Fihi"
+category = "traditional"
+fonts = { 700 = "mv-dheli-fihi.ttf" }
+
+[families.mv-karudhas]
+name = "MV Karudhas"
+category = "traditional"
+fonts = { 700 = "mv-karudhas.ttf" }
+
+[families.mv-neru-magu]
+name = "MV Neru Magu"
+category = "traditional"
+fonts = { 700 = "mv-nerumagu.ttf" }
+
+[families.mv-suruhee]
+name = "MV Suruhee"
+category = "traditional"
+fonts = { 700 = "mv-suruhee.ttf" }
+
+[families.mv-thakurufaanu]
+name = "MV Thakurufaanu"
+category = "traditional"
+fonts = { 700 = "mv-thakurufaanu.ttf" }
+
+# ─── Handwriting / casual ───────────────────────────────────────────────────
+
+[families.athu-casual]
+name = "Athu Casual"
+category = "handwriting"
+fonts = { 400 = "athu-casual.otf" }
+
+[families.avas-thaana]
+name = "Avas Thaana"
+category = "handwriting"
+fonts = { 400 = "avas-thaana.otf" }
+
+[families.samee-avas-thaana]
+name = "Samee Avas Thaana"
+category = "handwriting"
+fonts = { 400 = "samee-avas-thaana.ttf" }
+
+[families.nasr]
+name = "Nasr"
+category = "handwriting"
+fonts = { 300 = "nasr-light.otf" }
+
+[families.faiy]
+name = "Faiy"
+category = "handwriting"
+fonts = { 300 = "faiy-light.otf" }
+
+[families.bodukuru]
+name = "Bodukuru"
+category = "handwriting"
+fonts = { 300 = "bodukuru-light.otf" }
+
+[families.thaana]
+name = "Thaana"
+category = "handwriting"
+aliases = ["Akko"]
+fonts = { 400 = "thaana.ttf", 700 = "thaana-bold.ttf" }
+
+[families.mv-lady-luck]
+name = "MV Lady Luck"
+category = "handwriting"
+fonts = { 400 = "lady-luck.ttf" }
+
+[families.mv-edhuru]
+name = "MV Edhuru"
+category = "handwriting"
+fonts = { 400 = "mvedhuru.ttf" }
+
+[families.mv-meemu-ali]
+name = "MV Meemu Ali"
+category = "handwriting"
+fonts = { 400 = "mv-mohamed-ali-final.ttf" }
+
+[families.mv-azheel]
+name = "MV Azheel"
+category = "handwriting"
+fonts = { 400 = "mv-azheel.ttf" }
+
+[families.motaru-dhigu]
+name = "Motaru Dhigu"
+category = "handwriting"
+fonts = { 400 = "motarudhigu-regular.ttf" }
+
+[families.faagathi-dheli]
+name = "Faagathi Dheli"
+category = "handwriting"
+fonts = { 300 = "faagathidheli-light.ttf", 400 = "faagathidheli-regular.ttf" }
+
+[families.hawwa]
+name = "Hawwa"
+category = "handwriting"
+fonts = { 400 = "hawwa-regular.ttf" }
+
+# ─── Display / decorative ───────────────────────────────────────────────────
+
+[families.a-haleem-bolhu]
+name = "A Haleem Bolhu"
+category = "display"
+fonts = { 700 = "a-haleem-bolhu-bold.otf" }
+
+[families.a-haleem-faseyha]
+name = "A Haleem Faseyha"
+category = "display"
+fonts = { 400 = "a-haleem-faseyha.otf" }
+
+[families.a-haleem-kb]
+name = "A Haleem KB"
+category = "display"
+fonts = { 400 = "a-haleem-kb.otf" }
+
+[families.a-haleem-kirudhooni]
+name = "A Haleem Kirudhooni"
+category = "display"
+fonts = { 400 = "a-haleem-kirudhooni.otf" }
+
+[families.a-haleem-mathi]
+name = "A Haleem Mathi"
+category = "display"
+fonts = { 700 = "a-haleem-mathi-bold.otf" }
+
+[families.a-haleem-raaveri]
+name = "A Haleem Raaveri"
+category = "display"
+fonts = { 400 = "a-haleem-raaveri.otf" }
+
+[families.a-haleem-riveli]
+name = "A Haleem Riveli"
+category = "display"
+fonts = { 400 = "a-haleem-riveli.otf" }
+
+[families.a-haleem-sh]
+name = "A Haleem SH"
+category = "display"
+fonts = { 700 = "a-haleem-sh-bold-italic.otf" }
+
+[families.a-haleem-thangi]
+name = "A Haleem Thangi"
+category = "display"
+fonts = { 700 = "a-haleem-thangi-bold.otf" }
+
+[families.a-haleem-thiki]
+name = "A Haleem Thiki"
+category = "display"
+fonts = { 700 = "a-haleem-thiki-bold.otf" }
+
+[families.a-haleem-uivashaa]
+name = "A Haleem Uivashaa"
+category = "display"
+fonts = { 400 = "a-haleem-uivashaa.otf" }
+
+[families.dam-hiyani]
+name = "DAM Hiyani"
+category = "display"
+fonts = { 400 = "dam-hiyani.otf" }
+
+[families.mv-mag-round]
+name = "MV MAG Round"
+category = "display"
+fonts = { 700 = "mag-round.ttf", 800 = "mag-round-xbold.ttf" }
+
+[families.mv-mag-round-hollow]
+name = "MV MAG Round Hollow"
+category = "display"
+fonts = { 400 = "mag-round-hollowttf.ttf" }
+
+[families.mv-sehga-fb]
+name = "MV Sehga FB"
+category = "display"
+aliases = ["Mv Sehga Fubaru Fancy"]
+fonts = { 400 = "sehga-fb.ttf" }
+
+[families.mv-sehga-old]
+name = "MV Sehga Old"
+category = "display"
+fonts = { 400 = "mv-sehga-old.otf" }
+
+[families.mv-groupx-avas]
+name = "MV GroupX Avas"
+category = "display"
+aliases = ["Mv GroupX Avas Akuru"]
+fonts = { 400 = "avas.ttf" }
+
+[families.mv-karudhas-outline]
+name = "MV Karudhas Outline"
+category = "display"
+fonts = { 400 = "mv-karudhas-outline.ttf" }
+
+[families.mv-izyan-bodu-akuru-3d]
+name = "MV Izyan Bodu Akuru 3D"
+category = "display"
+fonts = { 700 = "mvizyanboduakuru3d-bold.ttf" }
+
+[families.mv-izyan-reethi]
+name = "MV Izyan Reethi"
+category = "display"
+fonts = { 700 = "mvizyanreethi-bold.ttf" }
+
+[families.mv-thiki-akuru]
+name = "MV Thiki Akuru"
+category = "display"
+fonts = { 400 = "thiki.ttf" }
+
+[families.faagathi-neon]
+name = "Faagathi Neon"
+category = "display"
+fonts = { 200 = "faagathineon-extralight.ttf", 300 = "faagathineon-light.ttf", 400 = "faagathineon-regular.ttf", 700 = "faagathineon-bold.ttf" }
+
+[families.faaru-punk]
+name = "Faaru Punk"
+category = "display"
+fonts = { 400 = "faarupunk-regular.ttf", 700 = "faarupunk-bold.ttf" }
+
+[families.fiyuzu]
+name = "Fiyuzu"
+category = "display"
+fonts = { 400 = "fiyuzu-regular.ttf" }
+
+[families.gurafiku]
+name = "Gurafiku"
+category = "display"
+fonts = { 400 = "gurafiku-regular.ttf" }
+
+[families.haluvidhaa]
+name = "Haluvidhaa"
+category = "display"
+fonts = { 400 = "haluvidhaa-regular.ttf" }
+
+[families.sangu-suruhee]
+name = "Sangu Suruhee"
+category = "display"
+fonts = { 400 = "sangusuruhee-regular.ttf" }
+
+[families.motaru-square]
+name = "Motaru Square"
+category = "display"
+fonts = { 400 = "motarusquare-regular.ttf" }
+
+[families.viethaana]
+name = "Viethaana"
+category = "display"
+notes = "Renders Thaana text as diacritic-marked Latin transliteration."
+fonts = { 300 = "viethaana-light.ttf", 700 = "viethaana-bold.ttf" }
+
+[families.kanafala]
+name = "Kanafala"
+category = "display"
+fonts = { 400 = "kanafala.ttf" }
+
+[families.mv-prathama-ek]
+name = "MV Prathama Ek"
+category = "display"
+fonts = { 400 = "mv-prathama-ek.ttf" }
+
+[families.mv-prathama-dva]
+name = "MV Prathama Dva"
+category = "display"
+fonts = { 400 = "mv-prathama-dva.ttf" }
+
+[families.mv-prathama-tin]
+name = "MV Prathama Tin"
+category = "display"
+fonts = { 400 = "mv-prathama-tin.ttf" }
+
+[families.mv-akson]
+name = "MV Akson"
+category = "display"
+fonts = { 400 = "mv-akson.otf" }
+
+[families.mv-ashaahi]
+name = "MV Ashaahi"
+category = "display"
+fonts = { 400 = "mv-ashaahi.otf" }
+
+[families.mv-beys]
+name = "MV Beys"
+category = "display"
+fonts = { 400 = "mv-beys.otf" }
+
+[families.mv-dubai]
+name = "MV Dubai"
+category = "display"
+fonts = { 400 = "mv-dubai.otf" }
+
+[families.mv-golhifoshi]
+name = "MV Golhifoshi"
+category = "display"
+fonts = { 400 = "mv-golhifoshi.otf" }
+
+[families.mv-hulhumale]
+name = "MV Hulhumale"
+category = "display"
+fonts = { 400 = "mv-hulhumale.otf" }
+
+[families.mv-lhaiy]
+name = "MV Lhaiy"
+category = "display"
+fonts = { 700 = "mv-lhaiy-bold.otf" }
+
+[families.mv-osho]
+name = "MV Osho"
+category = "display"
+fonts = { 400 = "mv-osho.otf" }
+
+[families.mv-roma]
+name = "MV Roma"
+category = "display"
+fonts = { 400 = "mv-roma.otf" }
+
+[families.mv-runa]
+name = "MV Runa"
+category = "display"
+fonts = { 400 = "mv-runa.otf" }
+
+[families.mv-salhi-eka]
+name = "MV Salhi Eka"
+category = "display"
+fonts = { 400 = "mv-salhi-eka.otf" }
+
+[families.mv-sarukitu]
+name = "MV Sarukitu"
+category = "display"
+fonts = { 400 = "mv-sarukitu.otf" }
+
+[families.mv-sishisozo-vah]
+name = "MV Sishisozo Vah"
+category = "display"
+fonts = { 400 = "mv-sishisozo-vah.otf" }
+
+[families.mv-thaanarabi]
+name = "MV Thaanarabi"
+category = "display"
+fonts = { 400 = "mv-thaanarabi.otf" }
+
+[families.mv-vashalo]
+name = "MV Vashalo"
+category = "display"
+fonts = { 400 = "mv-vashalo.otf" }
+
+[families.mv-thavaa]
+name = "MV Thavaa"
+category = "display"
+fonts = { 400 = "thavaa.otf" }
+
+# ─── Monospace / pixel ──────────────────────────────────────────────────────
+
+[families.masnooee-mono]
+name = "Masnooee Mono"
+category = "mono"
+fonts = { 400 = "masnooeemono-regular.ttf" }
+
+[families.lcd-thaana]
+name = "LCD Thaana"
+category = "mono"
+fonts = { 400 = "lcdthaana-regular.ttf" }
+
+[families.mv-thaana-matrix-8]
+name = "MV Thaana Matrix 8"
+category = "mono"
+fonts = { 400 = "mv-thaana-dotmatrix-8.ttf" }
+
+[families.mv-thaana-matrix-16]
+name = "MV Thaana Matrix 16"
+category = "mono"
+fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
+
+# ─── Symbols ────────────────────────────────────────────────────────────────
+
+[families.bismi]
+name = "Bismi"
+category = "symbols"
+aliases = ["A_Bismillah"]
+notes = "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives."
+fonts = { 400 = "bismi.ttf" }
+
+# ─── Not published ───────────────────────────────────────────────────────────
+# Files in sources/ that are deliberately left out, and why.
+#
+# Not in the repo at all (commercially licensed, so not redistributable):
+#   MV Boli (Microsoft/Monotype, ships with Windows)
+#   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
+
+[excluded]
+"aammu-f-rasmy.ttf" = "Legacy A_ font; the modern Unicode MV Aammu FK is the same design."
+"aammu-f-thedhu.ttf" = "Legacy A_ font; the modern Unicode MV Aammu FK is the same design."
+"raadhavalhi-b.ttf" = "Legacy A_ font; the modern Unicode MV Raadhavalhi is the same design."
+"a-midhili.otf" = "Legacy A_ font; the modern Unicode MV Midhili is the same design."
+"a-koagannu.ttf" = "Legacy A_ font; the modern Unicode MV Koagannu is the same design."
+"utheem.ttf" = "Legacy A_ font; the modern Unicode MV Utheemu is the same design."
+"randhoo.ttf" = "Legacy A_ font; the modern Unicode MV Randhoo is the same design."
+"ilham.ttf" = "Legacy A_ font; the modern Unicode MV Ilham is the same design."
+"faseyha.ttf" = "Legacy A_ font; the modern Unicode MV Faseyha is the same design."
+"waheed.ttf" = "Legacy A_ font; the modern Unicode MV A Waheed is the same design."
+"modfaruma.ttf" = "Faruma with a rufiyaa glyph on '$'; listed as an alias of Faruma."
+"a-nishan.ttf" = "Single state-emblem dingbat, not a text font."
+"dhives.ttf" = "Dhives Akuru (historic script) in a legacy encoding; needs its own remap to U+11900."
+"aa-randhoo.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
+"randhoo-p.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
+"utheem-p.ttf" = "Unknown 'P' legacy encoding; same design as A Utheem."
+"waheed-p.ttf" = "Unknown 'P' legacy encoding; same design as A Waheed."
+"raadhavalhi-p.ttf" = "Unknown 'P' legacy encoding; same design as A Raadhavalhi."
+"raadhavalhi-fp.ttf" = "Unknown 'P' legacy encoding; same design as A Raadhavalhi."
+"raadhavalhi.ttf" = "53-glyph beta that borrows A_Raadhavalhi's glyphs."
+"faseyha.otf" = "Duplicate of faseyha.ttf."
+"dhivehi.ttf" = "Same outlines as A_Faseyha; MV Faseyha supersedes it (alias)."
+"mv-amaan-xp.otf" = "Same outlines as A_Faseyha; MV Faseyha supersedes it (alias)."
+"a-waheed.otf" = "Duplicate of waheed.ttf."
+"eaman-xp.ttf" = "Same outlines as A_Waheed; MV A Waheed supersedes it (alias)."
+"mv-eamaan-xp.otf" = "Same outlines as A_Waheed; MV A Waheed supersedes it (alias)."
+"utheem.otf" = "Duplicate of utheem.ttf."
+"a-ilham.ttf" = "Duplicate of ilham.ttf."
+"kanafala.otf" = "Duplicate of kanafala.ttf."
+"akko.ttf" = "Same outlines as Thaana (alias)."
+"mv-mag-round-bold.otf" = "Duplicate of mag-round.ttf."
+"mv-mag-round-hbold.otf" = "Duplicate of mag-round-hollowttf.ttf."
+"mv-iyyu-normal.otf" = "Duplicate of iyyu-normal.ttf."
+"mv-groupx-avas-akuru.otf" = "Duplicate of avas.ttf."
+"mv-elaaf-normal.otf" = "Duplicate of elaaf-normal.ttf."
+"mv-sehga-fubaru-fancy.otf" = "Duplicate of sehga-fb.ttf."
+"mvazheel-regular.ttf" = "Mislabelled copy of MV Iyyu Formal (the real MV Azheel is mv-azheel.ttf)."

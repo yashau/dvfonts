@@ -1,0 +1,96 @@
+# Download bundles: zips built by scripts/bundles.py and served from R2 at
+# /downloads/<id>.zip. Each bundle picks families by id list and/or filters.
+#
+#   families   = explicit family ids
+#   categories = include families in these categories
+#   licenses   = include only these license labels
+#   legacy     = false drops fonts that dvfonts remapped from pre-Unicode encodings
+#   format     = "ttf" (desktop, default) or "woff2" (self-hosting kit with fonts.css)
+
+[bundles.essentials]
+name = "Essentials"
+description = "The fonts most Dhivehi documents and sites use: Faruma, the MV classics, and the modern Thaana Type Foundry families."
+families = [
+	"faruma",
+	"mv-faseyha",
+	"mv-a-waheed",
+	"mv-typewriter",
+	"mv-randhoo",
+	"mv-utheemu",
+	"mv-ilham",
+	"mv-raadhavalhi",
+	"mv-kelaa",
+	"mv-vaadhoo",
+	"a-reethi",
+	"noto-sans-thaana",
+	"bolhu",
+	"kolhu",
+	"theras",
+	"zaana-thedhu",
+	"fanara-golhi",
+	"bismi"
+]
+
+[bundles.full]
+name = "Full suite"
+description = "Every family in the catalogue."
+
+[bundles.unicode-originals]
+name = "Unicode originals"
+description = "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar)."
+legacy = false
+
+[bundles.open-licensed]
+name = "Openly licensed"
+description = "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute."
+licenses = ["OFL-1.1", "CC BY"]
+
+[bundles.modern]
+name = "Modern"
+description = "Geometric and sans-style Thaana families."
+categories = ["modern"]
+
+[bundles.traditional]
+name = "Traditional"
+description = "Calligraphic, Waheed-style text faces."
+categories = ["traditional"]
+
+[bundles.display]
+name = "Display"
+description = "Decorative and headline fonts."
+categories = ["display"]
+
+[bundles.handwriting]
+name = "Handwriting"
+description = "Casual and handwritten styles."
+categories = ["handwriting"]
+
+[bundles.webfonts-essentials]
+name = "Webfont kit (Essentials)"
+description = "The Essentials as WOFF2 with a ready-made fonts.css, for self-hosting."
+families = [
+	"faruma",
+	"mv-faseyha",
+	"mv-a-waheed",
+	"mv-typewriter",
+	"mv-randhoo",
+	"mv-utheemu",
+	"mv-ilham",
+	"mv-raadhavalhi",
+	"mv-kelaa",
+	"mv-vaadhoo",
+	"a-reethi",
+	"noto-sans-thaana",
+	"bolhu",
+	"kolhu",
+	"theras",
+	"zaana-thedhu",
+	"fanara-golhi",
+	"bismi"
+]
+format = "woff2"
+
+[bundles.webfonts-full]
+name = "Webfont kit (Full suite)"
+description = "Every family as WOFF2 with a ready-made fonts.css, for self-hosting."
+format = "woff2"
