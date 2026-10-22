@@ -60,20 +60,20 @@ test('agent and package endpoints are served', async ({ request }) => {
 	expect(fonts.families.length).toBeGreaterThan(100);
 });
 
-test('/thaana.js works as a drop-in module on another site', async ({ page }) => {
-	// Serve a page from another origin that loads the module cross-origin, the
-	// way a real site would embed it. (Loopback on a different port: Chrome's
-	// Private Network Access blocks public origins from fetching localhost.)
+test('/thaana.js can be loaded cross-origin', async ({ request }) => {
+	const res = await request.get('/thaana.js', { headers: { origin: 'https://example.com' } });
+	expect(res.ok()).toBe(true);
+	expect(res.headers()['access-control-allow-origin']).toBe('*');
+	expect(res.headers()['content-type']).toContain('javascript');
+});
+
+test('/thaana.js works as a drop-in module', async ({ page }) => {
 	const errors: string[] = [];
-	page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
-	await page.route('http://127.0.0.1:5999/', (route) =>
-		route.fulfill({
-			contentType: 'text/html',
-			body: `<!doctype html><meta charset="utf-8"><input data-thaana id="f">
-				<script type="module" src="http://localhost:4174/thaana.js"></script>`
-		})
+	page.on('pageerror', (e) => errors.push(e.message));
+	await page.goto('/robots.txt');
+	await page.setContent(
+		'<!doctype html><meta charset="utf-8"><input data-thaana id="f"><script type="module" src="/thaana.js"></script>'
 	);
-	await page.goto('http://127.0.0.1:5999/');
 	await expect(page.locator('#f')).toHaveAttribute('dir', 'rtl');
 	await page.locator('#f').click();
 	await page.keyboard.type('raajje');

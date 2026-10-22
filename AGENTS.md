@@ -87,4 +87,4 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 - `pnpm preview` (port 4173) and the e2e server (port 4174, always started fresh by Playwright) are plain `wrangler dev` from `apps/web`, so both use the local R2 state in `apps/web/.wrangler` that `mise run r2:local` fills.
 - mise runs task `depends` in parallel: `bundles` depends on `fonts`, not both on a third task.
 - Svelte actions attach in an effect: tests that `mount()` must `flushSync()` before interacting.
-- Chrome's Private Network Access blocks public origins from fetching `localhost`; cross-origin e2e tests use a different loopback origin.
+- Chrome's local-network restrictions make faked cross-origin pages flaky against `localhost` in e2e. Test CORS by asserting headers, and run scripts in a same-origin page.

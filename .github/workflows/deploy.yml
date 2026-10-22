@@ -56,16 +56,40 @@ jobs:
           fi
 
       - name: Install
-        run: |
-          pnpm install --frozen-lockfile
-          uv sync --project fonts --frozen
+        run: pnpm install --frozen-lockfile
 
       - name: Build site
         run: pnpm build
 
-      - name: Build fonts and bundles (binaries go to R2, data must match git)
+      # The font build is byte-reproducible from its inputs, so fingerprint the
+      # inputs (git blob hashes) and compare with the fingerprint stored in R2 by
+      # the last upload. Unchanged: skip the font build and the upload entirely.
+      # To force a re-upload, delete the `.fingerprint` object from the bucket.
+      - name: Have the fonts changed since the last upload?
+        id: fonts
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        working-directory: apps/web
         run: |
           set -euo pipefail
+          local_fp="$(git ls-files -s -- ../../fonts ../../packages/thaana/src/legacy-layouts.json | sha256sum | cut -d' ' -f1)"
+          remote_fp="$(pnpm exec wrangler r2 object get dvfonts-static/.fingerprint --remote --pipe 2>/dev/null || true)"
+          echo "local:  ${local_fp}"
+          echo "remote: ${remote_fp:-<none>}"
+          echo "fingerprint=${local_fp}" >> "$GITHUB_OUTPUT"
+          if [ "$local_fp" = "$remote_fp" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Fonts unchanged since the last upload; skipping font build and R2 upload."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build fonts and bundles (binaries go to R2, data must match git)
+        if: steps.fonts.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          uv sync --project fonts --frozen
           cd fonts
           uv run python scripts/build.py
           uv run python scripts/bundles.py
@@ -77,13 +101,20 @@ jobs:
           fi
 
       - name: Upload fonts and bundles to R2
+        if: steps.fonts.outputs.changed == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          FINGERPRINT: ${{ steps.fonts.outputs.fingerprint }}
         working-directory: apps/web
         # Uploaded BEFORE the Worker deploy, so the new site never references a
-        # file that isn't there yet. Unchanged files are simply overwritten.
-        run: pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force
+        # file that isn't there yet. The fingerprint is written last: if any
+        # upload fails, the next deploy sees a mismatch and uploads again.
+        run: |
+          set -euo pipefail
+          pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force
+          printf '%s' "$FINGERPRINT" > "$RUNNER_TEMP/fingerprint"
+          pnpm exec wrangler r2 object put dvfonts-static/.fingerprint --file "$RUNNER_TEMP/fingerprint" --content-type text/plain --remote
 
       - name: Deploy Worker
         env:
@@ -110,10 +141,12 @@ jobs:
         env:
           REF_NAME: ${{ github.ref_name }}
           COMMIT: ${{ github.sha }}
+          FONTS_CHANGED: ${{ steps.fonts.outputs.changed }}
         run: |
           {
             echo "### Site ${REF_NAME#site-v} deployed"
             echo
             echo "- commit: \`${COMMIT}\`"
+            echo "- fonts uploaded to R2: ${FONTS_CHANGED}"
             echo "- url: https://dvfonts.yashau.com"
           } >> "$GITHUB_STEP_SUMMARY"
