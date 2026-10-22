@@ -55,7 +55,11 @@ test('agent and package endpoints are served', async ({ request }) => {
 	for (const path of ['/llms.txt', '/fonts.json', '/keymap.json', '/thaana.js', '/thaana.iife.js', '/thaana.css']) {
 		const res = await request.get(path);
 		expect(res.ok(), path).toBe(true);
+		// Without an explicit charset browsers decode the Thaana in these as Windows-1252.
+		expect(res.headers()['content-type'], path).toMatch(/; charset=utf-8$/);
 	}
+	const llms = await (await request.get('/llms.txt')).text();
+	expect(llms).toContain('ދިވެހި');
 	const fonts = await (await request.get('/fonts.json')).json();
 	expect(fonts.families.length).toBeGreaterThan(100);
 });

@@ -1,22 +1,30 @@
 # The drop-in scripts and data are meant to be used from any site. (Fonts are
 # served by the Worker from R2 with their own headers: src/lib/server/r2.ts.)
+# Static assets get no charset by default, and browsers then decode Thaana as
+# Windows-1252, so every text file names UTF-8 explicitly.
 /thaana.js
+  Content-Type: text/javascript; charset=utf-8
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /thaana.iife.js
+  Content-Type: text/javascript; charset=utf-8
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /thaana.css
+  Content-Type: text/css; charset=utf-8
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /keymap.json
+  Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
 
 /fonts.json
+  Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
 
 /llms.txt
+  Content-Type: text/plain; charset=utf-8
   Access-Control-Allow-Origin: *
