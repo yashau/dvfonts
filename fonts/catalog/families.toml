@@ -6,6 +6,8 @@
 #
 # category: modern | traditional | display | handwriting | mono | symbols
 # aliases:  other names the same design circulates under (searchable on the site)
+# copyright: display text for the site when the font's own notice is too garbled
+#            to tidy automatically (scripts/copyright.py); the files keep the original
 
 # ─── Modern / geometric ──────────────────────────────────────────────────────
 
@@ -53,6 +55,7 @@ fonts = { 700 = "mvkoagannu.ttf" }
 
 [families.a-kaani]
 name = "A Kaani"
+copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Kaani is based on Athireege Thaana and modern styles."
 category = "modern"
 fonts = { 700 = "a-kaani.otf" }
 
@@ -64,6 +67,7 @@ fonts = { 700 = "midhilibold.ttf" }
 
 [families.a-uni]
 name = "A Uni"
+copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Uni is based on Athireege Thaana and modern styles."
 category = "modern"
 fonts = { 700 = "a-uni.otf" }
 
@@ -181,6 +185,7 @@ fonts = { 700 = "aammufkf.ttf" }
 
 [families.aammu-hima-thedhu]
 name = "Aammu Hima Thedhu"
+copyright = "Rasmee Kudhi © 1994 Hassan Hameed with Hassan Shujau."
 category = "traditional"
 fonts = { 400 = "aammu-h-thedhu.ttf" }
 
@@ -211,6 +216,7 @@ fonts = { 400 = "iyyu-normal.ttf" }
 
 [families.mv-iyyu-formal]
 name = "MV Iyyu Formal"
+copyright = "Designed and developed by M.A. Gadir, August 2005."
 category = "traditional"
 fonts = { 400 = "iyyu-formal.ttf" }
 
@@ -588,16 +594,19 @@ fonts = { 400 = "kanafala.ttf" }
 
 [families.mv-prathama-ek]
 name = "MV Prathama Ek"
+copyright = "© Zillon 2015. Based on Prathama by Zillon."
 category = "display"
 fonts = { 400 = "mv-prathama-ek.ttf" }
 
 [families.mv-prathama-dva]
 name = "MV Prathama Dva"
+copyright = "© Zillon 2016. Based on MV Prathama Tin, MV Prathama Ek and Prathama, all by Zillon."
 category = "display"
 fonts = { 400 = "mv-prathama-dva.ttf" }
 
 [families.mv-prathama-tin]
 name = "MV Prathama Tin"
+copyright = "© Zillon 2015. Based on MV Prathama Ek and Prathama, both by Zillon."
 category = "display"
 fonts = { 400 = "mv-prathama-tin.ttf" }
 

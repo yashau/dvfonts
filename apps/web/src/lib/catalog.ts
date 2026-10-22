@@ -122,10 +122,13 @@ export function formatBytes(n: number): string {
 
 /** Default line height for previews; Thaana needs room for fili above and below. */
 export const PREVIEW_LINE_HEIGHT = 1.6;
+/** Space added between lines for fonts taller than that (in em). */
+const PREVIEW_LINE_GAP = 0.2;
 
 /**
  * Line height for previewing a style: the default, or the font's own height
- * (ascent + descent + gap, as the browser will use it) when that is taller.
+ * (ascent + descent + gap, as the browser will use it) plus a little spacing
+ * when that is taller.
  * Fonts with very tall fili, like Faiy, are otherwise clipped where previews
  * hide overflow (line clamping).
  */
@@ -133,6 +136,6 @@ export function previewLineHeight(s: Style | undefined): number {
 	const m = s?.cssOverrides ?? s?.metrics;
 	if (m?.ascent === undefined || m.descent === undefined) return PREVIEW_LINE_HEIGHT;
 	const natural = m.ascent - m.descent + (m.lineGap ?? 0);
-	// A little extra so antialiased edges of the tallest marks aren't shaved off.
-	return Math.max(PREVIEW_LINE_HEIGHT, Math.round((natural + 0.05) * 100) / 100);
+	// Plus a gap, so one line's fili don't crowd the next line's.
+	return Math.max(PREVIEW_LINE_HEIGHT, Math.round((natural + PREVIEW_LINE_GAP) * 100) / 100);
 }

@@ -36,6 +36,7 @@ from fontTools.ttLib.tables import otTables
 from fontTools.ttLib.tables._c_m_a_p import cmap_format_4, cmap_format_12
 
 sys.path.insert(0, str(Path(__file__).parent))
+from copyright import tidy_copyright  # noqa: E402
 from layouts import LAYOUTS  # noqa: E402
 from legacy import layout_for  # noqa: E402
 
@@ -527,6 +528,8 @@ def main(only: set[str] | None = None) -> None:
                 "upstream": first.get("url"),
                 "attribution": first.get("attribution"),
                 **meta,
+                # Display text only; the files, README.txt and OFL.txt keep the font's own notice.
+                "copyright": fam.get("copyright") or tidy_copyright(meta.get("copyright")),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
             }
