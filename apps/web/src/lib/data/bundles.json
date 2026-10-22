@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "dvfonts-full.zip",
-  "families": 136,
-  "styles": 194,
-  "size": 6103717,
-  "sha256": "758ef02c4cc2e5c2d58c0944745101d58165a6d8595b89633ca5b201607fd157"
+  "families": 135,
+  "styles": 192,
+  "size": 5975590,
+  "sha256": "b38441dd3598c5f2e8f0bc6b67c533b0bcc75a0e99bfcd0bb62e5318b43bc956"
  },
  {
   "id": "unicode-originals",
@@ -27,10 +27,10 @@
   "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "dvfonts-unicode-originals.zip",
-  "families": 112,
-  "styles": 169,
-  "size": 5598608,
-  "sha256": "b5cc3d3a909e25f731e85db6784ceb6b6e643e9f1930a95a10bd0ddb93c2d3e9"
+  "families": 111,
+  "styles": 167,
+  "size": 5470377,
+  "sha256": "c5f40036c157292886816fb4aa3368a8a62a0198f68c01fed06e0e2868953689"
  },
  {
   "id": "open-licensed",
@@ -38,10 +38,10 @@
   "description": "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute.",
   "format": "ttf",
   "file": "dvfonts-open-licensed.zip",
-  "families": 30,
-  "styles": 74,
-  "size": 2925569,
-  "sha256": "3420d577fe6e65bf4317369b00799b5345ffcb3d2df9cf7d24c94b76d3d1c9a0"
+  "families": 29,
+  "styles": 72,
+  "size": 2797370,
+  "sha256": "d24170000402d1c4d9336f50c7586227f68b710206d3518a5429684f6318764d"
  },
  {
   "id": "modern",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts.",
   "format": "ttf",
   "file": "dvfonts-display.zip",
-  "families": 49,
-  "styles": 55,
-  "size": 839144,
-  "sha256": "c1e3063ea3c61b47aeb1d49b2ae7ee15c743118e6bb55bb25245a66a89414688"
+  "families": 48,
+  "styles": 53,
+  "size": 710995,
+  "sha256": "b63862a6a654d7f24258b7613ef2d7902da97a4a2717ac4f68670b1dc7eb2e63"
  },
  {
   "id": "handwriting",
@@ -104,9 +104,9 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-full.zip",
-  "families": 136,
-  "styles": 194,
-  "size": 4785203,
-  "sha256": "be3b97c405c52ae431fc4b404b9d72a3903067247c7f5117867fe6aea8c231b3"
+  "families": 135,
+  "styles": 192,
+  "size": 4687917,
+  "sha256": "9de5b0bf0591ba1ee07996e7def576287693672eb5e791926abf4a0674cf1be6"
  }
 ]

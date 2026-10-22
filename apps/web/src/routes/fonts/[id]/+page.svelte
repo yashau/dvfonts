@@ -221,20 +221,20 @@
 					<Table.Body>
 						{#each details as [label, value] (label)}
 							<Table.Row>
-								<Table.Head class="w-28 align-top text-muted-foreground">{label}</Table.Head>
-								<Table.Cell class="break-words whitespace-normal">{value}</Table.Cell>
+								<Table.Head class="h-auto w-28 py-2 align-top text-muted-foreground">{label}</Table.Head>
+								<Table.Cell class="align-top break-words whitespace-normal">{value}</Table.Cell>
 							</Table.Row>
 						{/each}
 						{#if family.source}
 							<Table.Row>
-								<Table.Head class="w-28 align-top text-muted-foreground">Source</Table.Head>
-								<Table.Cell class="whitespace-normal">
+								<Table.Head class="h-auto w-28 py-2 align-top text-muted-foreground">Source</Table.Head>
+								<Table.Cell class="align-top whitespace-normal">
 									{#if family.upstream}
 										<Button
 											href={family.upstream}
 											variant="link"
 											size="sm"
-											class="h-auto px-0"
+											class="h-auto p-0 align-top has-[>svg]:px-0"
 											rel="noopener noreferrer"
 											target="_blank">{family.source} <ExternalLinkIcon /></Button
 										>

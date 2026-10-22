@@ -9,13 +9,13 @@
 
 <p align="center">
   <b>Open Dhivehi fonts for the web, and one install that makes Thaana work everywhere.</b><br />
-  136 font families, cleaned up, Unicode, web-ready, free to embed, plus a keyboard, bidi toolkit and agent guide.
+  135 font families, cleaned up, Unicode, web-ready, free to embed, plus a keyboard, bidi toolkit and agent guide.
 </p>
 
 <p align="center">
   <a href="https://github.com/yashau/dvfonts/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
   <a href="https://github.com/yashau/dvfonts/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
-  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-136_families_·_194_styles-0e7c66?style=for-the-badge" /></a>
+  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-135_families_·_192_styles-0e7c66?style=for-the-badge" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/code-MIT-blue?style=for-the-badge" /></a>
 </p>
 
@@ -107,7 +107,7 @@ useDhivehiFont('Faruma');
 
 ### 🔤 The fonts
 
-- **136 families / 194 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
+- **135 families / 192 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
 - **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right.
 - **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits).

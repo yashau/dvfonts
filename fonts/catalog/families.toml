@@ -581,12 +581,6 @@ name = "Motaru Square"
 category = "display"
 fonts = { 400 = "motarusquare-regular.ttf" }
 
-[families.viethaana]
-name = "Viethaana"
-category = "display"
-notes = "Renders Thaana text as diacritic-marked Latin transliteration."
-fonts = { 300 = "viethaana-light.ttf", 700 = "viethaana-bold.ttf" }
-
 [families.kanafala]
 name = "Kanafala"
 category = "display"
@@ -726,6 +720,8 @@ fonts = { 400 = "bismi.ttf" }
 #   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
 
 [excluded]
+"viethaana-light.ttf" = "Novelty: draws Thaana as accented Latin letters, which reads as gibberish to Thaana readers."
+"viethaana-bold.ttf" = "Novelty: draws Thaana as accented Latin letters, which reads as gibberish to Thaana readers."
 "aammu-f-rasmy.ttf" = "Legacy A_ font; the modern Unicode MV Aammu FK is the same design."
 "aammu-f-thedhu.ttf" = "Legacy A_ font; the modern Unicode MV Aammu FK is the same design."
 "raadhavalhi-b.ttf" = "Legacy A_ font; the modern Unicode MV Raadhavalhi is the same design."
