@@ -130,8 +130,10 @@ jobs:
         run: |
           set -euo pipefail
           base=https://dvfonts.yashau.com
+          # A new custom domain can take a minute to resolve on the first deploy.
+          curl -s -o /dev/null --retry 12 --retry-delay 10 --retry-all-errors -f "${base}/"
           for path in / /fonts/faruma /docs /llms.txt /fonts.json /thaana.js "/css2?family=Faruma" /fonts/faruma/faruma-400.thaana.woff2 /downloads; do
-            code="$(curl -s -o /dev/null -w '%{http_code}' "${base}${path}")"
+            code="$(curl -s -o /dev/null --retry 3 --retry-all-errors -w '%{http_code}' "${base}${path}")"
             echo "${code} ${path}"
             [ "$code" = 200 ]
           done
