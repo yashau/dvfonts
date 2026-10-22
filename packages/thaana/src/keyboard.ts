@@ -1,4 +1,4 @@
-import { BRACKET_SWAP, KEYMAP } from './keymap.js';
+import { KEYMAP } from './keymap.js';
 import { resolveDirection } from './text.js';
 
 export interface KeyboardOptions {
@@ -7,9 +7,6 @@ export interface KeyboardOptions {
 	/** Set dir="rtl", lang="dv" and disable autocorrect/autocapitalize/spellcheck
 	 *  unless the element already sets them. Default: true. */
 	setAttributes?: boolean;
-	/** Swap bracket pairs like Microsoft's Divehi Phonetic layout, so the key
-	 *  labelled "(" shows "(" on screen. Default: false (Unicode-correct order). */
-	swapBrackets?: boolean;
 	/** Keep `dir` in step with the text: RTL when it contains Thaana (or is
 	 *  empty / has no letters), LTR only for pure Latin. Default: true. */
 	autoDirection?: boolean;
@@ -25,14 +22,11 @@ type Editable = HTMLInputElement | HTMLTextAreaElement | HTMLElement;
  * Only single typed characters are mapped; IME composition, paste,
  * autocorrect and deletes return null.
  */
-export function thaanaForInputEvent(
-	event: InputEvent,
-	{ swapBrackets = false }: { swapBrackets?: boolean } = {}
-): string | null {
+export function thaanaForInputEvent(event: InputEvent): string | null {
 	if (event.inputType !== 'insertText' || event.isComposing) return null;
 	const key = event.data && event.data.length === 1 ? event.data : undefined;
 	if (!key) return null;
-	return KEYMAP[key] ?? (swapBrackets ? BRACKET_SWAP[key] : undefined) ?? null;
+	return KEYMAP[key] ?? null;
 }
 
 /**
@@ -45,7 +39,7 @@ export function thaanaForInputEvent(
  * @returns a function that detaches the keyboard.
  */
 export function attachKeyboard(el: Editable, options: KeyboardOptions = {}): () => void {
-	const { enabled = () => true, setAttributes = true, swapBrackets = false, autoDirection = true } = options;
+	const { enabled = () => true, setAttributes = true, autoDirection = true } = options;
 	if (setAttributes) {
 		const defaults: [string, string][] = [
 			['dir', 'rtl'],
@@ -62,7 +56,7 @@ export function attachKeyboard(el: Editable, options: KeyboardOptions = {}): () 
 	const onBeforeInput = (e: Event) => {
 		const ev = e as InputEvent;
 		if (inserting || !enabled()) return;
-		const mapped = thaanaForInputEvent(ev, { swapBrackets });
+		const mapped = thaanaForInputEvent(ev);
 		if (!mapped) return;
 		ev.preventDefault();
 		inserting = true;
@@ -105,7 +99,7 @@ export function autoAttach(root: ParentNode = document): () => void {
 	const scan = () => {
 		for (const el of root.querySelectorAll<HTMLElement>('[data-thaana]')) {
 			if (attached.has(el) || el.dataset.thaana === 'off') continue;
-			attached.set(el, attachKeyboard(el, { swapBrackets: el.dataset.thaana === 'swap-brackets' }));
+			attached.set(el, attachKeyboard(el));
 		}
 	};
 	scan();

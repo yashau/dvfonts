@@ -45,7 +45,7 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 ### Thaana correctness (this is the point of the project)
 
 - Thaana is RTL. Set `dir="rtl"` **and** `lang="dv"` on Thaana text and inputs; use `unicode-bidi: plaintext` for user-entered text.
-- **Never swap bracket pairs** in stored text. Browsers mirror `( ) [ ] { } < >` in RTL. The keymap leaves brackets alone unless `swapBrackets` is explicitly requested (Microsoft's layout behaviour).
+- **Never swap bracket pairs in stored text.** Browsers mirror `( ) [ ] { } < >` in RTL. The keymap swaps bracket _keys_, like Microsoft's layout and rihaPDF: a Dhivehi typist presses `)` to open on the right, which stores `(`, so stored text stays in logical order.
 - The keyboard layout is **Divehi Phonetic** (Microsoft kbddiv1). Don't call it "Mahaa": that name was invented and has no external source.
 - Dhivehi punctuation is `،` `؛` `؟` (U+060C, U+061B, U+061F); the full stop is ASCII.
 - Isolate numbers, phone numbers, URLs and names inside Thaana with `isolateNumbers()` / `isolate()` / `<bdi>`, and strip bidi controls before saving.

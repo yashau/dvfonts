@@ -9,8 +9,8 @@ test('catalogue lists fonts and previews the typed Thaana', async ({ page }) => 
 
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	await input.click();
-	await page.keyboard.type('divehi (bu)?,');
-	// Divehi Phonetic keymap, brackets kept in logical order.
+	await page.keyboard.type('divehi )bu(?,');
+	// Divehi Phonetic keymap; brackets typed as seen, stored in logical order.
 	await expect(input).toHaveValue('ދިވެހި (ބު)؟،');
 	await expect(page.locator('p[lang="dv"]').first()).toHaveText('ދިވެހި (ބު)؟،');
 	expect(errors).toEqual([]);
@@ -189,10 +189,10 @@ for (const theme of ['light', 'dark'] as const) {
 // Each case: keys typed on the phonetic keyboard (or pasted in EN mode), the
 // stored text, and what the first preview must show (\u2066/\u2069 isolates).
 const TESTER_CASES: [mode: 'dv' | 'en', keys: string, stored: string, preview: string, dir: 'rtl' | 'ltr'][] = [
-	['dv', 'divehi (bu) 2026.', 'ދިވެހި (ބު) 2026.', 'ދިވެހި (ބު) \u20662026\u2069.', 'rtl'],
+	['dv', 'divehi )bu( 2026.', 'ދިވެހި (ބު) 2026.', 'ދިވެހި (ބު) \u20662026\u2069.', 'rtl'],
 	['dv', 'gulAlwvA: +960 333-1234', 'ގުލާލއވާ: +960 333-1234', 'ގުލާލއވާ: \u2066+960 333-1234\u2069', 'rtl'],
 	['dv', 'fini -5, 50%', 'ފިނި -5، 50%', 'ފިނި \u2066-5\u2069، \u206650%\u2069', 'rtl'],
-	['dv', '"bu"? [bu (hi)]', '"ބު"؟ [ބު (ހި)]', '"ބު"؟ [ބު (ހި)]', 'rtl'],
+	['dv', '"bu"? ]bu )hi([', '"ބު"؟ [ބު (ހި)]', '"ބު"؟ [ބު (ހި)]', 'rtl'],
 	['dv', 'gwRi 9:00; 14/1/2026', 'ގއޜި 9:00؛ 14/1/2026', 'ގއޜި \u20669:00\u2069؛ \u206614/1/2026\u2069', 'rtl'],
 	['en', 'Apple ގެ އާ ފޯނު!', 'Apple ގެ އާ ފޯނު!', 'Apple ގެ އާ ފޯނު!', 'rtl'],
 	['en', 'Hello world (2026).', 'Hello world (2026).', 'Hello world (2026).', 'ltr']

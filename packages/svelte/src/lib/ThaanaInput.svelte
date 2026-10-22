@@ -7,12 +7,10 @@
 		value?: string;
 		/** Latin keys type Thaana (Divehi Phonetic layout). Default: true. */
 		dv?: boolean;
-		/** Swap brackets like Microsoft's Divehi Phonetic layout. Default: false. */
-		swapBrackets?: boolean;
 		ref?: HTMLInputElement | null;
 	}
 
-	let { value = $bindable(''), dv = true, swapBrackets = false, ref = $bindable(null), ...rest }: Props = $props();
+	let { value = $bindable(''), dv = true, ref = $bindable(null), ...rest }: Props = $props();
 </script>
 
 <input
@@ -21,5 +19,5 @@
 	{...rest}
 	bind:this={ref}
 	bind:value
-	use:thaana={{ enabled: dv, swapBrackets }}
+	use:thaana={{ enabled: dv }}
 />

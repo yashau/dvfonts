@@ -7,12 +7,10 @@
 		value?: string;
 		/** Latin keys type Thaana (Divehi Phonetic layout). Default: true. */
 		dv?: boolean;
-		/** Swap brackets like Microsoft's Divehi Phonetic layout. Default: false. */
-		swapBrackets?: boolean;
 		ref?: HTMLTextAreaElement | null;
 	}
 
-	let { value = $bindable(''), dv = true, swapBrackets = false, ref = $bindable(null), ...rest }: Props = $props();
+	let { value = $bindable(''), dv = true, ref = $bindable(null), ...rest }: Props = $props();
 </script>
 
 <textarea
@@ -21,4 +19,4 @@
 	{...rest}
 	bind:this={ref}
 	bind:value
-	use:thaana={{ enabled: dv, swapBrackets }}></textarea>
+	use:thaana={{ enabled: dv }}></textarea>

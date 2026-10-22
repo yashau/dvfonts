@@ -28,8 +28,7 @@ export const vThaana: Directive<HTMLElement, ThaanaDirectiveOptions | boolean | 
 		const state = states.get(el);
 		if (!state) return;
 		const next = normalize(binding.value);
-		const reattach =
-			next.swapBrackets !== state.options.swapBrackets || next.setAttributes !== state.options.setAttributes;
+		const reattach = next.setAttributes !== state.options.setAttributes;
 		state.options = next;
 		if (reattach) {
 			state.detach();

@@ -3,10 +3,10 @@
  * the layout Maldivian websites use via aharen/thaana-keyboard
  * (h→ހ, a→ަ, q→ް sukun, w→އ alifu …).
  *
- * Brackets are not remapped here. Browsers mirror ( ) [ ] { } < > in RTL text,
- * so "(" typed before the enclosed text stays U+0028 and displays and copies
- * correctly. Microsoft's layout swaps the pairs so the glyph on screen matches
- * the key label; see BRACKET_SWAP / the `swapBrackets` keyboard option.
+ * Bracket pairs are swapped, as in Microsoft's layout and rihaPDF. Browsers
+ * mirror ( ) [ ] { } < > in RTL text, so a Dhivehi typist opens with the key
+ * that looks right on screen (")"), which stores U+0028: the glyph matches the
+ * key pressed and the stored text stays in logical order.
  */
 export const KEYMAP: Readonly<Record<string, string>> = Object.freeze({
 	q: 'ް',
@@ -63,13 +63,7 @@ export const KEYMAP: Readonly<Record<string, string>> = Object.freeze({
 	M: 'ޟ',
 	',': '،',
 	';': '؛',
-	'?': '؟'
-});
-
-/** Microsoft Divehi Phonetic's bracket swap: the key labelled "(" inserts ")",
- *  which RTL mirroring then displays as "(". Matches Windows muscle memory, but
- *  typing "(" first (as in English) then stores the brackets reversed. */
-export const BRACKET_SWAP: Readonly<Record<string, string>> = Object.freeze({
+	'?': '؟',
 	'(': ')',
 	')': '(',
 	'[': ']',
@@ -85,8 +79,8 @@ export const BRACKET_SWAP: Readonly<Record<string, string>> = Object.freeze({
  * `transliterate('divehi')` → "ދިވެހި". This is not a romanisation converter;
  * pass what a user would type on the layout, not arbitrary English spellings.
  */
-export function transliterate(text: string, { swapBrackets = false }: { swapBrackets?: boolean } = {}): string {
+export function transliterate(text: string): string {
 	let out = '';
-	for (const ch of text) out += KEYMAP[ch] ?? (swapBrackets ? BRACKET_SWAP[ch] : undefined) ?? ch;
+	for (const ch of text) out += KEYMAP[ch] ?? ch;
 	return out;
 }

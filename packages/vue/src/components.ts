@@ -9,9 +9,7 @@ function field(tag: 'input' | 'textarea', name: string) {
 		props: {
 			modelValue: { type: String, default: '' },
 			/** Latin keys type Thaana (Divehi Phonetic layout). */
-			dv: { type: Boolean, default: true },
-			/** Swap brackets like Microsoft's Divehi Phonetic layout. */
-			swapBrackets: { type: Boolean as PropType<boolean>, default: false }
+			dv: { type: Boolean, default: true }
 		},
 		emits: ['update:modelValue'],
 		setup(props, { emit }) {
@@ -23,7 +21,7 @@ function field(tag: 'input' | 'textarea', name: string) {
 						value: props.modelValue,
 						onInput: (e: Event) => emit('update:modelValue', (e.target as HTMLInputElement).value)
 					}),
-					[[vThaana, { enabled: props.dv, swapBrackets: props.swapBrackets }]]
+					[[vThaana, { enabled: props.dv }]]
 				);
 		}
 	});

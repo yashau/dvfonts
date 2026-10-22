@@ -1,4 +1,4 @@
-export { KEYMAP, BRACKET_SWAP, transliterate } from './keymap.js';
+export { KEYMAP, transliterate } from './keymap.js';
 export { attachKeyboard, autoAttach, thaanaForInputEvent, type KeyboardOptions } from './keyboard.js';
 export { convertLegacy, LEGACY_LAYOUTS, type LegacyLayout, type ConvertLegacyOptions } from './legacy.js';
 export {

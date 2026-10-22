@@ -107,7 +107,7 @@ ${SCRIPT_END}
 
 	const helpers: [string, string][] = [
 		[
-			'attachKeyboard(el, { enabled, swapBrackets })',
+			'attachKeyboard(el, { enabled })',
 			'Phonetic keyboard on an input, textarea or contenteditable. Returns detach().'
 		],
 		['autoAttach() / import "@yashau/thaana/auto"', 'Attach to every [data-thaana] field, including ones added later.'],
@@ -209,9 +209,9 @@ ${SCRIPT_END}
 	<ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
 		<li>Only typed characters change. Paste, IME composition, autocorrect and real Dhivehi keyboards pass through.</li>
 		<li>
-			Brackets are stored the right way round: type <code>(</code> before the text, like in English. Browsers mirror
-			them in RTL text. (Microsoft's layout swaps them; pass <code>swapBrackets: true</code> or
-			<code>data-thaana="swap-brackets"</code> for that.)
+			Brackets work like Microsoft's layout: press the key that looks right on screen (<code>)</code> to open on the
+			right). The pairs are swapped, so the stored text keeps <code>(</code> before the enclosed text and browsers mirror
+			it in RTL.
 		</li>
 		<li><code>,</code> <code>;</code> <code>?</code> type the Dhivehi forms ، ؛ ؟.</li>
 		<li>Works with React, Vue and Svelte controlled inputs; native undo keeps working.</li>

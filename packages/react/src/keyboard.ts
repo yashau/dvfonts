@@ -16,7 +16,7 @@ export interface UseThaanaKeyboardOptions extends Omit<KeyboardOptions, 'enabled
 export function useThaanaKeyboard<T extends HTMLElement = HTMLInputElement>(
 	options: UseThaanaKeyboardOptions = {}
 ): RefCallback<T> {
-	const { enabled = true, setAttributes, swapBrackets } = options;
+	const { enabled = true, setAttributes } = options;
 	const enabledRef = useRef(enabled);
 	useEffect(() => {
 		enabledRef.current = enabled;
@@ -25,11 +25,9 @@ export function useThaanaKeyboard<T extends HTMLElement = HTMLInputElement>(
 	return useCallback(
 		(el: T | null) => {
 			detachRef.current?.();
-			detachRef.current = el
-				? attachKeyboard(el, { enabled: () => enabledRef.current, setAttributes, swapBrackets })
-				: null;
+			detachRef.current = el ? attachKeyboard(el, { enabled: () => enabledRef.current, setAttributes }) : null;
 		},
-		[setAttributes, swapBrackets]
+		[setAttributes]
 	);
 }
 

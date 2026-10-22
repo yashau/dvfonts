@@ -34,9 +34,9 @@ describe('transliterate', () => {
 		expect(transliterate('rAqje')).toBe('ރާއްޖެ'.replace('އް', 'ް'));
 		expect(transliterate('a,b;c?')).toBe('ަ،ބ؛ޗ؟');
 	});
-	it('leaves brackets alone unless asked to swap them', () => {
-		expect(transliterate('(bu)')).toBe('(ބު)');
-		expect(transliterate('(bu)', { swapBrackets: true })).toBe(')ބު(');
+	it('swaps bracket pairs so RTL mirroring shows the key pressed', () => {
+		// Typed as seen in RTL: ")" opens on the right. Stored in logical order.
+		expect(transliterate(')bu( ]hi[ }ra{ >ka<')).toBe('(ބު) [ހި] {ރަ} <ކަ>');
 	});
 	it('covers every native letter', () => {
 		const produced = new Set(Object.values(KEYMAP));
@@ -51,7 +51,7 @@ describe('keyboard', () => {
 		const detach = attachKeyboard(el);
 		expect(el.getAttribute('dir')).toBe('rtl');
 		expect(el.getAttribute('lang')).toBe('dv');
-		type(el, 'bu (hi) ra?');
+		type(el, 'bu )hi( ra?');
 		expect(el.value).toBe('ބު (ހި) ރަ؟');
 		el.value = 'Hello';
 		el.dispatchEvent(new Event('input'));

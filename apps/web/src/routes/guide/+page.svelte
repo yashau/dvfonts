@@ -130,9 +130,10 @@
 	<section id="brackets" class="mt-12 scroll-mt-20">
 		<h2 class="mb-2 text-xl font-semibold tracking-tight">4. Brackets</h2>
 		<p class="mb-4 text-muted-foreground">
-			Type and store brackets the way you would in English: <code>(</code> before the text. Browsers mirror brackets in right-to-left
-			text, so they come out right. Some Dhivehi keyboard layouts (including Microsoft's) swap the pairs, which makes them
-			face outward and breaks copy-paste.
+			Store brackets in logical order: <code>(</code> before the enclosed text. Browsers mirror brackets in right-to-left
+			text, so they come out right. That is why Dhivehi keyboards (Microsoft's, and the one here) swap the bracket keys: you
+			press the key that looks right on screen and the logical character is stored. Text that stores the brackets reversed
+			shows them facing outward and breaks copy-paste.
 		</p>
 		<ThaanaDemo>
 			{#snippet wrong()}<p dir="rtl" lang="dv">ދިވެހިރާއްޖެ )ރާއްޖެ( ގައި</p>{/snippet}

@@ -20,7 +20,7 @@ export const thaana: Action<HTMLElement, ThaanaOptions | undefined> = (el, optio
 		update(next) {
 			const prev = current;
 			current = next ?? {};
-			if (prev.swapBrackets !== current.swapBrackets || prev.setAttributes !== current.setAttributes) {
+			if (prev.setAttributes !== current.setAttributes) {
 				detach();
 				detach = attachKeyboard(el, { ...current, enabled: () => current.enabled ?? true });
 			}

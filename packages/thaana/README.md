@@ -39,7 +39,7 @@ Or with no build step at all:
 - Only single typed characters are rewritten. Paste, IME composition, autocorrect, deletion and real Dhivehi keyboards pass through.
 - Inserts through the browser's editing command, so `input` events fire (controlled inputs keep working) and undo works.
 - Sets `dir="rtl"`, `lang="dv"` and turns off autocorrect/autocapitalize/spellcheck unless you set them, then keeps `dir` in step with the text (RTL if it contains any Thaana, LTR only for pure Latin; `autoDirection: false` to opt out).
-- Brackets are stored in logical order (`(` before the text) and mirrored by the browser. `swapBrackets: true` mimics Microsoft's layout, which swaps them.
+- Bracket pairs are swapped like Microsoft's layout: press the key that looks right in RTL (`)` to open on the right) and the stored text keeps `(` before the enclosed text, which the browser mirrors.
 - Rich-text editors (Lexical, TipTap, ProseMirror): call `thaanaForInputEvent(event)` in the editor's `beforeinput` hook and insert the result through the editor's API.
 
 ## Text helpers

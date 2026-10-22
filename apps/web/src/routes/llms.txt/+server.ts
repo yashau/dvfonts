@@ -104,7 +104,8 @@ Behaviour you can rely on:
 - Only single-character typing is rewritten. Paste, IME composition, autocorrect, deletion and text typed on a real Dhivehi keyboard pass through unchanged.
 - Text is inserted with the browser's own editing command, so normal \`input\` events fire (controlled inputs work) and undo works.
 - \`attachKeyboard\` sets dir="rtl", lang="dv" and turns off autocorrect/autocapitalize/spellcheck unless you set them yourself.
-- \`data-thaana="off"\` opts a field out of auto-attach; \`data-thaana="swap-brackets"\` mimics Microsoft's bracket swap.
+- \`data-thaana="off"\` opts a field out of auto-attach.
+- Bracket pairs are swapped like Microsoft's layout: the user presses the key that looks right in RTL (")" to open), and the stored text keeps "(" before the enclosed text.
 
 ## 3. Getting RTL text right (common mistakes)
 
@@ -113,7 +114,7 @@ Full guide with live examples: ${O}/guide
 - Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs (or \`<html lang="dv" dir="rtl">\`). Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
 - \`dir="auto"\` turns "Apple ގެ ފޯނު" left-to-right because the first letter is Latin. If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For multi-paragraph user content use \`unicode-bidi: plaintext\`.
 - Numbers inside Thaana: phone numbers swap their groups and "-5" shows as "5-". Wrap them in \`<bdi dir="ltr">\`, or use \`isolateNumbers(text)\` for plain strings (titles, notifications, canvas). Remove the invisible isolates with \`stripBidiControls()\` before saving.
-- Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text. Do NOT swap bracket pairs yourself.
+- Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text. Do NOT swap bracket pairs in stored text (the keyboard swaps keystrokes, not text).
 - Dhivehi punctuation: comma ، (U+060C), semicolon ؛ (U+061B), question mark ؟ (U+061F). Full stop and digits are ASCII. No space before punctuation. \`normalizePunctuation(text)\` fixes both.
 - Fili (vowel marks, U+07A6–U+07B0) sit above/below letters: use line-height ≈ 1.75 and avoid \`overflow: hidden\` with tight line heights, or they get clipped.
 - Most Dhivehi fonts have no Latin letters: always give a Latin fallback. \`fontStack('Faruma')\` → "'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif".
