@@ -11,6 +11,7 @@
 	let { children }: LayoutProps = $props();
 
 	onMount(() => tester.init());
+	import { REPO_URL } from '#lib/site.js';
 </script>
 
 <svelte:head>
@@ -29,7 +30,10 @@
 		<div
 			class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6"
 		>
-			<p>Open Dhivehi fonts, cleaned up for the web.</p>
+			<p>
+				Open Dhivehi fonts, cleaned up for the web. dvfonts is open source:
+				<a class="underline underline-offset-4 hover:text-foreground" href={REPO_URL}>yashau/dvfonts on GitHub</a>.
+			</p>
 			<p>
 				Rights holder? <a class="underline underline-offset-4 hover:text-foreground" href="/about#takedown"
 					>Request a change or removal</a

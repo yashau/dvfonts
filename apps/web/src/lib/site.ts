@@ -4,6 +4,9 @@ import { browser } from '$app/env';
  *  In the browser the actual origin wins, so preview deployments show working URLs. */
 export const SITE_ORIGIN = 'https://dvfonts.yashau.com';
 
+/** The open-source repository behind the site, fonts pipeline and packages. */
+export const REPO_URL = 'https://github.com/yashau/dvfonts';
+
 export function origin(): string {
 	return browser ? location.origin : SITE_ORIGIN;
 }

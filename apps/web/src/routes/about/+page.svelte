@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as Alert from '#lib/components/ui/alert/index.js';
 	import ShieldIcon from '@lucide/svelte/icons/shield-check';
+	import { REPO_URL } from '#lib/site.js';
 </script>
 
 <svelte:head>
@@ -27,6 +28,11 @@
 				Glyph outlines are never changed. Fonts whose license forbids derivatives are shipped exactly as published.
 			</li>
 		</ul>
+		<p>
+			dvfonts is open source. The site, the font pipeline and the <code>@yashau/thaana</code> packages are on GitHub at
+			<a class="underline underline-offset-4" href={REPO_URL}>yashau/dvfonts</a> under the MIT license; the fonts keep their
+			own licenses. Issues and pull requests are welcome.
+		</p>
 		<Alert.Root id="takedown" class="scroll-mt-20">
 			<ShieldIcon />
 			<Alert.Title>Rights holders</Alert.Title>
