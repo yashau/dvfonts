@@ -119,7 +119,8 @@ jobs:
           fi
           # Core first: the framework packages depend on it.
           for name in thaana thaana-react thaana-svelte thaana-vue; do
-            tgz="dist-pack/yashau-${name}-${VERSION}.tgz"
+            # "./" keeps npm from reading "dist-pack/x.tgz" as a GitHub user/repo shorthand.
+            tgz="./dist-pack/yashau-${name}-${VERSION}.tgz"
             if npm view "@yashau/${name}@${VERSION}" version >/dev/null 2>&1; then
               echo "@yashau/${name}@${VERSION} already published, skipping"
               continue
