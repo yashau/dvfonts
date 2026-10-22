@@ -133,7 +133,7 @@
 		<Item.Group class="mt-2 gap-0">
 			{#each family.styles as style, i (style.weight)}
 				{#if i > 0}<Item.Separator />{/if}
-				<Item.Root class="flex-col items-stretch px-0 py-5">
+				<Item.Root class="flex-col flex-nowrap items-stretch px-0 py-5">
 					<Item.Header class="flex-wrap">
 						<Item.Description>{WEIGHT_NAMES[style.weight]} {style.weight}</Item.Description>
 						<Item.Actions>

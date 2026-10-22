@@ -16,7 +16,9 @@
 </script>
 
 <div use:lazyFont={family}>
-	<Item.Root class="relative flex-col items-stretch rounded-none border-0 border-b px-1 py-6 hover:bg-muted/40 sm:px-3">
+	<Item.Root
+		class="relative flex-col flex-nowrap items-stretch rounded-none border-0 border-b px-1 py-6 hover:bg-muted/40 sm:px-3"
+	>
 		<Item.Header class="flex-wrap gap-y-1">
 			<div class="flex min-w-0 items-baseline gap-2">
 				<Item.Title class="text-base">
