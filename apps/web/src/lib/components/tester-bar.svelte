@@ -2,9 +2,9 @@
 	import type { Snippet } from 'svelte';
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
-	import * as Tabs from '#lib/components/ui/tabs/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { Slider } from '#lib/components/ui/slider/index.js';
+	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
@@ -33,29 +33,29 @@
 <Card.Root size="sm" class="py-3">
 	<Card.Content class="flex flex-col gap-3 px-3 lg:flex-row lg:items-center">
 		<InputGroup.Root class="min-w-0 flex-1">
-			<InputGroup.Addon>
+			<!-- A flush, full-height segment at the start of the field (the ypad pattern). -->
+			<InputGroup.Addon class="self-stretch p-0 has-[>button]:ml-0">
 				<Tooltip.Provider>
 					<Tooltip.Root>
 						<Tooltip.Trigger>
 							{#snippet child({ props })}
-								<Tabs.Root
-									value={tester.dv ? 'dv' : 'en'}
-									onValueChange={(v) => {
-										if (v) tester.dv = v === 'dv';
-									}}
+								<InputGroup.Button
+									{...props}
+									variant="ghost"
+									class="h-full w-16 rounded-none rounded-l-[calc(var(--radius-md)-1px)] border-0 border-r border-r-input bg-muted/50 font-medium tracking-wide text-muted-foreground hover:bg-muted hover:text-foreground dark:bg-muted/40"
+									aria-label="Dhivehi phonetic keyboard"
+									aria-pressed={tester.dv}
+									onclick={() => (tester.dv = !tester.dv)}
 								>
-									<Tabs.List {...props} aria-label="Keyboard" class="h-8 p-0.5">
-										<Tabs.Trigger value="dv" aria-label="Dhivehi phonetic keyboard" lang="dv" class="px-2.5 text-base"
-											>ދިވެހި</Tabs.Trigger
-										>
-										<Tabs.Trigger value="en" aria-label="Your system keyboard" class="px-2.5">EN</Tabs.Trigger>
-									</Tabs.List>
-								</Tabs.Root>
+									<KeyboardIcon />
+									{tester.dv ? 'DV' : 'EN'}
+								</InputGroup.Button>
 							{/snippet}
 						</Tooltip.Trigger>
 						<Tooltip.Content class="max-w-64">
-							ދިވެހި turns Latin keys into Thaana using the Divehi Phonetic layout (h→ހ, a→ަ, …). Pick EN to use your
-							own keyboard as-is.
+							{tester.dv
+								? 'Latin keys type Thaana (Divehi Phonetic: h→ހ, a→ަ …). Click to use your own keyboard as-is.'
+								: 'Your keyboard types as-is. Click to type Thaana with the Divehi Phonetic layout.'}
 						</Tooltip.Content>
 					</Tooltip.Root>
 				</Tooltip.Provider>
