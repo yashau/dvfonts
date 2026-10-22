@@ -73,6 +73,8 @@ jobs:
         working-directory: apps/web
         run: |
           set -euo pipefail
+          # First deploy: create the bucket (no-op if it already exists).
+          pnpm exec wrangler r2 bucket create dvfonts-static 2>&1 | tail -1 || true
           local_fp="$(git ls-files -s -- ../../fonts ../../packages/thaana/src/legacy-layouts.json | sha256sum | cut -d' ' -f1)"
           remote_fp="$(pnpm exec wrangler r2 object get dvfonts-static/.fingerprint --remote --pipe 2>/dev/null || true)"
           echo "local:  ${local_fp}"
