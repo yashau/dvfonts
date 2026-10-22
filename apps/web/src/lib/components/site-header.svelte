@@ -3,6 +3,7 @@
 	import { Button } from '#lib/components/ui/button/index.js';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
 	import ThemeMenu from '#lib/components/theme-menu.svelte';
+	import Logo from '#lib/components/logo.svelte';
 	import MenuIcon from '@lucide/svelte/icons/menu';
 
 	const links = [
@@ -20,9 +21,8 @@
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<a href="/" class="flex items-baseline gap-2 font-semibold tracking-tight">
-			<span class="text-lg">dvfonts</span>
-			<span class="text-base font-normal text-muted-foreground" dir="rtl" lang="dv">ޑީވީފޮންޓްސް</span>
+		<a href="/" class="shrink-0" aria-label="dvfonts home">
+			<Logo class="h-7 w-auto" />
 		</a>
 		<nav class="ml-auto hidden items-center gap-1 md:flex">
 			{#each links as link (link.href)}

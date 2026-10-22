@@ -143,6 +143,19 @@
 		   sideways between short and long pages or when a menu locks scrolling. */
 		scrollbar-gutter: stable;
 	}
+	/* Everything is sized in rem, so scaling the root on very large screens
+	   grows the whole layout: at 2160p it reads like a 1440p screen instead of
+	   a narrow column in empty space. */
+	@media (min-width: 2400px) {
+		html {
+			font-size: 112.5%;
+		}
+	}
+	@media (min-width: 3200px) {
+		html {
+			font-size: 137.5%;
+		}
+	}
 }
 
 /* Font previews: paragraph direction comes from the first strong character, so

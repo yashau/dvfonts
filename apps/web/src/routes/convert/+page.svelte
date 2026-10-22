@@ -1,11 +1,18 @@
 <script lang="ts">
 	import { convertLegacy, repairPdfText, normalizePunctuation, stripBidiControls } from '@yashau/thaana';
 	import { registerFamily } from '#lib/fonts.js';
-	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import * as Card from '#lib/components/ui/card/index.js';
+	import * as Tabs from '#lib/components/ui/tabs/index.js';
 	import { Textarea } from '#lib/components/ui/textarea/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
+	import { Button } from '#lib/components/ui/button/index.js';
+	import { Badge } from '#lib/components/ui/badge/index.js';
 	import CopyButton from '#lib/components/copy-button.svelte';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
+	import EraserIcon from '@lucide/svelte/icons/eraser';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -16,19 +23,19 @@
 		{
 			id: 'typewriter',
 			label: 'Old A_ font',
-			hint: 'Text typed in A_Waheed, A_Faseyha, A_Randhoo and the other A_ fonts: it shows up as Latin letters without the font.',
+			hint: 'Typed in A_Waheed, A_Faseyha, A_Randhoo and the other A_ fonts. Without the font it shows as Latin letters.',
 			example: 'cswb ihevid'
 		},
 		{
 			id: 'phonetic',
 			label: 'Old phonetic font',
-			hint: 'Text typed in older casual fonts such as Thaana, Akko, Athu Casual or Avas Thaana.',
+			hint: 'Typed in the older casual fonts: Thaana, Akko, Athu Casual, Avas Thaana and similar.',
 			example: 'qsab ihevid'
 		},
 		{
 			id: 'pdf',
-			label: 'Copied from a PDF',
-			hint: 'Thaana copied out of a PDF: fixes reversed dates and times, stray spaces and list markers.',
+			label: 'From a PDF',
+			hint: 'Copied out of a PDF: fixes reversed dates and times, stray spaces and jumped list numbers.',
 			example: 'ތާރީޚް 2026/1/14 ، ހެނދުނު 00:9 ގައި'
 		}
 	];
@@ -54,71 +61,100 @@
 	/>
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-	<h1 class="text-3xl font-semibold tracking-tight">Convert old Thaana text</h1>
-	<p class="mt-2 max-w-2xl text-muted-foreground">
-		Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. Everything runs in your
-		browser.
-	</p>
+<div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+	<div class="max-w-2xl">
+		<h1 class="text-3xl font-semibold tracking-tight">Convert old Thaana text</h1>
+		<p class="mt-2 text-muted-foreground">
+			Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. Everything runs in
+			your browser; nothing is uploaded.
+		</p>
+	</div>
 
-	<ToggleGroup.Root
-		type="single"
-		variant="outline"
+	<Tabs.Root
 		value={mode}
 		onValueChange={(v) => {
 			if (v) mode = v as Mode;
 		}}
-		class="mt-6 flex-wrap"
-		aria-label="Where the text came from"
+		class="mt-8"
 	>
-		{#each modes as m (m.id)}
-			<ToggleGroup.Item value={m.id} class="px-3">{m.label}</ToggleGroup.Item>
-		{/each}
-	</ToggleGroup.Root>
-	<p class="mt-2 text-sm text-muted-foreground">
-		{current.hint}
-		<button class="underline underline-offset-4 hover:text-foreground" onclick={() => (input = current.example)}
-			>Try an example</button
-		>
-	</p>
+		<Tabs.List aria-label="Where the text came from">
+			{#each modes as m (m.id)}
+				<Tabs.Trigger value={m.id}>{m.label}</Tabs.Trigger>
+			{/each}
+		</Tabs.List>
+	</Tabs.Root>
 
-	<div class="mt-6 grid gap-4 md:grid-cols-2">
-		<div>
-			<Label for="convert-in" class="mb-2">Paste here</Label>
-			<Textarea
-				id="convert-in"
-				bind:value={input}
-				rows={10}
-				dir={mode === 'pdf' ? 'rtl' : 'ltr'}
-				spellcheck={false}
-				class="font-mono text-base"
-			/>
+	<div class="mt-4 grid items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+		<Card.Root class="min-w-0">
+			<Card.Header>
+				<Card.Title>
+					<Label for="convert-in">Paste here</Label>
+				</Card.Title>
+				<Card.Description>{current.hint}</Card.Description>
+				<Card.Action class="flex gap-1">
+					<Button variant="outline" size="sm" onclick={() => (input = current.example)}>
+						<SparklesIcon /> Example
+					</Button>
+					<Button variant="ghost" size="icon-sm" onclick={() => (input = '')} disabled={!input} aria-label="Clear">
+						<EraserIcon />
+					</Button>
+				</Card.Action>
+			</Card.Header>
+			<Card.Content class="flex-1">
+				<Textarea
+					id="convert-in"
+					bind:value={input}
+					dir={mode === 'pdf' ? 'rtl' : 'ltr'}
+					spellcheck={false}
+					placeholder={current.example}
+					class="h-64 resize-y font-mono text-base"
+				/>
+			</Card.Content>
+		</Card.Root>
+
+		<div class="flex items-center justify-center text-muted-foreground" aria-hidden="true">
+			<ArrowRightIcon class="hidden size-5 lg:block" />
+			<ArrowDownIcon class="size-5 lg:hidden" />
 		</div>
-		<div>
-			<div class="mb-2 flex items-center justify-between gap-2">
-				<Label for="convert-out">Unicode Thaana</Label>
-				<CopyButton text={output} />
+
+		<Card.Root class="min-w-0">
+			<Card.Header>
+				<Card.Title>
+					<Label for="convert-out">Unicode Thaana</Label>
+				</Card.Title>
+				<Card.Description>Ready to paste into any app, website or document.</Card.Description>
+				<Card.Action>
+					<CopyButton text={output} />
+				</Card.Action>
+			</Card.Header>
+			<Card.Content class="flex-1">
+				<Textarea
+					id="convert-out"
+					value={output}
+					readonly
+					dir="rtl"
+					lang="dv"
+					placeholder="ދިވެހި"
+					class="h-64 resize-y text-xl [unicode-bidi:plaintext]"
+					style="font-family: 'dv-faruma', 'dv-ui', system-ui, sans-serif; line-height: 1.75"
+				/>
+			</Card.Content>
+			<Card.Footer class="gap-2">
+				<Switch id="tidy" bind:checked={tidy} />
+				<Label for="tidy" class="font-normal text-muted-foreground">Also fix punctuation and spacing</Label>
+			</Card.Footer>
+		</Card.Root>
+	</div>
+
+	<Card.Root class="mt-6 bg-muted/30 shadow-none">
+		<Card.Content class="flex flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-between">
+			<div class="flex items-center gap-2">
+				<Badge variant="secondary">In code</Badge>
+				<code class="text-xs sm:text-sm">convertLegacy(text)</code>
+				<span class="text-muted-foreground">·</span>
+				<code class="text-xs sm:text-sm">repairPdfText(text)</code>
 			</div>
-			<Textarea
-				id="convert-out"
-				value={output}
-				readonly
-				rows={10}
-				dir="rtl"
-				lang="dv"
-				class="text-xl [unicode-bidi:plaintext]"
-				style="font-family: 'dv-faruma', 'dv-ui', system-ui, sans-serif; line-height: 1.75"
-			/>
-		</div>
-	</div>
-	<div class="mt-3 flex items-center gap-2">
-		<Switch id="tidy" bind:checked={tidy} />
-		<Label for="tidy">Also tidy punctuation (، ؛ ؟ and spacing)</Label>
-	</div>
-
-	<p class="mt-8 text-sm text-muted-foreground">
-		In code: <code>convertLegacy(text, {'{'} layout: 'typewriter' {'}'})</code> and <code>repairPdfText(text)</code>
-		from
-		<a class="underline underline-offset-4" href="/docs#helpers">@yashau/thaana</a>.
-	</p>
+			<Button href="/docs#helpers" variant="link" size="sm" class="px-0">@yashau/thaana helpers →</Button>
+		</Card.Content>
+	</Card.Root>
 </div>

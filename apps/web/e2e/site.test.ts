@@ -158,7 +158,7 @@ test('converter turns old A_ text and PDF text into Unicode', async ({ page }) =
 	await page.goto('/convert');
 	await page.getByLabel('Paste here').fill('cswb ihevid');
 	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ދިވެހި ބަސް');
-	await page.getByRole('radio', { name: 'Copied from a PDF' }).click();
+	await page.getByRole('tab', { name: 'From a PDF' }).click();
 	await page.getByLabel('Paste here').fill('ތާރީޚް 2026/1/14');
 	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ތާރީޚް 14/1/2026');
 });

@@ -5,7 +5,9 @@
 	"printWidth": 120,
 	"trailingComma": "none",
 	"svelte": true,
-	"sortTailwindcss": { "stylesheet": "apps/web/src/routes/layout.css" },
+	"sortTailwindcss": {
+		"stylesheet": "apps/web/src/routes/layout.css"
+	},
 	"ignorePatterns": [
 		"pnpm-lock.yaml",
 		"**/dist/**",
@@ -15,6 +17,7 @@
 		"apps/web/src/lib/components/ui/**",
 		"apps/web/worker-configuration.d.ts",
 		"fonts/sources/**",
-		"fonts/.venv/**"
+		"fonts/.venv/**",
+		"apps/web/src/lib/components/logo.svelte"
 	]
 }

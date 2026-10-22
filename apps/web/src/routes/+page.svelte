@@ -61,7 +61,8 @@
 	</p>
 </section>
 
-<div class="sticky top-14 z-30 border-b bg-background/90 backdrop-blur">
+<!-- Sticky only from md up: on phones the tester + filters would cover a third of the screen. -->
+<div class="z-30 border-b bg-background/90 backdrop-blur md:sticky md:top-14">
 	<div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6">
 		<TesterBar />
 		<div class="flex flex-col gap-3 md:flex-row md:items-center">
