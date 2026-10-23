@@ -92,8 +92,10 @@
 	<section id="user-content" class="mt-12 scroll-mt-20">
 		<h2 class="mb-2 text-xl font-semibold tracking-tight">2. Text people type</h2>
 		<p class="mb-4 text-muted-foreground">
-			<code>dir="auto"</code> picks the direction from the first letter, so a Dhivehi sentence that starts with a brand
-			name turns left to right. If the text contains any Thaana, render it right to left (<code>resolveDirection()</code
+			<code>dir="auto"</code> takes the direction from the first letter, so a Dhivehi sentence that starts with any
+			Latin word (a brand, a person's name, an English term, an abbreviation like MNU) turns left to right. Digits and
+			punctuation don't count; the first letter does. If the text contains any Thaana, render it right to left (<code
+				>resolveDirection()</code
 			>), and use <code>unicode-bidi: plaintext</code> so each paragraph of a longer text decides for itself.
 		</p>
 		<ThaanaDemo>
