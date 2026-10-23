@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CATEGORIES, FEATURED, credit, type Category } from '#lib/catalog.js';
+	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, credit, type Category } from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
 	import TesterBar from '#lib/components/tester-bar.svelte';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
@@ -15,7 +15,7 @@
 	let { data }: PageProps = $props();
 
 	let query = $state('');
-	let categories = $state<Category[]>([]);
+	let categories = $state<Category[]>([...DEFAULT_CATEGORIES]);
 	let sort = $state<'featured' | 'name' | 'styles'>('featured');
 
 	const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
@@ -34,7 +34,8 @@
 		const q = query.trim().toLowerCase();
 		const list = data.families.filter(
 			(f) =>
-				(categories.length === 0 || categories.includes(f.category)) &&
+				// A typed search looks in every category; the filter narrows browsing.
+				(!!q || categories.length === 0 || categories.includes(f.category)) &&
 				(!q ||
 					f.name.toLowerCase().includes(q) ||
 					f.aliases.some((a) => a.toLowerCase().includes(q)) ||

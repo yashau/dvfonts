@@ -61,11 +61,14 @@ export interface Family {
 /** unicode-range values for the subset files, as emitted by scripts/build.py. */
 export const SUBSET_RANGES = subsetRanges as Record<'thaana' | 'latin', string>;
 
+/** Selected when the browse page loads: the fonts people use for text. */
+export const DEFAULT_CATEGORIES: Category[] = ['official', 'handwriting'];
+
 export const CATEGORIES: { id: Category; label: string; thaana: string }[] = [
 	{ id: 'official', label: 'Official', thaana: 'ރަސްމީ' },
-	{ id: 'modern', label: 'Modern', thaana: 'މޮޑަން' },
-	{ id: 'artistic', label: 'Artistic', thaana: 'ފަންނީ' },
 	{ id: 'handwriting', label: 'Handwriting', thaana: 'އަތްލިޔުން' },
+	{ id: 'artistic', label: 'Artistic', thaana: 'ފަންނީ' },
+	{ id: 'modern', label: 'Modern', thaana: 'މޮޑަން' },
 	{ id: 'novelty', label: 'Novelty', thaana: 'ތަފާތު' },
 	{ id: 'symbols', label: 'Symbols', thaana: 'ނިޝާން' }
 ];
