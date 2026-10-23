@@ -12,12 +12,16 @@ export function origin(): string {
 }
 
 /** Google-Fonts-style CSS API URL: /css2?family=Name:wght@400;700&display=swap */
-export function cssApiUrl(base: string, families: { name: string; weights: number[] }[]): string {
+export function cssApiUrl(
+	base: string,
+	families: { name: string; weights: number[] }[],
+	{ normalize = false }: { normalize?: boolean } = {}
+): string {
 	const params = families
 		.map(
 			(f) =>
 				`family=${encodeURIComponent(f.name).replace(/%20/g, '+')}:wght@${f.weights.toSorted((a, b) => a - b).join(';')}`
 		)
 		.join('&');
-	return `${base}/css2?${params}&display=swap`;
+	return `${base}/css2?${params}&display=swap${normalize ? '&normalize=1' : ''}`;
 }

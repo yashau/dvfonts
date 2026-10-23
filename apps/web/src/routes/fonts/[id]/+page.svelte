@@ -17,6 +17,8 @@
 	import * as Alert from '#lib/components/ui/alert/index.js';
 	import WrenchIcon from '@lucide/svelte/icons/wrench';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import { Switch } from '#lib/components/ui/switch/index.js';
+	import { Label } from '#lib/components/ui/label/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
 	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
@@ -40,7 +42,10 @@
 		selected = family.styles.map((s) => String(s.weight));
 	});
 	const weights = $derived(selected.length ? selected.map(Number) : [main.weight]);
-	const href = $derived(cssApiUrl(base, [{ name: family.name, weights }]));
+	// Opt-in: size-adjust so the letters look as big as Faruma's (the files are unchanged).
+	let normalize = $state(false);
+	const canNormalize = $derived(family.styles.some((s) => s.sizeAdjust && s.sizeAdjust !== 1));
+	const href = $derived(cssApiUrl(base, [{ name: family.name, weights }], { normalize: normalize && canNormalize }));
 	const linkSnippet = $derived(`<link rel="stylesheet" href="${href}">`);
 	const importSnippet = $derived(`@import url('${href}');`);
 	const cssSnippet = $derived(`:lang(dv) {\n  font-family: '${family.name}', sans-serif;\n}`);
@@ -216,6 +221,14 @@
 								<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
 							{/each}
 						</ToggleGroup.Root>
+					{/if}
+					{#if canNormalize}
+						<div class="flex items-center gap-2">
+							<Switch id="embed-normalize" bind:checked={normalize} />
+							<Label for="embed-normalize" class="font-normal text-muted-foreground">
+								Same size as Faruma (scales this font {Math.round((main.sizeAdjust ?? 1) * 100)}%)
+							</Label>
+						</div>
 					{/if}
 					<CodeBlock title="In <head>" lang="html" code={linkSnippet} />
 					<CodeBlock title="Or in CSS" lang="css" code={importSnippet} />

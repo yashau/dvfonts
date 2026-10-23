@@ -18,6 +18,9 @@ export function apiFamily(f: Family) {
 		weights,
 		page: `${SITE_ORIGIN}/fonts/${f.id}`,
 		css: cssApiUrl(SITE_ORIGIN, [{ name: f.name, weights }]),
+		/** Scale (CSS size-adjust) that makes the Thaana letters look as big as Faruma's; applied by &normalize=1. */
+		sizeAdjust: defaultStyle(f).sizeAdjust,
+		cssNormalized: cssApiUrl(SITE_ORIGIN, [{ name: f.name, weights }], { normalize: true }),
 		cssFamily: f.name,
 		download: `${SITE_ORIGIN}/fonts/${f.id}/${f.id}.zip`,
 		files: f.styles.map((s) => ({
