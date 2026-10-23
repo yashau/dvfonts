@@ -20,14 +20,16 @@
 		class="relative flex-col flex-nowrap items-stretch rounded-none border-0 border-b px-1 py-6 hover:bg-muted/40 sm:px-3"
 	>
 		<Item.Header class="flex-wrap gap-y-1">
-			<div class="flex min-w-0 items-baseline gap-2">
-				<Item.Title class="text-base">
+			<!-- Grows into the free space from a small basis, so a long credit truncates instead of
+			     pushing the badges onto their own line. -->
+			<div class="flex min-w-0 flex-1 basis-48 items-baseline gap-2">
+				<Item.Title class="shrink-0 text-base whitespace-nowrap">
 					<!-- Stretched link: the whole row is clickable; the download button sits above it. -->
 					<a href="/fonts/{family.id}" class="after:absolute after:inset-0 hover:underline hover:underline-offset-4"
 						>{family.name}</a
 					>
 				</Item.Title>
-				<Item.Description class="truncate">{by ?? family.source ?? ''}</Item.Description>
+				<Item.Description class="min-w-0 truncate">{by ?? family.source ?? ''}</Item.Description>
 			</div>
 			<Item.Actions>
 				<Badge variant="secondary">{category}</Badge>

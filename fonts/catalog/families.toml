@@ -6,6 +6,7 @@
 #
 # category: modern | traditional | display | handwriting | mono | symbols
 # aliases:  other names the same design circulates under (searchable on the site)
+# designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
 
@@ -55,6 +56,7 @@ fonts = { 700 = "mvkoagannu.ttf" }
 
 [families.a-kaani]
 name = "A Kaani"
+designer = "Hassan Hameed"
 copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Kaani is based on Athireege Thaana and modern styles."
 category = "modern"
 fonts = { 700 = "a-kaani.otf" }
@@ -67,17 +69,20 @@ fonts = { 700 = "midhilibold.ttf" }
 
 [families.a-uni]
 name = "A Uni"
+designer = "Hassan Hameed"
 copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Uni is based on Athireege Thaana and modern styles."
 category = "modern"
 fonts = { 700 = "a-uni.otf" }
 
 [families.a-lakudi]
 name = "A Lakudi"
+designer = "Hassan Hameed"
 category = "modern"
 fonts = { 400 = "a-lakudi.otf" }
 
 [families.a-lakudi-college]
 name = "A Lakudi College"
+designer = "Hassan Hameed"
 category = "modern"
 fonts = { 400 = "a-lakudi-college.otf" }
 
@@ -132,6 +137,7 @@ fonts = { 400 = "faruma.ttf" }
 
 [families.a-waheed-college]
 name = "A Waheed College"
+designer = "Hassan Shujau and Hassan Hameed"
 category = "traditional"
 fonts = { 400 = "a-waheed-college.otf" }
 
@@ -173,6 +179,7 @@ fonts = { 400 = "mvutheemuregular.ttf", 700 = "mvutheemubold.ttf" }
 
 [families.a-reethi]
 name = "A Reethi"
+designer = "Ibrahim Yasir"
 category = "traditional"
 aliases = ["MV Reethi"]
 fonts = { 400 = "reethi.ttf" }
@@ -185,6 +192,7 @@ fonts = { 700 = "aammufkf.ttf" }
 
 [families.aammu-hima-thedhu]
 name = "Aammu Hima Thedhu"
+designer = "Hassan Hameed with Hassan Shujau"
 copyright = "Rasmee Kudhi © 1994 Hassan Hameed with Hassan Shujau."
 category = "traditional"
 fonts = { 400 = "aammu-h-thedhu.ttf" }
@@ -216,6 +224,7 @@ fonts = { 400 = "iyyu-normal.ttf" }
 
 [families.mv-iyyu-formal]
 name = "MV Iyyu Formal"
+designer = "M.A. Gadir"
 copyright = "Designed and developed by M.A. Gadir, August 2005."
 category = "traditional"
 fonts = { 400 = "iyyu-formal.ttf" }
@@ -237,21 +246,25 @@ fonts = { 400 = "mv-galan-normal.otf" }
 
 [families.mv-radhun]
 name = "MV Radhun"
+designer = "M.A. Gadir"
 category = "traditional"
 fonts = { 400 = "radhun.ttf" }
 
 [families.dam-kalhi]
 name = "DAM Kalhi"
+designer = "Mohamed Mazeed"
 category = "traditional"
 fonts = { 700 = "dam-kalhi.otf" }
 
 [families.dam-madheeh]
 name = "DAM Madheeh"
+designer = "Mohamed Mazeed"
 category = "traditional"
 fonts = { 700 = "dam-madheeh.otf" }
 
 [families.dam-kathivalhi]
 name = "DAM Kathivalhi"
+designer = "Mohamed Mazeed"
 category = "traditional"
 fonts = { 400 = "dam-kathivalhi.otf" }
 
@@ -502,6 +515,7 @@ fonts = { 400 = "a-haleem-uivashaa.otf" }
 
 [families.dam-hiyani]
 name = "DAM Hiyani"
+designer = "Mohamed Mazeed"
 category = "display"
 fonts = { 400 = "dam-hiyani.otf" }
 
@@ -716,6 +730,7 @@ fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 
 [families.bismi]
 name = "Bismi"
+designer = "Hassan Hameed"
 category = "symbols"
 aliases = ["A_Bismillah", "ABismillah"]
 notes = "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives."

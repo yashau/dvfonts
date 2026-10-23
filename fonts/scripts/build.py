@@ -530,6 +530,7 @@ def main(only: set[str] | None = None) -> None:
                 **meta,
                 # Display text only; the files, README.txt and OFL.txt keep the font's own notice.
                 "copyright": fam.get("copyright") or tidy_copyright(meta.get("copyright")),
+                "designer": fam.get("designer") or meta.get("designer"),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
             }
