@@ -114,7 +114,19 @@ jobs:
         # upload fails, the next deploy sees a mismatch and uploads again.
         run: |
           set -euo pipefail
-          pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force
+          # R2 now and then answers a single object with a 500, which aborts the
+          # whole bulk upload. Uploads are idempotent, so retry the batch.
+          for attempt in 1 2 3; do
+            if pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then
+              echo "::error::R2 upload failed three times."
+              exit 1
+            fi
+            echo "::warning::R2 upload failed (attempt ${attempt}); retrying in $((attempt * 20))s."
+            sleep $((attempt * 20))
+          done
           printf '%s' "$FINGERPRINT" > "$RUNNER_TEMP/fingerprint"
           pnpm exec wrangler r2 object put dvfonts-static/.fingerprint --file "$RUNNER_TEMP/fingerprint" --content-type text/plain --remote
 
