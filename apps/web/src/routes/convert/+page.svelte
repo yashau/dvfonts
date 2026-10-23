@@ -42,12 +42,14 @@
 	];
 
 	let mode = $state<Mode>('typewriter');
-	let input = $state('');
+	// Each tab keeps its own text: switching tabs must never run one kind of text
+	// through another tab's converter.
+	const inputs = $state<Record<Mode, string>>({ typewriter: '', phonetic: '', pdf: '' });
 	let tidy = $state(true);
 
 	const current = $derived(modes.find((m) => m.id === mode)!);
 	const output = $derived.by(() => {
-		const text = stripBidiControls(input);
+		const text = stripBidiControls(inputs[mode]);
 		if (!text) return '';
 		const converted = mode === 'pdf' ? repairPdfText(text) : convertLegacy(text, { layout: mode });
 		return tidy ? normalizePunctuation(converted) : converted;
@@ -94,7 +96,7 @@
 				</Card.Title>
 				<Card.Description class="line-clamp-1">The text as it is now.</Card.Description>
 				<Card.Action class="flex gap-1">
-					<Button variant="outline" size="sm" onclick={() => (input = current.example)}>
+					<Button variant="outline" size="sm" onclick={() => (inputs[mode] = current.example)}>
 						<SparklesIcon /> Example
 					</Button>
 					<Tooltip.Root>
@@ -104,8 +106,8 @@
 									{...props}
 									variant="ghost"
 									size="icon-sm"
-									onclick={() => (input = '')}
-									disabled={!input}
+									onclick={() => (inputs[mode] = '')}
+									disabled={!inputs[mode]}
 									aria-label="Clear"
 								>
 									<EraserIcon />
@@ -119,7 +121,7 @@
 			<Card.Content class="flex-1">
 				<Textarea
 					id="convert-in"
-					bind:value={input}
+					bind:value={inputs[mode]}
 					dir={mode === 'pdf' ? 'rtl' : 'ltr'}
 					spellcheck={false}
 					placeholder={current.example}

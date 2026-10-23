@@ -1,4 +1,5 @@
 import layouts from './legacy-layouts.json' with { type: 'json' };
+import { hasThaana } from './text.js';
 
 export type LegacyLayout = 'typewriter' | 'phonetic';
 
@@ -19,7 +20,8 @@ export interface ConvertLegacyOptions {
  * Convert text typed in a pre-Unicode Thaana font (it looks like Latin
  * gibberish such as "ihevid" once the font is gone) into Unicode Thaana.
  * Each line is reversed into logical order, characters are mapped, and digit
- * groups are put back in reading order.
+ * groups are put back in reading order. Lines that already contain Unicode
+ * Thaana are not legacy text and are returned unchanged.
  */
 export function convertLegacy(text: string, options: ConvertLegacyOptions = {}): string {
 	const { layout = 'typewriter', reverse = true } = options;
@@ -27,7 +29,7 @@ export function convertLegacy(text: string, options: ConvertLegacyOptions = {}):
 	return text
 		.split(/(\r?\n)/)
 		.map((line) => {
-			if (line === '\n' || line === '\r\n') return line;
+			if (line === '\n' || line === '\r\n' || hasThaana(line)) return line;
 			const chars = reverse ? [...line].toReversed() : [...line];
 			let out = chars.map((c) => map[c] ?? c).join('');
 			// Numbers were typed left-to-right; un-reverse each digit group.

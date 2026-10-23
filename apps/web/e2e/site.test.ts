@@ -165,6 +165,16 @@ test('converter turns old A_ text and PDF text into Unicode', async ({ page }) =
 	await page.getByRole('tab', { name: 'PDF text' }).click();
 	await page.getByLabel('Paste here').fill('ތާރީޚް 2026/1/14');
 	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ތާރީޚް 14/1/2026');
+	// Each tab keeps its own text; switching never runs one tab's text through another converter.
+	await page.getByRole('tab', { name: 'A_ fonts' }).click();
+	await expect(page.getByLabel('Paste here')).toHaveValue('cswb ihevid');
+	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ދިވެހި ބަސް');
+	await page.getByRole('tab', { name: 'Phonetic fonts' }).click();
+	await expect(page.getByLabel('Paste here')).toHaveValue('');
+	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('');
+	await page.getByRole('tab', { name: 'PDF text' }).click();
+	await expect(page.getByLabel('Paste here')).toHaveValue('ތާރީޚް 2026/1/14');
+	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ތާރީޚް 14/1/2026');
 });
 
 test('mobile menu opens and navigates', async ({ page, isMobile }) => {

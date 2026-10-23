@@ -95,6 +95,9 @@ describe('convertLegacy', () => {
 	it('handles the phonetic legacy fonts and multiple lines', () => {
 		expect(convertLegacy('ihevid\nub', { layout: 'phonetic' })).toBe('ދިވެހި\nބު');
 	});
+	it('leaves lines that are already Unicode Thaana alone', () => {
+		expect(convertLegacy('ދިވެހި 2026/1/14\nihevid')).toBe('ދިވެހި 2026/1/14\nދިވެހި');
+	});
 });
 
 describe('text helpers', () => {
