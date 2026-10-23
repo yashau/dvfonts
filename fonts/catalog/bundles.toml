@@ -9,7 +9,7 @@
 
 [bundles.essentials]
 name = "Essentials"
-description = "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi bismillah font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows."
+description = "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows."
 families = ["modfaruma", "faruma", "mv-ilham", "mv-faseyha", "mv-a-waheed", "bismi", "mv-randhoo", "noto-sans-thaana"]
 
 [bundles.full]

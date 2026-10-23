@@ -84,7 +84,7 @@
 				class="flex-wrap"
 				aria-label="Categories"
 			>
-				{#each CATEGORIES as c (c.id)}
+				{#each CATEGORIES.filter((c) => counts[c.id] > 0) as c (c.id)}
 					<ToggleGroup.Item value={c.id} class="px-3">
 						{c.label}
 						<span class="text-xs text-muted-foreground tabular-nums">{counts[c.id]}</span>

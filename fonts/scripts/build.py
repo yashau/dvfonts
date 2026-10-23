@@ -522,6 +522,7 @@ def main(only: set[str] | None = None) -> None:
                 "category": fam["category"],
                 "aliases": fam.get("aliases", []),
                 "notes": fam.get("notes"),
+                "hidden": bool(fam.get("hidden")),
                 "license": license,
                 "unmodified": unmodified,
                 "source": first.get("group"),

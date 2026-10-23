@@ -6,6 +6,7 @@
 #
 # category: modern | traditional | display | handwriting | mono | symbols
 # aliases:  other names the same design circulates under (searchable on the site)
+# hidden:   true keeps a family off the browse page; it keeps its own page, downloads and bundles
 # designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
@@ -730,6 +731,7 @@ fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 
 [families.bismi]
 name = "Bismi"
+hidden = true
 designer = "Hassan Hameed"
 category = "symbols"
 aliases = ["A_Bismillah", "ABismillah"]

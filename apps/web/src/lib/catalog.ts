@@ -31,6 +31,8 @@ export interface Family {
 	category: Category;
 	aliases: string[];
 	notes: string | null;
+	/** Kept off the browse page (still has its own page, downloads and bundles). */
+	hidden: boolean;
 	license: string;
 	unmodified: boolean;
 	source: string | null;
@@ -81,8 +83,7 @@ export const FEATURED = [
 	'mv-kelaa',
 	'mv-vaadhoo',
 	'fanara',
-	'masnooee-mono',
-	'bismi'
+	'masnooee-mono'
 ];
 
 export const WEIGHT_NAMES: Record<number, string> = {

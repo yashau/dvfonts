@@ -2,13 +2,13 @@
  {
   "id": "essentials",
   "name": "Essentials",
-  "description": "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi bismillah font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows.",
+  "description": "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows.",
   "format": "ttf",
   "file": "dvfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 361470,
-  "sha256": "88437f22ad4871b2c56408ab629ed903c05397531f2f4bd3e2fa89b6d22e8c2d"
+  "size": 361460,
+  "sha256": "38a25bdf455ded932a85e3e065937e14d6d0f53949fefbf5b1698b0624421a02"
  },
  {
   "id": "full",
