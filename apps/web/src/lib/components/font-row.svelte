@@ -55,7 +55,7 @@
 			</Item.Actions>
 		</Item.Header>
 		<Item.Content class="min-w-0">
-			<FontPreview {family} weight={style.weight} class="line-clamp-4" />
+			<FontPreview {family} weight={style.weight} class="line-clamp-6 sm:line-clamp-4" />
 		</Item.Content>
 	</Item.Root>
 </div>

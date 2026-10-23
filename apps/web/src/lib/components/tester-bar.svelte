@@ -93,7 +93,15 @@
 		</InputGroup.Root>
 		<div class="flex items-center gap-3 lg:w-64">
 			<span class="w-12 shrink-0 text-right text-sm text-muted-foreground tabular-nums">{tester.size}px</span>
-			<Slider type="single" bind:value={tester.size} min={12} max={128} step={1} aria-label="Preview size" />
+			<Slider
+				type="single"
+				bind:value={tester.size}
+				onValueChange={() => (tester.sizeChosen = true)}
+				min={12}
+				max={128}
+				step={1}
+				aria-label="Preview size"
+			/>
 		</div>
 		{@render extra?.()}
 	</Card.Content>

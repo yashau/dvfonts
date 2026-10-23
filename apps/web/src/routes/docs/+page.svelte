@@ -8,9 +8,8 @@
 	import { Label } from '#lib/components/ui/label/index.js';
 	import * as Tabs from '#lib/components/ui/tabs/index.js';
 	import * as Card from '#lib/components/ui/card/index.js';
-	import * as Table from '#lib/components/ui/table/index.js';
+	import * as Item from '#lib/components/ui/item/index.js';
 	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
-	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import { thaanaKeyboard, KEYMAP } from '#lib/thaana.js';
 	import { origin, SITE_ORIGIN } from '#lib/site.js';
 
@@ -186,11 +185,9 @@ ${SCRIPT_END}
 	<Card.Root>
 		<Card.Header>
 			<Card.Title>Try it</Card.Title>
-			<Card.Description>Type “divehi” to get ދިވެހި.</Card.Description>
-			<Card.Action class="flex items-center gap-2">
-				<Switch id="demo-on" bind:checked={demoOn} />
-				<Label for="demo-on">Phonetic keyboard {demoOn ? 'on' : 'off'}</Label>
-			</Card.Action>
+			<Card.Description>
+				Type <Kbd>divehi</Kbd> to get <span class="whitespace-nowrap" dir="rtl" lang="dv">ދިވެހި</span>
+			</Card.Description>
 		</Card.Header>
 		<Card.Content>
 			<Textarea
@@ -205,6 +202,10 @@ ${SCRIPT_END}
 				spellcheck={false}
 			/>
 		</Card.Content>
+		<Card.Footer class="gap-2">
+			<Switch id="demo-on" bind:checked={demoOn} />
+			<Label for="demo-on" class="font-normal text-muted-foreground">Phonetic keyboard</Label>
+		</Card.Footer>
 	</Card.Root>
 	<div class="mt-4">
 		<CodeBlock
@@ -225,21 +226,27 @@ ${SCRIPT_END}
 	</ul>
 
 	<h3 class="mt-6 mb-2 font-medium">Layout</h3>
-	<ScrollArea orientation="horizontal" class="pb-3">
-		<div class="flex flex-col gap-1.5">
+	<!-- Keys are sized from the container's width (cqw), so the ten-key row always fits:
+	     no scrolling on phones, capped at a comfortable size on desktop. -->
+	<div class="@container mb-3 max-w-2xl">
+		<div class="flex flex-col gap-[1.2cqw]">
 			{#each keyRows as row, i (row)}
-				<KbdGroup class="gap-1.5" style="padding-left: {i * 1.25}rem">
+				<KbdGroup class="gap-[1.2cqw]" style="padding-inline-start: {i * 4.4}cqw">
 					{#each row.split('') as k (k)}
-						<Kbd class="h-auto w-12 shrink-0 flex-col gap-0 py-1.5">
-							<span class="text-lg leading-tight" dir="rtl" lang="dv">{KEYMAP[k.toUpperCase()] ?? ''}</span>
-							<span class="text-2xl leading-tight text-foreground" dir="rtl" lang="dv">{KEYMAP[k]}</span>
-							<span class="text-[11px] uppercase">{k}</span>
+						<Kbd class="h-auto w-[8.92cqw] min-w-0 shrink-0 flex-col gap-0 rounded-[1.2cqw] px-0 py-[1cqw]">
+							<span class="text-[clamp(10px,3.2cqw,18px)] leading-tight" dir="rtl" lang="dv"
+								>{KEYMAP[k.toUpperCase()] ?? ''}</span
+							>
+							<span class="text-[clamp(14px,4.4cqw,26px)] leading-tight text-foreground" dir="rtl" lang="dv"
+								>{KEYMAP[k]}</span
+							>
+							<span class="text-[clamp(9px,2.4cqw,12px)] uppercase">{k}</span>
 						</Kbd>
 					{/each}
 				</KbdGroup>
 			{/each}
 		</div>
-	</ScrollArea>
+	</div>
 	<p class="text-sm text-muted-foreground">
 		Top: with Shift. The raw map is at <a class="underline underline-offset-4" href="/keymap.json">/keymap.json</a>.
 	</p>
@@ -265,22 +272,20 @@ ${SCRIPT_END}
 
 	<h2 id="helpers" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Helpers</h2>
 	<Card.Root class="py-0">
-		<Table.Root>
-			<Table.Header>
-				<Table.Row>
-					<Table.Head class="pl-4">Function</Table.Head>
-					<Table.Head>What it's for</Table.Head>
-				</Table.Row>
-			</Table.Header>
-			<Table.Body>
-				{#each helpers as [fn, what] (fn)}
-					<Table.Row>
-						<Table.Cell class="pl-4 align-top font-mono text-[13px]">{fn}</Table.Cell>
-						<Table.Cell class="whitespace-normal text-muted-foreground">{what}</Table.Cell>
-					</Table.Row>
-				{/each}
-			</Table.Body>
-		</Table.Root>
+		<!-- A dense reference list: no group gap (gap-0! beats the group's own gap for
+		     small items) and separators without margins, so the items' padding is the
+		     same above and below every row, edges included. -->
+		<Item.Group class="gap-0!">
+			{#each helpers as [fn, what], i (fn)}
+				{#if i > 0}<Item.Separator class="my-0" />{/if}
+				<Item.Root size="sm">
+					<Item.Content class="min-w-0">
+						<Item.Title class="font-mono text-[13px] break-words">{fn}</Item.Title>
+						<Item.Description class="line-clamp-none">{what}</Item.Description>
+					</Item.Content>
+				</Item.Root>
+			{/each}
+		</Item.Group>
 	</Card.Root>
 	<p class="mt-3 text-sm text-muted-foreground">
 		Plus <code>@yashau/thaana/thaana.css</code>: right-to-left, a line height that doesn't clip fili, no fake italics,

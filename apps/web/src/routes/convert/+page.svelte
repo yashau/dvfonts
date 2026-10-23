@@ -8,12 +8,13 @@
 	import { Switch } from '#lib/components/ui/switch/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
-	import { Badge } from '#lib/components/ui/badge/index.js';
+	import * as Item from '#lib/components/ui/item/index.js';
 	import CopyButton from '#lib/components/copy-button.svelte';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
 	import EraserIcon from '@lucide/svelte/icons/eraser';
 	import SparklesIcon from '@lucide/svelte/icons/sparkles';
+	import CodeIcon from '@lucide/svelte/icons/code';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -164,15 +165,16 @@
 		</Card.Root>
 	</div>
 
-	<Card.Root class="mt-6 bg-muted/30 shadow-none">
-		<Card.Content class="flex flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-between">
-			<div class="flex items-center gap-2">
-				<Badge variant="secondary">In code</Badge>
-				<code class="text-xs sm:text-sm">convertLegacy(text)</code>
-				<span class="text-muted-foreground">·</span>
-				<code class="text-xs sm:text-sm">repairPdfText(text)</code>
-			</div>
-			<Button href="/docs#helpers" variant="link" size="sm" class="px-0">@yashau/thaana helpers →</Button>
-		</Card.Content>
-	</Card.Root>
+	<Item.Root variant="outline" class="mt-6">
+		<Item.Media variant="icon"><CodeIcon /></Item.Media>
+		<Item.Content class="min-w-48">
+			<Item.Title>Use it in code</Item.Title>
+			<Item.Description class="line-clamp-none">
+				<code>convertLegacy(text)</code> and <code>repairPdfText(text)</code> from <code>@yashau/thaana</code>.
+			</Item.Description>
+		</Item.Content>
+		<Item.Actions>
+			<Button href="/docs#helpers" variant="outline" size="sm">Helpers <ArrowRightIcon /></Button>
+		</Item.Actions>
+	</Item.Root>
 </div>
