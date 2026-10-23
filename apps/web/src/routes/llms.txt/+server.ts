@@ -139,7 +139,8 @@ ${PANGRAMS.map((p) => `- ${p}`).join('\n')}
 - Fonts were collected from the community archives where they have circulated freely for years (dhivehi.mv, hassanhameed.com, thaana.com, thatmaldivesblog, dhivehifont.com).
 - Pre-Unicode "A_" fonts that had Thaana on Latin keys were remapped to real Unicode Thaana. Where a modern Unicode version of the same design exists, only that is listed.
 - Metrics were repaired (no clipped fili), names and weights normalised, and Thaana/Latin subsets generated.
-- Fonts under CC BY-ND are shipped unmodified. OFL fonts include OFL.txt in the download.
+- Fonts under CC BY-ND, and fonts whose designer requires it (all of Hassan Hameed's), are shipped unmodified: only converted to WOFF/WOFF2. OFL fonts include OFL.txt in the download.
+- Pre-Unicode A_ fonts we may not remap are download-only, for opening old documents; the CSS API refuses them. Convert their text with \`convertLegacy()\`.
 - Licenses vary per family; check \`license\` in fonts.json before redistributing.
 
 ## Families

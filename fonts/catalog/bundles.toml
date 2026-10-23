@@ -4,8 +4,9 @@
 #   families   = explicit family ids
 #   categories = include families in these categories
 #   licenses   = include only these license labels
-#   legacy     = false drops fonts that dvfonts remapped from pre-Unicode encodings
-#   format     = "ttf" (desktop, default) or "woff2" (self-hosting kit with fonts.css)
+#   legacy     = false drops pre-Unicode fonts (remapped by dvfonts, or kept on Latin keys)
+#   format     = "ttf" (desktop, default) or "woff2" (self-hosting kit with fonts.css;
+#                never includes fonts still on Latin keys)
 
 [bundles.essentials]
 name = "Essentials"
@@ -31,15 +32,15 @@ name = "Modern"
 description = "Geometric and sans-style Thaana families."
 categories = ["modern"]
 
-[bundles.traditional]
-name = "Traditional"
-description = "Calligraphic, Waheed-style text faces."
-categories = ["traditional"]
+[bundles.official]
+name = "Official"
+description = "Text faces for formal documents: letters, notices, books and reports."
+categories = ["official"]
 
-[bundles.display]
-name = "Display"
-description = "Decorative and headline fonts."
-categories = ["display"]
+[bundles.artistic]
+name = "Artistic"
+description = "Decorative, calligraphic and headline fonts."
+categories = ["artistic"]
 
 [bundles.handwriting]
 name = "Handwriting"

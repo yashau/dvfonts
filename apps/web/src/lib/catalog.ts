@@ -1,6 +1,6 @@
 import subsetRanges from '#lib/data/subsets.json';
 
-export type Category = 'modern' | 'traditional' | 'display' | 'handwriting' | 'mono' | 'symbols';
+export type Category = 'official' | 'modern' | 'artistic' | 'handwriting' | 'mono' | 'symbols';
 
 export interface MetricOverrides {
 	ascent: number;
@@ -15,7 +15,10 @@ export interface Style {
 	sizes: Record<string, number>;
 	subsets: Partial<Record<'thaana' | 'latin', number>>;
 	upstream: string | null;
+	/** The pre-Unicode encoding dvfonts remapped this font from. */
 	legacyLayout: 'typewriter' | 'phonetic' | null;
+	/** Still in a pre-Unicode encoding (Thaana on Latin keys): a font we may not remap. */
+	legacyEncoding: 'typewriter' | 'phonetic' | null;
 	/** Vertical metrics in em (absent for fonts without usable ones). */
 	metrics: { repaired: boolean } & Partial<MetricOverrides>;
 	cssOverrides: MetricOverrides | null;
@@ -35,6 +38,8 @@ export interface Family {
 	hidden: boolean;
 	license: string;
 	unmodified: boolean;
+	/** Why the files are shipped as published: their license, or the designer's terms. */
+	unmodifiedReason: 'license' | 'designer' | null;
 	source: string | null;
 	upstream: string | null;
 	attribution: string | null;
@@ -55,9 +60,9 @@ export interface Family {
 export const SUBSET_RANGES = subsetRanges as Record<'thaana' | 'latin', string>;
 
 export const CATEGORIES: { id: Category; label: string; thaana: string }[] = [
+	{ id: 'official', label: 'Official', thaana: 'ރަސްމީ' },
 	{ id: 'modern', label: 'Modern', thaana: 'މޮޑަން' },
-	{ id: 'traditional', label: 'Traditional', thaana: 'ކުރީގެ' },
-	{ id: 'display', label: 'Display', thaana: 'ޑިސްޕްލޭ' },
+	{ id: 'artistic', label: 'Artistic', thaana: 'ފަންނީ' },
 	{ id: 'handwriting', label: 'Handwriting', thaana: 'އަތްލިޔުން' },
 	{ id: 'mono', label: 'Monospace', thaana: 'މޮނޯ' },
 	{ id: 'symbols', label: 'Symbols', thaana: 'ނިޝާން' }

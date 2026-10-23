@@ -446,8 +446,10 @@ def main(only: set[str] | None = None) -> None:
         first_src = TTFont(SOURCES / files[0][1], lazy=True)
         license_text = name_value(first_src, 13) or name_value(first_src, 13, any_platform=True)
         license = classify_license(license_text, fam.get("license"))
-        # CC BY-ND forbids derivatives: ship those byte-for-byte (WOFF wrapping only).
-        unmodified = license == "CC BY-ND"
+        # Ship byte-for-byte (WOFF/WOFF2 conversion only) when the license forbids
+        # derivatives (CC BY-ND) or the designer's terms do (`unmodified = true`).
+        unmodified_reason = "license" if license == "CC BY-ND" else "designer" if fam.get("unmodified") else None
+        unmodified = unmodified_reason is not None
         styles, zipbuf = [], io.BytesIO()
         meta = {}
         with zipfile.ZipFile(zipbuf, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -462,6 +464,8 @@ def main(only: set[str] | None = None) -> None:
                     cmap = read_cmap(font)
                     info = {
                         "legacyLayout": None,
+                        # Still on Latin keys (a pre-Unicode font we may not remap).
+                        "legacyEncoding": layout_for(src_path.name),
                         "metrics": {"repaired": False},
                         "cssOverrides": css_metric_overrides(src_path),
                         "glyphs": font["maxp"].numGlyphs,
@@ -473,6 +477,7 @@ def main(only: set[str] | None = None) -> None:
                     desktop_bytes, desktop_name = src_path.read_bytes(), src_path.name
                 else:
                     font, info = process(src_path, fam["name"], weight)
+                    info["legacyEncoding"] = None
                     info["cssOverrides"] = None
                     sizes = {"ttf": save(font, outdir / f"{base}.ttf")}
                     desktop_bytes = (outdir / f"{base}.ttf").read_bytes()
@@ -510,7 +515,7 @@ def main(only: set[str] | None = None) -> None:
                         **info,
                     }
                 )
-            zip_write(zf, f"{fam['name']}/README.txt", readme(fam, meta, styles, sources, license, unmodified))
+            zip_write(zf, f"{fam['name']}/README.txt", readme(fam, meta, styles, sources, license, unmodified_reason))
             if license == "OFL-1.1":
                 zip_write(zf, f"{fam['name']}/OFL.txt", (meta.get("copyright") or "") + "\n\n" + ofl_text)
         (outdir / f"{fid}.zip").write_bytes(zipbuf.getvalue())
@@ -525,6 +530,7 @@ def main(only: set[str] | None = None) -> None:
                 "hidden": bool(fam.get("hidden")),
                 "license": license,
                 "unmodified": unmodified,
+                "unmodifiedReason": unmodified_reason,
                 "source": first.get("group"),
                 "upstream": first.get("url"),
                 "attribution": first.get("attribution"),
@@ -557,7 +563,7 @@ def main(only: set[str] | None = None) -> None:
     print(f"{len(families)} families, {sum(len(f['styles']) for f in families)} fonts -> {FONTS_OUT}")
 
 
-def readme(fam, meta, styles, sources, license, unmodified) -> str:
+def readme(fam, meta, styles, sources, license, unmodified_reason) -> str:
     lines = [fam["name"], "=" * len(fam["name"]), ""]
     if fam.get("notes"):
         lines += [fam["notes"], ""]
@@ -578,12 +584,18 @@ def readme(fam, meta, styles, sources, license, unmodified) -> str:
             f"  {s['desktopFile']}  ({WEIGHT_NAMES[s['weight']]} {s['weight']}) <- {s['source']}"
             + (f"  [{src['url']}]" if src.get("url") else "")
         )
-    if unmodified:
-        lines += [
-            "",
-            "This font's license does not allow derivatives, so it is distributed exactly",
-            "as published by its author.",
-        ]
+    if unmodified_reason:
+        why = (
+            "This font's license does not allow derivatives"
+            if unmodified_reason == "license"
+            else "Its designer allows distribution only without changes"
+        )
+        lines += ["", f"{why}, so it is distributed exactly as published."]
+        if any(s["legacyEncoding"] for s in styles):
+            lines += [
+                "It is a pre-Unicode font with Thaana glyphs on Latin keys: use it to open",
+                "documents typed in it. dvfonts.yashau.com/convert turns such text into Unicode.",
+            ]
     else:
         if any(s["legacyLayout"] for s in styles):
             lines += [

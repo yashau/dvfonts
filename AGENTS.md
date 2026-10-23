@@ -66,9 +66,12 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 - `fonts/catalog/families.toml` is the curated catalogue: families, weights, categories, aliases and the `[excluded]` list with reasons. Every file in `sources/` must be either used or excluded.
 - **Licensing policy:**
   - CC BY-ND fonts are shipped byte-for-byte: no remap, no metrics changes, no subsetting.
+  - So is every family marked `unmodified = true` in `families.toml`. Hassan Hameed allows distribution of his fonts (October 2026) only unmodified and free of charge; converting to WOFF/WOFF2 is the one exception. That covers every family with his Thaana glyphs, including the hidden pre-Unicode A_ ones, which therefore keep their Latin-key encoding (`legacyEncoding`), stay off the browse page and the CSS API, and preview their sample text in that encoding. Metric problems in unmodified fonts are fixed with CSS `@font-face` overrides, never in the file.
+  - Keep designers' revisions current: Hassan Hameed revises his fonts and asked that the downloads follow. A revised file simply replaces the one in `sources/` (they're shipped as published).
   - OFL fonts get `OFL.txt` in their zip.
   - Don't add commercially licensed fonts (MV Boli, anything bundling Microsoft glyphs).
   - Glyph outlines are never modified.
+- Categories are `official`, `modern`, `artistic`, `handwriting`, `mono` and `symbols`. Not "traditional": designers read that as "old".
 - **Legacy policy:** an `A_`/pre-Unicode font is listed only if no modern Unicode version of the same design exists. Otherwise it goes in `[excluded]`, and its name becomes an alias on the modern family.
 - The build must stay **byte-reproducible**: no timestamps, dates or random ordering in output (`recalcTimestamp=False`, fixed zip times). CI rebuilds it and diffs `apps/web/src/lib/data`.
 - `fonts/scripts/research/` holds the one-off tools that recovered the legacy layouts and found duplicates. They're useful when adding fonts, but they're not part of the build.

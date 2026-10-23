@@ -54,7 +54,10 @@ def select(spec: dict, families: list[dict]) -> list[dict]:
     if lic := spec.get("licenses"):
         chosen = [f for f in chosen if f["license"] in lic]
     if spec.get("legacy") is False:
-        chosen = [f for f in chosen if not any(s["legacyLayout"] for s in f["styles"])]
+        chosen = [f for f in chosen if not any(s["legacyLayout"] or s["legacyEncoding"] for s in f["styles"])]
+    if spec.get("format") == "woff2":
+        # Fonts still on Latin keys can't show Unicode text: not for the web.
+        chosen = [f for f in chosen if not any(s["legacyEncoding"] for s in f["styles"])]
     return sorted(chosen, key=lambda f: f["name"].lower())
 
 

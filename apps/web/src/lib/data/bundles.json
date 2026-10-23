@@ -7,8 +7,8 @@
   "file": "dvfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 361460,
-  "sha256": "38a25bdf455ded932a85e3e065937e14d6d0f53949fefbf5b1698b0624421a02"
+  "size": 374800,
+  "sha256": "4c9d203802a92c8faa3365f119dbb58a9fd59403c35dd34df422529867ca284d"
  },
  {
   "id": "full",
@@ -17,9 +17,9 @@
   "format": "ttf",
   "file": "dvfonts-full.zip",
   "families": 135,
-  "styles": 192,
-  "size": 5975590,
-  "sha256": "b38441dd3598c5f2e8f0bc6b67c533b0bcc75a0e99bfcd0bb62e5318b43bc956"
+  "styles": 195,
+  "size": 6135420,
+  "sha256": "f73b076b2a916e8bb50ba5e4a44acab43183b43cdeab490643746bf34c58b0a6"
  },
  {
   "id": "unicode-originals",
@@ -27,10 +27,10 @@
   "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "dvfonts-unicode-originals.zip",
-  "families": 111,
-  "styles": 167,
-  "size": 5470377,
-  "sha256": "c5f40036c157292886816fb4aa3368a8a62a0198f68c01fed06e0e2868953689"
+  "families": 112,
+  "styles": 171,
+  "size": 5649587,
+  "sha256": "1b9ef485240e60c224ae772c6cc4c70ef183f7db7a5befe3a8ba0bf2e7a060e1"
  },
  {
   "id": "open-licensed",
@@ -40,8 +40,8 @@
   "file": "dvfonts-open-licensed.zip",
   "families": 29,
   "styles": 72,
-  "size": 2797370,
-  "sha256": "d24170000402d1c4d9336f50c7586227f68b710206d3518a5429684f6318764d"
+  "size": 2798481,
+  "sha256": "c72074aded7d98931c03faecc1cfcaf0fbd36ad470182956901e540acda3e158"
  },
  {
   "id": "modern",
@@ -51,30 +51,30 @@
   "file": "dvfonts-modern.zip",
   "families": 20,
   "styles": 61,
-  "size": 2971567,
-  "sha256": "1f006b7c364bfeba49c0f7cc9f047bd84747bd6a3af3bbfcd8bff8e30f36c9ed"
+  "size": 2990658,
+  "sha256": "de16e083c73158c5d6b40af63449842264701065a63509c601fe5aaf97386f21"
  },
  {
-  "id": "traditional",
-  "name": "Traditional",
-  "description": "Calligraphic, Waheed-style text faces.",
+  "id": "official",
+  "name": "Official",
+  "description": "Text faces for formal documents: letters, notices, books and reports.",
   "format": "ttf",
-  "file": "dvfonts-traditional.zip",
-  "families": 48,
-  "styles": 57,
-  "size": 1693709,
-  "sha256": "c5520407789ae378c691a7861b5216148b9803a35f190d921bd9075c7cf1d6ab"
+  "file": "dvfonts-official.zip",
+  "families": 47,
+  "styles": 56,
+  "size": 1694210,
+  "sha256": "967be69e6ff54619fc3f92f4d1dd2a4ab543acd36d1533aaa16508ddc693df2a"
  },
  {
-  "id": "display",
-  "name": "Display",
-  "description": "Decorative and headline fonts.",
+  "id": "artistic",
+  "name": "Artistic",
+  "description": "Decorative, calligraphic and headline fonts.",
   "format": "ttf",
-  "file": "dvfonts-display.zip",
+  "file": "dvfonts-artistic.zip",
   "families": 48,
   "styles": 53,
-  "size": 710995,
-  "sha256": "b63862a6a654d7f24258b7613ef2d7902da97a4a2717ac4f68670b1dc7eb2e63"
+  "size": 711134,
+  "sha256": "6f8e6309d88b5021d11678670b4d1c9508cde13736fdd8c348b02f9b905e74ab"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual and handwritten styles.",
   "format": "ttf",
   "file": "dvfonts-handwriting.zip",
-  "families": 14,
-  "styles": 16,
-  "size": 384938,
-  "sha256": "341b6a40b30d626c575085f54384d0b073a1374f06657bdbe598c699cdba3396"
+  "families": 15,
+  "styles": 20,
+  "size": 521483,
+  "sha256": "c35a4978be82f2900272c4c597f434fac09f8deb814ed503eea893fdeb47a70f"
  },
  {
   "id": "webfonts-essentials",
@@ -95,8 +95,8 @@
   "file": "dvfonts-webfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 297393,
-  "sha256": "e004a78c25ba844374d558a580ce3a151d375019454f66a730b0371b0a7bf181"
+  "size": 305967,
+  "sha256": "a0dfb697b03e9156338f80f31da8cf71b5bf1798a7d04503faf7e3acc3449151"
  },
  {
   "id": "webfonts-full",
@@ -104,9 +104,9 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-full.zip",
-  "families": 135,
-  "styles": 192,
-  "size": 4687917,
-  "sha256": "9de5b0bf0591ba1ee07996e7def576287693672eb5e791926abf4a0674cf1be6"
+  "families": 130,
+  "styles": 190,
+  "size": 4680274,
+  "sha256": "9e7e8902d2fefc43caf6de8f1b79b1ee16148173aaaa0e77070d1e168d5a3cf3"
  }
 ]
