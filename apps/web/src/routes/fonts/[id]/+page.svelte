@@ -41,7 +41,7 @@
 	const href = $derived(cssApiUrl(base, [{ name: family.name, weights }]));
 	const linkSnippet = $derived(`<link rel="stylesheet" href="${href}">`);
 	const importSnippet = $derived(`@import url('${href}');`);
-	const cssSnippet = $derived(`font-family: '${family.name}', sans-serif;`);
+	const cssSnippet = $derived(`:lang(dv) {\n  font-family: '${family.name}', sans-serif;\n}`);
 
 	const changes = $derived.by(() => {
 		const out: string[] = [];

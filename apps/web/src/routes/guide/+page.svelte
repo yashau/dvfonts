@@ -194,7 +194,7 @@
 				</p>{/snippet}
 		</ThaanaDemo>
 		<div class="mt-3">
-			<CodeBlock title="CSS" lang="css" code={`font-family: ${fontStack('MV Iyyu')};`} />
+			<CodeBlock title="CSS" lang="css" code={`:lang(dv) {\n  font-family: ${fontStack('MV Iyyu')};\n}`} />
 		</div>
 	</section>
 
