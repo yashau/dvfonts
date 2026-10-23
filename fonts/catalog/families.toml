@@ -13,12 +13,6 @@
 
 # ─── Official (text faces for documents, in the Faruma tradition) ────────────
 
-[families.noto-sans-thaana]
-name = "Noto Sans Thaana"
-category = "official"
-license = "OFL-1.1"
-fonts = { 400 = "noto-sans-thaana.ttf" }
-
 [families.modfaruma]
 name = "ModFaruma"
 category = "official"
@@ -176,95 +170,15 @@ designer = "Mohamed Mazeed"
 category = "official"
 fonts = { 400 = "dam-kathivalhi.otf" }
 
-[families.mv-izyan]
-name = "MV Izyan"
-category = "official"
-fonts = { 400 = "mv-izyannormal.ttf" }
-
-[families.mv-izyan-thin]
-name = "MV Izyan Thin"
-category = "official"
-fonts = { 100 = "mv-izyan-thin.ttf" }
-
-[families.mv-izyan-light]
-name = "MV Izyan Light"
-category = "official"
-fonts = { 300 = "mv-izyan-light.ttf" }
-
-[families.mv-izyan-regular]
-name = "MV Izyan Regular"
-category = "official"
-fonts = { 400 = "mvizyaregular.ttf" }
-
-[families.mv-izyan-thaana]
-name = "MV Izyan Thaana"
-category = "official"
-fonts = { 400 = "mv-izyanthaana.ttf" }
-
-[families.mv-izyan-athuliyun]
-name = "MV Izyan Athuliyun"
-category = "official"
-fonts = { 300 = "mv-izyan-athuliyun-light.ttf", 400 = "mv-izyan-athuliyun.ttf" }
-
-[families.mv-izyan-suruhee]
-name = "MV Izyan Suruhee"
-category = "official"
-fonts = { 400 = "mv-izyan-suruhee.ttf" }
-
-[families.mv-izyan-bodu-akuru]
-name = "MV Izyan Bodu Akuru"
-category = "official"
-fonts = { 700 = "mv-izyan-bodu-akuru.ttf" }
-
-[families.mv-lhohi]
-name = "MV Lhohi"
-category = "official"
-fonts = { 400 = "mvlhohi.ttf", 700 = "mvlhohi-bold.ttf" }
-
 [families.mv-kashi]
 name = "MV Kashi"
 category = "official"
 fonts = { 400 = "mv-kashi.ttf" }
 
-[families.mv-maryam]
-name = "MV Maryam"
-category = "official"
-fonts = { 400 = "mv-maryam.ttf" }
-
-[families.mv-fathimath]
-name = "MV Fathimath"
-category = "official"
-fonts = { 700 = "mv-fathimath.ttf" }
-
-[families.mv-nevi-raheem]
-name = "MV Nevi Raheem"
-category = "official"
-fonts = { 400 = "mv-nevi-raheem.ttf" }
-
-[families.mv-dheli-fihi]
-name = "MV Dheli Fihi"
-category = "official"
-fonts = { 700 = "mv-dheli-fihi.ttf" }
-
-[families.mv-karudhas]
-name = "MV Karudhas"
-category = "official"
-fonts = { 700 = "mv-karudhas.ttf" }
-
 [families.mv-neru-magu]
 name = "MV Neru Magu"
 category = "official"
 fonts = { 700 = "mv-nerumagu.ttf" }
-
-[families.mv-suruhee]
-name = "MV Suruhee"
-category = "official"
-fonts = { 700 = "mv-suruhee.ttf" }
-
-[families.mv-thakurufaanu]
-name = "MV Thakurufaanu"
-category = "official"
-fonts = { 700 = "mv-thakurufaanu.ttf" }
 
 [families.athu-casual]
 name = "Athu Casual"
@@ -282,32 +196,10 @@ category = "official"
 aliases = ["Akko"]
 fonts = { 400 = "thaana.ttf", 700 = "thaana-bold.ttf" }
 
-[families.hawwa]
-name = "Hawwa"
-category = "official"
-fonts = { 400 = "hawwa-regular.ttf" }
-
 [families.mv-mag-round]
 name = "MV MAG Round"
 category = "official"
 fonts = { 700 = "mag-round.ttf", 800 = "mag-round-xbold.ttf" }
-
-[families.mv-sehga-fb]
-name = "MV Sehga FB"
-category = "official"
-aliases = ["Mv Sehga Fubaru Fancy"]
-fonts = { 400 = "sehga-fb.ttf" }
-
-[families.mv-sehga-old]
-name = "MV Sehga Old"
-category = "official"
-fonts = { 400 = "mv-sehga-old.otf" }
-
-[families.mv-groupx-avas]
-name = "MV GroupX Avas"
-category = "official"
-aliases = ["Mv GroupX Avas Akuru"]
-fonts = { 400 = "avas.ttf" }
 
 [families.gurafiku]
 name = "Gurafiku"
@@ -319,12 +211,18 @@ name = "Haluvidhaa"
 category = "official"
 fonts = { 400 = "haluvidhaa-regular.ttf" }
 
-[families.sangu-suruhee]
-name = "Sangu Suruhee"
+[families.faiy]
+name = "Faiy"
 category = "official"
-fonts = { 400 = "sangusuruhee-regular.ttf" }
+fonts = { 300 = "faiy-light.otf" }
 
 # ─── Modern / geometric ──────────────────────────────────────────────────────
+
+[families.noto-sans-thaana]
+name = "Noto Sans Thaana"
+category = "modern"
+license = "OFL-1.1"
+fonts = { 400 = "noto-sans-thaana.ttf" }
 
 [families.bolhu]
 name = "Bolhu"
@@ -453,6 +351,32 @@ fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
 
 # ─── Artistic (decorative, display) ──────────────────────────────────────────
 
+[families.mv-suruhee]
+name = "MV Suruhee"
+category = "artistic"
+fonts = { 700 = "mv-suruhee.ttf" }
+
+[families.mv-thakurufaanu]
+name = "MV Thakurufaanu"
+category = "artistic"
+fonts = { 700 = "mv-thakurufaanu.ttf" }
+
+[families.mv-sehga-fb]
+name = "MV Sehga FB"
+category = "artistic"
+aliases = ["Mv Sehga Fubaru Fancy"]
+fonts = { 400 = "sehga-fb.ttf" }
+
+[families.mv-sehga-old]
+name = "MV Sehga Old"
+category = "artistic"
+fonts = { 400 = "mv-sehga-old.otf" }
+
+[families.sangu-suruhee]
+name = "Sangu Suruhee"
+category = "artistic"
+fonts = { 400 = "sangusuruhee-regular.ttf" }
+
 [families.a-haleem-bolhu]
 name = "A Haleem Bolhu"
 category = "artistic"
@@ -519,16 +443,6 @@ name = "MV Karudhas Outline"
 category = "artistic"
 fonts = { 400 = "mv-karudhas-outline.ttf" }
 
-[families.mv-izyan-bodu-akuru-3d]
-name = "MV Izyan Bodu Akuru 3D"
-category = "artistic"
-fonts = { 700 = "mvizyanboduakuru3d-bold.ttf" }
-
-[families.mv-izyan-reethi]
-name = "MV Izyan Reethi"
-category = "artistic"
-fonts = { 700 = "mvizyanreethi-bold.ttf" }
-
 [families.mv-thiki-akuru]
 name = "MV Thiki Akuru"
 category = "artistic"
@@ -571,7 +485,103 @@ unmodified = true
 category = "artistic"
 fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 
+[families.nasr]
+name = "Nasr"
+category = "artistic"
+fonts = { 300 = "nasr-light.otf" }
+
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
+
+[families.mv-izyan]
+name = "MV Izyan"
+category = "handwriting"
+fonts = { 400 = "mv-izyannormal.ttf" }
+
+[families.mv-izyan-thin]
+name = "MV Izyan Thin"
+category = "handwriting"
+fonts = { 100 = "mv-izyan-thin.ttf" }
+
+[families.mv-izyan-light]
+name = "MV Izyan Light"
+category = "handwriting"
+fonts = { 300 = "mv-izyan-light.ttf" }
+
+[families.mv-izyan-regular]
+name = "MV Izyan Regular"
+category = "handwriting"
+fonts = { 400 = "mvizyaregular.ttf" }
+
+[families.mv-izyan-thaana]
+name = "MV Izyan Thaana"
+category = "handwriting"
+fonts = { 400 = "mv-izyanthaana.ttf" }
+
+[families.mv-izyan-athuliyun]
+name = "MV Izyan Athuliyun"
+category = "handwriting"
+fonts = { 300 = "mv-izyan-athuliyun-light.ttf", 400 = "mv-izyan-athuliyun.ttf" }
+
+[families.mv-izyan-suruhee]
+name = "MV Izyan Suruhee"
+category = "handwriting"
+fonts = { 400 = "mv-izyan-suruhee.ttf" }
+
+[families.mv-izyan-bodu-akuru]
+name = "MV Izyan Bodu Akuru"
+category = "handwriting"
+fonts = { 700 = "mv-izyan-bodu-akuru.ttf" }
+
+[families.mv-lhohi]
+name = "MV Lhohi"
+category = "handwriting"
+fonts = { 400 = "mvlhohi.ttf", 700 = "mvlhohi-bold.ttf" }
+
+[families.mv-maryam]
+name = "MV Maryam"
+category = "handwriting"
+fonts = { 400 = "mv-maryam.ttf" }
+
+[families.mv-fathimath]
+name = "MV Fathimath"
+category = "handwriting"
+fonts = { 700 = "mv-fathimath.ttf" }
+
+[families.mv-nevi-raheem]
+name = "MV Nevi Raheem"
+category = "handwriting"
+fonts = { 400 = "mv-nevi-raheem.ttf" }
+
+[families.mv-dheli-fihi]
+name = "MV Dheli Fihi"
+category = "handwriting"
+fonts = { 700 = "mv-dheli-fihi.ttf" }
+
+[families.mv-karudhas]
+name = "MV Karudhas"
+category = "handwriting"
+fonts = { 700 = "mv-karudhas.ttf" }
+
+[families.hawwa]
+name = "Hawwa"
+category = "handwriting"
+fonts = { 400 = "hawwa-regular.ttf" }
+
+[families.mv-groupx-avas]
+name = "MV GroupX Avas"
+category = "handwriting"
+aliases = ["Mv GroupX Avas Akuru"]
+fonts = { 400 = "avas.ttf" }
+
+[families.mv-izyan-bodu-akuru-3d]
+name = "MV Izyan Bodu Akuru 3D"
+category = "handwriting"
+fonts = { 700 = "mvizyanboduakuru3d-bold.ttf" }
+
+[families.mv-izyan-reethi]
+name = "MV Izyan Reethi"
+category = "handwriting"
+fonts = { 700 = "mvizyanreethi-bold.ttf" }
 
 [families.mv-izy-pro]
 name = "MV Izy Pro"
@@ -607,16 +617,6 @@ fonts = { 400 = "avas-thaana.otf" }
 name = "Samee Avas Thaana"
 category = "handwriting"
 fonts = { 400 = "samee-avas-thaana.ttf" }
-
-[families.nasr]
-name = "Nasr"
-category = "handwriting"
-fonts = { 300 = "nasr-light.otf" }
-
-[families.faiy]
-name = "Faiy"
-category = "handwriting"
-fonts = { 300 = "faiy-light.otf" }
 
 [families.mv-lady-luck]
 name = "MV Lady Luck"

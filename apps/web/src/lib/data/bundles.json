@@ -49,10 +49,10 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "dvfonts-modern.zip",
-  "families": 19,
-  "styles": 60,
-  "size": 2972357,
-  "sha256": "45dce7b22499ba61fe2672d8502e1d688e6ac166ed39526a52f926d23bd4531f"
+  "families": 20,
+  "styles": 61,
+  "size": 2990658,
+  "sha256": "de16e083c73158c5d6b40af63449842264701065a63509c601fe5aaf97386f21"
  },
  {
   "id": "official",
@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "dvfonts-official.zip",
-  "families": 55,
-  "styles": 69,
-  "size": 1904574,
-  "sha256": "181f83eff0d6f8b7cdb0b4d09a229fc2fcc8eac06e7e44598bbff4b957312dfe"
+  "families": 34,
+  "styles": 46,
+  "size": 1279066,
+  "sha256": "486b3f189ea3a2d2c51fec54e80b5481a3e3d34e854936fb5590b6394e0f63b5"
  },
  {
   "id": "artistic",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "dvfonts-artistic.zip",
-  "families": 23,
-  "styles": 26,
-  "size": 609622,
-  "sha256": "9c406c69eb257f54b013b28f5b1d29a8fe0e392b75fe0110e484cc0964607c2a"
+  "families": 27,
+  "styles": 30,
+  "size": 656567,
+  "sha256": "58be5d769d97ba1b0ebd12a4c01200cf69acd8132194febe5b7e39dc5253c1ee"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "dvfonts-handwriting.zip",
-  "families": 15,
-  "styles": 16,
-  "size": 451905,
-  "sha256": "9af478feb5e57792d3dd3514999ecc79541583f77c64b16259af520fa769e2ba"
+  "families": 31,
+  "styles": 34,
+  "size": 1012351,
+  "sha256": "314f2c619766f1d695b724eb4c60951ee1ea49c71720ee461b77d199e1e81a50"
  },
  {
   "id": "novelty",
