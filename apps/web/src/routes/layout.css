@@ -167,3 +167,21 @@
 	overflow-wrap: anywhere;
 	line-height: 1.6;
 }
+
+/* Code blocks (code-block.svelte): the plain and the Shiki-highlighted <pre>
+   share one box, so nothing shifts when highlighting arrives. Shiki emits both
+   themes as variables; the site's theme class picks one. */
+.code-block pre {
+	padding: 1rem;
+	font-size: 13px;
+	line-height: 1.625;
+	background: transparent;
+}
+.code-block .shiki,
+.code-block .shiki span {
+	color: var(--shiki-light);
+}
+.dark .code-block .shiki,
+.dark .code-block .shiki span {
+	color: var(--shiki-dark);
+}

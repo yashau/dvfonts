@@ -83,6 +83,7 @@
 		<div class="mt-3">
 			<CodeBlock
 				title="HTML"
+				lang="html"
 				code={'<html lang="dv" dir="rtl">\n<!-- or on any element -->\n<p dir="rtl" lang="dv">…</p>'}
 			/>
 		</div>
@@ -102,6 +103,7 @@
 		<div class="mt-3">
 			<CodeBlock
 				title="JS"
+				lang="javascript"
 				code={"import { resolveDirection } from '@yashau/thaana';\n\nel.dir = resolveDirection(text); // 'rtl' if there's any Thaana, else 'ltr'"}
 			/>
 		</div>
@@ -120,9 +122,11 @@
 				<p dir="rtl" lang="dv">{isolateNumbers(temp)}</p>{/snippet}
 		</ThaanaDemo>
 		<div class="mt-3">
+			<CodeBlock title="HTML" lang="html" code={'<p dir="rtl">ގުޅާލައްވާ: <bdi dir="ltr">+960 333-1234</bdi></p>'} />
 			<CodeBlock
-				title="HTML or JS"
-				code={'<p dir="rtl">ގުޅާލައްވާ: <bdi dir="ltr">+960 333-1234</bdi></p>\n\nimport { isolateNumbers, stripBidiControls } from \'@yashau/thaana\';\nlabel.textContent = isolateNumbers(text);   // display\nsave(stripBidiControls(label.textContent));  // store without the invisible marks'}
+				title="JS"
+				lang="javascript"
+				code={"import { isolateNumbers, stripBidiControls } from '@yashau/thaana';\n\nlabel.textContent = isolateNumbers(text);   // display\nsave(stripBidiControls(label.textContent));  // store without the invisible marks"}
 			/>
 		</div>
 	</section>
@@ -190,7 +194,7 @@
 				</p>{/snippet}
 		</ThaanaDemo>
 		<div class="mt-3">
-			<CodeBlock title="CSS" code={`font-family: ${fontStack('MV Iyyu')};`} />
+			<CodeBlock title="CSS" lang="css" code={`font-family: ${fontStack('MV Iyyu')};`} />
 		</div>
 	</section>
 
@@ -227,6 +231,7 @@
 		<div class="mt-3">
 			<CodeBlock
 				title="HTML"
+				lang="html"
 				code={`<script type="module" src="https://dvfonts.yashau.com/thaana.js">${SCRIPT_END}\n<input data-thaana>`}
 			/>
 		</div>
@@ -245,6 +250,7 @@
 		</p>
 		<CodeBlock
 			title="JS"
+			lang="javascript"
 			code={"import { loadFonts } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma' });\nctx.font = \"32px 'Faruma'\";\nctx.direction = 'rtl';\nctx.textAlign = 'start';\nctx.fillText('ދިވެހިރާއްޖެ', canvas.width - 16, 48);"}
 		/>
 	</section>

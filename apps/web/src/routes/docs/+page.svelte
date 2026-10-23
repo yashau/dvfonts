@@ -31,6 +31,7 @@
 		{
 			id: 'vanilla',
 			label: 'Vanilla JS',
+			lang: 'javascript' as const,
 			install: 'npm i @yashau/thaana',
 			code: `import { attachKeyboard, loadFonts, fontStack } from '@yashau/thaana';
 import '@yashau/thaana/thaana.css'; // sane defaults for :lang(dv)
@@ -45,6 +46,7 @@ const detach = attachKeyboard(input, { enabled: () => dv });`
 		{
 			id: 'react',
 			label: 'React',
+			lang: 'jsx' as const,
 			install: 'npm i @yashau/thaana-react',
 			code: `import { useState } from 'react';
 import { ThaanaInput, useThaanaKeyboard, useDhivehiFont, fontStack } from '@yashau/thaana-react';
@@ -68,6 +70,7 @@ export function Form() {
 		{
 			id: 'svelte',
 			label: 'Svelte',
+			lang: 'svelte' as const,
 			install: 'npm i @yashau/thaana-svelte',
 			code: `<script>
   import { ThaanaInput, thaana, thaanaKeyboard, loadFonts, fontStack } from '@yashau/thaana-svelte';
@@ -86,6 +89,7 @@ ${SCRIPT_END}
 		{
 			id: 'vue',
 			label: 'Vue',
+			lang: 'vue' as const,
 			install: 'npm i @yashau/thaana-vue',
 			code: `<script setup>
 import { ref } from 'vue';
@@ -159,6 +163,7 @@ ${SCRIPT_END}
 	</p>
 	<CodeBlock
 		title="HTML"
+		lang="html"
 		code={`<link rel="stylesheet" href="${base}/css2?family=Faruma&family=Bolhu:wght@400;700&display=swap">\n\n<p dir="rtl" lang="dv" style="font-family: 'Faruma', system-ui, sans-serif">ދިވެހިރާއްޖެ</p>`}
 	/>
 	<ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
@@ -204,6 +209,7 @@ ${SCRIPT_END}
 	<div class="mt-4">
 		<CodeBlock
 			title="No build step"
+			lang="html"
 			code={`<script type="module" src="${base}/thaana.js">${SCRIPT_END}\n\n<input data-thaana>\n<textarea data-thaana></textarea>\n<div contenteditable data-thaana></div>\n\n<!-- or a classic script: window.Thaana -->\n<script src="${base}/thaana.iife.js">${SCRIPT_END}`}
 		/>
 	</div>
@@ -251,8 +257,8 @@ ${SCRIPT_END}
 		</Tabs.List>
 		{#each packages as p (p.id)}
 			<Tabs.Content value={p.id} class="mt-3 flex flex-col gap-3">
-				<CodeBlock title="Install" code={p.install} />
-				<CodeBlock title="Use" code={p.code} />
+				<CodeBlock title="Install" lang="bash" code={p.install} />
+				<CodeBlock title="Use" lang={p.lang} code={p.code} />
 			</Tabs.Content>
 		{/each}
 	</Tabs.Root>

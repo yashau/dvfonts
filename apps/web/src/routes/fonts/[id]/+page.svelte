@@ -205,9 +205,9 @@
 						{/each}
 					</ToggleGroup.Root>
 				{/if}
-				<CodeBlock title="In <head>" code={linkSnippet} />
-				<CodeBlock title="Or in CSS" code={importSnippet} />
-				<CodeBlock title="Then use" code={cssSnippet} />
+				<CodeBlock title="In <head>" lang="html" code={linkSnippet} />
+				<CodeBlock title="Or in CSS" lang="css" code={importSnippet} />
+				<CodeBlock title="Then use" lang="css" code={cssSnippet} />
 			</Card.Content>
 		</Card.Root>
 
