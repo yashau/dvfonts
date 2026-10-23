@@ -53,7 +53,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.976
     }
    ],
    "zipSize": 14800
@@ -107,7 +108,8 @@
      "latin": 0,
      "codepoints": 91,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.21
     }
    ],
    "zipSize": 27939
@@ -161,7 +163,8 @@
      "latin": 0,
      "codepoints": 85,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.008
     }
    ],
    "zipSize": 13227
@@ -215,7 +218,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.129
     }
    ],
    "zipSize": 10512
@@ -269,7 +273,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.179
     }
    ],
    "zipSize": 12397
@@ -323,7 +328,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.398
     }
    ],
    "zipSize": 23095
@@ -377,7 +383,8 @@
      "latin": 0,
      "codepoints": 74,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.305
     }
    ],
    "zipSize": 8271
@@ -431,7 +438,8 @@
      "latin": 0,
      "codepoints": 92,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.82
     }
    ],
    "zipSize": 10040
@@ -485,7 +493,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.287
     }
    ],
    "zipSize": 16557
@@ -539,7 +548,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.314
     }
    ],
    "zipSize": 32226
@@ -593,7 +603,8 @@
      "latin": 0,
      "codepoints": 73,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.005
     }
    ],
    "zipSize": 24024
@@ -646,7 +657,8 @@
      "glyphs": 172,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 169
+     "codepoints": 169,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 12517
@@ -699,7 +711,8 @@
      "glyphs": 102,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 99
+     "codepoints": 99,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 10929
@@ -752,7 +765,8 @@
      "glyphs": 102,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 99
+     "codepoints": 99,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 32469
@@ -808,7 +822,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.976
     }
    ],
    "zipSize": 14302
@@ -861,7 +876,8 @@
      "glyphs": 226,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 223
+     "codepoints": 223,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 11957
@@ -914,7 +930,8 @@
      "glyphs": 103,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 100
+     "codepoints": 100,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 55408
@@ -968,7 +985,8 @@
      "latin": 0,
      "codepoints": 120,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.967
     }
    ],
    "zipSize": 16473
@@ -1022,7 +1040,8 @@
      "latin": 0,
      "codepoints": 95,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.417
     }
    ],
    "zipSize": 13753
@@ -1073,7 +1092,8 @@
      "glyphs": 103,
      "thaana": 0,
      "latin": 52,
-     "codepoints": 100
+     "codepoints": 100,
+     "sizeAdjust": null
     }
    ],
    "zipSize": 64370
@@ -1127,7 +1147,8 @@
      "latin": 0,
      "codepoints": 90,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.794
     }
    ],
    "zipSize": 18568
@@ -1181,7 +1202,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 200,
@@ -1209,7 +1231,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 300,
@@ -1237,7 +1260,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 400,
@@ -1265,7 +1289,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 500,
@@ -1293,7 +1318,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 600,
@@ -1321,7 +1347,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 700,
@@ -1349,7 +1376,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     },
     {
      "weight": 800,
@@ -1377,7 +1405,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.922
     }
    ],
    "zipSize": 510039
@@ -1431,7 +1460,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.936
     }
    ],
    "zipSize": 28143
@@ -1485,7 +1515,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.969
     }
    ],
    "zipSize": 21736
@@ -1539,7 +1570,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.029
     }
    ],
    "zipSize": 15694
@@ -1593,7 +1625,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.969
     }
    ],
    "zipSize": 16608
@@ -1647,7 +1680,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.501
     },
     {
      "weight": 400,
@@ -1675,7 +1709,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.501
     }
    ],
    "zipSize": 27946
@@ -1729,7 +1764,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.552
     },
     {
      "weight": 300,
@@ -1757,7 +1793,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.552
     },
     {
      "weight": 400,
@@ -1785,7 +1822,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.552
     },
     {
      "weight": 700,
@@ -1813,7 +1851,8 @@
      "latin": 0,
      "codepoints": 124,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.552
     }
    ],
    "zipSize": 51578
@@ -1867,7 +1906,8 @@
      "latin": 0,
      "codepoints": 109,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.646
     },
     {
      "weight": 700,
@@ -1895,7 +1935,8 @@
      "latin": 0,
      "codepoints": 109,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.646
     }
    ],
    "zipSize": 19015
@@ -1949,7 +1990,8 @@
      "latin": 0,
      "codepoints": 92,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.616
     }
    ],
    "zipSize": 30978
@@ -2003,7 +2045,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.948
     },
     {
      "weight": 400,
@@ -2031,7 +2074,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.948
     },
     {
      "weight": 700,
@@ -2059,7 +2103,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.948
     },
     {
      "weight": 900,
@@ -2087,7 +2132,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.948
     }
    ],
    "zipSize": 258708
@@ -2141,7 +2187,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 200,
@@ -2169,7 +2216,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 300,
@@ -2197,7 +2245,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 400,
@@ -2225,7 +2274,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 500,
@@ -2253,7 +2303,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 600,
@@ -2281,7 +2332,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 700,
@@ -2309,7 +2361,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     },
     {
      "weight": 800,
@@ -2337,7 +2390,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.982
     }
    ],
    "zipSize": 59797
@@ -2394,7 +2448,8 @@
      "latin": 52,
      "codepoints": 161,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.0
     }
    ],
    "zipSize": 26429
@@ -2448,7 +2503,8 @@
      "latin": 52,
      "codepoints": 287,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.831
     }
    ],
    "zipSize": 37670
@@ -2502,7 +2558,8 @@
      "latin": 0,
      "codepoints": 109,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.54
     }
    ],
    "zipSize": 9781
@@ -2556,7 +2613,8 @@
      "latin": 0,
      "codepoints": 112,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.815
     }
    ],
    "zipSize": 15954
@@ -2610,7 +2668,8 @@
      "latin": 0,
      "codepoints": 112,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.252
     }
    ],
    "zipSize": 15906
@@ -2658,7 +2717,8 @@
      "glyphs": 96,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 93
+     "codepoints": 93,
+     "sizeAdjust": 1.447
     }
    ],
    "zipSize": 5051
@@ -2712,7 +2772,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 200,
@@ -2740,7 +2801,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 300,
@@ -2768,7 +2830,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 400,
@@ -2796,7 +2859,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 500,
@@ -2824,7 +2888,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 600,
@@ -2852,7 +2917,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 700,
@@ -2880,7 +2946,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     },
     {
      "weight": 800,
@@ -2908,7 +2975,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     }
    ],
    "zipSize": 504633
@@ -2962,7 +3030,8 @@
      "latin": 52,
      "codepoints": 313,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.773
     }
    ],
    "zipSize": 23716
@@ -3016,7 +3085,8 @@
      "latin": 52,
      "codepoints": 799,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.75
     }
    ],
    "zipSize": 54422
@@ -3070,7 +3140,8 @@
      "latin": 52,
      "codepoints": 161,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.0
     }
    ],
    "zipSize": 26183
@@ -3124,7 +3195,8 @@
      "latin": 52,
      "codepoints": 163,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.963
     }
    ],
    "zipSize": 34722
@@ -3178,7 +3250,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.827
     }
    ],
    "zipSize": 9962
@@ -3235,7 +3308,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.978
     }
    ],
    "zipSize": 40692
@@ -3292,7 +3366,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.913
     }
    ],
    "zipSize": 40698
@@ -3345,7 +3420,8 @@
      "glyphs": 878,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 568
+     "codepoints": 568,
+     "sizeAdjust": 0.803
     }
    ],
    "zipSize": 92121
@@ -3393,7 +3469,8 @@
      "glyphs": 98,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 97
+     "codepoints": 97,
+     "sizeAdjust": 0.754
     }
    ],
    "zipSize": 5026
@@ -3447,7 +3524,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.955
     }
    ],
    "zipSize": 35102
@@ -3495,7 +3573,8 @@
      "glyphs": 98,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 97
+     "codepoints": 97,
+     "sizeAdjust": 0.525
     }
    ],
    "zipSize": 4021
@@ -3549,7 +3628,8 @@
      "latin": 0,
      "codepoints": 120,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.984
     }
    ],
    "zipSize": 38980
@@ -3603,7 +3683,8 @@
      "latin": 0,
      "codepoints": 99,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.914
     }
    ],
    "zipSize": 4174
@@ -3657,7 +3738,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.88
     }
    ],
    "zipSize": 81414
@@ -3711,7 +3793,8 @@
      "latin": 0,
      "codepoints": 95,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.013
     }
    ],
    "zipSize": 4733
@@ -3765,7 +3848,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.71
     }
    ],
    "zipSize": 39092
@@ -3819,7 +3903,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.128
     },
     {
      "weight": 400,
@@ -3847,7 +3932,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.128
     }
    ],
    "zipSize": 27976
@@ -3905,7 +3991,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.933
     },
     {
      "weight": 700,
@@ -3932,7 +4019,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.933
     }
    ],
    "zipSize": 76495
@@ -3985,7 +4073,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.933
     }
    ],
    "zipSize": 43087
@@ -4039,7 +4128,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.944
     }
    ],
    "zipSize": 31558
@@ -4087,7 +4177,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 283
+     "codepoints": 283,
+     "sizeAdjust": 0.896
     },
     {
      "weight": 400,
@@ -4109,7 +4200,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 283
+     "codepoints": 283,
+     "sizeAdjust": 0.896
     },
     {
      "weight": 700,
@@ -4131,7 +4223,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.896
     },
     {
      "weight": 900,
@@ -4153,7 +4246,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.896
     }
    ],
    "zipSize": 136348
@@ -4207,7 +4301,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.089
     }
    ],
    "zipSize": 28282
@@ -4261,7 +4356,8 @@
      "latin": 0,
      "codepoints": 110,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.908
     }
    ],
    "zipSize": 22095
@@ -4315,7 +4411,8 @@
      "latin": 0,
      "codepoints": 97,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.025
     }
    ],
    "zipSize": 4438
@@ -4371,7 +4468,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.006
     }
    ],
    "zipSize": 17849
@@ -4419,7 +4517,8 @@
      "glyphs": 98,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 97
+     "codepoints": 97,
+     "sizeAdjust": 1.044
     }
    ],
    "zipSize": 5037
@@ -4470,7 +4569,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.882
     },
     {
      "weight": 700,
@@ -4492,7 +4592,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.882
     }
    ],
    "zipSize": 80901
@@ -4546,7 +4647,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.137
     }
    ],
    "zipSize": 14618
@@ -4600,7 +4702,8 @@
      "latin": 0,
      "codepoints": 102,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.058
     }
    ],
    "zipSize": 13068
@@ -4654,7 +4757,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.117
     }
    ],
    "zipSize": 14496
@@ -4708,7 +4812,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.919
     }
    ],
    "zipSize": 28486
@@ -4762,7 +4867,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.931
     }
    ],
    "zipSize": 36248
@@ -4816,7 +4922,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.823
     },
     {
      "weight": 400,
@@ -4844,7 +4951,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.823
     }
    ],
    "zipSize": 47659
@@ -4898,7 +5006,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.031
     }
    ],
    "zipSize": 30470
@@ -4952,7 +5061,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.882
     }
    ],
    "zipSize": 50631
@@ -5006,7 +5116,8 @@
      "latin": 0,
      "codepoints": 120,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.849
     }
    ],
    "zipSize": 30509
@@ -5060,7 +5171,8 @@
      "latin": 0,
      "codepoints": 119,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.141
     }
    ],
    "zipSize": 34394
@@ -5114,7 +5226,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.959
     }
    ],
    "zipSize": 33196
@@ -5168,7 +5281,8 @@
      "latin": 0,
      "codepoints": 120,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.818
     }
    ],
    "zipSize": 24362
@@ -5222,7 +5336,8 @@
      "latin": 0,
      "codepoints": 129,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.09
     }
    ],
    "zipSize": 16315
@@ -5276,7 +5391,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.139
     }
    ],
    "zipSize": 22186
@@ -5330,7 +5446,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.989
     }
    ],
    "zipSize": 35422
@@ -5384,7 +5501,8 @@
      "latin": 0,
      "codepoints": 119,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.204
     }
    ],
    "zipSize": 35512
@@ -5438,7 +5556,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.085
     }
    ],
    "zipSize": 13038
@@ -5492,7 +5611,8 @@
      "latin": 0,
      "codepoints": 105,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.726
     }
    ],
    "zipSize": 23635
@@ -5546,7 +5666,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.888
     }
    ],
    "zipSize": 22901
@@ -5594,7 +5715,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.949
     },
     {
      "weight": 700,
@@ -5621,7 +5743,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.949
     }
    ],
    "zipSize": 74099
@@ -5671,7 +5794,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.792
     }
    ],
    "zipSize": 32945
@@ -5725,7 +5849,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.993
     }
    ],
    "zipSize": 16060
@@ -5773,7 +5898,8 @@
      "glyphs": 95,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 94
+     "codepoints": 94,
+     "sizeAdjust": 0.823
     }
    ],
    "zipSize": 5925
@@ -5827,7 +5953,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.944
     },
     {
      "weight": 700,
@@ -5855,7 +5982,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.944
     }
    ],
    "zipSize": 59379
@@ -5909,7 +6037,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.037
     },
     {
      "weight": 800,
@@ -5937,7 +6066,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.037
     }
    ],
    "zipSize": 30452
@@ -5991,7 +6121,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     }
    ],
    "zipSize": 22773
@@ -6045,7 +6176,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.006
     }
    ],
    "zipSize": 22818
@@ -6099,7 +6231,8 @@
      "latin": 0,
      "codepoints": 120,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.963
     }
    ],
    "zipSize": 34192
@@ -6149,7 +6282,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.943
     }
    ],
    "zipSize": 34234
@@ -6197,7 +6331,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.776
     },
     {
      "weight": 700,
@@ -6219,7 +6354,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.776
     }
    ],
    "zipSize": 82924
@@ -6273,7 +6409,8 @@
      "latin": 0,
      "codepoints": 111,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.207
     }
    ],
    "zipSize": 21699
@@ -6327,7 +6464,8 @@
      "latin": 0,
      "codepoints": 118,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.929
     }
    ],
    "zipSize": 42073
@@ -6375,7 +6513,8 @@
      "glyphs": 288,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 284
+     "codepoints": 284,
+     "sizeAdjust": 0.894
     }
    ],
    "zipSize": 27503
@@ -6429,7 +6568,8 @@
      "latin": 0,
      "codepoints": 94,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.476
     }
    ],
    "zipSize": 3631
@@ -6477,7 +6617,8 @@
      "glyphs": 640,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 609
+     "codepoints": 609,
+     "sizeAdjust": 1.011
     }
    ],
    "zipSize": 62222
@@ -6525,7 +6666,8 @@
      "glyphs": 103,
      "thaana": 50,
      "latin": 3,
-     "codepoints": 100
+     "codepoints": 100,
+     "sizeAdjust": 1.034
     }
    ],
    "zipSize": 6363
@@ -6573,7 +6715,8 @@
      "glyphs": 103,
      "thaana": 50,
      "latin": 3,
-     "codepoints": 100
+     "codepoints": 100,
+     "sizeAdjust": 0.999
     }
    ],
    "zipSize": 6199
@@ -6621,7 +6764,8 @@
      "glyphs": 103,
      "thaana": 50,
      "latin": 3,
-     "codepoints": 100
+     "codepoints": 100,
+     "sizeAdjust": 1.034
     }
    ],
    "zipSize": 6355
@@ -6671,7 +6815,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 1.011
     },
     {
      "weight": 700,
@@ -6693,7 +6838,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 1.011
     }
    ],
    "zipSize": 76318
@@ -6747,7 +6893,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.987
     }
    ],
    "zipSize": 15769
@@ -6798,7 +6945,8 @@
      "glyphs": 302,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 1.014
     }
    ],
    "zipSize": 40451
@@ -6852,7 +7000,8 @@
      "latin": 0,
      "codepoints": 106,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.7
     }
    ],
    "zipSize": 7971
@@ -6900,7 +7049,8 @@
      "glyphs": 98,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 97
+     "codepoints": 97,
+     "sizeAdjust": 0.819
     }
    ],
    "zipSize": 4592
@@ -6954,7 +7104,8 @@
      "latin": 0,
      "codepoints": 97,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.738
     }
    ],
    "zipSize": 4262
@@ -7008,7 +7159,8 @@
      "latin": 0,
      "codepoints": 94,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.633
     }
    ],
    "zipSize": 5835
@@ -7064,7 +7216,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.965
     }
    ],
    "zipSize": 14936
@@ -7118,7 +7271,8 @@
      "latin": 0,
      "codepoints": 103,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.335
     }
    ],
    "zipSize": 18105
@@ -7166,7 +7320,8 @@
      "glyphs": 97,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 96
+     "codepoints": 96,
+     "sizeAdjust": 0.536
     }
    ],
    "zipSize": 4972
@@ -7220,7 +7375,8 @@
      "latin": 0,
      "codepoints": 111,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.147
     }
    ],
    "zipSize": 24321
@@ -7273,7 +7429,8 @@
      "glyphs": 250,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 247
+     "codepoints": 247,
+     "sizeAdjust": 0.836
     }
    ],
    "zipSize": 39237
@@ -7326,7 +7483,8 @@
      "glyphs": 250,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 247
+     "codepoints": 247,
+     "sizeAdjust": 0.628
     }
    ],
    "zipSize": 39737
@@ -7374,7 +7532,8 @@
      "glyphs": 94,
      "thaana": 50,
      "latin": 0,
-     "codepoints": 93
+     "codepoints": 93,
+     "sizeAdjust": 0.985
     }
    ],
    "zipSize": 4995
@@ -7428,7 +7587,8 @@
      "latin": 0,
      "codepoints": 111,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.936
     }
    ],
    "zipSize": 22490
@@ -7482,7 +7642,8 @@
      "latin": 0,
      "codepoints": 94,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 2.735
     }
    ],
    "zipSize": 4054
@@ -7536,7 +7697,8 @@
      "latin": 52,
      "codepoints": 129,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.213
     }
    ],
    "zipSize": 21083
@@ -7584,7 +7746,8 @@
      "glyphs": 310,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 292
+     "codepoints": 292,
+     "sizeAdjust": 0.938
     },
     {
      "weight": 700,
@@ -7606,7 +7769,8 @@
      "glyphs": 310,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 292
+     "codepoints": 292,
+     "sizeAdjust": 0.938
     }
    ],
    "zipSize": 63764
@@ -7654,7 +7818,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.85
     },
     {
      "weight": 700,
@@ -7676,7 +7841,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.85
     }
    ],
    "zipSize": 66590
@@ -7724,7 +7890,8 @@
      "glyphs": 733,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 688
+     "codepoints": 688,
+     "sizeAdjust": 0.848
     }
    ],
    "zipSize": 77912
@@ -7774,7 +7941,8 @@
      "glyphs": 301,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.98
     },
     {
      "weight": 700,
@@ -7796,7 +7964,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.98
     }
    ],
    "zipSize": 67124
@@ -7849,7 +8018,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.91
     },
     {
      "weight": 700,
@@ -7876,7 +8046,8 @@
      "glyphs": 300,
      "thaana": 50,
      "latin": 52,
-     "codepoints": 282
+     "codepoints": 282,
+     "sizeAdjust": 0.91
     }
    ],
    "zipSize": 77677
@@ -7930,7 +8101,8 @@
      "latin": 0,
      "codepoints": 99,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.086
     }
    ],
    "zipSize": 6225
@@ -7984,7 +8156,8 @@
      "latin": 0,
      "codepoints": 90,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.909
     }
    ],
    "zipSize": 26966
@@ -8038,7 +8211,8 @@
      "latin": 0,
      "codepoints": 104,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.978
     }
    ],
    "zipSize": 18221
@@ -8092,7 +8266,8 @@
      "latin": 0,
      "codepoints": 653,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.076
     }
    ],
    "zipSize": 32169
@@ -8146,7 +8321,8 @@
      "latin": 0,
      "codepoints": 112,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.503
     }
    ],
    "zipSize": 14883
@@ -8202,7 +8378,8 @@
      "latin": 0,
      "codepoints": 94,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.728
     },
     {
      "weight": 700,
@@ -8230,7 +8407,8 @@
      "latin": 0,
      "codepoints": 92,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.728
     }
    ],
    "zipSize": 37653
@@ -8284,7 +8462,8 @@
      "latin": 52,
      "codepoints": 297,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.173
     }
    ],
    "zipSize": 43369
@@ -8338,7 +8517,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 200,
@@ -8366,7 +8546,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 300,
@@ -8394,7 +8575,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 400,
@@ -8422,7 +8604,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 500,
@@ -8450,7 +8633,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 600,
@@ -8478,7 +8662,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 700,
@@ -8506,7 +8691,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     },
     {
      "weight": 800,
@@ -8534,7 +8720,8 @@
      "latin": 52,
      "codepoints": 725,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 0.905
     }
    ],
    "zipSize": 498347
@@ -8588,7 +8775,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 200,
@@ -8616,7 +8804,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 300,
@@ -8644,7 +8833,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 400,
@@ -8672,7 +8862,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 500,
@@ -8700,7 +8891,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 600,
@@ -8728,7 +8920,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 700,
@@ -8756,7 +8949,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     },
     {
      "weight": 800,
@@ -8784,7 +8978,8 @@
      "latin": 52,
      "codepoints": 724,
      "legacyEncoding": null,
-     "cssOverrides": null
+     "cssOverrides": null,
+     "sizeAdjust": 1.481
     }
    ],
    "zipSize": 520343

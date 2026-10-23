@@ -28,3 +28,5 @@ Show Thaana text correctly (RTL even when it starts with a Latin word, numbers i
 ```vue
 <ThaanaText as="p" text="ގުޅާލައްވާ: +960 333-1234" />
 ```
+
+Fonts vary a lot in size at the same `font-size`. `useDhivehiFont('Faruma', [400], { normalize: true })` scales a family so its Thaana letters look as big as Faruma's; the font files are unchanged.

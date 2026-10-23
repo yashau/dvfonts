@@ -73,6 +73,8 @@ dvfonts fixes all of that in one place.
 <p dir="rtl" lang="dv" style="font-family: 'Faruma', system-ui, sans-serif">ދިވެހިރާއްޖެ</p>
 ```
 
+Dhivehi fonts vary a lot in size at the same `font-size`. Add `&normalize=1` to scale each font (CSS `size-adjust`) so its Thaana letters look as big as Faruma's. The font files stay untouched.
+
 **Let people type Thaana on any keyboard,** with no build step:
 
 ```html
@@ -110,7 +112,7 @@ useDhivehiFont('Faruma');
 - **135 families / 195 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
 - **Sorted by use:** Official (document faces in the Faruma tradition), Modern, Artistic, Handwriting and Novelty.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
-- **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right.
+- **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right, and can show every font at the same letter size.
 - **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits).
 
 </td>

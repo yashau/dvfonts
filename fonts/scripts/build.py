@@ -55,6 +55,13 @@ FILI = range(0x07A6, 0x07B1)
 THAANA_LETTERS = range(0x0780, 0x07A6)
 ASCII_LETTERS = {*range(0x41, 0x5B), *range(0x61, 0x7B)}
 
+# Optional size normalisation (CSS size-adjust): fonts are scaled so their
+# Thaana letters look as big as Faruma's. Letter size is the median over the
+# base letters (U+0780-U+07A5, no fili) of sqrt(ink width x ink height), in em:
+# height alone shrinks tall, narrow designs too far. Faruma's value is a
+# constant so the build stays reproducible.
+REFERENCE_LETTER_SIZE = 0.4522
+
 WEIGHT_NAMES = {
     100: "Thin",
     200: "ExtraLight",
@@ -217,6 +224,31 @@ def ensure_gdef_marks(font: TTFont, cmap: dict[int, str]) -> None:
         if adv:
             translate_glyph(font, g, -adv)
             hmtx[g] = (0, lsb - adv)
+
+
+def size_adjust(path: Path) -> float | None:
+    """Scale that makes this font's Thaana letters look as big as Faruma's, for
+    `@font-face { size-adjust }`. None for fonts without Unicode Thaana letters.
+
+    Reads its own copy of the file: drawing glyphs decompiles them, and a font
+    object that is saved afterwards would then be re-encoded."""
+    font = TTFont(path)
+    cmap, glyphs, upm = read_cmap(font), font.getGlyphSet(), font["head"].unitsPerEm
+    sizes = []
+    for cp in range(0x0780, 0x07A6):
+        if cp not in cmap:
+            continue
+        pen = BoundsPen(glyphs)
+        glyphs[cmap[cp]].draw(pen)
+        if pen.bounds:
+            x0, y0, x1, y1 = pen.bounds
+            sizes.append(((x1 - x0) * (y1 - y0)) ** 0.5 / upm)
+    if len(sizes) < 10:
+        return None
+    sizes.sort()
+    mid = len(sizes) // 2
+    median = sizes[mid] if len(sizes) % 2 else (sizes[mid - 1] + sizes[mid]) / 2
+    return round(REFERENCE_LETTER_SIZE / median, 3)
 
 
 def ink_bounds(font: TTFont, glyphs) -> tuple[float, float] | None:
@@ -472,6 +504,7 @@ def main(only: set[str] | None = None) -> None:
                         "thaana": sum(1 for cp in cmap if 0x0780 <= cp <= 0x07B1),
                         "latin": sum(1 for cp in cmap if cp in ASCII_LETTERS),
                         "codepoints": len(cmap),
+                        "sizeAdjust": size_adjust(src_path),
                     }
                     sizes = {ext.lstrip("."): (outdir / f"{base}{ext}").stat().st_size}
                     desktop_bytes, desktop_name = src_path.read_bytes(), src_path.name
@@ -480,6 +513,7 @@ def main(only: set[str] | None = None) -> None:
                     info["legacyEncoding"] = None
                     info["cssOverrides"] = None
                     sizes = {"ttf": save(font, outdir / f"{base}.ttf")}
+                    info["sizeAdjust"] = size_adjust(outdir / f"{base}.ttf")
                     desktop_bytes = (outdir / f"{base}.ttf").read_bytes()
                     desktop_name = f"{re.sub(r'[^A-Za-z0-9]', '', fam['name'])}-{WEIGHT_NAMES[weight]}.ttf"
                 sizes["woff2"] = save(font, outdir / f"{base}.woff2", "woff2")
@@ -515,6 +549,11 @@ def main(only: set[str] | None = None) -> None:
                         **info,
                     }
                 )
+            # One scale per family, from the style nearest Regular: measured per
+            # weight, heavier strokes read as taller letters and bold would shrink.
+            regular = min(styles, key=lambda st: abs(st["weight"] - 400))
+            for st in styles:
+                st["sizeAdjust"] = regular["sizeAdjust"]
             zip_write(zf, f"{fam['name']}/README.txt", readme(fam, meta, styles, sources, license, unmodified_reason))
             if license == "OFL-1.1":
                 zip_write(zf, f"{fam['name']}/OFL.txt", (meta.get("copyright") or "") + "\n\n" + ofl_text)

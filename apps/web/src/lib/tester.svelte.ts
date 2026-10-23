@@ -20,10 +20,13 @@ class Tester {
 	size = $state(DEFAULT_SIZE);
 	/** Set once the user moves the size slider; until then the size follows the screen. */
 	sizeChosen = false;
-	/** Saved settings have been read; persisting earlier would overwrite them. */
-	private ready = false;
+	/** Saved settings have been read: persisting earlier would overwrite them, and
+	 *  the size controls stay hidden until then so they don't visibly jump. */
+	ready = $state(false);
 	/** Latin keystrokes → Thaana (Divehi Phonetic layout). */
 	dv = $state(true);
+	/** Scale previews so every font's Thaana letters look as big as Faruma's (CSS size-adjust). */
+	normalize = $state(true);
 	/** Chosen per page load, client-side, so prerendered HTML stays stable. */
 	pangram = $state('');
 
@@ -42,6 +45,7 @@ class Tester {
 				this.sizeChosen = true;
 			}
 			if (typeof saved.dv === 'boolean') this.dv = saved.dv;
+			if (typeof saved.normalize === 'boolean') this.normalize = saved.normalize;
 		} catch {
 			// storage unavailable: defaults are fine
 		}
@@ -51,7 +55,10 @@ class Tester {
 	persist() {
 		if (!browser || !this.ready) return;
 		try {
-			localStorage.setItem(KEY, JSON.stringify(this.sizeChosen ? { size: this.size, dv: this.dv } : { dv: this.dv }));
+			localStorage.setItem(
+				KEY,
+				JSON.stringify({ ...(this.sizeChosen ? { size: this.size } : {}), dv: this.dv, normalize: this.normalize })
+			);
 		} catch {
 			// ignore
 		}

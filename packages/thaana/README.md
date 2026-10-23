@@ -44,19 +44,19 @@ Or with no build step at all:
 
 ## Text helpers
 
-| Function                                                                      | What it's for                                                                                                                                 |
-| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `transliterate('divehi')`                                                     | `"ދިވެހި"`: replays keystrokes in the layout.                                                                                                    |
-| `convertLegacy(text, { layout })`                                             | Converts text typed in old pre-Unicode A_ fonts (it looks like `ihevid`) to Unicode.                                                          |
-| `repairPdfText(text)`                                                         | Fixes Thaana copied out of PDFs: reversed dates/times, stray spaces, jumped list markers.                                                     |
-| `normalizePunctuation(text)`                                                  | `"ބަސް ، ބުދަ ?"` → `"ބަސް، ބުދަ؟"`, tightens brackets.                                                                                               |
-| `isolateNumbers(text)`                                                        | Keeps `-5`, `+960 333-1234`, `9:00`, `1,000`, `50%` readable inside RTL text. Display only; the framework packages wrap it in `<ThaanaText>`. |
-| `isolate(value)`                                                              | Wraps a URL, email or name so it can't scramble the sentence around it.                                                                       |
-| `stripBidiControls(text)`                                                     | Removes bidi controls before saving or comparing.                                                                                             |
-| `hasThaana`, `hasRtl`, `isMixedScript`, `detectDirection`, `resolveDirection` | Script and direction detection.                                                                                                               |
-| `fontStack('Faruma')`                                                         | `'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif`                                                                              |
-| `loadFonts({ family: 'Faruma' })`                                             | Loads a font from [dvfonts](https://dvfonts.yashau.com) and resolves when it can be drawn.                                                    |
-| `PANGRAMS`, `LETTERS`, `FILI`, …                                              | Sample text and the alphabet.                                                                                                                 |
+| Function                                                                      | What it's for                                                                                                                                                             |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `transliterate('divehi')`                                                     | `"ދިވެހި"`: replays keystrokes in the layout.                                                                                                                                |
+| `convertLegacy(text, { layout })`                                             | Converts text typed in old pre-Unicode A_ fonts (it looks like `ihevid`) to Unicode.                                                                                      |
+| `repairPdfText(text)`                                                         | Fixes Thaana copied out of PDFs: reversed dates/times, stray spaces, jumped list markers.                                                                                 |
+| `normalizePunctuation(text)`                                                  | `"ބަސް ، ބުދަ ?"` → `"ބަސް، ބުދަ؟"`, tightens brackets.                                                                                                                           |
+| `isolateNumbers(text)`                                                        | Keeps `-5`, `+960 333-1234`, `9:00`, `1,000`, `50%` readable inside RTL text. Display only; the framework packages wrap it in `<ThaanaText>`.                             |
+| `isolate(value)`                                                              | Wraps a URL, email or name so it can't scramble the sentence around it.                                                                                                   |
+| `stripBidiControls(text)`                                                     | Removes bidi controls before saving or comparing.                                                                                                                         |
+| `hasThaana`, `hasRtl`, `isMixedScript`, `detectDirection`, `resolveDirection` | Script and direction detection.                                                                                                                                           |
+| `fontStack('Faruma')`                                                         | `'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif`                                                                                                          |
+| `loadFonts({ family: 'Faruma' })`                                             | Loads a font from [dvfonts](https://dvfonts.yashau.com) and resolves when it can be drawn. `{ normalize: true }` scales it so its Thaana letters look as big as Faruma's. |
+| `PANGRAMS`, `LETTERS`, `FILI`, …                                              | Sample text and the alphabet.                                                                                                                                             |
 
 ## CSS defaults
 

@@ -134,7 +134,10 @@ ${SCRIPT_END}
 			'detectDirection(text) · resolveDirection(text, explicit, fallback)',
 			'First-strong (like dir="auto") vs rihaPDF\'s rule: any Thaana → RTL; no letters → fallback.'
 		],
-		['loadFonts({ family, weights })', 'Load a dvfonts family; resolves when it can be drawn (canvas, SVG).'],
+		[
+			'loadFonts({ family, weights }, { normalize })',
+			"Load a dvfonts family; resolves when it can be drawn (canvas, SVG). normalize: true scales it so its letters look as big as Faruma's."
+		],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
 		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.']
 	];
@@ -169,6 +172,11 @@ ${SCRIPT_END}
 		<li><code>family=Name</code> with spaces as <code>+</code>. Old names work too (<code>A_Waheed</code>).</li>
 		<li><code>:wght@400;700</code> picks weights; without it you get the default weight.</li>
 		<li>Fonts are split into Thaana and Latin parts, so a Thaana-only page downloads only the Thaana part.</li>
+		<li>
+			Fonts vary a lot in size at the same <code>font-size</code>. Add <code>&amp;normalize=1</code> to scale each one
+			(CSS <code>size-adjust</code>) so its Thaana letters look as big as Faruma's. The font files are unchanged, and
+			it's off unless you ask for it.
+		</li>
 		<li>Many Dhivehi fonts have no Latin letters, so always list a Latin fallback after the family.</li>
 		<li>
 			Self-hosting? Every font and collection is on the <a class="underline underline-offset-4" href="/downloads"

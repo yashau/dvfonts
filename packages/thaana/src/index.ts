@@ -20,5 +20,5 @@ export {
 	PDI,
 	type NormalizePunctuationOptions
 } from './text.js';
-export { loadFonts, fontCssUrl, DVFONTS_ORIGIN, type FontRequest } from './fonts.js';
+export { loadFonts, fontCssUrl, DVFONTS_ORIGIN, type FontRequest, type FontCssOptions } from './fonts.js';
 export { PANGRAMS, ARABIC_LETTERS_SAMPLE, LETTERS, ARABIC_LETTERS, FILI } from './samples.js';

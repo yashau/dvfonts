@@ -8,9 +8,10 @@ import { SUBSET_RANGES, fontUrl, type Family, type Style } from '#lib/catalog.js
 const registered = new Set<string>();
 
 /** CSS family name used for previews (scoped so it never collides with an
- *  installed copy of the same font). */
-export function previewFamily(f: Family): string {
-	return `dv-${f.id}`;
+ *  installed copy of the same font). `normalized` picks the copy registered
+ *  with size-adjust, whose Thaana letters look as big as Faruma's. */
+export function previewFamily(f: Family, normalized = false): string {
+	return normalized ? `dv-${f.id}-n` : `dv-${f.id}`;
 }
 
 const pct = (v: number) => `${(v * 100).toFixed(2)}%`;
@@ -27,16 +28,23 @@ export function registerStyle(f: Family, s: Style): void {
 	registered.add(key);
 	const base = { weight: String(s.weight), display: 'swap' as FontDisplay, ...overrideDescriptors(s) };
 	const subsets = Object.keys(s.subsets) as ('thaana' | 'latin')[];
-	const faces = subsets.length
-		? subsets.map(
-				(name) =>
-					new FontFace(previewFamily(f), `url(${fontUrl(f, s.weight, `${name}.woff2`)}) format('woff2')`, {
-						...base,
-						unicodeRange: SUBSET_RANGES[name]
-					})
-			)
-		: [new FontFace(previewFamily(f), `url(${fontUrl(f, s.weight, 'woff2')}) format('woff2')`, base)];
-	for (const face of faces) document.fonts.add(face);
+	// Two registrations of the same files: as published, and size-adjusted.
+	// The browser downloads each file once, and only when a preview uses it.
+	// sizeAdjust is in every current browser but not yet in TypeScript's DOM types.
+	const variants: [string, FontFaceDescriptors & { sizeAdjust?: string }][] = [[previewFamily(f), base]];
+	if (s.sizeAdjust) variants.push([previewFamily(f, true), { ...base, sizeAdjust: pct(s.sizeAdjust) }]);
+	for (const [family, descriptors] of variants) {
+		const faces = subsets.length
+			? subsets.map(
+					(name) =>
+						new FontFace(family, `url(${fontUrl(f, s.weight, `${name}.woff2`)}) format('woff2')`, {
+							...descriptors,
+							unicodeRange: SUBSET_RANGES[name]
+						})
+				)
+			: [new FontFace(family, `url(${fontUrl(f, s.weight, 'woff2')}) format('woff2')`, descriptors)];
+		for (const face of faces) document.fonts.add(face);
+	}
 }
 
 export function registerFamily(f: Family): void {

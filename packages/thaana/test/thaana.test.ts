@@ -5,6 +5,7 @@ import {
 	autoAttach,
 	convertLegacy,
 	detectDirection,
+	fontCssUrl,
 	isolate,
 	KEYMAP,
 	LETTERS,
@@ -119,5 +120,16 @@ describe('text helpers', () => {
 				LETTERS.filter((l) => !p.includes(l)),
 				p
 			).toEqual([]);
+	});
+});
+
+describe('fontCssUrl', () => {
+	it('builds a css2 URL and only asks for size normalisation when requested', () => {
+		expect(fontCssUrl({ family: 'MV Faseyha', weights: [700, 400] })).toBe(
+			'https://dvfonts.yashau.com/css2?family=MV+Faseyha:wght@400;700&display=swap'
+		);
+		expect(fontCssUrl({ family: 'Bolhu' }, { normalize: true })).toBe(
+			'https://dvfonts.yashau.com/css2?family=Bolhu&display=swap&normalize=1'
+		);
 	});
 });

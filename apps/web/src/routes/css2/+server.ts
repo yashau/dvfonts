@@ -35,11 +35,14 @@ function parseFamily(spec: string): { family: Family; styles: Style[] } {
 	return { family, styles };
 }
 
-function faceRules(base: string, family: Family, style: Style, display: string): string[] {
+function faceRules(base: string, family: Family, style: Style, display: string, normalize: boolean): string[] {
 	const o = style.cssOverrides;
-	const overrides = o
-		? `\n  ascent-override: ${(o.ascent * 100).toFixed(2)}%;\n  descent-override: ${(-o.descent * 100).toFixed(2)}%;\n  line-gap-override: ${(o.lineGap * 100).toFixed(2)}%;`
-		: '';
+	const overrides =
+		(o
+			? `\n  ascent-override: ${(o.ascent * 100).toFixed(2)}%;\n  descent-override: ${(-o.descent * 100).toFixed(2)}%;\n  line-gap-override: ${(o.lineGap * 100).toFixed(2)}%;`
+			: '') +
+		// Opt-in: scale so the Thaana letters look as big as Faruma's. The font file is untouched.
+		(normalize && style.sizeAdjust ? `\n  size-adjust: ${(style.sizeAdjust * 100).toFixed(1)}%;` : '');
 	const head = (comment: string) =>
 		`/* ${family.name} ${WEIGHT_NAMES[style.weight]}${comment} */\n@font-face {\n  font-family: '${family.name}';\n  font-style: normal;\n  font-weight: ${style.weight};\n  font-display: ${display};${overrides}`;
 	const subsets = Object.keys(style.subsets) as ('thaana' | 'latin')[];
@@ -61,11 +64,12 @@ export const GET: RequestHandler = ({ url }) => {
 	if (!specs.length) error(400, 'Missing ?family=. Example: /css2?family=Faruma&display=swap');
 	const display = url.searchParams.get('display') ?? 'swap';
 	if (!DISPLAY.has(display)) error(400, `Invalid display "${display}"`);
+	const normalize = ['1', 'true'].includes(url.searchParams.get('normalize') ?? '');
 	const rules = specs
 		.flatMap((spec) => spec.split('|'))
 		.flatMap((spec) => {
 			const { family, styles } = parseFamily(spec);
-			return styles.flatMap((s) => faceRules(url.origin, family, s, display));
+			return styles.flatMap((s) => faceRules(url.origin, family, s, display, normalize));
 		});
 	return new Response(rules.join('\n\n') + '\n', {
 		headers: {

@@ -21,7 +21,9 @@
 	const content = $derived(
 		text ?? (symbols ? (tester.text && !tester.dv ? tester.text : SYMBOL_SAMPLE) : tester.preview)
 	);
-	const lineHeight = $derived(previewLineHeight(family.styles.find((s) => s.weight === weight)));
+	const style = $derived(family.styles.find((s) => s.weight === weight));
+	const normalized = $derived(tester.normalize && !!style?.sizeAdjust);
+	const lineHeight = $derived(previewLineHeight(style, normalized ? (style?.sizeAdjust ?? 1) : 1));
 	// Pre-Unicode fonts draw Thaana from Latin keys: write the sample in their
 	// encoding and force it right to left, unless the user typed Latin themselves.
 	const legacy = $derived(legacyEncoding(family));
@@ -33,7 +35,7 @@
 	class={cn('preview-text text-foreground', className)}
 	{dir}
 	lang={symbols || legacyText !== null ? undefined : 'dv'}
-	style:font-family="'{previewFamily(family)}', 'dv-ui', sans-serif"
+	style:font-family="'{previewFamily(family, normalized)}', 'dv-ui', sans-serif"
 	style:font-weight={weight}
 	style:font-size="{size}px"
 	style:unicode-bidi={legacyText !== null ? 'bidi-override' : undefined}

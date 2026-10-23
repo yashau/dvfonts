@@ -9,10 +9,20 @@ export interface FontRequest {
 	weights?: number[];
 }
 
+export interface FontCssOptions {
+	/** CSS font-display. Default: 'swap'. */
+	display?: string;
+	/** Where dvfonts lives. Default: https://dvfonts.yashau.com */
+	origin?: string;
+	/** Scale each family (CSS size-adjust) so its Thaana letters are as tall as
+	 *  Faruma's at the same font-size. The font files are unchanged. Default: false. */
+	normalize?: boolean;
+}
+
 /** URL of the CSS for one or more families. */
 export function fontCssUrl(
 	fonts: FontRequest | FontRequest[],
-	{ display = 'swap', origin = DVFONTS_ORIGIN }: { display?: string; origin?: string } = {}
+	{ display = 'swap', origin = DVFONTS_ORIGIN, normalize = false }: FontCssOptions = {}
 ): string {
 	const list = Array.isArray(fonts) ? fonts : [fonts];
 	const params = list
@@ -21,7 +31,7 @@ export function fontCssUrl(
 			return `family=${name}${weights?.length ? `:wght@${weights.toSorted((a, b) => a - b).join(';')}` : ''}`;
 		})
 		.join('&');
-	return `${origin}/css2?${params}&display=${display}`;
+	return `${origin}/css2?${params}&display=${display}${normalize ? '&normalize=1' : ''}`;
 }
 
 /**
@@ -29,10 +39,7 @@ export function fontCssUrl(
  * resolve when the fonts are ready to draw with. Use the family name in CSS
  * afterwards: font-family: 'Faruma', system-ui, sans-serif.
  */
-export function loadFonts(
-	fonts: FontRequest | FontRequest[],
-	options?: { display?: string; origin?: string }
-): Promise<void> {
+export function loadFonts(fonts: FontRequest | FontRequest[], options?: FontCssOptions): Promise<void> {
 	const href = fontCssUrl(fonts, options);
 	let link = document.querySelector<HTMLLinkElement>(`link[data-dvfonts][href="${CSS.escape(href)}"]`);
 	if (!link) {

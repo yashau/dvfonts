@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { loadFonts, type FontRequest } from '@yashau/thaana';
+import { loadFonts, type FontRequest, type FontCssOptions } from '@yashau/thaana';
 
 /**
  * Load a Dhivehi font from dvfonts and report when it's ready.
@@ -7,9 +7,9 @@ import { loadFonts, type FontRequest } from '@yashau/thaana';
  *   const ready = useDhivehiFont('Faruma');
  *   <p lang="dv" dir="rtl" style={{ fontFamily: "'Faruma', system-ui" }}>…</p>
  */
-export function useDhivehiFont(family: string, weights?: number[], options?: { origin?: string }): boolean {
+export function useDhivehiFont(family: string, weights?: number[], options?: FontCssOptions): boolean {
 	const [ready, setReady] = useState(false);
-	const key = `${family}|${weights?.join(';') ?? ''}|${options?.origin ?? ''}`;
+	const key = `${family}|${weights?.join(';') ?? ''}|${options?.origin ?? ''}|${options?.normalize ?? false}`;
 	useEffect(() => {
 		let live = true;
 		setReady(false);

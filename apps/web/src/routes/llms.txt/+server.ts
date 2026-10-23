@@ -42,6 +42,7 @@ Several families and weights in one request: \`${O}/css2?family=Bolhu:wght@400;7
 - Omit \`:wght@...\` to get the family's default (Regular) weight.
 - An unknown family or weight returns HTTP 400 with a message listing what is available.
 - The CSS uses unicode-range subsets: a Thaana-only page downloads only the small Thaana file.
+- Fonts differ a lot in size at the same font-size. Optional: add \`&normalize=1\` to scale each family (CSS \`size-adjust\`) so its Thaana letters look as big as Faruma's; the files are unchanged. Packages: \`fontCssUrl(fonts, { normalize: true })\`, \`loadFonts(fonts, { normalize: true })\`, \`useDhivehiFont(family, weights, { normalize: true })\`.
 - Many Dhivehi fonts have no Latin glyphs. Put a Latin fallback after the family: \`font-family: 'Faruma', system-ui, sans-serif;\`
 - Self-hosting: download \`${O}/fonts/<id>/<id>.zip\`, or individual \`.woff2\` / \`.ttf\` files listed in fonts.json.
 

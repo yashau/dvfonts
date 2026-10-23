@@ -22,6 +22,8 @@ export interface Style {
 	/** Vertical metrics in em (absent for fonts without usable ones). */
 	metrics: { repaired: boolean } & Partial<MetricOverrides>;
 	cssOverrides: MetricOverrides | null;
+	/** Optional scale (CSS size-adjust) that makes the Thaana letters look as big as Faruma's. */
+	sizeAdjust: number | null;
 	glyphs: number;
 	thaana: number;
 	latin: number;
@@ -138,10 +140,11 @@ const PREVIEW_LINE_GAP = 0.2;
  * Fonts with very tall fili, like Faiy, are otherwise clipped where previews
  * hide overflow (line clamping).
  */
-export function previewLineHeight(s: Style | undefined): number {
+export function previewLineHeight(s: Style | undefined, scale = 1): number {
 	const m = s?.cssOverrides ?? s?.metrics;
 	if (m?.ascent === undefined || m.descent === undefined) return PREVIEW_LINE_HEIGHT;
-	const natural = m.ascent - m.descent + (m.lineGap ?? 0);
+	// size-adjust scales the font's line box along with its glyphs.
+	const natural = (m.ascent - m.descent + (m.lineGap ?? 0)) * scale;
 	// Plus a gap, so one line's fili don't crowd the next line's.
 	return Math.max(PREVIEW_LINE_HEIGHT, Math.round((natural + PREVIEW_LINE_GAP) * 100) / 100);
 }
