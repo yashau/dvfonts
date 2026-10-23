@@ -7,6 +7,7 @@
 	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import ALargeSmallIcon from '@lucide/svelte/icons/a-large-small';
+	import CaseUpperIcon from '@lucide/svelte/icons/case-upper';
 	import { Toggle } from '#lib/components/ui/toggle/index.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
@@ -116,7 +117,8 @@
 							bind:pressed={tester.normalize}
 							aria-label="Same size for every font"
 						>
-							<ALargeSmallIcon />
+							<!-- Even letters when every font is scaled to Faruma's size; mixed sizes when not. -->
+							{#if tester.normalize}<CaseUpperIcon />{:else}<ALargeSmallIcon />{/if}
 						</Toggle>
 					{/snippet}
 				</Tooltip.Trigger>
