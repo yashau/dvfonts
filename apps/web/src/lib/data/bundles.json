@@ -68,13 +68,13 @@
  {
   "id": "artistic",
   "name": "Artistic",
-  "description": "Decorative and headline fonts: outlines, shadows, heavy and stylised Thaana.",
+  "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "dvfonts-artistic.zip",
-  "families": 19,
-  "styles": 22,
-  "size": 452212,
-  "sha256": "597fc1e66e08f250f25cbd9556ff170613a1eab054e1dd3abf06ccaf456533af"
+  "families": 23,
+  "styles": 26,
+  "size": 609622,
+  "sha256": "9c406c69eb257f54b013b28f5b1d29a8fe0e392b75fe0110e484cc0964607c2a"
  },
  {
   "id": "handwriting",

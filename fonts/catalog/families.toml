@@ -4,7 +4,7 @@
 # file in sources/. Legacy (pre-Unicode, ASCII-slot) fonts are detected from
 # scripts/legacy.py and remapped to Unicode Thaana at build time.
 #
-# category: official | modern | artistic | handwriting | novelty | mono | symbols
+# category: official | modern | artistic | handwriting | novelty | symbols
 # aliases:  other names the same design circulates under (searchable on the site)
 # hidden:   true keeps a family off the browse page; it keeps its own page, downloads and bundles
 # designer: display credit for the site when the font names nobody usable
@@ -549,6 +549,28 @@ name = "MV Lhaiy"
 category = "artistic"
 fonts = { 700 = "mv-lhaiy-bold.otf" }
 
+[families.masnooee-mono]
+name = "Masnooee Mono"
+category = "artistic"
+fonts = { 400 = "masnooeemono-regular.ttf" }
+
+[families.lcd-thaana]
+name = "LCD Thaana"
+category = "artistic"
+fonts = { 400 = "lcdthaana-regular.ttf" }
+
+[families.mv-thaana-matrix-8]
+name = "MV Thaana Matrix 8"
+unmodified = true
+category = "artistic"
+fonts = { 400 = "mv-thaana-dotmatrix-8.ttf" }
+
+[families.mv-thaana-matrix-16]
+name = "MV Thaana Matrix 16"
+unmodified = true
+category = "artistic"
+fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
+
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
 [families.mv-izy-pro]
@@ -740,30 +762,6 @@ fonts = { 400 = "mv-vashalo.otf" }
 name = "MV Thavaa"
 category = "novelty"
 fonts = { 400 = "thavaa.otf" }
-
-# ─── Monospace / pixel ───────────────────────────────────────────────────────
-
-[families.masnooee-mono]
-name = "Masnooee Mono"
-category = "mono"
-fonts = { 400 = "masnooeemono-regular.ttf" }
-
-[families.lcd-thaana]
-name = "LCD Thaana"
-category = "mono"
-fonts = { 400 = "lcdthaana-regular.ttf" }
-
-[families.mv-thaana-matrix-8]
-name = "MV Thaana Matrix 8"
-unmodified = true
-category = "mono"
-fonts = { 400 = "mv-thaana-dotmatrix-8.ttf" }
-
-[families.mv-thaana-matrix-16]
-name = "MV Thaana Matrix 16"
-unmodified = true
-category = "mono"
-fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 
 # ─── Symbols ─────────────────────────────────────────────────────────────────
 

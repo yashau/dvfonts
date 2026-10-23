@@ -2916,7 +2916,7 @@
   {
    "id": "lcd-thaana",
    "name": "LCD Thaana",
-   "category": "mono",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -2970,7 +2970,7 @@
   {
    "id": "masnooee-mono",
    "name": "Masnooee Mono",
-   "category": "mono",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7228,7 +7228,7 @@
   {
    "id": "mv-thaana-matrix-16",
    "name": "MV Thaana Matrix 16",
-   "category": "mono",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7281,7 +7281,7 @@
   {
    "id": "mv-thaana-matrix-8",
    "name": "MV Thaana Matrix 8",
-   "category": "mono",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,

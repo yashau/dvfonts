@@ -39,7 +39,7 @@ categories = ["official"]
 
 [bundles.artistic]
 name = "Artistic"
-description = "Decorative and headline fonts: outlines, shadows, heavy and stylised Thaana."
+description = "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana."
 categories = ["artistic"]
 
 [bundles.handwriting]
