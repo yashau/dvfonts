@@ -34,18 +34,23 @@ categories = ["modern"]
 
 [bundles.official]
 name = "Official"
-description = "Text faces for formal documents: letters, notices, books and reports."
+description = "Text faces in the Faruma tradition, for documents: letters, notices, books and reports."
 categories = ["official"]
 
 [bundles.artistic]
 name = "Artistic"
-description = "Decorative, calligraphic and headline fonts."
+description = "Decorative and headline fonts: outlines, shadows, heavy and stylised Thaana."
 categories = ["artistic"]
 
 [bundles.handwriting]
 name = "Handwriting"
-description = "Casual and handwritten styles."
+description = "Casual, calligraphic and handwritten styles."
 categories = ["handwriting"]
+
+[bundles.novelty]
+name = "Novelty"
+description = "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana."
+categories = ["novelty"]
 
 [bundles.webfonts-essentials]
 name = "Webfont kit (Essentials)"

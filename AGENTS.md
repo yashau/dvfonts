@@ -71,7 +71,7 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
   - OFL fonts get `OFL.txt` in their zip.
   - Don't add commercially licensed fonts (MV Boli, anything bundling Microsoft glyphs).
   - Glyph outlines are never modified.
-- Categories are `official`, `modern`, `artistic`, `handwriting`, `mono` and `symbols`. Not "traditional": designers read that as "old".
+- Categories are `official`, `modern`, `artistic`, `handwriting`, `novelty`, `mono` and `symbols`. A font that looks like Faruma (a text face you could set a document in) is `official`; experimental or constructed designs are `novelty`. Not "traditional": designers read that as "old". `families.toml` is grouped by category; keep a family in its category's section.
 - **Legacy policy:** an `A_`/pre-Unicode font is listed only if no modern Unicode version of the same design exists. Otherwise it goes in `[excluded]`, and its name becomes an alias on the modern family.
 - The build must stay **byte-reproducible**: no timestamps, dates or random ordering in output (`recalcTimestamp=False`, fixed zip times). CI rebuilds it and diffs `apps/web/src/lib/data`.
 - `fonts/scripts/research/` holds the one-off tools that recovered the legacy layouts and found duplicates. They're useful when adding fonts, but they're not part of the build.

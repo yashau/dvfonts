@@ -49,43 +49,54 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "dvfonts-modern.zip",
-  "families": 20,
-  "styles": 61,
-  "size": 2990658,
-  "sha256": "de16e083c73158c5d6b40af63449842264701065a63509c601fe5aaf97386f21"
+  "families": 19,
+  "styles": 60,
+  "size": 2972357,
+  "sha256": "45dce7b22499ba61fe2672d8502e1d688e6ac166ed39526a52f926d23bd4531f"
  },
  {
   "id": "official",
   "name": "Official",
-  "description": "Text faces for formal documents: letters, notices, books and reports.",
+  "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "dvfonts-official.zip",
-  "families": 47,
-  "styles": 56,
-  "size": 1694210,
-  "sha256": "967be69e6ff54619fc3f92f4d1dd2a4ab543acd36d1533aaa16508ddc693df2a"
+  "families": 55,
+  "styles": 69,
+  "size": 1904574,
+  "sha256": "181f83eff0d6f8b7cdb0b4d09a229fc2fcc8eac06e7e44598bbff4b957312dfe"
  },
  {
   "id": "artistic",
   "name": "Artistic",
-  "description": "Decorative, calligraphic and headline fonts.",
+  "description": "Decorative and headline fonts: outlines, shadows, heavy and stylised Thaana.",
   "format": "ttf",
   "file": "dvfonts-artistic.zip",
-  "families": 48,
-  "styles": 53,
-  "size": 711134,
-  "sha256": "6f8e6309d88b5021d11678670b4d1c9508cde13736fdd8c348b02f9b905e74ab"
+  "families": 19,
+  "styles": 22,
+  "size": 452212,
+  "sha256": "597fc1e66e08f250f25cbd9556ff170613a1eab054e1dd3abf06ccaf456533af"
  },
  {
   "id": "handwriting",
   "name": "Handwriting",
-  "description": "Casual and handwritten styles.",
+  "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "dvfonts-handwriting.zip",
   "families": 15,
-  "styles": 20,
-  "size": 521483,
-  "sha256": "c35a4978be82f2900272c4c597f434fac09f8deb814ed503eea893fdeb47a70f"
+  "styles": 16,
+  "size": 451905,
+  "sha256": "9af478feb5e57792d3dd3514999ecc79541583f77c64b16259af520fa769e2ba"
+ },
+ {
+  "id": "novelty",
+  "name": "Novelty",
+  "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
+  "format": "ttf",
+  "file": "dvfonts-novelty.zip",
+  "families": 22,
+  "styles": 23,
+  "size": 136780,
+  "sha256": "7a9b04d8a1d88ccd72699a894c90e0ace32b3e4a543067fd644d75ab741be0bc"
  },
  {
   "id": "webfonts-essentials",

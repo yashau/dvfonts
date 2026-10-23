@@ -1,6 +1,6 @@
 import subsetRanges from '#lib/data/subsets.json';
 
-export type Category = 'official' | 'modern' | 'artistic' | 'handwriting' | 'mono' | 'symbols';
+export type Category = 'official' | 'modern' | 'artistic' | 'handwriting' | 'novelty' | 'mono' | 'symbols';
 
 export interface MetricOverrides {
 	ascent: number;
@@ -64,6 +64,7 @@ export const CATEGORIES: { id: Category; label: string; thaana: string }[] = [
 	{ id: 'modern', label: 'Modern', thaana: 'މޮޑަން' },
 	{ id: 'artistic', label: 'Artistic', thaana: 'ފަންނީ' },
 	{ id: 'handwriting', label: 'Handwriting', thaana: 'އަތްލިޔުން' },
+	{ id: 'novelty', label: 'Novelty', thaana: 'ތަފާތު' },
 	{ id: 'mono', label: 'Monospace', thaana: 'މޮނޯ' },
 	{ id: 'symbols', label: 'Symbols', thaana: 'ނިޝާން' }
 ];

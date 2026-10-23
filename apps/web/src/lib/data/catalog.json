@@ -331,7 +331,7 @@
   {
    "id": "a-haleem-riveli",
    "name": "A Haleem Riveli",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -922,7 +922,7 @@
   {
    "id": "athu-casual",
    "name": "Athu Casual",
-   "category": "handwriting",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -1081,7 +1081,7 @@
   {
    "id": "bodukuru",
    "name": "Bodukuru",
-   "category": "handwriting",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -1821,7 +1821,7 @@
   {
    "id": "faaru-punk",
    "name": "Faaru Punk",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -2456,7 +2456,7 @@
   {
    "id": "gurafiku",
    "name": "Gurafiku",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -2510,7 +2510,7 @@
   {
    "id": "haluvidhaa",
    "name": "Haluvidhaa",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -2564,7 +2564,7 @@
   {
    "id": "hawwa",
    "name": "Hawwa",
-   "category": "handwriting",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -2618,7 +2618,7 @@
   {
    "id": "kanafala",
    "name": "Kanafala",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3132,7 +3132,7 @@
   {
    "id": "motaru-square",
    "name": "Motaru Square",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3353,7 +3353,7 @@
   {
    "id": "mv-akson",
    "name": "MV Akson",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3401,7 +3401,7 @@
   {
    "id": "mv-alram",
    "name": "MV Alram",
-   "category": "official",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3455,7 +3455,7 @@
   {
    "id": "mv-ashaahi",
    "name": "MV Ashaahi",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3557,7 +3557,7 @@
   {
    "id": "mv-beys",
    "name": "MV Beys",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -3665,7 +3665,7 @@
   {
    "id": "mv-dubai",
    "name": "MV Dubai",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -4047,7 +4047,7 @@
   {
    "id": "mv-funa",
    "name": "MV Funa",
-   "category": "handwriting",
+   "category": "official",
    "aliases": [],
    "notes": "Based on the handwriting in Viyafaari Miadhu (1968). Its OpenType features are tested in Microsoft Word; some, like the raised Thaana full stop, don't work in Adobe InDesign or other apps.",
    "hidden": false,
@@ -4161,7 +4161,7 @@
   {
    "id": "mv-gaa-lhohi",
    "name": "MV Gaa Lhohi",
-   "category": "official",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -4269,7 +4269,7 @@
   {
    "id": "mv-golhifoshi",
    "name": "MV Golhifoshi",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -4323,7 +4323,7 @@
   {
    "id": "mv-groupx-avas",
    "name": "MV GroupX Avas",
-   "category": "artistic",
+   "category": "official",
    "aliases": [
     "Mv GroupX Avas Akuru"
    ],
@@ -4379,7 +4379,7 @@
   {
    "id": "mv-hulhumale",
    "name": "MV Hulhumale",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -4662,7 +4662,7 @@
   {
    "id": "mv-izy-pro",
    "name": "MV Izy Pro",
-   "category": "official",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -4960,7 +4960,7 @@
   {
    "id": "mv-izyan-lhohi",
    "name": "MV Izyan Lhohi",
-   "category": "official",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -5068,7 +5068,7 @@
   {
    "id": "mv-izyan-liyun",
    "name": "MV Izyan Liyun",
-   "category": "official",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -5863,7 +5863,7 @@
   {
    "id": "mv-mag-round",
    "name": "MV MAG Round",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6383,7 +6383,7 @@
   {
    "id": "mv-osho",
    "name": "MV Osho",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6485,7 +6485,7 @@
   {
    "id": "mv-prathama-dva",
    "name": "MV Prathama Dva",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6533,7 +6533,7 @@
   {
    "id": "mv-prathama-ek",
    "name": "MV Prathama Ek",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6581,7 +6581,7 @@
   {
    "id": "mv-prathama-tin",
    "name": "MV Prathama Tin",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6806,7 +6806,7 @@
   {
    "id": "mv-roma",
    "name": "MV Roma",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6860,7 +6860,7 @@
   {
    "id": "mv-runa",
    "name": "MV Runa",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6908,7 +6908,7 @@
   {
    "id": "mv-salhi-eka",
    "name": "MV Salhi Eka",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6962,7 +6962,7 @@
   {
    "id": "mv-sarukitu",
    "name": "MV Sarukitu",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7016,7 +7016,7 @@
   {
    "id": "mv-sehga-fb",
    "name": "MV Sehga FB",
-   "category": "artistic",
+   "category": "official",
    "aliases": [
     "Mv Sehga Fubaru Fancy"
    ],
@@ -7072,7 +7072,7 @@
   {
    "id": "mv-sehga-old",
    "name": "MV Sehga Old",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7126,7 +7126,7 @@
   {
    "id": "mv-sishisozo-vah",
    "name": "MV Sishisozo Vah",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7334,7 +7334,7 @@
   {
    "id": "mv-thaanarabi",
    "name": "MV Thaanarabi",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7436,7 +7436,7 @@
   {
    "id": "mv-thavaa",
    "name": "MV Thavaa",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7884,7 +7884,7 @@
   {
    "id": "mv-vashalo",
    "name": "MV Vashalo",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7992,7 +7992,7 @@
   {
    "id": "noto-sans-thaana",
    "name": "Noto Sans Thaana",
-   "category": "modern",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -8100,7 +8100,7 @@
   {
    "id": "sangu-suruhee",
    "name": "Sangu Suruhee",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -8154,7 +8154,7 @@
   {
    "id": "thaana",
    "name": "Thaana",
-   "category": "handwriting",
+   "category": "official",
    "aliases": [
     "Akko"
    ],
