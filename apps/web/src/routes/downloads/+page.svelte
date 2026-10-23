@@ -31,7 +31,9 @@
 		<h2 class="mt-10 text-xl font-semibold tracking-tight">{group.title}</h2>
 		<p class="mb-4 text-sm text-muted-foreground">{group.note}</p>
 		<Card.Root class="py-0">
-			<Item.Group>
+			<!-- py-6 matches the space around each separator (the group's gap-4 plus the separator's my-2), so the
+			     first and last items sit as far from the card edge as the others do from a separator. -->
+			<Item.Group class="py-6">
 				{#each group.list as b, i (b.id)}
 					{#if i > 0}<Item.Separator />{/if}
 					<Item.Root class="flex-wrap">
