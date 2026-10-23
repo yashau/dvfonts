@@ -6,8 +6,8 @@
 	import { Slider } from '#lib/components/ui/slider/index.js';
 	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
-	import ALargeSmallIcon from '@lucide/svelte/icons/a-large-small';
-	import CaseUpperIcon from '@lucide/svelte/icons/case-upper';
+	import EqualIcon from '@lucide/svelte/icons/equal';
+	import EqualNotIcon from '@lucide/svelte/icons/equal-not';
 	import { Toggle } from '#lib/components/ui/toggle/index.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
@@ -117,8 +117,8 @@
 							bind:pressed={tester.normalize}
 							aria-label="Same size for every font"
 						>
-							<!-- Even letters when every font is scaled to Faruma's size; mixed sizes when not. -->
-							{#if tester.normalize}<CaseUpperIcon />{:else}<ALargeSmallIcon />{/if}
+							<!-- = when every font is scaled to Faruma's size, ≠ when each keeps its own. -->
+							{#if tester.normalize}<EqualIcon />{:else}<EqualNotIcon />{/if}
 						</Toggle>
 					{/snippet}
 				</Tooltip.Trigger>
