@@ -5500,7 +5500,7 @@
   {
    "id": "mv-kashi",
    "name": "MV Kashi",
-   "category": "official",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -6227,7 +6227,7 @@
   {
    "id": "mv-neru-magu",
    "name": "MV Neru Magu",
-   "category": "official",
+   "category": "artistic",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -7490,7 +7490,7 @@
   {
    "id": "mv-thiki-akuru",
    "name": "MV Thiki Akuru",
-   "category": "artistic",
+   "category": "novelty",
    "aliases": [],
    "notes": null,
    "hidden": false,
@@ -8100,7 +8100,7 @@
   {
    "id": "sangu-suruhee",
    "name": "Sangu Suruhee",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "hidden": false,

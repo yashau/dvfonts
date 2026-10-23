@@ -170,16 +170,6 @@ designer = "Mohamed Mazeed"
 category = "official"
 fonts = { 400 = "dam-kathivalhi.otf" }
 
-[families.mv-kashi]
-name = "MV Kashi"
-category = "official"
-fonts = { 400 = "mv-kashi.ttf" }
-
-[families.mv-neru-magu]
-name = "MV Neru Magu"
-category = "official"
-fonts = { 700 = "mv-nerumagu.ttf" }
-
 [families.athu-casual]
 name = "Athu Casual"
 category = "official"
@@ -215,6 +205,11 @@ fonts = { 400 = "haluvidhaa-regular.ttf" }
 name = "Faiy"
 category = "official"
 fonts = { 300 = "faiy-light.otf" }
+
+[families.sangu-suruhee]
+name = "Sangu Suruhee"
+category = "official"
+fonts = { 400 = "sangusuruhee-regular.ttf" }
 
 # ─── Modern / geometric ──────────────────────────────────────────────────────
 
@@ -351,6 +346,16 @@ fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
 
 # ─── Artistic (decorative, display) ──────────────────────────────────────────
 
+[families.mv-kashi]
+name = "MV Kashi"
+category = "artistic"
+fonts = { 400 = "mv-kashi.ttf" }
+
+[families.mv-neru-magu]
+name = "MV Neru Magu"
+category = "artistic"
+fonts = { 700 = "mv-nerumagu.ttf" }
+
 [families.mv-suruhee]
 name = "MV Suruhee"
 category = "artistic"
@@ -371,11 +376,6 @@ fonts = { 400 = "sehga-fb.ttf" }
 name = "MV Sehga Old"
 category = "artistic"
 fonts = { 400 = "mv-sehga-old.otf" }
-
-[families.sangu-suruhee]
-name = "Sangu Suruhee"
-category = "artistic"
-fonts = { 400 = "sangusuruhee-regular.ttf" }
 
 [families.a-haleem-bolhu]
 name = "A Haleem Bolhu"
@@ -442,11 +442,6 @@ fonts = { 400 = "mag-round-hollowttf.ttf" }
 name = "MV Karudhas Outline"
 category = "artistic"
 fonts = { 400 = "mv-karudhas-outline.ttf" }
-
-[families.mv-thiki-akuru]
-name = "MV Thiki Akuru"
-category = "artistic"
-fonts = { 400 = "thiki.ttf" }
 
 [families.faagathi-neon]
 name = "Faagathi Neon"
@@ -649,6 +644,11 @@ category = "handwriting"
 fonts = { 300 = "faagathidheli-light.ttf", 400 = "faagathidheli-regular.ttf" }
 
 # ─── Novelty (experimental, constructed) ─────────────────────────────────────
+
+[families.mv-thiki-akuru]
+name = "MV Thiki Akuru"
+category = "novelty"
+fonts = { 400 = "thiki.ttf" }
 
 [families.a-haleem-riveli]
 name = "A Haleem Riveli"

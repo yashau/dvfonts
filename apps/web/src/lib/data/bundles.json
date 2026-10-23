@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "dvfonts-official.zip",
-  "families": 34,
-  "styles": 46,
-  "size": 1279066,
-  "sha256": "486b3f189ea3a2d2c51fec54e80b5481a3e3d34e854936fb5590b6394e0f63b5"
+  "families": 33,
+  "styles": 45,
+  "size": 1249335,
+  "sha256": "24bd545160e54cb549af0e2778aeaf90d0ee538f9bc36c8f1fbe8891bedaa822"
  },
  {
   "id": "artistic",
@@ -73,8 +73,8 @@
   "file": "dvfonts-artistic.zip",
   "families": 27,
   "styles": 30,
-  "size": 656567,
-  "sha256": "58be5d769d97ba1b0ebd12a4c01200cf69acd8132194febe5b7e39dc5253c1ee"
+  "size": 665164,
+  "sha256": "187540a507df9f3f6e81fbd8b980361e9cb7f05769aa2305b3253598f5442d13"
  },
  {
   "id": "handwriting",
@@ -93,10 +93,10 @@
   "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
   "format": "ttf",
   "file": "dvfonts-novelty.zip",
-  "families": 22,
-  "styles": 23,
-  "size": 136780,
-  "sha256": "7a9b04d8a1d88ccd72699a894c90e0ace32b3e4a543067fd644d75ab741be0bc"
+  "families": 23,
+  "styles": 24,
+  "size": 157918,
+  "sha256": "4d155e42a0da25e63c08b4ee35bcefa3957f4f33a85f88bfa19270cc5caac610"
  },
  {
   "id": "webfonts-essentials",
