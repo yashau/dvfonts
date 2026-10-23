@@ -112,7 +112,7 @@ Behaviour you can rely on:
 Full guide with live examples: ${O}/guide
 
 - Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs (or \`<html lang="dv" dir="rtl">\`). Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
-- \`dir="auto"\` turns "Apple ގެ ފޯނު" left-to-right because the first letter is Latin. If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For multi-paragraph user content use \`unicode-bidi: plaintext\`.
+- \`dir="auto"\` turns "Apple ގެ ފޯނު" left-to-right because the first letter is Latin. If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For displayed multi-paragraph user content use \`unicode-bidi: plaintext\`, but never on inputs, textareas or contenteditable: an empty field becomes left-to-right and the caret starts on the left. Give inputs \`dir\` from \`resolveDirection(value, null, 'rtl')\` (attachKeyboard does this).
 - Numbers inside Thaana: phone numbers swap their groups and "-5" shows as "5-". Wrap them in \`<bdi dir="ltr">\`, or use \`isolateNumbers(text)\` for plain strings (titles, notifications, canvas). Remove the invisible isolates with \`stripBidiControls()\` before saving.
 - Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text. Do NOT swap bracket pairs in stored text (the keyboard swaps keystrokes, not text).
 - Dhivehi punctuation: comma ، (U+060C), semicolon ؛ (U+061B), question mark ؟ (U+061F). Full stop and digits are ASCII. No space before punctuation. \`normalizePunctuation(text)\` fixes both.

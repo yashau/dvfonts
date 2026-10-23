@@ -181,6 +181,7 @@ ${SCRIPT_END}
 	<Card.Root>
 		<Card.Header>
 			<Card.Title>Try it</Card.Title>
+			<Card.Description>Type “divehi” to get ދިވެހި.</Card.Description>
 			<Card.Action class="flex items-center gap-2">
 				<Switch id="demo-on" bind:checked={demoOn} />
 				<Label for="demo-on">Phonetic keyboard {demoOn ? 'on' : 'off'}</Label>
@@ -193,8 +194,8 @@ ${SCRIPT_END}
 				dir="rtl"
 				lang="dv"
 				rows={3}
-				placeholder="Type “divehi” → ދިވެހި"
-				class="text-lg [unicode-bidi:plaintext]"
+				placeholder="އަކުރުތައް ލިޔެ ބައްލަވާ…"
+				class="text-lg"
 				autocomplete="off"
 				spellcheck={false}
 			/>

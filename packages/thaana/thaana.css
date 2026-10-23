@@ -19,18 +19,18 @@
 	text-align: start;
 }
 
-/* User-generated content: each paragraph takes its direction from its first
+/* Displayed user content: each paragraph takes its direction from its first
    letter, so a Latin-first line is LTR and a Thaana-first line is RTL. */
-:where(:lang(dv))
-	:where(p, li, td, th, dd, blockquote, figcaption, h1, h2, h3, h4, h5, h6, input, textarea, [contenteditable]) {
+:where(:lang(dv)) :where(p, li, td, th, dd, blockquote, figcaption, h1, h2, h3, h4, h5, h6) {
 	unicode-bidi: plaintext;
 }
 
-/* Inputs: keep the caret and placeholder on the right for Thaana. */
-:where(input, textarea):where(:lang(dv), [data-thaana]) {
+/* Inputs: keep the caret and placeholder on the right for Thaana. Not
+   unicode-bidi: plaintext, which makes an empty field left-to-right (the caret
+   starts on the left); attachKeyboard keeps dir in step with the text instead. */
+:where(input, textarea, [contenteditable]):where(:lang(dv), [data-thaana]) {
 	direction: rtl;
 	text-align: start;
-	unicode-bidi: plaintext;
 }
 
 /* Things that are always left-to-right inside Thaana text. */

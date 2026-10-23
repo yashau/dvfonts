@@ -177,6 +177,24 @@ test('converter turns old A_ text and PDF text into Unicode', async ({ page }) =
 	await expect(page.getByLabel('Unicode Thaana')).toHaveValue('ތާރީޚް 14/1/2026');
 });
 
+// unicode-bidi: plaintext makes an empty field left-to-right, so the caret
+// starts on the left; Thaana inputs must start right-to-left instead.
+test('empty Thaana inputs start right-to-left', async ({ page }) => {
+	for (const [path, field] of [
+		['/', page.getByRole('textbox', { name: 'Preview text' })],
+		['/docs', page.locator('textarea[lang="dv"]').first()],
+		['/convert', page.getByLabel('Unicode Thaana')]
+	] as const) {
+		await page.goto(path);
+		await expect(field, path).toHaveValue('');
+		const style = await field.evaluate((el) => {
+			const s = getComputedStyle(el);
+			return { direction: s.direction, unicodeBidi: s.unicodeBidi };
+		});
+		expect(style, path).toEqual({ direction: 'rtl', unicodeBidi: expect.not.stringContaining('plaintext') });
+	}
+});
+
 test('mobile menu opens and navigates', async ({ page, isMobile }) => {
 	test.skip(!isMobile, 'mobile only');
 	await page.goto('/');

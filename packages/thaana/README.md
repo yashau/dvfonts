@@ -64,6 +64,6 @@ Or with no build step at all:
 import '@yashau/thaana/thaana.css';
 ```
 
-Applies to `:lang(dv)`: RTL, line height that doesn't clip fili, no synthetic italics/bold, `unicode-bidi: plaintext` for user content, LTR for code/URLs/emails.
+Applies to `:lang(dv)`: RTL, line height that doesn't clip fili, no synthetic italics/bold, `unicode-bidi: plaintext` for displayed paragraphs (not inputs, whose caret stays on the right), LTR for code/URLs/emails.
 
 Guide: https://dvfonts.yashau.com/docs · Agent guide: https://dvfonts.yashau.com/llms.txt

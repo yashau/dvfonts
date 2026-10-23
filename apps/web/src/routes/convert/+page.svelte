@@ -153,7 +153,7 @@
 					dir="rtl"
 					lang="dv"
 					placeholder="ދިވެހި"
-					class="h-64 resize-y text-xl [unicode-bidi:plaintext]"
+					class="h-64 resize-y text-xl"
 					style="font-family: 'dv-faruma', 'dv-ui', system-ui, sans-serif; line-height: 1.75"
 				/>
 			</Card.Content>
