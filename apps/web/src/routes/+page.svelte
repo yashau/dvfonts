@@ -108,7 +108,7 @@
 
 <section class="mx-auto max-w-7xl px-4 pt-2 pb-10 sm:px-6">
 	{#if visible.length}
-		<Item.Group class="gap-0 border-t">
+		<Item.Group class="gap-0">
 			{#each visible as family (family.id)}
 				<FontRow {family} />
 			{/each}
