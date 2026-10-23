@@ -32,26 +32,24 @@
 			<Item.Actions>
 				<Badge variant="secondary">{category}</Badge>
 				<Badge variant="outline">{family.styles.length} {family.styles.length === 1 ? 'style' : 'styles'}</Badge>
-				<Tooltip.Provider>
-					<Tooltip.Root>
-						<Tooltip.Trigger>
-							{#snippet child({ props })}
-								<Button
-									{...props}
-									href="/fonts/{family.id}/{family.id}.zip"
-									download="{family.name}.zip"
-									variant="ghost"
-									size="icon-sm"
-									class="relative z-10"
-									aria-label="Download {family.name}"
-								>
-									<DownloadIcon />
-								</Button>
-							{/snippet}
-						</Tooltip.Trigger>
-						<Tooltip.Content>Download {family.name} ({formatBytes(family.zipSize)})</Tooltip.Content>
-					</Tooltip.Root>
-				</Tooltip.Provider>
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						{#snippet child({ props })}
+							<Button
+								{...props}
+								href="/fonts/{family.id}/{family.id}.zip"
+								download="{family.name}.zip"
+								variant="ghost"
+								size="icon-sm"
+								class="relative z-10"
+								aria-label="Download {family.name}"
+							>
+								<DownloadIcon />
+							</Button>
+						{/snippet}
+					</Tooltip.Trigger>
+					<Tooltip.Content>Download {family.name} ({formatBytes(family.zipSize)})</Tooltip.Content>
+				</Tooltip.Root>
 			</Item.Actions>
 		</Item.Header>
 		<Item.Content class="min-w-0">

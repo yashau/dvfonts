@@ -1,4 +1,5 @@
 <script lang="ts">
+	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { convertLegacy, repairPdfText, normalizePunctuation, stripBidiControls } from '@yashau/thaana';
 	import { registerFamily } from '#lib/fonts.js';
 	import * as Card from '#lib/components/ui/card/index.js';
@@ -96,9 +97,23 @@
 					<Button variant="outline" size="sm" onclick={() => (input = current.example)}>
 						<SparklesIcon /> Example
 					</Button>
-					<Button variant="ghost" size="icon-sm" onclick={() => (input = '')} disabled={!input} aria-label="Clear">
-						<EraserIcon />
-					</Button>
+					<Tooltip.Root>
+						<Tooltip.Trigger>
+							{#snippet child({ props })}
+								<Button
+									{...props}
+									variant="ghost"
+									size="icon-sm"
+									onclick={() => (input = '')}
+									disabled={!input}
+									aria-label="Clear"
+								>
+									<EraserIcon />
+								</Button>
+							{/snippet}
+						</Tooltip.Trigger>
+						<Tooltip.Content>Clear</Tooltip.Content>
+					</Tooltip.Root>
 				</Card.Action>
 			</Card.Header>
 			<Card.Content class="flex-1">

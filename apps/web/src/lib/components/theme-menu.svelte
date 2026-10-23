@@ -2,6 +2,7 @@
 	import { setMode, resetMode, userPrefersMode } from 'mode-watcher';
 	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
+	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import MonitorIcon from '@lucide/svelte/icons/monitor';
@@ -20,14 +21,21 @@
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenu.Trigger>
-		{#snippet child({ props })}
-			<Button {...props} variant="ghost" size="icon-sm" aria-label="Theme">
-				<SunIcon class="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-				<MoonIcon class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-			</Button>
-		{/snippet}
-	</DropdownMenu.Trigger>
+	<Tooltip.Root>
+		<Tooltip.Trigger>
+			{#snippet child({ props: tip })}
+				<DropdownMenu.Trigger {...tip}>
+					{#snippet child({ props })}
+						<Button {...props} variant="ghost" size="icon-sm" aria-label="Theme">
+							<SunIcon class="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+							<MoonIcon class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+						</Button>
+					{/snippet}
+				</DropdownMenu.Trigger>
+			{/snippet}
+		</Tooltip.Trigger>
+		<Tooltip.Content>Theme: light, dark or system</Tooltip.Content>
+	</Tooltip.Root>
 	<DropdownMenu.Content align="end" class="w-36">
 		{#each options as o (o.value)}
 			<DropdownMenu.Item onclick={() => choose(o.value)}>

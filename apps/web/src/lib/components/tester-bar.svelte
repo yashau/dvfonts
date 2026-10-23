@@ -35,30 +35,28 @@
 		<InputGroup.Root class="min-w-0 flex-1">
 			<!-- A flush, full-height segment at the start of the field (the ypad pattern). -->
 			<InputGroup.Addon class="self-stretch p-0 has-[>button]:ml-0">
-				<Tooltip.Provider>
-					<Tooltip.Root>
-						<Tooltip.Trigger>
-							{#snippet child({ props })}
-								<InputGroup.Button
-									{...props}
-									variant="ghost"
-									class="h-full w-16 rounded-none rounded-l-[calc(var(--radius-md)-1px)] border-0 border-r border-r-input bg-muted/50 font-medium tracking-wide text-muted-foreground hover:bg-muted hover:text-foreground dark:bg-muted/40"
-									aria-label="Dhivehi phonetic keyboard"
-									aria-pressed={tester.dv}
-									onclick={() => (tester.dv = !tester.dv)}
-								>
-									<KeyboardIcon />
-									{tester.dv ? 'DV' : 'EN'}
-								</InputGroup.Button>
-							{/snippet}
-						</Tooltip.Trigger>
-						<Tooltip.Content class="max-w-64">
-							{tester.dv
-								? 'Latin keys type Thaana (Divehi Phonetic: h→ހ, a→ަ …). Click to use your own keyboard as-is.'
-								: 'Your keyboard types as-is. Click to type Thaana with the Divehi Phonetic layout.'}
-						</Tooltip.Content>
-					</Tooltip.Root>
-				</Tooltip.Provider>
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						{#snippet child({ props })}
+							<InputGroup.Button
+								{...props}
+								variant="ghost"
+								class="h-full w-16 rounded-none rounded-l-[calc(var(--radius-md)-1px)] border-0 border-r border-r-input bg-muted/50 font-medium tracking-wide text-muted-foreground hover:bg-muted hover:text-foreground dark:bg-muted/40"
+								aria-label="Dhivehi phonetic keyboard"
+								aria-pressed={tester.dv}
+								onclick={() => (tester.dv = !tester.dv)}
+							>
+								<KeyboardIcon />
+								{tester.dv ? 'DV' : 'EN'}
+							</InputGroup.Button>
+						{/snippet}
+					</Tooltip.Trigger>
+					<Tooltip.Content side="bottom" align="start" class="max-w-64">
+						{tester.dv
+							? 'Typing Thaana with the Divehi Phonetic layout. Click to use your own keyboard.'
+							: 'Typing with your own keyboard. Click to type Thaana with the Divehi Phonetic layout.'}
+					</Tooltip.Content>
+				</Tooltip.Root>
 			</InputGroup.Addon>
 			<InputGroup.Input
 				bind:ref={inputEl}
@@ -75,9 +73,21 @@
 			/>
 			{#if tester.text}
 				<InputGroup.Addon align="inline-end">
-					<InputGroup.Button size="icon-xs" onclick={() => (tester.text = '')} aria-label="Reset preview text">
-						<RotateCcwIcon />
-					</InputGroup.Button>
+					<Tooltip.Root>
+						<Tooltip.Trigger>
+							{#snippet child({ props })}
+								<InputGroup.Button
+									{...props}
+									size="icon-xs"
+									onclick={() => (tester.text = '')}
+									aria-label="Reset preview text"
+								>
+									<RotateCcwIcon />
+								</InputGroup.Button>
+							{/snippet}
+						</Tooltip.Trigger>
+						<Tooltip.Content>Back to the sample sentences</Tooltip.Content>
+					</Tooltip.Root>
 				</InputGroup.Addon>
 			{/if}
 		</InputGroup.Root>
