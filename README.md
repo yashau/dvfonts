@@ -110,7 +110,7 @@ useDhivehiFont('Faruma');
 ### 🔤 The fonts
 
 - **135 families / 195 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
-- **Sorted by use:** Official (document faces in the Faruma tradition), Modern, Artistic, Handwriting and Novelty.
+- **Sorted by use:** Official (document faces in the Faruma tradition), Handwriting, Artistic, Modern and Novelty. The browse page opens on Official and Handwriting; a search looks in every category.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
 - **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right, and can show every font at the same letter size.
 - **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits).
@@ -123,7 +123,7 @@ useDhivehiFont('Faruma');
 - **Phonetic keyboard** for any input, textarea or contenteditable, using Microsoft's standard Divehi Phonetic layout. Works with controlled inputs, keeps undo, never touches IME or paste.
 - **Bidi helpers:** keep `+960 333-1234`, `-5`, `9:00` and `50%` readable inside Thaana; isolate names and URLs.
 - **Text repair:** convert old A_-font text to Unicode, fix Thaana copied out of PDFs, tidy punctuation.
-- **Font loading and stacks,** plus CSS defaults that stop fili clipping.
+- **Font loading and stacks,** with optional size normalisation (`{ normalize: true }`), plus CSS defaults that stop fili clipping.
 
 </td>
 </tr>
@@ -138,6 +138,7 @@ useDhivehiFont('Faruma');
 | 📏&nbsp;**Metrics&nbsp;repair**     | 28 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (14 of them).                                                               |
 | 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too.                                                                                                                                                                                                                                                       |
 | 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                                                                                                                                    |
+| 📐&nbsp;**Same&nbsp;size**          | Fonts differ a lot in size at the same `font-size`. Each family is measured against Faruma (median size of its Thaana letters) and gets a scale factor, applied only with CSS `size-adjust` when asked for (`&normalize=1`, `{ normalize: true }`). The font files are untouched.                                                                                                 |
 | 📦&nbsp;**Web&nbsp;formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets for fonts we may modify: a Thaana-only page downloads only the Thaana part.                                                                                                                                                                                                                                        |
 | ⚖️&nbsp;**Licenses&nbsp;respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte, and so do Hassan Hameed's, as his permission requires (only converted to WOFF/WOFF2). OFL fonts include `OFL.txt`. Every download carries its credits.                                                                                                                                                       |
 | ♻️&nbsp;**Reproducible**            | The build is byte-reproducible: whenever its inputs change, CI rebuilds it and checks the result against the repo.                                                                                                                                                                                                                                                                |
