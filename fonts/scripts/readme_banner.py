@@ -5,7 +5,7 @@ path, so it renders identically everywhere without loading a font. Writes:
 
   .github/assets/banner-{light,dark}.svg      README title (stacked)
   apps/web/src/lib/components/logo.svelte     site header (one line, follows the theme)
-  apps/web/src/lib/assets/favicon-{dark,light}.svg  favicons for the light and dark themes
+  apps/web/src/lib/assets/favicon.svg         favicon (tan on dark brown, for both themes)
   apps/web/static/apple-touch-icon.png        home-screen icon, 180x180
   apps/web/static/og.png                      link preview (Open Graph), 1200x630
 
@@ -172,10 +172,9 @@ def og_card() -> str:
 def main() -> None:
     web = ROOT.parent / "apps" / "web" / "src" / "lib"
     (web / "components" / "logo.svelte").write_text(header_logo())
-    # Two favicons: dark for the light theme, light for the dark one (the layout switches them).
-    (web / "assets" / "favicon.svg").unlink(missing_ok=True)
-    (web / "assets" / "favicon-dark.svg").write_text(favicon("#130d09", "#cbab88"))
-    (web / "assets" / "favicon-light.svg").write_text(favicon("#faeedf", "#462c19"))
+    (web / "assets" / "favicon-dark.svg").unlink(missing_ok=True)
+    (web / "assets" / "favicon-light.svg").unlink(missing_ok=True)
+    (web / "assets" / "favicon.svg").write_text(favicon("#130d09", "#cbab88"))
     (web.parent.parent / "static" / "apple-touch-icon.png").write_bytes(
         bytes(resvg_py.svg_to_bytes(svg_string=favicon("#130d09", "#cbab88"), width=180, height=180))
     )
