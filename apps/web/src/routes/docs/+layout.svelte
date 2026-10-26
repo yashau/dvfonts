@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { scrollToSection } from '#lib/docs-scroll.js';
+	import { bottomRoom, scrollToSection } from '#lib/docs-scroll.js';
+	import { page } from '$app/state';
+	import { untrack } from 'svelte';
 	import DocsNav from '#lib/components/docs-nav.svelte';
 	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
@@ -9,6 +11,25 @@
 
 	let { children } = $props();
 	let menuOpen = $state(false);
+
+	// Room under the page so its last sections each get a real stretch of scrolling.
+	let room = $state(0);
+	$effect(() => {
+		const path = page.url.pathname;
+		const measure = () =>
+			(room = bottomRoom(
+				path,
+				untrack(() => room)
+			));
+		measure();
+		// Fonts and demos settle the layout after the first paint.
+		const late = setTimeout(measure, 500);
+		addEventListener('resize', measure, { passive: true });
+		return () => {
+			clearTimeout(late);
+			removeEventListener('resize', measure);
+		};
+	});
 
 	// Arriving at a section (#id) from elsewhere: scroll to its own position (see docs-scroll.ts)
 	// rather than the browser's, which can't lift the last sections of a page to the top.
@@ -53,5 +74,6 @@
 			</Sheet.Root>
 		</div>
 		{@render children()}
+		<div aria-hidden="true" style:height="{room}px"></div>
 	</div>
 </div>
