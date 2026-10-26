@@ -52,6 +52,18 @@
 	const href = $derived(cssApiUrl(base, [{ name: family.name, weights }], { normalize: normalize && canNormalize }));
 	const linkSnippet = $derived(`<link rel="stylesheet" href="${href}">`);
 	const importSnippet = $derived(`@import url('${href}');`);
+	// Self-hosting: the same weights from your own copies of the files (the WOFF2s above).
+	const ownSnippet = $derived.by(() => {
+		const scaled = normalize && canNormalize;
+		const lines = [
+			`  family: '${family.name}',`,
+			'  files: {',
+			...weights.map((w, i) => `    ${w}: '/fonts/${family.id}-${w}.woff2'${i < weights.length - 1 ? ',' : ''}`),
+			scaled ? '  },' : '  }',
+			...(scaled ? [`  sizeAdjust: ${main.sizeAdjust}`] : [])
+		];
+		return `import { loadFonts } from '@yashau/thaana';\n\nawait loadFonts({\n${lines.join('\n')}\n}${scaled ? ', { normalize: true }' : ''});`;
+	});
 	const cssSnippet = $derived(`:lang(dv) {\n  font-family: '${family.name}', sans-serif;\n}`);
 
 	const changes = $derived.by(() => {
@@ -236,6 +248,11 @@
 				<CodeBlock title="In <head>" lang="html" code={linkSnippet} />
 				<CodeBlock title="Or in CSS" lang="css" code={importSnippet} />
 				<CodeBlock title="Then use" lang="css" code={cssSnippet} />
+				<CodeBlock title="Or host the files yourself" lang="javascript" code={ownSnippet} />
+				<p class="text-sm text-muted-foreground">
+					Download the WOFF2 files above and the packages load them from your server, with nothing from dvfonts. More in
+					the <a class="underline underline-offset-4" href="/docs#own-files">docs</a>.
+				</p>
 			</Card.Content>
 		</Card.Root>
 

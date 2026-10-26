@@ -34,6 +34,8 @@ import '@yashau/thaana/thaana.css'; // sane defaults for :lang(dv)
 await loadFonts({ family: 'Faruma' });
 // Optional: { normalize: true } scales a font so its letters look as big as Faruma's
 await loadFonts({ family: 'Bolhu' }, { normalize: true });
+// Or your own copies of the files, with nothing loaded from dvfonts:
+await loadFonts({ family: 'Faiy', files: { 400: '/fonts/faiy-400.woff2' } });
 const input = document.querySelector('#name');
 input.style.fontFamily = fontStack('Faruma');
 
@@ -53,6 +55,7 @@ export function Form() {
   const [dv, setDv] = useState(true);
   useDhivehiFont('Faruma');
   useDhivehiFont('Bolhu', [400], { normalize: true }); // optional: Faruma-sized letters
+  useDhivehiFont('Faiy', [400], { files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
   const notes = useThaanaKeyboard<HTMLTextAreaElement>({ enabled: dv });
 
   return (
@@ -77,6 +80,7 @@ export function Form() {
   let dv = $state(true);
   loadFonts({ family: 'Faruma' });
   loadFonts({ family: 'Bolhu' }, { normalize: true }); // optional: Faruma-sized letters
+  loadFonts({ family: 'Faiy', files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
 ${SCRIPT_END}
 
 <ThaanaInput {dv} bind:value={name} style="font-family: {fontStack('Faruma')}" />
@@ -98,6 +102,7 @@ const name = ref('');
 const dv = ref(true);
 useDhivehiFont('Faruma');
 useDhivehiFont('Bolhu', [400], { normalize: true }); // optional: Faruma-sized letters
+useDhivehiFont('Faiy', [400], { files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
 ${SCRIPT_END}
 
 <template>
