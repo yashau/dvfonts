@@ -43,7 +43,7 @@ test('search filters the list', async ({ page }) => {
 	await page.getByRole('textbox', { name: 'Search' }).fill('A_Waheed');
 	await expect(page.getByRole('link', { name: 'MV A Waheed', exact: true })).toBeVisible();
 	await openBrowsePanel(page); // the count lives in the filter panel
-	await expect(page.getByText(/^1 families$/)).toBeVisible();
+	await expect(page.getByText(/^1 families$/).filter({ visible: true })).toBeVisible();
 });
 
 test('family page has styles, glyphs and a working embed URL', async ({ page, request }) => {

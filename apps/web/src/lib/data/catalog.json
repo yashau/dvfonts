@@ -52,7 +52,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.976
     }
@@ -107,7 +106,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 91,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.21
     }
@@ -162,7 +160,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 85,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.008
     }
@@ -217,7 +214,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.129
     }
@@ -272,7 +268,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.179
     }
@@ -327,7 +322,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.398
     }
@@ -382,7 +376,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 74,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.305
     }
@@ -437,7 +430,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 92,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.82
     }
@@ -492,7 +484,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.287
     }
@@ -547,7 +538,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.314
     }
@@ -602,174 +592,11 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 73,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.005
     }
    ],
    "zipSize": 24024
-  },
-  {
-   "id": "a-kaani",
-   "name": "A Kaani",
-   "category": "modern",
-   "aliases": [],
-   "notes": "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode.",
-   "hidden": true,
-   "license": "Unspecified",
-   "unmodified": true,
-   "unmodifiedReason": "designer",
-   "source": "dhivehi.mv archive",
-   "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Kaani.otf",
-   "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Kaani.otf)",
-   "copyright": "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Kaani is based on Athireege Thaana and modern styles.",
-   "designer": "Hassan Hameed",
-   "manufacturer": null,
-   "description": null,
-   "vendorUrl": null,
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "1.0 Sat Jan 08 20:42:34 2000",
-   "styles": [
-    {
-     "weight": 700,
-     "source": "a-kaani.otf",
-     "desktopFile": "a-kaani.otf",
-     "sizes": {
-      "otf": 13940,
-      "woff2": 11000,
-      "woff": 12072
-     },
-     "subsets": {},
-     "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Kaani.otf",
-     "legacyLayout": null,
-     "legacyEncoding": "typewriter",
-     "metrics": {
-      "repaired": false
-     },
-     "cssOverrides": {
-      "repaired": true,
-      "ascent": 0.8076171875,
-      "descent": -0.28271484375,
-      "lineGap": 0.0
-     },
-     "glyphs": 172,
-     "thaana": 0,
-     "latin": 52,
-     "codepoints": 169,
-     "sizeAdjust": null
-    }
-   ],
-   "zipSize": 12517
-  },
-  {
-   "id": "a-lakudi",
-   "name": "A Lakudi",
-   "category": "modern",
-   "aliases": [],
-   "notes": "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode.",
-   "hidden": true,
-   "license": "Unspecified",
-   "unmodified": true,
-   "unmodifiedReason": "designer",
-   "source": "dhivehi.mv archive",
-   "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Lakudi.otf",
-   "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Lakudi.otf)",
-   "copyright": "Lakudi is based on David. Experimental font created with readability in mind. Hassan Hameed 1995.",
-   "designer": "Hassan Hameed",
-   "manufacturer": null,
-   "description": null,
-   "vendorUrl": null,
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "v1.00",
-   "styles": [
-    {
-     "weight": 400,
-     "source": "a-lakudi.otf",
-     "desktopFile": "a-lakudi.otf",
-     "sizes": {
-      "otf": 12372,
-      "woff2": 9516,
-      "woff": 10420
-     },
-     "subsets": {},
-     "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Lakudi.otf",
-     "legacyLayout": null,
-     "legacyEncoding": "typewriter",
-     "metrics": {
-      "repaired": false
-     },
-     "cssOverrides": {
-      "repaired": true,
-      "ascent": 0.872,
-      "descent": -0.422,
-      "lineGap": 0.0
-     },
-     "glyphs": 102,
-     "thaana": 0,
-     "latin": 52,
-     "codepoints": 99,
-     "sizeAdjust": null
-    }
-   ],
-   "zipSize": 10929
-  },
-  {
-   "id": "a-lakudi-college",
-   "name": "A Lakudi College",
-   "category": "modern",
-   "aliases": [],
-   "notes": "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode.",
-   "hidden": true,
-   "license": "Unspecified",
-   "unmodified": true,
-   "unmodifiedReason": "designer",
-   "source": "dhivehi.mv archive",
-   "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Lakudi_College.otf",
-   "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Lakudi_College.otf)",
-   "copyright": "Lakudi is based on David. Experimental font created with readability in mind. Hassan Hameed 1995.",
-   "designer": "Hassan Hameed",
-   "manufacturer": null,
-   "description": null,
-   "vendorUrl": null,
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "v1.00",
-   "styles": [
-    {
-     "weight": 400,
-     "source": "a-lakudi-college.otf",
-     "desktopFile": "a-lakudi-college.otf",
-     "sizes": {
-      "otf": 35576,
-      "woff2": 29812,
-      "woff": 31864
-     },
-     "subsets": {},
-     "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Lakudi_College.otf",
-     "legacyLayout": null,
-     "legacyEncoding": "typewriter",
-     "metrics": {
-      "repaired": false
-     },
-     "cssOverrides": {
-      "repaired": true,
-      "ascent": 0.8759765625,
-      "descent": -0.42529296875,
-      "lineGap": 0.0
-     },
-     "glyphs": 102,
-     "thaana": 0,
-     "latin": 52,
-     "codepoints": 99,
-     "sizeAdjust": null
-    }
-   ],
-   "zipSize": 32469
   },
   {
    "id": "a-reethi",
@@ -821,120 +648,11 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.976
     }
    ],
    "zipSize": 14302
-  },
-  {
-   "id": "a-uni",
-   "name": "A Uni",
-   "category": "modern",
-   "aliases": [],
-   "notes": "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode.",
-   "hidden": true,
-   "license": "Unspecified",
-   "unmodified": true,
-   "unmodifiedReason": "designer",
-   "source": "dhivehi.mv archive",
-   "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Uni.otf",
-   "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Uni.otf)",
-   "copyright": "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Uni is based on Athireege Thaana and modern styles.",
-   "designer": "Hassan Hameed",
-   "manufacturer": null,
-   "description": null,
-   "vendorUrl": null,
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "1.0 Sat Jan 08 21:21:45 2000",
-   "styles": [
-    {
-     "weight": 700,
-     "source": "a-uni.otf",
-     "desktopFile": "a-uni.otf",
-     "sizes": {
-      "otf": 13768,
-      "woff2": 10368,
-      "woff": 11532
-     },
-     "subsets": {},
-     "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Uni.otf",
-     "legacyLayout": null,
-     "legacyEncoding": "typewriter",
-     "metrics": {
-      "repaired": false
-     },
-     "cssOverrides": {
-      "repaired": true,
-      "ascent": 0.71435546875,
-      "descent": -0.22509765625,
-      "lineGap": 0.0
-     },
-     "glyphs": 226,
-     "thaana": 0,
-     "latin": 52,
-     "codepoints": 223,
-     "sizeAdjust": null
-    }
-   ],
-   "zipSize": 11957
-  },
-  {
-   "id": "a-waheed-college",
-   "name": "A Waheed College",
-   "category": "official",
-   "aliases": [],
-   "notes": "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode.",
-   "hidden": true,
-   "license": "Unspecified",
-   "unmodified": true,
-   "unmodifiedReason": "designer",
-   "source": "dhivehi.mv archive",
-   "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Waheed_College.otf",
-   "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Waheed_College.otf)",
-   "copyright": "Named after the Calligrapher, Mr Abdulla Waheed of the Office of the President. Created by Hassan Shujau and Hassan Hameed. Key remapping and editing restricted. This version is dated 2nd January 1996.",
-   "designer": "Hassan Shujau and Hassan Hameed",
-   "manufacturer": null,
-   "description": null,
-   "vendorUrl": null,
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "v1.00",
-   "styles": [
-    {
-     "weight": 400,
-     "source": "a-waheed-college.otf",
-     "desktopFile": "a-waheed-college.otf",
-     "sizes": {
-      "otf": 63164,
-      "woff2": 50984,
-      "woff": 54772
-     },
-     "subsets": {},
-     "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Waheed_College.otf",
-     "legacyLayout": null,
-     "legacyEncoding": "typewriter",
-     "metrics": {
-      "repaired": false
-     },
-     "cssOverrides": {
-      "repaired": true,
-      "ascent": 0.8369140625,
-      "descent": -0.5107421875,
-      "lineGap": 0.0
-     },
-     "glyphs": 103,
-     "thaana": 0,
-     "latin": 52,
-     "codepoints": 100,
-     "sizeAdjust": null
-    }
-   ],
-   "zipSize": 55408
   },
   {
    "id": "athu-casual",
@@ -984,7 +702,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 120,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.967
     }
@@ -1039,7 +756,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 95,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.417
     }
@@ -1084,7 +800,6 @@
      "subsets": {},
      "upstream": null,
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -1146,7 +861,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 90,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.794
     }
@@ -1201,7 +915,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1230,7 +943,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1259,7 +971,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1288,7 +999,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1317,7 +1027,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1346,7 +1055,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1375,7 +1083,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     },
@@ -1404,7 +1111,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.922
     }
@@ -1459,7 +1165,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.936
     }
@@ -1514,7 +1219,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.969
     }
@@ -1569,7 +1273,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.029
     }
@@ -1624,7 +1327,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.969
     }
@@ -1679,7 +1381,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.501
     },
@@ -1708,7 +1409,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.501
     }
@@ -1763,7 +1463,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.552
     },
@@ -1792,7 +1491,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.552
     },
@@ -1821,7 +1519,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.552
     },
@@ -1850,7 +1547,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 124,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.552
     }
@@ -1905,7 +1601,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 109,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.646
     },
@@ -1934,7 +1629,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 109,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.646
     }
@@ -1989,7 +1683,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 92,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.616
     }
@@ -2044,7 +1737,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.948
     },
@@ -2073,7 +1765,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.948
     },
@@ -2102,7 +1793,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.948
     },
@@ -2131,7 +1821,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.948
     }
@@ -2186,7 +1875,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2215,7 +1903,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2244,7 +1931,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2273,7 +1959,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2302,7 +1987,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2331,7 +2015,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2360,7 +2043,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     },
@@ -2389,7 +2071,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.982
     }
@@ -2447,7 +2128,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 161,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.0
     }
@@ -2502,7 +2182,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 287,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.831
     }
@@ -2557,7 +2236,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 109,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.54
     }
@@ -2612,7 +2290,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 112,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.815
     }
@@ -2667,7 +2344,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 112,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.252
     }
@@ -2709,7 +2385,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Kanafala.ttf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -2771,7 +2446,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2800,7 +2474,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2829,7 +2502,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2858,7 +2530,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2887,7 +2558,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2916,7 +2586,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2945,7 +2614,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     },
@@ -2974,7 +2642,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     }
@@ -3029,7 +2696,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 313,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.773
     }
@@ -3084,7 +2750,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 799,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.75
     }
@@ -3139,7 +2804,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 161,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.0
     }
@@ -3194,7 +2858,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 163,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.963
     }
@@ -3249,7 +2912,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.827
     }
@@ -3295,7 +2957,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/a_waheed/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -3353,7 +3014,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-aammufk/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -3407,7 +3067,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=17283",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -3461,7 +3120,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2017/12/17/mv-akson/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -3523,7 +3181,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.955
     }
@@ -3565,7 +3222,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2018/01/28/mv-ashaahi/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -3627,7 +3283,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 120,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.984
     }
@@ -3682,7 +3337,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 99,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.914
     }
@@ -3737,7 +3391,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.88
     }
@@ -3792,7 +3445,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 95,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.013
     }
@@ -3847,7 +3499,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.71
     }
@@ -3902,7 +3553,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.128
     },
@@ -3931,7 +3581,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.128
     }
@@ -3978,7 +3627,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-faseyha/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4006,7 +3654,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-faseyha/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4060,7 +3707,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/dhivehi-language/a-font-with-an-improved-fili-system/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4127,7 +3773,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.944
     }
@@ -4169,7 +3814,6 @@
      "subsets": {},
      "upstream": "https://hassanhameed.com/thaana-fonts/mv-funa-a-much-demanded-font-in-four-weights/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4192,7 +3836,6 @@
      "subsets": {},
      "upstream": "https://hassanhameed.com/thaana-fonts/mv-funa-a-much-demanded-font-in-four-weights/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4215,7 +3858,6 @@
      "subsets": {},
      "upstream": "https://hassanhameed.com/thaana-fonts/mv-funa-a-much-demanded-font-in-four-weights/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4238,7 +3880,6 @@
      "subsets": {},
      "upstream": "https://hassanhameed.com/thaana-fonts/mv-funa-a-much-demanded-font-in-four-weights/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4300,7 +3941,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.089
     }
@@ -4355,7 +3995,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 110,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.908
     }
@@ -4410,7 +4049,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 97,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.025
     }
@@ -4467,7 +4105,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.006
     }
@@ -4509,7 +4146,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2018/08/26/mv-hulhumale/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4561,7 +4197,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=5172",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4584,7 +4219,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=5172",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -4646,7 +4280,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.137
     }
@@ -4701,7 +4334,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 102,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.058
     }
@@ -4756,7 +4388,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.117
     }
@@ -4811,7 +4442,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.919
     }
@@ -4866,7 +4496,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.931
     }
@@ -4921,7 +4550,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.823
     },
@@ -4950,7 +4578,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.823
     }
@@ -5005,7 +4632,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.031
     }
@@ -5060,7 +4686,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.882
     }
@@ -5115,7 +4740,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 120,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.849
     }
@@ -5170,7 +4794,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 119,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.141
     }
@@ -5225,7 +4848,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.959
     }
@@ -5280,7 +4902,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 120,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.818
     }
@@ -5335,7 +4956,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 129,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.09
     }
@@ -5390,7 +5010,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.139
     }
@@ -5445,7 +5064,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.989
     }
@@ -5500,7 +5118,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 119,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.204
     }
@@ -5555,7 +5172,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.085
     }
@@ -5610,7 +5226,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 105,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.726
     }
@@ -5665,7 +5280,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.888
     }
@@ -5707,7 +5321,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-kelaa-thaana-font-in-regular-and-semi-bold-sizes/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -5730,7 +5343,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-kelaa-thaana-font-in-regular-and-semi-bold-sizes/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -5786,7 +5398,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=1691",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -5848,7 +5459,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.993
     }
@@ -5890,7 +5500,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2017/11/01/mv-lhaiy/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -5952,7 +5561,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.944
     },
@@ -5981,7 +5589,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.944
     }
@@ -6036,7 +5643,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.037
     },
@@ -6065,7 +5671,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.037
     }
@@ -6120,7 +5725,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     }
@@ -6175,7 +5779,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.006
     }
@@ -6230,7 +5833,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 120,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.963
     }
@@ -6274,7 +5876,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Midhili.otf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6323,7 +5924,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=13342",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6346,7 +5946,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=13342",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6408,7 +6007,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 111,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.207
     }
@@ -6463,7 +6061,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 118,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.929
     }
@@ -6505,7 +6102,6 @@
      "subsets": {},
      "upstream": "https://bit.ly/2M4IetM",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6567,7 +6163,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 94,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.476
     }
@@ -6609,7 +6204,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=12764",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6658,7 +6252,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/df/MV%20Prathama%20Dva.ttf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6707,7 +6300,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/df/MV%20Prathama%20Ek.ttf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6756,7 +6348,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/df/MV%20Prathama%20Tin.ttf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6807,7 +6398,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=6693",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6830,7 +6420,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=6693",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6892,7 +6481,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.987
     }
@@ -6937,7 +6525,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/thaana-font-mv-randhoo/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -6999,7 +6586,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 106,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.7
     }
@@ -7041,7 +6627,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2020/05/10/mv-runa-mv-runa-us/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7103,7 +6688,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 97,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.738
     }
@@ -7158,7 +6742,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 94,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.633
     }
@@ -7215,7 +6798,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.965
     }
@@ -7270,7 +6852,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 103,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.335
     }
@@ -7312,7 +6893,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2017/01/15/mv-sishisozo/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7374,7 +6954,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 111,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.147
     }
@@ -7416,7 +6995,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/making-a-thaana-dot-matrix-font/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7470,7 +7048,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/making-a-thaana-dot-matrix-font/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7524,7 +7101,6 @@
      "subsets": {},
      "upstream": "https://thatmaldivesblog.wordpress.com/2016/06/08/mv_thaanarabi/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7586,7 +7162,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 111,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.936
     }
@@ -7641,7 +7216,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 94,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 2.735
     }
@@ -7696,7 +7270,6 @@
      "thaana": 49,
      "latin": 52,
      "codepoints": 129,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.213
     }
@@ -7738,7 +7311,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=11718",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7761,7 +7333,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=11718",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7810,7 +7381,6 @@
      "subsets": {},
      "upstream": "https://www.dhivehi.mv/fonts/data/df/mvtyper.ttf",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7833,7 +7403,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-typewriter-semibold/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7882,7 +7451,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/?page_id=3347",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7933,7 +7501,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-utheemu/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -7956,7 +7523,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-utheemu/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -8005,7 +7571,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-vaadhoo-new-thaana-font/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -8033,7 +7598,6 @@
      "subsets": {},
      "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-vaadhoo-new-thaana-font/",
      "legacyLayout": null,
-     "legacyEncoding": null,
      "metrics": {
       "repaired": false
      },
@@ -8100,7 +7664,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 99,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.086
     }
@@ -8155,7 +7718,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 90,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.909
     }
@@ -8210,7 +7772,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 104,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.978
     }
@@ -8265,7 +7826,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 653,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.076
     }
@@ -8320,7 +7880,6 @@
      "thaana": 50,
      "latin": 0,
      "codepoints": 112,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.503
     }
@@ -8377,7 +7936,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 94,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.728
     },
@@ -8406,7 +7964,6 @@
      "thaana": 49,
      "latin": 0,
      "codepoints": 92,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.728
     }
@@ -8461,7 +8018,6 @@
      "thaana": 49,
      "latin": 52,
      "codepoints": 297,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.173
     }
@@ -8516,7 +8072,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8545,7 +8100,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8574,7 +8128,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8603,7 +8156,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8632,7 +8184,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8661,7 +8212,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8690,7 +8240,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     },
@@ -8719,7 +8268,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 725,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 0.905
     }
@@ -8774,7 +8322,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8803,7 +8350,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8832,7 +8378,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8861,7 +8406,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8890,7 +8434,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8919,7 +8462,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8948,7 +8490,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     },
@@ -8977,7 +8518,6 @@
      "thaana": 50,
      "latin": 52,
      "codepoints": 724,
-     "legacyEncoding": null,
      "cssOverrides": null,
      "sizeAdjust": 1.481
     }

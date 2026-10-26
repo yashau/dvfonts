@@ -16,11 +16,6 @@ function parseFamily(spec: string): { family: Family; styles: Style[] } {
 	const [rawName, axes] = spec.split(':');
 	const family = findByName(rawName.replace(/\+/g, ' '));
 	if (!family) error(400, `Unknown family "${rawName}". See /fonts.json for the list.`);
-	if (family.styles.some((s) => s.legacyEncoding))
-		error(
-			400,
-			`${family.name} is a pre-Unicode font (Thaana on Latin keys) for opening old documents, not for the web. Download it from /fonts/${family.id}.`
-		);
 	if (!axes) return { family, styles: [defaultStyle(family)] };
 	const m = /^wght@([\d;.]+)$/.exec(axes);
 	if (!m) error(400, `Unsupported axis spec "${axes}". Use family=Name:wght@400;700`);

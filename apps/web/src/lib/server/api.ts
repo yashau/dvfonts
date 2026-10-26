@@ -13,6 +13,8 @@ export function apiFamily(f: Family) {
 		license: f.license,
 		designer: f.designer ?? f.manufacturer ?? null,
 		hasLatin: f.styles.some((s) => s.latin > 0),
+		/** Shipped exactly as published (only converted to WOFF/WOFF2): no subsets, line spacing fixed in CSS. */
+		unmodified: f.unmodified,
 		scriptCoverage: f.category === 'symbols' ? 'symbols on ASCII keys' : 'Thaana (U+0780–U+07BF)',
 		defaultWeight: defaultStyle(f).weight,
 		weights,

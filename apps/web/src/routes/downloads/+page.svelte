@@ -10,13 +10,23 @@
 
 	const desktop = bundles.filter((b) => b.format === 'ttf');
 	const web = bundles.filter((b) => b.format === 'woff2');
+	const legacy = bundles.filter((b) => b.format === 'legacy');
+	const groups = [
+		{ title: 'For your computer', note: 'TrueType/OpenType fonts to install.', list: desktop },
+		{ title: 'For self-hosting on the web', note: 'WOFF2 files with a ready-made fonts.css.', list: web },
+		{
+			title: 'For old documents',
+			note: 'The original pre-Unicode files, untouched. Text typed in them only reads correctly in these fonts.',
+			list: legacy
+		}
+	];
 </script>
 
 <svelte:head>
 	<title>Downloads — dvfonts</title>
 	<meta
 		name="description"
-		content="Download Dhivehi font collections as zip files: essentials, full suite, by category or as a webfont kit."
+		content="Download Dhivehi font collections as zip files: essentials, full suite, by category, as a webfont kit, or the original pre-Unicode fonts."
 	/>
 </svelte:head>
 
@@ -27,7 +37,7 @@
 		downloaded from their own pages.
 	</p>
 
-	{#each [{ title: 'For your computer', note: 'TrueType/OpenType fonts to install.', list: desktop }, { title: 'For self-hosting on the web', note: 'WOFF2 files with a ready-made fonts.css.', list: web }] as group (group.title)}
+	{#each groups as group (group.title)}
 		<h2 class="mt-10 text-xl font-semibold tracking-tight">{group.title}</h2>
 		<p class="mb-4 text-sm text-muted-foreground">{group.note}</p>
 		<Card.Root class="py-0">
@@ -41,7 +51,7 @@
 						<Item.Content class="min-w-48">
 							<Item.Title>
 								{b.name}
-								<Badge variant="secondary">{b.families} families</Badge>
+								<Badge variant="secondary">{b.families} {b.format === 'legacy' ? 'fonts' : 'families'}</Badge>
 							</Item.Title>
 							<Item.Description class="line-clamp-none">{b.description}</Item.Description>
 						</Item.Content>

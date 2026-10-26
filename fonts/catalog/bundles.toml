@@ -5,8 +5,8 @@
 #   categories = include families in these categories
 #   licenses   = include only these license labels
 #   legacy     = false drops pre-Unicode fonts (remapped by dvfonts, or kept on Latin keys)
-#   format     = "ttf" (desktop, default) or "woff2" (self-hosting kit with fonts.css;
-#                never includes fonts still on Latin keys)
+#   format     = "ttf" (desktop, default), "woff2" (self-hosting kit with fonts.css)
+#                or "legacy" (see the legacy bundle)
 
 [bundles.essentials]
 name = "Essentials"
@@ -62,3 +62,11 @@ format = "woff2"
 name = "Webfont kit (Full suite)"
 description = "Every family as WOFF2 with a ready-made fonts.css, for self-hosting."
 format = "woff2"
+
+[bundles.legacy]
+name = "Legacy"
+description = "Every pre-Unicode font in the archive, exactly as published, with Thaana on Latin keys. Only for opening old documents: for new text, type in Unicode and use the fonts on this site. The converter turns old text into Unicode."
+format = "legacy"
+# Every file in sources/ without Unicode Thaana, byte for byte, except these.
+# Nothing in this bundle is used anywhere else on the site.
+skip = { "bismi.ttf" = "symbol font, in the catalogue", "a-nishan.ttf" = "a single emblem dingbat, not a text font", "aammu-h-thedhu.ttf" = "removed at the designer's request" }

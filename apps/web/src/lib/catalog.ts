@@ -17,8 +17,6 @@ export interface Style {
 	upstream: string | null;
 	/** The pre-Unicode encoding dvfonts remapped this font from. */
 	legacyLayout: 'typewriter' | 'phonetic' | null;
-	/** Still in a pre-Unicode encoding (Thaana on Latin keys): a font we may not remap. */
-	legacyEncoding: 'typewriter' | 'phonetic' | null;
 	/** Vertical metrics in em (absent for fonts without usable ones). */
 	metrics: { repaired: boolean } & Partial<MetricOverrides>;
 	cssOverrides: MetricOverrides | null;

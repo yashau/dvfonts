@@ -7,21 +7,29 @@ export const prerender = true;
 
 export const GET = () => {
 	const fams = apiFamilies();
+	const about: Record<string, string> = {
+		official: 'Plain text faces for documents and UI, like Faruma.',
+		handwriting: 'Hand-lettered styles.',
+		artistic: 'Display and calligraphic faces for headings.',
+		modern: 'Contemporary designs.',
+		novelty: 'Decorative one-offs.',
+		symbols: 'Symbol fonts such as Bismi (bismillah calligraphy), with their glyphs on ASCII keys.'
+	};
 	const index = CATEGORIES.map((c) => {
 		const rows = fams
 			.filter((f) => f.category === c.id)
 			.map(
 				(f) =>
-					`- ${f.name} — weights ${f.weights.join(', ')}${f.hasLatin ? '' : ', no Latin glyphs'}; license ${f.license}${f.aliases.length ? `; also known as ${f.aliases.join(', ')}` : ''}. CSS: ${f.css}`
+					`- ${f.name} — weights ${f.weights.join(', ')}${f.hasLatin ? '' : ', no Latin glyphs'}; license ${f.license}${f.unmodified ? ', shipped unmodified' : ''}${f.aliases.length ? `; also known as ${f.aliases.join(', ')}` : ''}. CSS: ${f.css}`
 			);
-		return `### ${c.label}\n\n${rows.join('\n')}`;
+		return `### ${c.label}\n\n${about[c.id]}\n\n${rows.join('\n')}`;
 	}).join('\n\n');
 
 	const body = `# dvfonts
 
 > Free Dhivehi (Thaana script, language code "dv") fonts for the web, with a Google-Fonts-compatible CSS API, a drop-in Thaana phonetic keyboard, and the @yashau/thaana packages (vanilla, React, Svelte, Vue) that make Thaana display and input work correctly. ${fams.length} families. Everything below is copy-paste ready; all URLs are absolute.
 
-Machine-readable index of every family (names, weights, CSS URL, file URLs, license): ${O}/fonts.json
+Machine-readable index of every family (names, weights, CSS URL, file URLs, license, sizeAdjust): ${O}/fonts.json
 Keyboard keymap as JSON: ${O}/keymap.json
 
 ## 1. Use a Dhivehi font on a web page
@@ -104,7 +112,7 @@ Rich-text editors (Lexical, TipTap/ProseMirror, Slate): in the editor's beforein
 Behaviour you can rely on:
 - Only single-character typing is rewritten. Paste, IME composition, autocorrect, deletion and text typed on a real Dhivehi keyboard pass through unchanged.
 - Text is inserted with the browser's own editing command, so normal \`input\` events fire (controlled inputs work) and undo works.
-- \`attachKeyboard\` sets dir="rtl", lang="dv" and turns off autocorrect/autocapitalize/spellcheck unless you set them yourself.
+- \`attachKeyboard\` sets lang="dv" and keeps \`dir\` in step with the text: RTL if it contains any Thaana; an empty field is RTL while the keyboard is on and LTR while it is off (\`autoDirection: false\` to manage dir yourself). It also turns off autocorrect/autocapitalize/spellcheck unless you set them yourself.
 - \`data-thaana="off"\` opts a field out of auto-attach.
 - Bracket pairs are swapped like Microsoft's layout: the user presses the key that looks right in RTL (")" to open), and the stored text keeps "(" before the enclosed text.
 
@@ -113,7 +121,7 @@ Behaviour you can rely on:
 Full guide with live examples: ${O}/guide
 
 - Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs (or \`<html lang="dv" dir="rtl">\`). Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
-- \`dir="auto"\` takes the direction from the first letter, so Thaana text that starts with any Latin word turns left-to-right ("Apple ގެ ފޯނު"). If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For displayed multi-paragraph user content use \`unicode-bidi: plaintext\`, but never on inputs, textareas or contenteditable: an empty field becomes left-to-right and the caret starts on the left. Give inputs \`dir\` from \`resolveDirection(value, null, 'rtl')\` (attachKeyboard does this).
+- \`dir="auto"\` takes the direction from the first letter, so Thaana text that starts with any Latin word turns left-to-right ("Apple ގެ ފޯނު"). If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For displayed multi-paragraph user content use \`unicode-bidi: plaintext\`, but never on inputs, textareas or contenteditable: an empty field becomes left-to-right and the caret starts on the left. Give inputs \`dir\` from \`resolveDirection(value, null, keyboardOn ? 'rtl' : 'ltr')\` (attachKeyboard and the Thaana inputs do this). In Svelte, don't also set a static \`dir\` on an element using the attachment.
 - Numbers inside Thaana: phone numbers swap their groups and "-5" shows as "5-". Wrap them in \`<bdi dir="ltr">\`, or use \`isolateNumbers(text)\` for plain strings (titles, notifications, canvas). Remove the invisible isolates with \`stripBidiControls()\` before saving.
 - Brackets: store them in logical order, "(" before the enclosed text, exactly as in English. The browser mirrors ( ) [ ] { } < > in RTL text. Do NOT swap bracket pairs in stored text (the keyboard swaps keystrokes, not text).
 - Dhivehi punctuation: comma ، (U+060C), semicolon ؛ (U+061B), question mark ؟ (U+061F). Full stop and digits are ASCII. No space before punctuation. \`normalizePunctuation(text)\` fixes both.
@@ -139,9 +147,9 @@ ${PANGRAMS.map((p) => `- ${p}`).join('\n')}
 
 - Fonts were collected from the community archives where they have circulated freely for years (dhivehi.mv, hassanhameed.com, thaana.com, thatmaldivesblog, dhivehifont.com).
 - Pre-Unicode "A_" fonts that had Thaana on Latin keys were remapped to real Unicode Thaana. Where a modern Unicode version of the same design exists, only that is listed.
-- Metrics were repaired (no clipped fili), names and weights normalised, and Thaana/Latin subsets generated.
-- Fonts under CC BY-ND, and fonts whose designer requires it (all of Hassan Hameed's), are shipped unmodified: only converted to WOFF/WOFF2. OFL fonts include OFL.txt in the download.
-- Pre-Unicode A_ fonts we may not remap are download-only, for opening old documents; the CSS API refuses them. Convert their text with \`convertLegacy()\`.
+- For the other fonts, metrics were repaired (no clipped fili), names and weights normalised, and Thaana/Latin subsets generated. Glyph outlines are never changed.
+- Fonts under CC BY-ND, and fonts whose designer requires it (all of Hassan Hameed's), are shipped unmodified: only converted to WOFF/WOFF2, with no subsets; the CSS API fixes their line spacing with ascent/descent overrides instead. OFL fonts include OFL.txt in the download.
+- The original pre-Unicode files (Thaana on Latin keys), including those not listed here, are only in the legacy bundle, byte for byte, for opening old documents: ${O}/downloads/dvfonts-legacy.zip. Convert their text with \`convertLegacy()\`.
 - Licenses vary per family; check \`license\` in fonts.json before redistributing.
 
 ## Families

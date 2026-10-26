@@ -70,7 +70,8 @@
 		<h1 class="text-3xl font-semibold tracking-tight">Convert old Thaana text</h1>
 		<p class="mt-2 text-muted-foreground">
 			Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. Everything runs in
-			your browser; nothing is uploaded.
+			your browser; nothing is uploaded. To open an old document as it is, install the original fonts from the
+			<a class="underline underline-offset-4" href="/downloads/dvfonts-legacy.zip" download>legacy bundle</a>.
 		</p>
 	</div>
 

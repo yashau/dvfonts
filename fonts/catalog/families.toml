@@ -7,6 +7,9 @@
 # category: official | modern | artistic | handwriting | novelty | symbols
 # aliases:  other names the same design circulates under (searchable on the site)
 # hidden:   true keeps a family off the browse page; it keeps its own page, downloads and bundles
+#
+# Pre-Unicode files that aren't remapped here (excluded below) ship only in the
+# legacy bundle (bundles.toml), byte for byte.
 # designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
@@ -23,15 +26,6 @@ name = "Faruma"
 category = "official"
 aliases = ["A_Faruma", "AFaruma"]
 fonts = { 400 = "faruma.ttf" }
-
-[families.a-waheed-college]
-name = "A Waheed College"
-unmodified = true
-hidden = true
-notes = "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode."
-designer = "Hassan Shujau and Hassan Hameed"
-category = "official"
-fonts = { 400 = "a-waheed-college.otf" }
 
 [families.mv-a-waheed]
 name = "MV A Waheed"
@@ -256,50 +250,12 @@ category = "modern"
 aliases = ["A_Koagannu"]
 fonts = { 700 = "mvkoagannu.ttf" }
 
-[families.a-kaani]
-name = "A Kaani"
-unmodified = true
-hidden = true
-notes = "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode."
-designer = "Hassan Hameed"
-copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Kaani is based on Athireege Thaana and modern styles."
-category = "modern"
-fonts = { 700 = "a-kaani.otf" }
-
 [families.mv-midhili]
 name = "MV Midhili"
 unmodified = true
 category = "modern"
 aliases = ["A_Midhili"]
 fonts = { 700 = "midhilibold.ttf" }
-
-[families.a-uni]
-name = "A Uni"
-unmodified = true
-hidden = true
-notes = "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode."
-designer = "Hassan Hameed"
-copyright = "© 1998 Dr Hassan Hameed, 17 October. Font remapping not allowed. A_Uni is based on Athireege Thaana and modern styles."
-category = "modern"
-fonts = { 700 = "a-uni.otf" }
-
-[families.a-lakudi]
-name = "A Lakudi"
-unmodified = true
-hidden = true
-notes = "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode."
-designer = "Hassan Hameed"
-category = "modern"
-fonts = { 400 = "a-lakudi.otf" }
-
-[families.a-lakudi-college]
-name = "A Lakudi College"
-unmodified = true
-hidden = true
-notes = "Pre-Unicode font with Thaana on Latin keys, kept for opening old documents. Use the converter to turn text typed in it into Unicode."
-designer = "Hassan Hameed"
-category = "modern"
-fonts = { 400 = "a-lakudi-college.otf" }
 
 [families.mv-raadhavalhi]
 name = "MV Raadhavalhi"
@@ -783,6 +739,11 @@ fonts = { 400 = "bismi.ttf" }
 #   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
 
 [excluded]
+"a-kaani.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
+"a-lakudi.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
+"a-lakudi-college.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
+"a-uni.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
+"a-waheed-college.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
 "aammu-h-thedhu.ttf" = "Aammu Hima Thedhu: removed at the designer's request (Hassan Hameed, October 2026)."
 "viethaana-light.ttf" = "Novelty: draws Thaana as accented Latin letters, which reads as gibberish to Thaana readers."
 "viethaana-bold.ttf" = "Novelty: draws Thaana as accented Latin letters, which reads as gibberish to Thaana readers."

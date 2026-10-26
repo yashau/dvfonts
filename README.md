@@ -109,11 +109,11 @@ useDhivehiFont('Faruma');
 
 ### 🔤 The fonts
 
-- **135 families / 195 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
+- **130 families / 190 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
 - **Sorted by use:** Official (document faces in the Faruma tradition), Handwriting, Artistic, Modern and Novelty. The browse page opens on Official and Handwriting; a search looks in every category.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
 - **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right, and can show every font at the same letter size.
-- **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits).
+- **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits), plus a Legacy bundle of the original pre-Unicode files for opening old documents.
 
 </td>
 <td width="50%" valign="top">

@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "dvfonts-full.zip",
-  "families": 135,
-  "styles": 195,
-  "size": 6135420,
-  "sha256": "f73b076b2a916e8bb50ba5e4a44acab43183b43cdeab490643746bf34c58b0a6"
+  "families": 130,
+  "styles": 190,
+  "size": 6011966,
+  "sha256": "d48cee5e33339b01c2df27b4bbed8acee8f9cbe60c810048a5e960024b783b3b"
  },
  {
   "id": "unicode-originals",
@@ -49,10 +49,10 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "dvfonts-modern.zip",
-  "families": 20,
-  "styles": 61,
-  "size": 2990658,
-  "sha256": "de16e083c73158c5d6b40af63449842264701065a63509c601fe5aaf97386f21"
+  "families": 16,
+  "styles": 57,
+  "size": 2922609,
+  "sha256": "1caf258a7db3c8b4c0ee238e916aa7ff31a2d587a329d866d2621c3fe259c15a"
  },
  {
   "id": "official",
@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "dvfonts-official.zip",
-  "families": 33,
-  "styles": 45,
-  "size": 1249335,
-  "sha256": "24bd545160e54cb549af0e2778aeaf90d0ee538f9bc36c8f1fbe8891bedaa822"
+  "families": 32,
+  "styles": 44,
+  "size": 1193872,
+  "sha256": "70d2643c387c4f468237426e7f89b55814f24c21065d69bd5863133d83cfc831"
  },
  {
   "id": "artistic",
@@ -119,5 +119,16 @@
   "styles": 190,
   "size": 4680274,
   "sha256": "9e7e8902d2fefc43caf6de8f1b79b1ee16148173aaaa0e77070d1e168d5a3cf3"
+ },
+ {
+  "id": "legacy",
+  "name": "Legacy",
+  "description": "Every pre-Unicode font in the archive, exactly as published, with Thaana on Latin keys. Only for opening old documents: for new text, type in Unicode and use the fonts on this site. The converter turns old text into Unicode.",
+  "format": "legacy",
+  "file": "dvfonts-legacy.zip",
+  "families": 46,
+  "styles": 46,
+  "size": 909417,
+  "sha256": "e8cfd628cc466efbe0e0399e7bfba6fc545db66e5b1a60b366dd2decaffa00e7"
  }
 ]

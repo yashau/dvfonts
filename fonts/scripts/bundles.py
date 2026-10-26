@@ -2,7 +2,8 @@
 
 Reads the built library (fonts/build/r2/fonts + catalog.json, so run
 scripts/build.py first) and writes deterministic zips to fonts/build/r2/downloads/,
-plus apps/web/src/lib/data/bundles.json describing them for the site. Everything
+plus apps/web/src/lib/data/bundles.json describing them for the site. The legacy
+bundle is the exception: it packs the pre-Unicode files from sources/ as they are. Everything
 under fonts/build/r2/ is uploaded to R2 and served at /fonts/… and /downloads/….
 """
 
@@ -10,13 +11,21 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import tomllib
 import zipfile
 from pathlib import Path
 
+from fontTools.ttLib import TTFont
+
+sys.path.insert(0, str(Path(__file__).parent))
+from legacy import layout_for  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent  # fonts/
 WEB = ROOT.parent / "apps" / "web"
 FONTS = ROOT / "build" / "r2" / "fonts"
+SOURCES = ROOT / "sources"
+FAMILIES = ROOT / "catalog" / "families.toml"
 CATALOG = WEB / "src" / "lib" / "data" / "catalog.json"
 MANIFEST = WEB / "src" / "lib" / "data" / "bundles.json"
 OUT = ROOT / "build" / "r2" / "downloads"
@@ -54,10 +63,7 @@ def select(spec: dict, families: list[dict]) -> list[dict]:
     if lic := spec.get("licenses"):
         chosen = [f for f in chosen if f["license"] in lic]
     if spec.get("legacy") is False:
-        chosen = [f for f in chosen if not any(s["legacyLayout"] or s["legacyEncoding"] for s in f["styles"])]
-    if spec.get("format") == "woff2":
-        # Fonts still on Latin keys can't show Unicode text: not for the web.
-        chosen = [f for f in chosen if not any(s["legacyEncoding"] for s in f["styles"])]
+        chosen = [f for f in chosen if not any(s["legacyLayout"] for s in f["styles"])]
     return sorted(chosen, key=lambda f: f["name"].lower())
 
 
@@ -88,7 +94,69 @@ def css_for(fams: list[dict]) -> str:
     )
 
 
+def legacy_sources(skip: dict[str, str]) -> list[Path]:
+    """Every source file without Unicode Thaana: the pre-Unicode fonts."""
+    found = []
+    for p in sorted(SOURCES.iterdir()):
+        if p.suffix.lower() not in (".ttf", ".otf") or p.name in skip:
+            continue
+        cmap = TTFont(p, lazy=True).getBestCmap() or {}
+        if not any(0x0780 <= cp <= 0x07BF for cp in cmap):
+            found.append(p)
+    return found
+
+
+def build_legacy(bid: str, spec: dict, families: list[dict]) -> dict:
+    files = legacy_sources(spec.get("skip", {}))
+    excluded = tomllib.loads(FAMILIES.read_text())["excluded"]
+    remapped = {s["source"]: f["name"] for f in families for s in f["styles"] if s["legacyLayout"]}
+    top = f"dvfonts-{bid}"
+    path = OUT / f"{top}.zip"
+    lines = []
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
+        for p in files:
+            zip_write(zf, f"{top}/{p.name}", p.read_bytes())
+            font = TTFont(p, lazy=True)
+            name = font["name"].getDebugName(4) or font["name"].getDebugName(1) or p.stem
+            encoding = {"typewriter": "typewriter (A_) layout", "phonetic": "phonetic layout"}.get(
+                layout_for(p.name), "unknown layout"
+            )
+            if p.name in remapped:
+                note = f"remapped to Unicode on dvfonts as {remapped[p.name]}"
+            else:
+                note = excluded.get(p.name, "")
+            lines.append(f"  {p.name}  ({name}; {encoding})" + (f"\n    {note}" if note else ""))
+            if copyright := font["name"].getDebugName(0):
+                lines.append(f"    {' '.join(copyright.split())}")
+        zip_write(
+            zf,
+            f"{top}/README.txt",
+            f"dvfonts — {spec['name']}\n\n{spec['description']}\n\n"
+            "These are the original files, byte for byte. They put Thaana glyphs on Latin\n"
+            "keys, so text typed in them reads as Latin gibberish in any other font.\n"
+            "dvfonts.yashau.com/convert turns such text into Unicode Thaana.\n\n"
+            f"{len(files)} files:\n" + "\n".join(lines) + "\n\n"
+            "Licenses differ per font and most are unstated; the designers keep their rights.\n"
+            "Hassan Hameed's fonts may only be shared unmodified and free of charge.\n"
+            "https://dvfonts.yashau.com\n",
+        )
+    data = path.read_bytes()
+    return {
+        "id": bid,
+        "name": spec["name"],
+        "description": spec["description"],
+        "format": "legacy",
+        "file": path.name,
+        "families": len(files),
+        "styles": len(files),
+        "size": len(data),
+        "sha256": hashlib.sha256(data).hexdigest(),
+    }
+
+
 def build_bundle(bid: str, spec: dict, families: list[dict]) -> dict:
+    if spec.get("format") == "legacy":
+        return build_legacy(bid, spec, families)
     fams = select(spec, families)
     fmt = spec.get("format", "ttf")
     top = f"dvfonts-{bid}"

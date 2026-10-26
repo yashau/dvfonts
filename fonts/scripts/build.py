@@ -490,14 +490,16 @@ def main(only: set[str] | None = None) -> None:
                 base = f"{fid}-{weight}"
                 src_path = SOURCES / fname
                 if unmodified:
+                    if layout_for(src_path.name):
+                        raise SystemExit(
+                            f"{fname}: pre-Unicode and may not be remapped; it belongs in the legacy bundle only"
+                        )
                     ext = src_path.suffix.lower()
                     shutil.copyfile(src_path, outdir / f"{base}{ext}")
                     font = TTFont(src_path, recalcTimestamp=False)
                     cmap = read_cmap(font)
                     info = {
                         "legacyLayout": None,
-                        # Still on Latin keys (a pre-Unicode font we may not remap).
-                        "legacyEncoding": layout_for(src_path.name),
                         "metrics": {"repaired": False},
                         "cssOverrides": css_metric_overrides(src_path),
                         "glyphs": font["maxp"].numGlyphs,
@@ -510,7 +512,6 @@ def main(only: set[str] | None = None) -> None:
                     desktop_bytes, desktop_name = src_path.read_bytes(), src_path.name
                 else:
                     font, info = process(src_path, fam["name"], weight)
-                    info["legacyEncoding"] = None
                     info["cssOverrides"] = None
                     sizes = {"ttf": save(font, outdir / f"{base}.ttf")}
                     info["sizeAdjust"] = size_adjust(outdir / f"{base}.ttf")
@@ -630,11 +631,6 @@ def readme(fam, meta, styles, sources, license, unmodified_reason) -> str:
             else "Its designer allows distribution only without changes"
         )
         lines += ["", f"{why}, so it is distributed exactly as published."]
-        if any(s["legacyEncoding"] for s in styles):
-            lines += [
-                "It is a pre-Unicode font with Thaana glyphs on Latin keys: use it to open",
-                "documents typed in it. dvfonts.yashau.com/convert turns such text into Unicode.",
-            ]
     else:
         if any(s["legacyLayout"] for s in styles):
             lines += [

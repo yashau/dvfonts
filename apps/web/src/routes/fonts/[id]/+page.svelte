@@ -8,7 +8,6 @@
 	import TesterBar from '#lib/components/tester-bar.svelte';
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
-	import { legacyEncoding } from '#lib/legacy.js';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
@@ -28,7 +27,6 @@
 	let { data }: PageProps = $props();
 	const family = $derived(data.family);
 	const symbols = $derived(family.category === 'symbols');
-	const legacy = $derived(legacyEncoding(family));
 	const main = $derived(defaultStyle(family));
 	const by = $derived(credit(family));
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
@@ -59,10 +57,6 @@
 					? 'Distributed exactly as published, as its designer requires. Only converted to WOFF/WOFF2.'
 					: 'Distributed exactly as published: the license does not allow derivatives. Only converted to WOFF/WOFF2.'
 			);
-			if (legacy)
-				out.push(
-					'A pre-Unicode font with Thaana on Latin keys, for opening old documents. The converter turns text typed in it into Unicode.'
-				);
 			return out;
 		}
 		const remapped = family.styles.find((s) => s.legacyLayout)?.legacyLayout;
@@ -184,7 +178,7 @@
 		</Item.Group>
 	</section>
 
-	{#if !symbols && !legacy}
+	{#if !symbols}
 		<section class="mt-10">
 			<h2 class="mb-4 text-xl font-semibold tracking-tight">Glyphs</h2>
 			{#each glyphSets as set (set.title)}
@@ -210,38 +204,35 @@
 
 	<!-- min-w-0 on the columns: grid items default to min-width:auto, so the code
 	     blocks' long URLs would stretch the page instead of scrolling inside. -->
-	<section class="mt-10 grid grid-cols-1 gap-6 {legacy ? '' : 'lg:grid-cols-2'}">
-		<!-- Pre-Unicode fonts are for opening old documents, not for the web. -->
-		{#if !legacy}
-			<Card.Root class="min-w-0">
-				<Card.Header>
-					<Card.Title class="text-xl">Use on the web</Card.Title>
-					<Card.Description>
-						Pick the weights you need. The stylesheet loads only the Thaana or Latin parts a page actually uses.
-					</Card.Description>
-				</Card.Header>
-				<Card.Content class="flex flex-col gap-3">
-					{#if family.styles.length > 1}
-						<ToggleGroup.Root type="multiple" variant="outline" size="sm" bind:value={selected} class="flex-wrap">
-							{#each family.styles as style (style.weight)}
-								<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
-							{/each}
-						</ToggleGroup.Root>
-					{/if}
-					{#if canNormalize}
-						<div class="flex items-center gap-2">
-							<Switch id="embed-normalize" bind:checked={normalize} />
-							<Label for="embed-normalize" class="font-normal text-muted-foreground">
-								Same size as Faruma (scales this font {Math.round((main.sizeAdjust ?? 1) * 100)}%)
-							</Label>
-						</div>
-					{/if}
-					<CodeBlock title="In <head>" lang="html" code={linkSnippet} />
-					<CodeBlock title="Or in CSS" lang="css" code={importSnippet} />
-					<CodeBlock title="Then use" lang="css" code={cssSnippet} />
-				</Card.Content>
-			</Card.Root>
-		{/if}
+	<section class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+		<Card.Root class="min-w-0">
+			<Card.Header>
+				<Card.Title class="text-xl">Use on the web</Card.Title>
+				<Card.Description>
+					Pick the weights you need. The stylesheet loads only the Thaana or Latin parts a page actually uses.
+				</Card.Description>
+			</Card.Header>
+			<Card.Content class="flex flex-col gap-3">
+				{#if family.styles.length > 1}
+					<ToggleGroup.Root type="multiple" variant="outline" size="sm" bind:value={selected} class="flex-wrap">
+						{#each family.styles as style (style.weight)}
+							<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
+						{/each}
+					</ToggleGroup.Root>
+				{/if}
+				{#if canNormalize}
+					<div class="flex items-center gap-2">
+						<Switch id="embed-normalize" bind:checked={normalize} />
+						<Label for="embed-normalize" class="font-normal text-muted-foreground">
+							Same size as Faruma (scales this font {Math.round((main.sizeAdjust ?? 1) * 100)}%)
+						</Label>
+					</div>
+				{/if}
+				<CodeBlock title="In <head>" lang="html" code={linkSnippet} />
+				<CodeBlock title="Or in CSS" lang="css" code={importSnippet} />
+				<CodeBlock title="Then use" lang="css" code={cssSnippet} />
+			</Card.Content>
+		</Card.Root>
 
 		<Card.Root class="min-w-0">
 			<Card.Header>
