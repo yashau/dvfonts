@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import DocsNav from '#lib/components/docs-nav.svelte';
 	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
@@ -7,6 +8,20 @@
 
 	let { children } = $props();
 	let menuOpen = $state(false);
+
+	// Going to a section (#id) scrolls it to the top. If it's already fully visible with the
+	// page at the top, as on a short page, stay at the top instead of jumping.
+	afterNavigate(({ to }) => {
+		const id = to?.url.hash.slice(1);
+		const el = id ? document.getElementById(id) : null;
+		if (!el) return;
+		const settle = () => {
+			if (el.getBoundingClientRect().bottom + scrollY <= innerHeight) scrollTo({ top: 0, behavior: 'instant' });
+		};
+		// On a first load the browser's own jump to the anchor comes once the page has loaded.
+		if (document.readyState === 'complete') requestAnimationFrame(settle);
+		else addEventListener('load', () => requestAnimationFrame(settle), { once: true });
+	});
 </script>
 
 <!-- The docs area: a sticky side navigation on wide screens, a sheet from the left on small ones. -->
