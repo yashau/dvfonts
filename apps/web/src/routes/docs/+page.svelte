@@ -148,11 +148,12 @@ ${SCRIPT_END}
 	/>
 </svelte:head>
 
-<article class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+<article class="max-w-4xl min-w-0 py-10">
 	<h1 class="text-3xl font-semibold tracking-tight">Docs</h1>
 	<p class="mt-2 max-w-4xl text-pretty text-muted-foreground">
-		Everything here is free to use. New to Thaana on the web? Read <a class="underline underline-offset-4" href="/guide"
-			>Displaying Thaana well</a
+		Everything here is free to use. New to Thaana on the web? Read <a
+			class="underline underline-offset-4"
+			href="/docs/thaana">Displaying Thaana well</a
 		>. Building with an AI agent? Point it at <a class="underline underline-offset-4" href="/llms.txt">/llms.txt</a>.
 	</p>
 

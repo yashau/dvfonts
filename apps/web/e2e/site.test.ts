@@ -104,7 +104,7 @@ test('/thaana.js works as a drop-in module', async ({ page }) => {
 
 // From small phones up to 2160p: no page may ever scroll sideways.
 const WIDTHS = [320, 360, 390, 768, 1024, 1366, 1920, 2560, 3840];
-const PAGES = ['/', '/fonts/faruma', '/fonts/bolhu', '/guide', '/convert', '/docs', '/downloads', '/about'];
+const PAGES = ['/', '/fonts/faruma', '/fonts/bolhu', '/docs/thaana', '/convert', '/docs', '/downloads', '/about'];
 
 test('no horizontal scrolling at any width', async ({ page, isMobile }) => {
 	test.skip(isMobile, 'widths are set explicitly; run once');
@@ -129,7 +129,7 @@ test('screenshots at the extremes (320px and 2160p)', async ({ page, isMobile })
 		[3840, 2160]
 	] as const) {
 		await page.setViewportSize({ width, height });
-		for (const path of ['/', '/fonts/faruma', '/guide', '/docs']) {
+		for (const path of ['/', '/fonts/faruma', '/docs/thaana', '/docs']) {
 			await page.goto(path);
 			await page.waitForLoadState('networkidle');
 			await page.evaluate(() => document.fonts.ready);
@@ -166,7 +166,7 @@ test('downloads page lists the bundles', async ({ page }) => {
 });
 
 test('guide renders its demos', async ({ page }) => {
-	await page.goto('/guide');
+	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
 	// Each demo has a Wrong and a Right pane (.guide-sample); check the Right one.
 	const right = (section: string) => page.locator(`#${section} .guide-sample`).nth(1).locator('p');
@@ -217,15 +217,29 @@ test('mobile menu opens and navigates', async ({ page, isMobile }) => {
 	test.skip(!isMobile, 'mobile only');
 	await page.goto('/');
 	await page.getByRole('button', { name: 'Menu' }).click();
-	await page.getByRole('link', { name: 'Guide' }).click();
-	await expect(page).toHaveURL(/\/guide$/);
+	await page.getByRole('link', { name: 'Docs' }).click();
+	await expect(page).toHaveURL(/\/docs$/);
+});
+
+test('docs side navigation links the pages and their sections', async ({ page, isMobile }) => {
+	await page.goto('/docs');
+	if (isMobile) await page.getByRole('button', { name: 'Docs menu' }).click();
+	const nav = page.getByRole('navigation', { name: 'Docs' }).last();
+	await nav.getByRole('link', { name: 'Brackets' }).click();
+	await expect(page).toHaveURL(/\/docs\/thaana#brackets$/);
+	await expect(page.locator('#brackets')).toBeInViewport();
+});
+
+test('the old guide URL redirects into the docs', async ({ page }) => {
+	await page.goto('/guide');
+	await expect(page).toHaveURL(/\/docs\/thaana$/);
 });
 
 // Visual record for review (uploaded as a CI artifact): key pages, light and dark.
 for (const theme of ['light', 'dark'] as const) {
 	test(`screenshots (${theme})`, async ({ page }, info) => {
 		await page.emulateMedia({ colorScheme: theme });
-		for (const path of ['/', '/fonts/faruma', '/guide', '/convert', '/docs', '/downloads']) {
+		for (const path of ['/', '/fonts/faruma', '/docs/thaana', '/convert', '/docs', '/downloads']) {
 			await page.goto(path);
 			await page.waitForLoadState('networkidle');
 			await page.evaluate(() => document.fonts.ready);
