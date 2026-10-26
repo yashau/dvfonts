@@ -205,6 +205,32 @@ name = "Sangu Suruhee"
 category = "official"
 fonts = { 400 = "sangusuruhee-regular.ttf" }
 
+[families.dhivehi-muraka]
+name = "Dhivehi Muraka"
+category = "official"
+fonts = { 400 = "dhivehi-muraka.ttf" }
+
+[families.tharujamaanu]
+name = "Tharujamaanu"
+category = "official"
+fonts = { 300 = "tharujamaanu-light.ttf", 700 = "tharujamaanu-bold.ttf" }
+
+[families.akuru]
+name = "Akuru"
+category = "official"
+fonts = { 400 = "akuru.ttf" }
+
+[families.ajumalu]
+name = "Ajumalu"
+category = "official"
+fonts = { 300 = "ajumalu.ttf" }
+
+[families.mv-elaaf-formal]
+name = "MV Elaaf Formal"
+category = "official"
+designer = "M.A. Gadir"
+fonts = { 400 = "mv-elaaf-formal.ttf" }
+
 # ─── Modern / geometric ──────────────────────────────────────────────────────
 
 [families.noto-sans-thaana]
@@ -453,6 +479,28 @@ name = "Nasr"
 category = "artistic"
 fonts = { 300 = "nasr-light.otf" }
 
+[families.suruhee-outlined]
+name = "Suruhee Outlined"
+category = "artistic"
+designer = "Hasan Shazil"
+fonts = { 400 = "suruhee-outlined.ttf" }
+
+[families.akuro]
+name = "Akuro"
+category = "artistic"
+fonts = { 400 = "akuro2w2.ttf" }
+
+[families.yuu-thaana-kufi]
+name = "YUU Thaana Kufi"
+category = "artistic"
+designer = "Y.U.U (@miukumauku_)"
+fonts = { 400 = "yuu-thaana-kufi.ttf" }
+
+[families.novel03]
+name = "Novel03"
+category = "artistic"
+fonts = { 700 = "novel03-bold.ttf" }
+
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
 [families.mv-izyan]
@@ -620,6 +668,33 @@ fonts = { 200 = "mv-izyan-extra-light.ttf" }
 name = "MV Izyan Edge"
 category = "handwriting"
 fonts = { 500 = "mv-izyan-edge.ttf" }
+
+[families.dhanbumaa]
+name = "Dhanbumaa"
+category = "handwriting"
+designer = "Loopcraft (calligraphy by Mohamed Faiz)"
+fonts = { 400 = "dhanbumaa-regular.otf", 700 = "dhanbumaa-bold.otf" }
+
+[families.magey-huseynu]
+name = "Magey Huseynu"
+category = "handwriting"
+designer = "Loopcraft (calligraphy by Hussain Shameem)"
+fonts = { 400 = "magey-huseynu.ttf" }
+
+[families.nayaa]
+name = "Nayaa"
+category = "handwriting"
+fonts = { 300 = "nayaa-light.ttf" }
+
+[families.sehga-casual]
+name = "Sehga Casual"
+category = "handwriting"
+fonts = { 400 = "sehga-casual.ttf" }
+
+[families.nooru]
+name = "Nooru"
+category = "handwriting"
+fonts = { 300 = "nooru-light.ttf" }
 
 # ─── Novelty (experimental, constructed) ─────────────────────────────────────
 
@@ -811,6 +886,19 @@ fonts = { 400 = "bismi.ttf" }
 #   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
 
 [excluded]
+"ahmed2wn.ttf" = "Pre-Unicode (unnamed): a lighter cut of the MV Kelaa design. Legacy bundle only."
+"athuakuru.ttf" = "Pre-Unicode (Athuakuru), no Unicode version: legacy bundle only."
+"akurl2wn.ttf" = "Pre-Unicode (unnamed): the same design as Novel03. Legacy bundle only."
+"novel01-bold.ttf" = "Pre-Unicode (Novel01 Bold): has no ހ glyph (its h key holds a caret), so it can't set Dhivehi. Legacy bundle only."
+"novel02-bold.ttf" = "Pre-Unicode (Novel02 Bold), no Unicode version: legacy bundle only."
+"novel04.ttf" = "Pre-Unicode (Novel04), no Unicode version: legacy bundle only."
+"cypr2brv.ttf" = "Pre-Unicode (unnamed): the A_Randhoo Idhifushah design, whose notice restricts remapping. Legacy bundle only."
+"cypr2bw0.ttf" = "Pre-Unicode (unnamed), no Unicode version: legacy bundle only."
+"galan.ttf" = "Pre-Unicode (Galan), no Unicode version: legacy bundle only."
+"nizuraf-light.ttf" = "Pre-Unicode (NIZURAF Light): the same design as Nooru. Legacy bundle only."
+"a-raadhavalhi.ttf" = "Pre-Unicode (A_Raadhavalhi), no Unicode version: legacy bundle only."
+"a-randhoo-idhifushah.ttf" = "Pre-Unicode (A_Randhoo Idhifushah, Hassan Hameed); its notice restricts remapping. Legacy bundle only."
+"dhullisaa.ttf" = "Pre-Unicode (Dhullisaa): the A_Randhoo Idhifushah design, whose notice restricts remapping. Legacy bundle only."
 "a-kaani.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
 "a-lakudi.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
 "a-lakudi-college.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
