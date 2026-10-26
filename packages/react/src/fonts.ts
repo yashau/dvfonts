@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react';
 import { loadFonts, type FontRequest, type FontCssOptions } from '@yashau/thaana';
 
+/** CSS options, plus `files` (your own copies, by weight) and `sizeAdjust` to skip dvfonts' hosting. */
+export type DhivehiFontOptions = FontCssOptions & Pick<FontRequest, 'files' | 'sizeAdjust'>;
+
 /**
- * Load a Dhivehi font from dvfonts and report when it's ready.
+ * Load a Dhivehi font from dvfonts, or from your own files, and report when it's ready.
  *
  *   const ready = useDhivehiFont('Faruma');
+ *   const ready = useDhivehiFont('Faruma', undefined, { files: { 400: '/fonts/faruma-400.woff2' } });
  *   <p lang="dv" dir="rtl" style={{ fontFamily: "'Faruma', system-ui" }}>…</p>
  */
-export function useDhivehiFont(family: string, weights?: number[], options?: FontCssOptions): boolean {
+export function useDhivehiFont(family: string, weights?: number[], options?: DhivehiFontOptions): boolean {
 	const [ready, setReady] = useState(false);
-	const key = `${family}|${weights?.join(';') ?? ''}|${options?.origin ?? ''}|${options?.normalize ?? false}`;
+	const key = JSON.stringify([family, weights, options]);
 	useEffect(() => {
 		let live = true;
 		setReady(false);
-		const req: FontRequest = { family, weights };
-		loadFonts(req, options).then(
+		const { files, sizeAdjust, ...css } = options ?? {};
+		const req: FontRequest = { family, weights, files, sizeAdjust };
+		loadFonts(req, css).then(
 			() => live && setReady(true),
 			() => live && setReady(false)
 		);

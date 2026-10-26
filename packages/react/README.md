@@ -40,3 +40,5 @@ Show Thaana text correctly (RTL even when it starts with a Latin word, numbers i
 ```
 
 Fonts vary a lot in size at the same `font-size`. `useDhivehiFont('Faruma', [400], { normalize: true })` scales a family so its Thaana letters look as big as Faruma's; the font files are unchanged.
+
+To serve the font files yourself instead of from dvfonts, pass them by weight: `useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } })`. `fontFaceCss()` writes the `@font-face` rules for a stylesheet. See [@yashau/thaana](https://www.npmjs.com/package/@yashau/thaana#your-own-font-files).

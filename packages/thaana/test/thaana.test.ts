@@ -1,11 +1,13 @@
 // @vitest-environment jsdom
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import {
 	attachKeyboard,
 	autoAttach,
 	convertLegacy,
 	detectDirection,
 	fontCssUrl,
+	fontFaceCss,
+	loadFonts,
 	isolate,
 	KEYMAP,
 	LETTERS,
@@ -143,5 +145,49 @@ describe('fontCssUrl', () => {
 		expect(fontCssUrl({ family: 'Bolhu' }, { normalize: true })).toBe(
 			'https://dvfonts.yashau.com/css2?family=Bolhu&display=swap&normalize=1'
 		);
+	});
+});
+
+describe('own font files', () => {
+	const own = { family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2', 700: 'https://cdn.example/f-700.ttf?v=2' } };
+
+	it('writes @font-face CSS for your own files', () => {
+		const css = fontFaceCss({ ...own, sizeAdjust: 1.084 }, { normalize: true });
+		expect(css).toContain(`font-family: "Faruma";`);
+		expect(css).toContain(`src: url("/fonts/faruma-400.woff2") format('woff2');`);
+		expect(css).toContain(`src: url("https://cdn.example/f-700.ttf?v=2") format('truetype');`);
+		expect(css).toContain('size-adjust: 108.4%;');
+		expect(fontFaceCss(own)).not.toContain('size-adjust');
+		expect(fontFaceCss({ ...own, weights: [700] }).match(/@font-face/g)).toHaveLength(1);
+		expect(() => fontFaceCss({ ...own, weights: [300] })).toThrow(/weight 300/);
+	});
+
+	it('loadFonts registers your files and fetches nothing from dvfonts', async () => {
+		const added: { family: string; source: string; weight?: string }[] = [];
+		class FakeFontFace {
+			constructor(
+				public family: string,
+				public source: string,
+				public descriptors: FontFaceDescriptors
+			) {}
+			load() {
+				return Promise.resolve(this);
+			}
+		}
+		vi.stubGlobal('FontFace', FakeFontFace);
+		Object.defineProperty(document, 'fonts', {
+			configurable: true,
+			value: {
+				add: (f: FakeFontFace) => added.push({ family: f.family, source: f.source, weight: f.descriptors.weight })
+			}
+		});
+		await loadFonts(own);
+		await loadFonts(own); // registered once
+		expect(added).toEqual([
+			{ family: 'Faruma', source: `url("/fonts/faruma-400.woff2") format('woff2')`, weight: '400' },
+			{ family: 'Faruma', source: `url("https://cdn.example/f-700.ttf?v=2") format('truetype')`, weight: '700' }
+		]);
+		expect(document.querySelector('link[data-dvfonts]')).toBeNull();
+		vi.unstubAllGlobals();
 	});
 });

@@ -136,9 +136,10 @@ ${SCRIPT_END}
 			'First-strong (like dir="auto") vs rihaPDF\'s rule: any Thaana → RTL; no letters → fallback.'
 		],
 		[
-			'loadFonts({ family, weights }, { normalize })',
-			"Load a dvfonts family; resolves when it can be drawn (canvas, SVG). normalize: true scales it so its letters look as big as Faruma's."
+			'loadFonts({ family, weights, files }, { normalize })',
+			"Load a dvfonts family, or your own copies of its files (files: { 400: url }); resolves when it can be drawn (canvas, SVG). normalize: true scales it so its letters look as big as Faruma's."
 		],
+		['fontFaceCss({ family, files })', '@font-face CSS for your own copies of the files.'],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
 		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.']
 	];
@@ -182,9 +183,28 @@ ${SCRIPT_END}
 		<li>
 			Self-hosting? Every font and collection is on the <a class="underline underline-offset-4" href="/downloads"
 				>downloads</a
-			> page.
+			> page, and the packages can load your copies instead of ours (below).
 		</li>
 	</ul>
+
+	<h3 id="own-files" class="mt-8 mb-3 scroll-mt-20 text-lg font-semibold tracking-tight">Your own font files</h3>
+	<p class="mb-4 text-muted-foreground">
+		Don't want to depend on our hosting? Download the files, serve them yourself and pass their URLs by weight. The
+		packages then register the font from your files and load nothing from dvfonts. For <code>normalize</code>, also pass
+		the family's <code>sizeAdjust</code> from <a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>.
+	</p>
+	<div class="flex flex-col gap-3">
+		<CodeBlock
+			title="JS"
+			lang="javascript"
+			code={`import { loadFonts, fontFaceCss } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } });\n\n// Or the @font-face rules for your own stylesheet:\nfontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fonts/bolhu-700.woff2' } });`}
+		/>
+		<CodeBlock
+			title="React / Vue"
+			lang="jsx"
+			code={`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } });`}
+		/>
+	</div>
 
 	<h2 id="same-size" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Same size for every font</h2>
 	<p class="mb-4 text-muted-foreground">

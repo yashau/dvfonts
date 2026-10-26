@@ -6,7 +6,7 @@ export {
 	type ThaanaTextareaProps,
 	type ThaanaFieldProps
 } from './components.js';
-export { useDhivehiFont } from './fonts.js';
+export { useDhivehiFont, type DhivehiFontOptions } from './fonts.js';
 export { ThaanaText, type ThaanaTextProps } from './text.js';
 // The framework-agnostic helpers, so one install is enough.
 export * from '@yashau/thaana';

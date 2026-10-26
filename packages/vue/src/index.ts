@@ -4,7 +4,7 @@ import { ThaanaInput, ThaanaTextarea, ThaanaText } from './components.js';
 
 export { vThaana, type ThaanaDirectiveOptions } from './directive.js';
 export { ThaanaInput, ThaanaTextarea, ThaanaText } from './components.js';
-export { useDhivehiFont } from './fonts.js';
+export { useDhivehiFont, type DhivehiFontOptions } from './fonts.js';
 // The framework-agnostic helpers, so one install is enough.
 export * from '@yashau/thaana';
 

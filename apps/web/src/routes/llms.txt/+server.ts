@@ -52,7 +52,7 @@ Several families and weights in one request: \`${O}/css2?family=Bolhu:wght@400;7
 - The CSS uses unicode-range subsets: a Thaana-only page downloads only the small Thaana file.
 - Fonts differ a lot in size at the same font-size. Optional: add \`&normalize=1\` to scale each family (CSS \`size-adjust\`) so its Thaana letters look as big as Faruma's; the files are unchanged. Packages: \`fontCssUrl(fonts, { normalize: true })\`, \`loadFonts(fonts, { normalize: true })\`, \`useDhivehiFont(family, weights, { normalize: true })\`.
 - Many Dhivehi fonts have no Latin glyphs. Put a Latin fallback after the family: \`font-family: 'Faruma', system-ui, sans-serif;\`
-- Self-hosting: download \`${O}/fonts/<id>/<id>.zip\`, or individual \`.woff2\` / \`.ttf\` files listed in fonts.json.
+- Self-hosting: download \`${O}/fonts/<id>/<id>.zip\`, or individual \`.woff2\` / \`.ttf\` files listed in fonts.json. The packages can then load your copies instead of dvfonts' (nothing is fetched from dvfonts): \`loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })\`, \`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } })\` (React/Vue), or \`fontFaceCss({ family, files })\` for @font-face rules in your own stylesheet. With \`normalize\`, also pass the family's \`sizeAdjust\` from fonts.json.
 
 ## 2. Let users type Thaana (phonetic keyboard)
 
@@ -128,7 +128,7 @@ Full guide with live examples: ${O}/guide
 - Fili (vowel marks, U+07A6–U+07B0) sit above/below letters: use line-height ≈ 1.75 and avoid \`overflow: hidden\` with tight line heights, or they get clipped.
 - Most Dhivehi fonts have no Latin letters: always give a Latin fallback. \`fontStack('Faruma')\` → "'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif".
 - No italics for Thaana (\`font-synthesis: none\`); emphasise with weight or colour.
-- Canvas: \`await loadFonts({ family })\` before drawing, set \`ctx.direction = 'rtl'\`. SVG: \`direction="rtl"\`.
+- Canvas: \`await loadFonts({ family })\` (or with your own \`files\`) before drawing, set \`ctx.direction = 'rtl'\`. SVG: \`direction="rtl"\`.
 - \`@yashau/thaana/thaana.css\` (also ${O}/thaana.css) applies the CSS side of all this to \`:lang(dv)\`.
 - \`transliterate()\` replays keystrokes in the Divehi Phonetic layout. It is not a romanisation converter: pass what a user would type (e.g. "divehi" for ދިވެހި).
 
