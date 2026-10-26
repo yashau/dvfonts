@@ -1,7 +1,13 @@
+<script lang="ts" module>
+	export type Sort = 'featured' | 'name' | 'styles';
+	export const SORT_LABELS: Record<Sort, string> = { featured: 'Featured', name: 'Name', styles: 'Number of styles' };
+</script>
+
 <script lang="ts">
 	import { CATEGORIES, DEFAULT_CATEGORIES, type Category } from '#lib/catalog.js';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import * as Select from '#lib/components/ui/select/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Separator } from '#lib/components/ui/separator/index.js';
@@ -13,8 +19,12 @@
 	import { thaanaKeyboard } from '#lib/thaana.js';
 
 	// The browse page's controls, Google Fonts style: what to preview, how big,
-	// and which categories. A sticky sidebar on wide screens, a sheet on small ones.
-	let { categories = $bindable(), counts }: { categories: Category[]; counts: Record<string, number> } = $props();
+	// which categories and in what order. A sticky sidebar on wide screens, a sheet on small ones.
+	let {
+		categories = $bindable(),
+		sort = $bindable(),
+		counts
+	}: { categories: Category[]; sort: Sort; counts: Record<string, number> } = $props();
 
 	let textEl = $state<HTMLTextAreaElement | null>(null);
 	$effect(() => {
@@ -34,6 +44,7 @@
 		!tester.text &&
 			tester.normalize &&
 			!tester.sizeChosen &&
+			sort === 'featured' &&
 			categories.length === DEFAULT_CATEGORIES.length &&
 			DEFAULT_CATEGORIES.every((c) => categories.includes(c))
 	);
@@ -43,6 +54,7 @@
 		tester.normalize = true;
 		tester.resetSize();
 		categories = [...DEFAULT_CATEGORIES];
+		sort = 'featured';
 	}
 </script>
 
@@ -134,5 +146,19 @@
 				</ToggleGroup.Item>
 			{/each}
 		</ToggleGroup.Root>
+	</section>
+
+	<Separator />
+
+	<section class="flex flex-col gap-3">
+		<h2 class="text-sm font-medium">Sort</h2>
+		<Select.Root type="single" bind:value={sort}>
+			<Select.Trigger class="w-full" aria-label="Sort">{SORT_LABELS[sort]}</Select.Trigger>
+			<Select.Content>
+				{#each Object.entries(SORT_LABELS) as [value, label] (value)}
+					<Select.Item {value} {label}>{label}</Select.Item>
+				{/each}
+			</Select.Content>
+		</Select.Root>
 	</section>
 </div>

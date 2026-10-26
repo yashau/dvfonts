@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, credit, type Category } from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
-	import BrowsePanel from '#lib/components/browse-panel.svelte';
+	import BrowsePanel, { type Sort } from '#lib/components/browse-panel.svelte';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
 	import SlidersHorizontalIcon from '@lucide/svelte/icons/sliders-horizontal';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
@@ -9,7 +9,6 @@
 	import * as Empty from '#lib/components/ui/empty/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import SearchXIcon from '@lucide/svelte/icons/search-x';
-	import * as Select from '#lib/components/ui/select/index.js';
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import type { PageProps } from './$types';
 
@@ -17,7 +16,7 @@
 
 	let query = $state('');
 	let categories = $state<Category[]>([...DEFAULT_CATEGORIES]);
-	let sort = $state<'featured' | 'name' | 'styles'>('featured');
+	let sort = $state<Sort>('featured');
 	let panelOpen = $state(false);
 
 	const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
@@ -25,8 +24,6 @@
 		const i = FEATURED.indexOf(id);
 		return i === -1 ? FEATURED.length : i;
 	};
-
-	const sortLabels = { featured: 'Featured', name: 'Name', styles: 'Number of styles' };
 
 	const counts = $derived(
 		Object.fromEntries(CATEGORIES.map((c) => [c.id, data.families.filter((f) => f.category === c.id).length]))
@@ -73,7 +70,7 @@
 <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
 	<aside class="hidden lg:block">
 		<div class="sticky top-20 max-h-[calc(100svh-6rem)] overflow-y-auto pt-1 pr-1 pb-6">
-			<BrowsePanel bind:categories {counts} />
+			<BrowsePanel bind:categories bind:sort {counts} />
 		</div>
 	</aside>
 
@@ -93,7 +90,7 @@
 						<Sheet.Title>Preview &amp; filters</Sheet.Title>
 					</Sheet.Header>
 					<div class="px-4 pb-6">
-						<BrowsePanel bind:categories {counts} />
+						<BrowsePanel bind:categories bind:sort {counts} />
 					</div>
 				</Sheet.Content>
 			</Sheet.Root>
@@ -103,17 +100,7 @@
 				</InputGroup.Addon>
 				<InputGroup.Input bind:value={query} placeholder="Search fonts, designers, old names…" aria-label="Search" />
 			</InputGroup.Root>
-			<div class="flex items-center gap-3 md:ml-auto">
-				<span class="text-sm text-muted-foreground tabular-nums">{visible.length} families</span>
-				<Select.Root type="single" bind:value={sort}>
-					<Select.Trigger size="sm" class="w-44" aria-label="Sort">{sortLabels[sort]}</Select.Trigger>
-					<Select.Content>
-						{#each Object.entries(sortLabels) as [value, label] (value)}
-							<Select.Item {value} {label}>{label}</Select.Item>
-						{/each}
-					</Select.Content>
-				</Select.Root>
-			</div>
+			<span class="text-sm text-muted-foreground tabular-nums md:ml-auto">{visible.length} families</span>
 		</div>
 
 		<div class="pt-2">
