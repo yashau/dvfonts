@@ -1,7 +1,7 @@
-"""Tidy a font's copyright notice (name ID 0) for display on the site.
+"""Tidy the text fonts carry in their name table, for the site and README.txt.
 
-Only the catalog's display text goes through this. Font files, OFL.txt and the
-README in each zip keep the notice exactly as the font has it.
+Only display text goes through this. The font files and OFL.txt keep the
+notices exactly as the fonts have them.
 """
 
 import re
@@ -19,6 +19,31 @@ _NOISE = [
 
 # "Copyright (C)", "(C) Copyright,", "CopyRight (c)", "Copyright" -> "©".
 _MARK = re.compile(r"(\(c\)\s*copyright,?|copyright\s*(\(c\)|©)|\(c\)|copyright(?=\s+(\d|[A-Z])))", re.I)
+
+
+def tidy_text(text: str | None) -> str | None:
+    """Fix the spacing of a name-table string (designer, license text, …), keeping its lines."""
+    if not text:
+        return None
+    lines = [_tidy_line(line) for line in text.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip() or None
+
+
+def _tidy_line(s: str) -> str:
+    s = " ".join(s.split())
+    # No space before , . ; : and one after , ; (not inside numbers: "1,000").
+    s = re.sub(r"\s+([,.;:])(?=\s|$)", r"\1", s)
+    s = re.sub(r"(?<=\w) +:(?= )", ":", s)
+    s = re.sub(r"([,;])(?=[^\s\d])", r"\1 ", s)
+    # A full stop glued to the next sentence ("Mazeed.Phone"), not initials ("M.A.Gadir") or domains.
+    s = re.sub(r"(?<=[a-z]{2})\.(?=[A-Z][a-z])", ". ", s)
+    # Initials run into a surname: "M.A.Gadir" -> "M.A. Gadir".
+    s = re.sub(r"\b((?:[A-Z]\.){1,3})(?=[A-Z][a-z])", r"\1 ", s)
+    # Brackets: "Niyaz(Noonu" -> "Niyaz (Noonu", "( Laamu" -> "(Laamu".
+    s = re.sub(r"\(\s+", "(", s)
+    s = re.sub(r"(?<=[A-Za-z])\((?=[A-Za-z]{2})", " (", s)
+    s = re.sub(r"\s+\)", ")", s)
+    return s.strip()
 
 
 def tidy_copyright(text: str | None) -> str | None:
@@ -41,13 +66,8 @@ def tidy_copyright(text: str | None) -> str | None:
     s = re.sub(r"©\s*,?\s*", "© ", s)
     # "© 2021 by Hussain Niyaz" -> "© 2021 Hussain Niyaz"
     s = re.sub(r"(© \d{4}(?:[-–]\d{2,4})?),? (?:by )?", r"\1 ", s)
-    # Punctuation spacing: no space before , . and one after a comma.
     s = re.sub(r"\s+([,.])", r"\1", s)
-    s = re.sub(r",(?=\S)", ", ", s)
-    # A full stop glued to the next sentence ("Mazeed.Phone"), not initials ("M.A.Gadir") or domains.
-    s = re.sub(r"(?<=[a-z]{2})\.(?=[A-Z][a-z])", ". ", s)
-    # Initials run into a surname: "M.A.Gadir" -> "M.A. Gadir".
-    s = re.sub(r"\b((?:[A-Z]\.){1,3})(?=[A-Z][a-z])", r"\1 ", s)
+    s = _tidy_line(s)
     # Credits continued after a comma read as one sentence: ", Created by" -> ", created by".
     s = re.sub(r", (Created|Assisted|Calligraphy|Designed|Modified)\b", lambda m: ", " + m[1].lower(), s)
     s = re.sub(r"\s{2,}", " ", s).strip(" ,")

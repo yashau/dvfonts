@@ -21,6 +21,7 @@ import json
 import re
 import shutil
 import sys
+import textwrap
 import tomllib
 import zipfile
 from pathlib import Path
@@ -36,7 +37,7 @@ from fontTools.ttLib.tables import otTables
 from fontTools.ttLib.tables._c_m_a_p import cmap_format_4, cmap_format_12
 
 sys.path.insert(0, str(Path(__file__).parent))
-from copyright import tidy_copyright  # noqa: E402
+from copyright import tidy_copyright, tidy_text  # noqa: E402
 from layouts import LAYOUTS  # noqa: E402
 from legacy import layout_for  # noqa: E402
 
@@ -386,6 +387,9 @@ def zip_write(zf: zipfile.ZipFile, name: str, data: bytes | str) -> None:
     info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
     info.compress_type = zipfile.ZIP_DEFLATED
     info.external_attr = 0o644 << 16
+    if isinstance(data, str):
+        # Text files use LF only: name-table strings often carry CRLF or bare CR.
+        data = data.replace("\r\n", "\n").replace("\r", "\n")
     zf.writestr(info, data)
 
 
@@ -555,7 +559,11 @@ def main(only: set[str] | None = None) -> None:
             regular = min(styles, key=lambda st: abs(st["weight"] - 400))
             for st in styles:
                 st["sizeAdjust"] = regular["sizeAdjust"]
-            zip_write(zf, f"{fam['name']}/README.txt", readme(fam, meta, styles, sources, license, unmodified_reason))
+            zip_write(
+                zf,
+                f"{fam['name']}/README.txt",
+                readme(fam, {**meta, **display_meta(fam, meta)}, styles, sources, license, unmodified_reason),
+            )
             if license == "OFL-1.1":
                 zip_write(zf, f"{fam['name']}/OFL.txt", (meta.get("copyright") or "") + "\n\n" + ofl_text)
         (outdir / f"{fid}.zip").write_bytes(zipbuf.getvalue())
@@ -575,9 +583,7 @@ def main(only: set[str] | None = None) -> None:
                 "upstream": first.get("url"),
                 "attribution": first.get("attribution"),
                 **meta,
-                # Display text only; the files, README.txt and OFL.txt keep the font's own notice.
-                "copyright": fam.get("copyright") or tidy_copyright(meta.get("copyright")),
-                "designer": fam.get("designer") or meta.get("designer"),
+                **display_meta(fam, meta),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
             }
@@ -603,10 +609,21 @@ def main(only: set[str] | None = None) -> None:
     print(f"{len(families)} families, {sum(len(f['styles']) for f in families)} fonts -> {FONTS_OUT}")
 
 
+def display_meta(fam, meta) -> dict:
+    """Name-table text tidied for display; the files and OFL.txt keep the font's own notice."""
+    return {
+        "copyright": fam.get("copyright") or tidy_copyright(meta.get("copyright")),
+        "designer": fam.get("designer") or tidy_text(meta.get("designer")),
+        "manufacturer": tidy_text(meta.get("manufacturer")),
+        "description": tidy_text(meta.get("description")),
+        "licenseText": tidy_text(meta.get("licenseText")),
+    }
+
+
 def readme(fam, meta, styles, sources, license, unmodified_reason) -> str:
     lines = [fam["name"], "=" * len(fam["name"]), ""]
     if fam.get("notes"):
-        lines += [fam["notes"], ""]
+        lines += [*textwrap.wrap(fam["notes"], 78), ""]
     lines.append(f"License: {license}")
     for k, label in (
         ("copyright", "Copyright"),
@@ -616,7 +633,12 @@ def readme(fam, meta, styles, sources, license, unmodified_reason) -> str:
         ("licenseUrl", "License URL"),
     ):
         if meta.get(k):
-            lines.append(f"{label}: {meta[k]}")
+            # Wrap each of the field's own lines; continuation lines are indented.
+            for i, part in enumerate(meta[k].split("\n")):
+                text = f"{label}: {part}" if i == 0 else part
+                lines += textwrap.wrap(
+                    text, 78, initial_indent="" if i == 0 else "  ", subsequent_indent="  ", break_on_hyphens=False
+                ) or [""]
     lines += ["", "Files:"]
     for s in styles:
         src = sources.get(s["source"], {})

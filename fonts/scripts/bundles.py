@@ -47,6 +47,9 @@ def zip_write(zf: zipfile.ZipFile, name: str, data: bytes | str) -> None:
     info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
     info.compress_type = zipfile.ZIP_DEFLATED
     info.external_attr = 0o644 << 16
+    if isinstance(data, str):
+        # Text files use LF only: name-table strings often carry CRLF or bare CR.
+        data = data.replace("\r\n", "\n").replace("\r", "\n")
     zf.writestr(info, data)
 
 
@@ -203,6 +206,10 @@ def main() -> None:
     families = json.loads(CATALOG.read_text())["families"]
     OUT.mkdir(parents=True, exist_ok=True)
     manifest = [build_bundle(bid, spec, families) for bid, spec in bundles.items()]
+    # Drop zips of bundles that no longer exist, so they aren't uploaded again.
+    for old in OUT.glob("*.zip"):
+        if old.name not in {b["file"] for b in manifest}:
+            old.unlink()
     MANIFEST.write_text(json.dumps(manifest, indent=1) + "\n")
     for b in manifest:
         print(f"{b['file']:42} {b['families']:4} families {b['size'] / 1e6:7.1f} MB")
