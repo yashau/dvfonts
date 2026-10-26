@@ -32,10 +32,6 @@
 import '@yashau/thaana/thaana.css'; // sane defaults for :lang(dv)
 
 await loadFonts({ family: 'Faruma' });
-// Optional: { normalize: true } scales a font so its letters look as big as Faruma's
-await loadFonts({ family: 'Bolhu' }, { normalize: true });
-// Or your own copies of the files, with nothing loaded from dvfonts:
-await loadFonts({ family: 'Faiy', files: { 400: '/fonts/faiy-400.woff2' } });
 const input = document.querySelector('#name');
 input.style.fontFamily = fontStack('Faruma');
 
@@ -54,8 +50,6 @@ export function Form() {
   const [name, setName] = useState('');
   const [dv, setDv] = useState(true);
   useDhivehiFont('Faruma');
-  useDhivehiFont('Bolhu', [400], { normalize: true }); // optional: Faruma-sized letters
-  useDhivehiFont('Faiy', [400], { files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
   const notes = useThaanaKeyboard<HTMLTextAreaElement>({ enabled: dv });
 
   return (
@@ -79,8 +73,6 @@ export function Form() {
   let name = $state('');
   let dv = $state(true);
   loadFonts({ family: 'Faruma' });
-  loadFonts({ family: 'Bolhu' }, { normalize: true }); // optional: Faruma-sized letters
-  loadFonts({ family: 'Faiy', files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
 ${SCRIPT_END}
 
 <ThaanaInput {dv} bind:value={name} style="font-family: {fontStack('Faruma')}" />
@@ -101,8 +93,6 @@ import { ThaanaInput, vThaana, useDhivehiFont, fontStack } from '@yashau/thaana-
 const name = ref('');
 const dv = ref(true);
 useDhivehiFont('Faruma');
-useDhivehiFont('Bolhu', [400], { normalize: true }); // optional: Faruma-sized letters
-useDhivehiFont('Faiy', [400], { files: { 400: '/fonts/faiy-400.woff2' } }); // your own files
 ${SCRIPT_END}
 
 <template>
@@ -142,11 +132,11 @@ ${SCRIPT_END}
 		],
 		[
 			'loadFonts({ family, weights, files }, { normalize })',
-			"Load a dvfonts family, or your own copies of its files (files: { 400: url }); resolves when it can be drawn (canvas, SVG). normalize: true scales it so its letters look as big as Faruma's."
+			'Load a font; resolves when it can be drawn (canvas, SVG). See same size and self-hosting below for the options.'
 		],
-		['fontFaceCss({ family, files })', '@font-face CSS for your own copies of the files.'],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
-		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.']
+		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.'],
+		['fontFaceCss({ family, files })', '@font-face CSS for your own copies of the files (self-hosting).']
 	];
 </script>
 
@@ -179,62 +169,14 @@ ${SCRIPT_END}
 		<li><code>family=Name</code> with spaces as <code>+</code>. Old names work too (<code>A_Waheed</code>).</li>
 		<li><code>:wght@400;700</code> picks weights; without it you get the default weight.</li>
 		<li>Fonts are split into Thaana and Latin parts, so a Thaana-only page downloads only the Thaana part.</li>
-		<li>
-			Fonts vary a lot in size at the same <code>font-size</code>. Add <code>&amp;normalize=1</code> to scale each one
-			(CSS <code>size-adjust</code>) so its Thaana letters look as big as Faruma's. The font files are unchanged, and
-			it's off unless you ask for it.
-		</li>
 		<li>Many Dhivehi fonts have no Latin letters, so always list a Latin fallback after the family.</li>
 		<li>
-			Self-hosting? Every font and collection is on the <a class="underline underline-offset-4" href="/downloads"
-				>downloads</a
-			> page, and the packages can load your copies instead of ours (below).
+			Optional: <code>&amp;normalize=1</code> makes every font the same size (<a
+				class="underline underline-offset-4"
+				href="#same-size">below</a
+			>).
 		</li>
 	</ul>
-
-	<h3 id="own-files" class="mt-8 mb-3 scroll-mt-20 text-lg font-semibold tracking-tight">Your own font files</h3>
-	<p class="mb-4 text-muted-foreground">
-		Don't want to depend on our hosting? Download the files, serve them yourself and pass their URLs by weight. The
-		packages then register the font from your files and load nothing from dvfonts. For <code>normalize</code>, also pass
-		the family's <code>sizeAdjust</code> from <a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>.
-	</p>
-	<div class="flex flex-col gap-3">
-		<CodeBlock
-			title="JS"
-			lang="javascript"
-			code={`import { loadFonts, fontFaceCss } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } });\n\n// Or the @font-face rules for your own stylesheet:\nfontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fonts/bolhu-700.woff2' } });`}
-		/>
-		<CodeBlock
-			title="React / Vue"
-			lang="jsx"
-			code={`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } });`}
-		/>
-	</div>
-
-	<h2 id="same-size" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Same size for every font</h2>
-	<p class="mb-4 text-muted-foreground">
-		Dhivehi fonts differ a lot in size at the same <code>font-size</code>: some draw their letters at half Faruma's
-		size, others at nearly twice. Ask for <code>normalize</code> and each family is scaled with CSS
-		<code>size-adjust</code> so its Thaana letters look as big as Faruma's. Switching fonts then keeps your text the same
-		size. The font files are not changed, and it's off unless you ask for it.
-	</p>
-	<div class="flex flex-col gap-3">
-		<CodeBlock
-			title="HTML"
-			lang="html"
-			code={`<link rel="stylesheet" href="${base}/css2?family=Bolhu&family=Faiy&display=swap&normalize=1">`}
-		/>
-		<CodeBlock
-			title="JS"
-			lang="javascript"
-			code={`import { loadFonts, fontCssUrl } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Bolhu' }, { normalize: true });\nfontCssUrl([{ family: 'Faiy' }], { normalize: true }); // just the URL`}
-		/>
-		<CodeBlock title="React / Vue" lang="jsx" code={`useDhivehiFont('Bolhu', [400], { normalize: true });`} />
-	</div>
-	<p class="mt-3 text-sm text-muted-foreground">
-		Each font's page has a switch that adds it to the embed code. The scale per family is in
-		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a> (<code>sizeAdjust</code>).
-	</p>
 
 	<h2 id="keyboard" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Thaana keyboard</h2>
 	<p class="mb-4 text-muted-foreground">
@@ -349,6 +291,56 @@ ${SCRIPT_END}
 		and per-paragraph direction for <code>:lang(dv)</code>. Also at
 		<a class="underline underline-offset-4" href="/thaana.css">/thaana.css</a>.
 	</p>
+
+	<h2 id="same-size" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Same size for every font</h2>
+	<p class="mb-4 text-muted-foreground">
+		Dhivehi fonts differ a lot in size at the same <code>font-size</code>: some draw their letters at half Faruma's
+		size, others at nearly twice. Ask for <code>normalize</code> and each family is scaled with CSS
+		<code>size-adjust</code> so its Thaana letters look as big as Faruma's. Switching fonts then keeps your text the same
+		size. The font files are not changed, and it's off unless you ask for it.
+	</p>
+	<div class="flex flex-col gap-3">
+		<CodeBlock
+			title="HTML"
+			lang="html"
+			code={`<link rel="stylesheet" href="${base}/css2?family=Bolhu&family=Faiy&display=swap&normalize=1">`}
+		/>
+		<CodeBlock
+			title="JS"
+			lang="javascript"
+			code={`import { loadFonts, fontCssUrl } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Bolhu' }, { normalize: true });\nfontCssUrl([{ family: 'Faiy' }], { normalize: true }); // just the URL`}
+		/>
+		<CodeBlock title="React / Vue" lang="jsx" code={`useDhivehiFont('Bolhu', [400], { normalize: true });`} />
+	</div>
+	<p class="mt-3 text-sm text-muted-foreground">
+		Each font's page has a switch that adds it to the embed code. The scale per family is in
+		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a> (<code>sizeAdjust</code>).
+	</p>
+
+	<h2 id="self-hosting" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Self-hosting</h2>
+	<p class="mb-4 text-muted-foreground">
+		Every font and collection can be downloaded from its page or the
+		<a class="underline underline-offset-4" href="/downloads">downloads</a> page, to serve from your own server.
+	</p>
+
+	<h3 id="own-files" class="mt-6 mb-3 scroll-mt-20 text-lg font-semibold tracking-tight">With the packages</h3>
+	<p class="mb-4 text-muted-foreground">
+		Pass the URLs of your copies by weight. The packages then register the font from your files and load nothing from
+		dvfonts. For <code>normalize</code>, also pass the family's <code>sizeAdjust</code> from
+		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>.
+	</p>
+	<div class="flex flex-col gap-3">
+		<CodeBlock
+			title="JS"
+			lang="javascript"
+			code={`import { loadFonts, fontFaceCss } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } });\n\n// Or the @font-face rules for your own stylesheet:\nfontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fonts/bolhu-700.woff2' } });`}
+		/>
+		<CodeBlock
+			title="React / Vue"
+			lang="jsx"
+			code={`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } });`}
+		/>
+	</div>
 
 	<h2 id="data" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">For tools and agents</h2>
 	<ul class="list-disc space-y-1 pl-5 text-muted-foreground">
