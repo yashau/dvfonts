@@ -285,39 +285,41 @@
 		{#each blocks as b (b.id)}
 			{@const isActive = b.id === activeId}
 			{@const dir = resolveDirection(b.text, null, tester.dv ? 'rtl' : 'ltr')}
-			<!-- dir on the wrapper puts the selection bar at the start of the text (the
-			     right for Thaana) and the remove button at its end. -->
-			<div
-				{dir}
-				class="group relative border-s-4 ps-3 pe-8 transition-colors {isActive
-					? 'border-s-primary'
-					: 'border-s-transparent hover:border-s-border'}"
-				style:background={b.highlight || undefined}
-			>
-				<Textarea
-					bind:value={b.text}
-					rows={1}
-					{dir}
-					lang={tester.dv ? 'dv' : undefined}
-					aria-label="{KINDS[b.kind].label} text"
-					data-block={b.id}
-					spellcheck={false}
-					onfocus={() => (activeId = b.id)}
-					class="min-h-0 resize-none overflow-hidden rounded-none border-0 bg-transparent px-0 py-1 shadow-none focus-visible:ring-0 dark:bg-transparent"
-					style="font-family: '{previewFamily(
-						family,
-						normalized(b.weight)
-					)}', 'dv-ui', sans-serif; font-weight: {b.weight}; font-size: {b.size}px; line-height: {lineHeight(
-						b
-					)}; text-align: {b.align}; color: {b.color || 'inherit'}"
-					{@attach thaanaKeyboard({ enabled: tester.dv, setAttributes: false, autoDirection: false })}
-					{@attach autosize}
-				/>
+			<!-- dir on the row puts the selection bar at the start of the text (the right
+			     for Thaana) and the remove button after its end. The text box is shaded and
+			     the button sits outside it, so alignment uses exactly the box you see. -->
+			<div {dir} class="group flex items-start gap-1">
+				<div
+					class="min-w-0 flex-1 rounded-e-md border-s-4 bg-muted/50 ps-3 pe-3 transition-colors {isActive
+						? 'border-s-primary'
+						: 'border-s-transparent hover:border-s-border'}"
+					style:background={b.highlight || undefined}
+				>
+					<Textarea
+						bind:value={b.text}
+						rows={1}
+						{dir}
+						lang={tester.dv ? 'dv' : undefined}
+						aria-label="{KINDS[b.kind].label} text"
+						data-block={b.id}
+						spellcheck={false}
+						onfocus={() => (activeId = b.id)}
+						class="min-h-0 resize-none overflow-hidden rounded-none border-0 bg-transparent px-0 py-1 shadow-none focus-visible:ring-0 dark:bg-transparent"
+						style="font-family: '{previewFamily(
+							family,
+							normalized(b.weight)
+						)}', 'dv-ui', sans-serif; font-weight: {b.weight}; font-size: {b.size}px; line-height: {lineHeight(
+							b
+						)}; text-align: {b.align}; color: {b.color || 'inherit'}"
+						{@attach thaanaKeyboard({ enabled: tester.dv, setAttributes: false, autoDirection: false })}
+						{@attach autosize}
+					/>
+				</div>
 				{#if blocks.length > 1}
 					<Button
 						variant="ghost"
 						size="icon-xs"
-						class="absolute end-0 top-1 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 {isActive
+						class="mt-1 shrink-0 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 {isActive
 							? 'opacity-100'
 							: ''}"
 						aria-label="Remove this text"
