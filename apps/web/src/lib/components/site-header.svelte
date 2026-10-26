@@ -26,10 +26,10 @@
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
 		<!-- The logo's box ends at the Thaana baseline (its lower fili hang below it). Desktop:
-		     24px tall from 16px down, baseline at 40px, a little under the nav text's. Phones
+		     24px tall from 13px down, baseline at 37px, a little under the nav text's. Phones
 		     (no nav text): 22px from 12px down, which centres the whole mark, fili included, so
 		     the lower fili clear the bar's bottom edge. -->
-		<a href="/" class="mt-[12px] shrink-0 self-start md:mt-4" aria-label="fonts.mv home">
+		<a href="/" class="mt-[12px] shrink-0 self-start md:mt-[13px]" aria-label="fonts.mv home">
 			<Logo class="block h-[22px] w-auto md:h-6" />
 		</a>
 		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
