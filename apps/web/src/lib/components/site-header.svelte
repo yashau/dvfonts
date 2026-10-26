@@ -58,11 +58,12 @@
 			</Tooltip.Root>
 			<ThemeMenu />
 		</div>
-		<!-- On the right, where Thaana starts. The logo's box ends at the Thaana baseline (its lower fili hang below it). Desktop:
+		<!-- On the right, where Thaana starts, inset 16px on desktop like the nav links' text
+		     (their padding) is on the left. The logo's box ends at the Thaana baseline (its lower fili hang below it). Desktop:
 		     24px tall from 13px down, baseline at 37px, a little under the nav text's. Phones
 		     (no nav text): 22px from 12px down, which centres the whole mark, fili included, so
 		     the lower fili clear the bar's bottom edge. -->
-		<a href="/" class="mt-[12px] ml-auto shrink-0 self-start md:mt-[13px]" aria-label="fonts.mv home">
+		<a href="/" class="mt-[12px] ml-auto shrink-0 self-start md:mt-[13px] md:mr-4" aria-label="fonts.mv home">
 			<Logo class="block h-[22px] w-auto md:h-6" />
 		</a>
 		<!-- Phones: right of the logo. The menu opens from the right, below the header, which stays on top and
