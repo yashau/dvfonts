@@ -33,7 +33,9 @@
 	let { family }: { family: Family } = $props();
 
 	type Kind = 'heading' | 'subheading' | 'paragraph';
-	type Align = 'start' | 'center' | 'end' | 'justify';
+	// 'start' (the default) follows the text: right for Thaana, left for Latin. The toolbar
+	// sets a physical side, so its left and right buttons mean the same for any text.
+	type Align = 'start' | 'left' | 'center' | 'right' | 'justify';
 	interface Block {
 		id: number;
 		kind: Kind;
@@ -105,6 +107,7 @@
 		activeId = blocks[0].id;
 	});
 	const active = $derived(blocks.find((b) => b.id === activeId) ?? blocks[0]);
+	const activeDir = $derived(resolveDirection(active.text, null, tester.dv ? 'rtl' : 'ltr'));
 
 	function setKind(kind: Kind) {
 		if (!active) return;
@@ -202,14 +205,13 @@
 				type="single"
 				variant="outline"
 				size="sm"
-				value={active.align}
+				value={active.align === 'start' ? (activeDir === 'rtl' ? 'right' : 'left') : active.align}
 				onValueChange={(v) => v && (active.align = v as Align)}
 				aria-label="Alignment"
 			>
-				<!-- Thaana reads right to left: "start" is the right edge. -->
-				<ToggleGroup.Item value="start" aria-label="Align to start (right)"><AlignRightIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item value="left" aria-label="Align left"><AlignLeftIcon /></ToggleGroup.Item>
 				<ToggleGroup.Item value="center" aria-label="Centre"><AlignCenterIcon /></ToggleGroup.Item>
-				<ToggleGroup.Item value="end" aria-label="Align to end (left)"><AlignLeftIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item value="right" aria-label="Align right"><AlignRightIcon /></ToggleGroup.Item>
 				<ToggleGroup.Item value="justify" aria-label="Justify"><AlignJustifyIcon /></ToggleGroup.Item>
 			</ToggleGroup.Root>
 
