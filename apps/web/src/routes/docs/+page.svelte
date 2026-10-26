@@ -10,19 +10,15 @@
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as Item from '#lib/components/ui/item/index.js';
 	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
-	import { thaanaKeyboard, KEYMAP } from '#lib/thaana.js';
+	import { KEYMAP } from '#lib/thaana.js';
+	import { thaanaKeyboard } from '@yashau/thaana-svelte';
 	import { origin, SITE_ORIGIN } from '#lib/site.js';
 
 	let base = $state(SITE_ORIGIN);
 	onMount(() => (base = origin()));
 
-	let demoEl = $state<HTMLTextAreaElement | null>(null);
 	let demoOn = $state(true);
 	let demoText = $state('');
-	$effect(() => {
-		if (!demoEl) return;
-		return thaanaKeyboard(demoEl, () => demoOn).destroy;
-	});
 
 	const keyRows = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
 
@@ -229,10 +225,8 @@ ${SCRIPT_END}
 		</Card.Header>
 		<Card.Content>
 			<Textarea
-				bind:ref={demoEl}
+				{@attach thaanaKeyboard({ enabled: demoOn })}
 				bind:value={demoText}
-				dir="rtl"
-				lang="dv"
 				rows={3}
 				placeholder="އަކުރުތައް ލިޔެ ބައްލަވާ…"
 				class="text-lg"

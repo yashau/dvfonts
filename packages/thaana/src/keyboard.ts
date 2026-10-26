@@ -7,8 +7,9 @@ export interface KeyboardOptions {
 	/** Set dir="rtl", lang="dv" and disable autocorrect/autocapitalize/spellcheck
 	 *  unless the element already sets them. Default: true. */
 	setAttributes?: boolean;
-	/** Keep `dir` in step with the text: RTL when it contains Thaana (or is
-	 *  empty / has no letters), LTR only for pure Latin. Default: true. */
+	/** Keep `dir` in step with the text: RTL when it contains Thaana, LTR for
+	 *  pure Latin. Empty or letterless text follows the keyboard: RTL while it is
+	 *  enabled, LTR while it is off. Default: true. */
 	autoDirection?: boolean;
 }
 
@@ -75,7 +76,9 @@ export function attachKeyboard(el: Editable, options: KeyboardOptions = {}): () 
 	const fieldText = () =>
 		el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement ? el.value : (el.textContent ?? '');
 	const onInput = () => {
-		el.dir = resolveDirection(fieldText(), null, 'rtl');
+		// Empty or no letters: RTL while the phonetic keyboard is on, LTR when the
+		// user has switched it off to type in their own (usually Latin) layout.
+		el.dir = resolveDirection(fieldText(), null, enabled() ? 'rtl' : 'ltr');
 	};
 	el.addEventListener('beforeinput', onBeforeInput);
 	if (autoDirection) {

@@ -16,7 +16,7 @@
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
-	import { thaanaKeyboard } from '#lib/thaana.js';
+	import { thaanaKeyboard } from '@yashau/thaana-svelte';
 
 	// The browse page's controls, Google Fonts style: what to preview, how big,
 	// which categories and in what order. A sticky sidebar on wide screens, a sheet on small ones.
@@ -27,11 +27,6 @@
 		shown
 	}: { categories: Category[]; sort: Sort; counts: Record<string, number>; shown: number } = $props();
 
-	let textEl = $state<HTMLTextAreaElement | null>(null);
-	$effect(() => {
-		if (!textEl) return;
-		return thaanaKeyboard(textEl, () => tester.dv).destroy;
-	});
 	const dir = $derived(resolveDirection(tester.text, null, tester.dv ? 'rtl' : 'ltr'));
 
 	$effect(() => {
@@ -69,7 +64,7 @@
 		</div>
 		<InputGroup.Root>
 			<InputGroup.Textarea
-				bind:ref={textEl}
+				{@attach thaanaKeyboard({ enabled: tester.dv, setAttributes: false, autoDirection: false })}
 				bind:value={tester.text}
 				{dir}
 				lang={tester.dv ? 'dv' : undefined}

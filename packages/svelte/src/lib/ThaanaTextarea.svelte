@@ -14,7 +14,7 @@
 </script>
 
 <textarea
-	dir={resolveDirection(value ?? '', null, 'rtl')}
+	dir={resolveDirection(value ?? '', null, dv ? 'rtl' : 'ltr')}
 	lang="dv"
 	{...rest}
 	bind:this={ref}

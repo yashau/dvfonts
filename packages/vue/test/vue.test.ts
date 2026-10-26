@@ -41,6 +41,19 @@ describe('ThaanaInput', () => {
 	});
 });
 
+describe('ThaanaInput direction', () => {
+	it('starts left-to-right when empty and the keyboard is off', async () => {
+		const dv = ref(false);
+		const App = defineComponent(() => () => h(ThaanaInput, { modelValue: '', dv: dv.value }));
+		const host = document.createElement('div');
+		createApp(App).mount(host);
+		expect(host.querySelector('input')!.getAttribute('dir')).toBe('ltr');
+		dv.value = true;
+		await nextTick();
+		expect(host.querySelector('input')!.getAttribute('dir')).toBe('rtl');
+	});
+});
+
 describe('ThaanaText', () => {
 	it('renders RTL with numbers isolated', () => {
 		const host = document.createElement('div');

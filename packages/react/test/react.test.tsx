@@ -37,6 +37,15 @@ describe('ThaanaInput', () => {
 		await act(async () => type(input, ' ok'));
 		expect(seen).toBe('ދިވެހި ok');
 	});
+	it('starts left-to-right when empty and the keyboard is off', async () => {
+		const host = document.createElement('div');
+		const root = createRoot(host);
+		await act(async () => root.render(<ThaanaInput dv={false} value="" onChange={() => {}} />));
+		expect(host.querySelector('input')!.dir).toBe('ltr');
+		await act(async () => root.render(<ThaanaInput dv value="" onChange={() => {}} />));
+		expect(host.querySelector('input')!.dir).toBe('rtl');
+		await act(async () => root.unmount());
+	});
 	it('re-exports the core helpers', () => {
 		expect(transliterate('bu')).toBe('ބު');
 	});

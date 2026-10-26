@@ -23,6 +23,9 @@ importers:
       '@yashau/thaana':
         specifier: workspace:^
         version: link:../../packages/thaana
+      '@yashau/thaana-svelte':
+        specifier: workspace:^
+        version: link:../../packages/svelte
       shiki:
         specifier: ^4.5.0
         version: 4.5.0

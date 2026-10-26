@@ -16,7 +16,7 @@ function field(tag: 'input' | 'textarea', name: string) {
 			return () =>
 				withDirectives(
 					h(tag, {
-						dir: resolveDirection(props.modelValue, null, 'rtl'),
+						dir: resolveDirection(props.modelValue, null, props.dv ? 'rtl' : 'ltr'),
 						lang: 'dv',
 						value: props.modelValue,
 						onInput: (e: Event) => emit('update:modelValue', (e.target as HTMLInputElement).value)

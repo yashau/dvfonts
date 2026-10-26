@@ -8,15 +8,9 @@
 	import TesterSize from '#lib/components/tester-size.svelte';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
-	import { thaanaKeyboard } from '#lib/thaana.js';
+	import { thaanaKeyboard } from '@yashau/thaana-svelte';
 
 	let { extra }: { extra?: Snippet } = $props();
-
-	let inputEl = $state<HTMLInputElement | null>(null);
-	$effect(() => {
-		if (!inputEl) return;
-		return thaanaKeyboard(inputEl, () => tester.dv).destroy;
-	});
 
 	// Same rule as the previews: RTL when typing Thaana (or about to), LTR only
 	// for pure Latin. Explicit, not unicode-bidi: plaintext, which would flip
@@ -60,7 +54,7 @@
 				</Tooltip.Root>
 			</InputGroup.Addon>
 			<InputGroup.Input
-				bind:ref={inputEl}
+				{@attach thaanaKeyboard({ enabled: tester.dv, setAttributes: false, autoDirection: false })}
 				bind:value={tester.text}
 				{dir}
 				lang={tester.dv ? 'dv' : undefined}

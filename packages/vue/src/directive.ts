@@ -18,10 +18,9 @@ const states = new WeakMap<HTMLElement, State>();
 export const vThaana: Directive<HTMLElement, ThaanaDirectiveOptions | boolean | undefined> = {
 	mounted(el, binding) {
 		const options = normalize(binding.value);
-		const state: State = {
-			options,
-			detach: attachKeyboard(el, { ...options, enabled: () => state.options.enabled ?? true })
-		};
+		// Create the state first: attachKeyboard calls enabled() straight away.
+		const state: State = { options, detach: () => {} };
+		state.detach = attachKeyboard(el, { ...options, enabled: () => state.options.enabled ?? true });
 		states.set(el, state);
 	},
 	updated(el, binding) {

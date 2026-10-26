@@ -3,7 +3,7 @@
 	const SCRIPT_END = '<\u002Fscript>';
 	import { convertLegacy, isolateNumbers, normalizePunctuation, repairPdfText, fontStack } from '@yashau/thaana';
 	import { registerFamily } from '#lib/fonts.js';
-	import { thaanaKeyboard } from '#lib/thaana.js';
+	import { thaanaKeyboard } from '@yashau/thaana-svelte';
 	import ThaanaDemo from '#lib/components/thaana-demo.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Input } from '#lib/components/ui/input/index.js';
@@ -15,12 +15,6 @@
 	$effect(() => {
 		registerFamily(data.faruma);
 		registerFamily(data.iyyu);
-	});
-
-	let goodInput = $state<HTMLInputElement | null>(null);
-	$effect(() => {
-		if (!goodInput) return;
-		return thaanaKeyboard(goodInput, () => true).destroy;
 	});
 
 	const phone = 'ގުޅާލައްވާ: +960 333-1234';
@@ -221,13 +215,7 @@
 		</p>
 		<ThaanaDemo>
 			{#snippet wrong()}<Input placeholder="ލިޔުއްވާ" class="text-lg" />{/snippet}
-			{#snippet right()}<Input
-					bind:ref={goodInput}
-					placeholder="ލިޔުއްވާ"
-					dir="rtl"
-					lang="dv"
-					class="text-lg"
-				/>{/snippet}
+			{#snippet right()}<Input {@attach thaanaKeyboard()} placeholder="ލިޔުއްވާ" class="text-lg" />{/snippet}
 		</ThaanaDemo>
 		<div class="mt-3">
 			<CodeBlock

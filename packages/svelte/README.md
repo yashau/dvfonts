@@ -21,6 +21,8 @@ npm i @yashau/thaana-svelte
 <div contenteditable {@attach thaanaKeyboard({ enabled: dv })}></div>
 ```
 
+The action and attachment set `dir="rtl"`, `lang="dv"` and turn off autocorrect when the element doesn't set them, then keep `dir` in step with the text (left-to-right for an empty field while the keyboard is off). Let them manage `dir`: a `dir` you also put on a component that spreads its props is re-applied whenever the attachment changes, for example when `dv` flips. If you manage `dir` yourself, pass `autoDirection: false`.
+
 Show Thaana text correctly (RTL even when it starts with a Latin word, numbers isolated):
 
 ```svelte

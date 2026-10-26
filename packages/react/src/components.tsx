@@ -17,7 +17,7 @@ export const ThaanaInput: React.ForwardRefExoticComponent<ThaanaInputProps & Rea
 		const merged = useMemo(() => mergeRefs(ref, kb), [ref, kb]);
 		return (
 			<input
-				dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, 'rtl')}
+				dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, dv ? 'rtl' : 'ltr')}
 				lang="dv"
 				{...props}
 				ref={merged}
@@ -34,7 +34,7 @@ export const ThaanaTextarea: React.ForwardRefExoticComponent<
 	const merged = useMemo(() => mergeRefs(ref, kb), [ref, kb]);
 	return (
 		<textarea
-			dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, 'rtl')}
+			dir={resolveDirection(String(props.value ?? props.defaultValue ?? ''), null, dv ? 'rtl' : 'ltr')}
 			lang="dv"
 			{...props}
 			ref={merged}

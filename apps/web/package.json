@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@yashau/thaana": "workspace:^",
+		"@yashau/thaana-svelte": "workspace:^",
 		"shiki": "^4.5.0"
 	},
 	"devDependencies": {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { flushSync, mount } from 'svelte';
+import { flushSync, mount, unmount } from 'svelte';
 import Harness from './Harness.svelte';
 import TextHarness from './TextHarness.svelte';
 
@@ -15,6 +15,16 @@ function type(el: HTMLInputElement, text: string) {
 }
 
 describe('ThaanaInput', () => {
+	it('starts left-to-right when empty and the keyboard is off', () => {
+		const props = $state({ dv: false });
+		const app = mount(Harness, { target: document.body, props });
+		flushSync();
+		expect(document.querySelector('input')!.getAttribute('dir')).toBe('ltr');
+		props.dv = true;
+		flushSync();
+		expect(document.querySelector('input')!.getAttribute('dir')).toBe('rtl');
+		unmount(app);
+	});
 	it('types Thaana through bind:value and toggles with dv', () => {
 		const props = $state({ dv: true });
 		mount(Harness, { target: document.body, props });

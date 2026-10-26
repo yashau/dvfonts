@@ -4,7 +4,8 @@
 	// line spacing, colours). Formatting applies per block, not to selections.
 	import { WEIGHT_NAMES, previewLineHeight, type Family } from '#lib/catalog.js';
 	import { previewFamily } from '#lib/fonts.js';
-	import { PANGRAMS, thaanaKeyboard } from '#lib/thaana.js';
+	import { PANGRAMS } from '#lib/thaana.js';
+	import { thaanaKeyboard } from '@yashau/thaana-svelte';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
 	import * as Card from '#lib/components/ui/card/index.js';
@@ -309,7 +310,7 @@
 					)}', 'dv-ui', sans-serif; font-weight: {b.weight}; font-size: {b.size}px; line-height: {lineHeight(
 						b
 					)}; text-align: {b.align}; color: {b.color || 'inherit'}"
-					{@attach (el: HTMLTextAreaElement) => thaanaKeyboard(el, () => tester.dv).destroy}
+					{@attach thaanaKeyboard({ enabled: tester.dv, setAttributes: false, autoDirection: false })}
 					{@attach autosize}
 				/>
 				{#if blocks.length > 1}

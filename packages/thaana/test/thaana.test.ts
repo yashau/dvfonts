@@ -64,6 +64,18 @@ describe('keyboard', () => {
 		type(el, 'x');
 		expect(el.value.endsWith('x')).toBe(true);
 	});
+	it('lets an empty field go left-to-right while the keyboard is off', () => {
+		const el = document.createElement('input');
+		let on = true;
+		attachKeyboard(el, { enabled: () => on });
+		expect(el.dir).toBe('rtl');
+		on = false;
+		el.dispatchEvent(new Event('input'));
+		expect(el.dir).toBe('ltr'); // about to type in the user's own (Latin) layout
+		el.value = 'ދިވެހި';
+		el.dispatchEvent(new Event('input'));
+		expect(el.dir).toBe('rtl'); // Thaana still wins
+	});
 	it('respects enabled() and leaves Thaana keyboards alone', () => {
 		const el = document.createElement('input');
 		let on = false;
