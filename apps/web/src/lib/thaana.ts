@@ -7,7 +7,6 @@ export {
 	transliterate,
 	hasThaana,
 	PANGRAMS,
-	ARABIC_LETTERS_SAMPLE,
 	LETTERS as LETTERS_NATIVE,
 	ARABIC_LETTERS as LETTERS_ARABIC,
 	FILI

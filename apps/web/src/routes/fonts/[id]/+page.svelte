@@ -3,7 +3,7 @@
 	import { CATEGORIES, WEIGHT_NAMES, credit, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
 	import { registerFamily, previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
-	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE, ARABIC_LETTERS_SAMPLE } from '#lib/thaana.js';
+	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
 	import { cssApiUrl, origin, SITE_ORIGIN } from '#lib/site.js';
 	import TesterBar from '#lib/components/tester-bar.svelte';
 	import FontPreview from '#lib/components/font-preview.svelte';
@@ -194,11 +194,6 @@
 					{/each}
 				</div>
 			{/each}
-			<Card.Root class="mt-6">
-				<Card.Content>
-					<FontPreview {family} weight={main.weight} size={28} text={ARABIC_LETTERS_SAMPLE} />
-				</Card.Content>
-			</Card.Root>
 		</section>
 	{/if}
 
