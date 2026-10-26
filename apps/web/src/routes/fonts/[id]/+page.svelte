@@ -7,6 +7,7 @@
 	import { cssApiUrl, origin, SITE_ORIGIN } from '#lib/site.js';
 	import TesterBar from '#lib/components/tester-bar.svelte';
 	import FontPreview from '#lib/components/font-preview.svelte';
+	import RichTester from '#lib/components/rich-tester.svelte';
 	import { legacyEncoding } from '#lib/legacy.js';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
@@ -141,6 +142,14 @@
 			<FontPreview {family} weight={main.weight} size={Math.max(tester.size, 48)} />
 		</Card.Content>
 	</Card.Root>
+
+	<section class="mt-10">
+		<h2 class="mb-1 text-xl font-semibold tracking-tight">Try it in a layout</h2>
+		<p class="mb-4 text-sm text-muted-foreground">
+			Edit the text and pick a block to change its style, size, weight, alignment and colours.
+		</p>
+		<RichTester {family} />
+	</section>
 
 	<section class="mt-10">
 		<h2 class="mb-4 text-xl font-semibold tracking-tight">Styles</h2>
