@@ -42,6 +42,7 @@ test('search filters the list', async ({ page }) => {
 	await page.goto('/');
 	await page.getByRole('textbox', { name: 'Search' }).fill('A_Waheed');
 	await expect(page.getByRole('link', { name: 'MV A Waheed', exact: true })).toBeVisible();
+	await openBrowsePanel(page); // the count lives in the filter panel
 	await expect(page.getByText(/^1 families$/)).toBeVisible();
 });
 

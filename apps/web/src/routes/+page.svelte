@@ -70,7 +70,7 @@
 <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
 	<aside class="hidden lg:block">
 		<div class="sticky top-20 max-h-[calc(100svh-6rem)] overflow-y-auto pt-1 pr-1 pb-6">
-			<BrowsePanel bind:categories bind:sort {counts} />
+			<BrowsePanel bind:categories bind:sort {counts} shown={visible.length} />
 		</div>
 	</aside>
 
@@ -90,17 +90,16 @@
 						<Sheet.Title>Preview &amp; filters</Sheet.Title>
 					</Sheet.Header>
 					<div class="px-4 pb-6">
-						<BrowsePanel bind:categories bind:sort {counts} />
+						<BrowsePanel bind:categories bind:sort {counts} shown={visible.length} />
 					</div>
 				</Sheet.Content>
 			</Sheet.Root>
-			<InputGroup.Root class="min-w-0 flex-1 md:max-w-80">
+			<InputGroup.Root class="min-w-0 flex-1">
 				<InputGroup.Addon>
 					<SearchIcon />
 				</InputGroup.Addon>
 				<InputGroup.Input bind:value={query} placeholder="Search fonts, designers, old names…" aria-label="Search" />
 			</InputGroup.Root>
-			<span class="text-sm text-muted-foreground tabular-nums md:ml-auto">{visible.length} families</span>
 		</div>
 
 		<div class="pt-2">

@@ -23,8 +23,9 @@
 	let {
 		categories = $bindable(),
 		sort = $bindable(),
-		counts
-	}: { categories: Category[]; sort: Sort; counts: Record<string, number> } = $props();
+		counts,
+		shown
+	}: { categories: Category[]; sort: Sort; counts: Record<string, number>; shown: number } = $props();
 
 	let textEl = $state<HTMLTextAreaElement | null>(null);
 	$effect(() => {
@@ -129,7 +130,10 @@
 	<Separator />
 
 	<section class="flex flex-col gap-3">
-		<h2 class="text-sm font-medium">Categories</h2>
+		<div class="flex items-baseline justify-between gap-2">
+			<h2 class="text-sm font-medium">Categories</h2>
+			<span class="text-sm text-muted-foreground tabular-nums">{shown} families</span>
+		</div>
 		<ToggleGroup.Root
 			type="multiple"
 			variant="outline"
