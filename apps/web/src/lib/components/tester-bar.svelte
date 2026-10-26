@@ -3,12 +3,9 @@
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
-	import { Slider } from '#lib/components/ui/slider/index.js';
 	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
-	import EqualIcon from '@lucide/svelte/icons/equal';
-	import EqualNotIcon from '@lucide/svelte/icons/equal-not';
-	import { Toggle } from '#lib/components/ui/toggle/index.js';
+	import TesterSize from '#lib/components/tester-size.svelte';
 	import { tester } from '#lib/tester.svelte.js';
 	import { resolveDirection } from '@yashau/thaana';
 	import { thaanaKeyboard } from '#lib/thaana.js';
@@ -95,40 +92,7 @@
 				</InputGroup.Addon>
 			{/if}
 		</InputGroup.Root>
-		<!-- Invisible (space kept) until saved settings are read, so the slider doesn't jump. -->
-		<div class="flex items-center gap-3 lg:w-72" class:invisible={!tester.ready}>
-			<span class="w-12 shrink-0 text-right text-sm text-muted-foreground tabular-nums">{tester.size}px</span>
-			<Slider
-				type="single"
-				bind:value={tester.size}
-				onValueChange={() => (tester.sizeChosen = true)}
-				min={12}
-				max={128}
-				step={1}
-				aria-label="Preview size"
-			/>
-			<Tooltip.Root>
-				<Tooltip.Trigger>
-					{#snippet child({ props })}
-						<Toggle
-							{...props}
-							variant="outline"
-							size="sm"
-							bind:pressed={tester.normalize}
-							aria-label="Same size for every font"
-						>
-							<!-- = when every font is scaled to Faruma's size, ≠ when each keeps its own. -->
-							{#if tester.normalize}<EqualIcon />{:else}<EqualNotIcon />{/if}
-						</Toggle>
-					{/snippet}
-				</Tooltip.Trigger>
-				<Tooltip.Content class="max-w-64">
-					{tester.normalize
-						? "Same size: every font is scaled so its letters look as big as Faruma's. Click to show each at its own size."
-						: "Each font at its own size. Click to scale them so their letters look as big as Faruma's."}
-				</Tooltip.Content>
-			</Tooltip.Root>
-		</div>
+		<TesterSize class="lg:w-80" />
 		{@render extra?.()}
 	</Card.Content>
 </Card.Root>

@@ -1,4 +1,15 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+
+/** On small screens the home page's preview and filters live in a sheet: open it. */
+async function openBrowsePanel(page: Page) {
+	const filters = page.getByRole('button', { name: 'Filters' });
+	if (!(await filters.isVisible())) return;
+	// Retry: a tap before hydration does nothing.
+	await expect(async () => {
+		if (!(await page.getByRole('dialog').isVisible())) await filters.click();
+		await expect(page.getByRole('dialog')).toBeVisible({ timeout: 1000 });
+	}).toPass();
+}
 
 test('catalogue lists fonts and previews the typed Thaana', async ({ page }) => {
 	const errors: string[] = [];
@@ -7,6 +18,7 @@ test('catalogue lists fonts and previews the typed Thaana', async ({ page }) => 
 	await expect(page.getByRole('heading', { name: 'Open Dhivehi fonts' })).toBeVisible();
 	await expect(page.getByRole('link', { name: /Faruma/ }).first()).toBeVisible();
 
+	await openBrowsePanel(page);
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	await input.click();
 	await page.keyboard.type('divehi )bu(?,');
@@ -18,6 +30,7 @@ test('catalogue lists fonts and previews the typed Thaana', async ({ page }) => 
 
 test('EN mode leaves Latin keys alone', async ({ page }) => {
 	await page.goto('/');
+	await openBrowsePanel(page);
 	await page.getByRole('button', { name: 'Dhivehi phonetic keyboard' }).click();
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	await input.click();
@@ -186,6 +199,7 @@ test('empty Thaana inputs start right-to-left', async ({ page }) => {
 		['/convert', page.getByLabel('Unicode Thaana')]
 	] as const) {
 		await page.goto(path);
+		if (path === '/') await openBrowsePanel(page);
 		await expect(field, path).toHaveValue('');
 		const style = await field.evaluate((el) => {
 			const s = getComputedStyle(el);
@@ -232,6 +246,7 @@ const TESTER_CASES: [mode: 'dv' | 'en', keys: string, stored: string, preview: s
 
 test('type tester: punctuation, brackets, numbers and mixed text', async ({ page }) => {
 	await page.goto('/');
+	await openBrowsePanel(page);
 	const input = page.getByRole('textbox', { name: 'Preview text' });
 	const preview = page.locator('p.preview-text').first();
 	for (const [mode, keys, stored, shown, dir] of TESTER_CASES) {

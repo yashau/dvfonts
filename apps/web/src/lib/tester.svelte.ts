@@ -52,6 +52,12 @@ class Tester {
 		this.ready = true;
 	}
 
+	/** Back to the default size for this screen; the size is no longer "chosen". */
+	resetSize() {
+		this.size = browser && matchMedia(PHONE).matches ? DEFAULT_SIZE_PHONE : DEFAULT_SIZE;
+		this.sizeChosen = false;
+	}
+
 	persist() {
 		if (!browser || !this.ready) return;
 		try {

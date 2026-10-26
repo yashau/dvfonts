@@ -164,6 +164,8 @@
 @utility preview-text {
 	unicode-bidi: isolate;
 	text-align: start;
+	/* Keep the line breaks typed in the multi-line preview box. */
+	white-space: pre-line;
 	overflow-wrap: anywhere;
 	line-height: 1.6;
 }
