@@ -12,11 +12,23 @@
 	let { children }: LayoutProps = $props();
 
 	onMount(() => tester.init());
-	import { REPO_URL } from '#lib/site.js';
+	import { page } from '$app/state';
+	import { REPO_URL, SITE_ORIGIN } from '#lib/site.js';
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<!-- The old domain (dvfonts.yashau.com) serves the same pages until its redirect is in place. -->
+	<link rel="canonical" href="{SITE_ORIGIN}{page.url.pathname}" />
+	<!-- Link previews (Telegram, WhatsApp, Slack, X…). They fall back to each page's <title> and description. -->
+	<meta property="og:site_name" content="fonts.mv" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{SITE_ORIGIN}{page.url.pathname}" />
+	<meta property="og:image" content="{SITE_ORIGIN}/og.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="fonts.mv: open Dhivehi fonts for the web" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <ModeWatcher />
@@ -33,7 +45,7 @@
 				class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6"
 			>
 				<p>
-					Open Dhivehi fonts, cleaned up for the web. dvfonts is open source:
+					Open Dhivehi fonts for the web. fonts.mv is open source:
 					<a class="underline underline-offset-4 hover:text-foreground" href={REPO_URL}>yashau/dvfonts on GitHub</a>.
 				</p>
 				<p>

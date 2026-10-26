@@ -90,7 +90,7 @@ def css_for(fams: list[dict]) -> str:
                 "}"
             )
     return (
-        "/* Self-hosted Dhivehi fonts from dvfonts. Use with a Latin fallback:\n"
+        "/* Self-hosted Dhivehi fonts from fonts.mv. Use with a Latin fallback:\n"
         "   font-family: 'ModFaruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif; */\n\n"
         + "\n\n".join(rules)
         + "\n"
@@ -113,7 +113,7 @@ def build_legacy(bid: str, spec: dict, families: list[dict]) -> dict:
     files = legacy_sources(spec.get("skip", {}))
     excluded = tomllib.loads(FAMILIES.read_text())["excluded"]
     remapped = {s["source"]: f["name"] for f in families for s in f["styles"] if s["legacyLayout"]}
-    top = f"dvfonts-{bid}"
+    top = f"fonts-mv-{bid}"
     path = OUT / f"{top}.zip"
     lines = []
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -125,7 +125,7 @@ def build_legacy(bid: str, spec: dict, families: list[dict]) -> dict:
                 layout_for(p.name), "unknown layout"
             )
             if p.name in remapped:
-                note = f"remapped to Unicode on dvfonts as {remapped[p.name]}"
+                note = f"remapped to Unicode on fonts.mv as {remapped[p.name]}"
             else:
                 note = excluded.get(p.name, "")
             lines.append(f"  {p.name}  ({name}; {encoding})" + (f"\n    {note}" if note else ""))
@@ -134,14 +134,14 @@ def build_legacy(bid: str, spec: dict, families: list[dict]) -> dict:
         zip_write(
             zf,
             f"{top}/README.txt",
-            f"dvfonts — {spec['name']}\n\n{spec['description']}\n\n"
+            f"fonts.mv — {spec['name']}\n\n{spec['description']}\n\n"
             "These are the original files, byte for byte. They put Thaana glyphs on Latin\n"
             "keys, so text typed in them reads as Latin gibberish in any other font.\n"
-            "dvfonts.yashau.com/convert turns such text into Unicode Thaana.\n\n"
+            "fonts.mv/convert turns such text into Unicode Thaana.\n\n"
             f"{len(files)} files:\n" + "\n".join(lines) + "\n\n"
             "Licenses differ per font and most are unstated; the designers keep their rights.\n"
             "Hassan Hameed's fonts may only be shared unmodified and free of charge.\n"
-            "https://dvfonts.yashau.com\n",
+            "https://fonts.mv\n",
         )
     data = path.read_bytes()
     return {
@@ -162,7 +162,7 @@ def build_bundle(bid: str, spec: dict, families: list[dict]) -> dict:
         return build_legacy(bid, spec, families)
     fams = select(spec, families)
     fmt = spec.get("format", "ttf")
-    top = f"dvfonts-{bid}"
+    top = f"fonts-mv-{bid}"
     path = OUT / f"{top}.zip"
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in fams:
@@ -183,9 +183,9 @@ def build_bundle(bid: str, spec: dict, families: list[dict]) -> dict:
         zip_write(
             zf,
             f"{top}/README.txt",
-            f"dvfonts — {spec['name']}\n\n{spec['description']}\n\n{len(fams)} families:\n{listing}\n\n"
+            f"fonts.mv — {spec['name']}\n\n{spec['description']}\n\n{len(fams)} families:\n{listing}\n\n"
             "Each family folder has a README with its credits and license. Licenses differ per\n"
-            "family; check them before redistributing. https://dvfonts.yashau.com\n",
+            "family; check them before redistributing. https://fonts.mv\n",
         )
     data = path.read_bytes()
     return {

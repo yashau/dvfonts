@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-	<title>About — dvfonts</title>
+	<title>About — fonts.mv</title>
 	<meta
 		name="description"
-		content="Why dvfonts exists, what it does to the fonts and what it leaves alone. Free, non-profit and open source."
+		content="Why fonts.mv exists, what it does to the fonts and what it leaves alone. Free, non-profit and open source."
 	/>
 </svelte:head>
 
@@ -22,21 +22,21 @@
 			in web formats.
 		</p>
 		<p>
-			dvfonts brings them together in one place you can browse, embed and download, and makes Thaana work properly on
+			fonts.mv brings them together in one place you can browse, embed and download, and makes Thaana work properly on
 			the web:
 		</p>
 		<ul class="list-disc space-y-1 pl-5">
 			<li>A Google Fonts–style embed API, plus downloads of every font, family and collection.</li>
 			<li>
 				The <code>@yashau/thaana</code> packages for plain JavaScript, React, Svelte and Vue: a phonetic keyboard, text that
-				displays right to left correctly, and font loading, from dvfonts or from your own copies.
+				displays right to left correctly, and font loading, from fonts.mv or from your own copies.
 			</li>
 			<li>
 				An <a class="underline underline-offset-4" href="/llms.txt">llms.txt</a> so AI agents can do all of this for you.
 			</li>
 		</ul>
 		<h2 class="pt-4 text-xl font-semibold tracking-tight text-foreground">What happens to the fonts</h2>
-		<p>Where a font's license and its designer allow it, dvfonts fixes what gets in the way:</p>
+		<p>Where a font's license and its designer allow it, fonts.mv fixes what gets in the way:</p>
 		<ul class="list-disc space-y-1 pl-5">
 			<li>Old fonts with Thaana on Latin keys and no Unicode version are remapped to real Unicode Thaana.</li>
 			<li>Where a modern Unicode version of an old A_ font exists, only the modern one is listed.</li>
@@ -51,7 +51,7 @@
 			<a class="underline underline-offset-4" href="/downloads">Legacy</a> download, for opening old documents.
 		</p>
 		<p>
-			dvfonts is non-profit and free, and always will be. The site, the font pipeline and the packages are open source
+			fonts.mv is non-profit and free, and always will be. The site, the font pipeline and the packages are open source
 			on GitHub at <a class="underline underline-offset-4" href={REPO_URL}>yashau/dvfonts</a> under the MIT license; the fonts
 			keep their own licenses. Issues and pull requests are welcome.
 		</p>

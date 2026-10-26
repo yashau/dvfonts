@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { loadFonts, type FontRequest, type FontCssOptions } from '@yashau/thaana';
 
-/** CSS options, plus `files` (your own copies, by weight) and `sizeAdjust` to skip dvfonts' hosting. */
+/** CSS options, plus `files` (your own copies, by weight) and `sizeAdjust` to skip fonts.mv's hosting. */
 export type DhivehiFontOptions = FontCssOptions & Pick<FontRequest, 'files' | 'sizeAdjust'>;
 
 /**
- * Load a Dhivehi font from dvfonts, or from your own files, and report when it's ready.
+ * Load a Dhivehi font from fonts.mv, or from your own files, and report when it's ready.
  *
  *   const ready = useDhivehiFont('Faruma');
  *   const ready = useDhivehiFont('Faruma', undefined, { files: { 400: '/fonts/faruma-400.woff2' } });

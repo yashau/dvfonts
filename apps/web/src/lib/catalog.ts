@@ -15,7 +15,7 @@ export interface Style {
 	sizes: Record<string, number>;
 	subsets: Partial<Record<'thaana' | 'latin', number>>;
 	upstream: string | null;
-	/** The pre-Unicode encoding dvfonts remapped this font from. */
+	/** The pre-Unicode encoding fonts.mv remapped this font from. */
 	legacyLayout: 'typewriter' | 'phonetic' | null;
 	/** Vertical metrics in em (absent for fonts without usable ones). */
 	metrics: { repaired: boolean } & Partial<MetricOverrides>;

@@ -1,6 +1,6 @@
 # @dvfonts/web
 
-The dvfonts site: SvelteKit 3 on a Cloudflare Worker (static assets for pages and fonts, Worker routes for the `/css2` API and `/downloads` from R2).
+The fonts.mv site: SvelteKit 3 on a Cloudflare Worker (static assets for pages and fonts, Worker routes for the `/css2` API and `/downloads` from R2).
 
 ```sh
 pnpm dev            # from the repo root: builds packages first

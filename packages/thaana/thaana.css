@@ -1,7 +1,7 @@
 /*
  * @yashau/thaana — sane defaults for Thaana (Dhivehi) text.
  * Applies only to elements marked lang="dv" (put it on <html> for Dhivehi
- * sites). https://dvfonts.yashau.com/guide
+ * sites). https://fonts.mv/guide
  */
 
 /* Right-to-left by default. dir="rtl" in the HTML is still the most robust

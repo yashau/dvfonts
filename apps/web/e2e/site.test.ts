@@ -151,9 +151,9 @@ test('fonts and downloads are served from R2', async ({ request }) => {
 	const family = await request.get('/fonts/faruma/faruma.zip');
 	expect(family.headers()['content-type']).toBe('application/zip');
 
-	const bundle = await request.get('/downloads/dvfonts-essentials.zip');
+	const bundle = await request.get('/downloads/fonts-mv-essentials.zip');
 	expect(bundle.ok()).toBe(true);
-	expect(bundle.headers()['content-disposition']).toContain('dvfonts-essentials.zip');
+	expect(bundle.headers()['content-disposition']).toContain('fonts-mv-essentials.zip');
 
 	expect((await request.get('/fonts/faruma/../../secret')).status()).toBe(404);
 	expect((await request.get('/downloads/nope.zip')).status()).toBe(404);
@@ -161,8 +161,8 @@ test('fonts and downloads are served from R2', async ({ request }) => {
 
 test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
-	await expect(page.locator('a[href="/downloads/dvfonts-essentials.zip"]')).toBeVisible();
-	await expect(page.locator('a[href="/downloads/dvfonts-full.zip"]')).toBeVisible();
+	await expect(page.locator('a[href="/downloads/fonts-mv-essentials.zip"]')).toBeVisible();
+	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
 });
 
 test('guide renders its demos', async ({ page }) => {

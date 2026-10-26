@@ -25,20 +25,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "a-haleem-bolhu-bold.otf",
      "desktopFile": "AHaleemBolhu-Bold.ttf",
      "sizes": {
-      "ttf": 17372,
-      "woff2": 12880,
+      "ttf": 17376,
+      "woff2": 12892,
       "woff": 14240
      },
      "subsets": {
-      "thaana": 12776,
-      "latin": 3932
+      "thaana": 12764,
+      "latin": 3944
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Bolhu__Bold.otf",
      "legacyLayout": "typewriter",
@@ -56,7 +56,7 @@
      "sizeAdjust": 0.976
     }
    ],
-   "zipSize": 14753
+   "zipSize": 14758
   },
   {
    "id": "a-haleem-faseyha",
@@ -79,20 +79,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-faseyha.otf",
      "desktopFile": "AHaleemFaseyha-Regular.ttf",
      "sizes": {
-      "ttf": 37952,
-      "woff2": 24972,
-      "woff": 27308
+      "ttf": 37956,
+      "woff2": 24852,
+      "woff": 27312
      },
      "subsets": {
-      "thaana": 24860,
-      "latin": 6496
+      "thaana": 24812,
+      "latin": 6500
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_faseyha.otf",
      "legacyLayout": "typewriter",
@@ -110,7 +110,7 @@
      "sizeAdjust": 1.21
     }
    ],
-   "zipSize": 27893
+   "zipSize": 27892
   },
   {
    "id": "a-haleem-kb",
@@ -133,20 +133,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-kb.otf",
      "desktopFile": "AHaleemKB-Regular.ttf",
      "sizes": {
-      "ttf": 15472,
-      "woff2": 11292,
+      "ttf": 15476,
+      "woff2": 11324,
       "woff": 12700
      },
      "subsets": {
-      "thaana": 11228,
-      "latin": 5976
+      "thaana": 11100,
+      "latin": 5936
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_KB.otf",
      "legacyLayout": "typewriter",
@@ -164,7 +164,7 @@
      "sizeAdjust": 1.008
     }
    ],
-   "zipSize": 13181
+   "zipSize": 13179
   },
   {
    "id": "a-haleem-kirudhooni",
@@ -187,20 +187,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-kirudhooni.otf",
      "desktopFile": "AHaleemKirudhooni-Regular.ttf",
      "sizes": {
-      "ttf": 11164,
-      "woff2": 8972,
-      "woff": 9928
+      "ttf": 11168,
+      "woff2": 8980,
+      "woff": 9932
      },
      "subsets": {
-      "thaana": 8928,
-      "latin": 2772
+      "thaana": 8984,
+      "latin": 2800
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem__Kirudhooni.otf",
      "legacyLayout": "typewriter",
@@ -218,7 +218,7 @@
      "sizeAdjust": 1.129
     }
    ],
-   "zipSize": 10465
+   "zipSize": 10469
   },
   {
    "id": "a-haleem-mathi",
@@ -241,20 +241,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "a-haleem-mathi-bold.otf",
      "desktopFile": "AHaleemMathi-Bold.ttf",
      "sizes": {
-      "ttf": 13960,
-      "woff2": 10612,
+      "ttf": 13964,
+      "woff2": 10584,
       "woff": 11844
      },
      "subsets": {
-      "thaana": 10556,
-      "latin": 5128
+      "thaana": 10552,
+      "latin": 5108
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Mathi_Bold.otf",
      "legacyLayout": "typewriter",
@@ -272,7 +272,7 @@
      "sizeAdjust": 1.179
     }
    ],
-   "zipSize": 12350
+   "zipSize": 12352
   },
   {
    "id": "a-haleem-raaveri",
@@ -295,20 +295,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-raaveri.otf",
      "desktopFile": "AHaleemRaaveri-Regular.ttf",
      "sizes": {
-      "ttf": 28176,
+      "ttf": 28180,
       "woff2": 20828,
-      "woff": 22456
+      "woff": 22452
      },
      "subsets": {
-      "thaana": 20484,
-      "latin": 4364
+      "thaana": 20464,
+      "latin": 4352
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Raaveri.otf",
      "legacyLayout": "typewriter",
@@ -326,7 +326,7 @@
      "sizeAdjust": 1.398
     }
    ],
-   "zipSize": 23050
+   "zipSize": 23049
   },
   {
    "id": "a-haleem-riveli",
@@ -349,20 +349,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-riveli.otf",
      "desktopFile": "AHaleemRiveli-Regular.ttf",
      "sizes": {
-      "ttf": 8788,
-      "woff2": 7008,
+      "ttf": 8792,
+      "woff2": 6948,
       "woff": 7756
      },
      "subsets": {
-      "thaana": 6964,
-      "latin": 3276
+      "thaana": 6952,
+      "latin": 3260
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Riveli.otf",
      "legacyLayout": "typewriter",
@@ -380,7 +380,7 @@
      "sizeAdjust": 1.305
     }
    ],
-   "zipSize": 8225
+   "zipSize": 8226
   },
   {
    "id": "a-haleem-sh",
@@ -403,20 +403,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "a-haleem-sh-bold-italic.otf",
      "desktopFile": "AHaleemSH-Bold.ttf",
      "sizes": {
-      "ttf": 11508,
-      "woff2": 8672,
+      "ttf": 11512,
+      "woff2": 8660,
       "woff": 9548
      },
      "subsets": {
-      "thaana": 8536,
-      "latin": 4788
+      "thaana": 8552,
+      "latin": 4772
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_SH_Bold_Italic.otf",
      "legacyLayout": "typewriter",
@@ -457,20 +457,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "a-haleem-thangi-bold.otf",
      "desktopFile": "AHaleemThangi-Bold.ttf",
      "sizes": {
-      "ttf": 21912,
-      "woff2": 14568,
+      "ttf": 21916,
+      "woff2": 14524,
       "woff": 15996
      },
      "subsets": {
-      "thaana": 14536,
-      "latin": 2708
+      "thaana": 14428,
+      "latin": 2776
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Thangi_Bold.otf",
      "legacyLayout": "typewriter",
@@ -488,7 +488,7 @@
      "sizeAdjust": 1.287
     }
    ],
-   "zipSize": 16510
+   "zipSize": 16511
   },
   {
    "id": "a-haleem-thiki",
@@ -511,20 +511,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "a-haleem-thiki-bold.otf",
      "desktopFile": "AHaleemThiki-Bold.ttf",
      "sizes": {
-      "ttf": 46448,
-      "woff2": 28856,
+      "ttf": 46452,
+      "woff2": 29004,
       "woff": 31652
      },
      "subsets": {
-      "thaana": 28920,
-      "latin": 4120
+      "thaana": 28836,
+      "latin": 4108
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Thiki_Bold.otf",
      "legacyLayout": "typewriter",
@@ -542,7 +542,7 @@
      "sizeAdjust": 1.314
     }
    ],
-   "zipSize": 32178
+   "zipSize": 32181
   },
   {
    "id": "a-haleem-uivashaa",
@@ -565,20 +565,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "a-haleem-uivashaa.otf",
      "desktopFile": "AHaleemUivashaa-Regular.ttf",
      "sizes": {
-      "ttf": 28844,
-      "woff2": 21252,
-      "woff": 23412
+      "ttf": 28848,
+      "woff2": 21340,
+      "woff": 23416
      },
      "subsets": {
-      "thaana": 20828,
-      "latin": 2088
+      "thaana": 20816,
+      "latin": 2092
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Haleem_Uivashaa.otf",
      "legacyLayout": "typewriter",
@@ -596,7 +596,7 @@
      "sizeAdjust": 1.005
     }
    ],
-   "zipSize": 23979
+   "zipSize": 23988
   },
   {
    "id": "a-reethi",
@@ -621,20 +621,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.00; dvfonts",
+   "version": "Version 1.00; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "reethi.ttf",
      "desktopFile": "AReethi-Regular.ttf",
      "sizes": {
-      "ttf": 22580,
-      "woff2": 11372,
+      "ttf": 22584,
+      "woff2": 11352,
       "woff": 13928
      },
      "subsets": {
-      "thaana": 10512,
-      "latin": 5140
+      "thaana": 10536,
+      "latin": 5100
      },
      "upstream": null,
      "legacyLayout": null,
@@ -675,20 +675,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0 Fri Nov 08 13:10:55 1996; dvfonts",
+   "version": "Version 1.0 Fri Nov 08 13:10:55 1996; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "athu-casual.otf",
      "desktopFile": "AthuCasual-Regular.ttf",
      "sizes": {
-      "ttf": 18844,
-      "woff2": 14752,
+      "ttf": 18848,
+      "woff2": 14724,
       "woff": 15876
      },
      "subsets": {
-      "thaana": 11696,
-      "latin": 7596
+      "thaana": 11668,
+      "latin": 7624
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/Athu_Casual.otf",
      "legacyLayout": "phonetic",
@@ -706,7 +706,7 @@
      "sizeAdjust": 0.967
     }
    ],
-   "zipSize": 16449
+   "zipSize": 16454
   },
   {
    "id": "avas-thaana",
@@ -729,20 +729,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0 Sat Nov 11 01:25:31 1995; dvfonts",
+   "version": "Version 1.0 Sat Nov 11 01:25:31 1995; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "avas-thaana.otf",
      "desktopFile": "AvasThaana-Regular.ttf",
      "sizes": {
-      "ttf": 15800,
+      "ttf": 15804,
       "woff2": 12172,
-      "woff": 13160
+      "woff": 13164
      },
      "subsets": {
-      "thaana": 11156,
-      "latin": 6168
+      "thaana": 11184,
+      "latin": 6152
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/Avas_Thaana.otf",
      "legacyLayout": "phonetic",
@@ -760,7 +760,7 @@
      "sizeAdjust": 1.417
     }
    ],
-   "zipSize": 13729
+   "zipSize": 13728
   },
   {
    "id": "bismi",
@@ -834,20 +834,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0 Wed Aug 14 08:31:29 1996; dvfonts",
+   "version": "Version 1.0 Wed Aug 14 08:31:29 1996; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "bodukuru-light.otf",
      "desktopFile": "Bodukuru-Light.ttf",
      "sizes": {
-      "ttf": 20752,
-      "woff2": 16704,
-      "woff": 17996
+      "ttf": 20756,
+      "woff2": 16716,
+      "woff": 18000
      },
      "subsets": {
-      "thaana": 16692,
-      "latin": 8184
+      "thaana": 16684,
+      "latin": 8216
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/BODUKURU_Light.otf",
      "legacyLayout": "phonetic",
@@ -865,7 +865,7 @@
      "sizeAdjust": 0.794
     }
    ],
-   "zipSize": 18544
+   "zipSize": 18546
   },
   {
    "id": "bolhu",
@@ -888,20 +888,20 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "bolhu-thin.ttf",
      "desktopFile": "Bolhu-Thin.ttf",
      "sizes": {
-      "ttf": 127116,
-      "woff2": 43996,
-      "woff": 58836
+      "ttf": 127120,
+      "woff2": 43908,
+      "woff": 58840
      },
      "subsets": {
-      "thaana": 11760,
-      "latin": 25220
+      "thaana": 11804,
+      "latin": 25312
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -923,13 +923,13 @@
      "source": "bolhu-extralight.ttf",
      "desktopFile": "Bolhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 131992,
-      "woff2": 47000,
-      "woff": 62320
+      "ttf": 131996,
+      "woff2": 46996,
+      "woff": 62324
      },
      "subsets": {
-      "thaana": 12604,
-      "latin": 26712
+      "thaana": 12492,
+      "latin": 26784
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -951,13 +951,13 @@
      "source": "bolhu-light.ttf",
      "desktopFile": "Bolhu-Light.ttf",
      "sizes": {
-      "ttf": 132760,
-      "woff2": 47408,
+      "ttf": 132764,
+      "woff2": 47308,
       "woff": 62800
      },
      "subsets": {
-      "thaana": 12552,
-      "latin": 27052
+      "thaana": 12580,
+      "latin": 27036
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -979,13 +979,13 @@
      "source": "bolhu-regular.ttf",
      "desktopFile": "Bolhu-Regular.ttf",
      "sizes": {
-      "ttf": 132268,
-      "woff2": 47392,
+      "ttf": 132272,
+      "woff2": 47384,
       "woff": 63072
      },
      "subsets": {
-      "thaana": 12700,
-      "latin": 27144
+      "thaana": 12776,
+      "latin": 27192
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -1007,13 +1007,13 @@
      "source": "bolhu-medium.ttf",
      "desktopFile": "Bolhu-Medium.ttf",
      "sizes": {
-      "ttf": 131632,
-      "woff2": 46536,
+      "ttf": 131636,
+      "woff2": 46528,
       "woff": 61868
      },
      "subsets": {
-      "thaana": 12092,
-      "latin": 26624
+      "thaana": 12076,
+      "latin": 26604
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -1035,13 +1035,13 @@
      "source": "bolhu-semibold.ttf",
      "desktopFile": "Bolhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 136368,
-      "woff2": 49440,
-      "woff": 65528
+      "ttf": 136372,
+      "woff2": 49404,
+      "woff": 65532
      },
      "subsets": {
-      "thaana": 12832,
-      "latin": 28316
+      "thaana": 12908,
+      "latin": 28320
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -1063,13 +1063,13 @@
      "source": "bolhu-bold.ttf",
      "desktopFile": "Bolhu-Bold.ttf",
      "sizes": {
-      "ttf": 134668,
-      "woff2": 49288,
-      "woff": 65348
+      "ttf": 134672,
+      "woff2": 49308,
+      "woff": 65356
      },
      "subsets": {
-      "thaana": 12672,
-      "latin": 28212
+      "thaana": 12664,
+      "latin": 28332
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -1091,13 +1091,13 @@
      "source": "bolhu-extrabold.ttf",
      "desktopFile": "Bolhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 134272,
-      "woff2": 48716,
-      "woff": 64768
+      "ttf": 134276,
+      "woff2": 48700,
+      "woff": 64772
      },
      "subsets": {
-      "thaana": 12360,
-      "latin": 27864
+      "thaana": 12352,
+      "latin": 27856
      },
      "upstream": "https://thaana.com/bolhu/",
      "legacyLayout": null,
@@ -1115,7 +1115,7 @@
      "sizeAdjust": 0.922
     }
    ],
-   "zipSize": 510043
+   "zipSize": 510061
   },
   {
    "id": "dam-hiyani",
@@ -1138,20 +1138,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.00; dvfonts",
+   "version": "Version 1.00; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "dam-hiyani.otf",
      "desktopFile": "DAMHiyani-Regular.ttf",
      "sizes": {
-      "ttf": 33028,
-      "woff2": 25284,
-      "woff": 27684
+      "ttf": 33032,
+      "woff2": 25408,
+      "woff": 27688
      },
      "subsets": {
-      "thaana": 23280,
-      "latin": 7924
+      "thaana": 23188,
+      "latin": 8032
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Hiyani.otf",
      "legacyLayout": null,
@@ -1169,7 +1169,7 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 28130
+   "zipSize": 28124
   },
   {
    "id": "dam-kalhi",
@@ -1192,20 +1192,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.00; dvfonts",
+   "version": "Version 1.00; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "dam-kalhi.otf",
      "desktopFile": "DAMKalhi-Bold.ttf",
      "sizes": {
-      "ttf": 25788,
-      "woff2": 19492,
-      "woff": 21344
+      "ttf": 25792,
+      "woff2": 19528,
+      "woff": 21348
      },
      "subsets": {
-      "thaana": 17760,
-      "latin": 6888
+      "thaana": 17704,
+      "latin": 6884
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Kalhi.otf",
      "legacyLayout": null,
@@ -1223,7 +1223,7 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 21747
+   "zipSize": 21750
   },
   {
    "id": "dam-kathivalhi",
@@ -1246,20 +1246,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.00; dvfonts",
+   "version": "Version 1.00; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "dam-kathivalhi.otf",
      "desktopFile": "DAMKathivalhi-Regular.ttf",
      "sizes": {
-      "ttf": 18052,
-      "woff2": 13888,
+      "ttf": 18056,
+      "woff2": 13872,
       "woff": 15260
      },
      "subsets": {
-      "thaana": 12156,
-      "latin": 5744
+      "thaana": 12140,
+      "latin": 5736
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Kathivalhi.otf",
      "legacyLayout": null,
@@ -1277,7 +1277,7 @@
      "sizeAdjust": 1.029
     }
    ],
-   "zipSize": 15704
+   "zipSize": 15706
   },
   {
    "id": "dam-madheeh",
@@ -1300,20 +1300,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.00; dvfonts",
+   "version": "Version 1.00; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "dam-madheeh.otf",
      "desktopFile": "DAMMadheeh-Bold.ttf",
      "sizes": {
-      "ttf": 19236,
-      "woff2": 14928,
+      "ttf": 19240,
+      "woff2": 14892,
       "woff": 16220
      },
      "subsets": {
-      "thaana": 13408,
-      "latin": 5088
+      "thaana": 13368,
+      "latin": 5112
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Madheeh.otf",
      "legacyLayout": null,
@@ -1331,7 +1331,7 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 16617
+   "zipSize": 16618
   },
   {
    "id": "faagathi-dheli",
@@ -1354,20 +1354,20 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "faagathidheli-light.ttf",
      "desktopFile": "FaagathiDheli-Light.ttf",
      "sizes": {
-      "ttf": 21644,
+      "ttf": 21648,
       "woff2": 10140,
       "woff": 12704
      },
      "subsets": {
-      "thaana": 8532,
-      "latin": 4696
+      "thaana": 8524,
+      "latin": 4724
      },
      "upstream": "https://thaana.com/faagathi-dheli/",
      "legacyLayout": null,
@@ -1389,13 +1389,13 @@
      "source": "faagathidheli-regular.ttf",
      "desktopFile": "FaagathiDheli-Regular.ttf",
      "sizes": {
-      "ttf": 21592,
-      "woff2": 10156,
-      "woff": 12680
+      "ttf": 21596,
+      "woff2": 10136,
+      "woff": 12684
      },
      "subsets": {
-      "thaana": 8524,
-      "latin": 4824
+      "thaana": 8532,
+      "latin": 4832
      },
      "upstream": "https://thaana.com/faagathi-dheli/",
      "legacyLayout": null,
@@ -1413,7 +1413,7 @@
      "sizeAdjust": 1.501
     }
    ],
-   "zipSize": 27948
+   "zipSize": 27954
   },
   {
    "id": "faagathi-neon",
@@ -1436,20 +1436,20 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 200,
      "source": "faagathineon-extralight.ttf",
      "desktopFile": "FaagathiNeon-ExtraLight.ttf",
      "sizes": {
-      "ttf": 21664,
-      "woff2": 10000,
-      "woff": 12424
+      "ttf": 21668,
+      "woff2": 9948,
+      "woff": 12420
      },
      "subsets": {
-      "thaana": 8344,
-      "latin": 4584
+      "thaana": 8360,
+      "latin": 4608
      },
      "upstream": "https://thaana.com/faagathi-neon/",
      "legacyLayout": null,
@@ -1471,13 +1471,13 @@
      "source": "faagathineon-light.ttf",
      "desktopFile": "FaagathiNeon-Light.ttf",
      "sizes": {
-      "ttf": 21736,
-      "woff2": 9876,
-      "woff": 12376
+      "ttf": 21740,
+      "woff2": 9900,
+      "woff": 12380
      },
      "subsets": {
       "thaana": 8316,
-      "latin": 4652
+      "latin": 4644
      },
      "upstream": "https://thaana.com/faagathi-neon/",
      "legacyLayout": null,
@@ -1499,13 +1499,13 @@
      "source": "faagathineon-regular.ttf",
      "desktopFile": "FaagathiNeon-Regular.ttf",
      "sizes": {
-      "ttf": 22392,
-      "woff2": 9764,
+      "ttf": 22396,
+      "woff2": 9772,
       "woff": 12264
      },
      "subsets": {
-      "thaana": 8220,
-      "latin": 4576
+      "thaana": 8200,
+      "latin": 4580
      },
      "upstream": "https://thaana.com/faagathi-neon/",
      "legacyLayout": null,
@@ -1527,13 +1527,13 @@
      "source": "faagathineon-bold.ttf",
      "desktopFile": "FaagathiNeon-Bold.ttf",
      "sizes": {
-      "ttf": 21788,
-      "woff2": 9636,
-      "woff": 12076
+      "ttf": 21792,
+      "woff2": 9608,
+      "woff": 12080
      },
      "subsets": {
-      "thaana": 8048,
-      "latin": 4584
+      "thaana": 8052,
+      "latin": 4572
      },
      "upstream": "https://thaana.com/faagathi-neon/",
      "legacyLayout": null,
@@ -1551,7 +1551,7 @@
      "sizeAdjust": 1.552
     }
    ],
-   "zipSize": 51579
+   "zipSize": 51584
   },
   {
    "id": "faaru-punk",
@@ -1574,20 +1574,20 @@
    "designerUrl": "https://monochromist.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "faarupunk-regular.ttf",
      "desktopFile": "FaaruPunk-Regular.ttf",
      "sizes": {
-      "ttf": 12652,
-      "woff2": 5964,
-      "woff": 8280
+      "ttf": 12656,
+      "woff2": 5980,
+      "woff": 8284
      },
      "subsets": {
-      "thaana": 5192,
-      "latin": 2824
+      "thaana": 5276,
+      "latin": 2836
      },
      "upstream": "https://thaana.com/faaru-punk/",
      "legacyLayout": null,
@@ -1609,13 +1609,13 @@
      "source": "faarupunk-bold.ttf",
      "desktopFile": "FaaruPunk-Bold.ttf",
      "sizes": {
-      "ttf": 12616,
-      "woff2": 6080,
+      "ttf": 12620,
+      "woff2": 6072,
       "woff": 8392
      },
      "subsets": {
-      "thaana": 5308,
-      "latin": 2888
+      "thaana": 5292,
+      "latin": 2876
      },
      "upstream": "https://thaana.com/faaru-punk/",
      "legacyLayout": null,
@@ -1633,7 +1633,7 @@
      "sizeAdjust": 1.646
     }
    ],
-   "zipSize": 19018
+   "zipSize": 19022
   },
   {
    "id": "faiy",
@@ -1656,20 +1656,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "faiy-light.otf",
      "desktopFile": "Faiy-Light.ttf",
      "sizes": {
-      "ttf": 35084,
-      "woff2": 27708,
-      "woff": 30464
+      "ttf": 35088,
+      "woff2": 27740,
+      "woff": 30468
      },
      "subsets": {
-      "thaana": 27692,
-      "latin": 13344
+      "thaana": 27700,
+      "latin": 13248
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/Faiy_Light.otf",
      "legacyLayout": "phonetic",
@@ -1687,7 +1687,7 @@
      "sizeAdjust": 0.616
     }
    ],
-   "zipSize": 30932
+   "zipSize": 30935
   },
   {
    "id": "fanara",
@@ -1710,20 +1710,20 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "fanara-thin.ttf",
      "desktopFile": "Fanara-Thin.ttf",
      "sizes": {
-      "ttf": 129264,
-      "woff2": 45112,
-      "woff": 60168
+      "ttf": 129268,
+      "woff2": 45040,
+      "woff": 60172
      },
      "subsets": {
-      "thaana": 12728,
-      "latin": 25196
+      "thaana": 12848,
+      "latin": 25248
      },
      "upstream": "https://thaana.com/fanara/",
      "legacyLayout": null,
@@ -1745,13 +1745,13 @@
      "source": "fanara-regular.ttf",
      "desktopFile": "Fanara-Regular.ttf",
      "sizes": {
-      "ttf": 133776,
-      "woff2": 48464,
+      "ttf": 133780,
+      "woff2": 48480,
       "woff": 64232
      },
      "subsets": {
-      "thaana": 13684,
-      "latin": 27132
+      "thaana": 13692,
+      "latin": 27156
      },
      "upstream": "https://thaana.com/fanara/",
      "legacyLayout": null,
@@ -1773,13 +1773,13 @@
      "source": "fanara-bold.ttf",
      "desktopFile": "Fanara-Bold.ttf",
      "sizes": {
-      "ttf": 137264,
-      "woff2": 50688,
-      "woff": 66972
+      "ttf": 137268,
+      "woff2": 50612,
+      "woff": 66976
      },
      "subsets": {
-      "thaana": 14032,
-      "latin": 28204
+      "thaana": 14028,
+      "latin": 28184
      },
      "upstream": "https://thaana.com/fanara/",
      "legacyLayout": null,
@@ -1801,13 +1801,13 @@
      "source": "fanara-black.ttf",
      "desktopFile": "Fanara-Black.ttf",
      "sizes": {
-      "ttf": 133776,
-      "woff2": 47672,
-      "woff": 63268
+      "ttf": 133780,
+      "woff2": 47740,
+      "woff": 63272
      },
      "subsets": {
-      "thaana": 13036,
-      "latin": 26496
+      "thaana": 13064,
+      "latin": 26392
      },
      "upstream": "https://thaana.com/fanara/",
      "legacyLayout": null,
@@ -1825,7 +1825,7 @@
      "sizeAdjust": 0.948
     }
    ],
-   "zipSize": 258710
+   "zipSize": 258720
   },
   {
    "id": "fanara-golhi",
@@ -1848,20 +1848,20 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 2.010; dvfonts",
+   "version": "Version 2.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "fanaragolhi-thin.ttf",
      "desktopFile": "FanaraGolhi-Thin.ttf",
      "sizes": {
-      "ttf": 13884,
+      "ttf": 13888,
       "woff2": 4868,
       "woff": 6844
      },
      "subsets": {
-      "thaana": 4224,
-      "latin": 2720
+      "thaana": 4232,
+      "latin": 2752
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -1883,13 +1883,13 @@
      "source": "fanaragolhi-extralight.ttf",
      "desktopFile": "FanaraGolhi-ExtraLight.ttf",
      "sizes": {
-      "ttf": 13984,
-      "woff2": 5248,
-      "woff": 7304
+      "ttf": 13988,
+      "woff2": 5264,
+      "woff": 7308
      },
      "subsets": {
-      "thaana": 4616,
-      "latin": 2952
+      "thaana": 4596,
+      "latin": 2940
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -1911,13 +1911,13 @@
      "source": "fanaragolhi-light.ttf",
      "desktopFile": "FanaraGolhi-Light.ttf",
      "sizes": {
-      "ttf": 13960,
-      "woff2": 5288,
-      "woff": 7308
+      "ttf": 13964,
+      "woff2": 5284,
+      "woff": 7304
      },
      "subsets": {
-      "thaana": 4620,
-      "latin": 2984
+      "thaana": 4636,
+      "latin": 2980
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -1939,13 +1939,13 @@
      "source": "fanaragolhi-regular.ttf",
      "desktopFile": "FanaraGolhi-Regular.ttf",
      "sizes": {
-      "ttf": 13844,
-      "woff2": 5224,
-      "woff": 7244
+      "ttf": 13848,
+      "woff2": 5248,
+      "woff": 7248
      },
      "subsets": {
-      "thaana": 4556,
-      "latin": 2984
+      "thaana": 4544,
+      "latin": 2952
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -1967,13 +1967,13 @@
      "source": "fanaragolhi-medium.ttf",
      "desktopFile": "FanaraGolhi-Medium.ttf",
      "sizes": {
-      "ttf": 13956,
-      "woff2": 5036,
-      "woff": 7024
+      "ttf": 13960,
+      "woff2": 5020,
+      "woff": 7032
      },
      "subsets": {
-      "thaana": 4356,
-      "latin": 2852
+      "thaana": 4400,
+      "latin": 2892
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -1995,13 +1995,13 @@
      "source": "fanaragolhi-semibold.ttf",
      "desktopFile": "FanaraGolhi-SemiBold.ttf",
      "sizes": {
-      "ttf": 14044,
-      "woff2": 5464,
-      "woff": 7428
+      "ttf": 14048,
+      "woff2": 5468,
+      "woff": 7432
      },
      "subsets": {
-      "thaana": 4756,
-      "latin": 3056
+      "thaana": 4748,
+      "latin": 3072
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -2023,13 +2023,13 @@
      "source": "fanaragolhi-bold.ttf",
      "desktopFile": "FanaraGolhi-Bold.ttf",
      "sizes": {
-      "ttf": 13836,
-      "woff2": 5372,
-      "woff": 7368
+      "ttf": 13840,
+      "woff2": 5428,
+      "woff": 7372
      },
      "subsets": {
-      "thaana": 4704,
-      "latin": 3000
+      "thaana": 4684,
+      "latin": 3008
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -2051,13 +2051,13 @@
      "source": "fanaragolhi-extrabold.ttf",
      "desktopFile": "FanaraGolhi-ExtraBold.ttf",
      "sizes": {
-      "ttf": 13916,
-      "woff2": 5608,
-      "woff": 7536
+      "ttf": 13920,
+      "woff2": 5596,
+      "woff": 7540
      },
      "subsets": {
-      "thaana": 4864,
-      "latin": 3100
+      "thaana": 4872,
+      "latin": 3128
      },
      "upstream": "https://thaana.com/fanara-golhi/",
      "legacyLayout": null,
@@ -2075,7 +2075,7 @@
      "sizeAdjust": 0.982
     }
    ],
-   "zipSize": 59800
+   "zipSize": 59825
   },
   {
    "id": "faruma",
@@ -2101,20 +2101,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 2.0 Official release; dvfonts",
+   "version": "Version 2.0 Official release; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "faruma.ttf",
      "desktopFile": "Faruma-Regular.ttf",
      "sizes": {
-      "ttf": 42248,
-      "woff2": 20248,
-      "woff": 26036
+      "ttf": 42252,
+      "woff2": 20216,
+      "woff": 26040
      },
      "subsets": {
-      "thaana": 13220,
-      "latin": 14172
+      "thaana": 13232,
+      "latin": 14148
      },
      "upstream": null,
      "legacyLayout": null,
@@ -2132,7 +2132,7 @@
      "sizeAdjust": 1.0
     }
    ],
-   "zipSize": 26424
+   "zipSize": 26423
   },
   {
    "id": "fiyuzu",
@@ -2155,20 +2155,20 @@
    "designerUrl": "https://shaheeilyas.com/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "fiyuzu-regular.ttf",
      "desktopFile": "Fiyuzu-Regular.ttf",
      "sizes": {
-      "ttf": 67788,
-      "woff2": 27008,
-      "woff": 34988
+      "ttf": 67792,
+      "woff2": 27020,
+      "woff": 34992
      },
      "subsets": {
-      "thaana": 11508,
-      "latin": 21784
+      "thaana": 11488,
+      "latin": 21760
      },
      "upstream": "https://thaana.com/fiyuzu/",
      "legacyLayout": null,
@@ -2186,7 +2186,7 @@
      "sizeAdjust": 0.831
     }
    ],
-   "zipSize": 37673
+   "zipSize": 37670
   },
   {
    "id": "gurafiku",
@@ -2209,20 +2209,20 @@
    "designerUrl": "https://monochromist.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "gurafiku-regular.ttf",
      "desktopFile": "Gurafiku-Regular.ttf",
      "sizes": {
-      "ttf": 10528,
-      "woff2": 5316,
-      "woff": 7344
+      "ttf": 10532,
+      "woff2": 5244,
+      "woff": 7348
      },
      "subsets": {
-      "thaana": 4668,
-      "latin": 2476
+      "thaana": 4688,
+      "latin": 2480
      },
      "upstream": "https://thaana.com/gurafiku/",
      "legacyLayout": null,
@@ -2240,7 +2240,7 @@
      "sizeAdjust": 1.54
     }
    ],
-   "zipSize": 9785
+   "zipSize": 9786
   },
   {
    "id": "haluvidhaa",
@@ -2263,20 +2263,20 @@
    "designerUrl": "https://www.instagram.com/has_n/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "haluvidhaa-regular.ttf",
      "desktopFile": "Haluvidhaa-Regular.ttf",
      "sizes": {
-      "ttf": 24020,
-      "woff2": 10744,
-      "woff": 13384
+      "ttf": 24024,
+      "woff2": 10740,
+      "woff": 13388
      },
      "subsets": {
-      "thaana": 9924,
-      "latin": 5476
+      "thaana": 9904,
+      "latin": 5464
      },
      "upstream": "https://thaana.com/haluvidhaa/",
      "legacyLayout": null,
@@ -2294,7 +2294,7 @@
      "sizeAdjust": 1.815
     }
    ],
-   "zipSize": 15956
+   "zipSize": 15962
   },
   {
    "id": "hawwa",
@@ -2317,19 +2317,19 @@
    "designerUrl": "https://www.instagram.com/has_n/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "hawwa-regular.ttf",
      "desktopFile": "Hawwa-Regular.ttf",
      "sizes": {
-      "ttf": 20688,
-      "woff2": 10968,
-      "woff": 13436
+      "ttf": 20692,
+      "woff2": 10972,
+      "woff": 13432
      },
      "subsets": {
-      "thaana": 9772,
+      "thaana": 9780,
       "latin": 5456
      },
      "upstream": "https://thaana.com/hawwa/",
@@ -2348,7 +2348,7 @@
      "sizeAdjust": 1.252
     }
    ],
-   "zipSize": 15909
+   "zipSize": 15911
   },
   {
    "id": "kanafala",
@@ -2419,20 +2419,20 @@
    "designerUrl": "https://monochromist.com/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "kolhu-thin.ttf",
      "desktopFile": "Kolhu-Thin.ttf",
      "sizes": {
-      "ttf": 126420,
-      "woff2": 43888,
-      "woff": 58344
+      "ttf": 126424,
+      "woff2": 43836,
+      "woff": 58348
      },
      "subsets": {
       "thaana": 11560,
-      "latin": 25224
+      "latin": 25260
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2454,13 +2454,13 @@
      "source": "kolhu-extralight.ttf",
      "desktopFile": "Kolhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 131108,
-      "woff2": 46420,
+      "ttf": 131112,
+      "woff2": 46376,
       "woff": 61668
      },
      "subsets": {
-      "thaana": 12016,
-      "latin": 26792
+      "thaana": 12060,
+      "latin": 26788
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2482,13 +2482,13 @@
      "source": "kolhu-light.ttf",
      "desktopFile": "Kolhu-Light.ttf",
      "sizes": {
-      "ttf": 131224,
-      "woff2": 46864,
+      "ttf": 131228,
+      "woff2": 46740,
       "woff": 62140
      },
      "subsets": {
-      "thaana": 12120,
-      "latin": 27036
+      "thaana": 12092,
+      "latin": 27104
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2510,13 +2510,13 @@
      "source": "kolhu-regular.ttf",
      "desktopFile": "Kolhu-Regular.ttf",
      "sizes": {
-      "ttf": 130644,
-      "woff2": 46620,
+      "ttf": 130648,
+      "woff2": 46724,
       "woff": 62204
      },
      "subsets": {
-      "thaana": 12092,
-      "latin": 27192
+      "thaana": 12072,
+      "latin": 27136
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2538,13 +2538,13 @@
      "source": "kolhu-medium.ttf",
      "desktopFile": "Kolhu-Medium.ttf",
      "sizes": {
-      "ttf": 130132,
-      "woff2": 45884,
-      "woff": 61240
+      "ttf": 130136,
+      "woff2": 46128,
+      "woff": 61244
      },
      "subsets": {
-      "thaana": 11732,
-      "latin": 26596
+      "thaana": 11720,
+      "latin": 26652
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2566,13 +2566,13 @@
      "source": "kolhu-semibold.ttf",
      "desktopFile": "Kolhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 134864,
-      "woff2": 48916,
-      "woff": 64752
+      "ttf": 134868,
+      "woff2": 48948,
+      "woff": 64756
      },
      "subsets": {
-      "thaana": 12280,
-      "latin": 28384
+      "thaana": 12324,
+      "latin": 28356
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2594,13 +2594,13 @@
      "source": "kolhu-bold.ttf",
      "desktopFile": "Kolhu-Bold.ttf",
      "sizes": {
-      "ttf": 133732,
-      "woff2": 48860,
-      "woff": 64776
+      "ttf": 133736,
+      "woff2": 48848,
+      "woff": 64780
      },
      "subsets": {
-      "thaana": 12368,
-      "latin": 28288
+      "thaana": 12388,
+      "latin": 28224
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2622,13 +2622,13 @@
      "source": "kolhu-extrabold.ttf",
      "desktopFile": "Kolhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 133328,
-      "woff2": 48376,
-      "woff": 64296
+      "ttf": 133332,
+      "woff2": 48416,
+      "woff": 64300
      },
      "subsets": {
-      "thaana": 12080,
-      "latin": 28052
+      "thaana": 12072,
+      "latin": 27908
      },
      "upstream": "https://thaana.com/kolhu/",
      "legacyLayout": null,
@@ -2646,7 +2646,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 504637
+   "zipSize": 504665
   },
   {
    "id": "lcd-thaana",
@@ -2669,20 +2669,20 @@
    "designerUrl": "https://monochromist.com/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "https://scripts.sil.org/OFL",
-   "version": "Version 1.012; dvfonts",
+   "version": "Version 1.012; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "lcdthaana-regular.ttf",
      "desktopFile": "LCDThaana-Regular.ttf",
      "sizes": {
-      "ttf": 58132,
-      "woff2": 15292,
-      "woff": 20828
+      "ttf": 58136,
+      "woff2": 15240,
+      "woff": 20832
      },
      "subsets": {
-      "thaana": 7616,
-      "latin": 11072
+      "thaana": 7580,
+      "latin": 11056
      },
      "upstream": "https://thaana.com/lcd-thaana/",
      "legacyLayout": null,
@@ -2723,19 +2723,19 @@
    "designerUrl": "https://thaana.com",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "masnooeemono-regular.ttf",
      "desktopFile": "MasnooeeMono-Regular.ttf",
      "sizes": {
-      "ttf": 106508,
-      "woff2": 38420,
-      "woff": 51640
+      "ttf": 106512,
+      "woff2": 38496,
+      "woff": 51644
      },
      "subsets": {
-      "thaana": 10816,
+      "thaana": 10848,
       "latin": 16636
      },
      "upstream": "https://thaana.com/masnooee-mono/",
@@ -2754,7 +2754,7 @@
      "sizeAdjust": 0.75
     }
    ],
-   "zipSize": 54424
+   "zipSize": 54428
   },
   {
    "id": "modfaruma",
@@ -2777,20 +2777,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 2.0 Official release; dvfonts",
+   "version": "Version 2.0 Official release; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "modfaruma.ttf",
      "desktopFile": "ModFaruma-Regular.ttf",
      "sizes": {
-      "ttf": 41848,
-      "woff2": 20108,
+      "ttf": 41852,
+      "woff2": 20148,
       "woff": 25832
      },
      "subsets": {
-      "thaana": 13540,
-      "latin": 14328
+      "thaana": 13560,
+      "latin": 14288
      },
      "upstream": null,
      "legacyLayout": null,
@@ -2831,20 +2831,20 @@
    "designerUrl": "https://civ-eng.net/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "motarudhigu-regular.ttf",
      "desktopFile": "MotaruDhigu-Regular.ttf",
      "sizes": {
-      "ttf": 50884,
-      "woff2": 27032,
+      "ttf": 50888,
+      "woff2": 26972,
       "woff": 31952
      },
      "subsets": {
-      "thaana": 15600,
-      "latin": 19160
+      "thaana": 15552,
+      "latin": 19192
      },
      "upstream": "https://thaana.com/motaru-dhigu/",
      "legacyLayout": null,
@@ -2862,7 +2862,7 @@
      "sizeAdjust": 1.963
     }
    ],
-   "zipSize": 34707
+   "zipSize": 34706
   },
   {
    "id": "motaru-square",
@@ -2885,20 +2885,20 @@
    "designerUrl": "https://civ-eng.net/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "motarusquare-regular.ttf",
      "desktopFile": "MotaruSquare-Regular.ttf",
      "sizes": {
-      "ttf": 16448,
-      "woff2": 5544,
+      "ttf": 16452,
+      "woff2": 5580,
       "woff": 7420
      },
      "subsets": {
-      "thaana": 4732,
-      "latin": 3268
+      "thaana": 4692,
+      "latin": 3304
      },
      "upstream": "https://thaana.com/motaru-square/",
      "legacyLayout": null,
@@ -2916,7 +2916,7 @@
      "sizeAdjust": 1.827
     }
    ],
-   "zipSize": 9946
+   "zipSize": 9950
   },
   {
    "id": "mv-a-waheed",
@@ -3154,20 +3154,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-alram.ttf",
      "desktopFile": "MVAlram-Regular.ttf",
      "sizes": {
-      "ttf": 67640,
-      "woff2": 26500,
-      "woff": 34636
+      "ttf": 67644,
+      "woff2": 26472,
+      "woff": 34640
      },
      "subsets": {
-      "thaana": 24780,
-      "latin": 19560
+      "thaana": 24784,
+      "latin": 19568
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a6%de%8d%de%b0%de%83%de%a6%de%89%de%b0/",
      "legacyLayout": null,
@@ -3185,7 +3185,7 @@
      "sizeAdjust": 0.955
     }
    ],
-   "zipSize": 35093
+   "zipSize": 35097
   },
   {
    "id": "mv-ashaahi",
@@ -3256,20 +3256,20 @@
    "designerUrl": "https://Dhivehifont.com",
    "licenseText": null,
    "licenseUrl": "dhivehifont.com",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-azheel.ttf",
      "desktopFile": "MVAzheel-Regular.ttf",
      "sizes": {
-      "ttf": 73448,
-      "woff2": 29116,
+      "ttf": 73452,
+      "woff2": 29164,
       "woff": 38448
      },
      "subsets": {
-      "thaana": 27420,
-      "latin": 14352
+      "thaana": 27440,
+      "latin": 14388
      },
      "upstream": "https://dhivehifont.com/2023/11/14/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a6%de%92%de%b0%de%80%de%a9%de%8d%de%b0/",
      "legacyLayout": null,
@@ -3287,7 +3287,7 @@
      "sizeAdjust": 0.984
     }
    ],
-   "zipSize": 38968
+   "zipSize": 38972
   },
   {
    "id": "mv-beys",
@@ -3310,20 +3310,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons CC0 Public Domain Dedication",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-beys.otf",
      "desktopFile": "MVBeys-Regular.ttf",
      "sizes": {
-      "ttf": 10928,
-      "woff2": 3196,
-      "woff": 3768
+      "ttf": 10932,
+      "woff2": 3140,
+      "woff": 3764
      },
      "subsets": {
-      "thaana": 3196,
-      "latin": 1916
+      "thaana": 3140,
+      "latin": 1912
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2018/07/13/mv-beys/",
      "legacyLayout": null,
@@ -3341,7 +3341,7 @@
      "sizeAdjust": 0.914
     }
    ],
-   "zipSize": 4180
+   "zipSize": 4178
   },
   {
    "id": "mv-dheli-fihi",
@@ -3364,20 +3364,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-dheli-fihi.ttf",
      "desktopFile": "MVDheliFihi-Bold.ttf",
      "sizes": {
-      "ttf": 162456,
-      "woff2": 59484,
+      "ttf": 162460,
+      "woff2": 59496,
       "woff": 80888
      },
      "subsets": {
-      "thaana": 57120,
-      "latin": 31756
+      "thaana": 57092,
+      "latin": 31784
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%8b%de%ac%de%8d%de%a8-%de%8a%de%a8%de%80%de%a8/",
      "legacyLayout": null,
@@ -3395,7 +3395,7 @@
      "sizeAdjust": 0.88
     }
    ],
-   "zipSize": 81403
+   "zipSize": 81406
   },
   {
    "id": "mv-dubai",
@@ -3418,20 +3418,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons CC0 Public Domain Dedication",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-dubai.otf",
      "desktopFile": "MVDubai-Regular.ttf",
      "sizes": {
-      "ttf": 11888,
-      "woff2": 3564,
-      "woff": 4280
+      "ttf": 11892,
+      "woff2": 3608,
+      "woff": 4276
      },
      "subsets": {
-      "thaana": 3564,
-      "latin": 2120
+      "thaana": 3608,
+      "latin": 2112
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2019/02/08/mv-dubai/",
      "legacyLayout": null,
@@ -3449,7 +3449,7 @@
      "sizeAdjust": 1.013
     }
    ],
-   "zipSize": 4719
+   "zipSize": 4716
   },
   {
    "id": "mv-edhuru",
@@ -3472,20 +3472,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mvedhuru.ttf",
      "desktopFile": "MVEdhuru-Regular.ttf",
      "sizes": {
-      "ttf": 76016,
-      "woff2": 28320,
-      "woff": 38660
+      "ttf": 76020,
+      "woff2": 28396,
+      "woff": 38656
      },
      "subsets": {
-      "thaana": 26908,
-      "latin": 18600
+      "thaana": 27068,
+      "latin": 18504
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%ac%de%8b%de%aa%de%83%de%aa/",
      "legacyLayout": null,
@@ -3526,20 +3526,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "elaaf-lite.ttf",
      "desktopFile": "MVElaaf-Light.ttf",
      "sizes": {
-      "ttf": 21660,
-      "woff2": 11532,
+      "ttf": 21664,
+      "woff2": 11560,
       "woff": 13968
      },
      "subsets": {
-      "thaana": 10232,
-      "latin": 5748
+      "thaana": 10268,
+      "latin": 5732
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Elaaf_Lite.otf",
      "legacyLayout": null,
@@ -3561,9 +3561,9 @@
      "source": "elaaf-normal.ttf",
      "desktopFile": "MVElaaf-Regular.ttf",
      "sizes": {
-      "ttf": 22032,
-      "woff2": 11356,
-      "woff": 13744
+      "ttf": 22036,
+      "woff2": 11340,
+      "woff": 13748
      },
      "subsets": {
       "thaana": 10068,
@@ -3585,7 +3585,7 @@
      "sizeAdjust": 1.128
     }
    ],
-   "zipSize": 27973
+   "zipSize": 27976
   },
   {
    "id": "mv-faseyha",
@@ -3746,20 +3746,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-fathimath.ttf",
      "desktopFile": "MVFathimath-Bold.ttf",
      "sizes": {
-      "ttf": 58712,
-      "woff2": 24124,
+      "ttf": 58716,
+      "woff2": 24236,
       "woff": 31100
      },
      "subsets": {
-      "thaana": 22780,
-      "latin": 17376
+      "thaana": 22996,
+      "latin": 17388
      },
      "upstream": "https://dhivehifont.com/2022/05/16/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8a%de%a7%de%8c%de%a8%de%89%de%a6%de%8c%de%aa/",
      "legacyLayout": null,
@@ -3777,7 +3777,7 @@
      "sizeAdjust": 0.944
     }
    ],
-   "zipSize": 31548
+   "zipSize": 31550
   },
   {
    "id": "mv-funa",
@@ -3914,20 +3914,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1; dvfonts",
+   "version": "Version 1; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-gaa-lhohi.ttf",
      "desktopFile": "MVGaaLhohi-Regular.ttf",
      "sizes": {
-      "ttf": 46016,
-      "woff2": 23416,
-      "woff": 27856
+      "ttf": 46020,
+      "woff2": 23408,
+      "woff": 27860
      },
      "subsets": {
-      "thaana": 22152,
-      "latin": 16068
+      "thaana": 22172,
+      "latin": 16060
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8e%de%a7-%de%85%de%ae%de%80%de%a8/",
      "legacyLayout": null,
@@ -3945,7 +3945,7 @@
      "sizeAdjust": 1.089
     }
    ],
-   "zipSize": 28282
+   "zipSize": 28291
   },
   {
    "id": "mv-galan",
@@ -3968,20 +3968,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.1; dvfonts",
+   "version": "Version 1.1; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-galan-normal.otf",
      "desktopFile": "MVGalan-Regular.ttf",
      "sizes": {
-      "ttf": 27052,
-      "woff2": 19768,
-      "woff": 21604
+      "ttf": 27056,
+      "woff2": 19736,
+      "woff": 21608
      },
      "subsets": {
-      "thaana": 16164,
-      "latin": 7996
+      "thaana": 16116,
+      "latin": 7916
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Galan_Normal.otf",
      "legacyLayout": null,
@@ -3999,7 +3999,7 @@
      "sizeAdjust": 0.908
     }
    ],
-   "zipSize": 22095
+   "zipSize": 22092
   },
   {
    "id": "mv-golhifoshi",
@@ -4022,20 +4022,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons Attribution Share Alike",
    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-golhifoshi.otf",
      "desktopFile": "MVGolhifoshi-Regular.ttf",
      "sizes": {
-      "ttf": 8892,
-      "woff2": 3228,
+      "ttf": 8896,
+      "woff2": 3208,
       "woff": 3980
      },
      "subsets": {
-      "thaana": 3228,
-      "latin": 2048
+      "thaana": 3208,
+      "latin": 2068
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2020/04/18/mv-golhifoshi/",
      "legacyLayout": null,
@@ -4053,7 +4053,7 @@
      "sizeAdjust": 1.025
     }
    ],
-   "zipSize": 4428
+   "zipSize": 4430
   },
   {
    "id": "mv-groupx-avas",
@@ -4078,20 +4078,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "avas.ttf",
      "desktopFile": "MVGroupXAvas-Regular.ttf",
      "sizes": {
-      "ttf": 25984,
-      "woff2": 14964,
-      "woff": 17384
+      "ttf": 25988,
+      "woff2": 14988,
+      "woff": 17380
      },
      "subsets": {
-      "thaana": 13708,
-      "latin": 8240
+      "thaana": 13740,
+      "latin": 8232
      },
      "upstream": null,
      "legacyLayout": null,
@@ -4109,7 +4109,7 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 17848
+   "zipSize": 17850
   },
   {
    "id": "mv-hulhumale",
@@ -4253,20 +4253,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "iyyu-normal.ttf",
      "desktopFile": "MVIyyu-Regular.ttf",
      "sizes": {
-      "ttf": 22244,
-      "woff2": 11792,
-      "woff": 14284
+      "ttf": 22248,
+      "woff2": 11796,
+      "woff": 14288
      },
      "subsets": {
-      "thaana": 10476,
-      "latin": 5704
+      "thaana": 10448,
+      "latin": 5716
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Normal.otf",
      "legacyLayout": null,
@@ -4307,20 +4307,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "iyyu-formal.ttf",
      "desktopFile": "MVIyyuFormal-Regular.ttf",
      "sizes": {
-      "ttf": 17556,
-      "woff2": 10476,
+      "ttf": 17560,
+      "woff2": 10464,
       "woff": 12696
      },
      "subsets": {
-      "thaana": 9632,
-      "latin": 5540
+      "thaana": 9672,
+      "latin": 5572
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Formal.otf",
      "legacyLayout": null,
@@ -4338,7 +4338,7 @@
      "sizeAdjust": 1.058
     }
    ],
-   "zipSize": 13029
+   "zipSize": 13032
   },
   {
    "id": "mv-iyyu-nala",
@@ -4361,20 +4361,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "iyyu-nala.ttf",
      "desktopFile": "MVIyyuNala-Regular.ttf",
      "sizes": {
-      "ttf": 21788,
-      "woff2": 11752,
-      "woff": 14112
+      "ttf": 21792,
+      "woff2": 11816,
+      "woff": 14116
      },
      "subsets": {
-      "thaana": 10540,
-      "latin": 5672
+      "thaana": 10516,
+      "latin": 5704
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Nala.otf",
      "legacyLayout": null,
@@ -4392,7 +4392,7 @@
      "sizeAdjust": 1.117
     }
    ],
-   "zipSize": 14486
+   "zipSize": 14489
   },
   {
    "id": "mv-izy-pro",
@@ -4415,20 +4415,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.001;May 19, 2021;FontCreator 13.0.0.2683 64-bit; dvfonts",
+   "version": "Version 1.001;May 19, 2021;FontCreator 13.0.0.2683 64-bit; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-izy-pro.ttf",
      "desktopFile": "MVIzyPro-Regular.ttf",
      "sizes": {
-      "ttf": 50680,
-      "woff2": 20684,
+      "ttf": 50684,
+      "woff2": 20660,
       "woff": 28012
      },
      "subsets": {
       "thaana": 19280,
-      "latin": 14180
+      "latin": 14112
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%87%de%a6%de%8c%de%aa%de%8d%de%a8%de%94%de%aa%de%82%de%b0/",
      "legacyLayout": null,
@@ -4446,7 +4446,7 @@
      "sizeAdjust": 0.919
     }
    ],
-   "zipSize": 28475
+   "zipSize": 28481
   },
   {
    "id": "mv-izyan",
@@ -4469,20 +4469,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-izyannormal.ttf",
      "desktopFile": "MVIzyan-Regular.ttf",
      "sizes": {
-      "ttf": 70260,
-      "woff2": 26492,
-      "woff": 35836
+      "ttf": 70264,
+      "woff2": 26360,
+      "woff": 35840
      },
      "subsets": {
-      "thaana": 24804,
-      "latin": 18672
+      "thaana": 24840,
+      "latin": 18676
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%82%de%af%de%89%de%a6%de%8d%de%b0/",
      "legacyLayout": null,
@@ -4500,7 +4500,7 @@
      "sizeAdjust": 0.931
     }
    ],
-   "zipSize": 36236
+   "zipSize": 36232
   },
   {
    "id": "mv-izyan-athuliyun",
@@ -4523,20 +4523,20 @@
    "designerUrl": "https://dhivehifont.com/",
    "licenseText": null,
    "licenseUrl": "https://dhivehifont.com/",
-   "version": "Version 1; dvfonts",
+   "version": "Version 1; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "mv-izyan-athuliyun-light.ttf",
      "desktopFile": "MVIzyanAthuliyun-Light.ttf",
      "sizes": {
-      "ttf": 45096,
-      "woff2": 23600,
+      "ttf": 45100,
+      "woff2": 23520,
       "woff": 27588
      },
      "subsets": {
-      "thaana": 22480,
-      "latin": 16088
+      "thaana": 22436,
+      "latin": 16024
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%87%de%a6%de%8c%de%aa%de%8d%de%a8%de%94%de%aa%de%82%de%b0-%de%8d%de%a6%de%87%de%a8%de%93%de%b0/",
      "legacyLayout": null,
@@ -4558,13 +4558,13 @@
      "source": "mv-izyan-athuliyun.ttf",
      "desktopFile": "MVIzyanAthuliyun-Regular.ttf",
      "sizes": {
-      "ttf": 30412,
-      "woff2": 15896,
+      "ttf": 30416,
+      "woff2": 15892,
       "woff": 19640
      },
      "subsets": {
-      "thaana": 15060,
-      "latin": 7988
+      "thaana": 15088,
+      "latin": 7992
      },
      "upstream": "https://dhivehifont.com/2021/12/30/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%87%de%a6%de%8c%de%aa%de%8d%de%a8%de%94%de%aa%de%82%de%b0-2/",
      "legacyLayout": null,
@@ -4582,7 +4582,7 @@
      "sizeAdjust": 0.823
     }
    ],
-   "zipSize": 47659
+   "zipSize": 47665
   },
   {
    "id": "mv-izyan-bodu-akuru",
@@ -4605,20 +4605,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-izyan-bodu-akuru.ttf",
      "desktopFile": "MVIzyanBoduAkuru-Bold.ttf",
      "sizes": {
-      "ttf": 57020,
-      "woff2": 23544,
+      "ttf": 57024,
+      "woff2": 23576,
       "woff": 29980
      },
      "subsets": {
-      "thaana": 21988,
-      "latin": 16524
+      "thaana": 22060,
+      "latin": 16560
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%84%de%ae%de%91%de%aa%de%87%de%a6%de%86%de%aa%de%83%de%aa/",
      "legacyLayout": null,
@@ -4636,7 +4636,7 @@
      "sizeAdjust": 1.031
     }
    ],
-   "zipSize": 30460
+   "zipSize": 30463
   },
   {
    "id": "mv-izyan-bodu-akuru-3d",
@@ -4659,20 +4659,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mvizyanboduakuru3d-bold.ttf",
      "desktopFile": "MVIzyanBoduAkuru3D-Bold.ttf",
      "sizes": {
-      "ttf": 96580,
-      "woff2": 38196,
+      "ttf": 96584,
+      "woff2": 38236,
       "woff": 50084
      },
      "subsets": {
-      "thaana": 35256,
-      "latin": 23420
+      "thaana": 35152,
+      "latin": 23408
      },
      "upstream": "https://dhivehifont.com/2022/10/31/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%84%de%ae%de%91%de%aa%de%87%de%a6%de%86%de%aa%de%83%de%aa-3%de%91%de%a9/",
      "legacyLayout": null,
@@ -4690,7 +4690,7 @@
      "sizeAdjust": 0.882
     }
    ],
-   "zipSize": 50620
+   "zipSize": 50623
   },
   {
    "id": "mv-izyan-lhohi",
@@ -4713,20 +4713,20 @@
    "designerUrl": "https://Dhivehifont.com",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-izyan-lhohi.ttf",
      "desktopFile": "MVIzyanLhohi-Bold.ttf",
      "sizes": {
-      "ttf": 60088,
-      "woff2": 22648,
+      "ttf": 60092,
+      "woff2": 22640,
       "woff": 29956
      },
      "subsets": {
-      "thaana": 20100,
-      "latin": 9524
+      "thaana": 20152,
+      "latin": 9560
      },
      "upstream": "https://dhivehifont.com/2024/08/13/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%85%de%ae%de%80%de%a8/",
      "legacyLayout": null,
@@ -4744,7 +4744,7 @@
      "sizeAdjust": 0.849
     }
    ],
-   "zipSize": 30497
+   "zipSize": 30501
   },
   {
    "id": "mv-izyan-light",
@@ -4767,20 +4767,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "mv-izyan-light.ttf",
      "desktopFile": "MVIzyanLight-Light.ttf",
      "sizes": {
-      "ttf": 66612,
-      "woff2": 25448,
-      "woff": 33840
+      "ttf": 66616,
+      "woff2": 25436,
+      "woff": 33844
      },
      "subsets": {
-      "thaana": 24444,
-      "latin": 17944
+      "thaana": 24380,
+      "latin": 17940
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%87%de%ac%de%86%de%b0%de%90%de%b0%de%93%de%b0%de%83%de%a7-%de%8d%de%a6%de%87%de%a8%de%93%de%b0/",
      "legacyLayout": null,
@@ -4798,7 +4798,7 @@
      "sizeAdjust": 1.141
     }
    ],
-   "zipSize": 34383
+   "zipSize": 34385
   },
   {
    "id": "mv-izyan-liyun",
@@ -4821,20 +4821,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-izyan-liyun-regular.ttf",
      "desktopFile": "MVIzyanLiyun-Regular.ttf",
      "sizes": {
-      "ttf": 62692,
-      "woff2": 24984,
-      "woff": 32732
+      "ttf": 62696,
+      "woff2": 25064,
+      "woff": 32736
      },
      "subsets": {
-      "thaana": 23420,
-      "latin": 17544
+      "thaana": 23544,
+      "latin": 17592
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8d%de%a8%de%94%de%aa%de%82%de%b0/",
      "legacyLayout": null,
@@ -4852,7 +4852,7 @@
      "sizeAdjust": 0.959
     }
    ],
-   "zipSize": 33185
+   "zipSize": 33187
   },
   {
    "id": "mv-izyan-reethi",
@@ -4875,20 +4875,20 @@
    "designerUrl": "https://Dhivehifont.com",
    "licenseText": null,
    "licenseUrl": "https://dhivehifont.com",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mvizyanreethi-bold.ttf",
      "desktopFile": "MVIzyanReethi-Bold.ttf",
      "sizes": {
-      "ttf": 39992,
-      "woff2": 20140,
-      "woff": 23764
+      "ttf": 39996,
+      "woff2": 20148,
+      "woff": 23768
      },
      "subsets": {
-      "thaana": 18348,
-      "latin": 7140
+      "thaana": 18344,
+      "latin": 7124
      },
      "upstream": "https://dhivehifont.com/2024/01/31/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%83%de%a9%de%8c%de%a8/",
      "legacyLayout": null,
@@ -4906,7 +4906,7 @@
      "sizeAdjust": 0.818
     }
    ],
-   "zipSize": 24351
+   "zipSize": 24339
   },
   {
    "id": "mv-izyan-regular",
@@ -4929,20 +4929,20 @@
    "designerUrl": "dhivehifont.com",
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 01; dvfonts",
+   "version": "Version 01; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mvizyaregular.ttf",
      "desktopFile": "MVIzyanRegular-Regular.ttf",
      "sizes": {
-      "ttf": 31264,
-      "woff2": 12048,
-      "woff": 15844
+      "ttf": 31268,
+      "woff2": 12008,
+      "woff": 15840
      },
      "subsets": {
-      "thaana": 10276,
-      "latin": 4640
+      "thaana": 10280,
+      "latin": 4704
      },
      "upstream": "https://dhivehifont.com/2022/04/30/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%83%de%ac%de%8e%de%a8%de%87%de%aa%de%8d%de%a7%de%83/",
      "legacyLayout": null,
@@ -4960,7 +4960,7 @@
      "sizeAdjust": 1.09
     }
    ],
-   "zipSize": 16283
+   "zipSize": 16284
   },
   {
    "id": "mv-izyan-suruhee",
@@ -4983,20 +4983,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-izyan-suruhee.ttf",
      "desktopFile": "MVIzyanSuruhee-Regular.ttf",
      "sizes": {
-      "ttf": 42120,
-      "woff2": 16144,
+      "ttf": 42124,
+      "woff2": 16192,
       "woff": 21740
      },
      "subsets": {
-      "thaana": 14868,
-      "latin": 10356
+      "thaana": 14880,
+      "latin": 10328
      },
      "upstream": "https://dhivehifont.com/2022/07/25/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94/",
      "legacyLayout": null,
@@ -5014,7 +5014,7 @@
      "sizeAdjust": 1.139
     }
    ],
-   "zipSize": 22173
+   "zipSize": 22171
   },
   {
    "id": "mv-izyan-thaana",
@@ -5037,20 +5037,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-izyanthaana.ttf",
      "desktopFile": "MVIzyanThaana-Regular.ttf",
      "sizes": {
-      "ttf": 66816,
-      "woff2": 25692,
+      "ttf": 66820,
+      "woff2": 25636,
       "woff": 34980
      },
      "subsets": {
-      "thaana": 24656,
-      "latin": 18492
+      "thaana": 24608,
+      "latin": 18524
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8c%de%a7%de%82%de%a6/",
      "legacyLayout": null,
@@ -5068,7 +5068,7 @@
      "sizeAdjust": 0.989
     }
    ],
-   "zipSize": 35410
+   "zipSize": 35409
   },
   {
    "id": "mv-izyan-thin",
@@ -5091,20 +5091,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "mv-izyan-thin.ttf",
      "desktopFile": "MVIzyanThin-Thin.ttf",
      "sizes": {
-      "ttf": 71388,
-      "woff2": 25928,
+      "ttf": 71392,
+      "woff2": 26016,
       "woff": 35092
      },
      "subsets": {
       "thaana": 24868,
-      "latin": 17300
+      "latin": 17260
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8c%de%a8%de%82%de%b0/",
      "legacyLayout": null,
@@ -5122,7 +5122,7 @@
      "sizeAdjust": 1.204
     }
    ],
-   "zipSize": 35500
+   "zipSize": 35501
   },
   {
    "id": "mv-karudhas",
@@ -5145,20 +5145,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-karudhas.ttf",
      "desktopFile": "MVKarudhas-Bold.ttf",
      "sizes": {
-      "ttf": 24892,
-      "woff2": 9188,
+      "ttf": 24896,
+      "woff2": 9192,
       "woff": 12816
      },
      "subsets": {
-      "thaana": 8148,
-      "latin": 4288
+      "thaana": 8152,
+      "latin": 4172
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0/",
      "legacyLayout": null,
@@ -5176,7 +5176,7 @@
      "sizeAdjust": 1.085
     }
    ],
-   "zipSize": 13038
+   "zipSize": 13042
   },
   {
    "id": "mv-karudhas-outline",
@@ -5199,20 +5199,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1; dvfonts",
+   "version": "Version 1; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-karudhas-outline.ttf",
      "desktopFile": "MVKarudhasOutline-Regular.ttf",
      "sizes": {
-      "ttf": 38944,
-      "woff2": 17456,
+      "ttf": 38948,
+      "woff2": 17432,
       "woff": 23268
      },
      "subsets": {
-      "thaana": 16572,
-      "latin": 8620
+      "thaana": 16632,
+      "latin": 8612
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0-%de%87%de%a6%de%87%de%aa%de%93%de%b0-%de%8d%de%a6%de%87%de%a8%de%82%de%b0/",
      "legacyLayout": null,
@@ -5230,7 +5230,7 @@
      "sizeAdjust": 0.726
     }
    ],
-   "zipSize": 23635
+   "zipSize": 23633
   },
   {
    "id": "mv-kashi",
@@ -5253,20 +5253,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://Dhivehifont.com",
-   "version": "Version 1.01 (Official); dvfonts",
+   "version": "Version 1.01 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-kashi.ttf",
      "desktopFile": "MVKashi-Regular.ttf",
      "sizes": {
-      "ttf": 44576,
-      "woff2": 16808,
+      "ttf": 44580,
+      "woff2": 16788,
       "woff": 22468
      },
      "subsets": {
-      "thaana": 14628,
-      "latin": 9480
+      "thaana": 14712,
+      "latin": 9488
      },
      "upstream": "https://dhivehifont.com/2023/11/18/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%86%de%a6%de%81%de%a8/",
      "legacyLayout": null,
@@ -5432,20 +5432,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "lady-luck.ttf",
      "desktopFile": "MVLadyLuck-Regular.ttf",
      "sizes": {
-      "ttf": 24684,
-      "woff2": 13260,
-      "woff": 15644
+      "ttf": 24688,
+      "woff2": 13200,
+      "woff": 15648
      },
      "subsets": {
-      "thaana": 11932,
-      "latin": 6824
+      "thaana": 11948,
+      "latin": 6812
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Lady_Luck.otf",
      "legacyLayout": null,
@@ -5463,7 +5463,7 @@
      "sizeAdjust": 0.993
     }
    ],
-   "zipSize": 16051
+   "zipSize": 16053
   },
   {
    "id": "mv-lhaiy",
@@ -5534,20 +5534,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://Dhivehifont.com",
-   "version": "Version 1.01 (Official); dvfonts",
+   "version": "Version 1.01 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mvlhohi.ttf",
      "desktopFile": "MVLhohi-Regular.ttf",
      "sizes": {
-      "ttf": 65216,
-      "woff2": 24860,
+      "ttf": 65220,
+      "woff2": 24784,
       "woff": 32780
      },
      "subsets": {
-      "thaana": 23436,
-      "latin": 15732
+      "thaana": 23440,
+      "latin": 15804
      },
      "upstream": "https://dhivehifont.com/2022/10/27/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%85%de%ae%de%80%de%a8-%de%84%de%af%de%8d%de%b0%de%91%de%b0/",
      "legacyLayout": null,
@@ -5569,13 +5569,13 @@
      "source": "mvlhohi-bold.ttf",
      "desktopFile": "MVLhohi-Bold.ttf",
      "sizes": {
-      "ttf": 51188,
-      "woff2": 18392,
-      "woff": 26272
+      "ttf": 51192,
+      "woff2": 18324,
+      "woff": 26276
      },
      "subsets": {
-      "thaana": 16276,
-      "latin": 10292
+      "thaana": 16336,
+      "latin": 10296
      },
      "upstream": "https://dhivehifont.com/2022/10/27/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%85%de%ae%de%80%de%a8-%de%84%de%af%de%8d%de%b0%de%91%de%b0/",
      "legacyLayout": null,
@@ -5616,20 +5616,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mag-round.ttf",
      "desktopFile": "MVMAGRound-Bold.ttf",
      "sizes": {
-      "ttf": 23684,
-      "woff2": 12772,
+      "ttf": 23688,
+      "woff2": 12756,
       "woff": 15368
      },
      "subsets": {
-      "thaana": 11460,
-      "latin": 5916
+      "thaana": 11560,
+      "latin": 5944
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_Bold.otf",
      "legacyLayout": null,
@@ -5651,13 +5651,13 @@
      "source": "mag-round-xbold.ttf",
      "desktopFile": "MVMAGRound-ExtraBold.ttf",
      "sizes": {
-      "ttf": 23096,
-      "woff2": 12276,
-      "woff": 14764
+      "ttf": 23100,
+      "woff2": 12284,
+      "woff": 14768
      },
      "subsets": {
-      "thaana": 11008,
-      "latin": 6040
+      "thaana": 11048,
+      "latin": 5992
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_XBold.otf",
      "legacyLayout": null,
@@ -5675,7 +5675,7 @@
      "sizeAdjust": 1.037
     }
    ],
-   "zipSize": 30441
+   "zipSize": 30444
   },
   {
    "id": "mv-mag-round-hollow",
@@ -5698,20 +5698,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mag-round-hollowttf.ttf",
      "desktopFile": "MVMAGRoundHollow-Regular.ttf",
      "sizes": {
-      "ttf": 33992,
-      "woff2": 19412,
+      "ttf": 33996,
+      "woff2": 19380,
       "woff": 22312
      },
      "subsets": {
-      "thaana": 17948,
-      "latin": 8940
+      "thaana": 17940,
+      "latin": 8904
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_HBold.otf",
      "legacyLayout": null,
@@ -5729,7 +5729,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 22761
+   "zipSize": 22766
   },
   {
    "id": "mv-maryam",
@@ -5752,20 +5752,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-maryam.ttf",
      "desktopFile": "MVMaryam-Regular.ttf",
      "sizes": {
-      "ttf": 40712,
-      "woff2": 17356,
+      "ttf": 40716,
+      "woff2": 17384,
       "woff": 22388
      },
      "subsets": {
-      "thaana": 15176,
-      "latin": 9868
+      "thaana": 15272,
+      "latin": 9864
      },
      "upstream": "https://dhivehifont.com/2022/05/16/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%89%de%a6%de%83%de%b0%de%94%de%a6%de%89%de%b0/",
      "legacyLayout": null,
@@ -5783,7 +5783,7 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 22806
+   "zipSize": 22808
   },
   {
    "id": "mv-meemu-ali",
@@ -5806,20 +5806,20 @@
    "designerUrl": "https://Dhivehifont.com",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-mohamed-ali-final.ttf",
      "desktopFile": "MVMeemuAli-Regular.ttf",
      "sizes": {
-      "ttf": 67012,
-      "woff2": 24652,
-      "woff": 33700
+      "ttf": 67016,
+      "woff2": 24640,
+      "woff": 33704
      },
      "subsets": {
       "thaana": 23140,
-      "latin": 13256
+      "latin": 13320
      },
      "upstream": "https://dhivehifont.com/2023/07/24/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%90%de%aa%de%83%de%aa%de%9a%de%a9-2/",
      "legacyLayout": null,
@@ -5837,7 +5837,7 @@
      "sizeAdjust": 0.963
     }
    ],
-   "zipSize": 34181
+   "zipSize": 34182
   },
   {
    "id": "mv-midhili",
@@ -5980,20 +5980,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.000; dvfonts",
+   "version": "Version 1.000; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-nerumagu.ttf",
      "desktopFile": "MVNeruMagu-Bold.ttf",
      "sizes": {
-      "ttf": 40904,
-      "woff2": 16052,
+      "ttf": 40908,
+      "woff2": 16064,
       "woff": 21408
      },
      "subsets": {
-      "thaana": 14828,
-      "latin": 8396
+      "thaana": 14796,
+      "latin": 8404
      },
      "upstream": "https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%82%de%ac%de%83%de%aa%de%89%de%a6%de%8e%de%aa/",
      "legacyLayout": null,
@@ -6011,7 +6011,7 @@
      "sizeAdjust": 1.207
     }
    ],
-   "zipSize": 21699
+   "zipSize": 21703
   },
   {
    "id": "mv-nevi-raheem",
@@ -6034,20 +6034,20 @@
    "designerUrl": "https://niyaa.arts",
    "licenseText": null,
    "licenseUrl": "https://niyaa.arts",
-   "version": "Version 1.00 (Official); dvfonts",
+   "version": "Version 1.00 (Official); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-nevi-raheem.ttf",
      "desktopFile": "MVNeviRaheem-Regular.ttf",
      "sizes": {
-      "ttf": 82828,
-      "woff2": 31464,
-      "woff": 41640
+      "ttf": 82832,
+      "woff2": 31704,
+      "woff": 41644
      },
      "subsets": {
-      "thaana": 29812,
-      "latin": 21664
+      "thaana": 29840,
+      "latin": 21696
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%82%de%ac%de%88%de%a8-%de%83%de%a6%de%80%de%a9%de%89%de%b0/",
      "legacyLayout": null,
@@ -6065,7 +6065,7 @@
      "sizeAdjust": 0.929
     }
    ],
-   "zipSize": 42063
+   "zipSize": 42062
   },
   {
    "id": "mv-open-condensed",
@@ -6136,19 +6136,19 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons Attribution",
    "licenseUrl": "http://creativecommons.org/licenses/by/3.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-osho.otf",
      "desktopFile": "MVOsho-Regular.ttf",
      "sizes": {
-      "ttf": 8236,
-      "woff2": 2564,
-      "woff": 3256
+      "ttf": 8240,
+      "woff2": 2548,
+      "woff": 3252
      },
      "subsets": {
-      "thaana": 2564,
+      "thaana": 2548,
       "latin": 1564
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2020/07/12/mv-osho",
@@ -6167,7 +6167,7 @@
      "sizeAdjust": 0.476
     }
    ],
-   "zipSize": 3637
+   "zipSize": 3635
   },
   {
    "id": "mv-oswald",
@@ -6454,20 +6454,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 2.0; dvfonts",
+   "version": "Version 2.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "radhun.ttf",
      "desktopFile": "MVRadhun-Regular.ttf",
      "sizes": {
-      "ttf": 29648,
-      "woff2": 12320,
-      "woff": 15180
+      "ttf": 29652,
+      "woff2": 12296,
+      "woff": 15184
      },
      "subsets": {
-      "thaana": 10588,
-      "latin": 5724
+      "thaana": 10616,
+      "latin": 5716
      },
      "upstream": null,
      "legacyLayout": null,
@@ -6485,7 +6485,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 15781
+   "zipSize": 15783
   },
   {
    "id": "mv-randhoo",
@@ -6559,20 +6559,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons Attribution",
    "licenseUrl": "http://creativecommons.org/licenses/by/3.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-roma.otf",
      "desktopFile": "MVRoma-Regular.ttf",
      "sizes": {
-      "ttf": 27104,
-      "woff2": 6284,
+      "ttf": 27108,
+      "woff2": 6184,
       "woff": 7548
      },
      "subsets": {
-      "thaana": 6284,
-      "latin": 2976
+      "thaana": 6184,
+      "latin": 2984
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2020/01/11/mv-roma/",
      "legacyLayout": null,
@@ -6590,7 +6590,7 @@
      "sizeAdjust": 0.7
     }
    ],
-   "zipSize": 7977
+   "zipSize": 7975
   },
   {
    "id": "mv-runa",
@@ -6661,20 +6661,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons Attribution",
    "licenseUrl": "http://creativecommons.org/licenses/by/3.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-salhi-eka.otf",
      "desktopFile": "MVSalhiEka-Regular.ttf",
      "sizes": {
-      "ttf": 10924,
+      "ttf": 10928,
       "woff2": 3220,
-      "woff": 3844
+      "woff": 3840
      },
      "subsets": {
-      "thaana": 3208,
-      "latin": 1920
+      "thaana": 3192,
+      "latin": 1928
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2021/03/18/mv-salhi/",
      "legacyLayout": null,
@@ -6692,7 +6692,7 @@
      "sizeAdjust": 0.738
     }
    ],
-   "zipSize": 4268
+   "zipSize": 4265
   },
   {
    "id": "mv-sarukitu",
@@ -6715,20 +6715,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons CC0 Public Domain Dedication",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-sarukitu.otf",
      "desktopFile": "MVSarukitu-Regular.ttf",
      "sizes": {
-      "ttf": 18604,
-      "woff2": 4448,
-      "woff": 5372
+      "ttf": 18608,
+      "woff2": 4496,
+      "woff": 5368
      },
      "subsets": {
-      "thaana": 4448,
-      "latin": 2564
+      "thaana": 4496,
+      "latin": 2596
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2017/04/04/mv-sarukitu/",
      "legacyLayout": null,
@@ -6746,7 +6746,7 @@
      "sizeAdjust": 0.633
     }
    ],
-   "zipSize": 5840
+   "zipSize": 5838
   },
   {
    "id": "mv-sehga-fb",
@@ -6771,20 +6771,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "sehga-fb.ttf",
      "desktopFile": "MVSehgaFB-Regular.ttf",
      "sizes": {
-      "ttf": 22916,
-      "woff2": 12204,
-      "woff": 14528
+      "ttf": 22920,
+      "woff2": 12216,
+      "woff": 14532
      },
      "subsets": {
-      "thaana": 10916,
-      "latin": 6472
+      "thaana": 10920,
+      "latin": 6484
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Fubaru_Fancy.otf",
      "legacyLayout": null,
@@ -6802,7 +6802,7 @@
      "sizeAdjust": 0.965
     }
    ],
-   "zipSize": 14932
+   "zipSize": 14933
   },
   {
    "id": "mv-sehga-old",
@@ -6825,20 +6825,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-sehga-old.otf",
      "desktopFile": "MVSehgaOld-Regular.ttf",
      "sizes": {
-      "ttf": 23880,
-      "woff2": 15704,
+      "ttf": 23884,
+      "woff2": 15816,
       "woff": 17616
      },
      "subsets": {
-      "thaana": 13696,
-      "latin": 6288
+      "thaana": 13676,
+      "latin": 6296
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Old.otf",
      "legacyLayout": null,
@@ -6927,19 +6927,19 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.000; dvfonts",
+   "version": "Version 1.000; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-suruhee.ttf",
      "desktopFile": "MVSuruhee-Bold.ttf",
      "sizes": {
-      "ttf": 45496,
-      "woff2": 18404,
+      "ttf": 45500,
+      "woff2": 18372,
       "woff": 24108
      },
      "subsets": {
-      "thaana": 15932,
+      "thaana": 15956,
       "latin": 9364
      },
      "upstream": "https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%90%de%aa%de%83%de%aa%de%9a%de%a9/",
@@ -6958,7 +6958,7 @@
      "sizeAdjust": 1.147
     }
    ],
-   "zipSize": 24321
+   "zipSize": 24322
   },
   {
    "id": "mv-thaana-matrix-16",
@@ -7135,20 +7135,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.000; dvfonts",
+   "version": "Version 1.000; fonts.mv",
    "styles": [
     {
      "weight": 700,
      "source": "mv-thakurufaanu.ttf",
      "desktopFile": "MVThakurufaanu-Bold.ttf",
      "sizes": {
-      "ttf": 41788,
-      "woff2": 17112,
-      "woff": 22204
+      "ttf": 41792,
+      "woff2": 17136,
+      "woff": 22208
      },
      "subsets": {
-      "thaana": 16172,
-      "latin": 9420
+      "thaana": 16176,
+      "latin": 9448
      },
      "upstream": "https://dhivehifont.com/2022/09/26/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8c%de%a6%de%86%de%aa%de%83%de%aa%de%8a%de%a7%de%82%de%aa/",
      "legacyLayout": null,
@@ -7166,7 +7166,7 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 22490
+   "zipSize": 22493
   },
   {
    "id": "mv-thavaa",
@@ -7189,20 +7189,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons CC0 Public Domain Dedication",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "thavaa.otf",
      "desktopFile": "MVThavaa-Regular.ttf",
      "sizes": {
-      "ttf": 8000,
-      "woff2": 3024,
+      "ttf": 8004,
+      "woff2": 3032,
       "woff": 3640
      },
      "subsets": {
-      "thaana": 3024,
-      "latin": 1936
+      "thaana": 3032,
+      "latin": 1912
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2018/12/08/mv-thavaa/",
      "legacyLayout": null,
@@ -7220,7 +7220,7 @@
      "sizeAdjust": 2.735
     }
    ],
-   "zipSize": 4059
+   "zipSize": 4062
   },
   {
    "id": "mv-thiki-akuru",
@@ -7243,20 +7243,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.000; dvfonts",
+   "version": "Version 1.000; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "thiki.ttf",
      "desktopFile": "MVThikiAkuru-Regular.ttf",
      "sizes": {
-      "ttf": 60872,
+      "ttf": 60876,
       "woff2": 13056,
       "woff": 20780
      },
      "subsets": {
-      "thaana": 12280,
-      "latin": 12292
+      "thaana": 12264,
+      "latin": 12300
      },
      "upstream": "https://dhivehifont.com/2022/05/08/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8c%de%a8%de%86%de%a8-%de%87%de%a6%de%86%de%aa%de%83%de%aa/",
      "legacyLayout": null,
@@ -7274,7 +7274,7 @@
      "sizeAdjust": 1.213
     }
    ],
-   "zipSize": 21083
+   "zipSize": 21084
   },
   {
    "id": "mv-thuththu-neo",
@@ -7637,20 +7637,20 @@
    "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
    "licenseText": "Creative Commons CC0 Public Domain Dedication",
    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "version": "Version 1.0; dvfonts",
+   "version": "Version 1.0; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "mv-vashalo.otf",
      "desktopFile": "MVVashalo-Regular.ttf",
      "sizes": {
-      "ttf": 19040,
-      "woff2": 4936,
-      "woff": 5780
+      "ttf": 19044,
+      "woff2": 4932,
+      "woff": 5776
      },
      "subsets": {
-      "thaana": 4936,
-      "latin": 2552
+      "thaana": 4932,
+      "latin": 2508
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2019/06/23/mv-vashalo/",
      "legacyLayout": null,
@@ -7668,7 +7668,7 @@
      "sizeAdjust": 1.086
     }
    ],
-   "zipSize": 6230
+   "zipSize": 6234
   },
   {
    "id": "nasr",
@@ -7691,20 +7691,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version 1.0 Mon Oct 21 05:59:37 1996; dvfonts",
+   "version": "Version 1.0 Mon Oct 21 05:59:37 1996; fonts.mv",
    "styles": [
     {
      "weight": 300,
      "source": "nasr-light.otf",
      "desktopFile": "Nasr-Light.ttf",
      "sizes": {
-      "ttf": 31592,
-      "woff2": 24620,
+      "ttf": 31596,
+      "woff2": 24604,
       "woff": 26372
      },
      "subsets": {
       "thaana": 24608,
-      "latin": 11388
+      "latin": 11392
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/Nasr_Light.otf",
      "legacyLayout": "phonetic",
@@ -7722,7 +7722,7 @@
      "sizeAdjust": 0.909
     }
    ],
-   "zipSize": 26941
+   "zipSize": 26942
   },
   {
    "id": "noto-sans-thaana",
@@ -7745,20 +7745,20 @@
    "designerUrl": null,
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
    "licenseUrl": "https://scripts.sil.org/OFL",
-   "version": "Version 3.001; ttfautohint (v1.8.4.7-5d5b); dvfonts",
+   "version": "Version 3.001; ttfautohint (v1.8.4.7-5d5b); fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "noto-sans-thaana.ttf",
      "desktopFile": "NotoSansThaana-Regular.ttf",
      "sizes": {
-      "ttf": 27200,
-      "woff2": 12948,
-      "woff": 15624
+      "ttf": 27204,
+      "woff2": 12964,
+      "woff": 15620
      },
      "subsets": {
-      "thaana": 9352,
-      "latin": 4308
+      "thaana": 9372,
+      "latin": 4320
      },
      "upstream": null,
      "legacyLayout": null,
@@ -7799,20 +7799,20 @@
    "designerUrl": "http://www.nexus.com.mv/onlineservices/dhivehifonts/",
    "licenseText": null,
    "licenseUrl": "http://www.nexus.com.mv/onlineservices/dhivehifonts/",
-   "version": "Version 1.01; dvfonts",
+   "version": "Version 1.01; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "samee-avas-thaana.ttf",
      "desktopFile": "SameeAvasThaana-Regular.ttf",
      "sizes": {
-      "ttf": 48528,
-      "woff2": 26820,
-      "woff": 30988
+      "ttf": 48532,
+      "woff2": 26832,
+      "woff": 30984
      },
      "subsets": {
-      "thaana": 22004,
-      "latin": 12704
+      "thaana": 21952,
+      "latin": 12724
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/ef/Samee_Avas_Thaana.ttf",
      "legacyLayout": "phonetic",
@@ -7853,20 +7853,20 @@
    "designerUrl": "https://www.instagram.com/has_n/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "sangusuruhee-regular.ttf",
      "desktopFile": "SanguSuruhee-Regular.ttf",
      "sizes": {
-      "ttf": 20752,
-      "woff2": 9860,
-      "woff": 12332
+      "ttf": 20756,
+      "woff2": 9852,
+      "woff": 12336
      },
      "subsets": {
-      "thaana": 9056,
-      "latin": 4600
+      "thaana": 9068,
+      "latin": 4616
      },
      "upstream": "https://thaana.com/sangu-suruhee/",
      "legacyLayout": null,
@@ -7884,7 +7884,7 @@
      "sizeAdjust": 1.503
     }
    ],
-   "zipSize": 14886
+   "zipSize": 14890
   },
   {
    "id": "thaana",
@@ -7909,20 +7909,20 @@
    "designerUrl": null,
    "licenseText": null,
    "licenseUrl": null,
-   "version": "Version ; dvfonts",
+   "version": "Version ; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "thaana.ttf",
      "desktopFile": "Thaana-Regular.ttf",
      "sizes": {
-      "ttf": 25244,
-      "woff2": 13976,
-      "woff": 16100
+      "ttf": 25248,
+      "woff2": 13956,
+      "woff": 16104
      },
      "subsets": {
-      "thaana": 13816,
-      "latin": 6172
+      "thaana": 13808,
+      "latin": 6216
      },
      "upstream": null,
      "legacyLayout": "phonetic",
@@ -7944,13 +7944,13 @@
      "source": "thaana-bold.ttf",
      "desktopFile": "Thaana-Bold.ttf",
      "sizes": {
-      "ttf": 38820,
-      "woff2": 18604,
-      "woff": 21340
+      "ttf": 38824,
+      "woff2": 18600,
+      "woff": 21344
      },
      "subsets": {
-      "thaana": 18264,
-      "latin": 7480
+      "thaana": 18248,
+      "latin": 7500
      },
      "upstream": null,
      "legacyLayout": "phonetic",
@@ -7968,7 +7968,7 @@
      "sizeAdjust": 1.728
     }
    ],
-   "zipSize": 37653
+   "zipSize": 37652
   },
   {
    "id": "thaana-unicode-akeh",
@@ -7991,20 +7991,20 @@
    "designerUrl": "http://www.mitf.f2s.com",
    "licenseText": "Copyright (c) 2000 MITF\n\nPermission is granted to copy, distribute and/or modify\nthis document under the terms of the GNU Free\nDocumentation License, Version 1.1 or any later\nversion published by the Free Software Foundation.",
    "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
-   "version": "Version 1.01; dvfonts",
+   "version": "Version 1.01; fonts.mv",
    "styles": [
     {
      "weight": 400,
      "source": "thaana-1u.ttf",
      "desktopFile": "ThaanaUnicodeAkeh-Regular.ttf",
      "sizes": {
-      "ttf": 84956,
-      "woff2": 34732,
+      "ttf": 84960,
+      "woff2": 34752,
       "woff": 42592
      },
      "subsets": {
-      "thaana": 13544,
-      "latin": 25596
+      "thaana": 13592,
+      "latin": 25500
      },
      "upstream": null,
      "legacyLayout": null,
@@ -8022,7 +8022,7 @@
      "sizeAdjust": 1.173
     }
    ],
-   "zipSize": 43372
+   "zipSize": 43370
   },
   {
    "id": "theras",
@@ -8045,20 +8045,20 @@
    "designerUrl": "https://monochromist.com/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "theras-thin.ttf",
      "desktopFile": "Theras-Thin.ttf",
      "sizes": {
-      "ttf": 122292,
-      "woff2": 43128,
+      "ttf": 122296,
+      "woff2": 43156,
       "woff": 57580
      },
      "subsets": {
-      "thaana": 11348,
-      "latin": 24284
+      "thaana": 11288,
+      "latin": 24260
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8080,13 +8080,13 @@
      "source": "theras-extralight.ttf",
      "desktopFile": "Theras-ExtraLight.ttf",
      "sizes": {
-      "ttf": 127048,
-      "woff2": 45996,
+      "ttf": 127052,
+      "woff2": 45940,
       "woff": 60948
      },
      "subsets": {
-      "thaana": 11900,
-      "latin": 25760
+      "thaana": 11980,
+      "latin": 25752
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8108,13 +8108,13 @@
      "source": "theras-light.ttf",
      "desktopFile": "Theras-Light.ttf",
      "sizes": {
-      "ttf": 127184,
-      "woff2": 46360,
-      "woff": 61336
+      "ttf": 127188,
+      "woff2": 46284,
+      "woff": 61340
      },
      "subsets": {
-      "thaana": 11852,
-      "latin": 26016
+      "thaana": 11860,
+      "latin": 26060
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8136,13 +8136,13 @@
      "source": "theras-regular.ttf",
      "desktopFile": "Theras-Regular.ttf",
      "sizes": {
-      "ttf": 126708,
-      "woff2": 46232,
+      "ttf": 126712,
+      "woff2": 46396,
       "woff": 61464
      },
      "subsets": {
-      "thaana": 11980,
-      "latin": 26072
+      "thaana": 11944,
+      "latin": 26064
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8164,13 +8164,13 @@
      "source": "theras-medium.ttf",
      "desktopFile": "Theras-Medium.ttf",
      "sizes": {
-      "ttf": 126520,
-      "woff2": 45676,
-      "woff": 60568
+      "ttf": 126524,
+      "woff2": 45584,
+      "woff": 60572
      },
      "subsets": {
-      "thaana": 11548,
-      "latin": 25656
+      "thaana": 11576,
+      "latin": 25684
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8192,13 +8192,13 @@
      "source": "theras-semibold.ttf",
      "desktopFile": "Theras-SemiBold.ttf",
      "sizes": {
-      "ttf": 131332,
-      "woff2": 48284,
-      "woff": 63984
+      "ttf": 131336,
+      "woff2": 48404,
+      "woff": 63988
      },
      "subsets": {
-      "thaana": 12208,
-      "latin": 27336
+      "thaana": 12156,
+      "latin": 27380
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8220,13 +8220,13 @@
      "source": "theras-bold.ttf",
      "desktopFile": "Theras-Bold.ttf",
      "sizes": {
-      "ttf": 130068,
-      "woff2": 48360,
-      "woff": 63960
+      "ttf": 130072,
+      "woff2": 48392,
+      "woff": 63964
      },
      "subsets": {
-      "thaana": 12172,
-      "latin": 27196
+      "thaana": 12164,
+      "latin": 27148
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8248,13 +8248,13 @@
      "source": "theras-extrabold.ttf",
      "desktopFile": "Theras-ExtraBold.ttf",
      "sizes": {
-      "ttf": 129356,
-      "woff2": 47692,
+      "ttf": 129360,
+      "woff2": 47792,
       "woff": 63272
      },
      "subsets": {
-      "thaana": 11820,
-      "latin": 26992
+      "thaana": 11756,
+      "latin": 26944
      },
      "upstream": "https://thaana.com/theras/",
      "legacyLayout": null,
@@ -8272,7 +8272,7 @@
      "sizeAdjust": 0.905
     }
    ],
-   "zipSize": 498350
+   "zipSize": 498362
   },
   {
    "id": "zaana-thedhu",
@@ -8295,20 +8295,20 @@
    "designerUrl": "http://www.adamzubin.com/",
    "licenseText": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
    "licenseUrl": "http://scripts.sil.org/OFL",
-   "version": "Version 1.010; dvfonts",
+   "version": "Version 1.010; fonts.mv",
    "styles": [
     {
      "weight": 100,
      "source": "zaanathedhu-thin.ttf",
      "desktopFile": "ZaanaThedhu-Thin.ttf",
      "sizes": {
-      "ttf": 128816,
-      "woff2": 45588,
-      "woff": 60492
+      "ttf": 128820,
+      "woff2": 45712,
+      "woff": 60496
      },
      "subsets": {
-      "thaana": 11512,
-      "latin": 25600
+      "thaana": 11496,
+      "latin": 25700
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8330,13 +8330,13 @@
      "source": "zaanathedhu-extralight.ttf",
      "desktopFile": "ZaanaThedhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 133880,
-      "woff2": 48076,
+      "ttf": 133884,
+      "woff2": 48032,
       "woff": 63608
      },
      "subsets": {
-      "thaana": 12124,
-      "latin": 27064
+      "thaana": 12076,
+      "latin": 27052
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8358,13 +8358,13 @@
      "source": "zaanathedhu-light.ttf",
      "desktopFile": "ZaanaThedhu-Light.ttf",
      "sizes": {
-      "ttf": 134544,
-      "woff2": 48260,
-      "woff": 63864
+      "ttf": 134548,
+      "woff2": 48440,
+      "woff": 63872
      },
      "subsets": {
-      "thaana": 11948,
-      "latin": 27048
+      "thaana": 11960,
+      "latin": 27096
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8386,13 +8386,13 @@
      "source": "zaanathedhu-regular.ttf",
      "desktopFile": "ZaanaThedhu-Regular.ttf",
      "sizes": {
-      "ttf": 134380,
+      "ttf": 134384,
       "woff2": 48724,
       "woff": 64196
      },
      "subsets": {
-      "thaana": 12132,
-      "latin": 27396
+      "thaana": 12232,
+      "latin": 27356
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8414,13 +8414,13 @@
      "source": "zaanathedhu-medium.ttf",
      "desktopFile": "ZaanaThedhu-Medium.ttf",
      "sizes": {
-      "ttf": 132840,
-      "woff2": 46968,
-      "woff": 62096
+      "ttf": 132844,
+      "woff2": 46892,
+      "woff": 62100
      },
      "subsets": {
       "thaana": 11280,
-      "latin": 26212
+      "latin": 26152
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8442,13 +8442,13 @@
      "source": "zaanathedhu-semibold.ttf",
      "desktopFile": "ZaanaThedhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 138120,
-      "woff2": 50324,
+      "ttf": 138124,
+      "woff2": 50440,
       "woff": 66640
      },
      "subsets": {
-      "thaana": 12072,
-      "latin": 27968
+      "thaana": 12068,
+      "latin": 28040
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8470,13 +8470,13 @@
      "source": "zaanathedhu-bold.ttf",
      "desktopFile": "ZaanaThedhu-Bold.ttf",
      "sizes": {
-      "ttf": 137760,
-      "woff2": 50388,
+      "ttf": 137764,
+      "woff2": 50368,
       "woff": 66584
      },
      "subsets": {
-      "thaana": 12076,
-      "latin": 27788
+      "thaana": 12100,
+      "latin": 27800
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8498,13 +8498,13 @@
      "source": "zaanathedhu-extrabold.ttf",
      "desktopFile": "ZaanaThedhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 137428,
-      "woff2": 50556,
+      "ttf": 137432,
+      "woff2": 50452,
       "woff": 66528
      },
      "subsets": {
-      "thaana": 12120,
-      "latin": 27900
+      "thaana": 12088,
+      "latin": 27956
      },
      "upstream": "https://thaana.com/zaana-thedhu/",
      "legacyLayout": null,
@@ -8522,7 +8522,7 @@
      "sizeAdjust": 1.481
     }
    ],
-   "zipSize": 520347
+   "zipSize": 520365
   }
  ]
 }

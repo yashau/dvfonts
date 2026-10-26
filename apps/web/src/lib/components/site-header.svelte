@@ -25,7 +25,7 @@
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<a href="/" class="shrink-0" aria-label="dvfonts home">
+		<a href="/" class="shrink-0" aria-label="fonts.mv home">
 			<Logo class="h-7 w-auto" />
 		</a>
 		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
@@ -76,7 +76,7 @@
 				</Tooltip.Root>
 				<Sheet.Content side="right" class="w-64">
 					<Sheet.Header>
-						<Sheet.Title>dvfonts</Sheet.Title>
+						<Sheet.Title>fonts.mv</Sheet.Title>
 					</Sheet.Header>
 					<nav class="flex flex-col gap-1 px-4">
 						{#each links as link (link.href)}

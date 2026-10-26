@@ -4,131 +4,131 @@
   "name": "Essentials",
   "description": "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows.",
   "format": "ttf",
-  "file": "dvfonts-essentials.zip",
+  "file": "fonts-mv-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 374803,
-  "sha256": "e2bdd24ee8d67ed43deb2aef9bccc242b5c5aefc78fe789ee59a746cef9935ce"
+  "size": 374841,
+  "sha256": "f386d9d2107c4586aceda14167e0a15f30c70c9c22c4226391d70a26905a7f45"
  },
  {
   "id": "full",
   "name": "Full suite",
   "description": "Every family in the catalogue.",
   "format": "ttf",
-  "file": "dvfonts-full.zip",
+  "file": "fonts-mv-full.zip",
   "families": 130,
   "styles": 190,
-  "size": 6010869,
-  "sha256": "d3fe2a0aed17c6a2ed49dfcc54ba9353d687d1296a66dd25c067e1de35730ab0"
+  "size": 6011775,
+  "sha256": "66903da3633bc36fab0acba037b990cd859eef737af05d48337dc02e1e6c6a3a"
  },
  {
   "id": "unicode-originals",
   "name": "Unicode originals",
-  "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
+  "description": "Everything except the pre-Unicode fonts fonts.mv remapped (old A_ fonts and similar).",
   "format": "ttf",
-  "file": "dvfonts-unicode-originals.zip",
+  "file": "fonts-mv-unicode-originals.zip",
   "families": 112,
   "styles": 171,
-  "size": 5649157,
-  "sha256": "437406b1f9d4f54f191881a88aaaff56d53c45e69a1f12e4a4502ab4f9e92346"
+  "size": 5649960,
+  "sha256": "407562440b974dde5ce33e1a35a0b5161d96f9510d017a7dbefa7b14e5808a3c"
  },
  {
   "id": "open-licensed",
   "name": "Openly licensed",
   "description": "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute.",
   "format": "ttf",
-  "file": "dvfonts-open-licensed.zip",
+  "file": "fonts-mv-open-licensed.zip",
   "families": 29,
   "styles": 72,
-  "size": 2798509,
-  "sha256": "7e00c00fc141ee1cc83cd8a9c6fa20e1d277605eb4a00c17e514ed9291122e5a"
+  "size": 2798886,
+  "sha256": "e0580cb969db9ec170d2d22b58fb3dcc9d42a06940ff23487e2a4ff3b1b51d52"
  },
  {
   "id": "modern",
   "name": "Modern",
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
-  "file": "dvfonts-modern.zip",
+  "file": "fonts-mv-modern.zip",
   "families": 16,
   "styles": 57,
-  "size": 2922649,
-  "sha256": "d9804adfc568596362e2477cf214347c47eed7f596318a266a53fbc61ad5d9ea"
+  "size": 2922918,
+  "sha256": "38883a689f36fa86e55e9e3d2f09f20befd20da66c845f76127b3a5e769e6d08"
  },
  {
   "id": "official",
   "name": "Official",
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
-  "file": "dvfonts-official.zip",
+  "file": "fonts-mv-official.zip",
   "families": 32,
   "styles": 44,
-  "size": 1193750,
-  "sha256": "be3998de4173fa59010e850654e4b93883af2bc6556c1e0c142923d24629faf3"
+  "size": 1193937,
+  "sha256": "090d5f982f02078061fce6dcfc8f4ff26d61b2e3d38b832fd4053ba69539b603"
  },
  {
   "id": "artistic",
   "name": "Artistic",
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
-  "file": "dvfonts-artistic.zip",
+  "file": "fonts-mv-artistic.zip",
   "families": 27,
   "styles": 30,
-  "size": 664598,
-  "sha256": "f0bb3d734767ea2d1e87446882a5d3c426372da99ea256ea85afcf8168dd6ba3"
+  "size": 664750,
+  "sha256": "636749501276ff1619174e3fa3aa8424598a43a22dba58484b3a8c7d22f65d07"
  },
  {
   "id": "handwriting",
   "name": "Handwriting",
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
-  "file": "dvfonts-handwriting.zip",
+  "file": "fonts-mv-handwriting.zip",
   "families": 31,
   "styles": 34,
-  "size": 1012044,
-  "sha256": "1e276e8dede8cd8a8ad2261f5520e127b8dcc41b1d1acc569a4531f748320d18"
+  "size": 1012219,
+  "sha256": "c29b5f7321c4eaa635ef89490015e8f9b03d68c92f4a0c9bec29ac83faa79323"
  },
  {
   "id": "novelty",
   "name": "Novelty",
   "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
   "format": "ttf",
-  "file": "dvfonts-novelty.zip",
+  "file": "fonts-mv-novelty.zip",
   "families": 23,
   "styles": 24,
-  "size": 157767,
-  "sha256": "2f8f7b2c0ab0f806f62aa5df2804f12b24f386b7d81a94e80958c35b548e448c"
+  "size": 157865,
+  "sha256": "6baa366a12c145267fe4fd24949d3cf8961fd130cc54b88a395bbb36b3c7ca31"
  },
  {
   "id": "webfonts-essentials",
   "name": "Webfont kit (Essentials)",
   "description": "The Essentials as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
-  "file": "dvfonts-webfonts-essentials.zip",
+  "file": "fonts-mv-webfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 305970,
-  "sha256": "7128ce82cdc0f4e8e718be357f4fa514ba9140011f6ad6ecb4ee60a844ffcd55"
+  "size": 305980,
+  "sha256": "289e60925f0b3da48c1f022d00fc699eb318d50d40f69ce6d186fc367c2f0321"
  },
  {
   "id": "webfonts-full",
   "name": "Webfont kit (Full suite)",
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
-  "file": "dvfonts-webfonts-full.zip",
+  "file": "fonts-mv-webfonts-full.zip",
   "families": 130,
   "styles": 190,
-  "size": 4679177,
-  "sha256": "db3a150739a0253ad76ef43968358e27e7b5ee670a275cd196bdea68cdbd01ed"
+  "size": 4680555,
+  "sha256": "f1bba7cf3ccd235bdde30cec0fd1273579769c7f69df566f811c9205e1e341f9"
  },
  {
   "id": "legacy",
   "name": "Legacy",
   "description": "Every pre-Unicode font in the archive, exactly as published, with Thaana on Latin keys. Only for opening old documents: for new text, type in Unicode and use the fonts on this site. The converter turns old text into Unicode.",
   "format": "legacy",
-  "file": "dvfonts-legacy.zip",
+  "file": "fonts-mv-legacy.zip",
   "families": 46,
   "styles": 46,
-  "size": 909417,
-  "sha256": "e8cfd628cc466efbe0e0399e7bfba6fc545db66e5b1a60b366dd2decaffa00e7"
+  "size": 909508,
+  "sha256": "a75c45ad2fbf64affb1bc59686db3a990d6a6103ed2b08727bffcd25e679ed08"
  }
 ]

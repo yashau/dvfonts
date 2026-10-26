@@ -3,7 +3,7 @@
 <h1 align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg" />
-    <img alt="dvfonts — ޑީވީފޮންޓްސް" src=".github/assets/banner-light.svg" width="600" />
+    <img alt="fonts.mv — ފޮންޓްސް.އެމްވީ" src=".github/assets/banner-light.svg" width="600" />
   </picture>
 </h1>
 
@@ -16,7 +16,7 @@
 <p align="center">
   <a href="https://github.com/yashau/dvfonts/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
   <a href="https://github.com/yashau/dvfonts/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
-  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-130_families_·_190_styles-0e7c66?style=for-the-badge" /></a>
+  <a href="https://fonts.mv"><img alt="Fonts" src="https://img.shields.io/badge/fonts-130_families_·_190_styles-0e7c66?style=for-the-badge" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/code-MIT-blue?style=for-the-badge" /></a>
 </p>
 
@@ -44,10 +44,10 @@
 </p>
 
 <p align="center">
-  <a href="https://dvfonts.yashau.com"><b>Browse the fonts</b></a> ·
-  <a href="https://dvfonts.yashau.com/docs"><b>Docs</b></a> ·
-  <a href="https://dvfonts.yashau.com/downloads"><b>Downloads</b></a> ·
-  <a href="https://dvfonts.yashau.com/llms.txt"><b>llms.txt</b></a>
+  <a href="https://fonts.mv"><b>Browse the fonts</b></a> ·
+  <a href="https://fonts.mv/docs"><b>Docs</b></a> ·
+  <a href="https://fonts.mv/downloads"><b>Downloads</b></a> ·
+  <a href="https://fonts.mv/llms.txt"><b>llms.txt</b></a>
 </p>
 
 <br />
@@ -62,26 +62,26 @@ Dhivehi fonts have been passed around for decades on dhivehi.mv, Hassan Hameed's
 - Almost none come in web formats.
 - Getting RTL text, punctuation and brackets right is a maze.
 
-dvfonts fixes all of that in one place.
+fonts.mv fixes all of that in one place.
 
 ## Quick start
 
 **Use a font on any page.** It works like Google Fonts:
 
 ```html
-<link rel="stylesheet" href="https://dvfonts.yashau.com/css2?family=Faruma&family=Bolhu:wght@400;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.mv/css2?family=Faruma&family=Bolhu:wght@400;700&display=swap" />
 
 <p dir="rtl" lang="dv" style="font-family: 'Faruma', system-ui, sans-serif">ދިވެހިރާއްޖެ</p>
 ```
 
 Dhivehi fonts vary a lot in size at the same `font-size`. Add `&normalize=1` to scale each font (CSS `size-adjust`) so its Thaana letters look as big as Faruma's. The font files stay untouched.
 
-Rather host the files yourself? Download them and give the packages their URLs: `loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })`, or `fontFaceCss()` for a stylesheet. Nothing is then loaded from dvfonts.
+Rather host the files yourself? Download them and give the packages their URLs: `loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })`, or `fontFaceCss()` for a stylesheet. Nothing is then loaded from fonts.mv.
 
 **Let people type Thaana on any keyboard,** with no build step:
 
 ```html
-<script type="module" src="https://dvfonts.yashau.com/thaana.js"></script>
+<script type="module" src="https://fonts.mv/thaana.js"></script>
 
 <input data-thaana placeholder="ލިޔުއްވާ" />
 ```
@@ -102,7 +102,7 @@ useDhivehiFont('Faruma');
 <ThaanaInput value={name} onChange={(e) => setName(e.target.value)} style={{ fontFamily: fontStack('Faruma') }} />;
 ```
 
-**Building with an AI agent?** Point it at [`/llms.txt`](https://dvfonts.yashau.com/llms.txt). It has every recipe, the RTL rules and the full font list, with absolute URLs.
+**Building with an AI agent?** Point it at [`/llms.txt`](https://fonts.mv/llms.txt). It has every recipe, the RTL rules and the full font list, with absolute URLs.
 
 ## What's inside
 
@@ -126,7 +126,7 @@ useDhivehiFont('Faruma');
 - **Phonetic keyboard** for any input, textarea or contenteditable, using Microsoft's standard Divehi Phonetic layout. Works with controlled inputs, keeps undo, never touches IME or paste.
 - **Bidi helpers:** keep `+960 333-1234`, `-5`, `9:00` and `50%` readable inside Thaana; isolate names and URLs.
 - **Text repair:** convert old A_-font text to Unicode, fix Thaana copied out of PDFs, tidy punctuation.
-- **Font loading and stacks,** from dvfonts or your own copies of the files (`files`), with optional size normalisation (`{ normalize: true }`), plus CSS defaults that stop fili clipping.
+- **Font loading and stacks,** from fonts.mv or your own copies of the files (`files`), with optional size normalisation (`{ normalize: true }`), plus CSS defaults that stop fili clipping.
 
 </td>
 </tr>
@@ -134,17 +134,17 @@ useDhivehiFont('Faruma');
 
 ## What was done to the fonts
 
-| Fix                                 | What changed                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 🔁&nbsp;**Unicode&nbsp;remapping**  | 18 pre-Unicode fonts had Thaana on Latin keys and no Unicode version, so dvfonts remapped them: their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. The original pre-Unicode files, including five A_ fonts whose designer allows no changes, ship untouched only in the Legacy bundle, for opening old documents. |
-| 🧹&nbsp;**De&#8209;duplication**    | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases.                                                                                                                                                                                                                                                                                                                                     |
-| 📏&nbsp;**Metrics&nbsp;repair**     | 28 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (9 of them).                                                                                                                                                       |
-| 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too.                                                                                                                                                                                                                                                                                                                                              |
-| 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                                                                                                                                                                                                                           |
-| 📐&nbsp;**Same&nbsp;size**          | Fonts differ a lot in size at the same `font-size`. Each family is measured against Faruma (median size of its Thaana letters) and gets a scale factor, applied only with CSS `size-adjust` when asked for (`&normalize=1`, `{ normalize: true }`). The font files are untouched.                                                                                                                                                                                        |
-| 📦&nbsp;**Web&nbsp;formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets for fonts we may modify: a Thaana-only page downloads only the Thaana part.                                                                                                                                                                                                                                                                                                                               |
-| ⚖️&nbsp;**Licenses&nbsp;respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte, and so do Hassan Hameed's, as his permission requires (only converted to WOFF/WOFF2). OFL fonts include `OFL.txt`. Every download carries its credits.                                                                                                                                                                                                                                              |
-| ♻️&nbsp;**Reproducible**            | The build is byte-reproducible: whenever its inputs change, CI rebuilds it and checks the result against the repo.                                                                                                                                                                                                                                                                                                                                                       |
+| Fix                                 | What changed                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔁&nbsp;**Unicode&nbsp;remapping**  | 18 pre-Unicode fonts had Thaana on Latin keys and no Unicode version, so fonts.mv remapped them: their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. The original pre-Unicode files, including five A_ fonts whose designer allows no changes, ship untouched only in the Legacy bundle, for opening old documents. |
+| 🧹&nbsp;**De&#8209;duplication**    | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases.                                                                                                                                                                                                                                                                                                                                      |
+| 📏&nbsp;**Metrics&nbsp;repair**     | 28 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (9 of them).                                                                                                                                                        |
+| 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too.                                                                                                                                                                                                                                                                                                                                               |
+| 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                                                                                                                                                                                                                            |
+| 📐&nbsp;**Same&nbsp;size**          | Fonts differ a lot in size at the same `font-size`. Each family is measured against Faruma (median size of its Thaana letters) and gets a scale factor, applied only with CSS `size-adjust` when asked for (`&normalize=1`, `{ normalize: true }`). The font files are untouched.                                                                                                                                                                                         |
+| 📦&nbsp;**Web&nbsp;formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets for fonts we may modify: a Thaana-only page downloads only the Thaana part.                                                                                                                                                                                                                                                                                                                                |
+| ⚖️&nbsp;**Licenses&nbsp;respected** | Glyph outlines are never changed. CC BY-ND fonts ship byte-for-byte, and so do Hassan Hameed's, as his permission requires (only converted to WOFF/WOFF2). OFL fonts include `OFL.txt`. Every download carries its credits.                                                                                                                                                                                                                                               |
+| ♻️&nbsp;**Reproducible**            | The build is byte-reproducible: whenever its inputs change, CI rebuilds it and checks the result against the repo.                                                                                                                                                                                                                                                                                                                                                        |
 
 ## Repository
 
@@ -197,7 +197,7 @@ mise run dev            # http://localhost:5173
 
 ## Credits and rights
 
-The fonts belong to their makers: the Office of the President (Faruma, Reethi), Hassan Hameed, the Thaana Type Foundry, Hussain Niyaz, Zillon, Mohamed Amaan, M.A. Gadir and many others. Each family page and download names its makers and license, and lists exactly what dvfonts changed. Fonts were collected via [raajjefonts](https://raajjefonts.github.io/) and their original sites.
+The fonts belong to their makers: the Office of the President (Faruma, Reethi), Hassan Hameed, the Thaana Type Foundry, Hussain Niyaz, Zillon, Mohamed Amaan, M.A. Gadir and many others. Each family page and download names its makers and license, and lists exactly what fonts.mv changed. Fonts were collected via [raajjefonts](https://raajjefonts.github.io/) and their original sites.
 
 **If you hold rights to a font here** and want it credited differently, relicensed or removed, [open an issue](https://github.com/yashau/dvfonts/issues) or email ibrahim@yashau.com. Removal requests are honoured without argument.
 

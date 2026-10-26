@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<title>dvfonts — open Dhivehi fonts</title>
+	<title>fonts.mv — open Dhivehi fonts</title>
 	<meta
 		name="description"
 		content="Free Dhivehi (Thaana) fonts for the web: a Google Fonts–style embed API, downloads, and agent-ready packages for React, Svelte, Vue and plain JavaScript."

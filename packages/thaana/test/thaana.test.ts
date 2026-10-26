@@ -140,10 +140,10 @@ describe('text helpers', () => {
 describe('fontCssUrl', () => {
 	it('builds a css2 URL and only asks for size normalisation when requested', () => {
 		expect(fontCssUrl({ family: 'MV Faseyha', weights: [700, 400] })).toBe(
-			'https://dvfonts.yashau.com/css2?family=MV+Faseyha:wght@400;700&display=swap'
+			'https://fonts.mv/css2?family=MV+Faseyha:wght@400;700&display=swap'
 		);
 		expect(fontCssUrl({ family: 'Bolhu' }, { normalize: true })).toBe(
-			'https://dvfonts.yashau.com/css2?family=Bolhu&display=swap&normalize=1'
+			'https://fonts.mv/css2?family=Bolhu&display=swap&normalize=1'
 		);
 	});
 });
@@ -162,7 +162,7 @@ describe('own font files', () => {
 		expect(() => fontFaceCss({ ...own, weights: [300] })).toThrow(/weight 300/);
 	});
 
-	it('loadFonts registers your files and fetches nothing from dvfonts', async () => {
+	it('loadFonts registers your files and fetches nothing from fonts.mv', async () => {
 		const added: { family: string; source: string; weight?: string }[] = [];
 		class FakeFontFace {
 			constructor(

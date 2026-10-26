@@ -50,7 +50,7 @@ FONTS_OUT = ROOT / "build" / "r2" / "fonts"
 CATALOG_OUT = REPO / "apps" / "web" / "src" / "lib" / "data" / "catalog.json"
 # No dates anywhere in the output: the build is byte-reproducible so CI can
 # check that the committed fonts match what this script produces.
-BUILD_TAG = "dvfonts"
+BUILD_TAG = "fonts.mv"
 
 FILI = range(0x07A6, 0x07B1)
 THAANA_LETTERS = range(0x0780, 0x07A6)
@@ -678,12 +678,12 @@ def readme(fam, meta, styles, sources, license, unmodified_reason) -> str:
             lines += [
                 "",
                 "This font was originally a pre-Unicode font with Thaana glyphs on Latin keys.",
-                "dvfonts remapped it to Unicode Thaana (U+0780-U+07BF), so it works with any",
+                "fonts.mv remapped it to Unicode Thaana (U+0780-U+07BF), so it works with any",
                 "standard Dhivehi keyboard and on the web.",
             ]
         lines += [
             "",
-            "Cleaned and repackaged by dvfonts: Unicode cmap, repaired vertical metrics,",
+            "Cleaned and repackaged by fonts.mv: Unicode cmap, repaired vertical metrics,",
             "normalised names and weights. Glyph outlines are unchanged.",
         ]
     lines += ["If you hold rights to this font and want it changed or removed, open an issue."]

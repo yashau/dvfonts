@@ -1,4 +1,4 @@
-// Download bundles from R2 (fonts/scripts/bundles.py): /downloads/dvfonts-<bundle>.zip
+// Download bundles from R2 (fonts/scripts/bundles.py): /downloads/fonts-mv-<bundle>.zip
 import { error } from '@sveltejs/kit';
 import bundles from '#lib/data/bundles.json';
 import { serveR2 } from '#lib/server/r2.js';

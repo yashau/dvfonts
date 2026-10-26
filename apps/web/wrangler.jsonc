@@ -10,8 +10,14 @@
 	},
 	// All binaries (fonts/…, downloads/…) live in R2; built by fonts/scripts, uploaded by deploy.yml.
 	"r2_buckets": [{ "binding": "STATIC", "bucket_name": "dvfonts-static" }],
-	// Must match SITE_ORIGIN in src/lib/site.ts and DVFONTS_ORIGIN in @yashau/thaana.
-	"routes": [{ "pattern": "dvfonts.yashau.com", "custom_domain": true }],
+	// fonts.mv must match SITE_ORIGIN in src/lib/site.ts and DVFONTS_ORIGIN in @yashau/thaana.
+	// dvfonts.yashau.com, the old domain, stays attached so its DNS record lives on; a Cloudflare
+	// redirect rule (301) sends it to fonts.mv. Prerendered pages are static assets the Worker
+	// never sees, so the redirect can't live here.
+	"routes": [
+		{ "pattern": "fonts.mv", "custom_domain": true },
+		{ "pattern": "dvfonts.yashau.com", "custom_domain": true }
+	],
 	"workers_dev": true,
 	"preview_urls": true,
 	"observability": { "enabled": true }

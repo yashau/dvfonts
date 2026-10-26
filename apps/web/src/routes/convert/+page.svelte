@@ -58,7 +58,7 @@
 </script>
 
 <svelte:head>
-	<title>Convert old Thaana text — dvfonts</title>
+	<title>Convert old Thaana text — fonts.mv</title>
 	<meta
 		name="description"
 		content="Turn text typed in old A_ fonts, or copied out of PDFs, into proper Unicode Thaana."
@@ -71,7 +71,7 @@
 		<p class="mt-2 text-muted-foreground">
 			Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. Everything runs in
 			your browser; nothing is uploaded. To open an old document as it is, install the original fonts from the
-			<a class="underline underline-offset-4" href="/downloads/dvfonts-legacy.zip" download>legacy bundle</a>.
+			<a class="underline underline-offset-4" href="/downloads/fonts-mv-legacy.zip" download>legacy bundle</a>.
 		</p>
 	</div>
 

@@ -2,7 +2,7 @@ import { browser } from '$app/env';
 
 /** Canonical public origin, used in embed snippets on prerendered pages.
  *  In the browser the actual origin wins, so preview deployments show working URLs. */
-export const SITE_ORIGIN = 'https://dvfonts.yashau.com';
+export const SITE_ORIGIN = 'https://fonts.mv';
 
 /** The open-source repository behind the site, fonts pipeline and packages. */
 export const REPO_URL = 'https://github.com/yashau/dvfonts';

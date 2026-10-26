@@ -25,7 +25,7 @@ export const GET = () => {
 		return `### ${c.label}\n\n${about[c.id]}\n\n${rows.join('\n')}`;
 	}).join('\n\n');
 
-	const body = `# dvfonts
+	const body = `# fonts.mv
 
 > Free Dhivehi (Thaana script, language code "dv") fonts for the web, with a Google-Fonts-compatible CSS API, a drop-in Thaana phonetic keyboard, and the @yashau/thaana packages (vanilla, React, Svelte, Vue) that make Thaana display and input work correctly. ${fams.length} families. Everything below is copy-paste ready; all URLs are absolute.
 
@@ -52,7 +52,7 @@ Several families and weights in one request: \`${O}/css2?family=Bolhu:wght@400;7
 - The CSS uses unicode-range subsets: a Thaana-only page downloads only the small Thaana file.
 - Fonts differ a lot in size at the same font-size. Optional: add \`&normalize=1\` to scale each family (CSS \`size-adjust\`) so its Thaana letters look as big as Faruma's; the files are unchanged. Packages: \`fontCssUrl(fonts, { normalize: true })\`, \`loadFonts(fonts, { normalize: true })\`, \`useDhivehiFont(family, weights, { normalize: true })\`.
 - Many Dhivehi fonts have no Latin glyphs. Put a Latin fallback after the family: \`font-family: 'Faruma', system-ui, sans-serif;\`
-- Self-hosting: download \`${O}/fonts/<id>/<id>.zip\`, or individual \`.woff2\` / \`.ttf\` files listed in fonts.json. The packages can then load your copies instead of dvfonts' (nothing is fetched from dvfonts): \`loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })\`, \`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } })\` (React/Vue), or \`fontFaceCss({ family, files })\` for @font-face rules in your own stylesheet. With \`normalize\`, also pass the family's \`sizeAdjust\` from fonts.json.
+- Self-hosting: download \`${O}/fonts/<id>/<id>.zip\`, or individual \`.woff2\` / \`.ttf\` files listed in fonts.json. The packages can then load your copies instead of fonts.mv' (nothing is fetched from fonts.mv): \`loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })\`, \`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } })\` (React/Vue), or \`fontFaceCss({ family, files })\` for @font-face rules in your own stylesheet. With \`normalize\`, also pass the family's \`sizeAdjust\` from fonts.json.
 
 ## 2. Let users type Thaana (phonetic keyboard)
 
@@ -149,7 +149,7 @@ ${PANGRAMS.map((p) => `- ${p}`).join('\n')}
 - Pre-Unicode "A_" fonts that had Thaana on Latin keys were remapped to real Unicode Thaana. Where a modern Unicode version of the same design exists, only that is listed.
 - For the other fonts, metrics were repaired (no clipped fili), names and weights normalised, and Thaana/Latin subsets generated. Glyph outlines are never changed.
 - Fonts under CC BY-ND, and fonts whose designer requires it (all of Hassan Hameed's), are shipped unmodified: only converted to WOFF/WOFF2, with no subsets; the CSS API fixes their line spacing with ascent/descent overrides instead. OFL fonts include OFL.txt in the download.
-- The original pre-Unicode files (Thaana on Latin keys), including those not listed here, are only in the legacy bundle, byte for byte, for opening old documents: ${O}/downloads/dvfonts-legacy.zip. Convert their text with \`convertLegacy()\`.
+- The original pre-Unicode files (Thaana on Latin keys), including those not listed here, are only in the legacy bundle, byte for byte, for opening old documents: ${O}/downloads/fonts-mv-legacy.zip. Convert their text with \`convertLegacy()\`.
 - Licenses vary per family; check \`license\` in fonts.json before redistributing.
 
 ## Families
