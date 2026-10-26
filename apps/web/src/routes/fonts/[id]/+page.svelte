@@ -180,11 +180,13 @@
 			<h2 class="mb-4 text-xl font-semibold tracking-tight">Glyphs</h2>
 			{#each glyphSets as set (set.title)}
 				<h3 class="mt-6 mb-2 text-sm font-medium text-muted-foreground">{set.title}</h3>
-				<div class="grid grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] gap-2">
+				<div
+					class="grid grid-cols-[repeat(auto-fill,minmax(2.25rem,1fr))] gap-1.5 sm:grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] sm:gap-2"
+				>
 					{#each set.chars as ch (ch)}
-						<Card.Root size="sm" class="aspect-square justify-center py-0">
+						<Card.Root size="sm" class="aspect-square justify-center rounded-md py-0 sm:rounded-xl">
 							<Card.Content
-								class="flex items-center justify-center px-0 text-4xl"
+								class="flex items-center justify-center px-0 text-2xl sm:text-4xl"
 								dir="rtl"
 								style="font-family: '{previewFamily(family)}', 'dv-ui', sans-serif; font-weight: {main.weight}"
 							>
