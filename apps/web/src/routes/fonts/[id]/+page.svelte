@@ -5,18 +5,17 @@
 	import { tester } from '#lib/tester.svelte.js';
 	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
 	import { cssApiUrl, origin, SITE_ORIGIN } from '#lib/site.js';
-	import TesterBar from '#lib/components/tester-bar.svelte';
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
 	import * as Card from '#lib/components/ui/card/index.js';
-	import * as Item from '#lib/components/ui/item/index.js';
 	import * as Table from '#lib/components/ui/table/index.js';
 	import * as Alert from '#lib/components/ui/alert/index.js';
 	import WrenchIcon from '@lucide/svelte/icons/wrench';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import * as Select from '#lib/components/ui/select/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
@@ -28,6 +27,12 @@
 	const family = $derived(data.family);
 	const symbols = $derived(family.category === 'symbols');
 	const main = $derived(defaultStyle(family));
+	// The weight shown in the preview card.
+	let weightChoice = $state('');
+	$effect(() => {
+		weightChoice = String(defaultStyle(family).weight);
+	});
+	const shown = $derived(family.styles.find((s) => String(s.weight) === weightChoice) ?? main);
 	const by = $derived(credit(family));
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
 
@@ -132,8 +137,41 @@
 	</header>
 
 	<Card.Root class="mt-8">
-		<Card.Content class="sm:px-10 sm:py-4">
-			<FontPreview {family} weight={main.weight} size={Math.max(tester.size, 48)} />
+		<Card.Header class="flex flex-wrap items-center justify-between gap-x-1 gap-y-2 px-4 sm:px-10">
+			{#if family.styles.length > 1}
+				<Select.Root type="single" bind:value={weightChoice}>
+					<Select.Trigger class="w-36 shrink-0 sm:w-44" aria-label="Preview weight"
+						>{WEIGHT_NAMES[shown.weight]} {shown.weight}</Select.Trigger
+					>
+					<Select.Content>
+						{#each family.styles as style (style.weight)}
+							{@const label = `${WEIGHT_NAMES[style.weight]} ${style.weight}`}
+							<Select.Item value={String(style.weight)} {label}>{label}</Select.Item>
+						{/each}
+					</Select.Content>
+				</Select.Root>
+			{:else}
+				<Card.Description>{WEIGHT_NAMES[shown.weight]} {shown.weight}</Card.Description>
+			{/if}
+			<div class="flex shrink-0">
+				{#each Object.keys(shown.sizes).filter((k) => k !== 'woff') as kind (kind)}
+					<Button
+						href="{fontUrl(family, shown.weight, kind)}?download={encodeURIComponent(
+							`${family.name.replace(/\s+/g, '')}-${WEIGHT_NAMES[shown.weight]}.${kind}`
+						)}"
+						variant="ghost"
+						size="sm"
+						class="px-1.5 sm:px-3"
+						aria-label="Download {family.name} {WEIGHT_NAMES[shown.weight]} as {kind.toUpperCase()}"
+					>
+						<DownloadIcon />
+						{kind.toUpperCase()}
+					</Button>
+				{/each}
+			</div>
+		</Card.Header>
+		<Card.Content class="px-4 sm:px-10 sm:pb-4">
+			<FontPreview {family} weight={shown.weight} size={Math.max(tester.size, 48)} />
 		</Card.Content>
 	</Card.Root>
 
@@ -143,39 +181,6 @@
 			Edit the text and pick a block to change its style, size, weight, alignment and colours.
 		</p>
 		<RichTester {family} />
-	</section>
-
-	<section class="mt-10">
-		<h2 class="mb-4 text-xl font-semibold tracking-tight">Styles</h2>
-		<TesterBar />
-		<Item.Group class="mt-2 gap-0">
-			{#each family.styles as style, i (style.weight)}
-				{#if i > 0}<Item.Separator />{/if}
-				<Item.Root class="flex-col flex-nowrap items-stretch px-0 py-5">
-					<Item.Header class="flex-wrap">
-						<Item.Description>{WEIGHT_NAMES[style.weight]} {style.weight}</Item.Description>
-						<Item.Actions>
-							{#each Object.keys(style.sizes).filter((k) => k !== 'woff') as kind (kind)}
-								<Button
-									href="{fontUrl(family, style.weight, kind)}?download={encodeURIComponent(
-										`${family.name.replace(/\s+/g, '')}-${WEIGHT_NAMES[style.weight]}.${kind}`
-									)}"
-									variant="ghost"
-									size="xs"
-									aria-label="Download {family.name} {WEIGHT_NAMES[style.weight]} as {kind.toUpperCase()}"
-								>
-									<DownloadIcon />
-									{kind.toUpperCase()}
-								</Button>
-							{/each}
-						</Item.Actions>
-					</Item.Header>
-					<Item.Content class="min-w-0">
-						<FontPreview {family} weight={style.weight} />
-					</Item.Content>
-				</Item.Root>
-			{/each}
-		</Item.Group>
 	</section>
 
 	{#if !symbols}

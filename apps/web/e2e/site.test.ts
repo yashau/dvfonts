@@ -49,7 +49,10 @@ test('search filters the list', async ({ page }) => {
 test('family page has styles, glyphs and a working embed URL', async ({ page, request }) => {
 	await page.goto('/fonts/bolhu');
 	await expect(page.getByRole('heading', { name: 'Bolhu', level: 1 })).toBeVisible();
-	await expect(page.getByText('Thin 100')).toBeVisible();
+	// The preview card switches weights and offers that weight's files.
+	await page.getByRole('combobox', { name: 'Preview weight' }).click();
+	await page.getByRole('option', { name: 'Thin 100' }).click();
+	await expect(page.getByRole('link', { name: 'Download Bolhu Thin as TTF' })).toBeVisible();
 	const css = await request.get('/css2?family=Bolhu:wght@400;700&display=swap');
 	expect(css.ok()).toBe(true);
 	const body = await css.text();
