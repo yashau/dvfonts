@@ -106,7 +106,7 @@ fonts = { 400 = "mv-vaadhoo-reg-v1.0-hinted.ttf", 700 = "mv-vaadhoo-bd-v1.0-hint
 name = "MV Typewriter"
 unmodified = true
 category = "official"
-fonts = { 400 = "mvtyper.ttf", 700 = "mvtypebold.ttf" }
+fonts = { 400 = "mvtyper.ttf", 600 = "mvtypewriter-semibold.ttf", 700 = "mvtypebold.ttf" }
 
 [families.thaana-unicode-akeh]
 name = "Thaana Unicode Akeh"
@@ -216,22 +216,22 @@ fonts = { 400 = "noto-sans-thaana.ttf" }
 [families.bolhu]
 name = "Bolhu"
 category = "modern"
-fonts = { 100 = "bolhu-thin.ttf", 200 = "bolhu-extralight.ttf", 300 = "bolhu-light.ttf", 400 = "bolhu-regular.ttf", 500 = "bolhu-medium.ttf", 600 = "bolhu-semibold.ttf", 700 = "bolhu-bold.ttf", 800 = "bolhu-extrabold.ttf" }
+fonts = { 100 = "bolhu-thin.ttf", 200 = "bolhu-extralight.ttf", 300 = "bolhu-light.ttf", 400 = "bolhu-regular.ttf", 500 = "bolhu-medium.ttf", 600 = "bolhu-semibold.ttf", 700 = "bolhu-bold.ttf", 800 = "bolhu-extrabold.ttf", 900 = "bolhu-black.ttf" }
 
 [families.kolhu]
 name = "Kolhu"
 category = "modern"
-fonts = { 100 = "kolhu-thin.ttf", 200 = "kolhu-extralight.ttf", 300 = "kolhu-light.ttf", 400 = "kolhu-regular.ttf", 500 = "kolhu-medium.ttf", 600 = "kolhu-semibold.ttf", 700 = "kolhu-bold.ttf", 800 = "kolhu-extrabold.ttf" }
+fonts = { 100 = "kolhu-thin.ttf", 200 = "kolhu-extralight.ttf", 300 = "kolhu-light.ttf", 400 = "kolhu-regular.ttf", 500 = "kolhu-medium.ttf", 600 = "kolhu-semibold.ttf", 700 = "kolhu-bold.ttf", 800 = "kolhu-extrabold.ttf", 900 = "kolhu-black.ttf" }
 
 [families.theras]
 name = "Theras"
 category = "modern"
-fonts = { 100 = "theras-thin.ttf", 200 = "theras-extralight.ttf", 300 = "theras-light.ttf", 400 = "theras-regular.ttf", 500 = "theras-medium.ttf", 600 = "theras-semibold.ttf", 700 = "theras-bold.ttf", 800 = "theras-extrabold.ttf" }
+fonts = { 100 = "theras-thin.ttf", 200 = "theras-extralight.ttf", 300 = "theras-light.ttf", 400 = "theras-regular.ttf", 500 = "theras-medium.ttf", 600 = "theras-semibold.ttf", 700 = "theras-bold.ttf", 800 = "theras-extrabold.ttf", 900 = "theras-black.ttf" }
 
 [families.zaana-thedhu]
 name = "Zaana Thedhu"
 category = "modern"
-fonts = { 100 = "zaanathedhu-thin.ttf", 200 = "zaanathedhu-extralight.ttf", 300 = "zaanathedhu-light.ttf", 400 = "zaanathedhu-regular.ttf", 500 = "zaanathedhu-medium.ttf", 600 = "zaanathedhu-semibold.ttf", 700 = "zaanathedhu-bold.ttf", 800 = "zaanathedhu-extrabold.ttf" }
+fonts = { 100 = "zaanathedhu-thin.ttf", 200 = "zaanathedhu-extralight.ttf", 300 = "zaanathedhu-light.ttf", 400 = "zaanathedhu-regular.ttf", 500 = "zaanathedhu-medium.ttf", 600 = "zaanathedhu-semibold.ttf", 700 = "zaanathedhu-bold.ttf", 800 = "zaanathedhu-extrabold.ttf", 900 = "zaanathedhu-black.ttf" }
 
 [families.fanara]
 name = "Fanara"
@@ -241,7 +241,7 @@ fonts = { 100 = "fanara-thin.ttf", 400 = "fanara-regular.ttf", 700 = "fanara-bol
 [families.fanara-golhi]
 name = "Fanara Golhi"
 category = "modern"
-fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 = "fanaragolhi-light.ttf", 400 = "fanaragolhi-regular.ttf", 500 = "fanaragolhi-medium.ttf", 600 = "fanaragolhi-semibold.ttf", 700 = "fanaragolhi-bold.ttf", 800 = "fanaragolhi-extrabold.ttf" }
+fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 = "fanaragolhi-light.ttf", 400 = "fanaragolhi-regular.ttf", 500 = "fanaragolhi-medium.ttf", 600 = "fanaragolhi-semibold.ttf", 700 = "fanaragolhi-bold.ttf", 800 = "fanaragolhi-extrabold.ttf", 900 = "fanaragolhi-black.ttf" }
 
 [families.mv-koagannu]
 name = "MV Koagannu"
@@ -299,6 +299,18 @@ name = "MV Thuththu Neo"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
+
+[families.mv-maliku]
+name = "MV Maliku"
+unmodified = true
+category = "modern"
+fonts = { 400 = "mv-maliku.ttf" }
+
+[families.mv-thuththu]
+name = "MV Thuththu"
+unmodified = true
+category = "modern"
+fonts = { 700 = "mvthuththu-bld.ttf" }
 
 # ─── Artistic (decorative, display) ──────────────────────────────────────────
 
@@ -412,7 +424,7 @@ fonts = { 400 = "fiyuzu-regular.ttf" }
 [families.mv-lhaiy]
 name = "MV Lhaiy"
 category = "artistic"
-fonts = { 700 = "mv-lhaiy-bold.otf" }
+fonts = { 400 = "mv-lhaiy.otf", 700 = "mv-lhaiy-bold.otf" }
 
 [families.masnooee-mono]
 name = "Masnooee Mono"
@@ -599,6 +611,16 @@ name = "Faagathi Dheli"
 category = "handwriting"
 fonts = { 300 = "faagathidheli-light.ttf", 400 = "faagathidheli-regular.ttf" }
 
+[families.mv-izyan-extra-light]
+name = "MV Izyan Extra Light"
+category = "handwriting"
+fonts = { 200 = "mv-izyan-extra-light.ttf" }
+
+[families.mv-izyan-edge]
+name = "MV Izyan Edge"
+category = "handwriting"
+fonts = { 500 = "mv-izyan-edge.ttf" }
+
 # ─── Novelty (experimental, constructed) ─────────────────────────────────────
 
 [families.mv-thiki-akuru]
@@ -718,6 +740,56 @@ fonts = { 400 = "mv-vashalo.otf" }
 name = "MV Thavaa"
 category = "novelty"
 fonts = { 400 = "thavaa.otf" }
+
+[families.mv-hutti]
+name = "MV Hutti"
+category = "novelty"
+fonts = { 400 = "mv-hutti.otf" }
+
+[families.mv-salhi]
+name = "MV Salhi"
+category = "novelty"
+fonts = { 400 = "mv-salhi.otf" }
+
+[families.mv-binaa]
+name = "MV Binaa"
+category = "novelty"
+fonts = { 400 = "mv-binaa.otf" }
+
+[families.mv-finikaa]
+name = "MV Finikaa"
+category = "novelty"
+fonts = { 400 = "mv-finikaa.otf" }
+
+[families.mv-thinikaa]
+name = "MV Thinikaa"
+category = "novelty"
+fonts = { 400 = "mv-thinikaa.otf" }
+
+[families.mv-reyo]
+name = "MV Reyo"
+category = "novelty"
+fonts = { 400 = "mv-reyo.otf" }
+
+[families.mv-reyo-vah]
+name = "MV Reyo Vah"
+category = "novelty"
+fonts = { 400 = "mv-reyo-vah.otf" }
+
+[families.mv-dhidhavee]
+name = "MV Dhidhavee"
+category = "novelty"
+fonts = { 400 = "mv-dhidhavee.otf" }
+
+[families.mv-runa-us]
+name = "MV Runa Us"
+category = "novelty"
+fonts = { 400 = "mv-runa-us.otf" }
+
+[families.mv-sishisozo]
+name = "MV Sishisozo"
+category = "novelty"
+fonts = { 400 = "mv-sishisozo.otf" }
 
 # ─── Symbols ─────────────────────────────────────────────────────────────────
 

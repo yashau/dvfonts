@@ -451,7 +451,11 @@ def classify_license(text: str | None, override: str | None) -> str:
     if "open font license" in t or "ofl" in t.split():
         return "OFL-1.1"
     if "creative commons" in t:
-        return "CC BY-ND" if "no deriv" in t else "CC BY"
+        if "no deriv" in t:
+            return "CC BY-ND"
+        if "share alike" in t or "sharealike" in t:
+            return "CC BY-SA"
+        return "CC BY"
     return "Author's terms" if t else "Unspecified"
 
 

@@ -7,8 +7,8 @@
   "file": "dvfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 374803,
-  "sha256": "e2bdd24ee8d67ed43deb2aef9bccc242b5c5aefc78fe789ee59a746cef9935ce"
+  "size": 376764,
+  "sha256": "30f45b8d9319d72df07277db335e5bccc5d838d604cfd27f83422f89201da4c6"
  },
  {
   "id": "full",
@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "dvfonts-full.zip",
-  "families": 130,
-  "styles": 190,
-  "size": 6010869,
-  "sha256": "d3fe2a0aed17c6a2ed49dfcc54ba9353d687d1296a66dd25c067e1de35730ab0"
+  "families": 144,
+  "styles": 211,
+  "size": 6485537,
+  "sha256": "5a81581999063eb15e1d88c7ea32cdeef47524218f62bbe71f274da6232699ea"
  },
  {
   "id": "unicode-originals",
@@ -27,21 +27,21 @@
   "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "dvfonts-unicode-originals.zip",
-  "families": 112,
-  "styles": 171,
-  "size": 5649157,
-  "sha256": "437406b1f9d4f54f191881a88aaaff56d53c45e69a1f12e4a4502ab4f9e92346"
+  "families": 126,
+  "styles": 192,
+  "size": 6124739,
+  "sha256": "67b79fd8a7c7ce640bbd5072d740572ed0dd8c65c029d08d494b9e983cca0a96"
  },
  {
   "id": "open-licensed",
   "name": "Openly licensed",
-  "description": "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute.",
+  "description": "Only fonts under an explicit open license (OFL, Creative Commons BY or BY-SA), safe to redistribute.",
   "format": "ttf",
   "file": "dvfonts-open-licensed.zip",
-  "families": 29,
-  "styles": 72,
-  "size": 2798509,
-  "sha256": "7e00c00fc141ee1cc83cd8a9c6fa20e1d277605eb4a00c17e514ed9291122e5a"
+  "families": 37,
+  "styles": 85,
+  "size": 3099331,
+  "sha256": "4f1b2d7fc3ef7e75b16f40d010ca0791dbeaccd5a87d9ab7b3f35751a8cb86b4"
  },
  {
   "id": "modern",
@@ -49,10 +49,10 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "dvfonts-modern.zip",
-  "families": 16,
-  "styles": 57,
-  "size": 2922649,
-  "sha256": "d9804adfc568596362e2477cf214347c47eed7f596318a266a53fbc61ad5d9ea"
+  "families": 18,
+  "styles": 64,
+  "size": 3242836,
+  "sha256": "4c05291394de2f774cf3a0ded77427b17e9f8496806ef41ff7346b71384f6faf"
  },
  {
   "id": "official",
@@ -61,9 +61,9 @@
   "format": "ttf",
   "file": "dvfonts-official.zip",
   "families": 32,
-  "styles": 44,
-  "size": 1193750,
-  "sha256": "be3998de4173fa59010e850654e4b93883af2bc6556c1e0c142923d24629faf3"
+  "styles": 45,
+  "size": 1238385,
+  "sha256": "ee49b401506101d48350bee2720e727111f69952367ddd4ce7f066620affb348"
  },
  {
   "id": "artistic",
@@ -72,9 +72,9 @@
   "format": "ttf",
   "file": "dvfonts-artistic.zip",
   "families": 27,
-  "styles": 30,
-  "size": 664598,
-  "sha256": "f0bb3d734767ea2d1e87446882a5d3c426372da99ea256ea85afcf8168dd6ba3"
+  "styles": 31,
+  "size": 670461,
+  "sha256": "5980bee39d4f343aeb406755d53f88a478285ba54a3b8def42e567d94ad4cdf5"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "dvfonts-handwriting.zip",
-  "families": 31,
-  "styles": 34,
-  "size": 1012044,
-  "sha256": "1e276e8dede8cd8a8ad2261f5520e127b8dcc41b1d1acc569a4531f748320d18"
+  "families": 33,
+  "styles": 36,
+  "size": 1070754,
+  "sha256": "7f1850329eb59cdbb0f3b8a124def45594b3afa560cc1548bce98ff660783426"
  },
  {
   "id": "novelty",
@@ -93,10 +93,10 @@
   "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
   "format": "ttf",
   "file": "dvfonts-novelty.zip",
-  "families": 23,
-  "styles": 24,
-  "size": 157767,
-  "sha256": "2f8f7b2c0ab0f806f62aa5df2804f12b24f386b7d81a94e80958c35b548e448c"
+  "families": 33,
+  "styles": 34,
+  "size": 203262,
+  "sha256": "97717c5048521097656bc0f816aceff8a609729bc70968dfe24979759977812f"
  },
  {
   "id": "webfonts-essentials",
@@ -106,8 +106,8 @@
   "file": "dvfonts-webfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 305970,
-  "sha256": "7128ce82cdc0f4e8e718be357f4fa514ba9140011f6ad6ecb4ee60a844ffcd55"
+  "size": 303479,
+  "sha256": "7dd83f9c8e018a2e74d19d4c83e5c0618af91c24233b128d54b42c5222ac2e59"
  },
  {
   "id": "webfonts-full",
@@ -115,10 +115,10 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-full.zip",
-  "families": 130,
-  "styles": 190,
-  "size": 4679177,
-  "sha256": "db3a150739a0253ad76ef43968358e27e7b5ee670a275cd196bdea68cdbd01ed"
+  "families": 144,
+  "styles": 211,
+  "size": 5041348,
+  "sha256": "cadb585587e059cf40f71ae2f17bc357f3c938ee6b6cad241ec41f915862e9e3"
  },
  {
   "id": "legacy",
