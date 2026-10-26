@@ -77,8 +77,8 @@ jobs:
       - name: Committed catalog data matches the pipeline
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          if ! git diff --exit-code --stat -- apps/web/src/lib/data; then
-            echo "::error::apps/web/src/lib/data is stale. Run 'mise run fonts && mise run bundles' and commit the result."
+          if ! git diff --exit-code --stat -- apps/web/src/lib/data README.md; then
+            echo "::error::apps/web/src/lib/data or the README's font count is stale. Run 'mise run fonts && mise run bundles' and commit the result."
             exit 1
           fi
 

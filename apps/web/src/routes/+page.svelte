@@ -45,23 +45,24 @@
 		if (sort === 'styles') return list.toSorted((a, b) => b.styles.length - a.styles.length || byName(a, b));
 		return list.toSorted((a, b) => featuredRank(a.id) - featuredRank(b.id) || byName(a, b));
 	});
-
-	const totalStyles = $derived(data.families.reduce((n, f) => n + f.styles.length, 0));
 </script>
 
 <svelte:head>
 	<title>dvfonts — open Dhivehi fonts</title>
 	<meta
 		name="description"
-		content="Free Dhivehi (Thaana) fonts, cleaned up and ready for the web: Unicode, WOFF2, fixed metrics and a Google Fonts–style embed API."
+		content="Free Dhivehi (Thaana) fonts for the web: a Google Fonts–style embed API, downloads, and agent-ready packages for React, Svelte, Vue and plain JavaScript."
 	/>
 </svelte:head>
 
 <section class="mx-auto max-w-7xl px-4 pt-10 pb-6 sm:px-6">
 	<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Open Dhivehi fonts</h1>
 	<p class="mt-2 text-pretty text-muted-foreground">
-		{data.families.length} families and {totalStyles} styles that have circulated freely in the Maldives for years — now Unicode,
-		web-ready and easy to embed.
+		{data.total.families} families and {data.total.styles} styles that have circulated freely in the Maldives for years, ready
+		to embed on the web. Agent-ready, with
+		<a class="underline underline-offset-4" href="/docs#packages">packages</a> for React, Svelte, Vue and plain
+		JavaScript that handle Thaana typing and display, and an
+		<a class="underline underline-offset-4" href="/llms.txt">llms.txt</a> for AI agents.
 	</p>
 </section>
 

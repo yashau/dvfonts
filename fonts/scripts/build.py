@@ -606,7 +606,14 @@ def main(only: set[str] | None = None) -> None:
     out = {"subsets": {k: unicode_range_css(v) for k, v in SUBSETS.items()}, "families": families}
     CATALOG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
     (CATALOG_OUT.parent / "subsets.json").write_text(json.dumps(out["subsets"], indent=1))
-    print(f"{len(families)} families, {sum(len(f['styles']) for f in families)} fonts -> {FONTS_OUT}")
+    n_styles = sum(len(f["styles"]) for f in families)
+    # The README's headline count is generated, not typed.
+    repo_readme = ROOT.parent / "README.md"
+    text = repo_readme.read_text()
+    counted = re.sub(r"\*\*\d+ families / \d+ styles\*\*", f"**{len(families)} families / {n_styles} styles**", text)
+    if counted != text:
+        repo_readme.write_text(counted)
+    print(f"{len(families)} families, {n_styles} fonts -> {FONTS_OUT}")
 
 
 def display_meta(fam, meta) -> dict:

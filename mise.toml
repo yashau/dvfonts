@@ -16,7 +16,7 @@ run = "uv run python scripts/build.py"
 [tasks."fonts:check"]
 description = "Fail if the committed catalog data differs from what the pipeline produces"
 depends = ["bundles"]
-run = "git diff --exit-code --stat -- apps/web/src/lib/data"
+run = "git diff --exit-code --stat -- apps/web/src/lib/data README.md"
 
 [tasks.dev]
 description = "Run the site locally (run `mise run r2:local` once first so fonts load)"
