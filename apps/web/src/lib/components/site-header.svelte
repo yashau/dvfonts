@@ -25,10 +25,10 @@
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<!-- The logo's box ends at the Thaana baseline (its lower fili hang below it). 28px tall
-		     from 6px down puts that baseline at 34px, just under the nav text's (33px), and the
-		     lower fili end inside the bar. -->
-		<a href="/" class="mt-[6px] shrink-0 self-start" aria-label="fonts.mv home">
+		<!-- The logo's box ends at the Thaana baseline (its lower fili hang below it). 24px tall
+		     from 16px down puts that baseline at 40px, a little under the nav text's (33px), and
+		     the lower fili end just inside the bar. -->
+		<a href="/" class="mt-[16px] shrink-0 self-start" aria-label="fonts.mv home">
 			<Logo class="block" />
 		</a>
 		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>

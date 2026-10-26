@@ -100,7 +100,7 @@ def banner(accent: str) -> str:
 # MV Golhifoshi (the favicon) is a pixel font: every line is one cell of this grid (882/15 font units) thick.
 GRID = 882 / 15
 # The header wordmark: the top of its ink to the baseline, in px.
-LOGO_HEIGHT = 28
+LOGO_HEIGHT = 24
 
 
 def filled_shapes(glyphs, gs, x0: float, h: int) -> str:
