@@ -9,13 +9,14 @@
 
 <p align="center">
   <b>Open Dhivehi fonts for the web, and one install that makes Thaana work everywhere.</b><br />
-  135 font families, cleaned up, Unicode, web-ready, free to embed, plus a keyboard, bidi toolkit and agent guide.
+  130 font families, free to embed or download. Agent-ready, with packages for React, Svelte, Vue and plain JavaScript:<br />
+  a Thaana keyboard, a bidi toolkit and an llms.txt for AI agents.
 </p>
 
 <p align="center">
   <a href="https://github.com/yashau/dvfonts/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
   <a href="https://github.com/yashau/dvfonts/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
-  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-135_families_·_195_styles-0e7c66?style=for-the-badge" /></a>
+  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-130_families_·_190_styles-0e7c66?style=for-the-badge" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/code-MIT-blue?style=for-the-badge" /></a>
 </p>
 
@@ -137,7 +138,7 @@ useDhivehiFont('Faruma');
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 🔁&nbsp;**Unicode&nbsp;remapping**  | 18 pre-Unicode fonts had Thaana on Latin keys. Their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs, then remapped. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. Five A_ fonts whose designer allows no changes stay as published, as downloads for opening old documents. |
 | 🧹&nbsp;**De&#8209;duplication**    | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases.                                                                                                                                                                                                                                              |
-| 📏&nbsp;**Metrics&nbsp;repair**     | 28 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (14 of them).                                                               |
+| 📏&nbsp;**Metrics&nbsp;repair**     | 28 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (9 of them).                                                                |
 | 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly. Faruma's malformed GDEF is repaired too.                                                                                                                                                                                                                                                       |
 | 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                                                                                                                                    |
 | 📐&nbsp;**Same&nbsp;size**          | Fonts differ a lot in size at the same `font-size`. Each family is measured against Faruma (median size of its Thaana letters) and gets a scale factor, applied only with CSS `size-adjust` when asked for (`&normalize=1`, `{ normalize: true }`). The font files are untouched.                                                                                                 |

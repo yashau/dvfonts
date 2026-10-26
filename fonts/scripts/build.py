@@ -606,11 +606,24 @@ def main(only: set[str] | None = None) -> None:
     out = {"subsets": {k: unicode_range_css(v) for k, v in SUBSETS.items()}, "families": families}
     CATALOG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
     (CATALOG_OUT.parent / "subsets.json").write_text(json.dumps(out["subsets"], indent=1))
-    n_styles = sum(len(f["styles"]) for f in families)
-    # The README's headline count is generated, not typed.
+    n_fams, n_styles = len(families), sum(len(f["styles"]) for f in families)
+    n_remapped = sum(1 for f in families if any(s["legacyLayout"] for s in f["styles"]))
+    n_repaired = sum(1 for f in families if any(s["metrics"]["repaired"] for s in f["styles"]))
+    n_css_fixed = sum(1 for f in families if any(s["cssOverrides"] for s in f["styles"]))
+    # The README's counts (intro, badge, feature list) are generated, not typed.
     repo_readme = ROOT.parent / "README.md"
-    text = repo_readme.read_text()
-    counted = re.sub(r"\*\*\d+ families / \d+ styles\*\*", f"**{len(families)} families / {n_styles} styles**", text)
+    text = counted = repo_readme.read_text()
+    for pattern, value in (
+        (r"\*\*\d+ families / \d+ styles\*\*", f"**{n_fams} families / {n_styles} styles**"),
+        (r"fonts-\d+_families_·_\d+_styles", f"fonts-{n_fams}_families_·_{n_styles}_styles"),
+        (r"\d+ font families, free to embed", f"{n_fams} font families, free to embed"),
+        (r"\d+ pre-Unicode fonts had Thaana", f"{n_remapped} pre-Unicode fonts had Thaana"),
+        (r"\d+ fonts had broken vertical metrics", f"{n_repaired} fonts had broken vertical metrics"),
+        (r"overrides instead \(\d+ of them\)", f"overrides instead ({n_css_fixed} of them)"),
+    ):
+        counted, n = re.subn(pattern, value, counted)
+        if n != 1:
+            raise SystemExit(f"README.md: expected one match for {pattern!r}, found {n}")
     if counted != text:
         repo_readme.write_text(counted)
     print(f"{len(families)} families, {n_styles} fonts -> {FONTS_OUT}")
