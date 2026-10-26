@@ -14,6 +14,7 @@ path, so it renders identically everywhere without loading a font. Writes:
 
 from pathlib import Path
 
+import pathops
 import resvg_py
 import uharfbuzz as hb
 from fontTools.pens.boundsPen import BoundsPen
@@ -98,6 +99,31 @@ def banner(accent: str) -> str:
 GRID = 882 / 15
 
 
+def filled_shapes(glyphs, gs, x0: float, h: int) -> str:
+    """The outer outline of every glyph shape with its holes closed, in the header logo's
+    grid cells: the solid shapes that the font's lines frame."""
+    solid = pathops.Path()
+    for name, gx, gy in glyphs:
+        glyph = pathops.Path()
+        t = (1 / GRID, 0, 0, -1 / GRID, (gx - x0) / GRID, h - gy / GRID)
+        gs[name].draw(TransformPen(RoundingPen(glyph.getPen()), t))
+        glyph.simplify()
+        contours = list(glyph.contours)
+        boxes = [c.bounds for c in contours]
+
+        def inside(a, b):
+            return a != b and b[0] <= a[0] and b[1] <= a[1] and a[2] <= b[2] and a[3] <= b[3]
+
+        for c, box in zip(contours, boxes, strict=True):
+            if not any(inside(box, other) for other in boxes):
+                outer = pathops.Path()
+                c.draw(outer.getPen())
+                solid = pathops.op(solid, outer, pathops.PathOp.UNION)
+    pen = SVGPathPen(None)
+    solid.draw(pen)
+    return pen.getCommands()
+
+
 def header_logo() -> str:
     """Wordmark for the site header; the colour comes from CSS. Drawn in grid cells, every
     corner snapped to a whole cell, so at one cell per CSS pixel the lines are pixel-sharp
@@ -131,6 +157,8 @@ def header_logo() -> str:
 	role="img"
 	aria-label="{LATIN} — {THAANA}"
 >
+	<!-- Letters and fili filled with the dark theme's brown under the tan lines (same on both themes). -->
+	<path class="fill-brand-ground" d="{filled_shapes(glyphs, gs, x0, h)}" />
 	<path class="fill-brand" d="{pen.getCommands()}" />
 </svg>
 """
@@ -172,7 +200,7 @@ def og_card() -> str:
 def main() -> None:
     web = ROOT.parent / "apps" / "web" / "src" / "lib"
     (web / "components" / "logo.svelte").write_text(header_logo())
-    (web / "assets" / "favicon-dark.svg").unlink(missing_ok=True)
+    (web / "assets" / "favicon-dark.svg").unlink(missing_ok=True)  # earlier theme-specific favicons
     (web / "assets" / "favicon-light.svg").unlink(missing_ok=True)
     (web / "assets" / "favicon.svg").write_text(favicon("#130d09", "#cbab88"))
     (web.parent.parent / "static" / "apple-touch-icon.png").write_bytes(
