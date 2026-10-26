@@ -25,11 +25,12 @@
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<!-- The logo's box ends at the Thaana baseline (its lower marks hang below it). 24px tall
-		     from 14px down puts that baseline at 38px, a little under the nav text's (33px): most
-		     letters only carry fili above, so sitting it on the exact baseline reads as too high. -->
-		<a href="/" class="mt-[14px] shrink-0 self-start" aria-label="fonts.mv home">
-			<Logo class="h-6 w-auto" />
+		<!-- The logo's box ends at the Thaana baseline (its lower fili hang below it). At its
+		     natural 27px (one font grid cell per pixel, so it stays sharp) from 11px down, that
+		     baseline is at 38px, a little under the nav text's (33px): most letters only carry
+		     fili above, so sitting it exactly on the baseline reads as too high. -->
+		<a href="/" class="mt-[11px] shrink-0 self-start" aria-label="fonts.mv home">
+			<Logo class="block" />
 		</a>
 		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
 			<NavigationMenu.List>
@@ -79,7 +80,7 @@
 				</Tooltip.Root>
 				<Sheet.Content side="right" class="w-64">
 					<Sheet.Header>
-						<Sheet.Title><Logo class="h-6 w-auto" /></Sheet.Title>
+						<Sheet.Title><Logo class="block" /></Sheet.Title>
 					</Sheet.Header>
 					<nav class="flex flex-col gap-1 px-4">
 						{#each links as link (link.href)}
