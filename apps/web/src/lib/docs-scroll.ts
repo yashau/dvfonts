@@ -48,3 +48,33 @@ export function scrollToSection(pathname: string, id: string): boolean {
 	scrollTo({ top: stop.y, behavior: 'instant' });
 	return true;
 }
+
+/** Scrolling each crammed section at the end of a page gets at least (one mouse-wheel notch is ~100px). */
+const MIN_STRETCH = 120;
+
+/**
+ * Extra space to leave under a docs page so that its last sections, the ones whose headings
+ * can't reach the top, each get at least MIN_STRETCH of scrolling. Without it a big window
+ * leaves them a few dozen pixels each, and one wheel notch skips a section. `current` is the
+ * space already added, which is measured out.
+ */
+export function bottomRoom(pathname: string, current: number): number {
+	const doc = DOCS.find((d) => d.href === pathname);
+	if (!doc) return 0;
+	const max = Math.max(0, document.documentElement.scrollHeight - innerHeight - current);
+	const ys = doc.sections.flatMap((s) => {
+		const el = document.getElementById(s.id);
+		return el ? [Math.max(0, el.getBoundingClientRect().top + scrollY - HEADING_TOP)] : [];
+	});
+	ys[0] = 0;
+	const k = ys.findIndex((y) => y > max);
+	if (k <= 0) return 0;
+	// The room itself can make one more section reachable, leaving those after it crammed again,
+	// so try each section as the last reachable one and take the first that works out.
+	const n = ys.length;
+	for (let j = k - 1; j < n - 1; j++) {
+		const end = Math.max(max, ys[j] + (n - 1 - j) * MIN_STRETCH);
+		if (ys[j + 1] > end) return Math.ceil(end - max);
+	}
+	return Math.ceil(ys[n - 1] - max);
+}
