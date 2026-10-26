@@ -94,7 +94,7 @@ def banner(accent: str) -> str:
 
 
 # The header wordmark: the top of its ink to the baseline, in px.
-LOGO_HEIGHT = 24
+LOGO_HEIGHT = 22
 
 
 def header_logo() -> str:
