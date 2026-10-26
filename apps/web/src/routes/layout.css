@@ -53,8 +53,8 @@
 	--sidebar-accent-foreground: oklch(0.26 0.02 55);
 	--sidebar-border: oklch(0.87 0.036 75);
 	--sidebar-ring: oklch(0.65 0.05 70);
-	/* The logo: light tan on the dark theme's brown, on both themes (in dark mode the brown
-	   matches the page, so only the tan shows). */
+	/* The logo looks the same on both themes: light tan lines, its letters and fili filled
+	   with the dark theme's brown (in dark mode that matches the page). */
 	--brand: oklch(0.76 0.06 68);
 	--brand-ground: oklch(0.165 0.014 55);
 }
