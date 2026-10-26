@@ -56,11 +56,8 @@
 			keep their own licenses. Issues and pull requests are welcome.
 		</p>
 		<p>
-			The fonts.mv wordmark is set in <a class="underline underline-offset-4" href="/fonts/mv-neru-magu">MV Neru Magu</a
-			>. The favicon is ފ in <a class="underline underline-offset-4" href="/fonts/mv-golhifoshi">MV Golhifoshi</a> by
-			Zillon (<a class="underline underline-offset-4" href="https://creativecommons.org/licenses/by-sa/3.0/"
-				>CC BY-SA 3.0</a
-			>).
+			The fonts.mv wordmark and favicon are set in
+			<a class="underline underline-offset-4" href="/fonts/mv-neru-magu">MV Neru Magu</a>.
 		</p>
 		<Alert.Root id="takedown" class="scroll-mt-20">
 			<ShieldIcon />

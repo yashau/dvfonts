@@ -205,4 +205,4 @@ The fonts belong to their makers: the Office of the President (Faruma, Reethi), 
 
 Code is [MIT](LICENSE). Each font keeps its own license and credits.
 
-The fonts.mv wordmark is set in [MV Neru Magu](https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%82%de%ac%de%83%de%aa%de%89%de%a6%de%8e%de%aa/) (dhivehifont.com). The favicon is ފ in [MV Golhifoshi](https://thatmaldivesblog.wordpress.com/2020/04/18/mv-golhifoshi/) by Zillon, licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), and the tagline is set in Bolhu (Thaana Type Foundry, OFL).
+The fonts.mv wordmark and favicon are set in [MV Neru Magu](https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%82%de%ac%de%83%de%aa%de%89%de%a6%de%8e%de%aa/) (dhivehifont.com), and the link-preview tagline in Bolhu (Thaana Type Foundry, OFL).

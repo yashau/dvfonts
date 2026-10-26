@@ -14,27 +14,23 @@ path, so it renders identically everywhere without loading a font. Writes:
 
 from pathlib import Path
 
-import pathops
 import resvg_py
 import uharfbuzz as hb
 from fontTools.pens.boundsPen import BoundsPen
-from fontTools.pens.roundingPen import RoundingPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent  # fonts/
 OUT = ROOT.parent / ".github" / "assets"
-# The wordmark's font: MV Neru Magu (dhivehifont.com). The favicon is still MV Golhifoshi by
-# Zillon (CC BY-SA 3.0), drawn on its pixel grid.
+# The wordmark's and favicon's font: MV Neru Magu (dhivehifont.com).
 THAANA_FONT = ROOT / "sources" / "mv-nerumagu.ttf"
-FAVICON_FONT = ROOT / "sources" / "mv-golhifoshi.otf"
 TAGLINE_FONT = ROOT / "sources" / "bolhu-regular.ttf"
 TAGLINE = "Open Dhivehi fonts for the web"
 # The wordmark is the domain in Thaana; LATIN is its accessible name.
 LATIN = "fonts.mv"
 THAANA = "ފޮންޓްސް.އެމްވީ"
-FAVICON = "ފ"  # faafu, the Thaana f, in MV Golhifoshi
+FAVICON = "ފ"  # faafu, the Thaana f
 
 
 def shape(path: Path, text: str, rtl: bool) -> tuple[list[tuple[str, float, float]], float, TTFont]:
@@ -97,35 +93,8 @@ def banner(accent: str) -> str:
 """
 
 
-# MV Golhifoshi (the favicon) is a pixel font: every line is one cell of this grid (882/15 font units) thick.
-GRID = 882 / 15
 # The header wordmark: the top of its ink to the baseline, in px.
 LOGO_HEIGHT = 24
-
-
-def filled_shapes(glyphs, gs, x0: float, h: int) -> str:
-    """The outer outline of every glyph shape with its holes closed, in the header logo's
-    grid cells: the solid shapes that the font's lines frame."""
-    solid = pathops.Path()
-    for name, gx, gy in glyphs:
-        glyph = pathops.Path()
-        t = (1 / GRID, 0, 0, -1 / GRID, (gx - x0) / GRID, h - gy / GRID)
-        gs[name].draw(TransformPen(RoundingPen(glyph.getPen()), t))
-        glyph.simplify()
-        contours = list(glyph.contours)
-        boxes = [c.bounds for c in contours]
-
-        def inside(a, b):
-            return a != b and b[0] <= a[0] and b[1] <= a[1] and a[2] <= b[2] and a[3] <= b[3]
-
-        for c, box in zip(contours, boxes, strict=True):
-            if not any(inside(box, other) for other in boxes):
-                outer = pathops.Path()
-                c.draw(outer.getPen())
-                solid = pathops.op(solid, outer, pathops.PathOp.UNION)
-    pen = SVGPathPen(None)
-    solid.draw(pen)
-    return pen.getCommands()
 
 
 def header_logo() -> str:
@@ -157,21 +126,15 @@ def header_logo() -> str:
 """
 
 
-def favicon(fill: str, lines: str) -> str:
-    """FAVICON in the logo's look, on MV Golhifoshi's grid at one cell per pixel (sharp at
-    16px, exactly doubled at 32px): its shape filled with `fill`, its strokes cut out in
-    `lines`. The glyph is 15 cells square; the spare pixel goes to the top and left."""
-    glyphs, _, tt = shape(FAVICON_FONT, FAVICON, rtl=True)
-    x0, _, _, y1 = ink(tt, glyphs)
-    gs = tt.getGlyphSet()
-    h = round(y1 / GRID)
-    pen = SVGPathPen(gs)
-    snap = RoundingPen(pen)
-    for name, gx, gy in glyphs:
-        gs[name].draw(TransformPen(snap, (1 / GRID, 0, 0, -1 / GRID, (gx - x0) / GRID, h - gy / GRID)))
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 16 16" width="16" height="16">
-  <path fill="{fill}" shape-rendering="crispEdges" d="{filled_shapes(glyphs, gs, x0, h)}"/>
-  <path fill="{lines}" shape-rendering="crispEdges" d="{pen.getCommands()}"/>
+def favicon(bg: str, fg: str) -> str:
+    """FAVICON in the wordmark's font, `fg` on a rounded `bg` tile, centred on its ink."""
+    glyphs, _, tt = shape(THAANA_FONT, FAVICON, rtl=True)
+    x0, y0, x1, y1 = ink(tt, glyphs)
+    scale = 46 / max(x1 - x0, y1 - y0)
+    d = path_for(tt, glyphs, scale, 32 - (x0 + x1) / 2 * scale, 32 + (y0 + y1) / 2 * scale)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="{bg}"/>
+  <path fill="{fg}" d="{d}"/>
 </svg>
 """
 
@@ -196,10 +159,10 @@ def main() -> None:
     (web / "components" / "logo.svelte").write_text(header_logo())
     (web / "assets" / "favicon-dark.svg").unlink(missing_ok=True)  # earlier theme-specific favicons
     (web / "assets" / "favicon-light.svg").unlink(missing_ok=True)
-    # The light theme's text colour with its page colour cut out, like the logo there.
-    (web / "assets" / "favicon.svg").write_text(favicon("#20160f", "#faeedf"))
+    # Light tan on the dark theme's brown, like the link-preview card.
+    (web / "assets" / "favicon.svg").write_text(favicon("#130d09", "#cbab88"))
     (web.parent.parent / "static" / "apple-touch-icon.png").write_bytes(
-        bytes(resvg_py.svg_to_bytes(svg_string=favicon("#20160f", "#faeedf"), width=180, height=180))
+        bytes(resvg_py.svg_to_bytes(svg_string=favicon("#130d09", "#cbab88"), width=180, height=180))
     )
     # Telegram, WhatsApp and most link previews need a raster image, not SVG.
     (web.parent.parent / "static" / "og.png").write_bytes(bytes(resvg_py.svg_to_bytes(svg_string=og_card())))
