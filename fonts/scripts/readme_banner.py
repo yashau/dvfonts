@@ -132,16 +132,16 @@ def favicon() -> str:
 
 
 def og_card() -> str:
-    """Link-preview card (Open Graph): the wordmark and tagline, centred, on the dark theme."""
+    """Link-preview card (Open Graph): the wordmark and tagline, centred, in the dark theme's browns."""
     w, h = 1200, 630
     d, _, bottom = thaana_mark(220, w / 2, 160)
     glyphs, adv, tt = shape(TAGLINE_FONT, TAGLINE, rtl=False)
     scale = 44 / tt["head"].unitsPerEm
     tagline_d = path_for(tt, glyphs, scale, (w - adv * scale) / 2, bottom + 100)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}">
-  <rect width="{w}" height="{h}" fill="#0b0d12"/>
-  <path fill="#3ecfa9" d="{d}"/>
-  <path fill="#9aa4b2" d="{tagline_d}"/>
+  <rect width="{w}" height="{h}" fill="#130d09"/>
+  <path fill="#cbab88" d="{d}"/>
+  <path fill="#a49589" d="{tagline_d}"/>
 </svg>
 """
 
@@ -154,7 +154,7 @@ def main() -> None:
     (web.parent.parent / "static" / "og.png").write_bytes(bytes(resvg_py.svg_to_bytes(svg_string=og_card())))
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "banner-light.svg").write_text(banner("#462c19"))
-    (OUT / "banner-dark.svg").write_text(banner("#3ecfa9"))
+    (OUT / "banner-dark.svg").write_text(banner("#cbab88"))
     print(f"wrote {OUT / 'banner-light.svg'} and banner-dark.svg")
 
 
