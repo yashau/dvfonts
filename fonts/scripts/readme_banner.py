@@ -5,7 +5,8 @@ path, so it renders identically everywhere without loading a font. Writes:
 
   .github/assets/banner-{light,dark}.svg      README title (stacked)
   apps/web/src/lib/components/logo.svelte     site header (one line, follows the theme)
-  apps/web/src/lib/assets/favicon.svg         favicon
+  apps/web/src/lib/assets/favicon-{dark,light}.svg  favicons for the light and dark themes
+  apps/web/static/apple-touch-icon.png        home-screen icon, 180x180
   apps/web/static/og.png                      link preview (Open Graph), 1200x630
 
     uv run python scripts/readme_banner.py
@@ -23,7 +24,6 @@ from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent.parent  # fonts/
 OUT = ROOT.parent / ".github" / "assets"
-FONT = ROOT / "sources" / "bolhu-bold.ttf"  # favicon
 # The Thaana half of the wordmark: MV Golhifoshi by Zillon (CC BY-SA 3.0), credited in the README.
 THAANA_FONT = ROOT / "sources" / "mv-golhifoshi.otf"
 TAGLINE_FONT = ROOT / "sources" / "bolhu-regular.ttf"
@@ -31,7 +31,7 @@ TAGLINE = "Open Dhivehi fonts for the web"
 # The wordmark is the domain in Thaana; LATIN is its accessible name.
 LATIN = "fonts.mv"
 THAANA = "ފޮންޓްސް.އެމްވީ"
-FAVICON = "ފ"  # faafu, the Thaana f
+FAVICON = "ފ"  # faafu, the Thaana f, in MV Golhifoshi
 
 
 def shape(path: Path, text: str, rtl: bool) -> tuple[list[tuple[str, float, float]], float, TTFont]:
@@ -136,18 +136,20 @@ def header_logo() -> str:
 """
 
 
-def favicon() -> str:
-    """FAVICON (Thaana) in Bolhu Bold, white on the accent green, centred on its ink."""
-    glyphs, _, tt = shape(FONT, FAVICON, rtl=True)
-    x0, y0, x1, y1 = ink(tt, glyphs)
-    scale = 40 / max(x1 - x0, y1 - y0)
-    # Font units are y-up: the ink's vertical centre lands on the tile's centre.
-    ox = 32 - (x0 + x1) / 2 * scale
-    baseline = 32 + (y0 + y1) / 2 * scale
-    d = path_for(tt, glyphs, scale, ox, baseline)
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0e7c66"/>
-  <path fill="#ffffff" d="{d}"/>
+def favicon(bg: str, fg: str) -> str:
+    """FAVICON on a 16x16 tile, drawn on MV Golhifoshi's grid: one cell per pixel, so it's
+    pixel-sharp at 16px and exactly doubled at 32px. The glyph is 15 cells square, so the one
+    spare pixel goes to the top and left."""
+    glyphs, _, tt = shape(THAANA_FONT, FAVICON, rtl=True)
+    x0, _, _, y1 = ink(tt, glyphs)
+    gs = tt.getGlyphSet()
+    pen = SVGPathPen(gs)
+    snap = RoundingPen(pen)
+    for name, gx, gy in glyphs:
+        gs[name].draw(TransformPen(snap, (1 / GRID, 0, 0, -1 / GRID, 1 + (gx - x0) / GRID, 1 + (y1 - gy) / GRID)))
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <rect width="16" height="16" rx="1" fill="{bg}"/>
+  <path fill="{fg}" shape-rendering="crispEdges" d="{pen.getCommands()}"/>
 </svg>
 """
 
@@ -170,7 +172,13 @@ def og_card() -> str:
 def main() -> None:
     web = ROOT.parent / "apps" / "web" / "src" / "lib"
     (web / "components" / "logo.svelte").write_text(header_logo())
-    (web / "assets" / "favicon.svg").write_text(favicon())
+    # Two favicons: dark for the light theme, light for the dark one (the layout switches them).
+    (web / "assets" / "favicon.svg").unlink(missing_ok=True)
+    (web / "assets" / "favicon-dark.svg").write_text(favicon("#130d09", "#cbab88"))
+    (web / "assets" / "favicon-light.svg").write_text(favicon("#faeedf", "#462c19"))
+    (web.parent.parent / "static" / "apple-touch-icon.png").write_bytes(
+        bytes(resvg_py.svg_to_bytes(svg_string=favicon("#130d09", "#cbab88"), width=180, height=180))
+    )
     # Telegram, WhatsApp and most link previews need a raster image, not SVG.
     (web.parent.parent / "static" / "og.png").write_bytes(bytes(resvg_py.svg_to_bytes(svg_string=og_card())))
     OUT.mkdir(parents=True, exist_ok=True)

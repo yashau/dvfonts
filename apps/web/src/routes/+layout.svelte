@@ -1,8 +1,9 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '#lib/assets/favicon.svg';
+	import faviconDark from '#lib/assets/favicon-dark.svg';
+	import faviconLight from '#lib/assets/favicon-light.svg';
 	import { onMount } from 'svelte';
-	import { ModeWatcher } from 'mode-watcher';
+	import { ModeWatcher, mode } from 'mode-watcher';
 	import { Toaster } from '#lib/components/ui/sonner/index.js';
 	import SiteHeader from '#lib/components/site-header.svelte';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
@@ -17,7 +18,15 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<!-- A light icon on the dark theme and a dark one on the light theme. Until the theme is
+	     known (prerendered HTML, before hydration) the OS colour scheme picks. -->
+	{#if mode.current}
+		<link rel="icon" type="image/svg+xml" href={mode.current === 'dark' ? faviconLight : faviconDark} />
+	{:else}
+		<link rel="icon" type="image/svg+xml" href={faviconDark} media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/svg+xml" href={faviconLight} media="(prefers-color-scheme: dark)" />
+	{/if}
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<!-- The old domain (dvfonts.yashau.com) serves the same pages until its redirect is in place. -->
 	<link rel="canonical" href="{SITE_ORIGIN}{page.url.pathname}" />
 	<!-- Link previews (Telegram, WhatsApp, Slack, X…). They fall back to each page's <title> and description. -->
