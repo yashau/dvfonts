@@ -132,7 +132,7 @@ ${SCRIPT_END}
 		],
 		[
 			'loadFonts({ family, weights, files }, { normalize })',
-			'Load a font; resolves when it can be drawn (canvas, SVG). See same size and self-hosting below for the options.'
+			'Load a font; resolves when it can be drawn (canvas, SVG). Options: same size (above) and self-hosting (below).'
 		],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
 		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.'],
@@ -269,29 +269,6 @@ ${SCRIPT_END}
 		{/each}
 	</Tabs.Root>
 
-	<h2 id="helpers" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Helpers</h2>
-	<Card.Root class="py-0">
-		<!-- A dense reference list: no group gap (gap-0! beats the group's own gap for
-		     small items) and separators without margins, so the items' padding is the
-		     same above and below every row, edges included. -->
-		<Item.Group class="gap-0!">
-			{#each helpers as [fn, what], i (fn)}
-				{#if i > 0}<Item.Separator class="my-0" />{/if}
-				<Item.Root size="sm">
-					<Item.Content class="min-w-0">
-						<Item.Title class="font-mono text-[13px] break-words">{fn}</Item.Title>
-						<Item.Description class="line-clamp-none">{what}</Item.Description>
-					</Item.Content>
-				</Item.Root>
-			{/each}
-		</Item.Group>
-	</Card.Root>
-	<p class="mt-3 text-sm text-muted-foreground">
-		Plus <code>@yashau/thaana/thaana.css</code>: right-to-left, a line height that doesn't clip fili, no fake italics,
-		and per-paragraph direction for <code>:lang(dv)</code>. Also at
-		<a class="underline underline-offset-4" href="/thaana.css">/thaana.css</a>.
-	</p>
-
 	<h2 id="same-size" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Same size for every font</h2>
 	<p class="mb-4 text-muted-foreground">
 		Dhivehi fonts differ a lot in size at the same <code>font-size</code>: some draw their letters at half Faruma's
@@ -315,6 +292,29 @@ ${SCRIPT_END}
 	<p class="mt-3 text-sm text-muted-foreground">
 		Each font's page has a switch that adds it to the embed code. The scale per family is in
 		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a> (<code>sizeAdjust</code>).
+	</p>
+
+	<h2 id="helpers" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Helpers</h2>
+	<Card.Root class="py-0">
+		<!-- A dense reference list: no group gap (gap-0! beats the group's own gap for
+		     small items) and separators without margins, so the items' padding is the
+		     same above and below every row, edges included. -->
+		<Item.Group class="gap-0!">
+			{#each helpers as [fn, what], i (fn)}
+				{#if i > 0}<Item.Separator class="my-0" />{/if}
+				<Item.Root size="sm">
+					<Item.Content class="min-w-0">
+						<Item.Title class="font-mono text-[13px] break-words">{fn}</Item.Title>
+						<Item.Description class="line-clamp-none">{what}</Item.Description>
+					</Item.Content>
+				</Item.Root>
+			{/each}
+		</Item.Group>
+	</Card.Root>
+	<p class="mt-3 text-sm text-muted-foreground">
+		Plus <code>@yashau/thaana/thaana.css</code>: right-to-left, a line height that doesn't clip fili, no fake italics,
+		and per-paragraph direction for <code>:lang(dv)</code>. Also at
+		<a class="underline underline-offset-4" href="/thaana.css">/thaana.css</a>.
 	</p>
 
 	<h2 id="self-hosting" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Self-hosting</h2>
