@@ -70,7 +70,9 @@
      screens and in a sheet from the left on small ones; search and sort stay above the list. -->
 <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
 	<aside class="hidden lg:block">
-		<div class="sticky top-20 max-h-[calc(100svh-6rem)] overflow-y-auto pt-1 pr-1 pb-6">
+		<!-- Padding on every side (offset by -mx-1) leaves room for the 3px focus rings, which the
+		     scroll container would otherwise clip. -->
+		<div class="sticky top-20 -mx-1 max-h-[calc(100svh-6rem)] overflow-y-auto px-1 pt-1 pb-6">
 			<BrowsePanel bind:categories bind:sort {counts} shown={visible.length} />
 		</div>
 	</aside>
