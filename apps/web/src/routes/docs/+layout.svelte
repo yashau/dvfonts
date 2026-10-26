@@ -14,8 +14,8 @@
 	<aside class="hidden lg:block">
 		<!-- Sticky on a wrapper: the scroll area sets its own position: relative. -->
 		<div class="sticky top-14">
-			<ScrollArea class="h-[calc(100svh-3.5rem)] py-10 pr-2">
-				<DocsNav />
+			<ScrollArea class="h-[calc(100svh-3.5rem)] pr-2">
+				<div class="py-6"><DocsNav /></div>
 			</ScrollArea>
 		</div>
 	</aside>

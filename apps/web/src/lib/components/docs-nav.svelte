@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { replaceState } from '$app/navigation';
 	import { DOCS } from '#lib/docs-nav.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 
@@ -8,6 +9,20 @@
 	let { onnavigate }: { onnavigate?: () => void } = $props();
 
 	let current = $state('');
+
+	// A section that's already fully on screen needs no scrolling: just mark it as current.
+	function goTo(e: MouseEvent, href: string, id: string) {
+		onnavigate?.();
+		if (page.url.pathname !== href) return;
+		const el = document.getElementById(id);
+		if (!el) return;
+		const r = el.getBoundingClientRect();
+		if (r.top >= 56 && r.bottom <= innerHeight) {
+			e.preventDefault();
+			replaceState(`#${id}`, page.state);
+			current = id;
+		}
+	}
 
 	$effect(() => {
 		const doc = DOCS.find((d) => d.href === page.url.pathname);
@@ -47,7 +62,7 @@
 						? 'bg-muted text-foreground'
 						: 'text-muted-foreground'}"
 					aria-current={on ? 'location' : undefined}
-					onclick={onnavigate}>{s.label}</Button
+					onclick={(e: MouseEvent) => goTo(e, doc.href, s.id)}>{s.label}</Button
 				>
 			{/each}
 		</div>
