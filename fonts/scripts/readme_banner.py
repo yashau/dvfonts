@@ -157,9 +157,9 @@ def header_logo() -> str:
 	role="img"
 	aria-label="{LATIN} — {THAANA}"
 >
-	<!-- Letters and fili filled with the dark theme's brown under the tan lines (same on both themes). -->
-	<path class="fill-brand-ground" d="{filled_shapes(glyphs, gs, x0, h)}" />
-	<path class="fill-brand" d="{pen.getCommands()}" />
+	<!-- Letters and fili in the text colour, the lines cut out in the page colour. -->
+	<path class="fill-foreground" d="{filled_shapes(glyphs, gs, x0, h)}" />
+	<path class="fill-background" d="{pen.getCommands()}" />
 </svg>
 """
 
