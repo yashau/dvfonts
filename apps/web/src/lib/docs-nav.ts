@@ -38,5 +38,10 @@ export const DOCS: DocsPage[] = [
 			{ id: 'pdf', label: 'Generating PDFs' },
 			{ id: 'storing', label: 'Storing and searching' }
 		]
+	},
+	{
+		href: '/docs/tools',
+		title: 'Tools',
+		sections: [{ id: 'convert', label: 'Convert old Thaana text' }]
 	}
 ];

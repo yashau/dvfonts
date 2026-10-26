@@ -227,7 +227,7 @@
 			Documents typed with the old A_ fonts store Latin letters (<code>ihevid</code>) and only look like Thaana in that
 			font. Text copied out of a PDF comes back with reversed dates and stray spaces. Both can be repaired:
 			<code>convertLegacy()</code> and <code>repairPdfText()</code>, or paste it into the
-			<a class="underline underline-offset-4" href="/convert">converter</a>.
+			<a class="underline underline-offset-4" href="/docs/tools#convert">converter</a>.
 		</p>
 		<ThaanaDemo>
 			{#snippet wrong()}<p>{legacy}</p>

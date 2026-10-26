@@ -136,7 +136,7 @@ Full guide with live examples: ${O}/docs/thaana
 
 - Text typed with old pre-Unicode A_ fonts shows as Latin gibberish (e.g. "cswb ihevid" for ދިވެހި ބަސް): \`convertLegacy(text, { layout: 'typewriter' })\`; for the older casual fonts (Thaana, Akko, Athu Casual) use \`layout: 'phonetic'\`.
 - Thaana copied out of a PDF has reversed dates/times ("2026/1/14" for 14/1/2026) and stray spaces: \`repairPdfText(text)\`. Never run it on typed text.
-- Interactive converter: ${O}/convert
+- Interactive converter: ${O}/docs/tools#convert
 
 ## 4. Sample text
 

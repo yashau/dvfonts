@@ -12,7 +12,6 @@
 
 	const links = [
 		{ href: '/', label: 'Fonts' },
-		{ href: '/convert', label: 'Convert' },
 		{ href: '/docs', label: 'Docs' },
 		{ href: '/downloads', label: 'Downloads' },
 		{ href: '/about', label: 'About' }
