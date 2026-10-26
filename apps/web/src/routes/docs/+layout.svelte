@@ -27,10 +27,11 @@
 <!-- The docs area: a sticky side navigation on wide screens, a sheet from the left on small ones. -->
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-10">
 	<aside class="hidden lg:block">
-		<!-- Sticky on a wrapper: the scroll area sets its own position: relative. -->
+		<!-- Sticky on a wrapper: the scroll area sets its own position: relative. The padding
+		     inside it leaves room for the links' 3px focus rings, which it would otherwise clip. -->
 		<div class="sticky top-14">
 			<ScrollArea class="h-[calc(100svh-3.5rem)] pr-2">
-				<div class="py-6"><DocsNav /></div>
+				<div class="p-1 py-6"><DocsNav /></div>
 			</ScrollArea>
 		</div>
 	</aside>
@@ -47,7 +48,7 @@
 						<Sheet.Title>Docs</Sheet.Title>
 					</Sheet.Header>
 					<ScrollArea class="h-[calc(100svh-5rem)] px-2 pb-6">
-						<DocsNav onnavigate={() => (menuOpen = false)} />
+						<div class="p-1"><DocsNav onnavigate={() => (menuOpen = false)} /></div>
 					</ScrollArea>
 				</Sheet.Content>
 			</Sheet.Root>
