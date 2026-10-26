@@ -32,6 +32,9 @@
 			// 96px: below the sticky header, with a little room.
 			let id = els[0]?.id ?? '';
 			for (const el of els) if (el.getBoundingClientRect().top <= 96) id = el.id;
+			// At the bottom the last sections can't scroll up that far: take the last one on screen.
+			if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2)
+				for (const el of els) if (el.getBoundingClientRect().top < innerHeight) id = el.id;
 			current = id;
 		};
 		update();
