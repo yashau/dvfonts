@@ -53,8 +53,8 @@
 	--sidebar-accent-foreground: oklch(0.26 0.02 55);
 	--sidebar-border: oklch(0.87 0.036 75);
 	--sidebar-ring: oklch(0.65 0.05 70);
-	/* The logo's colour: ink brown on sand, light tan on dark brown. */
-	--brand: oklch(0.32 0.05 55);
+	/* The logo's colour: the same light tan on both themes. */
+	--brand: oklch(0.76 0.06 68);
 }
 
 .dark {
@@ -91,7 +91,6 @@
 	--sidebar-accent-foreground: oklch(0.95 0.012 75);
 	--sidebar-border: oklch(0.95 0.03 75 / 10%);
 	--sidebar-ring: oklch(0.56 0.03 60);
-	--brand: oklch(0.76 0.06 68);
 }
 
 @theme inline {
