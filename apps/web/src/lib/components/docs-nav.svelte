@@ -2,44 +2,35 @@
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import { DOCS } from '#lib/docs-nav.js';
+	import { currentSection, scrollToSection } from '#lib/docs-scroll.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 
 	// Side navigation for the docs area: every page with its sections. The section being
-	// read is highlighted (the last heading scrolled past the top of the viewport).
+	// read is highlighted.
 	let { onnavigate }: { onnavigate?: () => void } = $props();
 
 	let current = $state('');
 
-	// A section that's already fully on screen needs no scrolling: just mark it as current.
+	// Same-page section links scroll to the section's own position (see docs-scroll.ts), so
+	// the one clicked is the one highlighted, even near the bottom of the page.
 	function goTo(e: MouseEvent, href: string, id: string) {
 		onnavigate?.();
-		if (page.url.pathname !== href) return;
-		const el = document.getElementById(id);
-		if (!el) return;
-		const r = el.getBoundingClientRect();
-		if (r.top >= 56 && r.bottom <= innerHeight) {
-			e.preventDefault();
-			replaceState(`#${id}`, page.state);
-			current = id;
-		}
+		if (page.url.pathname !== href || !scrollToSection(href, id)) return;
+		e.preventDefault();
+		replaceState(`#${id}`, page.state);
+		current = id;
 	}
 
 	$effect(() => {
-		const doc = DOCS.find((d) => d.href === page.url.pathname);
-		if (!doc) return;
-		const els = doc.sections.map((s) => document.getElementById(s.id)).filter((el) => el !== null);
-		const update = () => {
-			// 96px: below the sticky header, with a little room.
-			let id = els[0]?.id ?? '';
-			for (const el of els) if (el.getBoundingClientRect().top <= 96) id = el.id;
-			// At the bottom the last sections can't scroll up that far: take the last one on screen.
-			if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2)
-				for (const el of els) if (el.getBoundingClientRect().top < innerHeight) id = el.id;
-			current = id;
-		};
+		const path = page.url.pathname;
+		const update = () => (current = currentSection(path));
 		update();
 		addEventListener('scroll', update, { passive: true });
-		return () => removeEventListener('scroll', update);
+		addEventListener('resize', update, { passive: true });
+		return () => {
+			removeEventListener('scroll', update);
+			removeEventListener('resize', update);
+		};
 	});
 </script>
 
