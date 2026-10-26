@@ -5,7 +5,7 @@ path, so it renders identically everywhere without loading a font. Writes:
 
   .github/assets/banner-{light,dark}.svg      README title (stacked)
   apps/web/src/lib/components/logo.svelte     site header (one line, follows the theme)
-  apps/web/src/lib/assets/favicon.svg         favicon (tan on dark brown, for both themes)
+  apps/web/src/lib/assets/favicon.svg         favicon, in the logo's look
   apps/web/static/apple-touch-icon.png        home-screen icon, 180x180
   apps/web/static/og.png                      link preview (Open Graph), 1200x630
 
@@ -164,20 +164,21 @@ def header_logo() -> str:
 """
 
 
-def favicon(bg: str, fg: str) -> str:
-    """FAVICON on a 16x16 tile, drawn on MV Golhifoshi's grid: one cell per pixel, so it's
-    pixel-sharp at 16px and exactly doubled at 32px. The glyph is 15 cells square, so the one
-    spare pixel goes to the top and left."""
+def favicon(fill: str, lines: str) -> str:
+    """FAVICON in the logo's look, on MV Golhifoshi's grid at one cell per pixel (sharp at
+    16px, exactly doubled at 32px): its shape filled with `fill`, its strokes cut out in
+    `lines`. The glyph is 15 cells square; the spare pixel goes to the top and left."""
     glyphs, _, tt = shape(THAANA_FONT, FAVICON, rtl=True)
     x0, _, _, y1 = ink(tt, glyphs)
     gs = tt.getGlyphSet()
+    h = round(y1 / GRID)
     pen = SVGPathPen(gs)
     snap = RoundingPen(pen)
     for name, gx, gy in glyphs:
-        gs[name].draw(TransformPen(snap, (1 / GRID, 0, 0, -1 / GRID, 1 + (gx - x0) / GRID, 1 + (y1 - gy) / GRID)))
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <rect width="16" height="16" rx="1" fill="{bg}"/>
-  <path fill="{fg}" shape-rendering="crispEdges" d="{pen.getCommands()}"/>
+        gs[name].draw(TransformPen(snap, (1 / GRID, 0, 0, -1 / GRID, (gx - x0) / GRID, h - gy / GRID)))
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 16 16" width="16" height="16">
+  <path fill="{fill}" shape-rendering="crispEdges" d="{filled_shapes(glyphs, gs, x0, h)}"/>
+  <path fill="{lines}" shape-rendering="crispEdges" d="{pen.getCommands()}"/>
 </svg>
 """
 
@@ -202,9 +203,10 @@ def main() -> None:
     (web / "components" / "logo.svelte").write_text(header_logo())
     (web / "assets" / "favicon-dark.svg").unlink(missing_ok=True)  # earlier theme-specific favicons
     (web / "assets" / "favicon-light.svg").unlink(missing_ok=True)
-    (web / "assets" / "favicon.svg").write_text(favicon("#130d09", "#cbab88"))
+    # The light theme's text colour with its page colour cut out, like the logo there.
+    (web / "assets" / "favicon.svg").write_text(favicon("#20160f", "#faeedf"))
     (web.parent.parent / "static" / "apple-touch-icon.png").write_bytes(
-        bytes(resvg_py.svg_to_bytes(svg_string=favicon("#130d09", "#cbab88"), width=180, height=180))
+        bytes(resvg_py.svg_to_bytes(svg_string=favicon("#20160f", "#faeedf"), width=180, height=180))
     )
     # Telegram, WhatsApp and most link previews need a raster image, not SVG.
     (web.parent.parent / "static" / "og.png").write_bytes(bytes(resvg_py.svg_to_bytes(svg_string=og_card())))
