@@ -25,8 +25,11 @@
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<a href="/" class="shrink-0" aria-label="fonts.mv home">
-			<Logo class="h-8 w-auto" />
+		<!-- The logo's box ends at the Thaana baseline (its lower marks hang below it). 24px tall
+		     from 14px down puts that baseline at 38px, a little under the nav text's (33px): most
+		     letters only carry fili above, so sitting it on the exact baseline reads as too high. -->
+		<a href="/" class="mt-[14px] shrink-0 self-start" aria-label="fonts.mv home">
+			<Logo class="h-6 w-auto" />
 		</a>
 		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
 			<NavigationMenu.List>
