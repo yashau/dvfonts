@@ -11,6 +11,9 @@ export const PANGRAMS: readonly string[] = [
 	'މީރު ޗޮކްލެޓާއި، ބަޓަރު، ފުށް، ޗީޒް އަދި ޏަމްޏަމް އެއްކޮށް، ބޮޑު ތައްޓަކަށް ސަމުސަލުން ހަކުރު އަޅައިގެން، ޒުވާން ކުއްޖާ ޕޭސްޓްރީ ތައްޔާރުކުރިއެވެ.'
 ];
 
+/** Uses 12 of the 14 Arabic-derived letters (ޜ and ޥ have no common words). */
+export const ARABIC_LETTERS_SAMPLE = 'ރަމަޟާން މަހުގެ ޚާއްޞަ ޘަޤާފަތާއި ޝަރީޢަތުގެ ޙަޤީޤަތް ޙިފްޡުކޮށް ޛިކުރުކުރުމަކީ ބަޣާވާތެއް ނޫނެވެ.';
+
 const range = (from: number, to: number) => Array.from({ length: to - from }, (_, i) => String.fromCodePoint(from + i));
 
 /** The 24 native letters, in alphabet order. */
