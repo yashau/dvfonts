@@ -19,38 +19,42 @@
 	   prefers-color-scheme rules here, so an explicit choice always wins, and
 	   color-scheme is pinned so native controls follow the chosen theme too. */
 	color-scheme: light;
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.145 0 0);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.145 0 0);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.145 0 0);
-	--primary: oklch(0.205 0 0);
-	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
-	--accent: oklch(0.97 0 0);
-	--accent-foreground: oklch(0.205 0 0);
+	/* Warm sand: a light paper tone with warm-tinted neutrals (hue 75), so the
+	   green logo stands out. Text is a warm near-black. */
+	--background: oklch(0.955 0.024 75);
+	--foreground: oklch(0.21 0.02 55);
+	--card: oklch(0.977 0.014 75);
+	--card-foreground: oklch(0.21 0.02 55);
+	--popover: oklch(0.977 0.014 75);
+	--popover-foreground: oklch(0.21 0.02 55);
+	--primary: oklch(0.26 0.02 55);
+	--primary-foreground: oklch(0.977 0.014 75);
+	--secondary: oklch(0.925 0.029 75);
+	--secondary-foreground: oklch(0.26 0.02 55);
+	--muted: oklch(0.925 0.029 75);
+	--muted-foreground: oklch(0.49 0.03 55);
+	--accent: oklch(0.925 0.029 75);
+	--accent-foreground: oklch(0.26 0.02 55);
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.922 0 0);
-	--input: oklch(0.922 0 0);
-	--ring: oklch(0.708 0 0);
-	--chart-1: oklch(0.87 0 0);
-	--chart-2: oklch(0.556 0 0);
-	--chart-3: oklch(0.439 0 0);
-	--chart-4: oklch(0.371 0 0);
-	--chart-5: oklch(0.269 0 0);
+	--border: oklch(0.87 0.036 75);
+	--input: oklch(0.87 0.036 75);
+	--ring: oklch(0.65 0.05 70);
+	--chart-1: oklch(0.85 0.04 75);
+	--chart-2: oklch(0.65 0.05 70);
+	--chart-3: oklch(0.5 0.04 60);
+	--chart-4: oklch(0.4 0.03 55);
+	--chart-5: oklch(0.3 0.02 55);
 	--radius: 0.625rem;
-	--sidebar: oklch(0.985 0 0);
-	--sidebar-foreground: oklch(0.145 0 0);
-	--sidebar-primary: oklch(0.205 0 0);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.97 0 0);
-	--sidebar-accent-foreground: oklch(0.205 0 0);
-	--sidebar-border: oklch(0.922 0 0);
-	--sidebar-ring: oklch(0.708 0 0);
+	--sidebar: oklch(0.945 0.026 75);
+	--sidebar-foreground: oklch(0.21 0.02 55);
+	--sidebar-primary: oklch(0.26 0.02 55);
+	--sidebar-primary-foreground: oklch(0.977 0.014 75);
+	--sidebar-accent: oklch(0.925 0.029 75);
+	--sidebar-accent-foreground: oklch(0.26 0.02 55);
+	--sidebar-border: oklch(0.87 0.036 75);
+	--sidebar-ring: oklch(0.65 0.05 70);
+	/* The logo's colour: ink brown on sand, the link-preview green on dark. */
+	--brand: oklch(0.32 0.05 55);
 }
 
 .dark {
@@ -86,9 +90,11 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
+	--brand: #3ecfa9;
 }
 
 @theme inline {
+	--color-brand: var(--brand);
 	--font-sans: 'Inter Variable', 'dv-ui', sans-serif;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
@@ -128,6 +134,11 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* The registry slider paints its thumb white; follow the theme instead. */
+[data-slot='slider-thumb'] {
+	background-color: var(--card);
 }
 
 @layer base {

@@ -204,3 +204,5 @@ The fonts belong to their makers: the Office of the President (Faruma, Reethi), 
 ## License
 
 Code is [MIT](LICENSE). Each font keeps its own license and credits.
+
+The fonts.mv wordmark is set in Bolhu (Thaana Type Foundry, OFL) and, for the Thaana, [MV Golhifoshi](https://thatmaldivesblog.wordpress.com/2020/04/18/mv-golhifoshi/) by Zillon, licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
