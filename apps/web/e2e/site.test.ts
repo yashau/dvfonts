@@ -167,7 +167,7 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await page.getByRole('tab', { name: 'macOS / Linux' }).click();
 	await expect(page.getByRole('tabpanel')).toContainText('curl -fsSL https://fonts.mv/install/essentials.sh | sh');
 	await page.getByRole('tab', { name: 'Windows' }).click();
-	await expect(page.getByRole('tabpanel')).toContainText('irm https://fonts.mv/install/essentials.ps1 | iex');
+	await expect(page.getByRole('tabpanel')).toContainText("irm 'https://fonts.mv/install/essentials.ps1' | iex");
 });
 
 test('install scripts are plain text and check the bundle', async ({ request }) => {

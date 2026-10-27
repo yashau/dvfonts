@@ -46,14 +46,15 @@
 			<Tabs.Content value="sh" class="mt-3 flex flex-col gap-2">
 				<CodeBlock title="Terminal" lang="bash" code={installCommand(bundle, 'sh')} />
 				<p class="text-sm text-muted-foreground">
-					Fonts go to <code>~/Library/Fonts/fonts.mv</code> on macOS and <code>~/.local/share/fonts/fonts.mv</code> on Linux.
+					Fonts go to <code class="break-all">~/Library/Fonts/fonts.mv</code> on macOS and
+					<code class="break-all">~/.local/share/fonts/fonts.mv</code> on Linux.
 				</p>
 			</Tabs.Content>
 			<Tabs.Content value="ps1" class="mt-3 flex flex-col gap-2">
 				<CodeBlock title="PowerShell" lang="powershell" code={installCommand(bundle, 'ps1')} />
 				<p class="text-sm text-muted-foreground">
-					Fonts go to <code>%LOCALAPPDATA%\Microsoft\Windows\Fonts\fonts.mv</code> and are registered for your account. The
-					same command works in PowerShell 7 on macOS and Linux.
+					Fonts go to <code class="break-all">%LOCALAPPDATA%\Microsoft\Windows\Fonts\fonts.mv</code> and are registered for
+					your account. The same command works in PowerShell 7 on macOS and Linux.
 				</p>
 			</Tabs.Content>
 		</Tabs.Root>
