@@ -163,9 +163,9 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
 	await expect(page.locator('a[href="/downloads/fonts-mv-essentials.zip"]')).toBeVisible();
 	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
-	await expect(page.getByText('curl -fsSL https://fonts.mv/install/essentials.sh | sh')).toBeVisible();
+	await expect(page.getByRole('tabpanel')).toContainText('curl -fsSL https://fonts.mv/install/essentials.sh | sh');
 	await page.getByRole('tab', { name: 'Windows' }).click();
-	await expect(page.getByText('irm https://fonts.mv/install/essentials.ps1 | iex')).toBeVisible();
+	await expect(page.getByRole('tabpanel')).toContainText('irm https://fonts.mv/install/essentials.ps1 | iex');
 });
 
 test('install scripts are plain text and check the bundle', async ({ request }) => {
