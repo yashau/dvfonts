@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { authorBio, correctionsMailto, THAANA_NAME_CSS, THAANA_NAME_FONT } from '#lib/authors.js';
+	import { authorBio, CORRECTIONS_EMAIL, correctionsMailto, THAANA_NAME_CSS, THAANA_NAME_FONT } from '#lib/authors.js';
+	import { UNKNOWN_AUTHOR } from '#lib/catalog.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import MailIcon from '@lucide/svelte/icons/mail';
@@ -9,6 +10,8 @@
 	let { name, count, onclear }: { name: string; count: number; onclear: () => void } = $props();
 
 	const bio = $derived(authorBio(name));
+	const unknown = $derived(name === UNKNOWN_AUTHOR);
+	const askMailto = `mailto:${CORRECTIONS_EMAIL}?subject=${encodeURIComponent('fonts.mv: who designed these fonts?')}`;
 </script>
 
 <svelte:head>
@@ -17,12 +20,17 @@
 
 <p class="text-sm font-medium tracking-wide text-muted-foreground uppercase">Author</p>
 <div class="mt-1 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-	<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{name}</h1>
+	<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{unknown ? 'Unknown author' : name}</h1>
 	{#if bio?.thaana}
 		<span class="text-2xl sm:text-3xl" dir="rtl" lang="dv" style:font-family={THAANA_NAME_FONT}>{bio.thaana}</span>
 	{/if}
 </div>
-{#if bio}
+{#if unknown}
+	<p class="mt-1 text-sm text-muted-foreground">{count} {count === 1 ? 'family' : 'families'}</p>
+	<p class="mt-3 max-w-3xl text-pretty text-muted-foreground">
+		These fonts don't name their designer. If you know who made any of them, tell us and we'll credit them.
+	</p>
+{:else if bio}
 	<p class="mt-1 text-sm text-muted-foreground">{bio.role} · {count} {count === 1 ? 'family' : 'families'}</p>
 	<p class="mt-3 max-w-3xl text-pretty text-muted-foreground">{bio.excerpt}</p>
 {:else}
@@ -35,9 +43,9 @@
 	{#if bio?.page}
 		<Button href="/authors/{bio.slug}" size="sm">Read the full bio <ArrowRightIcon /></Button>
 	{/if}
-	<Button href={correctionsMailto(name)} variant="outline" size="sm">
+	<Button href={unknown ? askMailto : correctionsMailto(name)} variant="outline" size="sm">
 		<MailIcon />
-		{bio ? 'Suggest a correction' : 'Tell us about them'}
+		{unknown ? 'Tell us who made them' : bio ? 'Suggest a correction' : 'Tell us about them'}
 	</Button>
 	<Button variant="ghost" size="sm" onclick={onclear}><XIcon /> All fonts</Button>
 </div>

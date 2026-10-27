@@ -592,7 +592,7 @@ def main(only: set[str] | None = None) -> None:
                 **display_meta(fam, meta),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
-                "year": release_year(fam, files),
+                **dict(zip(("firstYear", "versionYear"), release_years(fam, files), strict=True)),
             }
         )
         flags = []
@@ -638,31 +638,35 @@ def main(only: set[str] | None = None) -> None:
 
 YEAR = re.compile(r"(?<!\d)(19[89]\d|20[0-4]\d)(?!\d)")
 # Font editors stamp re-saves: "Generated in 2014 by FontLab Studio".
-GENERATED = re.compile(r"generated in \d{4}[^.]*", re.I)
+GENERATED = re.compile(r"generated in (\d{4})[^.]*", re.I)
 HEAD_EPOCH = datetime.datetime(1904, 1, 1)  # the head table counts seconds from here
 
 
-def release_year(fam: dict, files: list[tuple[str, str]]) -> int | None:
-    """The family's release year: `year` in families.toml, else the earliest year its
-    source files mention (copyright, version, description), else the files' creation
-    date. Creation dates from 2014 on are skipped: archive re-saves stamped 2014, and
-    repaired files carry the repair date."""
-    if fam.get("year"):
-        return int(fam["year"])
-    years, created = [], []
+def release_years(fam: dict, files: list[tuple[str, str]]) -> tuple[int | None, int | None]:
+    """(first release, this version) for a family.
+
+    First release: `year` in families.toml, else the earliest year the source files
+    mention (copyright, version, description), else a creation date before 2014 (later
+    ones are archive re-saves or repairs). Editor stamps like "Generated in 2014 by
+    FontLab" don't count, since they date a save, not the design.
+
+    This version: `versionYear` in families.toml, else the latest year the files
+    mention, editor stamps included, never earlier than the first release."""
+    years, stamps, created = [], [], []
     for _, fname in files:
         font = TTFont(SOURCES / fname, lazy=True)
         for nid in (0, 3, 5, 10):
-            text = GENERATED.sub("", name_value(font, nid, True) or "")
-            years += [int(y) for y in YEAR.findall(text)]
+            text = name_value(font, nid, True) or ""
+            stamps += [int(y) for y in GENERATED.findall(text)]
+            years += [int(y) for y in YEAR.findall(GENERATED.sub("", text))]
         try:
             created.append((HEAD_EPOCH + datetime.timedelta(seconds=font["head"].created)).year)
         except OverflowError:
             pass
-    if years:
-        return min(years)
     created = [y for y in created if 1990 <= y <= 2013]
-    return min(created) if created else None
+    first = fam.get("year") or (min(years) if years else min(created) if created else None)
+    version = fam.get("versionYear") or max(years + stamps + ([first] if first else []), default=None)
+    return first, version
 
 
 def display_meta(fam, meta) -> dict:
