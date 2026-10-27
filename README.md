@@ -9,14 +9,14 @@
 
 <p align="center">
   <b>Open Dhivehi fonts for the web, and one install that makes Thaana work everywhere.</b><br />
-  158 font families, free to embed or download. Agent-ready, with packages for React, Svelte, Vue and plain JavaScript:<br />
+  157 font families, free to embed or download. Agent-ready, with packages for React, Svelte, Vue and plain JavaScript:<br />
   a Thaana keyboard, a bidi toolkit and an llms.txt for AI agents.
 </p>
 
 <p align="center">
   <a href="https://github.com/yashau/dvfonts/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
   <a href="https://github.com/yashau/dvfonts/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
-  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-158_families_·_227_styles-0e7c66?style=for-the-badge" /></a>
+  <a href="https://dvfonts.yashau.com"><img alt="Fonts" src="https://img.shields.io/badge/fonts-157_families_·_226_styles-0e7c66?style=for-the-badge" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/code-MIT-blue?style=for-the-badge" /></a>
 </p>
 
@@ -112,7 +112,7 @@ useDhivehiFont('Faruma');
 
 ### 🔤 The fonts
 
-- **158 families / 227 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
+- **157 families / 226 styles**: ModFaruma, Faruma, the MV classics, Thaana Type Foundry's modern families, dhivehifont.com, Zillon and more.
 - **Sorted by use:** Official (document faces in the Faruma tradition), Handwriting, Artistic, Modern and Novelty. The browse page opens on Official and Handwriting; a search looks in every category.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
 - **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right, and can show every font at the same letter size.
@@ -139,7 +139,7 @@ useDhivehiFont('Faruma');
 | 🔁&nbsp;**Unicode&nbsp;remapping**  | 25 pre-Unicode fonts had Thaana on Latin keys and no Unicode version, so dvfonts remapped them: their two keyboard layouts were recovered by matching glyph outlines against Unicode twins of the same designs. Where a modern Unicode version of an old `A_` font exists, only the modern one is listed. The original pre-Unicode files, including five A_ fonts whose designer allows no changes, ship untouched only in the Legacy bundle, for opening old documents. |
 | 🧹&nbsp;**De&#8209;duplication**    | Identical designs under different names were found by comparing rasterised letters and merged, with the other names kept as aliases.                                                                                                                                                                                                                                                                                                                                     |
 | 📏&nbsp;**Metrics&nbsp;repair**     | 34 fonts had broken vertical metrics (positive descenders, tiny line boxes) that clip fili in browsers, and now have consistent hhea/typo/win metrics, so line height is the same on Windows, macOS and Linux. Fonts that must ship unmodified get the same fix as CSS `@font-face` overrides instead (10 of them).                                                                                                                                                      |
-| 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly, with stray mark widths zeroed without moving anchored fili off their letter. Faruma's malformed GDEF is repaired too, and the two constructed fonts that set fili inline (MV Finikaa, MV Salhi Eka) keep them inline.                                                                                                                                                                 |
+| 🎯&nbsp;**Fili&nbsp;as&nbsp;marks** | Vowel marks are classed as combining marks (GDEF) so shapers stack them correctly, and stray mark widths are zeroed without moving the mark. Faruma's malformed GDEF is repaired too.                                                                                                                                                                                                                                                                                    |
 | 🏷️&nbsp;**Clean&nbsp;names**        | Names and weights are normalised so families install as one family on desktop.                                                                                                                                                                                                                                                                                                                                                                                           |
 | 📐&nbsp;**Same&nbsp;size**          | Fonts differ a lot in size at the same `font-size`. Each family is measured against Faruma (median size of its Thaana letters) and gets a scale factor, applied only with CSS `size-adjust` when asked for (`&normalize=1`, `{ normalize: true }`). The font files are untouched.                                                                                                                                                                                        |
 | 📦&nbsp;**Web&nbsp;formats**        | WOFF2, WOFF and TTF, plus Thaana/Latin `unicode-range` subsets for fonts we may modify: a Thaana-only page downloads only the Thaana part.                                                                                                                                                                                                                                                                                                                               |

@@ -1057,9 +1057,9 @@
      "source": "bolhu-thin.ttf",
      "desktopFile": "Bolhu-Thin.ttf",
      "sizes": {
-      "ttf": 126276,
-      "woff2": 44600,
-      "woff": 58748
+      "ttf": 127116,
+      "woff2": 43996,
+      "woff": 58836
      },
      "subsets": {
       "thaana": 11760,
@@ -1085,9 +1085,9 @@
      "source": "bolhu-extralight.ttf",
      "desktopFile": "Bolhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 131064,
-      "woff2": 47024,
-      "woff": 62224
+      "ttf": 131992,
+      "woff2": 47000,
+      "woff": 62320
      },
      "subsets": {
       "thaana": 12604,
@@ -1113,9 +1113,9 @@
      "source": "bolhu-light.ttf",
      "desktopFile": "Bolhu-Light.ttf",
      "sizes": {
-      "ttf": 131844,
-      "woff2": 47376,
-      "woff": 62660
+      "ttf": 132760,
+      "woff2": 47408,
+      "woff": 62800
      },
      "subsets": {
       "thaana": 12552,
@@ -1141,9 +1141,9 @@
      "source": "bolhu-regular.ttf",
      "desktopFile": "Bolhu-Regular.ttf",
      "sizes": {
-      "ttf": 131336,
-      "woff2": 47412,
-      "woff": 62944
+      "ttf": 132268,
+      "woff2": 47392,
+      "woff": 63072
      },
      "subsets": {
       "thaana": 12700,
@@ -1169,9 +1169,9 @@
      "source": "bolhu-medium.ttf",
      "desktopFile": "Bolhu-Medium.ttf",
      "sizes": {
-      "ttf": 130724,
-      "woff2": 46624,
-      "woff": 61820
+      "ttf": 131632,
+      "woff2": 46536,
+      "woff": 61868
      },
      "subsets": {
       "thaana": 12092,
@@ -1197,9 +1197,9 @@
      "source": "bolhu-semibold.ttf",
      "desktopFile": "Bolhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 135416,
-      "woff2": 49540,
-      "woff": 65540
+      "ttf": 136368,
+      "woff2": 49440,
+      "woff": 65528
      },
      "subsets": {
       "thaana": 12832,
@@ -1225,9 +1225,9 @@
      "source": "bolhu-bold.ttf",
      "desktopFile": "Bolhu-Bold.ttf",
      "sizes": {
-      "ttf": 133756,
-      "woff2": 49208,
-      "woff": 65332
+      "ttf": 134668,
+      "woff2": 49288,
+      "woff": 65348
      },
      "subsets": {
       "thaana": 12672,
@@ -1253,9 +1253,9 @@
      "source": "bolhu-extrabold.ttf",
      "desktopFile": "Bolhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 133344,
-      "woff2": 48720,
-      "woff": 64700
+      "ttf": 134272,
+      "woff2": 48716,
+      "woff": 64768
      },
      "subsets": {
       "thaana": 12360,
@@ -1281,9 +1281,9 @@
      "source": "bolhu-black.ttf",
      "desktopFile": "Bolhu-Black.ttf",
      "sizes": {
-      "ttf": 130148,
-      "woff2": 46320,
-      "woff": 61540
+      "ttf": 131060,
+      "woff2": 46304,
+      "woff": 61592
      },
      "subsets": {
       "thaana": 11644,
@@ -1305,7 +1305,7 @@
      "sizeAdjust": 0.922
     }
    ],
-   "zipSize": 571103
+   "zipSize": 571979
   },
   {
    "id": "dam-hiyani",
@@ -1335,12 +1335,12 @@
      "source": "dam-hiyani.otf",
      "desktopFile": "DAMHiyani-Regular.ttf",
      "sizes": {
-      "ttf": 33028,
-      "woff2": 25284,
-      "woff": 27684
+      "ttf": 29508,
+      "woff2": 24580,
+      "woff": 26856
      },
      "subsets": {
-      "thaana": 23280,
+      "thaana": 23872,
       "latin": 7924
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Hiyani.otf",
@@ -1359,7 +1359,7 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 28130
+   "zipSize": 27296
   },
   {
    "id": "dam-kalhi",
@@ -1389,12 +1389,12 @@
      "source": "dam-kalhi.otf",
      "desktopFile": "DAMKalhi-Bold.ttf",
      "sizes": {
-      "ttf": 25788,
-      "woff2": 19492,
-      "woff": 21344
+      "ttf": 23752,
+      "woff2": 18880,
+      "woff": 20692
      },
      "subsets": {
-      "thaana": 17760,
+      "thaana": 18040,
       "latin": 6888
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Kalhi.otf",
@@ -1413,7 +1413,7 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 21747
+   "zipSize": 21095
   },
   {
    "id": "dam-kathivalhi",
@@ -1443,12 +1443,12 @@
      "source": "dam-kathivalhi.otf",
      "desktopFile": "DAMKathivalhi-Regular.ttf",
      "sizes": {
-      "ttf": 18052,
-      "woff2": 13888,
-      "woff": 15260
+      "ttf": 16472,
+      "woff2": 13616,
+      "woff": 14868
      },
      "subsets": {
-      "thaana": 12156,
+      "thaana": 12388,
       "latin": 5744
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Kathivalhi.otf",
@@ -1467,7 +1467,7 @@
      "sizeAdjust": 1.029
     }
    ],
-   "zipSize": 15704
+   "zipSize": 15318
   },
   {
    "id": "dam-madheeh",
@@ -1497,12 +1497,12 @@
      "source": "dam-madheeh.otf",
      "desktopFile": "DAMMadheeh-Bold.ttf",
      "sizes": {
-      "ttf": 19236,
-      "woff2": 14928,
-      "woff": 16220
+      "ttf": 17772,
+      "woff2": 14560,
+      "woff": 15832
      },
      "subsets": {
-      "thaana": 13408,
+      "thaana": 13644,
       "latin": 5088
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/DAM_Madheeh.otf",
@@ -1521,7 +1521,7 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 16617
+   "zipSize": 16219
   },
   {
    "id": "dhanbumaa",
@@ -1552,8 +1552,8 @@
      "desktopFile": "Dhanbumaa-Regular.ttf",
      "sizes": {
       "ttf": 24500,
-      "woff2": 19148,
-      "woff": 21240
+      "woff2": 19180,
+      "woff": 21236
      },
      "subsets": {
       "thaana": 18104,
@@ -1580,7 +1580,7 @@
      "desktopFile": "Dhanbumaa-Bold.ttf",
      "sizes": {
       "ttf": 25296,
-      "woff2": 19864,
+      "woff2": 19924,
       "woff": 22108
      },
      "subsets": {
@@ -1603,7 +1603,7 @@
      "sizeAdjust": 0.985
     }
    ],
-   "zipSize": 43689
+   "zipSize": 43644
   },
   {
    "id": "dhivehi-muraka",
@@ -1634,8 +1634,8 @@
      "desktopFile": "DhivehiMuraka-Regular.ttf",
      "sizes": {
       "ttf": 43224,
-      "woff2": 16704,
-      "woff": 22748
+      "woff2": 16812,
+      "woff": 22724
      },
      "subsets": {
       "thaana": 6872,
@@ -1657,7 +1657,7 @@
      "sizeAdjust": 1.043
     }
    ],
-   "zipSize": 25637
+   "zipSize": 25619
   },
   {
    "id": "faagathi-dheli",
@@ -1688,8 +1688,8 @@
      "desktopFile": "FaagathiDheli-Light.ttf",
      "sizes": {
       "ttf": 21644,
-      "woff2": 10128,
-      "woff": 12708
+      "woff2": 10140,
+      "woff": 12704
      },
      "subsets": {
       "thaana": 8532,
@@ -1716,8 +1716,8 @@
      "desktopFile": "FaagathiDheli-Regular.ttf",
      "sizes": {
       "ttf": 21592,
-      "woff2": 10160,
-      "woff": 12688
+      "woff2": 10156,
+      "woff": 12680
      },
      "subsets": {
       "thaana": 8524,
@@ -1739,7 +1739,7 @@
      "sizeAdjust": 1.501
     }
    ],
-   "zipSize": 27989
+   "zipSize": 27948
   },
   {
    "id": "faagathi-neon",
@@ -1770,8 +1770,8 @@
      "desktopFile": "FaagathiNeon-ExtraLight.ttf",
      "sizes": {
       "ttf": 21664,
-      "woff2": 9968,
-      "woff": 12432
+      "woff2": 10000,
+      "woff": 12424
      },
      "subsets": {
       "thaana": 8344,
@@ -1798,8 +1798,8 @@
      "desktopFile": "FaagathiNeon-Light.ttf",
      "sizes": {
       "ttf": 21736,
-      "woff2": 9960,
-      "woff": 12380
+      "woff2": 9876,
+      "woff": 12376
      },
      "subsets": {
       "thaana": 8316,
@@ -1826,8 +1826,8 @@
      "desktopFile": "FaagathiNeon-Regular.ttf",
      "sizes": {
       "ttf": 22392,
-      "woff2": 9772,
-      "woff": 12276
+      "woff2": 9764,
+      "woff": 12264
      },
      "subsets": {
       "thaana": 8220,
@@ -1854,8 +1854,8 @@
      "desktopFile": "FaagathiNeon-Bold.ttf",
      "sizes": {
       "ttf": 21788,
-      "woff2": 9648,
-      "woff": 12084
+      "woff2": 9636,
+      "woff": 12076
      },
      "subsets": {
       "thaana": 8048,
@@ -1877,7 +1877,7 @@
      "sizeAdjust": 1.552
     }
    ],
-   "zipSize": 51631
+   "zipSize": 51579
   },
   {
    "id": "faaru-punk",
@@ -1908,8 +1908,8 @@
      "desktopFile": "FaaruPunk-Regular.ttf",
      "sizes": {
       "ttf": 12652,
-      "woff2": 5908,
-      "woff": 8292
+      "woff2": 5964,
+      "woff": 8280
      },
      "subsets": {
       "thaana": 5192,
@@ -1936,8 +1936,8 @@
      "desktopFile": "FaaruPunk-Bold.ttf",
      "sizes": {
       "ttf": 12616,
-      "woff2": 6068,
-      "woff": 8400
+      "woff2": 6080,
+      "woff": 8392
      },
      "subsets": {
       "thaana": 5308,
@@ -1959,7 +1959,7 @@
      "sizeAdjust": 1.646
     }
    ],
-   "zipSize": 19049
+   "zipSize": 19018
   },
   {
    "id": "faiy",
@@ -2043,9 +2043,9 @@
      "source": "fanara-thin.ttf",
      "desktopFile": "Fanara-Thin.ttf",
      "sizes": {
-      "ttf": 128360,
-      "woff2": 45048,
-      "woff": 60064
+      "ttf": 129264,
+      "woff2": 45112,
+      "woff": 60168
      },
      "subsets": {
       "thaana": 12728,
@@ -2071,9 +2071,9 @@
      "source": "fanara-regular.ttf",
      "desktopFile": "Fanara-Regular.ttf",
      "sizes": {
-      "ttf": 132836,
-      "woff2": 48340,
-      "woff": 64076
+      "ttf": 133776,
+      "woff2": 48464,
+      "woff": 64232
      },
      "subsets": {
       "thaana": 13684,
@@ -2099,9 +2099,9 @@
      "source": "fanara-bold.ttf",
      "desktopFile": "Fanara-Bold.ttf",
      "sizes": {
-      "ttf": 136336,
-      "woff2": 50696,
-      "woff": 66888
+      "ttf": 137264,
+      "woff2": 50688,
+      "woff": 66972
      },
      "subsets": {
       "thaana": 14032,
@@ -2127,9 +2127,9 @@
      "source": "fanara-black.ttf",
      "desktopFile": "Fanara-Black.ttf",
      "sizes": {
-      "ttf": 132864,
-      "woff2": 47640,
-      "woff": 63204
+      "ttf": 133776,
+      "woff2": 47672,
+      "woff": 63268
      },
      "subsets": {
       "thaana": 13036,
@@ -2151,7 +2151,7 @@
      "sizeAdjust": 0.948
     }
    ],
-   "zipSize": 258231
+   "zipSize": 258710
   },
   {
    "id": "fanara-golhi",
@@ -2181,9 +2181,9 @@
      "source": "fanaragolhi-thin.ttf",
      "desktopFile": "FanaraGolhi-Thin.ttf",
      "sizes": {
-      "ttf": 13620,
-      "woff2": 4864,
-      "woff": 6840
+      "ttf": 13884,
+      "woff2": 4868,
+      "woff": 6844
      },
      "subsets": {
       "thaana": 4224,
@@ -2209,9 +2209,9 @@
      "source": "fanaragolhi-extralight.ttf",
      "desktopFile": "FanaraGolhi-ExtraLight.ttf",
      "sizes": {
-      "ttf": 13728,
-      "woff2": 5296,
-      "woff": 7316
+      "ttf": 13984,
+      "woff2": 5248,
+      "woff": 7304
      },
      "subsets": {
       "thaana": 4616,
@@ -2237,9 +2237,9 @@
      "source": "fanaragolhi-light.ttf",
      "desktopFile": "FanaraGolhi-Light.ttf",
      "sizes": {
-      "ttf": 13716,
-      "woff2": 5284,
-      "woff": 7312
+      "ttf": 13960,
+      "woff2": 5288,
+      "woff": 7308
      },
      "subsets": {
       "thaana": 4620,
@@ -2265,9 +2265,9 @@
      "source": "fanaragolhi-regular.ttf",
      "desktopFile": "FanaraGolhi-Regular.ttf",
      "sizes": {
-      "ttf": 13600,
-      "woff2": 5284,
-      "woff": 7260
+      "ttf": 13844,
+      "woff2": 5224,
+      "woff": 7244
      },
      "subsets": {
       "thaana": 4556,
@@ -2293,9 +2293,9 @@
      "source": "fanaragolhi-medium.ttf",
      "desktopFile": "FanaraGolhi-Medium.ttf",
      "sizes": {
-      "ttf": 13712,
-      "woff2": 5016,
-      "woff": 7004
+      "ttf": 13956,
+      "woff2": 5036,
+      "woff": 7024
      },
      "subsets": {
       "thaana": 4356,
@@ -2321,9 +2321,9 @@
      "source": "fanaragolhi-semibold.ttf",
      "desktopFile": "FanaraGolhi-SemiBold.ttf",
      "sizes": {
-      "ttf": 13800,
-      "woff2": 5444,
-      "woff": 7440
+      "ttf": 14044,
+      "woff2": 5464,
+      "woff": 7428
      },
      "subsets": {
       "thaana": 4756,
@@ -2349,9 +2349,9 @@
      "source": "fanaragolhi-bold.ttf",
      "desktopFile": "FanaraGolhi-Bold.ttf",
      "sizes": {
-      "ttf": 13592,
-      "woff2": 5424,
-      "woff": 7380
+      "ttf": 13836,
+      "woff2": 5372,
+      "woff": 7368
      },
      "subsets": {
       "thaana": 4704,
@@ -2377,9 +2377,9 @@
      "source": "fanaragolhi-extrabold.ttf",
      "desktopFile": "FanaraGolhi-ExtraBold.ttf",
      "sizes": {
-      "ttf": 13672,
-      "woff2": 5576,
-      "woff": 7544
+      "ttf": 13916,
+      "woff2": 5608,
+      "woff": 7536
      },
      "subsets": {
       "thaana": 4864,
@@ -2405,9 +2405,9 @@
      "source": "fanaragolhi-black.ttf",
      "desktopFile": "FanaraGolhi-Black.ttf",
      "sizes": {
-      "ttf": 13492,
-      "woff2": 5248,
-      "woff": 7192
+      "ttf": 13736,
+      "woff2": 5196,
+      "woff": 7180
      },
      "subsets": {
       "thaana": 4608,
@@ -2429,7 +2429,7 @@
      "sizeAdjust": 0.982
     }
    ],
-   "zipSize": 66883
+   "zipSize": 66857
   },
   {
    "id": "faruma",
@@ -2462,9 +2462,9 @@
      "source": "faruma.ttf",
      "desktopFile": "Faruma-Regular.ttf",
      "sizes": {
-      "ttf": 42012,
-      "woff2": 20228,
-      "woff": 25996
+      "ttf": 42248,
+      "woff2": 20248,
+      "woff": 26036
      },
      "subsets": {
       "thaana": 13220,
@@ -2486,7 +2486,7 @@
      "sizeAdjust": 1.0
     }
    ],
-   "zipSize": 26379
+   "zipSize": 26424
   },
   {
    "id": "fiyuzu",
@@ -2516,9 +2516,9 @@
      "source": "fiyuzu-regular.ttf",
      "desktopFile": "Fiyuzu-Regular.ttf",
      "sizes": {
-      "ttf": 67532,
-      "woff2": 27068,
-      "woff": 35048
+      "ttf": 67788,
+      "woff2": 27008,
+      "woff": 34988
      },
      "subsets": {
       "thaana": 11508,
@@ -2540,7 +2540,7 @@
      "sizeAdjust": 0.831
     }
    ],
-   "zipSize": 37730
+   "zipSize": 37673
   },
   {
    "id": "gurafiku",
@@ -2571,8 +2571,8 @@
      "desktopFile": "Gurafiku-Regular.ttf",
      "sizes": {
       "ttf": 10528,
-      "woff2": 5260,
-      "woff": 7352
+      "woff2": 5316,
+      "woff": 7344
      },
      "subsets": {
       "thaana": 4668,
@@ -2594,7 +2594,7 @@
      "sizeAdjust": 1.54
     }
    ],
-   "zipSize": 9793
+   "zipSize": 9785
   },
   {
    "id": "haluvidhaa",
@@ -2625,8 +2625,8 @@
      "desktopFile": "Haluvidhaa-Regular.ttf",
      "sizes": {
       "ttf": 24020,
-      "woff2": 10776,
-      "woff": 13392
+      "woff2": 10744,
+      "woff": 13384
      },
      "subsets": {
       "thaana": 9924,
@@ -2648,7 +2648,7 @@
      "sizeAdjust": 1.815
     }
    ],
-   "zipSize": 15978
+   "zipSize": 15956
   },
   {
    "id": "hawwa",
@@ -2679,7 +2679,7 @@
      "desktopFile": "Hawwa-Regular.ttf",
      "sizes": {
       "ttf": 20688,
-      "woff2": 10996,
+      "woff2": 10968,
       "woff": 13436
      },
      "subsets": {
@@ -2702,7 +2702,7 @@
      "sizeAdjust": 1.252
     }
    ],
-   "zipSize": 15917
+   "zipSize": 15909
   },
   {
    "id": "kanafala",
@@ -2780,9 +2780,9 @@
      "source": "kolhu-thin.ttf",
      "desktopFile": "Kolhu-Thin.ttf",
      "sizes": {
-      "ttf": 125520,
-      "woff2": 43812,
-      "woff": 58260
+      "ttf": 126420,
+      "woff2": 43888,
+      "woff": 58344
      },
      "subsets": {
       "thaana": 11560,
@@ -2808,9 +2808,9 @@
      "source": "kolhu-extralight.ttf",
      "desktopFile": "Kolhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 130168,
-      "woff2": 46436,
-      "woff": 61516
+      "ttf": 131108,
+      "woff2": 46420,
+      "woff": 61668
      },
      "subsets": {
       "thaana": 12016,
@@ -2836,9 +2836,9 @@
      "source": "kolhu-light.ttf",
      "desktopFile": "Kolhu-Light.ttf",
      "sizes": {
-      "ttf": 130304,
-      "woff2": 46748,
-      "woff": 61972
+      "ttf": 131224,
+      "woff2": 46864,
+      "woff": 62140
      },
      "subsets": {
       "thaana": 12120,
@@ -2864,9 +2864,9 @@
      "source": "kolhu-regular.ttf",
      "desktopFile": "Kolhu-Regular.ttf",
      "sizes": {
-      "ttf": 129732,
-      "woff2": 46632,
-      "woff": 62052
+      "ttf": 130644,
+      "woff2": 46620,
+      "woff": 62204
      },
      "subsets": {
       "thaana": 12092,
@@ -2892,9 +2892,9 @@
      "source": "kolhu-medium.ttf",
      "desktopFile": "Kolhu-Medium.ttf",
      "sizes": {
-      "ttf": 129224,
-      "woff2": 46100,
-      "woff": 61180
+      "ttf": 130132,
+      "woff2": 45884,
+      "woff": 61240
      },
      "subsets": {
       "thaana": 11732,
@@ -2920,9 +2920,9 @@
      "source": "kolhu-semibold.ttf",
      "desktopFile": "Kolhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 133896,
-      "woff2": 48992,
-      "woff": 64772
+      "ttf": 134864,
+      "woff2": 48916,
+      "woff": 64752
      },
      "subsets": {
       "thaana": 12280,
@@ -2948,9 +2948,9 @@
      "source": "kolhu-bold.ttf",
      "desktopFile": "Kolhu-Bold.ttf",
      "sizes": {
-      "ttf": 132776,
-      "woff2": 48844,
-      "woff": 64808
+      "ttf": 133732,
+      "woff2": 48860,
+      "woff": 64776
      },
      "subsets": {
       "thaana": 12368,
@@ -2976,9 +2976,9 @@
      "source": "kolhu-extrabold.ttf",
      "desktopFile": "Kolhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 132336,
-      "woff2": 48396,
-      "woff": 64228
+      "ttf": 133328,
+      "woff2": 48376,
+      "woff": 64296
      },
      "subsets": {
       "thaana": 12080,
@@ -3004,9 +3004,9 @@
      "source": "kolhu-black.ttf",
      "desktopFile": "Kolhu-Black.ttf",
      "sizes": {
-      "ttf": 129224,
-      "woff2": 46060,
-      "woff": 61152
+      "ttf": 130164,
+      "woff2": 46084,
+      "woff": 61192
      },
      "subsets": {
       "thaana": 11384,
@@ -3028,7 +3028,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 565223
+   "zipSize": 566154
   },
   {
    "id": "lcd-thaana",
@@ -3059,7 +3059,7 @@
      "desktopFile": "LCDThaana-Regular.ttf",
      "sizes": {
       "ttf": 58132,
-      "woff2": 15300,
+      "woff2": 15292,
       "woff": 20828
      },
      "subsets": {
@@ -3082,7 +3082,7 @@
      "sizeAdjust": 0.773
     }
    ],
-   "zipSize": 23711
+   "zipSize": 23694
   },
   {
    "id": "magey-huseynu",
@@ -3113,8 +3113,8 @@
      "desktopFile": "MageyHuseynu-Regular.ttf",
      "sizes": {
       "ttf": 59192,
-      "woff2": 26072,
-      "woff": 31816
+      "woff2": 26084,
+      "woff": 31832
      },
      "subsets": {
       "thaana": 13852,
@@ -3136,7 +3136,7 @@
      "sizeAdjust": 1.07
     }
    ],
-   "zipSize": 32290
+   "zipSize": 32288
   },
   {
    "id": "masnooee-mono",
@@ -3167,8 +3167,8 @@
      "desktopFile": "MasnooeeMono-Regular.ttf",
      "sizes": {
       "ttf": 106508,
-      "woff2": 38480,
-      "woff": 51668
+      "woff2": 38420,
+      "woff": 51640
      },
      "subsets": {
       "thaana": 10816,
@@ -3190,7 +3190,7 @@
      "sizeAdjust": 0.75
     }
    ],
-   "zipSize": 54452
+   "zipSize": 54424
   },
   {
    "id": "modfaruma",
@@ -3222,7 +3222,7 @@
      "sizes": {
       "ttf": 41848,
       "woff2": 20108,
-      "woff": 25840
+      "woff": 25832
      },
      "subsets": {
       "thaana": 13540,
@@ -3244,7 +3244,7 @@
      "sizeAdjust": 1.0
     }
    ],
-   "zipSize": 26186
+   "zipSize": 26177
   },
   {
    "id": "motaru-dhigu",
@@ -3275,8 +3275,8 @@
      "desktopFile": "MotaruDhigu-Regular.ttf",
      "sizes": {
       "ttf": 50884,
-      "woff2": 26972,
-      "woff": 31960
+      "woff2": 27032,
+      "woff": 31952
      },
      "subsets": {
       "thaana": 15600,
@@ -3298,7 +3298,7 @@
      "sizeAdjust": 1.963
     }
    ],
-   "zipSize": 34710
+   "zipSize": 34707
   },
   {
    "id": "motaru-square",
@@ -3597,9 +3597,9 @@
      "source": "mv-alram.ttf",
      "desktopFile": "MVAlram-Regular.ttf",
      "sizes": {
-      "ttf": 67632,
-      "woff2": 26556,
-      "woff": 34640
+      "ttf": 67640,
+      "woff2": 26500,
+      "woff": 34636
      },
      "subsets": {
       "thaana": 24780,
@@ -3621,7 +3621,7 @@
      "sizeAdjust": 0.955
     }
    ],
-   "zipSize": 35101
+   "zipSize": 35093
   },
   {
    "id": "mv-ashaahi",
@@ -3699,9 +3699,9 @@
      "source": "mv-azheel.ttf",
      "desktopFile": "MVAzheel-Regular.ttf",
      "sizes": {
-      "ttf": 73440,
-      "woff2": 29104,
-      "woff": 38452
+      "ttf": 73448,
+      "woff2": 29116,
+      "woff": 38448
      },
      "subsets": {
       "thaana": 27420,
@@ -3723,7 +3723,7 @@
      "sizeAdjust": 0.984
     }
    ],
-   "zipSize": 38972
+   "zipSize": 38968
   },
   {
    "id": "mv-beys",
@@ -3861,12 +3861,12 @@
      "source": "mv-dheli-fihi.ttf",
      "desktopFile": "MVDheliFihi-Bold.ttf",
      "sizes": {
-      "ttf": 162448,
-      "woff2": 59532,
-      "woff": 80888
+      "ttf": 162788,
+      "woff2": 59476,
+      "woff": 81072
      },
      "subsets": {
-      "thaana": 57120,
+      "thaana": 57148,
       "latin": 31756
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%8b%de%ac%de%8d%de%a8-%de%8a%de%a8%de%80%de%a8/",
@@ -3885,7 +3885,7 @@
      "sizeAdjust": 0.88
     }
    ],
-   "zipSize": 81406
+   "zipSize": 81581
   },
   {
    "id": "mv-dhidhavee",
@@ -4023,12 +4023,12 @@
      "source": "mvedhuru.ttf",
      "desktopFile": "MVEdhuru-Regular.ttf",
      "sizes": {
-      "ttf": 76004,
-      "woff2": 28500,
-      "woff": 38664
+      "ttf": 76112,
+      "woff2": 28428,
+      "woff": 38632
      },
      "subsets": {
-      "thaana": 26908,
+      "thaana": 26952,
       "latin": 18600
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%ac%de%8b%de%aa%de%83%de%aa/",
@@ -4047,7 +4047,7 @@
      "sizeAdjust": 0.71
     }
    ],
-   "zipSize": 39100
+   "zipSize": 39053
   },
   {
    "id": "mv-elaaf",
@@ -4077,9 +4077,9 @@
      "source": "elaaf-lite.ttf",
      "desktopFile": "MVElaaf-Light.ttf",
      "sizes": {
-      "ttf": 21292,
-      "woff2": 11464,
-      "woff": 13824
+      "ttf": 21660,
+      "woff2": 11556,
+      "woff": 13968
      },
      "subsets": {
       "thaana": 10256,
@@ -4105,12 +4105,12 @@
      "source": "elaaf-normal.ttf",
      "desktopFile": "MVElaaf-Regular.ttf",
      "sizes": {
-      "ttf": 21540,
-      "woff2": 11196,
-      "woff": 13504
+      "ttf": 22024,
+      "woff2": 11364,
+      "woff": 13688
      },
      "subsets": {
-      "thaana": 10072,
+      "thaana": 10032,
       "latin": 5472
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Elaaf_Normal.otf",
@@ -4129,7 +4129,7 @@
      "sizeAdjust": 1.128
     }
    ],
-   "zipSize": 27582
+   "zipSize": 27909
   },
   {
    "id": "mv-elaaf-formal",
@@ -4159,12 +4159,12 @@
      "source": "mv-elaaf-formal.ttf",
      "desktopFile": "MVElaafFormal-Regular.ttf",
      "sizes": {
-      "ttf": 22836,
-      "woff2": 11788,
-      "woff": 14280
+      "ttf": 22852,
+      "woff2": 11688,
+      "woff": 14264
      },
      "subsets": {
-      "thaana": 10604,
+      "thaana": 10616,
       "latin": 5716
      },
      "upstream": "https://github.com/aliaafee/ttf-dhivehi",
@@ -4183,7 +4183,7 @@
      "sizeAdjust": 1.173
     }
    ],
-   "zipSize": 14777
+   "zipSize": 14767
   },
   {
    "id": "mv-faseyha",
@@ -4351,12 +4351,12 @@
      "source": "mv-fathimath.ttf",
      "desktopFile": "MVFathimath-Bold.ttf",
      "sizes": {
-      "ttf": 58700,
-      "woff2": 24212,
-      "woff": 31104
+      "ttf": 58712,
+      "woff2": 24196,
+      "woff": 31100
      },
      "subsets": {
-      "thaana": 22780,
+      "thaana": 22920,
       "latin": 17376
      },
      "upstream": "https://dhivehifont.com/2022/05/16/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8a%de%a7%de%8c%de%a8%de%89%de%a6%de%8c%de%aa/",
@@ -4375,61 +4375,7 @@
      "sizeAdjust": 0.944
     }
    ],
-   "zipSize": 31563
-  },
-  {
-   "id": "mv-finikaa",
-   "name": "MV Finikaa",
-   "category": "novelty",
-   "aliases": [],
-   "notes": null,
-   "hidden": false,
-   "license": "CC BY",
-   "unmodified": false,
-   "unmodifiedReason": null,
-   "source": "FontStruct (fontstruct.com)",
-   "upstream": "https://fontstruct.com/fontstructions/show/1597340/mv-finikaa",
-   "attribution": "[catalogue page](https://fontstruct.com/fontstructions/show/1597340/mv-finikaa)",
-   "copyright": "© Zillon 2019",
-   "designer": "Zillon",
-   "manufacturer": "https://fontstruct.com",
-   "description": "“MV Finikaa” was built with FontStruct",
-   "vendorUrl": "https://fontstruct.com/fontstructions/show/1597340/mv-finikaa",
-   "designerUrl": "https://fontstruct.com/fontstructors/show/1250314/zillon",
-   "licenseText": "Creative Commons Attribution",
-   "licenseUrl": "http://creativecommons.org/licenses/by/3.0/",
-   "version": "Version 1.0; dvfonts",
-   "styles": [
-    {
-     "weight": 400,
-     "source": "mv-finikaa.otf",
-     "desktopFile": "MVFinikaa-Regular.ttf",
-     "sizes": {
-      "ttf": 11476,
-      "woff2": 3596,
-      "woff": 4236
-     },
-     "subsets": {
-      "thaana": 3596,
-      "latin": 2204
-     },
-     "upstream": "https://fontstruct.com/fontstructions/show/1597340/mv-finikaa",
-     "legacyLayout": null,
-     "metrics": {
-      "repaired": false,
-      "ascent": 0.857,
-      "descent": -0.2855,
-      "lineGap": 0.0
-     },
-     "glyphs": 97,
-     "thaana": 50,
-     "latin": 0,
-     "codepoints": 97,
-     "cssOverrides": null,
-     "sizeAdjust": 0.746
-    }
-   ],
-   "zipSize": 4654
+   "zipSize": 31548
   },
   {
    "id": "mv-funa",
@@ -4573,9 +4519,9 @@
      "source": "mv-gaa-lhohi.ttf",
      "desktopFile": "MVGaaLhohi-Regular.ttf",
      "sizes": {
-      "ttf": 45764,
-      "woff2": 23240,
-      "woff": 27760
+      "ttf": 46016,
+      "woff2": 23416,
+      "woff": 27856
      },
      "subsets": {
       "thaana": 22152,
@@ -4597,7 +4543,7 @@
      "sizeAdjust": 1.089
     }
    ],
-   "zipSize": 28198
+   "zipSize": 28282
   },
   {
    "id": "mv-galan",
@@ -4627,12 +4573,12 @@
      "source": "mv-galan-normal.otf",
      "desktopFile": "MVGalan-Regular.ttf",
      "sizes": {
-      "ttf": 26624,
-      "woff2": 19516,
-      "woff": 21460
+      "ttf": 27124,
+      "woff2": 19688,
+      "woff": 21660
      },
      "subsets": {
-      "thaana": 16156,
+      "thaana": 16192,
       "latin": 7996
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Galan_Normal.otf",
@@ -4651,7 +4597,7 @@
      "sizeAdjust": 0.908
     }
    ],
-   "zipSize": 21949
+   "zipSize": 22148
   },
   {
    "id": "mv-golhifoshi",
@@ -4737,9 +4683,9 @@
      "source": "avas.ttf",
      "desktopFile": "MVGroupXAvas-Regular.ttf",
      "sizes": {
-      "ttf": 25592,
-      "woff2": 14872,
-      "woff": 17212
+      "ttf": 25984,
+      "woff2": 14980,
+      "woff": 17364
      },
      "subsets": {
       "thaana": 13752,
@@ -4761,7 +4707,7 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 17668
+   "zipSize": 17829
   },
   {
    "id": "mv-hulhumale",
@@ -4966,9 +4912,9 @@
      "source": "iyyu-normal.ttf",
      "desktopFile": "MVIyyu-Regular.ttf",
      "sizes": {
-      "ttf": 21784,
-      "woff2": 11656,
-      "woff": 14080
+      "ttf": 22244,
+      "woff2": 11792,
+      "woff": 14264
      },
      "subsets": {
       "thaana": 10460,
@@ -4990,7 +4936,7 @@
      "sizeAdjust": 1.137
     }
    ],
-   "zipSize": 14409
+   "zipSize": 14582
   },
   {
    "id": "mv-iyyu-formal",
@@ -5021,11 +4967,11 @@
      "desktopFile": "MVIyyuFormal-Regular.ttf",
      "sizes": {
       "ttf": 17556,
-      "woff2": 10480,
+      "woff2": 10500,
       "woff": 12696
      },
      "subsets": {
-      "thaana": 9632,
+      "thaana": 9576,
       "latin": 5540
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Formal.otf",
@@ -5044,7 +4990,7 @@
      "sizeAdjust": 1.058
     }
    ],
-   "zipSize": 13042
+   "zipSize": 13029
   },
   {
    "id": "mv-iyyu-nala",
@@ -5074,9 +5020,9 @@
      "source": "iyyu-nala.ttf",
      "desktopFile": "MVIyyuNala-Regular.ttf",
      "sizes": {
-      "ttf": 21412,
-      "woff2": 11672,
-      "woff": 13944
+      "ttf": 21788,
+      "woff2": 11748,
+      "woff": 14100
      },
      "subsets": {
       "thaana": 10536,
@@ -5098,7 +5044,7 @@
      "sizeAdjust": 1.117
     }
    ],
-   "zipSize": 14328
+   "zipSize": 14475
   },
   {
    "id": "mv-izy-pro",
@@ -5182,8 +5128,8 @@
      "source": "mv-izyannormal.ttf",
      "desktopFile": "MVIzyan-Regular.ttf",
      "sizes": {
-      "ttf": 70248,
-      "woff2": 26364,
+      "ttf": 70260,
+      "woff2": 26492,
       "woff": 35836
      },
      "subsets": {
@@ -5206,7 +5152,7 @@
      "sizeAdjust": 0.931
     }
    ],
-   "zipSize": 36257
+   "zipSize": 36236
   },
   {
    "id": "mv-izyan-athuliyun",
@@ -5236,9 +5182,9 @@
      "source": "mv-izyan-athuliyun-light.ttf",
      "desktopFile": "MVIzyanAthuliyun-Light.ttf",
      "sizes": {
-      "ttf": 44844,
-      "woff2": 23432,
-      "woff": 27492
+      "ttf": 45096,
+      "woff2": 23600,
+      "woff": 27588
      },
      "subsets": {
       "thaana": 22480,
@@ -5264,9 +5210,9 @@
      "source": "mv-izyan-athuliyun.ttf",
      "desktopFile": "MVIzyanAthuliyun-Regular.ttf",
      "sizes": {
-      "ttf": 30160,
-      "woff2": 15836,
-      "woff": 19544
+      "ttf": 30412,
+      "woff2": 15896,
+      "woff": 19640
      },
      "subsets": {
       "thaana": 15060,
@@ -5288,7 +5234,7 @@
      "sizeAdjust": 0.823
     }
    ],
-   "zipSize": 47491
+   "zipSize": 47659
   },
   {
    "id": "mv-izyan-bodu-akuru",
@@ -5318,12 +5264,12 @@
      "source": "mv-izyan-bodu-akuru.ttf",
      "desktopFile": "MVIzyanBoduAkuru-Bold.ttf",
      "sizes": {
-      "ttf": 57008,
-      "woff2": 23540,
-      "woff": 29984
+      "ttf": 57044,
+      "woff2": 23528,
+      "woff": 29960
      },
      "subsets": {
-      "thaana": 21988,
+      "thaana": 22048,
       "latin": 16524
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%84%de%ae%de%91%de%aa%de%87%de%a6%de%86%de%aa%de%83%de%aa/",
@@ -5342,7 +5288,7 @@
      "sizeAdjust": 1.031
     }
    ],
-   "zipSize": 30474
+   "zipSize": 30443
   },
   {
    "id": "mv-izyan-bodu-akuru-3d",
@@ -5372,12 +5318,12 @@
      "source": "mvizyanboduakuru3d-bold.ttf",
      "desktopFile": "MVIzyanBoduAkuru3D-Bold.ttf",
      "sizes": {
-      "ttf": 96568,
-      "woff2": 38176,
-      "woff": 50088
+      "ttf": 96628,
+      "woff2": 38196,
+      "woff": 50060
      },
      "subsets": {
-      "thaana": 35256,
+      "thaana": 35092,
       "latin": 23420
      },
      "upstream": "https://dhivehifont.com/2022/10/31/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%84%de%ae%de%91%de%aa%de%87%de%a6%de%86%de%aa%de%83%de%aa-3%de%91%de%a9/",
@@ -5396,7 +5342,7 @@
      "sizeAdjust": 0.882
     }
    ],
-   "zipSize": 50632
+   "zipSize": 50600
   },
   {
    "id": "mv-izyan-edge",
@@ -5426,9 +5372,9 @@
      "source": "mv-izyan-edge.ttf",
      "desktopFile": "MVIzyanEdge-Medium.ttf",
      "sizes": {
-      "ttf": 46992,
-      "woff2": 18080,
-      "woff": 23876
+      "ttf": 47116,
+      "woff2": 18124,
+      "woff": 23912
      },
      "subsets": {
       "thaana": 15948,
@@ -5450,7 +5396,7 @@
      "sizeAdjust": 0.845
     }
    ],
-   "zipSize": 24341
+   "zipSize": 24365
   },
   {
    "id": "mv-izyan-extra-light",
@@ -5480,12 +5426,12 @@
      "source": "mv-izyan-extra-light.ttf",
      "desktopFile": "MVIzyanExtraLight-ExtraLight.ttf",
      "sizes": {
-      "ttf": 71436,
-      "woff2": 25424,
-      "woff": 34128
+      "ttf": 71540,
+      "woff2": 25444,
+      "woff": 34104
      },
      "subsets": {
-      "thaana": 24348,
+      "thaana": 24356,
       "latin": 18000
      },
      "upstream": "https://dhivehifont.com/archives/34684",
@@ -5504,7 +5450,7 @@
      "sizeAdjust": 1.166
     }
    ],
-   "zipSize": 34601
+   "zipSize": 34576
   },
   {
    "id": "mv-izyan-lhohi",
@@ -5534,12 +5480,12 @@
      "source": "mv-izyan-lhohi.ttf",
      "desktopFile": "MVIzyanLhohi-Bold.ttf",
      "sizes": {
-      "ttf": 60080,
-      "woff2": 22672,
-      "woff": 29964
+      "ttf": 61004,
+      "woff2": 22868,
+      "woff": 30304
      },
      "subsets": {
-      "thaana": 20100,
+      "thaana": 20396,
       "latin": 9524
      },
      "upstream": "https://dhivehifont.com/2024/08/13/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%85%de%ae%de%80%de%a8/",
@@ -5558,7 +5504,7 @@
      "sizeAdjust": 0.849
     }
    ],
-   "zipSize": 30502
+   "zipSize": 30831
   },
   {
    "id": "mv-izyan-light",
@@ -5588,12 +5534,12 @@
      "source": "mv-izyan-light.ttf",
      "desktopFile": "MVIzyanLight-Light.ttf",
      "sizes": {
-      "ttf": 66604,
-      "woff2": 25360,
-      "woff": 33840
+      "ttf": 66612,
+      "woff2": 25476,
+      "woff": 33832
      },
      "subsets": {
-      "thaana": 24444,
+      "thaana": 24492,
       "latin": 17944
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%87%de%ac%de%86%de%b0%de%90%de%b0%de%93%de%b0%de%83%de%a7-%de%8d%de%a6%de%87%de%a8%de%93%de%b0/",
@@ -5612,7 +5558,7 @@
      "sizeAdjust": 1.141
     }
    ],
-   "zipSize": 34390
+   "zipSize": 34376
   },
   {
    "id": "mv-izyan-liyun",
@@ -5642,12 +5588,12 @@
      "source": "mv-izyan-liyun-regular.ttf",
      "desktopFile": "MVIzyanLiyun-Regular.ttf",
      "sizes": {
-      "ttf": 62680,
-      "woff2": 25080,
-      "woff": 32736
+      "ttf": 62788,
+      "woff2": 24992,
+      "woff": 32672
      },
      "subsets": {
-      "thaana": 23420,
+      "thaana": 23484,
       "latin": 17544
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8d%de%a8%de%94%de%aa%de%82%de%b0/",
@@ -5666,7 +5612,7 @@
      "sizeAdjust": 0.959
     }
    ],
-   "zipSize": 33202
+   "zipSize": 33127
   },
   {
    "id": "mv-izyan-reethi",
@@ -5696,12 +5642,12 @@
      "source": "mvizyanreethi-bold.ttf",
      "desktopFile": "MVIzyanReethi-Bold.ttf",
      "sizes": {
-      "ttf": 39968,
-      "woff2": 20140,
-      "woff": 23760
+      "ttf": 39992,
+      "woff2": 20124,
+      "woff": 23756
      },
      "subsets": {
-      "thaana": 18348,
+      "thaana": 18352,
       "latin": 7140
      },
      "upstream": "https://dhivehifont.com/2024/01/31/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%83%de%a9%de%8c%de%a8/",
@@ -5720,7 +5666,7 @@
      "sizeAdjust": 0.818
     }
    ],
-   "zipSize": 24347
+   "zipSize": 24353
   },
   {
    "id": "mv-izyan-regular",
@@ -5750,12 +5696,12 @@
      "source": "mvizyaregular.ttf",
      "desktopFile": "MVIzyanRegular-Regular.ttf",
      "sizes": {
-      "ttf": 31264,
-      "woff2": 12048,
-      "woff": 15844
+      "ttf": 31280,
+      "woff2": 11964,
+      "woff": 15848
      },
      "subsets": {
-      "thaana": 10276,
+      "thaana": 10336,
       "latin": 4640
      },
      "upstream": "https://dhivehifont.com/2022/04/30/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%83%de%ac%de%8e%de%a8%de%87%de%aa%de%8d%de%a7%de%83/",
@@ -5774,7 +5720,7 @@
      "sizeAdjust": 1.09
     }
    ],
-   "zipSize": 16283
+   "zipSize": 16287
   },
   {
    "id": "mv-izyan-suruhee",
@@ -5804,8 +5750,8 @@
      "source": "mv-izyan-suruhee.ttf",
      "desktopFile": "MVIzyanSuruhee-Regular.ttf",
      "sizes": {
-      "ttf": 42112,
-      "woff2": 16240,
+      "ttf": 42120,
+      "woff2": 16144,
       "woff": 21740
      },
      "subsets": {
@@ -5828,7 +5774,7 @@
      "sizeAdjust": 1.139
     }
    ],
-   "zipSize": 22178
+   "zipSize": 22173
   },
   {
    "id": "mv-izyan-thaana",
@@ -5858,12 +5804,12 @@
      "source": "mv-izyanthaana.ttf",
      "desktopFile": "MVIzyanThaana-Regular.ttf",
      "sizes": {
-      "ttf": 66808,
-      "woff2": 25824,
-      "woff": 34980
+      "ttf": 66816,
+      "woff2": 25684,
+      "woff": 34972
      },
      "subsets": {
-      "thaana": 24656,
+      "thaana": 24612,
       "latin": 18492
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8c%de%a7%de%82%de%a6/",
@@ -5882,7 +5828,7 @@
      "sizeAdjust": 0.989
     }
    ],
-   "zipSize": 35415
+   "zipSize": 35400
   },
   {
    "id": "mv-izyan-thin",
@@ -5912,12 +5858,12 @@
      "source": "mv-izyan-thin.ttf",
      "desktopFile": "MVIzyanThin-Thin.ttf",
      "sizes": {
-      "ttf": 71380,
-      "woff2": 25976,
-      "woff": 35092
+      "ttf": 71500,
+      "woff2": 25900,
+      "woff": 35076
      },
      "subsets": {
-      "thaana": 24868,
+      "thaana": 24812,
       "latin": 17300
      },
      "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%87%de%a8%de%92%de%a8%de%94%de%a6%de%82%de%b0-%de%8c%de%a8%de%82%de%b0/",
@@ -5936,7 +5882,7 @@
      "sizeAdjust": 1.204
     }
    ],
-   "zipSize": 35509
+   "zipSize": 35482
   },
   {
    "id": "mv-karudhas",
@@ -5966,9 +5912,9 @@
      "source": "mv-karudhas.ttf",
      "desktopFile": "MVKarudhas-Bold.ttf",
      "sizes": {
-      "ttf": 24716,
-      "woff2": 9080,
-      "woff": 12732
+      "ttf": 24956,
+      "woff2": 9144,
+      "woff": 12800
      },
      "subsets": {
       "thaana": 8192,
@@ -5990,7 +5936,7 @@
      "sizeAdjust": 1.085
     }
    ],
-   "zipSize": 12958
+   "zipSize": 13024
   },
   {
    "id": "mv-karudhas-outline",
@@ -6020,9 +5966,9 @@
      "source": "mv-karudhas-outline.ttf",
      "desktopFile": "MVKarudhasOutline-Regular.ttf",
      "sizes": {
-      "ttf": 38692,
-      "woff2": 17472,
-      "woff": 23172
+      "ttf": 38944,
+      "woff2": 17456,
+      "woff": 23268
      },
      "subsets": {
       "thaana": 16572,
@@ -6044,7 +5990,7 @@
      "sizeAdjust": 0.726
     }
    ],
-   "zipSize": 23549
+   "zipSize": 23635
   },
   {
    "id": "mv-kashi",
@@ -6074,12 +6020,12 @@
      "source": "mv-kashi.ttf",
      "desktopFile": "MVKashi-Regular.ttf",
      "sizes": {
-      "ttf": 44568,
-      "woff2": 16780,
-      "woff": 22468
+      "ttf": 46072,
+      "woff2": 17052,
+      "woff": 22952
      },
      "subsets": {
-      "thaana": 14628,
+      "thaana": 15012,
       "latin": 9480
      },
      "upstream": "https://dhivehifont.com/2023/11/18/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%86%de%a6%de%81%de%a8/",
@@ -6098,7 +6044,7 @@
      "sizeAdjust": 0.888
     }
    ],
-   "zipSize": 22887
+   "zipSize": 23375
   },
   {
    "id": "mv-kelaa",
@@ -6253,9 +6199,9 @@
      "source": "lady-luck.ttf",
      "desktopFile": "MVLadyLuck-Regular.ttf",
      "sizes": {
-      "ttf": 24268,
-      "woff2": 13088,
-      "woff": 15468
+      "ttf": 24680,
+      "woff2": 13212,
+      "woff": 15620
      },
      "subsets": {
       "thaana": 11936,
@@ -6277,7 +6223,7 @@
      "sizeAdjust": 0.993
     }
    ],
-   "zipSize": 15878
+   "zipSize": 16031
   },
   {
    "id": "mv-lhaiy",
@@ -6377,8 +6323,8 @@
      "source": "mvlhohi.ttf",
      "desktopFile": "MVLhohi-Regular.ttf",
      "sizes": {
-      "ttf": 65208,
-      "woff2": 24916,
+      "ttf": 65216,
+      "woff2": 24860,
       "woff": 32780
      },
      "subsets": {
@@ -6405,12 +6351,12 @@
      "source": "mvlhohi-bold.ttf",
      "desktopFile": "MVLhohi-Bold.ttf",
      "sizes": {
-      "ttf": 51180,
-      "woff2": 18324,
-      "woff": 26272
+      "ttf": 51920,
+      "woff2": 18404,
+      "woff": 26328
      },
      "subsets": {
-      "thaana": 16276,
+      "thaana": 16408,
       "latin": 10292
      },
      "upstream": "https://dhivehifont.com/2022/10/27/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%85%de%ae%de%80%de%a8-%de%84%de%af%de%8d%de%b0%de%91%de%b0/",
@@ -6429,7 +6375,7 @@
      "sizeAdjust": 0.944
     }
    ],
-   "zipSize": 59385
+   "zipSize": 59421
   },
   {
    "id": "mv-mag-round",
@@ -6459,12 +6405,12 @@
      "source": "mag-round.ttf",
      "desktopFile": "MVMAGRound-Bold.ttf",
      "sizes": {
-      "ttf": 23256,
-      "woff2": 12672,
-      "woff": 15152
+      "ttf": 23684,
+      "woff2": 12804,
+      "woff": 15316
      },
      "subsets": {
-      "thaana": 11500,
+      "thaana": 11560,
       "latin": 5916
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_Bold.otf",
@@ -6487,12 +6433,12 @@
      "source": "mag-round-xbold.ttf",
      "desktopFile": "MVMAGRound-ExtraBold.ttf",
      "sizes": {
-      "ttf": 22660,
-      "woff2": 12128,
-      "woff": 14540
+      "ttf": 23096,
+      "woff2": 12264,
+      "woff": 14704
      },
      "subsets": {
-      "thaana": 11000,
+      "thaana": 11016,
       "latin": 6040
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_XBold.otf",
@@ -6511,7 +6457,7 @@
      "sizeAdjust": 1.037
     }
    ],
-   "zipSize": 30026
+   "zipSize": 30340
   },
   {
    "id": "mv-mag-round-hollow",
@@ -6541,12 +6487,12 @@
      "source": "mag-round-hollowttf.ttf",
      "desktopFile": "MVMAGRoundHollow-Regular.ttf",
      "sizes": {
-      "ttf": 33556,
-      "woff2": 19212,
-      "woff": 22096
+      "ttf": 33992,
+      "woff2": 19376,
+      "woff": 22264
      },
      "subsets": {
-      "thaana": 17848,
+      "thaana": 17912,
       "latin": 8940
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_HBold.otf",
@@ -6565,7 +6511,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 22555
+   "zipSize": 22708
   },
   {
    "id": "mv-maliku",
@@ -6648,12 +6594,12 @@
      "source": "mv-maryam.ttf",
      "desktopFile": "MVMaryam-Regular.ttf",
      "sizes": {
-      "ttf": 40700,
-      "woff2": 17464,
-      "woff": 22392
+      "ttf": 40736,
+      "woff2": 17404,
+      "woff": 22396
      },
      "subsets": {
-      "thaana": 15176,
+      "thaana": 15228,
       "latin": 9868
      },
      "upstream": "https://dhivehifont.com/2022/05/16/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%89%de%a6%de%83%de%b0%de%94%de%a6%de%89%de%b0/",
@@ -6672,7 +6618,7 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 22814
+   "zipSize": 22811
   },
   {
    "id": "mv-meemu-ali",
@@ -6702,8 +6648,8 @@
      "source": "mv-mohamed-ali-final.ttf",
      "desktopFile": "MVMeemuAli-Regular.ttf",
      "sizes": {
-      "ttf": 67004,
-      "woff2": 24656,
+      "ttf": 67012,
+      "woff2": 24652,
       "woff": 33700
      },
      "subsets": {
@@ -6726,7 +6672,7 @@
      "sizeAdjust": 0.963
     }
    ],
-   "zipSize": 34189
+   "zipSize": 34181
   },
   {
    "id": "mv-midhili",
@@ -6876,12 +6822,12 @@
      "source": "mv-nerumagu.ttf",
      "desktopFile": "MVNeruMagu-Bold.ttf",
      "sizes": {
-      "ttf": 40904,
-      "woff2": 16080,
-      "woff": 21408
+      "ttf": 41004,
+      "woff2": 15980,
+      "woff": 21340
      },
      "subsets": {
-      "thaana": 14828,
+      "thaana": 14876,
       "latin": 8396
      },
      "upstream": "https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%82%de%ac%de%83%de%aa%de%89%de%a6%de%8e%de%aa/",
@@ -6900,7 +6846,7 @@
      "sizeAdjust": 1.207
     }
    ],
-   "zipSize": 21702
+   "zipSize": 21625
   },
   {
    "id": "mv-nevi-raheem",
@@ -6930,8 +6876,8 @@
      "source": "mv-nevi-raheem.ttf",
      "desktopFile": "MVNeviRaheem-Regular.ttf",
      "sizes": {
-      "ttf": 82816,
-      "woff2": 31564,
+      "ttf": 82828,
+      "woff2": 31464,
       "woff": 41640
      },
      "subsets": {
@@ -6954,7 +6900,7 @@
      "sizeAdjust": 0.929
     }
    ],
-   "zipSize": 42083
+   "zipSize": 42063
   },
   {
    "id": "mv-open-condensed",
@@ -7350,12 +7296,12 @@
      "source": "radhun.ttf",
      "desktopFile": "MVRadhun-Regular.ttf",
      "sizes": {
-      "ttf": 29504,
-      "woff2": 12304,
-      "woff": 15100
+      "ttf": 29648,
+      "woff2": 12316,
+      "woff": 15180
      },
      "subsets": {
-      "thaana": 10588,
+      "thaana": 10576,
       "latin": 5724
      },
      "upstream": null,
@@ -7374,7 +7320,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 15707
+   "zipSize": 15782
   },
   {
    "id": "mv-randhoo",
@@ -7767,12 +7713,12 @@
      "source": "mv-salhi-eka.otf",
      "desktopFile": "MVSalhiEka-Regular.ttf",
      "sizes": {
-      "ttf": 11016,
-      "woff2": 3080,
-      "woff": 3728
+      "ttf": 11020,
+      "woff2": 3132,
+      "woff": 3716
      },
      "subsets": {
-      "thaana": 3080,
+      "thaana": 3132,
       "latin": 1920
      },
      "upstream": "https://thatmaldivesblog.wordpress.com/2021/03/18/mv-salhi/",
@@ -7791,7 +7737,7 @@
      "sizeAdjust": 0.738
     }
    ],
-   "zipSize": 4154
+   "zipSize": 4147
   },
   {
    "id": "mv-sarukitu",
@@ -7877,9 +7823,9 @@
      "source": "sehga-fb.ttf",
      "desktopFile": "MVSehgaFB-Regular.ttf",
      "sizes": {
-      "ttf": 22504,
-      "woff2": 12056,
-      "woff": 14340
+      "ttf": 22916,
+      "woff2": 12164,
+      "woff": 14516
      },
      "subsets": {
       "thaana": 10892,
@@ -7901,7 +7847,7 @@
      "sizeAdjust": 0.965
     }
    ],
-   "zipSize": 14747
+   "zipSize": 14918
   },
   {
    "id": "mv-sehga-old",
@@ -7931,12 +7877,12 @@
      "source": "mv-sehga-old.otf",
      "desktopFile": "MVSehgaOld-Regular.ttf",
      "sizes": {
-      "ttf": 21816,
-      "woff2": 15300,
-      "woff": 16976
+      "ttf": 22060,
+      "woff2": 15380,
+      "woff": 17084
      },
      "subsets": {
-      "thaana": 13880,
+      "thaana": 13884,
       "latin": 6288
      },
      "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Old.otf",
@@ -7955,7 +7901,7 @@
      "sizeAdjust": 1.335
     }
    ],
-   "zipSize": 17515
+   "zipSize": 17614
   },
   {
    "id": "mv-sishisozo",
@@ -8082,11 +8028,11 @@
      "desktopFile": "MVSuruhee-Bold.ttf",
      "sizes": {
       "ttf": 45496,
-      "woff2": 18448,
+      "woff2": 18436,
       "woff": 24108
      },
      "subsets": {
-      "thaana": 15932,
+      "thaana": 15936,
       "latin": 9364
      },
      "upstream": "https://dhivehifont.com/2023/04/20/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%90%de%aa%de%83%de%aa%de%9a%de%a9/",
@@ -8105,7 +8051,7 @@
      "sizeAdjust": 1.147
     }
    ],
-   "zipSize": 24325
+   "zipSize": 24323
   },
   {
    "id": "mv-thaana-matrix-16",
@@ -8289,12 +8235,12 @@
      "source": "mv-thakurufaanu.ttf",
      "desktopFile": "MVThakurufaanu-Bold.ttf",
      "sizes": {
-      "ttf": 41824,
-      "woff2": 17152,
-      "woff": 22192
+      "ttf": 41936,
+      "woff2": 17116,
+      "woff": 22180
      },
      "subsets": {
-      "thaana": 16216,
+      "thaana": 16356,
       "latin": 9420
      },
      "upstream": "https://dhivehifont.com/2022/09/26/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%8c%de%a6%de%86%de%aa%de%83%de%aa%de%8a%de%a7%de%82%de%aa/",
@@ -8313,7 +8259,7 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 22482
+   "zipSize": 22455
   },
   {
    "id": "mv-thavaa",
@@ -8398,7 +8344,7 @@
      "desktopFile": "MVThikiAkuru-Regular.ttf",
      "sizes": {
       "ttf": 60872,
-      "woff2": 13056,
+      "woff2": 13088,
       "woff": 20780
      },
      "subsets": {
@@ -8421,7 +8367,7 @@
      "sizeAdjust": 1.213
     }
    ],
-   "zipSize": 21083
+   "zipSize": 21084
   },
   {
    "id": "mv-thinikaa",
@@ -9293,9 +9239,9 @@
      "source": "sangusuruhee-regular.ttf",
      "desktopFile": "SanguSuruhee-Regular.ttf",
      "sizes": {
-      "ttf": 40652,
-      "woff2": 14728,
-      "woff": 20472
+      "ttf": 40680,
+      "woff2": 14720,
+      "woff": 20480
      },
      "subsets": {
       "thaana": 13788,
@@ -9401,12 +9347,12 @@
      "source": "suruhee-outlined.ttf",
      "desktopFile": "SuruheeOutlined-Regular.ttf",
      "sizes": {
-      "ttf": 178444,
-      "woff2": 73464,
-      "woff": 100544
+      "ttf": 178456,
+      "woff2": 73816,
+      "woff": 100536
      },
      "subsets": {
-      "thaana": 41328,
+      "thaana": 41868,
       "latin": 48368
      },
      "upstream": "https://github.com/hshazil84/Dhivehi-fonts",
@@ -9425,7 +9371,7 @@
      "sizeAdjust": 1.004
     }
    ],
-   "zipSize": 101135
+   "zipSize": 101106
   },
   {
    "id": "thaana",
@@ -9539,12 +9485,12 @@
      "source": "thaana-1u.ttf",
      "desktopFile": "ThaanaUnicodeAkeh-Regular.ttf",
      "sizes": {
-      "ttf": 84956,
-      "woff2": 34732,
-      "woff": 42592
+      "ttf": 85864,
+      "woff2": 35048,
+      "woff": 42976
      },
      "subsets": {
-      "thaana": 13544,
+      "thaana": 13888,
       "latin": 25596
      },
      "upstream": null,
@@ -9563,7 +9509,7 @@
      "sizeAdjust": 1.173
     }
    ],
-   "zipSize": 43372
+   "zipSize": 43807
   },
   {
    "id": "tharujamaanu",
@@ -9593,8 +9539,8 @@
      "source": "tharujamaanu-light.ttf",
      "desktopFile": "Tharujamaanu-Light.ttf",
      "sizes": {
-      "ttf": 44724,
-      "woff2": 17088,
+      "ttf": 44732,
+      "woff2": 16872,
       "woff": 23276
      },
      "subsets": {
@@ -9621,8 +9567,8 @@
      "source": "tharujamaanu-bold.ttf",
      "desktopFile": "Tharujamaanu-Bold.ttf",
      "sizes": {
-      "ttf": 40532,
-      "woff2": 16856,
+      "ttf": 40540,
+      "woff2": 16764,
       "woff": 21872
      },
      "subsets": {
@@ -9645,7 +9591,7 @@
      "sizeAdjust": 1.051
     }
    ],
-   "zipSize": 45688
+   "zipSize": 45628
   },
   {
    "id": "theras",
@@ -9675,9 +9621,9 @@
      "source": "theras-thin.ttf",
      "desktopFile": "Theras-Thin.ttf",
      "sizes": {
-      "ttf": 121404,
-      "woff2": 43032,
-      "woff": 57492
+      "ttf": 122292,
+      "woff2": 43128,
+      "woff": 57580
      },
      "subsets": {
       "thaana": 11348,
@@ -9703,9 +9649,9 @@
      "source": "theras-extralight.ttf",
      "desktopFile": "Theras-ExtraLight.ttf",
      "sizes": {
-      "ttf": 126100,
-      "woff2": 46072,
-      "woff": 60856
+      "ttf": 127048,
+      "woff2": 45996,
+      "woff": 60948
      },
      "subsets": {
       "thaana": 11900,
@@ -9731,9 +9677,9 @@
      "source": "theras-light.ttf",
      "desktopFile": "Theras-Light.ttf",
      "sizes": {
-      "ttf": 126260,
-      "woff2": 46340,
-      "woff": 61196
+      "ttf": 127184,
+      "woff2": 46360,
+      "woff": 61336
      },
      "subsets": {
       "thaana": 11852,
@@ -9759,9 +9705,9 @@
      "source": "theras-regular.ttf",
      "desktopFile": "Theras-Regular.ttf",
      "sizes": {
-      "ttf": 125772,
-      "woff2": 46268,
-      "woff": 61308
+      "ttf": 126708,
+      "woff2": 46232,
+      "woff": 61464
      },
      "subsets": {
       "thaana": 11980,
@@ -9787,9 +9733,9 @@
      "source": "theras-medium.ttf",
      "desktopFile": "Theras-Medium.ttf",
      "sizes": {
-      "ttf": 125572,
-      "woff2": 45572,
-      "woff": 60512
+      "ttf": 126520,
+      "woff2": 45676,
+      "woff": 60568
      },
      "subsets": {
       "thaana": 11548,
@@ -9815,9 +9761,9 @@
      "source": "theras-semibold.ttf",
      "desktopFile": "Theras-SemiBold.ttf",
      "sizes": {
-      "ttf": 130360,
-      "woff2": 48404,
-      "woff": 64048
+      "ttf": 131332,
+      "woff2": 48284,
+      "woff": 63984
      },
      "subsets": {
       "thaana": 12208,
@@ -9843,9 +9789,9 @@
      "source": "theras-bold.ttf",
      "desktopFile": "Theras-Bold.ttf",
      "sizes": {
-      "ttf": 129112,
-      "woff2": 48304,
-      "woff": 63928
+      "ttf": 130068,
+      "woff2": 48360,
+      "woff": 63960
      },
      "subsets": {
       "thaana": 12172,
@@ -9871,9 +9817,9 @@
      "source": "theras-extrabold.ttf",
      "desktopFile": "Theras-ExtraBold.ttf",
      "sizes": {
-      "ttf": 128408,
-      "woff2": 47820,
-      "woff": 63232
+      "ttf": 129356,
+      "woff2": 47692,
+      "woff": 63272
      },
      "subsets": {
       "thaana": 11820,
@@ -9899,9 +9845,9 @@
      "source": "theras-black.ttf",
      "desktopFile": "Theras-Black.ttf",
      "sizes": {
-      "ttf": 125964,
-      "woff2": 45564,
-      "woff": 60564
+      "ttf": 126944,
+      "woff2": 45608,
+      "woff": 60616
      },
      "subsets": {
       "thaana": 11272,
@@ -9923,7 +9869,7 @@
      "sizeAdjust": 0.905
     }
    ],
-   "zipSize": 558852
+   "zipSize": 559333
   },
   {
    "id": "yuu-thaana-kufi",
@@ -9953,12 +9899,12 @@
      "source": "yuu-thaana-kufi.ttf",
      "desktopFile": "YUUThaanaKufi-Regular.ttf",
      "sizes": {
-      "ttf": 10392,
-      "woff2": 3772,
-      "woff": 5268
+      "ttf": 10424,
+      "woff2": 3704,
+      "woff": 5276
      },
      "subsets": {
-      "thaana": 2820,
+      "thaana": 2888,
       "latin": 988
      },
      "upstream": "https://github.com/miukumauku/YUUThaanaKufi",
@@ -9977,7 +9923,7 @@
      "sizeAdjust": 0.883
     }
    ],
-   "zipSize": 5512
+   "zipSize": 5521
   },
   {
    "id": "zaana-thedhu",
@@ -10007,9 +9953,9 @@
      "source": "zaanathedhu-thin.ttf",
      "desktopFile": "ZaanaThedhu-Thin.ttf",
      "sizes": {
-      "ttf": 127888,
-      "woff2": 45356,
-      "woff": 60428
+      "ttf": 128816,
+      "woff2": 45588,
+      "woff": 60492
      },
      "subsets": {
       "thaana": 11512,
@@ -10035,9 +9981,9 @@
      "source": "zaanathedhu-extralight.ttf",
      "desktopFile": "ZaanaThedhu-ExtraLight.ttf",
      "sizes": {
-      "ttf": 132952,
-      "woff2": 48072,
-      "woff": 63672
+      "ttf": 133880,
+      "woff2": 48076,
+      "woff": 63608
      },
      "subsets": {
       "thaana": 12124,
@@ -10063,9 +10009,9 @@
      "source": "zaanathedhu-light.ttf",
      "desktopFile": "ZaanaThedhu-Light.ttf",
      "sizes": {
-      "ttf": 133652,
-      "woff2": 48152,
-      "woff": 63928
+      "ttf": 134544,
+      "woff2": 48260,
+      "woff": 63864
      },
      "subsets": {
       "thaana": 11948,
@@ -10091,9 +10037,9 @@
      "source": "zaanathedhu-regular.ttf",
      "desktopFile": "ZaanaThedhu-Regular.ttf",
      "sizes": {
-      "ttf": 133520,
-      "woff2": 48592,
-      "woff": 64240
+      "ttf": 134380,
+      "woff2": 48724,
+      "woff": 64196
      },
      "subsets": {
       "thaana": 12132,
@@ -10119,9 +10065,9 @@
      "source": "zaanathedhu-medium.ttf",
      "desktopFile": "ZaanaThedhu-Medium.ttf",
      "sizes": {
-      "ttf": 131936,
-      "woff2": 46860,
-      "woff": 62144
+      "ttf": 132840,
+      "woff2": 46968,
+      "woff": 62096
      },
      "subsets": {
       "thaana": 11280,
@@ -10147,9 +10093,9 @@
      "source": "zaanathedhu-semibold.ttf",
      "desktopFile": "ZaanaThedhu-SemiBold.ttf",
      "sizes": {
-      "ttf": 137204,
-      "woff2": 50340,
-      "woff": 66568
+      "ttf": 138120,
+      "woff2": 50324,
+      "woff": 66640
      },
      "subsets": {
       "thaana": 12072,
@@ -10175,9 +10121,9 @@
      "source": "zaanathedhu-bold.ttf",
      "desktopFile": "ZaanaThedhu-Bold.ttf",
      "sizes": {
-      "ttf": 136844,
-      "woff2": 50432,
-      "woff": 66500
+      "ttf": 137760,
+      "woff2": 50388,
+      "woff": 66584
      },
      "subsets": {
       "thaana": 12076,
@@ -10203,9 +10149,9 @@
      "source": "zaanathedhu-extrabold.ttf",
      "desktopFile": "ZaanaThedhu-ExtraBold.ttf",
      "sizes": {
-      "ttf": 136484,
-      "woff2": 50400,
-      "woff": 66432
+      "ttf": 137428,
+      "woff2": 50556,
+      "woff": 66528
      },
      "subsets": {
       "thaana": 12120,
@@ -10231,9 +10177,9 @@
      "source": "zaanathedhu-black.ttf",
      "desktopFile": "ZaanaThedhu-Black.ttf",
      "sizes": {
-      "ttf": 133452,
-      "woff2": 48320,
-      "woff": 63928
+      "ttf": 134356,
+      "woff2": 48316,
+      "woff": 63892
      },
      "subsets": {
       "thaana": 11520,
@@ -10255,7 +10201,7 @@
      "sizeAdjust": 1.481
     }
    ],
-   "zipSize": 584613
+   "zipSize": 584697
   }
  ]
 }

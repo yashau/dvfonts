@@ -26,7 +26,6 @@ import tomllib
 import zipfile
 from pathlib import Path
 
-import pathops
 from fontTools.misc.transform import Transform
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.t2CharStringPen import T2CharStringPen
@@ -198,20 +197,8 @@ def remap_legacy(font: TTFont, layout: str, cmap: dict[int, str]) -> dict[int, s
     return out
 
 
-# Constructed designs whose fili are spacing glyphs on the baseline, set inline
-# after their letter like an alphabet. Their fili stay base glyphs (class 1) with
-# their own width, or shapers would zero them and stack them on the letter.
-INLINE_FILI = {"mv-finikaa.otf", "mv-salhi-eka.otf"}
-# Fili given a stray advance while their outline already sits where the font's
-# other fili do: drop the advance, leave the outline.
-STRAY_FILI_ADVANCE = {"mv-thakurufaanu.ttf": {0x07AB}}
-
-
-def ensure_gdef_marks(
-    font: TTFont, cmap: dict[int, str], inline: bool = False, stray: set[int] | frozenset[int] = frozenset()
-) -> None:
-    """Make sure every fili glyph is classed as a mark (class 3) in GDEF, or as a
-    base (class 1) for fonts that set fili inline."""
+def ensure_gdef_marks(font: TTFont, cmap: dict[int, str]) -> None:
+    """Make sure every fili glyph is classed as a mark (class 3) in GDEF."""
     fili = {cmap[cp] for cp in FILI if cp in cmap}
     if not fili:
         return
@@ -230,86 +217,15 @@ def ensure_gdef_marks(
         for g in letters:
             t.GlyphClassDef.classDefs[g] = 1
     for g in fili:
-        t.GlyphClassDef.classDefs[g] = 1 if inline else 3
-    if inline:
-        return
-    # Zero any leftover mark advances (some Unicode fonts give fili width). A
-    # fili that GPOS attaches by anchor keeps its outline where it is: the anchor
-    # places it, and moving the outline would pull it off the base. So does a
-    # fili listed in STRAY_FILI_ADVANCE.
-    hmtx, anchored = font["hmtx"], gpos_marks(font) | {cmap[cp] for cp in stray if cp in cmap}
+        t.GlyphClassDef.classDefs[g] = 3
+    # Zero any leftover mark advances (some Unicode fonts give fili width). Only
+    # the advance: shapers draw an RTL mark where its outline already is, so
+    # that's where the designer saw it.
+    hmtx = font["hmtx"]
     for g in fili:
         adv, lsb = hmtx[g]
         if adv:
-            if g not in anchored:
-                translate_glyph(font, g, -adv)
-                lsb -= adv
             hmtx[g] = (0, lsb)
-
-
-def gpos_marks(font: TTFont) -> set[str]:
-    """Glyphs that a GPOS mark-to-base/ligature/mark lookup positions."""
-    if "GPOS" not in font or not font["GPOS"].table.LookupList:
-        return set()
-    out: set[str] = set()
-    for lookup in font["GPOS"].table.LookupList.Lookup:
-        for st in lookup.SubTable:
-            st = getattr(st, "ExtSubTable", st)
-            cov = getattr(st, "MarkCoverage", None) or getattr(st, "Mark1Coverage", None)
-            if cov:
-                out.update(cov.glyphs)
-    return out
-
-
-# Fonts whose below-base fili (ibi, eebee) GPOS-attach into the letter above
-# them: source file -> clearance (font units) to leave under the letter's ink.
-BELOW_MARK_CLEARANCE = {"suruhee-outlined.ttf": 40}
-BELOW_FILI = (0x07A8, 0x07A9)
-
-
-def clear_below_marks(font: TTFont, cmap: dict[int, str], gap: int) -> None:
-    """Lower each base's below-mark anchor until ibi and eebee clear the letter's
-    ink by `gap`. Only anchors move; outlines and advances stay as they are."""
-    marks = {cmap[cp] for cp in BELOW_FILI if cp in cmap}
-    gs = font.getGlyphSet()
-
-    def outline(name: str) -> pathops.Path:
-        path = pathops.Path()
-        gs[name].draw(path.getPen())
-        return path
-
-    for lookup in font["GPOS"].table.LookupList.Lookup:
-        for st in lookup.SubTable:
-            st = getattr(st, "ExtSubTable", st)
-            if not hasattr(st, "BaseCoverage"):
-                continue
-            below = [
-                (g, rec) for g, rec in zip(st.MarkCoverage.glyphs, st.MarkArray.MarkRecord, strict=True) if g in marks
-            ]
-            for base, rec in zip(st.BaseCoverage.glyphs, st.BaseArray.BaseRecord, strict=True):
-                body, drop = outline(base), 0
-                for mark, mrec in below:
-                    anchor = rec.BaseAnchor[mrec.Class]
-                    if anchor is None or gs[mark].width is None:
-                        continue
-                    bounds = outline(mark).bounds
-                    if bounds == (0, 0, 0, 0):
-                        continue
-                    dx = anchor.XCoordinate - mrec.MarkAnchor.XCoordinate
-                    dy = anchor.YCoordinate - mrec.MarkAnchor.YCoordinate
-                    window = pathops.Path()
-                    window.moveTo(bounds[0] + dx, -10_000)
-                    window.lineTo(bounds[2] + dx, -10_000)
-                    window.lineTo(bounds[2] + dx, 10_000)
-                    window.lineTo(bounds[0] + dx, 10_000)
-                    window.close()
-                    under = pathops.op(body, window, pathops.PathOp.INTERSECTION)
-                    if under.bounds == (0, 0, 0, 0):
-                        continue
-                    drop = max(drop, bounds[3] + dy - (under.bounds[1] - gap))
-                if drop > 0:
-                    for anchor in {id(a): a for a in (rec.BaseAnchor[m.Class] for _, m in below) if a}.values():
-                        anchor.YCoordinate -= round(drop)
 
 
 def size_adjust(path: Path) -> float | None:
@@ -446,9 +362,7 @@ def process(path: Path, family: str, weight: int) -> tuple[TTFont, dict]:
     if 0x20 in cmap and 0xA0 not in cmap:
         cmap[0xA0] = cmap[0x20]
     write_cmap(font, cmap)
-    ensure_gdef_marks(font, cmap, inline=path.name in INLINE_FILI, stray=STRAY_FILI_ADVANCE.get(path.name, frozenset()))
-    if path.name in BELOW_MARK_CLEARANCE:
-        clear_below_marks(font, cmap, BELOW_MARK_CLEARANCE[path.name])
+    ensure_gdef_marks(font, cmap)
     metrics = fix_vertical_metrics(font, cmap)
     upgrade_os2(font)
     set_names(font, family, weight, version)
