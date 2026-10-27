@@ -163,6 +163,24 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
 	await expect(page.locator('a[href="/downloads/fonts-mv-essentials.zip"]')).toBeVisible();
 	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
+	await expect(page.getByText('curl -fsSL https://fonts.mv/install/essentials.sh | sh')).toBeVisible();
+	await page.getByRole('tab', { name: 'Windows' }).click();
+	await expect(page.getByText('irm https://fonts.mv/install/essentials.ps1 | iex')).toBeVisible();
+});
+
+test('install scripts are plain text and check the bundle', async ({ request }) => {
+	for (const ext of ['sh', 'ps1']) {
+		const res = await request.get(`/install/essentials.${ext}`);
+		expect(res.ok()).toBe(true);
+		expect(res.headers()['content-type']).toContain('text/plain');
+		const script = await res.text();
+		expect(script).toContain('fonts-mv-essentials.zip');
+		expect(script).toMatch(/[0-9a-f]{64}/);
+	}
+	// Webfont kits and legacy fonts aren't for installing.
+	expect((await request.get('/install/webfonts-full.sh')).status()).toBe(404);
+	expect((await request.get('/install/legacy.ps1')).status()).toBe(404);
+	expect((await request.get('/install/essentials.bat')).status()).toBe(404);
 });
 
 test('guide renders its demos', async ({ page }) => {

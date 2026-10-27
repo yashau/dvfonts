@@ -4,7 +4,7 @@
 import { createHighlighterCore, type HighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
-export type CodeLang = 'html' | 'css' | 'javascript' | 'jsx' | 'svelte' | 'vue' | 'bash';
+export type CodeLang = 'html' | 'css' | 'javascript' | 'jsx' | 'svelte' | 'vue' | 'bash' | 'powershell';
 
 let highlighter: Promise<HighlighterCore> | undefined;
 
@@ -18,7 +18,8 @@ function load(): Promise<HighlighterCore> {
 			import('shiki/langs/jsx.mjs'),
 			import('shiki/langs/svelte.mjs'),
 			import('shiki/langs/vue.mjs'),
-			import('shiki/langs/bash.mjs')
+			import('shiki/langs/bash.mjs'),
+			import('shiki/langs/powershell.mjs')
 		],
 		engine: createJavaScriptRegexEngine()
 	});

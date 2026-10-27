@@ -7,12 +7,13 @@
 	import PackageIcon from '@lucide/svelte/icons/package';
 	import { Badge } from '#lib/components/ui/badge/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
+	import InstallCommand from '#lib/components/install-command.svelte';
 
 	const desktop = bundles.filter((b) => b.format === 'ttf');
 	const web = bundles.filter((b) => b.format === 'woff2');
 	const legacy = bundles.filter((b) => b.format === 'legacy');
 	const groups = [
-		{ title: 'For your computer', note: 'TrueType/OpenType fonts to install.', list: desktop },
+		{ title: 'For your computer', note: 'TrueType/OpenType fonts to install.', list: desktop, install: true },
 		{ title: 'For self-hosting on the web', note: 'WOFF2 files with a ready-made fonts.css.', list: web },
 		{
 			title: 'For old documents',
@@ -26,7 +27,7 @@
 	<title>Downloads — fonts.mv</title>
 	<meta
 		name="description"
-		content="Download Dhivehi font collections as zip files: essentials, full suite, by category, as a webfont kit, or the original pre-Unicode fonts."
+		content="Download Dhivehi font collections as zip files, or install them with one command on macOS, Linux or Windows: essentials, full suite, by category, as a webfont kit, or the original pre-Unicode fonts."
 	/>
 </svelte:head>
 
@@ -40,6 +41,9 @@
 	{#each groups as group (group.title)}
 		<h2 class="mt-10 text-xl font-semibold tracking-tight">{group.title}</h2>
 		<p class="mb-4 text-sm text-muted-foreground">{group.note}</p>
+		{#if group.install}
+			<div class="mb-4"><InstallCommand /></div>
+		{/if}
 		<Card.Root class="py-0">
 			<!-- py-6 matches the space around each separator (the group's gap-4 plus the separator's my-2), so the
 			     first and last items sit as far from the card edge as the others do from a separator. -->
