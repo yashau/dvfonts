@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from '#lib/site.js';
+
 // Author bios (beta). Names match the credits in the catalogue (see authors() in catalog.ts).
 // Authors with enough sourced information get a page at /authors/<slug>; the rest show a
 // short note and an invitation to send what we're missing.
@@ -26,7 +28,7 @@ export interface AuthorBio {
 }
 
 /** Where corrections and missing details go. */
-export const CORRECTIONS_EMAIL = 'ibrahim@yashau.com';
+export const CORRECTIONS_EMAIL = CONTACT_EMAIL;
 
 export function correctionsMailto(name: string): string {
 	const subject = `fonts.mv author bio: ${name}`;
