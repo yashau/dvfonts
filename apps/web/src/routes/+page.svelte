@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, credit, type Category } from '#lib/catalog.js';
+	import { page } from '$app/state';
+	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, authors, credit, type Category } from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
 	import BrowsePanel, { type Sort } from '#lib/components/browse-panel.svelte';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
@@ -19,6 +20,21 @@
 	let sort = $state<Sort>('featured');
 	let panelOpen = $state(false);
 
+	let author = $state<string | null>(null);
+
+	// Author names on cards and font pages link to /?author=<name>. Read in an effect,
+	// since the prerendered page has no query string.
+	$effect(() => {
+		const a = page.url.searchParams.get('author');
+		if (a !== null) author = a;
+	});
+
+	const authorList = $derived.by(() => {
+		const count = new Map<string, number>();
+		for (const f of data.families) for (const a of authors(f)) count.set(a, (count.get(a) ?? 0) + 1);
+		return [...count].map(([name, n]) => ({ name, count: n })).toSorted((a, b) => a.name.localeCompare(b.name));
+	});
+
 	const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
 	const featuredRank = (id: string) => {
 		const i = FEATURED.indexOf(id);
@@ -33,8 +49,9 @@
 		const q = query.trim().toLowerCase();
 		const list = data.families.filter(
 			(f) =>
-				// A typed search looks in every category; the filter narrows browsing.
-				(!!q || categories.length === 0 || categories.includes(f.category)) &&
+				// A typed search or an author looks in every category; the filter narrows browsing.
+				(!!q || !!author || categories.length === 0 || categories.includes(f.category)) &&
+				(!author || authors(f).includes(author)) &&
 				(!q ||
 					f.name.toLowerCase().includes(q) ||
 					f.aliases.some((a) => a.toLowerCase().includes(q)) ||
@@ -73,7 +90,7 @@
 		<!-- Padding on every side (offset by -mx-1) leaves room for the 3px focus rings, which the
 		     scroll container would otherwise clip. -->
 		<div class="sticky top-20 -mx-1 max-h-[calc(100svh-6rem)] overflow-y-auto px-1 pt-1 pb-6">
-			<BrowsePanel bind:categories bind:sort {counts} shown={visible.length} />
+			<BrowsePanel bind:categories bind:sort bind:author authors={authorList} {counts} shown={visible.length} />
 		</div>
 	</aside>
 
@@ -93,7 +110,7 @@
 						<Sheet.Title>Preview &amp; filters</Sheet.Title>
 					</Sheet.Header>
 					<div class="px-4 pb-6">
-						<BrowsePanel bind:categories bind:sort {counts} shown={visible.length} />
+						<BrowsePanel bind:categories bind:sort bind:author authors={authorList} {counts} shown={visible.length} />
 					</div>
 				</Sheet.Content>
 			</Sheet.Root>
@@ -124,6 +141,7 @@
 							variant="outline"
 							onclick={() => {
 								query = '';
+								author = null;
 								categories = [];
 							}}>Clear search and filters</Button
 						>

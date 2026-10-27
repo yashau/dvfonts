@@ -12,6 +12,7 @@
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Separator } from '#lib/components/ui/separator/index.js';
 	import TesterSize from '#lib/components/tester-size.svelte';
+	import AuthorCombobox from '#lib/components/author-combobox.svelte';
 	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import { tester } from '#lib/tester.svelte.js';
@@ -23,9 +24,18 @@
 	let {
 		categories = $bindable(),
 		sort = $bindable(),
+		author = $bindable(),
+		authors,
 		counts,
 		shown
-	}: { categories: Category[]; sort: Sort; counts: Record<string, number>; shown: number } = $props();
+	}: {
+		categories: Category[];
+		sort: Sort;
+		author: string | null;
+		authors: { name: string; count: number }[];
+		counts: Record<string, number>;
+		shown: number;
+	} = $props();
 
 	const dir = $derived(resolveDirection(tester.text, null, tester.dv ? 'rtl' : 'ltr'));
 
@@ -41,6 +51,7 @@
 			tester.normalize &&
 			!tester.sizeChosen &&
 			sort === 'featured' &&
+			author === null &&
 			categories.length === DEFAULT_CATEGORIES.length &&
 			DEFAULT_CATEGORIES.every((c) => categories.includes(c))
 	);
@@ -51,6 +62,7 @@
 		tester.resetSize();
 		categories = [...DEFAULT_CATEGORIES];
 		sort = 'featured';
+		author = null;
 	}
 </script>
 
@@ -145,6 +157,14 @@
 				</ToggleGroup.Item>
 			{/each}
 		</ToggleGroup.Root>
+	</section>
+
+	<Separator />
+
+	<section class="flex flex-col gap-3">
+		<!-- An author shows all their families, whatever the categories, like a search. -->
+		<h2 class="text-sm font-medium">Author</h2>
+		<AuthorCombobox bind:value={author} {authors} />
 	</section>
 
 	<Separator />

@@ -165,6 +165,15 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
 });
 
+test('author names link to their fonts', async ({ page }) => {
+	await page.goto('/fonts/mv-a-waheed');
+	await page.getByRole('link', { name: 'Abdulla Waheed' }).first().click();
+	await expect(page).toHaveURL(/\/\?q=Abdulla%20Waheed$/);
+	await expect(page.getByRole('searchbox').or(page.getByLabel('Search'))).toHaveValue('Abdulla Waheed');
+	await expect(page.getByRole('link', { name: 'MV Aammu FK', exact: true })).toBeVisible();
+	await expect(page.getByRole('link', { name: 'Faruma', exact: true })).toHaveCount(0);
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();

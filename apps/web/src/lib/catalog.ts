@@ -116,6 +116,55 @@ export function credit(f: Family): string | null {
 	return meaningful(f.designer) ?? meaningful(f.manufacturer) ?? meaningful(f.copyright);
 }
 
+/** The people (or studios) a designer credit names: each comma-separated designer, plus
+ *  any calligrapher. "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)" names
+ *  Hassan Hameed and Abdulla Waheed; places and notes in brackets are skipped. */
+export function authors(f: Family): string[] {
+	const out: string[] = [];
+	for (const part of splitTopLevel(f.designer ?? '')) {
+		const m = /^([^(]+?)\s*(?:\((.*)\))?$/.exec(part);
+		if (!m) continue;
+		out.push(m[1]);
+		const calligrapher = /^calligraphy by ([^,]+)/.exec(m[2] ?? '');
+		if (calligrapher) out.push(calligrapher[1].trim());
+	}
+	return [...new Set(out.filter(Boolean))];
+}
+
+/** The credit line split into plain text and author names, for linking the names. */
+export function creditParts(f: Family): { text: string; author?: string }[] {
+	const line = credit(f);
+	if (!line) return [];
+	if (!meaningful(f.designer)) return [{ text: line }];
+	const parts: { text: string; author?: string }[] = [];
+	let rest = line;
+	for (const name of authors(f)) {
+		const i = rest.indexOf(name);
+		if (i < 0) continue;
+		if (i) parts.push({ text: rest.slice(0, i) });
+		parts.push({ text: name, author: name });
+		rest = rest.slice(i + name.length);
+	}
+	if (rest) parts.push({ text: rest });
+	return parts;
+}
+
+function splitTopLevel(s: string): string[] {
+	const parts: string[] = [];
+	let depth = 0;
+	let start = 0;
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === '(') depth++;
+		else if (s[i] === ')') depth--;
+		else if (s[i] === ',' && depth === 0) {
+			parts.push(s.slice(start, i).trim());
+			start = i + 1;
+		}
+	}
+	parts.push(s.slice(start).trim());
+	return parts.filter(Boolean);
+}
+
 /** Drop font-editor boilerplate that some files carry instead of a real credit. */
 function meaningful(s: string | null): string | null {
 	return s && !/fontographer|fontlab|copyright info pending/i.test(s) ? s : null;
