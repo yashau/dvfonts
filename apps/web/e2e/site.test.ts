@@ -225,6 +225,17 @@ test('fonts with no named designer say so and ask for it', async ({ page }) => {
 	await expect(page.getByRole('link', { name: 'Thaana', exact: true })).toBeVisible();
 });
 
+test('categories start collapsed and expand', async ({ page, isMobile }) => {
+	await page.goto('/');
+	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
+	const toggle = page.getByRole('button', { name: 'Categories' }).last();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+	await expect(page.getByText('Official, Handwriting').last()).toBeVisible();
+	await toggle.click();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+	await expect(page.getByRole('group', { name: 'Categories' }).last().getByText('Novelty')).toBeVisible();
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
