@@ -78,8 +78,8 @@
 					These fonts are listed because they have circulated freely for years, with credit to their makers wherever the
 					files or their sources name one. If you hold rights to a font here and want it credited differently,
 					relicensed or removed, email
-					<a class="underline underline-offset-4" href="mailto:ibrahim@yashau.com">ibrahim@yashau.com</a>. Removal
-					requests are honoured without argument.
+					<a class="underline underline-offset-4" href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>. Removal requests
+					are honoured without argument.
 				</p>
 			</Alert.Description>
 		</Alert.Root>

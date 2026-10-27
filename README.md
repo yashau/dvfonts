@@ -199,7 +199,7 @@ mise run dev            # http://localhost:5173
 
 The fonts belong to their makers: the Office of the President (Faruma, Reethi), Hassan Hameed, the Thaana Type Foundry, Hussain Niyaz, Zillon, Mohamed Amaan, M.A. Gadir and many others. Each family page and download names its makers and license, and lists exactly what fonts.mv changed. Fonts were collected via [raajjefonts](https://raajjefonts.github.io/) and their original sites.
 
-**If you hold rights to a font here** and want it credited differently, relicensed or removed, [open an issue](https://github.com/yashau/fonts.mv/issues) or email ibrahim@yashau.com. Removal requests are honoured without argument.
+**If you hold rights to a font here** and want it credited differently, relicensed or removed, [open an issue](https://github.com/yashau/fonts.mv/issues) or email contact@fonts.mv. Removal requests are honoured without argument.
 
 ## License
 
