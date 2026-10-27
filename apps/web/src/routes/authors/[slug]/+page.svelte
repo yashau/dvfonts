@@ -45,23 +45,23 @@
 					<Table.Root>
 						<Table.Body>
 							<Table.Row>
-								<Table.Head class="pl-6 align-top">Occupation</Table.Head>
+								<Table.Head class="h-auto py-2 pl-6 align-top">Occupation</Table.Head>
 								<Table.Cell class="pr-6 whitespace-normal">{bio.role}</Table.Cell>
 							</Table.Row>
 							{#if bio.born}
 								<Table.Row>
-									<Table.Head class="pl-6 align-top">Born</Table.Head>
+									<Table.Head class="h-auto py-2 pl-6 align-top">Born</Table.Head>
 									<Table.Cell class="pr-6 whitespace-normal">{bio.born}</Table.Cell>
 								</Table.Row>
 							{/if}
 							{#if bio.knownFor}
 								<Table.Row>
-									<Table.Head class="pl-6 align-top">Known for</Table.Head>
+									<Table.Head class="h-auto py-2 pl-6 align-top">Known for</Table.Head>
 									<Table.Cell class="pr-6 whitespace-normal">{bio.knownFor}</Table.Cell>
 								</Table.Row>
 							{/if}
 							<Table.Row>
-								<Table.Head class="pl-6 align-top">On fonts.mv</Table.Head>
+								<Table.Head class="h-auto py-2 pl-6 align-top">On fonts.mv</Table.Head>
 								<Table.Cell class="pr-6 whitespace-normal">
 									<a class="underline underline-offset-4" href={fontsHref}
 										>{data.families.length} {data.families.length === 1 ? 'family' : 'families'}</a
@@ -70,7 +70,7 @@
 							</Table.Row>
 							{#if bio.website}
 								<Table.Row>
-									<Table.Head class="pl-6 align-top">Website</Table.Head>
+									<Table.Head class="h-auto py-2 pl-6 align-top">Website</Table.Head>
 									<Table.Cell class="pr-6 break-all whitespace-normal">
 										<a class="underline underline-offset-4" href={bio.website} rel="noopener"
 											>{bio.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a
