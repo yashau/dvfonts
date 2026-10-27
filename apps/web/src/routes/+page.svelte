@@ -28,8 +28,8 @@
 	// since the prerendered page has no query string.
 	let urlRead = $state(false);
 	$effect(() => {
-		const a = page.url.searchParams.get('author');
-		if (a !== null) author = a;
+		// No ?author= (the logo, the Fonts link) clears the filter.
+		author = page.url.searchParams.get('author');
 		urlRead = true;
 	});
 
