@@ -74,9 +74,9 @@ jobs:
         run: |
           set -euo pipefail
           # First deploy: create the bucket (no-op if it already exists).
-          pnpm exec wrangler r2 bucket create dvfonts-static 2>&1 | tail -1 || true
+          pnpm exec wrangler r2 bucket create fonts-mv-static 2>&1 | tail -1 || true
           local_fp="$(git ls-files -s -- ../../fonts ../../packages/thaana/src/legacy-layouts.json | sha256sum | cut -d' ' -f1)"
-          remote_fp="$(pnpm exec wrangler r2 object get dvfonts-static/.fingerprint --remote --pipe 2>/dev/null || true)"
+          remote_fp="$(pnpm exec wrangler r2 object get fonts-mv-static/.fingerprint --remote --pipe 2>/dev/null || true)"
           echo "local:  ${local_fp}"
           echo "remote: ${remote_fp:-<none>}"
           echo "fingerprint=${local_fp}" >> "$GITHUB_OUTPUT"
@@ -117,7 +117,7 @@ jobs:
           # R2 now and then answers a single object with a 500, which aborts the
           # whole bulk upload. Uploads are idempotent, so retry the batch.
           for attempt in 1 2 3; do
-            if pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --remote --force; then
+            if pnpm exec wrangler r2 bulk put fonts-mv-static --filename ../../fonts/build/r2-bulk.json --remote --force; then
               break
             fi
             if [ "$attempt" = 3 ]; then
@@ -128,7 +128,7 @@ jobs:
             sleep $((attempt * 20))
           done
           printf '%s' "$FINGERPRINT" > "$RUNNER_TEMP/fingerprint"
-          pnpm exec wrangler r2 object put dvfonts-static/.fingerprint --file "$RUNNER_TEMP/fingerprint" --content-type text/plain --remote
+          pnpm exec wrangler r2 object put fonts-mv-static/.fingerprint --file "$RUNNER_TEMP/fingerprint" --content-type text/plain --remote
 
       - name: Deploy Worker
         env:

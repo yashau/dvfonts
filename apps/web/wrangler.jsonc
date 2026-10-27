@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "dvfonts",
+	"name": "fonts-mv",
 	"compatibility_date": "2026-10-22",
 	"compatibility_flags": ["nodejs_als"],
 	"main": ".svelte-kit/cloudflare/_worker.js",
@@ -9,7 +9,7 @@
 		"directory": ".svelte-kit/cloudflare"
 	},
 	// All binaries (fonts/…, downloads/…) live in R2; built by fonts/scripts, uploaded by deploy.yml.
-	"r2_buckets": [{ "binding": "STATIC", "bucket_name": "dvfonts-static" }],
+	"r2_buckets": [{ "binding": "STATIC", "bucket_name": "fonts-mv-static" }],
 	// fonts.mv must match SITE_ORIGIN in src/lib/site.ts and FONTS_MV_ORIGIN in @yashau/thaana.
 	// dvfonts.yashau.com, the old domain, stays attached so its DNS record lives on; a Cloudflare
 	// redirect rule (301) sends it to fonts.mv. Prerendered pages are static assets the Worker

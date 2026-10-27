@@ -4,7 +4,7 @@ Guidance for AI coding agents (and humans) working in this repository. Read this
 
 ## What this is
 
-- **`apps/web`**: the fonts.mv site. SvelteKit 3 + Svelte 5 (runes) + Tailwind 4 + shadcn-svelte, deployed as a Cloudflare Worker. Pages are prerendered. The Worker serves `/css2` (Google-Fonts-style CSS API), `/fonts/<id>/<file>` and `/downloads/<file>` from the R2 bucket `dvfonts-static` (binding `STATIC`).
+- **`apps/web`**: the fonts.mv site. SvelteKit 3 + Svelte 5 (runes) + Tailwind 4 + shadcn-svelte, deployed as a Cloudflare Worker. Pages are prerendered. The Worker serves `/css2` (Google-Fonts-style CSS API), `/fonts/<id>/<file>` and `/downloads/<file>` from the R2 bucket `fonts-mv-static` (binding `STATIC`).
 - **`packages/*`**: `@yashau/thaana` (core, zero deps), `@yashau/thaana-react`, `-svelte`, `-vue`. The site imports the core, so the site and the npm package behave identically.
 - **`fonts/`**: the Python font pipeline (fontTools, run with uv). Turns `fonts/sources/*` into cleaned web fonts under `fonts/build/r2/` and the catalog JSON in `apps/web/src/lib/data/`.
 
