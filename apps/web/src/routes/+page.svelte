@@ -51,9 +51,12 @@
 		}
 	});
 
+	// What browsing shows; hidden families only come up in a search.
+	const shelf = $derived(data.families.filter((f) => !f.hidden));
+
 	const authorList = $derived.by(() => {
 		const count = new Map<string, number>();
-		for (const f of data.families) for (const a of authorsOrUnknown(f)) count.set(a, (count.get(a) ?? 0) + 1);
+		for (const f of shelf) for (const a of authorsOrUnknown(f)) count.set(a, (count.get(a) ?? 0) + 1);
 		// The Authors page's order (importance to Maldivian typography), with Unknown last.
 		const rank = (n: string) => (n === UNKNOWN_AUTHOR ? 1 : 0);
 		return [...count]
@@ -70,13 +73,17 @@
 	};
 
 	const counts = $derived(
-		Object.fromEntries(CATEGORIES.map((c) => [c.id, data.families.filter((f) => f.category === c.id).length]))
+		Object.fromEntries(CATEGORIES.map((c) => [c.id, shelf.filter((f) => f.category === c.id).length]))
 	);
 
 	const visible = $derived.by(() => {
 		const q = query.trim().toLowerCase();
+		const named = (f: (typeof data.families)[number]) =>
+			f.name.toLowerCase().includes(q) || f.aliases.some((a) => a.toLowerCase().includes(q));
 		const list = data.families.filter(
 			(f) =>
+				// Hidden families (symbol fonts) only turn up when searched for by name.
+				(!f.hidden || (!!q && named(f))) &&
 				// A typed search or an author looks in every category; the filter narrows browsing.
 				(!!q || !!author || categories.length === 0 || categories.includes(f.category)) &&
 				(!author || authorsOrUnknown(f).includes(author)) &&

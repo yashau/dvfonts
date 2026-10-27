@@ -267,6 +267,15 @@ test('the glyph list shows everything a font draws, keys included', async ({ pag
 	await expect(page.getByText('key D')).toBeVisible();
 });
 
+test('hidden symbol fonts turn up when searched for', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('link', { name: 'Bismi', exact: true })).toHaveCount(0);
+	await page.getByLabel('Search').fill('bismi');
+	await expect(page.getByRole('link', { name: 'Bismi', exact: true })).toBeVisible();
+	await page.getByLabel('Search').fill('nishan');
+	await expect(page.getByRole('link', { name: 'A_Nishan', exact: true })).toBeVisible();
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
