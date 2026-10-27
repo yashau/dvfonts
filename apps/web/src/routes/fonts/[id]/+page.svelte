@@ -92,6 +92,7 @@
 		(
 			[
 				['Designer', family.designer],
+				['Released', family.year ? String(family.year) : null],
 				['Manufacturer', family.manufacturer],
 				['Copyright', family.copyright],
 				[
@@ -134,7 +135,9 @@
 				<Badge variant="secondary">{category}</Badge>
 				<Badge variant="outline">{family.license}</Badge>
 				<span class="text-sm text-muted-foreground"
-					>{family.styles.length} {family.styles.length === 1 ? 'style' : 'styles'}</span
+					>{family.styles.length}
+					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.year}
+						· {family.year}{/if}</span
 				>
 				{#if family.aliases.length}
 					<span class="text-sm text-muted-foreground">· also known as {family.aliases.join(', ')}</span>

@@ -54,6 +54,8 @@ export interface Family {
 	version: string | null;
 	styles: Style[];
 	zipSize: number;
+	/** Release year, from the font files or families.toml; null when unknown. */
+	year: number | null;
 }
 
 /** unicode-range values for the subset files, as emitted by scripts/build.py. */

@@ -193,6 +193,23 @@ test('author names filter the font list', async ({ page }) => {
 	const rows = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])');
 	await expect(rows).toHaveCount(2);
 	await expect(page.getByRole('link', { name: 'MV Aammu FK', exact: true })).toBeVisible();
+	// The logo goes back to the whole list.
+	await page.getByRole('link', { name: 'fonts.mv home' }).click();
+	await expect(page).toHaveURL(/\/$/);
+	await expect(rows).not.toHaveCount(2);
+});
+
+test('fonts show and sort by release year', async ({ page, isMobile }) => {
+	await page.goto('/fonts/faruma');
+	await expect(page.getByRole('row', { name: /Released\s*2002/ })).toBeVisible();
+	await page.goto('/');
+	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
+	await page.getByRole('combobox', { name: 'Sort' }).last().click();
+	await page.getByRole('option', { name: 'Oldest first' }).click();
+	if (isMobile) await page.keyboard.press('Escape');
+	// Avas Thaana (1995) is the oldest family on the default shelves (Official, Handwriting).
+	const first = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])').first();
+	await expect(first).toHaveAttribute('href', '/fonts/avas-thaana');
 });
 
 test('guide renders its demos', async ({ page }) => {
