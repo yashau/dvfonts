@@ -3,6 +3,8 @@
 declare global {
 	/** True in builds for beta.fonts.mv (see vite.config.ts). */
 	const __FONTS_MV_BETA__: boolean;
+	/** Hash of src/lib/data, i.e. of what the font pipeline put in R2 (see vite.config.ts). */
+	const __FONTS_MV_DATA__: string;
 
 	namespace App {
 		// Bindings come from `import { env } from 'cloudflare:workers'` (see

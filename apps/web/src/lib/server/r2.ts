@@ -36,10 +36,14 @@ export async function serveR2(
 	const bucket = env.STATIC;
 	if (!bucket) error(503, 'Static storage is not configured');
 
-	// Edge cache first: R2 reads cost more than cache hits and fonts never change
-	// within a release.
+	// Edge cache first: R2 reads cost more than cache hits. Objects keep their
+	// names when the pipeline rebuilds them, so the key carries the data version:
+	// otherwise a new zip would be served from the old entry and fail the
+	// installers' checksum.
 	const cache = edgeCache();
-	const cacheKey = new Request(new URL(request.url).toString(), { method: 'GET' });
+	const keyUrl = new URL(request.url);
+	keyUrl.searchParams.set('_data', __FONTS_MV_DATA__);
+	const cacheKey = new Request(keyUrl.toString(), { method: 'GET' });
 	if (cache && request.method === 'GET' && !request.headers.has('if-none-match')) {
 		const hit = await cache.match(cacheKey);
 		if (hit) return hit;
