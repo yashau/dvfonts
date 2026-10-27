@@ -5,7 +5,7 @@ import { browser } from '$app/env';
 export const SITE_ORIGIN = 'https://fonts.mv';
 
 /** The open-source repository behind the site, fonts pipeline and packages. */
-export const REPO_URL = 'https://github.com/yashau/dvfonts';
+export const REPO_URL = 'https://github.com/yashau/fonts.mv';
 
 export function origin(): string {
 	return browser ? location.origin : SITE_ORIGIN;

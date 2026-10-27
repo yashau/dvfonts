@@ -52,8 +52,8 @@
 		</p>
 		<p>
 			fonts.mv is non-profit and free, and always will be. The site, the font pipeline and the packages are open source
-			on GitHub at <a class="underline underline-offset-4" href={REPO_URL}>yashau/dvfonts</a> under the MIT license; the fonts
-			keep their own licenses. Issues and pull requests are welcome.
+			on GitHub at <a class="underline underline-offset-4" href={REPO_URL}>yashau/fonts.mv</a> under the MIT license; the
+			fonts keep their own licenses. Issues and pull requests are welcome.
 		</p>
 		<p>
 			The fonts.mv wordmark and favicon are set in

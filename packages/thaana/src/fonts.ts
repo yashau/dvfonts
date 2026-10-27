@@ -3,7 +3,10 @@
  * your own copies of the files (`files`), in which case nothing is fetched from fonts.mv.
  */
 
-export const DVFONTS_ORIGIN = 'https://fonts.mv';
+export const FONTS_MV_ORIGIN = 'https://fonts.mv';
+
+/** @deprecated Renamed to `FONTS_MV_ORIGIN`. */
+export const DVFONTS_ORIGIN: 'https://fonts.mv' = FONTS_MV_ORIGIN;
 
 export interface FontRequest {
 	/** Family name, e.g. "Faruma" or "MV Faseyha" (old names like "A_Waheed" work too). */
@@ -33,7 +36,7 @@ export interface FontCssOptions {
 /** URL of the CSS for one or more families. */
 export function fontCssUrl(
 	fonts: FontRequest | FontRequest[],
-	{ display = 'swap', origin = DVFONTS_ORIGIN, normalize = false }: FontCssOptions = {}
+	{ display = 'swap', origin = FONTS_MV_ORIGIN, normalize = false }: FontCssOptions = {}
 ): string {
 	const list = Array.isArray(fonts) ? fonts : [fonts];
 	const params = list
@@ -134,12 +137,12 @@ export function loadFonts(fonts: FontRequest | FontRequest[], options: FontCssOp
 
 function loadHosted(list: FontRequest[], options: FontCssOptions): Promise<void> {
 	const href = fontCssUrl(list, options);
-	let link = document.querySelector<HTMLLinkElement>(`link[data-dvfonts][href="${CSS.escape(href)}"]`);
+	let link = document.querySelector<HTMLLinkElement>(`link[data-fonts-mv][href="${CSS.escape(href)}"]`);
 	if (!link) {
 		link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.href = href;
-		link.dataset.dvfonts = '';
+		link.dataset.fontsMv = '';
 		document.head.append(link);
 	}
 	const ready = new Promise<void>((resolve, reject) => {

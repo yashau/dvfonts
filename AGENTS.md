@@ -12,16 +12,16 @@ Guidance for AI coding agents (and humans) working in this repository. Read this
 
 Toolchain is pinned in `mise.toml`. Use `mise run <task>` or the pnpm/uv equivalents.
 
-| Need          | Command                                                                                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Install       | `mise run install` (`pnpm install` + `uv sync --project fonts`)                                                                                   |
-| Dev server    | `mise run r2:local` once (loads fonts into local R2), then `mise run dev`                                                                         |
-| Unit tests    | `pnpm test` (Vitest in each package)                                                                                                              |
-| Type-check    | `pnpm check`                                                                                                                                      |
-| Lint / format | `pnpm lint` / `pnpm format` (oxlint + oxfmt); `uv run --project fonts ruff check fonts/scripts`                                                   |
-| Build         | `pnpm build` (packages, then site)                                                                                                                |
-| E2E           | `pnpm --filter @dvfonts/web test:e2e`: Playwright against the built Worker under `wrangler dev`; needs `pnpm build` and `mise run r2:local` first |
-| Rebuild fonts | `mise run fonts`, then `mise run bundles`                                                                                                         |
+| Need          | Command                                                                                                                                            |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Install       | `mise run install` (`pnpm install` + `uv sync --project fonts`)                                                                                    |
+| Dev server    | `mise run r2:local` once (loads fonts into local R2), then `mise run dev`                                                                          |
+| Unit tests    | `pnpm test` (Vitest in each package)                                                                                                               |
+| Type-check    | `pnpm check`                                                                                                                                       |
+| Lint / format | `pnpm lint` / `pnpm format` (oxlint + oxfmt); `uv run --project fonts ruff check fonts/scripts`                                                    |
+| Build         | `pnpm build` (packages, then site)                                                                                                                 |
+| E2E           | `pnpm --filter @fonts.mv/web test:e2e`: Playwright against the built Worker under `wrangler dev`; needs `pnpm build` and `mise run r2:local` first |
+| Rebuild fonts | `mise run fonts`, then `mise run bundles`                                                                                                          |
 
 Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run the e2e suite if you touched the site, and `mise run fonts:check` if you touched `fonts/`.
 

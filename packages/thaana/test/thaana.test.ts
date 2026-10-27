@@ -5,8 +5,10 @@ import {
 	autoAttach,
 	convertLegacy,
 	detectDirection,
+	DVFONTS_ORIGIN,
 	fontCssUrl,
 	fontFaceCss,
+	FONTS_MV_ORIGIN,
 	loadFonts,
 	isolate,
 	KEYMAP,
@@ -148,6 +150,21 @@ describe('fontCssUrl', () => {
 	});
 });
 
+describe('hosted fonts', () => {
+	it('come from fonts.mv; the old origin name still works', () => {
+		expect(FONTS_MV_ORIGIN).toBe('https://fonts.mv');
+		expect(DVFONTS_ORIGIN).toBe(FONTS_MV_ORIGIN);
+	});
+	it('loadFonts adds one marked stylesheet per request', () => {
+		void loadFonts({ family: 'Faruma' });
+		void loadFonts({ family: 'Faruma' });
+		const links = document.querySelectorAll<HTMLLinkElement>('link[data-fonts-mv]');
+		expect(links).toHaveLength(1);
+		expect(links[0].href).toBe(fontCssUrl({ family: 'Faruma' }));
+		links[0].remove();
+	});
+});
+
 describe('own font files', () => {
 	const own = { family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2', 700: 'https://cdn.example/f-700.ttf?v=2' } };
 
@@ -187,7 +204,7 @@ describe('own font files', () => {
 			{ family: 'Faruma', source: `url("/fonts/faruma-400.woff2") format('woff2')`, weight: '400' },
 			{ family: 'Faruma', source: `url("https://cdn.example/f-700.ttf?v=2") format('truetype')`, weight: '700' }
 		]);
-		expect(document.querySelector('link[data-dvfonts]')).toBeNull();
+		expect(document.querySelector('link[data-fonts-mv]')).toBeNull();
 		vi.unstubAllGlobals();
 	});
 });

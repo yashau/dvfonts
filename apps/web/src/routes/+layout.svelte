@@ -47,7 +47,7 @@
 			>
 				<p>
 					Open Dhivehi fonts for the web. fonts.mv is open source:
-					<a class="underline underline-offset-4 hover:text-foreground" href={REPO_URL}>yashau/dvfonts on GitHub</a>.
+					<a class="underline underline-offset-4 hover:text-foreground" href={REPO_URL}>yashau/fonts.mv on GitHub</a>.
 				</p>
 				<p>
 					Rights holder? <a class="underline underline-offset-4 hover:text-foreground" href="/about#takedown"

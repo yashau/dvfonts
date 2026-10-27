@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/yashau/dvfonts/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
-  <a href="https://github.com/yashau/dvfonts/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/dvfonts/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
+  <a href="https://github.com/yashau/fonts.mv/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/yashau/fonts.mv/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" /></a>
+  <a href="https://github.com/yashau/fonts.mv/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/yashau/fonts.mv/deploy.yml?style=for-the-badge&label=deploy&logo=cloudflare&logoColor=white" /></a>
   <a href="https://fonts.mv"><img alt="Fonts" src="https://img.shields.io/badge/fonts-157_families_·_226_styles-0e7c66?style=for-the-badge" /></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/code-MIT-blue?style=for-the-badge" /></a>
 </p>
@@ -172,14 +172,14 @@ mise run r2:local       # build fonts + bundles and load them into local R2 (onc
 mise run dev            # http://localhost:5173
 ```
 
-| Task                                  | What it does                                            |
-| ------------------------------------- | ------------------------------------------------------- |
-| `mise run test`                       | Unit tests for all packages (Vitest)                    |
-| `mise run check`                      | Type-check packages and site                            |
-| `mise run lint` / `format`            | oxlint + oxfmt (JS/TS/Svelte), ruff (Python)            |
-| `mise run fonts`                      | Rebuild the font library from `fonts/sources`           |
-| `mise run bundles`                    | Build the download zips                                 |
-| `pnpm --filter @dvfonts/web test:e2e` | Playwright against the real Worker under `wrangler dev` |
+| Task                                   | What it does                                            |
+| -------------------------------------- | ------------------------------------------------------- |
+| `mise run test`                        | Unit tests for all packages (Vitest)                    |
+| `mise run check`                       | Type-check packages and site                            |
+| `mise run lint` / `format`             | oxlint + oxfmt (JS/TS/Svelte), ruff (Python)            |
+| `mise run fonts`                       | Rebuild the font library from `fonts/sources`           |
+| `mise run bundles`                     | Build the download zips                                 |
+| `pnpm --filter @fonts.mv/web test:e2e` | Playwright against the real Worker under `wrangler dev` |
 
 **Adding a font:**
 
@@ -199,7 +199,7 @@ mise run dev            # http://localhost:5173
 
 The fonts belong to their makers: the Office of the President (Faruma, Reethi), Hassan Hameed, the Thaana Type Foundry, Hussain Niyaz, Zillon, Mohamed Amaan, M.A. Gadir and many others. Each family page and download names its makers and license, and lists exactly what fonts.mv changed. Fonts were collected via [raajjefonts](https://raajjefonts.github.io/) and their original sites.
 
-**If you hold rights to a font here** and want it credited differently, relicensed or removed, [open an issue](https://github.com/yashau/dvfonts/issues) or email ibrahim@yashau.com. Removal requests are honoured without argument.
+**If you hold rights to a font here** and want it credited differently, relicensed or removed, [open an issue](https://github.com/yashau/fonts.mv/issues) or email ibrahim@yashau.com. Removal requests are honoured without argument.
 
 ## License
 
