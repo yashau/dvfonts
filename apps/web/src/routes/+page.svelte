@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
+	import AuthorHero from '#lib/components/author-hero.svelte';
 	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, authors, credit, type Category } from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
 	import BrowsePanel, { type Sort } from '#lib/components/browse-panel.svelte';
@@ -24,9 +26,20 @@
 
 	// Author names on cards and font pages link to /?author=<name>. Read in an effect,
 	// since the prerendered page has no query string.
+	let urlRead = $state(false);
 	$effect(() => {
 		const a = page.url.searchParams.get('author');
 		if (a !== null) author = a;
+		urlRead = true;
+	});
+
+	// Keep the address in step with the author picker, so a filtered list can be shared.
+	$effect(() => {
+		if (!urlRead) return;
+		const wanted = author === null ? '/' : `/?author=${encodeURIComponent(author)}`;
+		if (`${page.url.pathname}${page.url.search}` !== wanted) {
+			goto(wanted, { replace: true, reset: false });
+		}
 	});
 
 	const authorList = $derived.by(() => {
@@ -34,6 +47,8 @@
 		for (const f of data.families) for (const a of authors(f)) count.set(a, (count.get(a) ?? 0) + 1);
 		return [...count].map(([name, n]) => ({ name, count: n })).toSorted((a, b) => a.name.localeCompare(b.name));
 	});
+
+	const authorCount = $derived(author ? (authorList.find((a) => a.name === author)?.count ?? 0) : 0);
 
 	const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
 	const featuredRank = (id: string) => {
@@ -73,14 +88,18 @@
 </svelte:head>
 
 <section class="mx-auto max-w-7xl px-4 pt-10 pb-6 sm:px-6">
-	<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Open Dhivehi fonts</h1>
-	<p class="mt-2 text-pretty text-muted-foreground">
-		{data.total.families} families and {data.total.styles} styles that have circulated freely in the Maldives for years, ready
-		to embed on the web. Agent-ready, with
-		<a class="underline underline-offset-4" href="/docs#packages">packages</a> for React, Svelte, Vue and plain
-		JavaScript that handle Thaana typing and display, and an
-		<a class="underline underline-offset-4" href="/llms.txt">llms.txt</a> for AI agents.
-	</p>
+	{#if author}
+		<AuthorHero name={author} count={authorCount} onclear={() => (author = null)} />
+	{:else}
+		<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">Open Dhivehi fonts</h1>
+		<p class="mt-2 text-pretty text-muted-foreground">
+			{data.total.families} families and {data.total.styles} styles that have circulated freely in the Maldives for years,
+			ready to embed on the web. Agent-ready, with
+			<a class="underline underline-offset-4" href="/docs#packages">packages</a> for React, Svelte, Vue and plain
+			JavaScript that handle Thaana typing and display, and an
+			<a class="underline underline-offset-4" href="/llms.txt">llms.txt</a> for AI agents.
+		</p>
+	{/if}
 </section>
 
 <!-- Google Fonts layout: the preview and filters live in a sticky sidebar on wide

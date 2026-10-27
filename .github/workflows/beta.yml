@@ -1,0 +1,79 @@
+name: Beta
+
+# Every push to the `beta` branch deploys it to https://beta.fonts.mv, a separate
+# Worker (wrangler env "beta"). The beta reads the production R2 bucket and never
+# uploads to it, so it only shows fonts that a real release has already uploaded.
+on:
+  push:
+    branches: [beta]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time, and never cancel one halfway.
+concurrency:
+  group: deploy-beta
+  cancel-in-progress: false
+
+env:
+  PINNED_MISE_VERSION: '2026.10.17'
+  TZ: UTC
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  beta:
+    name: beta
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: preview
+      url: https://beta.fonts.mv
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: jdx/mise-action@8418fedb1110381a0d3ba51a7a415d7c1b884550 # v5.2.2
+        with:
+          version: ${{ env.PINNED_MISE_VERSION }}
+          # This job holds Cloudflare credentials: no cache in either direction.
+          cache: false
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm build
+
+      - name: Deploy beta Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MESSAGE: 'beta ${{ github.sha }}'
+        working-directory: apps/web
+        run: pnpm exec wrangler deploy --env beta --message "$MESSAGE"
+
+      - name: Smoke-test beta
+        run: |
+          set -euo pipefail
+          base=https://beta.fonts.mv
+          # A new custom domain can take a minute to resolve on the first deploy.
+          curl -s -o /dev/null --retry 12 --retry-delay 10 --retry-all-errors -f "${base}/"
+          for path in / /fonts/faruma /authors "/css2?family=Faruma"; do
+            code="$(curl -s -o /dev/null --retry 3 --retry-all-errors -w '%{http_code}' "${base}${path}")"
+            echo "${code} ${path}"
+            [ "$code" = 200 ]
+          done
+
+      - name: Summary
+        run: |
+          {
+            echo "### Beta deployed"
+            echo
+            echo "- commit: \`${GITHUB_SHA}\`"
+            echo "- url: https://beta.fonts.mv"
+          } >> "$GITHUB_STEP_SUMMARY"
