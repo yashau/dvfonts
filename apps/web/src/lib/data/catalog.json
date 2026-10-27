@@ -56,7 +56,8 @@
      "sizeAdjust": 0.976
     }
    ],
-   "zipSize": 14758
+   "zipSize": 14758,
+   "year": null
   },
   {
    "id": "a-haleem-faseyha",
@@ -110,7 +111,8 @@
      "sizeAdjust": 1.21
     }
    ],
-   "zipSize": 27892
+   "zipSize": 27892,
+   "year": null
   },
   {
    "id": "a-haleem-kb",
@@ -164,7 +166,8 @@
      "sizeAdjust": 1.008
     }
    ],
-   "zipSize": 13179
+   "zipSize": 13179,
+   "year": null
   },
   {
    "id": "a-haleem-kirudhooni",
@@ -218,7 +221,8 @@
      "sizeAdjust": 1.129
     }
    ],
-   "zipSize": 10469
+   "zipSize": 10469,
+   "year": null
   },
   {
    "id": "a-haleem-mathi",
@@ -272,7 +276,8 @@
      "sizeAdjust": 1.179
     }
    ],
-   "zipSize": 12352
+   "zipSize": 12352,
+   "year": null
   },
   {
    "id": "a-haleem-raaveri",
@@ -326,7 +331,8 @@
      "sizeAdjust": 1.398
     }
    ],
-   "zipSize": 23049
+   "zipSize": 23049,
+   "year": null
   },
   {
    "id": "a-haleem-riveli",
@@ -380,7 +386,8 @@
      "sizeAdjust": 1.305
     }
    ],
-   "zipSize": 8226
+   "zipSize": 8226,
+   "year": null
   },
   {
    "id": "a-haleem-sh",
@@ -434,7 +441,8 @@
      "sizeAdjust": 0.82
     }
    ],
-   "zipSize": 9992
+   "zipSize": 9992,
+   "year": null
   },
   {
    "id": "a-haleem-thangi",
@@ -488,7 +496,8 @@
      "sizeAdjust": 1.287
     }
    ],
-   "zipSize": 16511
+   "zipSize": 16511,
+   "year": null
   },
   {
    "id": "a-haleem-thiki",
@@ -542,7 +551,8 @@
      "sizeAdjust": 1.314
     }
    ],
-   "zipSize": 32181
+   "zipSize": 32181,
+   "year": null
   },
   {
    "id": "a-haleem-uivashaa",
@@ -596,7 +606,8 @@
      "sizeAdjust": 1.005
     }
    ],
-   "zipSize": 23988
+   "zipSize": 23988,
+   "year": null
   },
   {
    "id": "a-reethi",
@@ -652,7 +663,8 @@
      "sizeAdjust": 0.976
     }
    ],
-   "zipSize": 14315
+   "zipSize": 14315,
+   "year": 2002
   },
   {
    "id": "ajumalu",
@@ -706,7 +718,8 @@
      "sizeAdjust": 1.033
     }
    ],
-   "zipSize": 18927
+   "zipSize": 18927,
+   "year": 1997
   },
   {
    "id": "akuro",
@@ -760,7 +773,8 @@
      "sizeAdjust": 1.272
     }
    ],
-   "zipSize": 26577
+   "zipSize": 26577,
+   "year": 1995
   },
   {
    "id": "akuru",
@@ -814,7 +828,8 @@
      "sizeAdjust": 1.385
     }
    ],
-   "zipSize": 14034
+   "zipSize": 14034,
+   "year": null
   },
   {
    "id": "athu-casual",
@@ -868,7 +883,8 @@
      "sizeAdjust": 0.967
     }
    ],
-   "zipSize": 16454
+   "zipSize": 16454,
+   "year": 1996
   },
   {
    "id": "avas-thaana",
@@ -922,7 +938,8 @@
      "sizeAdjust": 1.417
     }
    ],
-   "zipSize": 13728
+   "zipSize": 13728,
+   "year": 1995
   },
   {
    "id": "bismi",
@@ -973,7 +990,8 @@
      "sizeAdjust": null
     }
    ],
-   "zipSize": 64379
+   "zipSize": 64379,
+   "year": 1997
   },
   {
    "id": "bodukuru",
@@ -1027,7 +1045,8 @@
      "sizeAdjust": 0.794
     }
    ],
-   "zipSize": 18546
+   "zipSize": 18546,
+   "year": 1996
   },
   {
    "id": "bolhu",
@@ -1305,7 +1324,8 @@
      "sizeAdjust": 0.922
     }
    ],
-   "zipSize": 571996
+   "zipSize": 571996,
+   "year": 2020
   },
   {
    "id": "dam-hiyani",
@@ -1359,7 +1379,8 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 27290
+   "zipSize": 27290,
+   "year": 2002
   },
   {
    "id": "dam-kalhi",
@@ -1413,7 +1434,8 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 21098
+   "zipSize": 21098,
+   "year": null
   },
   {
    "id": "dam-kathivalhi",
@@ -1467,7 +1489,8 @@
      "sizeAdjust": 1.029
     }
    ],
-   "zipSize": 15319
+   "zipSize": 15319,
+   "year": 2000
   },
   {
    "id": "dam-madheeh",
@@ -1521,7 +1544,8 @@
      "sizeAdjust": 0.969
     }
    ],
-   "zipSize": 16217
+   "zipSize": 16217,
+   "year": null
   },
   {
    "id": "dhanbumaa",
@@ -1603,7 +1627,8 @@
      "sizeAdjust": 0.985
     }
    ],
-   "zipSize": 43647
+   "zipSize": 43647,
+   "year": 2024
   },
   {
    "id": "dhivehi-muraka",
@@ -1657,7 +1682,8 @@
      "sizeAdjust": 1.043
     }
    ],
-   "zipSize": 25621
+   "zipSize": 25621,
+   "year": 2026
   },
   {
    "id": "faagathi-dheli",
@@ -1739,7 +1765,8 @@
      "sizeAdjust": 1.501
     }
    ],
-   "zipSize": 27954
+   "zipSize": 27954,
+   "year": 2021
   },
   {
    "id": "faagathi-neon",
@@ -1877,7 +1904,8 @@
      "sizeAdjust": 1.552
     }
    ],
-   "zipSize": 51584
+   "zipSize": 51584,
+   "year": 2021
   },
   {
    "id": "faaru-punk",
@@ -1959,7 +1987,8 @@
      "sizeAdjust": 1.646
     }
    ],
-   "zipSize": 19022
+   "zipSize": 19022,
+   "year": 2021
   },
   {
    "id": "faiy",
@@ -2013,7 +2042,8 @@
      "sizeAdjust": 0.616
     }
    ],
-   "zipSize": 30935
+   "zipSize": 30935,
+   "year": null
   },
   {
    "id": "fanara",
@@ -2151,7 +2181,8 @@
      "sizeAdjust": 0.948
     }
    ],
-   "zipSize": 258719
+   "zipSize": 258719,
+   "year": 2020
   },
   {
    "id": "fanara-golhi",
@@ -2429,7 +2460,8 @@
      "sizeAdjust": 0.982
     }
    ],
-   "zipSize": 66879
+   "zipSize": 66879,
+   "year": 2021
   },
   {
    "id": "faruma",
@@ -2486,7 +2518,8 @@
      "sizeAdjust": 1.0
     }
    ],
-   "zipSize": 26423
+   "zipSize": 26423,
+   "year": 2002
   },
   {
    "id": "fiyuzu",
@@ -2540,7 +2573,8 @@
      "sizeAdjust": 0.831
     }
    ],
-   "zipSize": 37670
+   "zipSize": 37670,
+   "year": 2020
   },
   {
    "id": "gurafiku",
@@ -2594,7 +2628,8 @@
      "sizeAdjust": 1.54
     }
    ],
-   "zipSize": 9786
+   "zipSize": 9786,
+   "year": 2021
   },
   {
    "id": "haluvidhaa",
@@ -2648,7 +2683,8 @@
      "sizeAdjust": 1.815
     }
    ],
-   "zipSize": 15962
+   "zipSize": 15962,
+   "year": 2021
   },
   {
    "id": "hawwa",
@@ -2702,7 +2738,8 @@
      "sizeAdjust": 1.252
     }
    ],
-   "zipSize": 15911
+   "zipSize": 15911,
+   "year": 2021
   },
   {
    "id": "kanafala",
@@ -2750,7 +2787,8 @@
      "sizeAdjust": 1.447
     }
    ],
-   "zipSize": 5059
+   "zipSize": 5059,
+   "year": 2015
   },
   {
    "id": "kolhu",
@@ -3028,7 +3066,8 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 566186
+   "zipSize": 566186,
+   "year": 2020
   },
   {
    "id": "lcd-thaana",
@@ -3082,7 +3121,8 @@
      "sizeAdjust": 0.773
     }
    ],
-   "zipSize": 23694
+   "zipSize": 23694,
+   "year": 2021
   },
   {
    "id": "magey-huseynu",
@@ -3136,7 +3176,8 @@
      "sizeAdjust": 1.07
     }
    ],
-   "zipSize": 32287
+   "zipSize": 32287,
+   "year": 2024
   },
   {
    "id": "masnooee-mono",
@@ -3190,7 +3231,8 @@
      "sizeAdjust": 0.75
     }
    ],
-   "zipSize": 54428
+   "zipSize": 54428,
+   "year": 2020
   },
   {
    "id": "modfaruma",
@@ -3244,7 +3286,8 @@
      "sizeAdjust": 1.0
     }
    ],
-   "zipSize": 26177
+   "zipSize": 26177,
+   "year": 2002
   },
   {
    "id": "motaru-dhigu",
@@ -3298,7 +3341,8 @@
      "sizeAdjust": 1.963
     }
    ],
-   "zipSize": 34706
+   "zipSize": 34706,
+   "year": 2021
   },
   {
    "id": "motaru-square",
@@ -3352,7 +3396,8 @@
      "sizeAdjust": 1.827
     }
    ],
-   "zipSize": 9950
+   "zipSize": 9950,
+   "year": 2021
   },
   {
    "id": "mv-a-waheed",
@@ -3409,7 +3454,8 @@
      "sizeAdjust": 0.978
     }
    ],
-   "zipSize": 40704
+   "zipSize": 40704,
+   "year": 1996
   },
   {
    "id": "mv-aammu-fk",
@@ -3466,7 +3512,8 @@
      "sizeAdjust": 0.913
     }
    ],
-   "zipSize": 40692
+   "zipSize": 40692,
+   "year": 1996
   },
   {
    "id": "mv-aka-light",
@@ -3519,7 +3566,8 @@
      "sizeAdjust": 0.803
     }
    ],
-   "zipSize": 92106
+   "zipSize": 92106,
+   "year": 2021
   },
   {
    "id": "mv-akson",
@@ -3567,7 +3615,8 @@
      "sizeAdjust": 0.754
     }
    ],
-   "zipSize": 5032
+   "zipSize": 5032,
+   "year": 2017
   },
   {
    "id": "mv-alram",
@@ -3621,7 +3670,8 @@
      "sizeAdjust": 0.955
     }
    ],
-   "zipSize": 35097
+   "zipSize": 35097,
+   "year": 2021
   },
   {
    "id": "mv-ashaahi",
@@ -3669,7 +3719,8 @@
      "sizeAdjust": 0.525
     }
    ],
-   "zipSize": 4026
+   "zipSize": 4026,
+   "year": 2017
   },
   {
    "id": "mv-azheel",
@@ -3723,7 +3774,8 @@
      "sizeAdjust": 0.984
     }
    ],
-   "zipSize": 38972
+   "zipSize": 38972,
+   "year": 2021
   },
   {
    "id": "mv-beys",
@@ -3777,7 +3829,8 @@
      "sizeAdjust": 0.914
     }
    ],
-   "zipSize": 4178
+   "zipSize": 4178,
+   "year": 2017
   },
   {
    "id": "mv-binaa",
@@ -3831,7 +3884,8 @@
      "sizeAdjust": 0.615
     }
    ],
-   "zipSize": 5665
+   "zipSize": 5665,
+   "year": 2018
   },
   {
    "id": "mv-dheli-fihi",
@@ -3885,7 +3939,8 @@
      "sizeAdjust": 0.88
     }
    ],
-   "zipSize": 81586
+   "zipSize": 81586,
+   "year": 2021
   },
   {
    "id": "mv-dhidhavee",
@@ -3939,7 +3994,8 @@
      "sizeAdjust": 0.904
     }
    ],
-   "zipSize": 3853
+   "zipSize": 3853,
+   "year": 2021
   },
   {
    "id": "mv-dubai",
@@ -3993,7 +4049,8 @@
      "sizeAdjust": 1.013
     }
    ],
-   "zipSize": 4716
+   "zipSize": 4716,
+   "year": 2018
   },
   {
    "id": "mv-edhuru",
@@ -4047,7 +4104,8 @@
      "sizeAdjust": 0.71
     }
    ],
-   "zipSize": 39053
+   "zipSize": 39053,
+   "year": 2021
   },
   {
    "id": "mv-elaaf",
@@ -4129,7 +4187,8 @@
      "sizeAdjust": 1.128
     }
    ],
-   "zipSize": 27923
+   "zipSize": 27923,
+   "year": 2000
   },
   {
    "id": "mv-elaaf-formal",
@@ -4183,7 +4242,8 @@
      "sizeAdjust": 1.173
     }
    ],
-   "zipSize": 14763
+   "zipSize": 14763,
+   "year": 2005
   },
   {
    "id": "mv-faseyha",
@@ -4268,7 +4328,8 @@
      "sizeAdjust": 0.933
     }
    ],
-   "zipSize": 76495
+   "zipSize": 76495,
+   "year": 2024
   },
   {
    "id": "mv-faseyha-au",
@@ -4321,7 +4382,8 @@
      "sizeAdjust": 0.933
     }
    ],
-   "zipSize": 43087
+   "zipSize": 43087,
+   "year": 2024
   },
   {
    "id": "mv-fathimath",
@@ -4375,7 +4437,8 @@
      "sizeAdjust": 0.944
     }
    ],
-   "zipSize": 31548
+   "zipSize": 31548,
+   "year": 2021
   },
   {
    "id": "mv-funa",
@@ -4489,7 +4552,8 @@
      "sizeAdjust": 0.896
     }
    ],
-   "zipSize": 136359
+   "zipSize": 136359,
+   "year": 1999
   },
   {
    "id": "mv-gaa-lhohi",
@@ -4543,7 +4607,8 @@
      "sizeAdjust": 1.089
     }
    ],
-   "zipSize": 28291
+   "zipSize": 28291,
+   "year": 2021
   },
   {
    "id": "mv-galan",
@@ -4597,7 +4662,8 @@
      "sizeAdjust": 0.908
     }
    ],
-   "zipSize": 22149
+   "zipSize": 22149,
+   "year": null
   },
   {
    "id": "mv-golhifoshi",
@@ -4651,7 +4717,8 @@
      "sizeAdjust": 1.025
     }
    ],
-   "zipSize": 4431
+   "zipSize": 4431,
+   "year": 2016
   },
   {
    "id": "mv-groupx-avas",
@@ -4707,7 +4774,8 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 17840
+   "zipSize": 17840,
+   "year": 2000
   },
   {
    "id": "mv-hulhumale",
@@ -4755,7 +4823,8 @@
      "sizeAdjust": 1.044
     }
    ],
-   "zipSize": 5041
+   "zipSize": 5041,
+   "year": 2017
   },
   {
    "id": "mv-hutti",
@@ -4809,7 +4878,8 @@
      "sizeAdjust": 0.847
     }
    ],
-   "zipSize": 4682
+   "zipSize": 4682,
+   "year": 2016
   },
   {
    "id": "mv-ilham",
@@ -4882,7 +4952,8 @@
      "sizeAdjust": 0.882
     }
    ],
-   "zipSize": 80907
+   "zipSize": 80907,
+   "year": 1996
   },
   {
    "id": "mv-iyyu",
@@ -4936,7 +5007,8 @@
      "sizeAdjust": 1.137
     }
    ],
-   "zipSize": 14596
+   "zipSize": 14596,
+   "year": 2000
   },
   {
    "id": "mv-iyyu-formal",
@@ -4990,7 +5062,8 @@
      "sizeAdjust": 1.058
     }
    ],
-   "zipSize": 13032
+   "zipSize": 13032,
+   "year": 2005
   },
   {
    "id": "mv-iyyu-nala",
@@ -5044,7 +5117,8 @@
      "sizeAdjust": 1.117
     }
    ],
-   "zipSize": 14485
+   "zipSize": 14485,
+   "year": 2000
   },
   {
    "id": "mv-izy-pro",
@@ -5098,7 +5172,8 @@
      "sizeAdjust": 0.919
     }
    ],
-   "zipSize": 28481
+   "zipSize": 28481,
+   "year": 2021
   },
   {
    "id": "mv-izyan",
@@ -5152,7 +5227,8 @@
      "sizeAdjust": 0.931
     }
    ],
-   "zipSize": 36232
+   "zipSize": 36232,
+   "year": 2021
   },
   {
    "id": "mv-izyan-athuliyun",
@@ -5234,7 +5310,8 @@
      "sizeAdjust": 0.823
     }
    ],
-   "zipSize": 47665
+   "zipSize": 47665,
+   "year": 2021
   },
   {
    "id": "mv-izyan-bodu-akuru",
@@ -5288,7 +5365,8 @@
      "sizeAdjust": 1.031
     }
    ],
-   "zipSize": 30446
+   "zipSize": 30446,
+   "year": 2021
   },
   {
    "id": "mv-izyan-bodu-akuru-3d",
@@ -5342,7 +5420,8 @@
      "sizeAdjust": 0.882
     }
    ],
-   "zipSize": 50601
+   "zipSize": 50601,
+   "year": 2021
   },
   {
    "id": "mv-izyan-edge",
@@ -5396,7 +5475,8 @@
      "sizeAdjust": 0.845
     }
    ],
-   "zipSize": 24360
+   "zipSize": 24360,
+   "year": 2021
   },
   {
    "id": "mv-izyan-extra-light",
@@ -5450,7 +5530,8 @@
      "sizeAdjust": 1.166
     }
    ],
-   "zipSize": 34577
+   "zipSize": 34577,
+   "year": 2021
   },
   {
    "id": "mv-izyan-lhohi",
@@ -5504,7 +5585,8 @@
      "sizeAdjust": 0.849
     }
    ],
-   "zipSize": 30834
+   "zipSize": 30834,
+   "year": 2021
   },
   {
    "id": "mv-izyan-light",
@@ -5558,7 +5640,8 @@
      "sizeAdjust": 1.141
     }
    ],
-   "zipSize": 34377
+   "zipSize": 34377,
+   "year": 2021
   },
   {
    "id": "mv-izyan-liyun",
@@ -5612,7 +5695,8 @@
      "sizeAdjust": 0.959
     }
    ],
-   "zipSize": 33127
+   "zipSize": 33127,
+   "year": 2021
   },
   {
    "id": "mv-izyan-reethi",
@@ -5666,7 +5750,8 @@
      "sizeAdjust": 0.818
     }
    ],
-   "zipSize": 24344
+   "zipSize": 24344,
+   "year": 2021
   },
   {
    "id": "mv-izyan-regular",
@@ -5720,7 +5805,8 @@
      "sizeAdjust": 1.09
     }
    ],
-   "zipSize": 16288
+   "zipSize": 16288,
+   "year": 2022
   },
   {
    "id": "mv-izyan-suruhee",
@@ -5774,7 +5860,8 @@
      "sizeAdjust": 1.139
     }
    ],
-   "zipSize": 22171
+   "zipSize": 22171,
+   "year": 2021
   },
   {
    "id": "mv-izyan-thaana",
@@ -5828,7 +5915,8 @@
      "sizeAdjust": 0.989
     }
    ],
-   "zipSize": 35399
+   "zipSize": 35399,
+   "year": 2021
   },
   {
    "id": "mv-izyan-thin",
@@ -5882,7 +5970,8 @@
      "sizeAdjust": 1.204
     }
    ],
-   "zipSize": 35481
+   "zipSize": 35481,
+   "year": 2021
   },
   {
    "id": "mv-karudhas",
@@ -5936,7 +6025,8 @@
      "sizeAdjust": 1.085
     }
    ],
-   "zipSize": 13039
+   "zipSize": 13039,
+   "year": 2021
   },
   {
    "id": "mv-karudhas-outline",
@@ -5990,7 +6080,8 @@
      "sizeAdjust": 0.726
     }
    ],
-   "zipSize": 23641
+   "zipSize": 23641,
+   "year": 2021
   },
   {
    "id": "mv-kashi",
@@ -6044,7 +6135,8 @@
      "sizeAdjust": 0.888
     }
    ],
-   "zipSize": 23377
+   "zipSize": 23377,
+   "year": 2021
   },
   {
    "id": "mv-kelaa",
@@ -6119,7 +6211,8 @@
      "sizeAdjust": 0.949
     }
    ],
-   "zipSize": 74099
+   "zipSize": 74099,
+   "year": 2024
   },
   {
    "id": "mv-koagannu",
@@ -6169,7 +6262,8 @@
      "sizeAdjust": 0.792
     }
    ],
-   "zipSize": 32930
+   "zipSize": 32930,
+   "year": 1995
   },
   {
    "id": "mv-lady-luck",
@@ -6223,7 +6317,8 @@
      "sizeAdjust": 0.993
     }
    ],
-   "zipSize": 16040
+   "zipSize": 16040,
+   "year": 2000
   },
   {
    "id": "mv-lhaiy",
@@ -6293,7 +6388,8 @@
      "sizeAdjust": 0.862
     }
    ],
-   "zipSize": 11745
+   "zipSize": 11745,
+   "year": 2016
   },
   {
    "id": "mv-lhohi",
@@ -6375,7 +6471,8 @@
      "sizeAdjust": 0.944
     }
    ],
-   "zipSize": 59426
+   "zipSize": 59426,
+   "year": 2021
   },
   {
    "id": "mv-mag-round",
@@ -6457,7 +6554,8 @@
      "sizeAdjust": 1.037
     }
    ],
-   "zipSize": 30359
+   "zipSize": 30359,
+   "year": 2000
   },
   {
    "id": "mv-mag-round-hollow",
@@ -6511,7 +6609,8 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 22725
+   "zipSize": 22725,
+   "year": 2000
   },
   {
    "id": "mv-maliku",
@@ -6564,7 +6663,8 @@
      "sizeAdjust": 0.919
     }
    ],
-   "zipSize": 32998
+   "zipSize": 32998,
+   "year": 2015
   },
   {
    "id": "mv-maryam",
@@ -6618,7 +6718,8 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 22814
+   "zipSize": 22814,
+   "year": 2021
   },
   {
    "id": "mv-meemu-ali",
@@ -6672,7 +6773,8 @@
      "sizeAdjust": 0.963
     }
    ],
-   "zipSize": 34182
+   "zipSize": 34182,
+   "year": 2021
   },
   {
    "id": "mv-midhili",
@@ -6722,7 +6824,8 @@
      "sizeAdjust": 0.943
     }
    ],
-   "zipSize": 34218
+   "zipSize": 34218,
+   "year": 1995
   },
   {
    "id": "mv-nasri",
@@ -6792,7 +6895,8 @@
      "sizeAdjust": 0.776
     }
    ],
-   "zipSize": 82930
+   "zipSize": 82930,
+   "year": 2018
   },
   {
    "id": "mv-neru-magu",
@@ -6846,7 +6950,8 @@
      "sizeAdjust": 1.207
     }
    ],
-   "zipSize": 21626
+   "zipSize": 21626,
+   "year": 2022
   },
   {
    "id": "mv-nevi-raheem",
@@ -6900,7 +7005,8 @@
      "sizeAdjust": 0.929
     }
    ],
-   "zipSize": 42062
+   "zipSize": 42062,
+   "year": 2021
   },
   {
    "id": "mv-open-condensed",
@@ -6948,7 +7054,8 @@
      "sizeAdjust": 0.894
     }
    ],
-   "zipSize": 27515
+   "zipSize": 27515,
+   "year": 2020
   },
   {
    "id": "mv-osho",
@@ -7002,7 +7109,8 @@
      "sizeAdjust": 0.476
     }
    ],
-   "zipSize": 3635
+   "zipSize": 3635,
+   "year": 2015
   },
   {
    "id": "mv-oswald",
@@ -7050,7 +7158,8 @@
      "sizeAdjust": 1.011
     }
    ],
-   "zipSize": 62246
+   "zipSize": 62246,
+   "year": 2018
   },
   {
    "id": "mv-prathama-dva",
@@ -7098,7 +7207,8 @@
      "sizeAdjust": 1.034
     }
    ],
-   "zipSize": 6317
+   "zipSize": 6317,
+   "year": 2016
   },
   {
    "id": "mv-prathama-ek",
@@ -7146,7 +7256,8 @@
      "sizeAdjust": 0.999
     }
    ],
-   "zipSize": 6157
+   "zipSize": 6157,
+   "year": 2015
   },
   {
    "id": "mv-prathama-tin",
@@ -7194,7 +7305,8 @@
      "sizeAdjust": 1.034
     }
    ],
-   "zipSize": 6312
+   "zipSize": 6312,
+   "year": 2015
   },
   {
    "id": "mv-raadhavalhi",
@@ -7266,7 +7378,8 @@
      "sizeAdjust": 1.011
     }
    ],
-   "zipSize": 76325
+   "zipSize": 76325,
+   "year": 1996
   },
   {
    "id": "mv-radhun",
@@ -7320,7 +7433,8 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 15784
+   "zipSize": 15784,
+   "year": 2005
   },
   {
    "id": "mv-randhoo",
@@ -7371,7 +7485,8 @@
      "sizeAdjust": 1.014
     }
    ],
-   "zipSize": 42395
+   "zipSize": 42395,
+   "year": 1998
   },
   {
    "id": "mv-reyo",
@@ -7425,7 +7540,8 @@
      "sizeAdjust": 0.8
     }
    ],
-   "zipSize": 3540
+   "zipSize": 3540,
+   "year": 2020
   },
   {
    "id": "mv-reyo-vah",
@@ -7479,7 +7595,8 @@
      "sizeAdjust": 0.731
     }
    ],
-   "zipSize": 4660
+   "zipSize": 4660,
+   "year": 2020
   },
   {
    "id": "mv-roma",
@@ -7533,7 +7650,8 @@
      "sizeAdjust": 0.7
     }
    ],
-   "zipSize": 7975
+   "zipSize": 7975,
+   "year": 2017
   },
   {
    "id": "mv-runa",
@@ -7581,7 +7699,8 @@
      "sizeAdjust": 0.819
     }
    ],
-   "zipSize": 4597
+   "zipSize": 4597,
+   "year": 2018
   },
   {
    "id": "mv-runa-us",
@@ -7629,7 +7748,8 @@
      "sizeAdjust": 0.64
     }
    ],
-   "zipSize": 4707
+   "zipSize": 4707,
+   "year": 2018
   },
   {
    "id": "mv-salhi",
@@ -7683,7 +7803,8 @@
      "sizeAdjust": 0.738
     }
    ],
-   "zipSize": 4243
+   "zipSize": 4243,
+   "year": 2017
   },
   {
    "id": "mv-salhi-eka",
@@ -7737,7 +7858,8 @@
      "sizeAdjust": 0.738
     }
    ],
-   "zipSize": 4145
+   "zipSize": 4145,
+   "year": 2016
   },
   {
    "id": "mv-sarukitu",
@@ -7791,7 +7913,8 @@
      "sizeAdjust": 0.633
     }
    ],
-   "zipSize": 5838
+   "zipSize": 5838,
+   "year": 2016
   },
   {
    "id": "mv-sehga-fb",
@@ -7847,7 +7970,8 @@
      "sizeAdjust": 0.965
     }
    ],
-   "zipSize": 14925
+   "zipSize": 14925,
+   "year": 2000
   },
   {
    "id": "mv-sehga-old",
@@ -7901,7 +8025,8 @@
      "sizeAdjust": 1.335
     }
    ],
-   "zipSize": 17623
+   "zipSize": 17623,
+   "year": null
   },
   {
    "id": "mv-sishisozo",
@@ -7949,7 +8074,8 @@
      "sizeAdjust": 0.536
     }
    ],
-   "zipSize": 4227
+   "zipSize": 4227,
+   "year": 2016
   },
   {
    "id": "mv-sishisozo-vah",
@@ -7997,7 +8123,8 @@
      "sizeAdjust": 0.536
     }
    ],
-   "zipSize": 4964
+   "zipSize": 4964,
+   "year": 2016
   },
   {
    "id": "mv-suruhee",
@@ -8051,7 +8178,8 @@
      "sizeAdjust": 1.147
     }
    ],
-   "zipSize": 24320
+   "zipSize": 24320,
+   "year": 2022
   },
   {
    "id": "mv-thaana-matrix-16",
@@ -8104,7 +8232,8 @@
      "sizeAdjust": 0.836
     }
    ],
-   "zipSize": 39241
+   "zipSize": 39241,
+   "year": 2024
   },
   {
    "id": "mv-thaana-matrix-8",
@@ -8157,7 +8286,8 @@
      "sizeAdjust": 0.628
     }
    ],
-   "zipSize": 39743
+   "zipSize": 39743,
+   "year": 2024
   },
   {
    "id": "mv-thaanarabi",
@@ -8205,7 +8335,8 @@
      "sizeAdjust": 0.985
     }
    ],
-   "zipSize": 4999
+   "zipSize": 4999,
+   "year": 2015
   },
   {
    "id": "mv-thakurufaanu",
@@ -8259,7 +8390,8 @@
      "sizeAdjust": 0.936
     }
    ],
-   "zipSize": 22459
+   "zipSize": 22459,
+   "year": 2022
   },
   {
    "id": "mv-thavaa",
@@ -8313,7 +8445,8 @@
      "sizeAdjust": 2.735
     }
    ],
-   "zipSize": 4062
+   "zipSize": 4062,
+   "year": 2015
   },
   {
    "id": "mv-thiki-akuru",
@@ -8367,7 +8500,8 @@
      "sizeAdjust": 1.213
     }
    ],
-   "zipSize": 21085
+   "zipSize": 21085,
+   "year": 2022
   },
   {
    "id": "mv-thinikaa",
@@ -8421,7 +8555,8 @@
      "sizeAdjust": 0.959
     }
    ],
-   "zipSize": 4685
+   "zipSize": 4685,
+   "year": 2021
   },
   {
    "id": "mv-thuththu",
@@ -8469,7 +8604,8 @@
      "sizeAdjust": 0.75
     }
    ],
-   "zipSize": 31111
+   "zipSize": 31111,
+   "year": 2018
   },
   {
    "id": "mv-thuththu-neo",
@@ -8539,7 +8675,8 @@
      "sizeAdjust": 0.938
     }
    ],
-   "zipSize": 63766
+   "zipSize": 63766,
+   "year": 2018
   },
   {
    "id": "mv-typewriter",
@@ -8631,7 +8768,8 @@
      "sizeAdjust": 0.85
     }
    ],
-   "zipSize": 101140
+   "zipSize": 101140,
+   "year": 1996
   },
   {
    "id": "mv-uligamu",
@@ -8679,7 +8817,8 @@
      "sizeAdjust": 0.848
     }
    ],
-   "zipSize": 77914
+   "zipSize": 77914,
+   "year": 2016
   },
   {
    "id": "mv-utheemu",
@@ -8751,7 +8890,8 @@
      "sizeAdjust": 0.98
     }
    ],
-   "zipSize": 67109
+   "zipSize": 67109,
+   "year": 1996
   },
   {
    "id": "mv-vaadhoo",
@@ -8831,7 +8971,8 @@
      "sizeAdjust": 0.91
     }
    ],
-   "zipSize": 77677
+   "zipSize": 77677,
+   "year": 2024
   },
   {
    "id": "mv-vashalo",
@@ -8885,7 +9026,8 @@
      "sizeAdjust": 1.086
     }
    ],
-   "zipSize": 6234
+   "zipSize": 6234,
+   "year": 2018
   },
   {
    "id": "nasr",
@@ -8939,7 +9081,8 @@
      "sizeAdjust": 0.909
     }
    ],
-   "zipSize": 26942
+   "zipSize": 26942,
+   "year": 1996
   },
   {
    "id": "nayaa",
@@ -8993,7 +9136,8 @@
      "sizeAdjust": 0.805
     }
    ],
-   "zipSize": 24444
+   "zipSize": 24444,
+   "year": 1996
   },
   {
    "id": "nooru",
@@ -9047,7 +9191,8 @@
      "sizeAdjust": 1.021
     }
    ],
-   "zipSize": 20906
+   "zipSize": 20906,
+   "year": 1996
   },
   {
    "id": "noto-sans-thaana",
@@ -9101,7 +9246,8 @@
      "sizeAdjust": 0.978
     }
    ],
-   "zipSize": 18230
+   "zipSize": 18230,
+   "year": 2022
   },
   {
    "id": "novel03",
@@ -9155,7 +9301,8 @@
      "sizeAdjust": 1.065
     }
    ],
-   "zipSize": 29541
+   "zipSize": 29541,
+   "year": 1994
   },
   {
    "id": "samee-avas-thaana",
@@ -9209,7 +9356,8 @@
      "sizeAdjust": 1.076
     }
    ],
-   "zipSize": 32157
+   "zipSize": 32157,
+   "year": 1999
   },
   {
    "id": "sangu-suruhee",
@@ -9263,7 +9411,8 @@
      "sizeAdjust": 1.519
     }
    ],
-   "zipSize": 22981
+   "zipSize": 22981,
+   "year": 2021
   },
   {
    "id": "sehga-casual",
@@ -9317,7 +9466,8 @@
      "sizeAdjust": 1.176
     }
    ],
-   "zipSize": 10161
+   "zipSize": 10161,
+   "year": null
   },
   {
    "id": "suruhee-outlined",
@@ -9371,7 +9521,8 @@
      "sizeAdjust": 1.004
     }
    ],
-   "zipSize": 101105
+   "zipSize": 101105,
+   "year": 2026
   },
   {
    "id": "thaana",
@@ -9455,7 +9606,8 @@
      "sizeAdjust": 1.728
     }
    ],
-   "zipSize": 37652
+   "zipSize": 37652,
+   "year": null
   },
   {
    "id": "thaana-unicode-akeh",
@@ -9509,7 +9661,8 @@
      "sizeAdjust": 1.173
     }
    ],
-   "zipSize": 43809
+   "zipSize": 43809,
+   "year": 2000
   },
   {
    "id": "tharujamaanu",
@@ -9591,7 +9744,8 @@
      "sizeAdjust": 1.051
     }
    ],
-   "zipSize": 45634
+   "zipSize": 45634,
+   "year": 2013
   },
   {
    "id": "theras",
@@ -9869,7 +10023,8 @@
      "sizeAdjust": 0.905
     }
    ],
-   "zipSize": 559347
+   "zipSize": 559347,
+   "year": 2020
   },
   {
    "id": "yuu-thaana-kufi",
@@ -9923,7 +10078,8 @@
      "sizeAdjust": 0.883
     }
    ],
-   "zipSize": 5522
+   "zipSize": 5522,
+   "year": 2017
   },
   {
    "id": "zaana-thedhu",
@@ -10201,7 +10357,8 @@
      "sizeAdjust": 1.481
     }
    ],
-   "zipSize": 584717
+   "zipSize": 584717,
+   "year": 2021
   }
  ]
 }

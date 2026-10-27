@@ -16,6 +16,7 @@ plus apps/web/src/lib/data/catalog.json describing everything for the site.
 
 from __future__ import annotations
 
+import datetime
 import io
 import json
 import re
@@ -591,6 +592,7 @@ def main(only: set[str] | None = None) -> None:
                 **display_meta(fam, meta),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
+                "year": release_year(fam, files),
             }
         )
         flags = []
@@ -632,6 +634,35 @@ def main(only: set[str] | None = None) -> None:
     if counted != text:
         repo_readme.write_text(counted)
     print(f"{len(families)} families, {n_styles} fonts -> {FONTS_OUT}")
+
+
+YEAR = re.compile(r"(?<!\d)(19[89]\d|20[0-4]\d)(?!\d)")
+# Font editors stamp re-saves: "Generated in 2014 by FontLab Studio".
+GENERATED = re.compile(r"generated in \d{4}[^.]*", re.I)
+HEAD_EPOCH = datetime.datetime(1904, 1, 1)  # the head table counts seconds from here
+
+
+def release_year(fam: dict, files: list[tuple[str, str]]) -> int | None:
+    """The family's release year: `year` in families.toml, else the earliest year its
+    source files mention (copyright, version, description), else the files' creation
+    date. Creation dates from 2014 on are skipped: archive re-saves stamped 2014, and
+    repaired files carry the repair date."""
+    if fam.get("year"):
+        return int(fam["year"])
+    years, created = [], []
+    for _, fname in files:
+        font = TTFont(SOURCES / fname, lazy=True)
+        for nid in (0, 3, 5, 10):
+            text = GENERATED.sub("", name_value(font, nid, True) or "")
+            years += [int(y) for y in YEAR.findall(text)]
+        try:
+            created.append((HEAD_EPOCH + datetime.timedelta(seconds=font["head"].created)).year)
+        except OverflowError:
+            pass
+    if years:
+        return min(years)
+    created = [y for y in created if 1990 <= y <= 2013]
+    return min(created) if created else None
 
 
 def display_meta(fam, meta) -> dict:

@@ -13,6 +13,8 @@
 # designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
+# year:     release year, when the files' own dates mislead (a Latin base font's
+#           copyright, a template's year); otherwise the build reads it from the files
 
 # ─── Official (text faces for documents, in the Faruma tradition) ────────────
 
@@ -41,6 +43,7 @@ designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 notes = "Based on the handwriting in Viyafaari Miadhu (1968). Its OpenType features are tested in Microsoft Word; some, like the raised Thaana full stop, don't work in Adobe InDesign or other apps."
+year = 1999
 fonts = { 300 = "mv-funa-light.ttf", 400 = "mv-funa-regular.ttf", 700 = "mv-funa-bold.ttf", 900 = "mv-funa-black.ttf" }
 
 [families.mv-faseyha]
@@ -117,6 +120,7 @@ name = "MV Typewriter"
 designer = "Hassan Hameed"
 unmodified = true
 category = "official"
+year = 1996
 fonts = { 400 = "mvtyper.ttf", 600 = "mvtypewriter-semibold.ttf", 700 = "mvtypebold.ttf" }
 
 [families.thaana-unicode-akeh]
@@ -344,6 +348,7 @@ name = "MV Oswald"
 designer = "Hassan Hameed (Thaana), Vernon Adams (Latin)"
 unmodified = true
 category = "modern"
+year = 2018
 fonts = { 400 = "mv-oswald-reg.ttf" }
 
 [families.mv-thuththu-neo]
@@ -489,11 +494,13 @@ fonts = { 400 = "mv-lhaiy.otf", 700 = "mv-lhaiy-bold.otf" }
 [families.masnooee-mono]
 name = "Masnooee Mono"
 category = "artistic"
+year = 2020
 fonts = { 400 = "masnooeemono-regular.ttf" }
 
 [families.lcd-thaana]
 name = "LCD Thaana"
 category = "artistic"
+year = 2021
 fonts = { 400 = "lcdthaana-regular.ttf" }
 
 [families.mv-thaana-matrix-8]
@@ -567,6 +574,7 @@ fonts = { 400 = "mv-izyanthaana.ttf" }
 [families.mv-izyan-athuliyun]
 name = "MV Izyan Athuliyun"
 category = "handwriting"
+year = 2021
 fonts = { 300 = "mv-izyan-athuliyun-light.ttf", 400 = "mv-izyan-athuliyun.ttf" }
 
 [families.mv-izyan-suruhee]
@@ -608,6 +616,7 @@ fonts = { 700 = "mv-dheli-fihi.ttf" }
 name = "MV Karudhas"
 designer = "Hussain Niyaz"
 category = "handwriting"
+year = 2021
 fonts = { 700 = "mv-karudhas.ttf" }
 
 [families.hawwa]
@@ -652,6 +661,7 @@ fonts = { 700 = "mv-izyan-lhohi.ttf" }
 [families.mv-gaa-lhohi]
 name = "MV Gaa Lhohi"
 category = "handwriting"
+year = 2021
 fonts = { 400 = "mv-gaa-lhohi.ttf" }
 
 [families.mv-alram]

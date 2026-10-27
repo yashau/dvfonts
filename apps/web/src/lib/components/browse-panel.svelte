@@ -1,6 +1,12 @@
 <script lang="ts" module>
-	export type Sort = 'featured' | 'name' | 'styles';
-	export const SORT_LABELS: Record<Sort, string> = { featured: 'Featured', name: 'Name', styles: 'Number of styles' };
+	export type Sort = 'featured' | 'name' | 'styles' | 'newest' | 'oldest';
+	export const SORT_LABELS: Record<Sort, string> = {
+		featured: 'Featured',
+		name: 'Name',
+		styles: 'Number of styles',
+		newest: 'Newest first',
+		oldest: 'Oldest first'
+	};
 </script>
 
 <script lang="ts">
