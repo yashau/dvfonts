@@ -13,6 +13,7 @@
 # designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
+# sample:   for symbol fonts, the keys the testers show ({ heading, subheading, text })
 # year:     first release year, when the files' own dates mislead (a Latin base
 #           font's copyright, a template's year); otherwise the build reads it
 # versionYear: the year of the version shipped here, when the files don't say
@@ -925,6 +926,8 @@ hidden = true
 designer = "Hassan Hameed"
 category = "symbols"
 aliases = ["A_Bismillah", "ABismillah"]
+# Symbol fonts draw nothing for a Thaana pangram: the testers show these keys instead.
+sample = { heading = "h", subheading = "z", text = "a b c d e f g i j k l m n o p q r s t u v w x" }
 notes = "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives."
 fonts = { 400 = "bismi.ttf" }
 
@@ -936,6 +939,7 @@ unmodified = true
 hidden = true
 category = "symbols"
 aliases = ["A Nishan", "Nishan"]
+sample = { heading = "D" }
 notes = "The state emblem of the Maldives on the D key. Not a Thaana font, but used in official documents."
 fonts = { 400 = "a-nishan.ttf" }
 

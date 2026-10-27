@@ -54,6 +54,8 @@ export interface Family {
 	version: string | null;
 	styles: Style[];
 	zipSize: number;
+	/** For symbol fonts: the keys the testers show instead of a Thaana pangram. */
+	sample: { heading?: string; subheading?: string; text?: string } | null;
 	/** Every character the family draws, in code point order. */
 	chars: string;
 	/** Keyboard keys that carry a large drawing (a Bismillah on `, say) instead of their own symbol. */

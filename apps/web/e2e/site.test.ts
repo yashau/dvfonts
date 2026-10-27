@@ -278,6 +278,14 @@ test('hidden symbol fonts turn up when searched for', async ({ page }) => {
 	}
 });
 
+test('symbol fonts try out their own keys, not a Thaana pangram', async ({ page }) => {
+	await page.goto('/fonts/bismi');
+	await expect(page.getByLabel('Heading text')).toHaveValue('h');
+	await expect(page.getByLabel('Subheading text')).toHaveValue('z');
+	await page.goto('/fonts/a-nishan');
+	await expect(page.getByLabel('Heading text')).toHaveValue('D');
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();

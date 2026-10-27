@@ -81,13 +81,15 @@
 	// Sample text from the pangrams: the first clause of one as a heading, then more.
 	const clause = (p: string) => p.split('،')[0];
 	let nextId = 0;
+	// Symbol fonts draw small for their em; show their samples at twice the size.
+	const scale = $derived(family.sample ? 2 : 1);
 	function block(kind: Kind, text: string, weight: number): Block {
 		const k = KINDS[kind];
 		return {
 			id: nextId++,
 			kind,
 			text,
-			size: k.size,
+			size: k.size * scale,
 			weight,
 			align: 'start',
 			leading: k.leading,
@@ -99,11 +101,19 @@
 	let activeId = $state(0);
 	$effect.pre(() => {
 		if (blocks.length) return;
-		blocks = [
-			block('heading', clause(PANGRAMS[0]), boldest),
-			block('subheading', clause(PANGRAMS[2]), regular),
-			block('paragraph', `${PANGRAMS[3]} ${PANGRAMS[4]}`, regular)
-		];
+		// Symbol fonts draw nothing for Thaana: they bring their own sample keys.
+		const s = family.sample;
+		blocks = s
+			? [
+					s.heading && block('heading', s.heading, boldest),
+					s.subheading && block('subheading', s.subheading, regular),
+					s.text && block('paragraph', s.text, regular)
+				].filter((b): b is Block => Boolean(b))
+			: [
+					block('heading', clause(PANGRAMS[0]), boldest),
+					block('subheading', clause(PANGRAMS[2]), regular),
+					block('paragraph', `${PANGRAMS[3]} ${PANGRAMS[4]}`, regular)
+				];
 		activeId = blocks[0].id;
 	});
 	const active = $derived(blocks.find((b) => b.id === activeId) ?? blocks[0]);
