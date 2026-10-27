@@ -18,8 +18,8 @@
   "file": "dvfonts-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 6892937,
-  "sha256": "e82dd581cd80a78e98283546099e55f06d59bd047bd312b95e39e89aa41c4291"
+  "size": 6893040,
+  "sha256": "02e73e937176272e122b74de4ad7b91e7d2ed206299ec9c3565bea80d19018fc"
  },
  {
   "id": "unicode-originals",
@@ -29,8 +29,8 @@
   "file": "dvfonts-unicode-originals.zip",
   "families": 132,
   "styles": 200,
-  "size": 6387710,
-  "sha256": "922c72874ec73881e603859646a6f9e52e62e83ff1565728eccd815019c1c5c7"
+  "size": 6387813,
+  "sha256": "98a24e04e69e3a8a3b4d475e576d2bc0fc0af06ae51ff8a77e1fd9e8d61943d4"
  },
  {
   "id": "open-licensed",
@@ -40,8 +40,8 @@
   "file": "dvfonts-open-licensed.zip",
   "families": 37,
   "styles": 85,
-  "size": 3120121,
-  "sha256": "934809814c7b36c203f65ed8ed76f784e891ad60fa5a8e78a7620ef50a512ad0"
+  "size": 3120120,
+  "sha256": "686ed9e7f75301bcddc1a898c22021072b8740fc0e9a344838f5709f34690608"
  },
  {
   "id": "modern",
@@ -51,8 +51,8 @@
   "file": "dvfonts-modern.zip",
   "families": 18,
   "styles": 64,
-  "size": 3242832,
-  "sha256": "3c7d07a8f4a7af99d663e19fdbdc1a2d97b92fc00bb6ab1634a7ef8668c6be56"
+  "size": 3242831,
+  "sha256": "4503e03ac9b1d15d5a990f1ec0bd7687d19940505d923a9725613faeb65d2a93"
  },
  {
   "id": "official",
@@ -62,8 +62,8 @@
   "file": "dvfonts-official.zip",
   "families": 37,
   "styles": 51,
-  "size": 1356548,
-  "sha256": "c6ab9315211ae95ca730ae46f584c92a6ff600398c4671dafa23e59e1b636b33"
+  "size": 1356585,
+  "sha256": "d1a72293dfd6da9ad120fcf271dcd3e4d99e35047a86b87837523fbc7d0f2015"
  },
  {
   "id": "artistic",
@@ -73,8 +73,8 @@
   "file": "dvfonts-artistic.zip",
   "families": 31,
   "styles": 35,
-  "size": 832422,
-  "sha256": "0dbe4de1cc5838af500c0473a68f0087119c0a2a27c6ebcec30a88ab68d4120e"
+  "size": 832460,
+  "sha256": "709d73c90bedd8b4b724b2078a3c43f3394d7c338db346ce610907329d0b728e"
  },
  {
   "id": "handwriting",
@@ -84,8 +84,8 @@
   "file": "dvfonts-handwriting.zip",
   "families": 38,
   "styles": 42,
-  "size": 1203281,
-  "sha256": "9b72d83e7f23549b7f955ede82bdfbb15d13473973e27f5cbed0b19ca69b6c03"
+  "size": 1203310,
+  "sha256": "6cb5b1c9ae867b1524edc43199a982b1fe2124e694f338213d18ced522eff3c1"
  },
  {
   "id": "novelty",
@@ -117,8 +117,8 @@
   "file": "dvfonts-webfonts-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 5373132,
-  "sha256": "4ae217314df1aae4b6b5569c400c9c83eff97e275022361f86e7263c51ce4955"
+  "size": 5373235,
+  "sha256": "b18fcf4a69b13e40502240b2104c64374ce1ad417347f1d88a22590cdf926cea"
  },
  {
   "id": "legacy",

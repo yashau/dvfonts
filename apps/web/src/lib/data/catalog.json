@@ -1043,7 +1043,7 @@
    "upstream": "https://thaana.com/bolhu/",
    "attribution": "[catalogue page](https://thaana.com/bolhu/)",
    "copyright": "© 2020 Thaana Type",
-   "designer": "Ayeshath Fadwa + Shahee Ilyas",
+   "designer": "Ayeshath Fadwa, Shahee Ilyas",
    "manufacturer": "Thaana Type",
    "description": null,
    "vendorUrl": "https://thaana.com",
@@ -1305,7 +1305,7 @@
      "sizeAdjust": 0.922
     }
    ],
-   "zipSize": 571979
+   "zipSize": 571978
   },
   {
    "id": "dam-hiyani",
@@ -1673,7 +1673,7 @@
    "upstream": "https://thaana.com/faagathi-dheli/",
    "attribution": "[catalogue page](https://thaana.com/faagathi-dheli/)",
    "copyright": "© 2021 Thaana Type Foundry",
-   "designer": "Ayeshath Fadwa + Shahee Ilyas",
+   "designer": "Ayeshath Fadwa, Shahee Ilyas",
    "manufacturer": "Thaana Type Foundry",
    "description": null,
    "vendorUrl": "https://thaana.com",
@@ -1755,7 +1755,7 @@
    "upstream": "https://thaana.com/faagathi-neon/",
    "attribution": "[catalogue page](https://thaana.com/faagathi-neon/)",
    "copyright": "© 2021 Thaana Type Foundry",
-   "designer": "Ayeshath Fadwa + Shahee Ilyas",
+   "designer": "Ayeshath Fadwa, Shahee Ilyas",
    "manufacturer": "Thaana Type Foundry",
    "description": null,
    "vendorUrl": "https://thaana.com",
@@ -2029,7 +2029,7 @@
    "upstream": "https://thaana.com/fanara/",
    "attribution": "[catalogue page](https://thaana.com/fanara/)",
    "copyright": "© 2020 Thaana Type",
-   "designer": "Ayeshath Fadwa + Shahee Ilyas",
+   "designer": "Ayeshath Fadwa, Shahee Ilyas",
    "manufacturer": "Thaana Type",
    "description": null,
    "vendorUrl": "https://thaana.com",
@@ -2167,7 +2167,7 @@
    "upstream": "https://thaana.com/fanara-golhi/",
    "attribution": "[catalogue page](https://thaana.com/fanara-golhi/)",
    "copyright": "© 2021 Thaana Type",
-   "designer": "Ayeshath Fadwa + Shahee Ilyas",
+   "designer": "Ayeshath Fadwa, Shahee Ilyas",
    "manufacturer": "Thaana Type",
    "description": null,
    "vendorUrl": "https://thaana.com",
@@ -3685,7 +3685,7 @@
    "upstream": "https://dhivehifont.com/2023/11/14/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a6%de%92%de%b0%de%80%de%a9%de%8d%de%b0/",
    "attribution": "[catalogue page](https://dhivehifont.com/2023/11/14/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a6%de%92%de%b0%de%80%de%a9%de%8d%de%b0/)",
    "copyright": "© 2021 Hussain Niyaz. Created by Hussain Niyaz",
-   "designer": "Hussain Niyaz (Noonu Lhohi). Mohamed Azheel",
+   "designer": "Hussain Niyaz (Noonu Lhohi), Mohamed Azheel",
    "manufacturer": "Hussain Niyaz",
    "description": "Copyright (c) 2021 by Hussain Niyaz",
    "vendorUrl": "https://niyaa.arts",
@@ -4063,7 +4063,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Elaaf_Lite.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Elaaf_Lite.otf)",
    "copyright": "M.A. Gadir for Sehga Soft.",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": "M.A. Gadir\nGoalhithereyge.\nMale'\nTel 31 33 99",
    "description": null,
    "vendorUrl": null,
@@ -4129,7 +4129,7 @@
      "sizeAdjust": 1.128
     }
    ],
-   "zipSize": 27909
+   "zipSize": 27917
   },
   {
    "id": "mv-elaaf-formal",
@@ -4669,7 +4669,7 @@
    "upstream": null,
    "attribution": "Unknown",
    "copyright": "M.A. Gadir & Sappe",
-   "designer": null,
+   "designer": "M.A. Gadir, Sappe",
    "manufacturer": "M.A. Gadir\nGoalhithereyge\nMale'\nTel; 31 33 99",
    "description": null,
    "vendorUrl": null,
@@ -4707,7 +4707,7 @@
      "sizeAdjust": 1.006
     }
    ],
-   "zipSize": 17829
+   "zipSize": 17838
   },
   {
    "id": "mv-hulhumale",
@@ -4898,7 +4898,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Normal.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Normal.otf)",
    "copyright": "M.A. Gadir for Sehga Soft.",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -4936,7 +4936,7 @@
      "sizeAdjust": 1.137
     }
    ],
-   "zipSize": 14582
+   "zipSize": 14591
   },
   {
    "id": "mv-iyyu-formal",
@@ -5006,7 +5006,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Nala.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Iyyu_Nala.otf)",
    "copyright": "M.A. Gadir for Sehga Soft.",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -5044,7 +5044,7 @@
      "sizeAdjust": 1.117
     }
    ],
-   "zipSize": 14475
+   "zipSize": 14484
   },
   {
    "id": "mv-izy-pro",
@@ -5466,7 +5466,7 @@
    "upstream": "https://dhivehifont.com/2024/08/13/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%85%de%ae%de%80%de%a8/",
    "attribution": "[catalogue page](https://dhivehifont.com/2024/08/13/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%85%de%ae%de%80%de%a8/)",
    "copyright": "© 2021 Hussain Niyaz. Created by Hussain Niyaz",
-   "designer": "Hussain Niyaz (Noonu Lhohi). Mohamed Ali (Laamu Maavah)",
+   "designer": "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)",
    "manufacturer": "Hussain Niyaz",
    "description": "Copyright (c) 2021 by Hussain Niyaz",
    "vendorUrl": "https://niyaa.arts",
@@ -5504,7 +5504,7 @@
      "sizeAdjust": 0.849
     }
    ],
-   "zipSize": 30831
+   "zipSize": 30832
   },
   {
    "id": "mv-izyan-light",
@@ -5628,7 +5628,7 @@
    "upstream": "https://dhivehifont.com/2024/01/31/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%83%de%a9%de%8c%de%a8/",
    "attribution": "[catalogue page](https://dhivehifont.com/2024/01/31/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%87%de%a8%de%92%de%b0%de%94%de%a6%de%82%de%b0-%de%83%de%a9%de%8c%de%a8/)",
    "copyright": "© 2021 Hussain Niyaz. Created by Hussain Niyaz",
-   "designer": "Hussain Niyaz (Noonu Lhohi). Mohamed Ali (Laamu Maavah)",
+   "designer": "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)",
    "manufacturer": "Hussain Niyaz",
    "description": "Copyright (c) 2021 by Hussain Niyaz",
    "vendorUrl": "https://niyaa.arts",
@@ -5898,7 +5898,7 @@
    "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0/",
    "attribution": "[catalogue page](https://dhivehifont.com/2022/04/28/%de%87%de%ac-%de%89%de%b0-%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0/)",
    "copyright": "hussain Niyaz, dhivehifont.com",
-   "designer": null,
+   "designer": "Hussain Niyaz",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -5936,7 +5936,7 @@
      "sizeAdjust": 1.085
     }
    ],
-   "zipSize": 13024
+   "zipSize": 13036
   },
   {
    "id": "mv-karudhas-outline",
@@ -5952,7 +5952,7 @@
    "upstream": "https://dhivehifont.com/2022/04/28/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0-%de%87%de%a6%de%87%de%aa%de%93%de%b0-%de%8d%de%a6%de%87%de%a8%de%82%de%b0/",
    "attribution": "[catalogue page](https://dhivehifont.com/2022/04/28/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%86%de%a6%de%83%de%aa%de%8b%de%a7%de%90%de%b0-%de%87%de%a6%de%87%de%aa%de%93%de%b0-%de%8d%de%a6%de%87%de%a8%de%82%de%b0/)",
    "copyright": "dhivehifont.com",
-   "designer": "Niyaz",
+   "designer": "Hussain Niyaz",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -5990,7 +5990,7 @@
      "sizeAdjust": 0.726
     }
    ],
-   "zipSize": 23635
+   "zipSize": 23642
   },
   {
    "id": "mv-kashi",
@@ -6185,7 +6185,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Lady_Luck.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Lady_Luck.otf)",
    "copyright": "M.A. Gadir, Sehga Soft.",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": "Mohamed Abdul Gadir.\nGoalhithereyge.\nMale'\nTel: 313399",
    "description": null,
    "vendorUrl": null,
@@ -6223,7 +6223,7 @@
      "sizeAdjust": 0.993
     }
    ],
-   "zipSize": 16031
+   "zipSize": 16038
   },
   {
    "id": "mv-lhaiy",
@@ -6391,7 +6391,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_Bold.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_Bold.otf)",
    "copyright": "Gadir for Sehga Soft",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -6457,7 +6457,7 @@
      "sizeAdjust": 1.037
     }
    ],
-   "zipSize": 30340
+   "zipSize": 30351
   },
   {
    "id": "mv-mag-round-hollow",
@@ -6473,7 +6473,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_HBold.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_MAG_Round_HBold.otf)",
    "copyright": "Gadir for Sehga Soft",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -6511,7 +6511,7 @@
      "sizeAdjust": 0.987
     }
    ],
-   "zipSize": 22708
+   "zipSize": 22720
   },
   {
    "id": "mv-maliku",
@@ -6634,7 +6634,7 @@
    "upstream": "https://dhivehifont.com/2023/07/24/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%90%de%aa%de%83%de%aa%de%9a%de%a9-2/",
    "attribution": "[catalogue page](https://dhivehifont.com/2023/07/24/%de%87%de%ac%de%89%de%b0%de%88%de%a9-%de%90%de%aa%de%83%de%aa%de%9a%de%a9-2/)",
    "copyright": "© 2021 Hussain Niyaz. Created by Hussain Niyaz",
-   "designer": "Hussain Niyaz (Noonu Lhohi). Mohamed Ali (Laamu Maavah)",
+   "designer": "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)",
    "manufacturer": "Hussain Niyaz",
    "description": "Copyright (c) 2021 by Hussain Niyaz",
    "vendorUrl": "https://niyaa.arts",
@@ -7809,7 +7809,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Fubaru_Fancy.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Fubaru_Fancy.otf)",
    "copyright": "M.A. Gadir for Sehga Soft.",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": "M.A. Gadir\nGoalhithereyge.\nMale'\nTel 31 33 99",
    "description": null,
    "vendorUrl": null,
@@ -7847,7 +7847,7 @@
      "sizeAdjust": 0.965
     }
    ],
-   "zipSize": 14918
+   "zipSize": 14925
   },
   {
    "id": "mv-sehga-old",
@@ -7863,7 +7863,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Old.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/df/Mv_Sehga_Old.otf)",
    "copyright": "Gadir for Sehga Soft",
-   "designer": null,
+   "designer": "M.A. Gadir",
    "manufacturer": null,
    "description": null,
    "vendorUrl": null,
@@ -7901,7 +7901,7 @@
      "sizeAdjust": 1.335
     }
    ],
-   "zipSize": 17614
+   "zipSize": 17626
   },
   {
    "id": "mv-sishisozo",
