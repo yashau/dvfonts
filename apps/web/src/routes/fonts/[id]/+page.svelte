@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CATEGORIES, WEIGHT_NAMES, credit, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
+	import { CATEGORIES, WEIGHT_NAMES, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
 	import { registerFamily, previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
@@ -7,6 +7,7 @@
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
+	import CreditLine from '#lib/components/credit-line.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
 	import * as Card from '#lib/components/ui/card/index.js';
@@ -32,7 +33,6 @@
 		weightChoice = String(defaultStyle(family).weight);
 	});
 	const shown = $derived(family.styles.find((s) => String(s.weight) === weightChoice) ?? main);
-	const by = $derived(credit(family));
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
 
 	$effect(() => registerFamily(family));
@@ -129,7 +129,7 @@
 	<header class="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
 		<div class="min-w-0">
 			<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{family.name}</h1>
-			<p class="mt-1 text-muted-foreground">{by ?? family.source ?? 'Unknown designer'}</p>
+			<p class="mt-1 text-muted-foreground"><CreditLine {family} fallback={family.source ?? 'Unknown designer'} /></p>
 			<div class="mt-3 flex flex-wrap items-center gap-2">
 				<Badge variant="secondary">{category}</Badge>
 				<Badge variant="outline">{family.license}</Badge>

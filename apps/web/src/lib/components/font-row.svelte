@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { CATEGORIES, credit, defaultStyle, formatBytes, type Family } from '#lib/catalog.js';
+	import { CATEGORIES, defaultStyle, formatBytes, type Family } from '#lib/catalog.js';
 	import { lazyFont } from '#lib/fonts.js';
 	import FontPreview from '#lib/components/font-preview.svelte';
+	import CreditLine from '#lib/components/credit-line.svelte';
 	import * as Item from '#lib/components/ui/item/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
@@ -11,7 +12,6 @@
 	let { family }: { family: Family } = $props();
 
 	const style = $derived(defaultStyle(family));
-	const by = $derived(credit(family));
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
 </script>
 
@@ -29,7 +29,9 @@
 						>{family.name}</a
 					>
 				</Item.Title>
-				<Item.Description class="min-w-0 truncate">{by ?? family.source ?? ''}</Item.Description>
+				<Item.Description class="min-w-0 truncate"
+					><CreditLine {family} fallback={family.source ?? ''} raised /></Item.Description
+				>
 			</div>
 			<Item.Actions>
 				<Badge variant="secondary">{category}</Badge>
