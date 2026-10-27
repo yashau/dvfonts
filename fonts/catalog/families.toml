@@ -13,8 +13,9 @@
 # designer: display credit for the site when the font names nobody usable
 # copyright: display text for the site when the font's own notice is too garbled
 #            to tidy automatically (scripts/copyright.py); the files keep the original
-# year:     release year, when the files' own dates mislead (a Latin base font's
-#           copyright, a template's year); otherwise the build reads it from the files
+# year:     first release year, when the files' own dates mislead (a Latin base
+#           font's copyright, a template's year); otherwise the build reads it
+# versionYear: the year of the version shipped here, when the files don't say
 
 # ─── Official (text faces for documents, in the Faruma tradition) ────────────
 

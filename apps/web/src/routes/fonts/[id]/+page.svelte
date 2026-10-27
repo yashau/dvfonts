@@ -92,7 +92,8 @@
 		(
 			[
 				['Designer', family.designer],
-				['Released', family.year ? String(family.year) : null],
+				['First released', family.firstYear ? String(family.firstYear) : null],
+				['This version', family.versionYear ? String(family.versionYear) : null],
 				['Manufacturer', family.manufacturer],
 				['Copyright', family.copyright],
 				[
@@ -136,8 +137,8 @@
 				<Badge variant="outline">{family.license}</Badge>
 				<span class="text-sm text-muted-foreground"
 					>{family.styles.length}
-					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.year}
-						· {family.year}{/if}</span
+					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.firstYear}
+						· {family.firstYear}{#if family.versionYear && family.versionYear !== family.firstYear}, this version {family.versionYear}{/if}{/if}</span
 				>
 				{#if family.aliases.length}
 					<span class="text-sm text-muted-foreground">· also known as {family.aliases.join(', ')}</span>

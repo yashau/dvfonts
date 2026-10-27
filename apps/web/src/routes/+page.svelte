@@ -60,9 +60,10 @@
 		);
 		if (sort === 'name') return list.toSorted(byName);
 		if (sort === 'styles') return list.toSorted((a, b) => b.styles.length - a.styles.length || byName(a, b));
-		// Families without a known year go last either way.
-		if (sort === 'newest') return list.toSorted((a, b) => (b.year ?? 0) - (a.year ?? 0) || byName(a, b));
-		if (sort === 'oldest') return list.toSorted((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || byName(a, b));
+		// By first release; families without a known year go last either way.
+		if (sort === 'newest') return list.toSorted((a, b) => (b.firstYear ?? 0) - (a.firstYear ?? 0) || byName(a, b));
+		if (sort === 'oldest')
+			return list.toSorted((a, b) => (a.firstYear ?? 9999) - (b.firstYear ?? 9999) || byName(a, b));
 		return list.toSorted((a, b) => featuredRank(a.id) - featuredRank(b.id) || byName(a, b));
 	});
 </script>

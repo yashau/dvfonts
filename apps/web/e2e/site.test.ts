@@ -201,7 +201,9 @@ test('author names filter the font list', async ({ page }) => {
 
 test('fonts show and sort by release year', async ({ page, isMobile }) => {
 	await page.goto('/fonts/faruma');
-	await expect(page.getByRole('row', { name: /Released\s*2002/ })).toBeVisible();
+	await expect(page.getByRole('row', { name: /First released\s*2002/ })).toBeVisible();
+	await page.goto('/fonts/mv-a-waheed');
+	await expect(page.getByRole('row', { name: /This version\s*2015/ })).toBeVisible();
 	await page.goto('/');
 	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
 	await page.getByRole('combobox', { name: 'Sort' }).last().click();
