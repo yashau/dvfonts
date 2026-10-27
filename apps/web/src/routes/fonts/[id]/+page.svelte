@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { CATEGORIES, WEIGHT_NAMES, credit, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
 	import { registerFamily, previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
-	import { cssApiUrl, origin, SITE_ORIGIN } from '#lib/site.js';
+	import { cssApiUrl, SITE_ORIGIN } from '#lib/site.js';
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
@@ -38,9 +37,6 @@
 
 	$effect(() => registerFamily(family));
 
-	let base = $state(SITE_ORIGIN);
-	onMount(() => (base = origin()));
-
 	let selected = $state<string[]>([]);
 	$effect(() => {
 		selected = family.styles.map((s) => String(s.weight));
@@ -49,7 +45,9 @@
 	// Opt-in: size-adjust so the letters look as big as Faruma's (the files are unchanged).
 	let normalize = $state(false);
 	const canNormalize = $derived(family.styles.some((s) => s.sizeAdjust && s.sizeAdjust !== 1));
-	const href = $derived(cssApiUrl(base, [{ name: family.name, weights }], { normalize: normalize && canNormalize }));
+	const href = $derived(
+		cssApiUrl(SITE_ORIGIN, [{ name: family.name, weights }], { normalize: normalize && canNormalize })
+	);
 	const linkSnippet = $derived(`<link rel="stylesheet" href="${href}">`);
 	const importSnippet = $derived(`@import url('${href}');`);
 	// Self-hosting: the same weights from your own copies of the files (the WOFF2s above).
