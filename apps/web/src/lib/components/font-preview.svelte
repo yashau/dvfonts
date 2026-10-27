@@ -46,13 +46,14 @@
 		)}', 'dv-ui', sans-serif; font-weight: {weight}; font-size: {size}px; line-height: {lineHeight}"
 	/>
 {:else}
-	<!-- Symbol fonts: glyphs on ASCII keys. -->
+	<!-- Symbol fonts: glyphs on ASCII keys, at no less than 48px (as on their own page), since
+	     they draw small for their em. -->
 	<p
 		class={cn('preview-text text-foreground', className)}
 		dir="ltr"
 		style:font-family="'{previewFamily(family, normalized)}', 'dv-ui', sans-serif"
 		style:font-weight={weight}
-		style:font-size="{size}px"
+		style:font-size="{Math.max(size, 48)}px"
 		style:line-height={lineHeight}
 	>
 		{content}
