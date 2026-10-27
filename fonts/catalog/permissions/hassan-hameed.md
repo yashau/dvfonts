@@ -35,6 +35,7 @@ On 23 October 2026 Dr Hassan Hameed, the designer of these fonts, gave fonts.mv 
 | [MV Ilham](https://fonts.mv/fonts/mv-ilham)                       | Regular, Bold               | Download and web font                                                             |
 | [MV Kelaa](https://fonts.mv/fonts/mv-kelaa)                       | Regular, Bold               | Download and web font                                                             |
 | [MV Koagannu](https://fonts.mv/fonts/mv-koagannu)                 | Bold                        | Download and web font                                                             |
+| [MV Maliku](https://fonts.mv/fonts/mv-maliku)                     | Regular                     | Download and web font                                                             |
 | [MV Midhili](https://fonts.mv/fonts/mv-midhili)                   | Bold                        | Download and web font                                                             |
 | [MV Nasri](https://fonts.mv/fonts/mv-nasri)                       | Regular, Bold               | Download and web font                                                             |
 | [MV Open Condensed](https://fonts.mv/fonts/mv-open-condensed)     | Bold                        | Download and web font                                                             |
@@ -43,8 +44,9 @@ On 23 October 2026 Dr Hassan Hameed, the designer of these fonts, gave fonts.mv 
 | [MV Randhoo](https://fonts.mv/fonts/mv-randhoo)                   | Regular                     | Download and web font                                                             |
 | [MV Thaana Matrix 16](https://fonts.mv/fonts/mv-thaana-matrix-16) | Regular                     | Download and web font                                                             |
 | [MV Thaana Matrix 8](https://fonts.mv/fonts/mv-thaana-matrix-8)   | Regular                     | Download and web font                                                             |
+| [MV Thuththu](https://fonts.mv/fonts/mv-thuththu)                 | Bold                        | Download and web font                                                             |
 | [MV Thuththu Neo](https://fonts.mv/fonts/mv-thuththu-neo)         | Regular, Bold               | Download and web font                                                             |
-| [MV Typewriter](https://fonts.mv/fonts/mv-typewriter)             | Regular, Bold               | Download and web font                                                             |
+| [MV Typewriter](https://fonts.mv/fonts/mv-typewriter)             | Regular, SemiBold, Bold     | Download and web font                                                             |
 | [MV Uligamu](https://fonts.mv/fonts/mv-uligamu)                   | Regular                     | Download and web font                                                             |
 | [MV Utheemu](https://fonts.mv/fonts/mv-utheemu)                   | Regular, Bold               | Download and web font                                                             |
 | [MV Vaadhoo](https://fonts.mv/fonts/mv-vaadhoo)                   | Regular, Bold               | Download and web font                                                             |

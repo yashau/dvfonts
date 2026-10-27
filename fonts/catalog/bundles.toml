@@ -24,8 +24,8 @@ legacy = false
 
 [bundles.open-licensed]
 name = "Openly licensed"
-description = "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute."
-licenses = ["OFL-1.1", "CC BY"]
+description = "Only fonts under an explicit open license (OFL, Creative Commons BY or BY-SA), safe to redistribute."
+licenses = ["OFL-1.1", "CC BY", "CC BY-SA"]
 
 [bundles.modern]
 name = "Modern"
