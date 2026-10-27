@@ -1,6 +1,6 @@
 # Hassan Hameed's fonts
 
-On 23 October 2026 Dr Hassan Hameed, the designer of these fonts, gave dvfonts permission to distribute them, on these conditions:
+On 23 October 2026 Hassan Hameed, the designer of these fonts, gave dvfonts permission to distribute them, on these conditions:
 
 - The fonts are distributed in their original, unmodified form: no changes to the files, glyph designs, glyph mappings, character order or any other part of their internal structure.
 - Converting the files to WOFF, WOFF2 and other formats is allowed.
