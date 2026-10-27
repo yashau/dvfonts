@@ -1137,7 +1137,8 @@ export const AUTHORS: AuthorBio[] = [
 ];
 
 /** Authors by their importance to Maldivian typography, most important first. Both
- *  sections of /authors follow it; anyone not listed goes last, alphabetically. */
+ *  sections of /authors and the font list's author picker follow it; anyone not listed
+ *  goes last, alphabetically. */
 export const AUTHOR_ORDER = [
 	'Hassan Hameed',
 	'Abdulla Waheed',

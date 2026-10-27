@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import AuthorHero from '#lib/components/author-hero.svelte';
+	import { byImportance } from '#lib/authors.js';
 	import {
 		CATEGORIES,
 		DEFAULT_CATEGORIES,
@@ -53,11 +54,11 @@
 	const authorList = $derived.by(() => {
 		const count = new Map<string, number>();
 		for (const f of data.families) for (const a of authorsOrUnknown(f)) count.set(a, (count.get(a) ?? 0) + 1);
-		// Alphabetical, with Unknown last.
+		// The Authors page's order (importance to Maldivian typography), with Unknown last.
 		const rank = (n: string) => (n === UNKNOWN_AUTHOR ? 1 : 0);
 		return [...count]
 			.map(([name, n]) => ({ name, count: n }))
-			.toSorted((a, b) => rank(a.name) - rank(b.name) || a.name.localeCompare(b.name));
+			.toSorted((a, b) => rank(a.name) - rank(b.name) || byImportance(a.name, b.name));
 	});
 
 	const authorCount = $derived(author ? (authorList.find((a) => a.name === author)?.count ?? 0) : 0);
