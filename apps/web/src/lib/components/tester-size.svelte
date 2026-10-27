@@ -10,6 +10,13 @@
 
 	let { class: className }: { class?: string } = $props();
 
+	// The registry Slider puts role="slider" on its thumb and passes no label to it, so name
+	// the thumb here (screen readers and agents read the thumb, not the wrapper).
+	let slider = $state<HTMLElement | null>(null);
+	$effect(() => {
+		slider?.querySelector('[role="slider"]')?.setAttribute('aria-label', 'Preview size');
+	});
+
 	const PRESETS = [12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128];
 
 	function choose(size: number) {
@@ -32,6 +39,7 @@
 		</Select.Content>
 	</Select.Root>
 	<Slider
+		bind:ref={slider}
 		type="single"
 		bind:value={tester.size}
 		onValueChange={() => (tester.sizeChosen = true)}

@@ -15,7 +15,7 @@
 	const category = $derived(CATEGORIES.find((c) => c.id === family.category)?.label);
 </script>
 
-<div use:lazyFont={family}>
+<div use:lazyFont={family} role="listitem">
 	<Item.Root
 		class="relative flex-col flex-nowrap items-stretch rounded-none border-0 border-b px-1 py-6 hover:bg-muted/40 sm:px-3"
 	>

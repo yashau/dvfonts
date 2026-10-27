@@ -2,7 +2,7 @@
 // the catalogue to a family page, like Google Fonts.
 
 import { browser } from '$app/env';
-import { randomPangram } from '#lib/thaana.js';
+import { PANGRAMS } from '#lib/thaana.js';
 
 // v2: the size is only stored once someone moves the slider (v1 stored the
 // default too, which pinned phones to the desktop size).
@@ -19,7 +19,7 @@ class Tester {
 	text = $state('');
 	size = $state(DEFAULT_SIZE);
 	/** Set once the user moves the size slider; until then the size follows the screen. */
-	sizeChosen = false;
+	sizeChosen = $state(false);
 	/** Saved settings have been read: persisting earlier would overwrite them, and
 	 *  the size controls stay hidden until then so they don't visibly jump. */
 	ready = $state(false);
@@ -27,8 +27,9 @@ class Tester {
 	dv = $state(true);
 	/** Scale previews so every font's Thaana letters look as big as Faruma's (CSS size-adjust). */
 	normalize = $state(true);
-	/** Chosen per page load, client-side, so prerendered HTML stays stable. */
-	pangram = $state('');
+	/** The sample sentence. Fixed rather than picked per visit: the prerendered page carries
+	 *  it, so previews don't fill in (and push the list down) after load. */
+	pangram = $state(PANGRAMS[0]);
 
 	get preview(): string {
 		return this.text || this.pangram;
@@ -36,7 +37,6 @@ class Tester {
 
 	init() {
 		if (!browser) return;
-		this.pangram = randomPangram();
 		if (matchMedia(PHONE).matches) this.size = DEFAULT_SIZE_PHONE;
 		try {
 			const saved = JSON.parse(localStorage.getItem(KEY) ?? '{}');

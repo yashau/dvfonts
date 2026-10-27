@@ -9,12 +9,14 @@
 	let {
 		family,
 		weight,
-		size = tester.size,
+		size,
 		text,
 		class: className
 	}: { family: Family; weight: number; size?: number; text?: string; class?: string } = $props();
 
 	const symbols = $derived(family.category === 'symbols');
+	// Until a size is picked, the CSS default (36px, 20px on phones) applies from first paint.
+	const fontSize = $derived(size ? `${size}px` : tester.sizeChosen ? `${tester.size}px` : 'var(--tester-size)');
 	// Symbol fonts keep their glyphs on ASCII keys, so typed Thaana would only
 	// show fallback text; preview their own glyphs unless the user typed Latin.
 	const content = $derived(
@@ -43,7 +45,7 @@
 		style="font-family: '{previewFamily(
 			family,
 			normalized
-		)}', 'dv-ui', sans-serif; font-weight: {weight}; font-size: {size}px; line-height: {lineHeight}"
+		)}', 'dv-ui', sans-serif; font-weight: {weight}; font-size: {fontSize}; line-height: {lineHeight}"
 	/>
 {:else}
 	<!-- Symbol fonts: glyphs on ASCII keys, at no less than 48px (as on their own page), since
@@ -53,7 +55,7 @@
 		dir="ltr"
 		style:font-family="'{previewFamily(family, normalized)}', 'dv-ui', sans-serif"
 		style:font-weight={weight}
-		style:font-size="{Math.max(size, 48)}px"
+		style:font-size="max({fontSize}, 48px)"
 		style:line-height={lineHeight}
 	>
 		{content}
