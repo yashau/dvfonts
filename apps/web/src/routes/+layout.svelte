@@ -21,8 +21,10 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<!-- The old domain (dvfonts.yashau.com) serves the same pages until its redirect is in place. -->
 	<link rel="canonical" href="{SITE_ORIGIN}{page.url.pathname}" />
-	<!-- beta branch only: keep beta.fonts.mv out of search results. -->
-	<meta name="robots" content="noindex" />
+	{#if __FONTS_MV_BETA__}
+		<!-- Keep beta.fonts.mv out of search results. -->
+		<meta name="robots" content="noindex" />
+	{/if}
 	<!-- Link previews (Telegram, WhatsApp, Slack, X…). They fall back to each page's <title> and description. -->
 	<meta property="og:site_name" content="fonts.mv" />
 	<meta property="og:type" content="website" />

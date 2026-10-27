@@ -1,6 +1,6 @@
 import { CONTACT_EMAIL } from '#lib/site.js';
 
-// Author bios (beta). Names match the credits in the catalogue (see authors() in catalog.ts).
+// Author bios. Names match the credits in the catalogue (see authors() in catalog.ts).
 // Authors with enough sourced information get a page at /authors/<slug>; the rest show a
 // short note and an invitation to send what we're missing.
 

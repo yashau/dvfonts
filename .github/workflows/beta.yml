@@ -47,6 +47,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build site
+        env:
+          FONTS_MV_BETA: '1'
         run: pnpm build
 
       - name: Deploy beta Worker
