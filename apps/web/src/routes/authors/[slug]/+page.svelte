@@ -35,8 +35,9 @@
 	<div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
 		<!-- Info card first on small screens, beside the text on wide ones, like an encyclopedia infobox. -->
 		<aside class="lg:order-2">
-			<!-- 89px: the header (56px and a 1px border) plus the page padding (32px), i.e. where the card starts. -->
-			<Card.Root class="gap-4 lg:sticky lg:top-[89px]">
+			<!-- Sticks where it starts, so it never shifts: the header (h-14 and a 1px border) plus the
+			     page padding (py-8). In rem like they are, so it holds at any default font size. -->
+			<Card.Root class="gap-4 lg:sticky lg:top-[calc(var(--spacing)*22+1px)]">
 				<Card.Header class="items-center text-center">
 					<Avatar.Root class="mx-auto size-40 rounded-lg after:rounded-lg">
 						<Avatar.Fallback class="rounded-lg"><UserRoundIcon class="size-16 text-muted-foreground" /></Avatar.Fallback
