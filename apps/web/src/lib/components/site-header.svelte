@@ -12,15 +12,15 @@
 
 	const links = [
 		{ href: '/', label: 'Fonts' },
-		{ href: '/guide', label: 'Guide' },
-		{ href: '/convert', label: 'Convert' },
 		{ href: '/docs', label: 'Docs' },
 		{ href: '/downloads', label: 'Downloads' },
 		{ href: '/about', label: 'About' }
 	];
 
 	let open = $state(false);
-	const active = (href: string) => page.url.pathname === href;
+	// A section is active on its own page and everything under it (/docs covers /docs/thaana).
+	const active = (href: string) =>
+		href === '/' ? page.url.pathname === '/' : page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
 </script>
 
 <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">

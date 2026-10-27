@@ -7,7 +7,6 @@
 	import ThaanaDemo from '#lib/components/thaana-demo.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Input } from '#lib/components/ui/input/index.js';
-	import { Button } from '#lib/components/ui/button/index.js';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,22 +22,6 @@
 	// How an A_-font document stores ދިވެހި ބަސް: typewriter keys, in visual order.
 	const legacy = 'cswb ihevid';
 	const fromPdf = 'ތާރީޚް 2026/1/14';
-
-	const toc = [
-		['direction', 'Set direction and language'],
-		['user-content', 'Text people type'],
-		['numbers', 'Numbers and phone numbers'],
-		['brackets', 'Brackets'],
-		['punctuation', 'Punctuation'],
-		['line-height', 'Line height'],
-		['fallback', 'Latin fallback'],
-		['italics', 'No italics'],
-		['inputs', 'Inputs'],
-		['canvas', 'Canvas and SVG'],
-		['old-text', 'Old fonts and PDFs'],
-		['pdf', 'Generating PDFs'],
-		['storing', 'Storing and searching']
-	] as const;
 </script>
 
 <svelte:head>
@@ -49,7 +32,7 @@
 	/>
 </svelte:head>
 
-<article class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+<article class="max-w-4xl min-w-0 py-10">
 	<h1 class="text-3xl font-semibold tracking-tight">Displaying Thaana well</h1>
 	<p class="mt-2 max-w-4xl text-pretty text-muted-foreground">
 		Thaana is written right to left, its vowels are marks above and below the letters, and most Dhivehi fonts have no
@@ -57,12 +40,6 @@
 		<a class="underline underline-offset-4" href="/docs#packages">@yashau/thaana</a> packages and
 		<a class="underline underline-offset-4" href="/thaana.css">thaana.css</a> handle most of it for you.
 	</p>
-
-	<nav class="mt-6 flex flex-wrap gap-1" aria-label="Contents">
-		{#each toc as [id, label], i (id)}
-			<Button href="#{id}" variant="outline" size="sm">{i + 1}. {label}</Button>
-		{/each}
-	</nav>
 
 	<section id="direction" class="mt-12 scroll-mt-20">
 		<h2 class="mb-2 text-xl font-semibold tracking-tight">1. Set direction and language</h2>
@@ -250,7 +227,7 @@
 			Documents typed with the old A_ fonts store Latin letters (<code>ihevid</code>) and only look like Thaana in that
 			font. Text copied out of a PDF comes back with reversed dates and stray spaces. Both can be repaired:
 			<code>convertLegacy()</code> and <code>repairPdfText()</code>, or paste it into the
-			<a class="underline underline-offset-4" href="/convert">converter</a>.
+			<a class="underline underline-offset-4" href="/docs/tools#convert">converter</a>.
 		</p>
 		<ThaanaDemo>
 			{#snippet wrong()}<p>{legacy}</p>

@@ -58,19 +58,24 @@
 </script>
 
 <svelte:head>
-	<title>Convert old Thaana text — dvfonts</title>
+	<title>Tools — dvfonts</title>
 	<meta
 		name="description"
-		content="Turn text typed in old A_ fonts, or copied out of PDFs, into proper Unicode Thaana."
+		content="Tools for Thaana text: turn text typed in old A_ fonts, or copied out of PDFs, into proper Unicode Thaana."
 	/>
 </svelte:head>
 
-<div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-	<div class="max-w-2xl">
-		<h1 class="text-3xl font-semibold tracking-tight">Convert old Thaana text</h1>
+<div class="min-w-0 py-10">
+	<h1 class="text-3xl font-semibold tracking-tight">Tools</h1>
+	<p class="mt-2 max-w-2xl text-muted-foreground">
+		Utilities for Thaana text. They run in your browser; nothing is uploaded.
+	</p>
+
+	<div id="convert" class="mt-10 max-w-2xl scroll-mt-20">
+		<h2 class="text-xl font-semibold tracking-tight">Convert old Thaana text</h2>
 		<p class="mt-2 text-muted-foreground">
-			Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. Everything runs in
-			your browser; nothing is uploaded. To open an old document as it is, install the original fonts from the
+			Paste text from an old document or a PDF and get proper Unicode Thaana you can use anywhere. To open an old
+			document as it is, install the original fonts from the
 			<a class="underline underline-offset-4" href="/downloads/dvfonts-legacy.zip" download>legacy bundle</a>.
 		</p>
 	</div>
@@ -127,7 +132,7 @@
 					dir={mode === 'pdf' ? 'rtl' : 'ltr'}
 					spellcheck={false}
 					placeholder={current.example}
-					class="h-64 resize-y font-mono text-base"
+					class="max-h-[32rem] min-h-64 resize-none font-mono text-base"
 				/>
 			</Card.Content>
 		</Card.Root>
@@ -155,7 +160,7 @@
 					dir="rtl"
 					lang="dv"
 					placeholder="ދިވެހި"
-					class="h-64 resize-y text-xl"
+					class="max-h-[32rem] min-h-64 resize-none text-xl"
 					style="font-family: 'dv-faruma', 'dv-ui', system-ui, sans-serif; line-height: 1.75"
 				/>
 			</Card.Content>
