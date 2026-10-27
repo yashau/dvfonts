@@ -27,15 +27,15 @@
 </div>
 {#if unknown}
 	<p class="mt-1 text-sm text-muted-foreground">{count} {count === 1 ? 'family' : 'families'}</p>
-	<p class="mt-3 max-w-3xl text-pretty text-muted-foreground">
+	<p class="mt-3 max-w-5xl text-pretty text-muted-foreground">
 		These fonts don't name their designer. If you know who made any of them, tell us and we'll credit them.
 	</p>
 {:else if bio}
 	<p class="mt-1 text-sm text-muted-foreground">{bio.role} · {count} {count === 1 ? 'family' : 'families'}</p>
-	<p class="mt-3 max-w-3xl text-pretty text-muted-foreground">{bio.excerpt}</p>
+	<p class="mt-3 max-w-5xl text-pretty text-muted-foreground">{bio.excerpt}</p>
 {:else}
 	<p class="mt-1 text-sm text-muted-foreground">{count} {count === 1 ? 'family' : 'families'}</p>
-	<p class="mt-3 max-w-3xl text-pretty text-muted-foreground">
+	<p class="mt-3 max-w-5xl text-pretty text-muted-foreground">
 		We don't know much about {name} yet beyond the credits in their fonts. If you can tell us more, we'd like to hear it.
 	</p>
 {/if}
