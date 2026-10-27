@@ -7,8 +7,8 @@
   "file": "dvfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 374803,
-  "sha256": "e2bdd24ee8d67ed43deb2aef9bccc242b5c5aefc78fe789ee59a746cef9935ce"
+  "size": 376764,
+  "sha256": "30f45b8d9319d72df07277db335e5bccc5d838d604cfd27f83422f89201da4c6"
  },
  {
   "id": "full",
@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "dvfonts-full.zip",
-  "families": 130,
-  "styles": 190,
-  "size": 6010869,
-  "sha256": "d3fe2a0aed17c6a2ed49dfcc54ba9353d687d1296a66dd25c067e1de35730ab0"
+  "families": 157,
+  "styles": 226,
+  "size": 6892927,
+  "sha256": "8ec98afc67566fc717dac57e59724591d9e7e970290bf787a6b730e9d342f25c"
  },
  {
   "id": "unicode-originals",
@@ -27,21 +27,21 @@
   "description": "Everything except the pre-Unicode fonts dvfonts remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "dvfonts-unicode-originals.zip",
-  "families": 112,
-  "styles": 171,
-  "size": 5649157,
-  "sha256": "437406b1f9d4f54f191881a88aaaff56d53c45e69a1f12e4a4502ab4f9e92346"
+  "families": 132,
+  "styles": 200,
+  "size": 6387700,
+  "sha256": "eb8bbbb588c03265709c8a62192f38edd2f92fbd6aa81fd2f0ab64dba9c72a24"
  },
  {
   "id": "open-licensed",
   "name": "Openly licensed",
-  "description": "Only fonts under an explicit open license (OFL or Creative Commons BY), safe to redistribute.",
+  "description": "Only fonts under an explicit open license (OFL, Creative Commons BY or BY-SA), safe to redistribute.",
   "format": "ttf",
   "file": "dvfonts-open-licensed.zip",
-  "families": 29,
-  "styles": 72,
-  "size": 2798509,
-  "sha256": "7e00c00fc141ee1cc83cd8a9c6fa20e1d277605eb4a00c17e514ed9291122e5a"
+  "families": 37,
+  "styles": 85,
+  "size": 3120111,
+  "sha256": "c28d3dc9e99558b9e51b39da325bcad5984bf288dcc88c86ad21b60b3d933210"
  },
  {
   "id": "modern",
@@ -49,10 +49,10 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "dvfonts-modern.zip",
-  "families": 16,
-  "styles": 57,
-  "size": 2922649,
-  "sha256": "d9804adfc568596362e2477cf214347c47eed7f596318a266a53fbc61ad5d9ea"
+  "families": 18,
+  "styles": 64,
+  "size": 3242836,
+  "sha256": "4c05291394de2f774cf3a0ded77427b17e9f8496806ef41ff7346b71384f6faf"
  },
  {
   "id": "official",
@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "dvfonts-official.zip",
-  "families": 32,
-  "styles": 44,
-  "size": 1193750,
-  "sha256": "be3998de4173fa59010e850654e4b93883af2bc6556c1e0c142923d24629faf3"
+  "families": 37,
+  "styles": 51,
+  "size": 1356541,
+  "sha256": "66cbac80a3b996be2cfae3b514b854fce90cc5677efcb32b2c6779e51a8d5474"
  },
  {
   "id": "artistic",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "dvfonts-artistic.zip",
-  "families": 27,
-  "styles": 30,
-  "size": 664598,
-  "sha256": "f0bb3d734767ea2d1e87446882a5d3c426372da99ea256ea85afcf8168dd6ba3"
+  "families": 31,
+  "styles": 35,
+  "size": 832415,
+  "sha256": "287f1c8f67ba46a2d7e5dcaab42fbf8f687a07e047cce858198c06bc9b6dec47"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "dvfonts-handwriting.zip",
-  "families": 31,
-  "styles": 34,
-  "size": 1012044,
-  "sha256": "1e276e8dede8cd8a8ad2261f5520e127b8dcc41b1d1acc569a4531f748320d18"
+  "families": 38,
+  "styles": 42,
+  "size": 1203281,
+  "sha256": "9b72d83e7f23549b7f955ede82bdfbb15d13473973e27f5cbed0b19ca69b6c03"
  },
  {
   "id": "novelty",
@@ -93,10 +93,10 @@
   "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
   "format": "ttf",
   "file": "dvfonts-novelty.zip",
-  "families": 23,
-  "styles": 24,
-  "size": 157767,
-  "sha256": "2f8f7b2c0ab0f806f62aa5df2804f12b24f386b7d81a94e80958c35b548e448c"
+  "families": 32,
+  "styles": 33,
+  "size": 198327,
+  "sha256": "8dc82d26518fd02c787b5cc34e2798dc12b585b12a29b07ecec09767451c895b"
  },
  {
   "id": "webfonts-essentials",
@@ -106,8 +106,8 @@
   "file": "dvfonts-webfonts-essentials.zip",
   "families": 8,
   "styles": 10,
-  "size": 305970,
-  "sha256": "7128ce82cdc0f4e8e718be357f4fa514ba9140011f6ad6ecb4ee60a844ffcd55"
+  "size": 303479,
+  "sha256": "7dd83f9c8e018a2e74d19d4c83e5c0618af91c24233b128d54b42c5222ac2e59"
  },
  {
   "id": "webfonts-full",
@@ -115,10 +115,10 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "dvfonts-webfonts-full.zip",
-  "families": 130,
-  "styles": 190,
-  "size": 4679177,
-  "sha256": "db3a150739a0253ad76ef43968358e27e7b5ee670a275cd196bdea68cdbd01ed"
+  "families": 157,
+  "styles": 226,
+  "size": 5373122,
+  "sha256": "c6933cc8a3e4214e54b032dc8f68a1db99ed0492cb4b8ad050fcb5384df36332"
  },
  {
   "id": "legacy",
@@ -126,9 +126,9 @@
   "description": "Every pre-Unicode font in the archive, exactly as published, with Thaana on Latin keys. Only for opening old documents: for new text, type in Unicode and use the fonts on this site. The converter turns old text into Unicode.",
   "format": "legacy",
   "file": "dvfonts-legacy.zip",
-  "families": 46,
-  "styles": 46,
-  "size": 909417,
-  "sha256": "e8cfd628cc466efbe0e0399e7bfba6fc545db66e5b1a60b366dd2decaffa00e7"
+  "families": 67,
+  "styles": 67,
+  "size": 1309957,
+  "sha256": "a610602fcb07ba38ae2dcdc8111f752f4a68a4e8f9a1198a1e6e88618b659cee"
  }
 ]

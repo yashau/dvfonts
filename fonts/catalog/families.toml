@@ -106,7 +106,7 @@ fonts = { 400 = "mv-vaadhoo-reg-v1.0-hinted.ttf", 700 = "mv-vaadhoo-bd-v1.0-hint
 name = "MV Typewriter"
 unmodified = true
 category = "official"
-fonts = { 400 = "mvtyper.ttf", 700 = "mvtypebold.ttf" }
+fonts = { 400 = "mvtyper.ttf", 600 = "mvtypewriter-semibold.ttf", 700 = "mvtypebold.ttf" }
 
 [families.thaana-unicode-akeh]
 name = "Thaana Unicode Akeh"
@@ -205,6 +205,32 @@ name = "Sangu Suruhee"
 category = "official"
 fonts = { 400 = "sangusuruhee-regular.ttf" }
 
+[families.dhivehi-muraka]
+name = "Dhivehi Muraka"
+category = "official"
+fonts = { 400 = "dhivehi-muraka.ttf" }
+
+[families.tharujamaanu]
+name = "Tharujamaanu"
+category = "official"
+fonts = { 300 = "tharujamaanu-light.ttf", 700 = "tharujamaanu-bold.ttf" }
+
+[families.akuru]
+name = "Akuru"
+category = "official"
+fonts = { 400 = "akuru.ttf" }
+
+[families.ajumalu]
+name = "Ajumalu"
+category = "official"
+fonts = { 300 = "ajumalu.ttf" }
+
+[families.mv-elaaf-formal]
+name = "MV Elaaf Formal"
+category = "official"
+designer = "M.A. Gadir"
+fonts = { 400 = "mv-elaaf-formal.ttf" }
+
 # ─── Modern / geometric ──────────────────────────────────────────────────────
 
 [families.noto-sans-thaana]
@@ -216,22 +242,22 @@ fonts = { 400 = "noto-sans-thaana.ttf" }
 [families.bolhu]
 name = "Bolhu"
 category = "modern"
-fonts = { 100 = "bolhu-thin.ttf", 200 = "bolhu-extralight.ttf", 300 = "bolhu-light.ttf", 400 = "bolhu-regular.ttf", 500 = "bolhu-medium.ttf", 600 = "bolhu-semibold.ttf", 700 = "bolhu-bold.ttf", 800 = "bolhu-extrabold.ttf" }
+fonts = { 100 = "bolhu-thin.ttf", 200 = "bolhu-extralight.ttf", 300 = "bolhu-light.ttf", 400 = "bolhu-regular.ttf", 500 = "bolhu-medium.ttf", 600 = "bolhu-semibold.ttf", 700 = "bolhu-bold.ttf", 800 = "bolhu-extrabold.ttf", 900 = "bolhu-black.ttf" }
 
 [families.kolhu]
 name = "Kolhu"
 category = "modern"
-fonts = { 100 = "kolhu-thin.ttf", 200 = "kolhu-extralight.ttf", 300 = "kolhu-light.ttf", 400 = "kolhu-regular.ttf", 500 = "kolhu-medium.ttf", 600 = "kolhu-semibold.ttf", 700 = "kolhu-bold.ttf", 800 = "kolhu-extrabold.ttf" }
+fonts = { 100 = "kolhu-thin.ttf", 200 = "kolhu-extralight.ttf", 300 = "kolhu-light.ttf", 400 = "kolhu-regular.ttf", 500 = "kolhu-medium.ttf", 600 = "kolhu-semibold.ttf", 700 = "kolhu-bold.ttf", 800 = "kolhu-extrabold.ttf", 900 = "kolhu-black.ttf" }
 
 [families.theras]
 name = "Theras"
 category = "modern"
-fonts = { 100 = "theras-thin.ttf", 200 = "theras-extralight.ttf", 300 = "theras-light.ttf", 400 = "theras-regular.ttf", 500 = "theras-medium.ttf", 600 = "theras-semibold.ttf", 700 = "theras-bold.ttf", 800 = "theras-extrabold.ttf" }
+fonts = { 100 = "theras-thin.ttf", 200 = "theras-extralight.ttf", 300 = "theras-light.ttf", 400 = "theras-regular.ttf", 500 = "theras-medium.ttf", 600 = "theras-semibold.ttf", 700 = "theras-bold.ttf", 800 = "theras-extrabold.ttf", 900 = "theras-black.ttf" }
 
 [families.zaana-thedhu]
 name = "Zaana Thedhu"
 category = "modern"
-fonts = { 100 = "zaanathedhu-thin.ttf", 200 = "zaanathedhu-extralight.ttf", 300 = "zaanathedhu-light.ttf", 400 = "zaanathedhu-regular.ttf", 500 = "zaanathedhu-medium.ttf", 600 = "zaanathedhu-semibold.ttf", 700 = "zaanathedhu-bold.ttf", 800 = "zaanathedhu-extrabold.ttf" }
+fonts = { 100 = "zaanathedhu-thin.ttf", 200 = "zaanathedhu-extralight.ttf", 300 = "zaanathedhu-light.ttf", 400 = "zaanathedhu-regular.ttf", 500 = "zaanathedhu-medium.ttf", 600 = "zaanathedhu-semibold.ttf", 700 = "zaanathedhu-bold.ttf", 800 = "zaanathedhu-extrabold.ttf", 900 = "zaanathedhu-black.ttf" }
 
 [families.fanara]
 name = "Fanara"
@@ -241,7 +267,7 @@ fonts = { 100 = "fanara-thin.ttf", 400 = "fanara-regular.ttf", 700 = "fanara-bol
 [families.fanara-golhi]
 name = "Fanara Golhi"
 category = "modern"
-fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 = "fanaragolhi-light.ttf", 400 = "fanaragolhi-regular.ttf", 500 = "fanaragolhi-medium.ttf", 600 = "fanaragolhi-semibold.ttf", 700 = "fanaragolhi-bold.ttf", 800 = "fanaragolhi-extrabold.ttf" }
+fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 = "fanaragolhi-light.ttf", 400 = "fanaragolhi-regular.ttf", 500 = "fanaragolhi-medium.ttf", 600 = "fanaragolhi-semibold.ttf", 700 = "fanaragolhi-bold.ttf", 800 = "fanaragolhi-extrabold.ttf", 900 = "fanaragolhi-black.ttf" }
 
 [families.mv-koagannu]
 name = "MV Koagannu"
@@ -299,6 +325,18 @@ name = "MV Thuththu Neo"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
+
+[families.mv-maliku]
+name = "MV Maliku"
+unmodified = true
+category = "modern"
+fonts = { 400 = "mv-maliku.ttf" }
+
+[families.mv-thuththu]
+name = "MV Thuththu"
+unmodified = true
+category = "modern"
+fonts = { 700 = "mvthuththu-bld.ttf" }
 
 # ─── Artistic (decorative, display) ──────────────────────────────────────────
 
@@ -412,7 +450,7 @@ fonts = { 400 = "fiyuzu-regular.ttf" }
 [families.mv-lhaiy]
 name = "MV Lhaiy"
 category = "artistic"
-fonts = { 700 = "mv-lhaiy-bold.otf" }
+fonts = { 400 = "mv-lhaiy.otf", 700 = "mv-lhaiy-bold.otf" }
 
 [families.masnooee-mono]
 name = "Masnooee Mono"
@@ -440,6 +478,28 @@ fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }
 name = "Nasr"
 category = "artistic"
 fonts = { 300 = "nasr-light.otf" }
+
+[families.suruhee-outlined]
+name = "Suruhee Outlined"
+category = "artistic"
+designer = "Hasan Shazil"
+fonts = { 400 = "suruhee-outlined.ttf" }
+
+[families.akuro]
+name = "Akuro"
+category = "artistic"
+fonts = { 400 = "akuro2w2.ttf" }
+
+[families.yuu-thaana-kufi]
+name = "YUU Thaana Kufi"
+category = "artistic"
+designer = "Y.U.U (@miukumauku_)"
+fonts = { 400 = "yuu-thaana-kufi.ttf" }
+
+[families.novel03]
+name = "Novel03"
+category = "artistic"
+fonts = { 700 = "novel03-bold.ttf" }
 
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
@@ -599,6 +659,43 @@ name = "Faagathi Dheli"
 category = "handwriting"
 fonts = { 300 = "faagathidheli-light.ttf", 400 = "faagathidheli-regular.ttf" }
 
+[families.mv-izyan-extra-light]
+name = "MV Izyan Extra Light"
+category = "handwriting"
+fonts = { 200 = "mv-izyan-extra-light.ttf" }
+
+[families.mv-izyan-edge]
+name = "MV Izyan Edge"
+category = "handwriting"
+fonts = { 500 = "mv-izyan-edge.ttf" }
+
+[families.dhanbumaa]
+name = "Dhanbumaa"
+category = "handwriting"
+designer = "Loopcraft (calligraphy by Mohamed Faiz)"
+fonts = { 400 = "dhanbumaa-regular.otf", 700 = "dhanbumaa-bold.otf" }
+
+[families.magey-huseynu]
+name = "Magey Huseynu"
+category = "handwriting"
+designer = "Loopcraft (calligraphy by Hussain Shameem)"
+fonts = { 400 = "magey-huseynu.ttf" }
+
+[families.nayaa]
+name = "Nayaa"
+category = "handwriting"
+fonts = { 300 = "nayaa-light.ttf" }
+
+[families.sehga-casual]
+name = "Sehga Casual"
+category = "handwriting"
+fonts = { 400 = "sehga-casual.ttf" }
+
+[families.nooru]
+name = "Nooru"
+category = "handwriting"
+fonts = { 300 = "nooru-light.ttf" }
+
 # ─── Novelty (experimental, constructed) ─────────────────────────────────────
 
 [families.mv-thiki-akuru]
@@ -719,6 +816,51 @@ name = "MV Thavaa"
 category = "novelty"
 fonts = { 400 = "thavaa.otf" }
 
+[families.mv-hutti]
+name = "MV Hutti"
+category = "novelty"
+fonts = { 400 = "mv-hutti.otf" }
+
+[families.mv-salhi]
+name = "MV Salhi"
+category = "novelty"
+fonts = { 400 = "mv-salhi.otf" }
+
+[families.mv-binaa]
+name = "MV Binaa"
+category = "novelty"
+fonts = { 400 = "mv-binaa.otf" }
+
+[families.mv-thinikaa]
+name = "MV Thinikaa"
+category = "novelty"
+fonts = { 400 = "mv-thinikaa.otf" }
+
+[families.mv-reyo]
+name = "MV Reyo"
+category = "novelty"
+fonts = { 400 = "mv-reyo.otf" }
+
+[families.mv-reyo-vah]
+name = "MV Reyo Vah"
+category = "novelty"
+fonts = { 400 = "mv-reyo-vah.otf" }
+
+[families.mv-dhidhavee]
+name = "MV Dhidhavee"
+category = "novelty"
+fonts = { 400 = "mv-dhidhavee.otf" }
+
+[families.mv-runa-us]
+name = "MV Runa Us"
+category = "novelty"
+fonts = { 400 = "mv-runa-us.otf" }
+
+[families.mv-sishisozo]
+name = "MV Sishisozo"
+category = "novelty"
+fonts = { 400 = "mv-sishisozo.otf" }
+
 # ─── Symbols ─────────────────────────────────────────────────────────────────
 
 [families.bismi]
@@ -739,6 +881,19 @@ fonts = { 400 = "bismi.ttf" }
 #   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
 
 [excluded]
+"ahmed2wn.ttf" = "Pre-Unicode (unnamed): a lighter cut of the MV Kelaa design. Legacy bundle only."
+"athuakuru.ttf" = "Pre-Unicode (Athuakuru): an italic of the Thaana design. Legacy bundle only."
+"akurl2wn.ttf" = "Pre-Unicode (unnamed): the same design as Novel03. Legacy bundle only."
+"novel01-bold.ttf" = "Pre-Unicode (Novel01 Bold): has no ހ glyph (its h key holds a caret), so it can't set Dhivehi. Legacy bundle only."
+"novel02-bold.ttf" = "Pre-Unicode (Novel02 Bold): the same design as MV Mag Round. Legacy bundle only."
+"novel04.ttf" = "Pre-Unicode (Novel04): the same design as MV Kelaa. Legacy bundle only."
+"cypr2brv.ttf" = "Pre-Unicode (unnamed): the A_Randhoo Idhifushah design, whose notice restricts remapping. Legacy bundle only."
+"cypr2bw0.ttf" = "Pre-Unicode (unnamed): the same design as MV Kelaa. Legacy bundle only."
+"galan.ttf" = "Pre-Unicode (Galan): the same design as MV Galan Normal. Legacy bundle only."
+"nizuraf-light.ttf" = "Pre-Unicode (NIZURAF Light): the same design as Nooru. Legacy bundle only."
+"a-raadhavalhi.ttf" = "Pre-Unicode (A_Raadhavalhi): the same design as MV Raadhavalhi. Legacy bundle only."
+"a-randhoo-idhifushah.ttf" = "Pre-Unicode (A_Randhoo Idhifushah, Hassan Hameed); its notice restricts remapping. Legacy bundle only."
+"dhullisaa.ttf" = "Pre-Unicode (Dhullisaa): the A_Randhoo Idhifushah design, whose notice restricts remapping. Legacy bundle only."
 "a-kaani.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
 "a-lakudi.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
 "a-lakudi-college.otf" = "Pre-Unicode (Thaana on Latin keys); the designer doesn't allow remapping. Legacy bundle only."
@@ -758,7 +913,7 @@ fonts = { 400 = "bismi.ttf" }
 "faseyha.ttf" = "Legacy A_ font; the modern Unicode MV Faseyha is the same design."
 "waheed.ttf" = "Legacy A_ font; the modern Unicode MV A Waheed is the same design."
 "a-nishan.ttf" = "Single state-emblem dingbat, not a text font."
-"dhives.ttf" = "Dhives Akuru (historic script) in a legacy encoding; needs its own remap to U+11900."
+"dhives.ttf" = "Dhives Akuru (historic script) on Thaana keys: letters only, with no vowel signs or virama, so it cannot set Unicode Dives Akuru. Legacy bundle only."
 "aa-randhoo.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
 "randhoo-p.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
 "utheem-p.ttf" = "Unknown 'P' legacy encoding; same design as A Utheem."

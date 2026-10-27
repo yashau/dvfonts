@@ -7,15 +7,22 @@ sys.path.insert(0, str(Path(__file__).parent))
 from layouts import LAYOUTS
 
 PHONETIC_FONTS = {
+    "ajumalu.ttf",
     "akko.ttf",
+    "akuro2w2.ttf",
+    "akuru.ttf",
     "athu-casual.otf",
     "avas-thaana.otf",
     "bodukuru-light.otf",
     "faiy-light.otf",
     "nasr-light.otf",
+    "nayaa-light.ttf",
+    "nooru-light.ttf",
+    "novel03-bold.ttf",
     "samee-avas-thaana.ttf",
-    "thaana.ttf",
+    "sehga-casual.ttf",
     "thaana-bold.ttf",
+    "thaana.ttf",
 }
 TYPEWRITER_FONTS = {
     "a-haleem-bolhu-bold.otf",

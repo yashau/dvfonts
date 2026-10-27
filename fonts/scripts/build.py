@@ -218,13 +218,14 @@ def ensure_gdef_marks(font: TTFont, cmap: dict[int, str]) -> None:
             t.GlyphClassDef.classDefs[g] = 1
     for g in fili:
         t.GlyphClassDef.classDefs[g] = 3
-    # Zero any leftover mark advances (some Unicode fonts give fili width).
+    # Zero any leftover mark advances (some Unicode fonts give fili width). Only
+    # the advance: shapers draw an RTL mark where its outline already is, so
+    # that's where the designer saw it.
     hmtx = font["hmtx"]
     for g in fili:
         adv, lsb = hmtx[g]
         if adv:
-            translate_glyph(font, g, -adv)
-            hmtx[g] = (0, lsb - adv)
+            hmtx[g] = (0, lsb)
 
 
 def size_adjust(path: Path) -> float | None:
@@ -451,7 +452,11 @@ def classify_license(text: str | None, override: str | None) -> str:
     if "open font license" in t or "ofl" in t.split():
         return "OFL-1.1"
     if "creative commons" in t:
-        return "CC BY-ND" if "no deriv" in t else "CC BY"
+        if "no deriv" in t:
+            return "CC BY-ND"
+        if "share alike" in t or "sharealike" in t:
+            return "CC BY-SA"
+        return "CC BY"
     return "Author's terms" if t else "Unspecified"
 
 
