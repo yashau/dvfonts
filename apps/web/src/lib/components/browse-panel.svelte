@@ -26,6 +26,8 @@
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Separator } from '#lib/components/ui/separator/index.js';
+	import * as Collapsible from '#lib/components/ui/collapsible/index.js';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import TesterSize from '#lib/components/tester-size.svelte';
 	import AuthorCombobox from '#lib/components/author-combobox.svelte';
 	import KeyboardIcon from '@lucide/svelte/icons/keyboard';
@@ -51,6 +53,22 @@
 		counts: Record<string, number>;
 		shown: number;
 	} = $props();
+
+	let categoriesOpen = $state(false);
+	// Open whenever the categories aren't the default set, so a changed filter is never folded away.
+	const defaultCategories = $derived(
+		categories.length === DEFAULT_CATEGORIES.length && DEFAULT_CATEGORIES.every((c) => categories.includes(c))
+	);
+	$effect(() => {
+		if (!defaultCategories) categoriesOpen = true;
+	});
+	const categorySummary = $derived(
+		categories.length === 0 || categories.length === CATEGORIES.filter((c) => counts[c.id] > 0).length
+			? 'All categories'
+			: CATEGORIES.filter((c) => categories.includes(c.id))
+					.map((c) => c.label)
+					.join(', ')
+	);
 
 	const dir = $derived(resolveDirection(tester.text, null, tester.dv ? 'rtl' : 'ltr'));
 
@@ -151,28 +169,48 @@
 
 	<Separator />
 
-	<section class="flex flex-col gap-3">
-		<div class="flex items-baseline justify-between gap-2">
-			<h2 class="text-sm font-medium">Categories</h2>
-			<span class="text-sm text-muted-foreground tabular-nums">{shown} families</span>
-		</div>
-		<ToggleGroup.Root
-			type="multiple"
-			variant="outline"
-			orientation="vertical"
-			spacing={1}
-			bind:value={categories}
-			class="w-full flex-col items-stretch"
-			aria-label="Categories"
-		>
-			{#each CATEGORIES.filter((c) => counts[c.id] > 0) as c (c.id)}
-				<ToggleGroup.Item value={c.id} class="w-full justify-between px-3">
-					{c.label}
-					<span class="text-xs text-muted-foreground tabular-nums">{counts[c.id]}</span>
-				</ToggleGroup.Item>
-			{/each}
-		</ToggleGroup.Root>
-	</section>
+	<!-- Collapsed by default; the header still says which categories are on. -->
+	<Collapsible.Root bind:open={categoriesOpen}>
+		<section class="flex flex-col gap-3">
+			<div class="flex items-center justify-between gap-2">
+				<Collapsible.Trigger>
+					{#snippet child({ props })}
+						<Button
+							{...props}
+							variant="ghost"
+							size="sm"
+							class="-ml-2 px-2 font-medium [&[data-state=open]>svg]:rotate-90"
+						>
+							<ChevronRightIcon class="transition-transform" />
+							Categories
+						</Button>
+					{/snippet}
+				</Collapsible.Trigger>
+				<span class="text-sm text-muted-foreground tabular-nums">{shown} families</span>
+			</div>
+			{#if !categoriesOpen}
+				<p class="-mt-2 text-sm text-muted-foreground">{categorySummary}</p>
+			{/if}
+			<Collapsible.Content>
+				<ToggleGroup.Root
+					type="multiple"
+					variant="outline"
+					orientation="vertical"
+					spacing={1}
+					bind:value={categories}
+					class="w-full flex-col items-stretch"
+					aria-label="Categories"
+				>
+					{#each CATEGORIES.filter((c) => counts[c.id] > 0) as c (c.id)}
+						<ToggleGroup.Item value={c.id} class="w-full justify-between px-3">
+							{c.label}
+							<span class="text-xs text-muted-foreground tabular-nums">{counts[c.id]}</span>
+						</ToggleGroup.Item>
+					{/each}
+				</ToggleGroup.Root>
+			</Collapsible.Content>
+		</section>
+	</Collapsible.Root>
 
 	<Separator />
 
