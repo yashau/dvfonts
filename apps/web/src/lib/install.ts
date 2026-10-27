@@ -15,7 +15,7 @@ export type Shell = 'sh' | 'ps1';
 
 export function installCommand(bundle: Bundle, shell: Shell): string {
 	const url = `${SITE_ORIGIN}/install/${bundle.id}.${shell}`;
-	return shell === 'sh' ? `curl -fsSL ${url} | sh` : `irm ${url} | iex`;
+	return shell === 'sh' ? `curl -fsSL ${url} | sh` : `irm '${url}' | iex`;
 }
 
 /** POSIX sh, for macOS and Linux. */
@@ -89,7 +89,7 @@ export function ps1Script(b: Bundle): string {
 	return `# fonts.mv: install the ${b.name} bundle (${b.families} families) for the current user.
 # Windows: %LOCALAPPDATA%\\Microsoft\\Windows\\Fonts\\fonts.mv (no admin needed)
 # macOS: ~/Library/Fonts/fonts.mv   Linux: ~/.local/share/fonts/fonts.mv
-# Usage: irm ${SITE_ORIGIN}/install/${b.id}.ps1 | iex
+# Usage: irm '${SITE_ORIGIN}/install/${b.id}.ps1' | iex
 & {
 	$ErrorActionPreference = 'Stop'
 	$ProgressPreference = 'SilentlyContinue'
