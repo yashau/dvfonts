@@ -1134,6 +1134,43 @@ export const AUTHORS: AuthorBio[] = [
 	}
 ];
 
+/** Authors by their importance to Maldivian typography, most important first. Both
+ *  sections of /authors follow it; anyone not listed goes last, alphabetically. */
+export const AUTHOR_ORDER = [
+	'Hassan Hameed',
+	'Abdulla Waheed',
+	'Ibrahim Yasir',
+	'Shahee Ilyas',
+	'Ayeshath Fadwa',
+	'M.A. Gadir',
+	'Hussain Niyaz',
+	'Maldivian Internet Task Force',
+	'Zillon',
+	'Mohamed Mazeed',
+	'David Williams',
+	'Nexus Maldives Pvt. Ltd',
+	'Hasan Shazil',
+	'Adnan Ali',
+	'Adam Zubin',
+	'Loopcraft',
+	'Mohamed Faiz',
+	'Hussain Shameem',
+	'Sappe',
+	'Mohamed Ali',
+	'Mohamed Azheel',
+	'Ashrag Rasheed',
+	'Y.U.U',
+	'Vernon Adams'
+];
+
+export function byImportance(a: string, b: string): number {
+	const rank = (n: string) => {
+		const i = AUTHOR_ORDER.indexOf(n);
+		return i === -1 ? AUTHOR_ORDER.length : i;
+	};
+	return rank(a) - rank(b) || a.localeCompare(b);
+}
+
 const byName = new Map(AUTHORS.map((a) => [a.name, a]));
 
 export function authorBio(name: string): AuthorBio | undefined {

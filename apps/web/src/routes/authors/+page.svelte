@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { authorBio, correctionsMailto } from '#lib/authors.js';
+	import { authorBio, byImportance, correctionsMailto } from '#lib/authors.js';
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as Avatar from '#lib/components/ui/avatar/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
@@ -21,9 +21,11 @@
 		data.authors
 			.map((a) => ({ ...a, bio: authorBio(a.name) }))
 			.filter((a) => a.bio?.page)
-			.toSorted((a, b) => b.families - a.families || a.name.localeCompare(b.name))
+			.toSorted((a, b) => byImportance(a.name, b.name))
 	);
-	const others = $derived(data.authors.filter((a) => !authorBio(a.name)?.page));
+	const others = $derived(
+		data.authors.filter((a) => !authorBio(a.name)?.page).toSorted((a, b) => byImportance(a.name, b.name))
+	);
 </script>
 
 <svelte:head>
