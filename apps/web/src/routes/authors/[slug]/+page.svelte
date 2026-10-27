@@ -23,14 +23,20 @@
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-	<Button href="/authors" variant="ghost" size="sm" class="-ml-2 text-muted-foreground"
-		><ArrowLeftIcon /> All authors</Button
-	>
+	{#snippet back(cls: string)}
+		<Button href="/authors" variant="ghost" size="sm" class="-ml-2 text-muted-foreground {cls}"
+			><ArrowLeftIcon /> All authors</Button
+		>
+	{/snippet}
+	<!-- On phones the back link leads the page; on wide screens it moves into the text column so
+	     the info card starts at the top of the content, where it sticks: it never shifts. -->
+	{@render back('mb-4 lg:hidden')}
 
-	<div class="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+	<div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
 		<!-- Info card first on small screens, beside the text on wide ones, like an encyclopedia infobox. -->
 		<aside class="lg:order-2">
-			<Card.Root class="gap-4 lg:sticky lg:top-20">
+			<!-- 89px: the header (56px and a 1px border) plus the page padding (32px), i.e. where the card starts. -->
+			<Card.Root class="gap-4 lg:sticky lg:top-[89px]">
 				<Card.Header class="items-center text-center">
 					<Avatar.Root class="mx-auto size-40 rounded-lg after:rounded-lg">
 						<Avatar.Fallback class="rounded-lg"><UserRoundIcon class="size-16 text-muted-foreground" /></Avatar.Fallback
@@ -85,6 +91,7 @@
 		</aside>
 
 		<article class="min-w-0 lg:order-1">
+			{@render back('mb-4 hidden lg:inline-flex')}
 			<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{bio.name}</h1>
 			<div class="mt-4 flex max-w-prose flex-col gap-4 text-pretty">
 				{#each bio.bio as paragraph, i (i)}
