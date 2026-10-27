@@ -68,6 +68,18 @@ test('CSS API rejects unknown families with a helpful message', async ({ request
 	expect(await res.text()).toContain('Unknown family');
 });
 
+test("the site's own stylesheets only point at fonts that exist", async ({ page, request }) => {
+	await page.goto('/');
+	const hrefs = await page.$$eval('link[rel="stylesheet"]', (ls) => ls.map((l) => (l as HTMLLinkElement).href));
+	const urls = new Set<string>();
+	for (const href of hrefs) {
+		const css = await (await request.get(href)).text();
+		for (const m of css.matchAll(/url\(['"]?(\/fonts\/[^'")]+)/g)) urls.add(m[1]);
+	}
+	expect(urls.size).toBeGreaterThan(0);
+	for (const url of urls) expect((await request.get(url)).status(), url).toBe(200);
+});
+
 test('agent and package endpoints are served', async ({ request }) => {
 	for (const path of ['/llms.txt', '/fonts.json', '/keymap.json', '/thaana.js', '/thaana.iife.js', '/thaana.css']) {
 		const res = await request.get(path);
