@@ -45,7 +45,7 @@ export const AUTHORS: AuthorBio[] = [
 		knownFor:
 			"Thaana calligraphy at the President's Office, the basis of the A_Waheed / MV A Waheed and Aammu FK / MV Aammu FK fonts",
 		bio: [
-			"Abdulla Waheed is a Maldivian calligrapher from Eydhafushi in Baa Atoll who worked at the Office of the President. The Faruma designer Musthafa Mohamed, a classmate in the government's Thaana calligraphy class, describes Waheed's handwriting as the most beautiful Thaana he knows, and writes that official documents signed by the President were at the time written out by hand by Waheed.",
+			"Abdulla Waheed is a Maldivian calligrapher from Eydhafushi in Baa Atoll who worked at the Office of the President. He studied in the government's Thaana calligraphy class alongside Musthafa Mohamed, later the designer of Faruma, and for a time wrote out by hand the official documents the President signed.",
 			"Hassan Hameed based his 1996 font A_Waheed, later MV A Waheed, on Waheed's lettering in a 1995 calendar of the Supreme Council for Islamic Affairs. Waheed reviewed the glyphs through Hassan Shujau, and the font is named after him. Hameed's bold display font Aammu FK, later MV Aammu FK, was made from a set of bold letters Waheed had drawn for stencil-cut banners. Waheed advised on the 2015 revisions of both fonts. His calligraphy is also credited in A_Faseyha, A_Utheem, Aammu FalaRasmee and A_Randhoo (1995), and in A Reethi (2002), made at the President's Office."
 		],
 		excerpt:
@@ -103,7 +103,7 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Adam Zubin is a media designer and photographer based in Malé. His website says he co-founded and is a partner in mooinc. pvt. ltd., a multidisciplinary design and architecture firm in the Maldives. He trained in aquaculture, with a degree from James Cook University in Australia, and is self-taught as a designer. His portfolio includes brand identity, layout, photography, cinematography and marketing work for businesses, resorts, United Nations agencies and government ministries.',
+			'Adam Zubin is a media designer and photographer based in Malé. He co-founded and is a partner in mooinc. pvt. ltd., a multidisciplinary design and architecture firm in the Maldives. He trained in aquaculture, with a degree from James Cook University in Australia, and is self-taught as a designer. His portfolio includes brand identity, layout, photography, cinematography and marketing work for businesses, resorts, United Nations agencies and government ministries.',
 			'His Thaana typeface Zaana Thedhu was released by Thaana Type Foundry in 2021. It is a variable font in nine weights, drawn to simplify the vertical arrangement of written Thaana for readability, and it uses Raleway for its Latin characters.'
 		],
 		excerpt:
@@ -148,9 +148,9 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Adnan Ali is a Maldivian civil and structural engineer and the Chief Engineer and Managing Director of CVNG Consulting, an engineering consultancy in Malé. His company profile lists a B.Eng (Civil/Structural) and an M.Eng, and says he is a registered engineer in the Maldives with experience in structural design, transport engineering and airport planning.',
-			'He designed two Thaana typefaces released by Thaana Type Foundry in 2021, both under the SIL Open Font License. Motaru Dhigu is based on natural handwriting and updates the long, stretched strokes of early-20th-century Dhivehi handwriting. He says the name honours his father. Motaru Square has perfectly square edges, so Thaana text can be stacked in regular patterns. He says the idea came from his work on the Uvadhoani project.',
-			'Uvadhoani is an online magazine run by CVNG Consulting that publishes technical writing about construction in Dhivehi. Its About page says the team decided to set the new magazine in new fonts of its own, and that it was registered with the Ministry of Home Affairs in October 2021.'
+			'Adnan Ali is a Maldivian civil and structural engineer and the Chief Engineer and Managing Director of CVNG Consulting, an engineering consultancy in Malé. He holds a B.Eng (Civil/Structural) and an M.Eng, and is a registered engineer in the Maldives with experience in structural design, transport engineering and airport planning.',
+			'He designed two Thaana typefaces released by Thaana Type Foundry in 2021, both under the SIL Open Font License. Motaru Dhigu is based on natural handwriting and updates the long, stretched strokes of early-20th-century Dhivehi handwriting. The name honours his father. Motaru Square has perfectly square edges, so Thaana text can be stacked in regular patterns. The idea came from his work on the Uvadhoani project.',
+			'Uvadhoani is an online magazine run by CVNG Consulting that publishes technical writing about construction in Dhivehi. The team decided to set the new magazine in fonts of its own, and it was registered with the Ministry of Home Affairs in October 2021.'
 		],
 		excerpt:
 			'Adnan Ali is a Maldivian civil and structural engineer and the Chief Engineer and Managing Director of CVNG Consulting, an engineering consultancy in Malé.',
@@ -193,7 +193,7 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Ashrag Rasheed is the designer of Dhivehi Muraka, a Thaana typeface released under the SIL Open Font License on GitHub in 2026. It covers the full Unicode Thaana block and the new Rufiyaa sign. The project says every Thaana outline was drawn by hand, and it takes its Latin characters from Inter.'
+			'Ashrag Rasheed is the designer of Dhivehi Muraka, a Thaana typeface released under the SIL Open Font License on GitHub in 2026. It covers the full Unicode Thaana block and the new Rufiyaa sign. Every Thaana outline was drawn by hand, and the font takes its Latin characters from Inter.'
 		],
 		excerpt:
 			'Ashrag Rasheed is the designer of Dhivehi Muraka, a Thaana typeface released under the SIL Open Font License on GitHub in 2026.',
@@ -241,8 +241,8 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Ayeshath Fadwa Waheed, who also goes by Ayesh, is a Maldivian graphic designer. Her portfolio describes her work as design, layout, illustration and branding, with a particular focus on Thaana typography, and says she has more than 25 years of experience. Clients listed there include Bank of Maldives, DHL Maldives, the National Art Gallery of Maldives, Transparency Maldives, UNDP Maldives, UNICEF Maldives and UNFPA Maldives.',
-			"With Shahee Ilyas she runs Thaana Type, a Maldivian type foundry that publishes free Thaana fonts under the SIL Open Font License. It went public with its first releases in 2020. According to the foundry, it 'came into being' in Vietnam, and it named its Viethaana font as a tribute to Saigon. The two had earlier designed and developed Nakaiy Nevi (2012), a mobile app for the traditional Maldivian nakaiy calendar.",
+			'Ayeshath Fadwa Waheed, who also goes by Ayesh, is a Maldivian graphic designer. She works in design, layout, illustration and branding, with a particular focus on Thaana typography, and has more than 25 years of experience. Clients listed there include Bank of Maldives, DHL Maldives, the National Art Gallery of Maldives, Transparency Maldives, UNDP Maldives, UNICEF Maldives and UNFPA Maldives.',
+			'With Shahee Ilyas she runs Thaana Type, a Maldivian type foundry that publishes free Thaana fonts under the SIL Open Font License. It went public with its first releases in 2020. The foundry came into being in Vietnam, and named its Viethaana font as a tribute to Saigon. The two had earlier designed and developed Nakaiy Nevi (2012), a mobile app for the traditional Maldivian nakaiy calendar.',
 			"Her own designs for the foundry include Kolhu, Theras, Masnooee Mono and Viethaana (2020), as well as Faaru Punk, Gurafiku and LCD Thaana (2021). Faaru Punk grew out of letters she drew for the logo of the band Kushehnooney's second album, Lah. With Shahee Ilyas she co-designed Bolhu, Fanara, Fanara Golhi, Faagathi Dheli and Faagathi Neon. The Faagathi fonts are based on early-20th-century manuscripts by the scholar Salaahuddin. Fanara Golhi received a Special Mention in the South Asian Scripts text typefaces category of the 12th Granshan Type Design Competition (2021/22)."
 		],
 		excerpt:
@@ -338,7 +338,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
-			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. Thaana Type Foundry presents it as a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. A second version was released in 2026. He has also published Suruhee Outlined (2026) on GitHub.'
+			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. It is a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. A second version was released in 2026. He has also published Suruhee Outlined (2026) on GitHub.'
 		],
 		excerpt:
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
@@ -381,9 +381,9 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			"Hassan Hameed, usually credited as Dr Hassan Hameed, is a Maldivian educator, writer and Thaana type designer. He has written that he studied computer science at the University of Tasmania from 1980, and that he was studying in New Zealand in 1995. He worked at the Maldives College of Higher Education and its successor, the Maldives National University (MNU), from 1998, served as Rector of the college, and was elected the university's Vice-Chancellor in 2011. He resigned in July 2015 after amendments to the national university law. In August 2019 he was appointed Chancellor of MNU.",
+			"Hassan Hameed, usually credited as Dr Hassan Hameed, is a Maldivian educator, writer and Thaana type designer. He studied computer science at the University of Tasmania from 1980, and was studying in New Zealand in 1995. He worked at the Maldives College of Higher Education and its successor, the Maldives National University (MNU), from 1998, served as Rector of the college, and was elected the university's Vice-Chancellor in 2011. He resigned in July 2015 after amendments to the national university law. In August 2019 he was appointed Chancellor of MNU.",
 			"Hameed began making Thaana fonts in the mid-1990s, working with Hassan Shujau and the calligrapher Abdulla Waheed of the President's Office. Their pre-Unicode fonts from 1995 and 1996, such as A_Faseyha, A_Randhoo, A_Utheem and A_Waheed, were based on Waheed's handwriting. From 2015 he reworked these designs as Unicode fonts with OpenType features under the MV prefix, among them MV A Waheed and MV Aammu FK, a heavy display face widely used for newspaper headlines.",
-			'He has written that he has released about 35 fonts over some 30 years, and that his fonts are the ones most used by Maldivian online newspapers. MV Funa began as a font he released in 1999 with a Thaana word-processing program and later used for MNU publications; it was later published in four weights. He also made the Thaana for MV Oswald and MV Open Condensed, pairing it with existing Latin typefaces.',
+			'He has released about 35 fonts over some 30 years, and his fonts are widely used by Maldivian online newspapers. MV Funa began as a font he released in 1999 with a Thaana word-processing program and later used for MNU publications; it was later published in four weights. He also made the Thaana for MV Oswald and MV Open Condensed, pairing it with existing Latin typefaces.',
 			'Beyond type design, Hameed writes on the Dhivehi language, the history of Thaana and Thaana typography, engineering, education and the history of MNU, and publishes much of this work on his website. In 2000 he presented the paper "Gabulhi Thaana: A challenge for information technology" at a writers\' conference held by the National Centre for Linguistic and Historical Research.'
 		],
 		excerpt:
@@ -454,8 +454,8 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Hussain Niyaz is a Maldivian type designer from Lhohi in Noonu Atoll. He runs dhivehifont.com, where he publishes his own Thaana fonts. Font files credit him as "Hussain Niyaz (Noonu Lhohi)". On the site\'s About page he writes that he had considered making Dhivehi fonts for years and had started several times with font software, stopping each time, before the project finally got under way.',
-			'The earliest font release on the site is dated December 2021. A larger batch followed in April 2022, and he has kept releasing new designs since then, most recently in 2026. His work centres on the MV Izyan family, which includes handwriting, Bodu Akuru, 3D, Light, Thin, Edge, Suruhee and other variants. He describes many of his fonts as meant for headlines, cards, posters and other short, informal text rather than long passages.',
+			'Hussain Niyaz is a Maldivian type designer from Lhohi in Noonu Atoll. He runs dhivehifont.com, where he publishes his own Thaana fonts. Font files credit him as "Hussain Niyaz (Noonu Lhohi)". He had considered making Dhivehi fonts for years, and started several times with font software before the project finally got under way.',
+			'The earliest font release on the site is dated December 2021. A larger batch followed in April 2022, and he has kept releasing new designs since then, most recently in 2026. His work centres on the MV Izyan family, which includes handwriting, Bodu Akuru, 3D, Light, Thin, Edge, Suruhee and other variants. Many of his fonts are meant for headlines, cards, posters and other short, informal text rather than long passages.',
 			"Several of his fonts are named after people and places in his life. MV Lhohi, his second font, and MV Gaa Lhohi are named after his home island. MV Fathimath and MV Maryam are named after his grandmothers, and MV Nerumagu after a harbour road on his island. Others digitise real handwriting. MV Nevi Raheem is based on the handwriting of the late Abdul Raheem Abubakuru of N. Manadhoo and was made after talking with his family. MV Alram reproduces the handwriting of Ali Rameez of N. Lhohi. MV Azheel and MV Azheel Rasmee are based on the handwriting of Azheel Ahmed, and MV Meemu Ali on the quick note-taking hand of Mohamed Ali. MV Edhuru is based on the lettering in Ali Edhuru Thakurufaanu's book Zuhurul Kamaalaathi fee Ahkaamil Ibaadhaathi.",
 			"Besides fonts, the site publishes vector artwork, such as a drawing of the Maldivian state emblem (2024) and Eid-themed vectors (2025). Most fonts in the site's library are marked as free. Some other items, such as the vector files, are sold, and he takes donations through Buy Me a Coffee."
 		],
@@ -548,7 +548,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			"Hussain Shameem is the Maldivian calligrapher whose handwriting is the basis of Magey Huseynu, a free Thaana font made with Loopcraft's RaajjeType foundry and launched in February 2024 with an exhibition at the art gallery in Malé. The font's name, 'Magey Huseynu' ('my Husain'), is what his mother called him.",
-			"In his own account, he learned to love writing as a child, sitting beside his father, the late Gonbili Mohamed Shameem. His father was a calligrapher of Thaana and Arabic who spent hours each day hand-lettering the newspaper Haveeru while it was still produced by hand. Shameem says his handwriting developed over many years. In 2023 he entered the Dhivehi Language Academy's national handwriting competition; his entry did not place, but the judges chose it for public display. He describes the font as his art."
+			"He learned to love writing as a child, sitting beside his father, the late Gonbili Mohamed Shameem. His father was a calligrapher of Thaana and Arabic who spent hours each day hand-lettering the newspaper Haveeru while it was still produced by hand. His handwriting developed over many years. In 2023 he entered the Dhivehi Language Academy's national handwriting competition; his entry did not place, but the judges chose it for public display."
 		],
 		excerpt:
 			"Hussain Shameem is the Maldivian calligrapher whose handwriting is the basis of Magey Huseynu, a free Thaana font launched with Loopcraft's RaajjeType foundry in 2024.",
@@ -576,7 +576,7 @@ export const AUTHORS: AuthorBio[] = [
 		role: "Font developer (IT staff, President's Office)",
 		knownFor: "Building the Faruma and A Reethi fonts digitally at the President's Office in 2002",
 		bio: [
-			"Ibrahim Yasir was a member of the IT unit at the Maldivian President's Office who produced the digital font files for Faruma and A Reethi in 2002. According to Musthafa Mohamed, who designed Faruma's letterforms, the head of IT, Ahmed Asif, assigned Yasir to the project. Yasir, who was trained in IT, drew and adjusted the glyphs as Mohamed directed, working at his own workstation, and the first usable version was ready in about three months.",
+			"Ibrahim Yasir was a member of the IT unit at the Maldivian President's Office who produced the digital font files for Faruma and A Reethi in 2002. Musthafa Mohamed designed Faruma's letterforms, and the head of IT, Ahmed Asif, assigned Yasir to the project. Yasir, who was trained in IT, drew and adjusted the glyphs as Mohamed directed, working at his own workstation, and the first usable version was ready in about three months.",
 			'The first stage of the font was named A_Reethi; after further refinement it was released as A_Faruma and then Faruma. The font files credit Yasir as creator, with calligraphy by Musthafa Mohamed (and, for A Reethi, also by Abdul Sattar and Abdulla Waheed) and assistance from Ahmed Asif. Faruma came to be widely used for official government documents in the Maldives.'
 		],
 		excerpt:
@@ -622,7 +622,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			'Loopcraft is a design and technology company based in Malé, Maldives. It works in branding, software and app development, 3D and animation, and marketing. Its own products have included the augmented-reality education app Butterfly Story and the Foodies delivery app. Its chief executive is Mohamed Shamheel.',
-			"The company publishes Thaana fonts through its own foundry, RaajjeType. According to Shamheel, it set up the foundry because the lack of varied Dhivehi fonts made design work difficult. RaajjeType's fonts include Thundu (from calligraphy by Lazzath) and Fanvaiy, as well as two fonts based on the handwriting of individual calligraphers: Magey Huseynu, from the calligraphy of Hussain Shameem (launched in February 2024), and Dhanbumaa, from the handwriting of the late Mohamed Faiz (Dhanbumaa Faiz), launched on 10 August 2025 with his family. Both are free to use."
+			"The company publishes Thaana fonts through its own foundry, RaajjeType. It set up the foundry because the lack of varied Dhivehi fonts made design work difficult. RaajjeType's fonts include Thundu (from calligraphy by Lazzath) and Fanvaiy, as well as two fonts based on the handwriting of individual calligraphers: Magey Huseynu, from the calligraphy of Hussain Shameem (launched in February 2024), and Dhanbumaa, from the handwriting of the late Mohamed Faiz (Dhanbumaa Faiz), launched on 10 August 2025 with his family. Both are free to use."
 		],
 		excerpt:
 			'Loopcraft is a design and technology company in Malé, Maldives. Through its foundry RaajjeType it publishes free Thaana fonts, including Magey Huseynu and Dhanbumaa.',
@@ -706,11 +706,11 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'The Maldivian Internet Task Force (MITF) was a volunteer, non-profit group that described itself as a catalyst for Maldivian internet and computer projects. Its members, many of them Maldivians living abroad, worked on Thaana software such as editors, transliteration engines and a Unicode encoder, ran the alt.culture.maldives newsgroup, and in 2001 moved their Thaana work into Project Thaana on SourceForge.',
+			'The Maldivian Internet Task Force (MITF) was a volunteer, non-profit group that worked as a catalyst for Maldivian internet and computer projects. Its members, many of them Maldivians living abroad, worked on Thaana software such as editors, transliteration engines and a Unicode encoder, ran the alt.culture.maldives newsgroup, and in 2001 moved their Thaana work into Project Thaana on SourceForge.',
 			'Because few Unicode Thaana fonts existed at the time, MITF made its own. Thaana Unicode Akeh, dated 2000, covers Latin-1 and Thaana with a few Arabic characters, and was released free of charge under the GNU Free Documentation License.'
 		],
 		excerpt:
-			'The Maldivian Internet Task Force (MITF) was a volunteer, non-profit group that described itself as a catalyst for Maldivian internet and computer projects. Its Thaana Unicode Akeh (2000) was an early free Unicode Thaana font.',
+			'The Maldivian Internet Task Force (MITF) was a volunteer, non-profit group that worked as a catalyst for Maldivian internet and computer projects. Its Thaana Unicode Akeh (2000) was an early free Unicode Thaana font.',
 		sources: [
 			{
 				title: 'MITF: Maldivian Internet Task Force, home page (archived January 2002)',
@@ -747,10 +747,10 @@ export const AUTHORS: AuthorBio[] = [
 		role: 'Co-credited contributor; his handwriting is the basis of MV Meemu Ali',
 		knownFor: 'The handwriting behind MV Meemu Ali by Hussain Niyaz',
 		bio: [
-			'Mohamed Ali, from Maavah in Laamu Atoll according to the font credits, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi. Hussain Niyaz describes MV Meemu Ali as modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters.'
+			'Mohamed Ali, from Maavah in Laamu Atoll, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi. MV Meemu Ali is modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters.'
 		],
 		excerpt:
-			'Mohamed Ali, from Maavah in Laamu Atoll according to the font credits, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi.',
+			'Mohamed Ali, from Maavah in Laamu Atoll, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi.',
 		sources: [
 			{
 				title: 'dhivehifont.com: MV Meemu Ali (2023-07-24)',
@@ -772,7 +772,7 @@ export const AUTHORS: AuthorBio[] = [
 		role: 'Co-credited contributor; his handwriting is the basis of MV Azheel',
 		knownFor: 'The handwriting behind MV Azheel and MV Azheel Rasmee by Hussain Niyaz',
 		bio: [
-			'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel. Hussain Niyaz scanned the writing into Illustrator and redrew the letters there. The release post calls him Azheel Ahmed (Fiyoaree) and describes him as a teacher of the Quran who supports the font project. The font file credits him as Mohamed Azheel. A second font from his handwriting, MV Azheel Rasmee, followed in 2024.'
+			'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel. Hussain Niyaz scanned the writing into Illustrator and redrew the letters there. He is a teacher of the Quran, also known as Azheel Ahmed (Fiyoaree), and supports the font project. The font file credits him as Mohamed Azheel. A second font from his handwriting, MV Azheel Rasmee, followed in 2024.'
 		],
 		excerpt: 'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel.',
 		sources: [
@@ -855,7 +855,7 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Nexus Maldives Pvt. Ltd is a Malé company in real estate, construction and tourism, formed in 1999 according to its website. Around 2000 it offered free Thaana online services: Dhivehi e-mail, a Dhivehi chat program and a collection of free Dhivehi fonts. The fonts were meant to make different styles of handwriting available to the public. Samee Avas Thaana, dated 1999 with a 2020 update, comes from that collection.'
+			'Nexus Maldives Pvt. Ltd is a Malé company in real estate, construction and tourism, formed in 1999. Around 2000 it offered free Thaana online services: Dhivehi e-mail, a Dhivehi chat program and a collection of free Dhivehi fonts. The fonts were meant to make different styles of handwriting available to the public. Samee Avas Thaana, dated 1999 with a 2020 update, comes from that collection.'
 		],
 		excerpt:
 			'Nexus Maldives Pvt. Ltd is a Malé company in real estate, construction and tourism. Around 2000 it offered free Thaana online services, including a collection of free Dhivehi fonts.',
@@ -1090,9 +1090,9 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			'Zillon is the pseudonym of a Maldivian type designer who publishes experimental Thaana fonts on FontStruct, a browser-based tool that builds fonts from modular pieces. The FontStruct account dates from September 2015 and had 31 shared fonts as of 2026. The designer also writes the blog ThatMaldivesBlog, started in April 2016, and its About page describes the author as a Maldivian who has lived abroad for a long time and would rather not say who they are.',
+			'Zillon is the pseudonym of a Maldivian type designer who publishes experimental Thaana fonts on FontStruct, a browser-based tool that builds fonts from modular pieces. The FontStruct account dates from September 2015 and had 31 shared fonts as of 2026. The designer also writes the blog ThatMaldivesBlog, started in April 2016. The author is a Maldivian who has lived abroad for a long time and prefers not to say who they are.',
 			'The first font announced on the blog was MV Prathama Tin (April 2016), a blocky serif Thaana design that drops most of the baseline stroke from which most Thaana letters are built. Kanafala followed later that month, and further fonts appeared over the next decade. They include MV Thaanarabi, MV Sishisozo, MV Lhaiy, MV Akson, MV Hulhumale, MV Dubai, MV Golhifoshi, MV Runa, MV Salhi, MV Binaa, MV Thinikaa and MV Dhidhavee. Most are offered on FontStruct under Creative Commons licences.',
-			'The blog also covers the Dhivehi language and Maldivian society. It includes a long-running series of Dhivehi lessons, essays on etymology and vocabulary building, proposals for reforming Thaana, and urban-planning pieces under the title "Tharaggee". In 2020–2021 the author released an album, Sick City, under the same name, explaining that Zillon is the name they also use for fonts.'
+			'The blog also covers the Dhivehi language and Maldivian society. It includes a long-running series of Dhivehi lessons, essays on etymology and vocabulary building, proposals for reforming Thaana, and urban-planning pieces under the title "Tharaggee". In 2020–2021 the author released an album, Sick City, under the same name.'
 		],
 		excerpt:
 			'Zillon is the pseudonym of a Maldivian type designer who publishes experimental Thaana fonts on FontStruct, a browser-based tool that builds fonts from modular pieces.',
