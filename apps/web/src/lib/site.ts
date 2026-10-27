@@ -6,7 +6,7 @@ export const SITE_ORIGIN = 'https://fonts.mv';
 export const REPO_URL = 'https://github.com/yashau/fonts.mv';
 
 /** Where credits, corrections and missing details go. */
-export const CONTACT_EMAIL = 'ibrahim@yashau.com';
+export const CONTACT_EMAIL = 'contact@fonts.mv';
 
 /** Google-Fonts-style CSS API URL: /css2?family=Name:wght@400;700&display=swap */
 export function cssApiUrl(

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Alert from '#lib/components/ui/alert/index.js';
 	import ShieldIcon from '@lucide/svelte/icons/shield-check';
-	import { REPO_URL } from '#lib/site.js';
+	import { CONTACT_EMAIL, REPO_URL } from '#lib/site.js';
 </script>
 
 <svelte:head>
@@ -55,6 +55,17 @@
 			on GitHub at <a class="underline underline-offset-4" href={REPO_URL}>yashau/fonts.mv</a> under the MIT license; the
 			fonts keep their own licenses. Issues and pull requests are welcome.
 		</p>
+		<h2 class="pt-4 text-xl font-semibold tracking-tight text-foreground">Corrections welcome</h2>
+		<p>
+			Credits, release years and other details here are pieced together from the font files and public sources, and not
+			all of them will be right. If something is wrong or missing, a correction is always welcome: email
+			<a
+				class="underline underline-offset-4"
+				href="mailto:{CONTACT_EMAIL}?subject={encodeURIComponent('fonts.mv: a correction')}">{CONTACT_EMAIL}</a
+			>
+			or
+			<a class="underline underline-offset-4" href="{REPO_URL}/issues">open an issue</a>.
+		</p>
 		<p>
 			The fonts.mv wordmark and favicon are set in
 			<a class="underline underline-offset-4" href="/fonts/mv-neru-magu">MV Neru Magu</a>.
@@ -67,8 +78,8 @@
 					These fonts are listed because they have circulated freely for years, with credit to their makers wherever the
 					files or their sources name one. If you hold rights to a font here and want it credited differently,
 					relicensed or removed, email
-					<a class="underline underline-offset-4" href="mailto:ibrahim@yashau.com">ibrahim@yashau.com</a>. Removal
-					requests are honoured without argument.
+					<a class="underline underline-offset-4" href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>. Removal requests
+					are honoured without argument.
 				</p>
 			</Alert.Description>
 		</Alert.Root>
