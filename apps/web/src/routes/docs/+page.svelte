@@ -1,7 +1,6 @@
 <script lang="ts">
 	// A literal closing script tag would end this component's <script> block.
 	const SCRIPT_END = '<\u002Fscript>';
-	import { onMount } from 'svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
 	import { Textarea } from '#lib/components/ui/textarea/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
@@ -12,10 +11,7 @@
 	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.js';
 	import { KEYMAP } from '#lib/thaana.js';
 	import { thaanaKeyboard } from '@yashau/thaana-svelte';
-	import { origin, SITE_ORIGIN } from '#lib/site.js';
-
-	let base = $state(SITE_ORIGIN);
-	onMount(() => (base = origin()));
+	import { SITE_ORIGIN } from '#lib/site.js';
 
 	let demoOn = $state(true);
 	let demoText = $state('');
@@ -164,7 +160,7 @@ ${SCRIPT_END}
 	<CodeBlock
 		title="HTML"
 		lang="html"
-		code={`<link rel="stylesheet" href="${base}/css2?family=Faruma&family=Bolhu:wght@400;700&display=swap">\n\n<p dir="rtl" lang="dv" style="font-family: 'Faruma', system-ui, sans-serif">ދިވެހިރާއްޖެ</p>`}
+		code={`<link rel="stylesheet" href="${SITE_ORIGIN}/css2?family=Faruma&family=Bolhu:wght@400;700&display=swap">\n\n<p dir="rtl" lang="dv" style="font-family: 'Faruma', system-ui, sans-serif">ދިވެހިރާއްޖެ</p>`}
 	/>
 	<ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
 		<li><code>family=Name</code> with spaces as <code>+</code>. Old names work too (<code>A_Waheed</code>).</li>
@@ -211,7 +207,7 @@ ${SCRIPT_END}
 		<CodeBlock
 			title="No build step"
 			lang="html"
-			code={`<script type="module" src="${base}/thaana.js">${SCRIPT_END}\n\n<input data-thaana>\n<textarea data-thaana></textarea>\n<div contenteditable data-thaana></div>\n\n<!-- or a classic script: window.Thaana -->\n<script src="${base}/thaana.iife.js">${SCRIPT_END}`}
+			code={`<script type="module" src="${SITE_ORIGIN}/thaana.js">${SCRIPT_END}\n\n<input data-thaana>\n<textarea data-thaana></textarea>\n<div contenteditable data-thaana></div>\n\n<!-- or a classic script: window.Thaana -->\n<script src="${SITE_ORIGIN}/thaana.iife.js">${SCRIPT_END}`}
 		/>
 	</div>
 	<ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
@@ -281,7 +277,7 @@ ${SCRIPT_END}
 		<CodeBlock
 			title="HTML"
 			lang="html"
-			code={`<link rel="stylesheet" href="${base}/css2?family=Bolhu&family=Faiy&display=swap&normalize=1">`}
+			code={`<link rel="stylesheet" href="${SITE_ORIGIN}/css2?family=Bolhu&family=Faiy&display=swap&normalize=1">`}
 		/>
 		<CodeBlock
 			title="JS"
