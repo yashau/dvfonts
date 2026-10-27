@@ -15,7 +15,7 @@
 	function choose(name: string | null) {
 		value = name;
 		open = false;
-		tick().then(() => trigger?.focus());
+		tick().then(() => trigger?.focus({ preventScroll: true }));
 	}
 </script>
 
@@ -35,7 +35,10 @@
 			</Button>
 		{/snippet}
 	</Popover.Trigger>
-	<Popover.Content class="w-(--bits-popover-anchor-width) p-0" align="start">
+	<!-- strategy="fixed": opening highlights the first author and scrolls it into view before the
+	     popover is placed; positioned against the page it starts at the top, and the page would
+	     jump there. Against the viewport it is always in view. -->
+	<Popover.Content class="w-(--bits-popover-anchor-width) p-0" align="start" strategy="fixed">
 		<Command.Root>
 			<Command.Input placeholder="Search authors…" />
 			<Command.List>

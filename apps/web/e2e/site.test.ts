@@ -286,6 +286,15 @@ test('symbol fonts try out their own keys, not a Thaana pangram', async ({ page 
 	await expect(page.getByLabel('Heading text', { exact: true })).toHaveValue('D');
 });
 
+test('opening the author picker keeps the page where it is', async ({ page, isMobile }) => {
+	test.skip(isMobile, 'the picker sits in the Filters sheet on phones');
+	await page.goto('/');
+	await page.evaluate(() => window.scrollTo(0, 2000));
+	await page.locator('aside').getByRole('combobox', { name: 'Author' }).click();
+	await expect(page.getByPlaceholder('Search authors…')).toBeVisible();
+	expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(1500);
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
