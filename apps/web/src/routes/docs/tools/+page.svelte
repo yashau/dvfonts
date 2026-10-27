@@ -132,7 +132,7 @@
 					dir={mode === 'pdf' ? 'rtl' : 'ltr'}
 					spellcheck={false}
 					placeholder={current.example}
-					class="h-64 resize-y font-mono text-base"
+					class="max-h-[32rem] min-h-64 resize-none font-mono text-base"
 				/>
 			</Card.Content>
 		</Card.Root>
@@ -160,7 +160,7 @@
 					dir="rtl"
 					lang="dv"
 					placeholder="ދިވެހި"
-					class="h-64 resize-y text-xl"
+					class="max-h-[32rem] min-h-64 resize-none text-xl"
 					style="font-family: 'dv-faruma', 'dv-ui', system-ui, sans-serif; line-height: 1.75"
 				/>
 			</Card.Content>

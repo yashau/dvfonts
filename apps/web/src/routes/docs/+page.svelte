@@ -197,7 +197,7 @@ ${SCRIPT_END}
 				bind:value={demoText}
 				rows={3}
 				placeholder="އަކުރުތައް ލިޔެ ބައްލަވާ…"
-				class="text-lg"
+				class="min-h-24 resize-none text-lg"
 				autocomplete="off"
 				spellcheck={false}
 			/>
