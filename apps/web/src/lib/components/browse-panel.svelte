@@ -1,11 +1,20 @@
 <script lang="ts" module>
-	export type Sort = 'featured' | 'name' | 'styles' | 'newest' | 'oldest';
+	export type Sort =
+		| 'featured'
+		| 'name'
+		| 'styles'
+		| 'first-newest'
+		| 'first-oldest'
+		| 'release-newest'
+		| 'release-oldest';
 	export const SORT_LABELS: Record<Sort, string> = {
 		featured: 'Featured',
 		name: 'Name',
 		styles: 'Number of styles',
-		newest: 'Newest first',
-		oldest: 'Oldest first'
+		'first-newest': 'First released, newest',
+		'first-oldest': 'First released, oldest',
+		'release-newest': 'Release date, newest',
+		'release-oldest': 'Release date, oldest'
 	};
 </script>
 

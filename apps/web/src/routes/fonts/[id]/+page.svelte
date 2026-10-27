@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { CATEGORIES, WEIGHT_NAMES, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
+	import { CATEGORIES, WEIGHT_NAMES, authors, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
 	import { registerFamily, previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
 	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
-	import { cssApiUrl, SITE_ORIGIN } from '#lib/site.js';
+	import { CONTACT_EMAIL, cssApiUrl, SITE_ORIGIN } from '#lib/site.js';
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
 	import CodeBlock from '#lib/components/code-block.svelte';
@@ -92,7 +92,8 @@
 		(
 			[
 				['Designer', family.designer],
-				['Released', family.year ? String(family.year) : null],
+				['First released', family.firstYear ? String(family.firstYear) : null],
+				['Release date', family.versionYear ? String(family.versionYear) : null],
 				['Manufacturer', family.manufacturer],
 				['Copyright', family.copyright],
 				[
@@ -130,14 +131,24 @@
 	<header class="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
 		<div class="min-w-0">
 			<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{family.name}</h1>
-			<p class="mt-1 text-muted-foreground"><CreditLine {family} fallback={family.source ?? 'Unknown designer'} /></p>
+			<p class="mt-1 text-muted-foreground"><CreditLine {family} /></p>
+			{#if !authors(family).length}
+				<p class="mt-1 text-sm text-pretty text-muted-foreground">
+					We don't know who designed {family.name}. If you do,
+					<a
+						class="underline underline-offset-4 hover:text-foreground"
+						href="mailto:{CONTACT_EMAIL}?subject={encodeURIComponent(`fonts.mv: who designed ${family.name}?`)}"
+						>email us</a
+					> and we'll credit them.
+				</p>
+			{/if}
 			<div class="mt-3 flex flex-wrap items-center gap-2">
 				<Badge variant="secondary">{category}</Badge>
 				<Badge variant="outline">{family.license}</Badge>
 				<span class="text-sm text-muted-foreground"
 					>{family.styles.length}
-					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.year}
-						· {family.year}{/if}</span
+					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.firstYear}{' · '}first released {family.firstYear}{/if}{#if family.versionYear && family.versionYear !== family.firstYear}{' · '}released
+						{family.versionYear}{/if}</span
 				>
 				{#if family.aliases.length}
 					<span class="text-sm text-muted-foreground">· also known as {family.aliases.join(', ')}</span>
