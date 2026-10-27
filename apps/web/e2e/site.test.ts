@@ -203,15 +203,23 @@ test('fonts show and sort by release year', async ({ page, isMobile }) => {
 	await page.goto('/fonts/faruma');
 	await expect(page.getByRole('row', { name: /First released\s*2002/ })).toBeVisible();
 	await page.goto('/fonts/mv-a-waheed');
-	await expect(page.getByRole('row', { name: /This version\s*2015/ })).toBeVisible();
+	await expect(page.getByRole('row', { name: /Release date\s*2015/ })).toBeVisible();
 	await page.goto('/');
 	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
 	await page.getByRole('combobox', { name: 'Sort' }).last().click();
-	await page.getByRole('option', { name: 'Oldest first' }).click();
+	await page.getByRole('option', { name: 'First released, oldest' }).click();
 	if (isMobile) await page.keyboard.press('Escape');
 	// Avas Thaana (1995) is the oldest family on the default shelves (Official, Handwriting).
 	const first = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])').first();
 	await expect(first).toHaveAttribute('href', '/fonts/avas-thaana');
+});
+
+test('fonts with no named designer say so and ask for it', async ({ page }) => {
+	await page.goto('/fonts/thaana');
+	await expect(page.getByText('Unknown author').first()).toBeVisible();
+	await expect(page.getByRole('link', { name: 'email us' })).toHaveAttribute('href', /^mailto:/);
+	await page.goto('/?author=Unknown');
+	await expect(page.getByRole('link', { name: 'Thaana', exact: true })).toBeVisible();
 });
 
 test('guide renders its demos', async ({ page }) => {

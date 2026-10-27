@@ -135,11 +135,20 @@ export function authors(f: Family): string[] {
 	return [...new Set(out.filter(Boolean))];
 }
 
+/** Stands in for an author in the filter when a font names nobody. Sites and archives the
+ *  font came from (dhivehi.mv, dhivehifont.com) aren't authors. */
+export const UNKNOWN_AUTHOR = 'Unknown';
+
+/** The family's authors, or [UNKNOWN_AUTHOR] when it names none. */
+export function authorsOrUnknown(f: Family): string[] {
+	const list = authors(f);
+	return list.length ? list : [UNKNOWN_AUTHOR];
+}
+
 /** The credit line split into plain text and author names, for linking the names. */
 export function creditParts(f: Family): { text: string; author?: string }[] {
-	const line = credit(f);
-	if (!line) return [];
-	if (!meaningful(f.designer)) return [{ text: line }];
+	const line = meaningful(f.designer);
+	if (!line) return [{ text: 'Unknown author', author: UNKNOWN_AUTHOR }];
 	const parts: { text: string; author?: string }[] = [];
 	let rest = line;
 	for (const name of authors(f)) {

@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { CATEGORIES, DEFAULT_CATEGORIES, FEATURED, authors, credit, type Category } from '#lib/catalog.js';
+	import {
+		CATEGORIES,
+		DEFAULT_CATEGORIES,
+		FEATURED,
+		UNKNOWN_AUTHOR,
+		authorsOrUnknown,
+		credit,
+		type Category
+	} from '#lib/catalog.js';
 	import FontRow from '#lib/components/font-row.svelte';
 	import BrowsePanel, { type Sort } from '#lib/components/browse-panel.svelte';
 	import * as Sheet from '#lib/components/ui/sheet/index.js';
@@ -31,8 +39,12 @@
 
 	const authorList = $derived.by(() => {
 		const count = new Map<string, number>();
-		for (const f of data.families) for (const a of authors(f)) count.set(a, (count.get(a) ?? 0) + 1);
-		return [...count].map(([name, n]) => ({ name, count: n })).toSorted((a, b) => a.name.localeCompare(b.name));
+		for (const f of data.families) for (const a of authorsOrUnknown(f)) count.set(a, (count.get(a) ?? 0) + 1);
+		// Alphabetical, with Unknown last.
+		const rank = (n: string) => (n === UNKNOWN_AUTHOR ? 1 : 0);
+		return [...count]
+			.map(([name, n]) => ({ name, count: n }))
+			.toSorted((a, b) => rank(a.name) - rank(b.name) || a.name.localeCompare(b.name));
 	});
 
 	const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
@@ -51,7 +63,7 @@
 			(f) =>
 				// A typed search or an author looks in every category; the filter narrows browsing.
 				(!!q || !!author || categories.length === 0 || categories.includes(f.category)) &&
-				(!author || authors(f).includes(author)) &&
+				(!author || authorsOrUnknown(f).includes(author)) &&
 				(!q ||
 					f.name.toLowerCase().includes(q) ||
 					f.aliases.some((a) => a.toLowerCase().includes(q)) ||
@@ -60,10 +72,13 @@
 		);
 		if (sort === 'name') return list.toSorted(byName);
 		if (sort === 'styles') return list.toSorted((a, b) => b.styles.length - a.styles.length || byName(a, b));
-		// By first release; families without a known year go last either way.
-		if (sort === 'newest') return list.toSorted((a, b) => (b.firstYear ?? 0) - (a.firstYear ?? 0) || byName(a, b));
-		if (sort === 'oldest')
-			return list.toSorted((a, b) => (a.firstYear ?? 9999) - (b.firstYear ?? 9999) || byName(a, b));
+		// Years: first release or this version's release date; unknown years go last either way.
+		const byYear = (key: 'firstYear' | 'versionYear', dir: 1 | -1) =>
+			list.toSorted((a, b) => dir * ((a[key] ?? dir * 9999) - (b[key] ?? dir * 9999)) || byName(a, b));
+		if (sort === 'first-newest') return byYear('firstYear', -1);
+		if (sort === 'first-oldest') return byYear('firstYear', 1);
+		if (sort === 'release-newest') return byYear('versionYear', -1);
+		if (sort === 'release-oldest') return byYear('versionYear', 1);
 		return list.toSorted((a, b) => featuredRank(a.id) - featuredRank(b.id) || byName(a, b));
 	});
 </script>
