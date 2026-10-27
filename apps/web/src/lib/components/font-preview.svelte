@@ -22,9 +22,11 @@
 			(symbols
 				? tester.text && !tester.dv
 					? tester.text
-					: family.chars
-						? [...family.chars].join(' ')
-						: SYMBOL_SAMPLE
+					: family.sample
+						? [family.sample.heading, family.sample.subheading, family.sample.text].filter(Boolean).join(' ')
+						: family.chars
+							? [...family.chars].join(' ')
+							: SYMBOL_SAMPLE
 				: tester.preview)
 	);
 	const style = $derived(family.styles.find((s) => s.weight === weight));
