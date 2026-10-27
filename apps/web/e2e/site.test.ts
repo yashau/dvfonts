@@ -165,6 +165,16 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
 });
 
+test('author names filter the font list', async ({ page }) => {
+	await page.goto('/fonts/mv-a-waheed');
+	await page.getByRole('link', { name: 'Abdulla Waheed' }).first().click();
+	await expect(page).toHaveURL(/\/\?author=Abdulla%20Waheed$/);
+	// MV A Waheed and MV Aammu FK both credit his calligraphy; nothing else does.
+	const rows = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])');
+	await expect(rows).toHaveCount(2);
+	await expect(page.getByRole('link', { name: 'MV Aammu FK', exact: true })).toBeVisible();
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
