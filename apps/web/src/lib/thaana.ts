@@ -1,6 +1,5 @@
 // The site uses the published @yashau/thaana package for all Thaana handling,
 // so what visitors try here is exactly what the npm package does.
-import { PANGRAMS as PANGRAMS_LIST } from '@yashau/thaana';
 
 export {
 	KEYMAP,
@@ -14,7 +13,3 @@ export {
 
 /** Sample for symbol fonts (Bismi): its glyphs live on ASCII keys. */
 export const SYMBOL_SAMPLE = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
-
-export function randomPangram(): string {
-	return PANGRAMS_LIST[Math.floor(Math.random() * PANGRAMS_LIST.length)];
-}

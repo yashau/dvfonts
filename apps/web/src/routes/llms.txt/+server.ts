@@ -22,7 +22,7 @@ export const GET = () => {
 			.filter((f) => f.category === c.id)
 			.map(
 				(f) =>
-					`- ${f.name} — weights ${f.weights.join(', ')}${f.hasLatin ? '' : ', no Latin glyphs'}; license ${f.license}${f.unmodified ? ', shipped unmodified' : ''}${f.aliases.length ? `; also known as ${f.aliases.join(', ')}` : ''}. CSS: ${f.css}`
+					`- [${f.name}](${f.page}) — weights ${f.weights.join(', ')}${f.hasLatin ? '' : ', no Latin glyphs'}; license ${f.license}${f.unmodified ? ', shipped unmodified' : ''}${f.aliases.length ? `; also known as ${f.aliases.join(', ')}` : ''}. CSS: ${f.css}`
 			);
 		return `### ${c.label}\n\n${about[c.id]}\n\n${rows.join('\n')}`;
 	}).join('\n\n');
@@ -31,8 +31,11 @@ export const GET = () => {
 
 > Free Dhivehi (Thaana script, language code "dv") fonts for the web, with a Google-Fonts-compatible CSS API, a drop-in Thaana phonetic keyboard, and the @yashau/thaana packages (vanilla, React, Svelte, Vue) that make Thaana display and input work correctly. ${fams.length} families. Everything below is copy-paste ready; all URLs are absolute.
 
-Machine-readable index of every family (names, weights, CSS URL, file URLs, license, sizeAdjust): ${O}/fonts.json
-Keyboard keymap as JSON: ${O}/keymap.json
+- [fonts.json](${O}/fonts.json): machine-readable index of every family (names, weights, CSS URL, file URLs, license, sizeAdjust)
+- [keymap.json](${O}/keymap.json): the phonetic keyboard's keymap as JSON
+- [Docs](${O}/docs): embedding, the keyboard, packages and helpers, for people
+- [Downloads](${O}/downloads): bundles and one-line installers
+- [Authors](${O}/authors): the designers behind the fonts
 
 ## 1. Use a Dhivehi font on a web page
 

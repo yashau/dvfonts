@@ -14,6 +14,9 @@
 }
 
 :root {
+	/* Default preview size until someone picks one (tester.svelte.ts): CSS, so it's right
+	   before any script runs and phones don't reflow from the desktop size. */
+	--tester-size: 36px;
 	/* Theme comes only from the .dark class (set by mode-watcher before first
 	   paint: system preference by default, or the user's explicit choice). No
 	   prefers-color-scheme rules here, so an explicit choice always wins, and
@@ -194,4 +197,10 @@
 .dark .code-block .shiki,
 .dark .code-block .shiki span {
 	color: var(--shiki-dark);
+}
+
+@media (max-width: 639px) {
+	:root {
+		--tester-size: 20px;
+	}
 }
