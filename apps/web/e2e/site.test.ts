@@ -193,6 +193,10 @@ test('author names filter the font list', async ({ page }) => {
 	const rows = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])');
 	await expect(rows).toHaveCount(2);
 	await expect(page.getByRole('link', { name: 'MV Aammu FK', exact: true })).toBeVisible();
+	// The logo goes back to the whole list.
+	await page.getByRole('link', { name: 'fonts.mv home' }).click();
+	await expect(page).toHaveURL(/\/$/);
+	await expect(rows).not.toHaveCount(2);
 });
 
 test('guide renders its demos', async ({ page }) => {

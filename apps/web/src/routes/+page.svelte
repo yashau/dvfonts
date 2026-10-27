@@ -22,11 +22,11 @@
 
 	let author = $state<string | null>(null);
 
-	// Author names on cards and font pages link to /?author=<name>. Read in an effect,
-	// since the prerendered page has no query string.
+	// Author names on cards and font pages link to /?author=<name>; any other visit to the
+	// list (the logo, the Fonts link) clears it. Read in an effect, since the prerendered
+	// page has no query string.
 	$effect(() => {
-		const a = page.url.searchParams.get('author');
-		if (a !== null) author = a;
+		author = page.url.searchParams.get('author');
 	});
 
 	const authorList = $derived.by(() => {
