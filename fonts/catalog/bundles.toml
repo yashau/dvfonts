@@ -10,8 +10,18 @@
 
 [bundles.essentials]
 name = "Essentials"
-description = "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi font, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows."
-families = ["modfaruma", "faruma", "mv-ilham", "mv-faseyha", "mv-a-waheed", "bismi", "mv-randhoo", "noto-sans-thaana"]
+description = "The fonts Dhivehi documents actually use: ModFaruma and Faruma, MV Ilham, MV Faseyha, MV A Waheed (MV Eamaan XP), the Bismi and A_Nishan symbol fonts, MV Randhoo and Noto Sans Thaana. MV Boli, the other common one, comes with Windows."
+families = [
+	"modfaruma",
+	"faruma",
+	"mv-ilham",
+	"mv-faseyha",
+	"mv-a-waheed",
+	"bismi",
+	"a-nishan",
+	"mv-randhoo",
+	"noto-sans-thaana"
+]
 
 [bundles.full]
 name = "Full suite"
@@ -55,7 +65,17 @@ categories = ["novelty"]
 [bundles.webfonts-essentials]
 name = "Webfont kit (Essentials)"
 description = "The Essentials as WOFF2 with a ready-made fonts.css, for self-hosting."
-families = ["modfaruma", "faruma", "mv-ilham", "mv-faseyha", "mv-a-waheed", "bismi", "mv-randhoo", "noto-sans-thaana"]
+families = [
+	"modfaruma",
+	"faruma",
+	"mv-ilham",
+	"mv-faseyha",
+	"mv-a-waheed",
+	"bismi",
+	"a-nishan",
+	"mv-randhoo",
+	"noto-sans-thaana"
+]
 format = "woff2"
 
 [bundles.webfonts-full]
@@ -69,4 +89,4 @@ description = "Every pre-Unicode font in the archive, exactly as published, with
 format = "legacy"
 # Every file in sources/ without Unicode Thaana, byte for byte, except these.
 # Nothing in this bundle is used anywhere else on the site.
-skip = { "bismi.ttf" = "symbol font, in the catalogue", "a-nishan.ttf" = "a single emblem dingbat, not a text font", "aammu-h-thedhu.ttf" = "removed at the designer's request" }
+skip = { "bismi.ttf" = "symbol font, in the catalogue", "a-nishan.ttf" = "symbol font, in the catalogue", "aammu-h-thedhu.ttf" = "removed at the designer's request" }

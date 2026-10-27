@@ -24,6 +24,7 @@ import shutil
 import sys
 import textwrap
 import tomllib
+import unicodedata
 import zipfile
 from pathlib import Path
 
@@ -495,6 +496,8 @@ def main(only: set[str] | None = None) -> None:
         unmodified = unmodified_reason is not None
         styles, zipbuf = [], io.BytesIO()
         meta = {}
+        chars: set[int] = set()
+        key_glyphs: set[int] = set()
         with zipfile.ZipFile(zipbuf, "w", zipfile.ZIP_DEFLATED) as zf:
             for w, fname in files:
                 weight = int(w)
@@ -530,6 +533,9 @@ def main(only: set[str] | None = None) -> None:
                     desktop_name = f"{re.sub(r'[^A-Za-z0-9]', '', fam['name'])}-{WEIGHT_NAMES[weight]}.ttf"
                 sizes["woff2"] = save(font, outdir / f"{base}.woff2", "woff2")
                 sizes["woff"] = save(font, outdir / f"{base}.woff", "woff")
+                style_chars, style_keys = glyph_inventory(font)
+                chars |= style_chars
+                key_glyphs |= style_keys
                 subsets = {}
                 if not unmodified and fam.get("category") != "symbols":
                     for sname, ranges in SUBSETS.items():
@@ -593,6 +599,8 @@ def main(only: set[str] | None = None) -> None:
                 **display_meta(fam, meta),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
+                "chars": "".join(chr(cp) for cp in sorted(chars)),
+                "keyGlyphs": "".join(chr(cp) for cp in sorted(key_glyphs)),
                 **dict(zip(("firstYear", "versionYear"), release_years(fam, files, older.get(fid, [])), strict=True)),
             }
         )
@@ -696,6 +704,33 @@ def release_years(fam: dict, files: list[tuple[str, str]], older: list[str]) -> 
     latest = [y for ys, stamps, _ in own for y in ys + stamps]
     version = fam.get("versionYear") or max(latest + ([first] if first else []), default=None)
     return first, version
+
+
+def glyph_inventory(font: TTFont) -> tuple[set[int], set[int]]:
+    """Every character the font draws (its cmap, minus spaces and control/format
+    characters), and the keyboard keys (printable ASCII) that carry a drawing far wider
+    than a letter instead of their own symbol, like the Bismillah many Thaana fonts put
+    on ` or ~."""
+    cmap = font.getBestCmap() or {}
+    glyphs = font.getGlyphSet()
+    inked: dict[str, bool] = {}
+
+    def has_ink(name: str) -> bool:
+        if name not in inked:
+            pen = BoundsPen(glyphs)
+            glyphs[name].draw(pen)
+            inked[name] = pen.bounds is not None
+        return inked[name]
+
+    # Mapped characters with an empty glyph (some fonts map U+07B1 to nothing) aren't drawn.
+    chars = {cp for cp, g in cmap.items() if unicodedata.category(chr(cp))[0] not in "ZC" and has_ink(g)}
+    hmtx = font["hmtx"]
+    letters = sorted(hmtx[cmap[cp]][0] for cp in range(0x0780, 0x07A6) if cp in cmap)
+    keys: set[int] = set()
+    if len(letters) >= 10:
+        median = letters[len(letters) // 2]
+        keys = {cp for cp in range(0x21, 0x7F) if cp in cmap and hmtx[cmap[cp]][0] > 3 * median}
+    return chars, keys
 
 
 def display_meta(fam, meta) -> dict:

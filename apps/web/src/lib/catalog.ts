@@ -54,6 +54,10 @@ export interface Family {
 	version: string | null;
 	styles: Style[];
 	zipSize: number;
+	/** Every character the family draws, in code point order. */
+	chars: string;
+	/** Keyboard keys that carry a large drawing (a Bismillah on `, say) instead of their own symbol. */
+	keyGlyphs: string;
 	/** Year the design first came out, from the font files or families.toml; null when unknown. */
 	firstYear: number | null;
 	/** Year of the version shipped here; null when unknown. */
