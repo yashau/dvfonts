@@ -381,13 +381,13 @@ export const AUTHORS: AuthorBio[] = [
 			}
 		],
 		bio: [
-			"Hassan Hameed, usually credited as Dr Hassan Hameed, is a Maldivian educator, writer and Thaana type designer. He studied computer science at the University of Tasmania from 1980, and was studying in New Zealand in 1995. He worked at the Maldives College of Higher Education and its successor, the Maldives National University (MNU), from 1998, served as Rector of the college, and was elected the university's Vice-Chancellor in 2011. He resigned in July 2015 after amendments to the national university law. In August 2019 he was appointed Chancellor of MNU.",
+			"Dr Hassan Hameed is a Maldivian educator, writer and Thaana type designer. He studied computer science at the University of Tasmania from 1980, and was studying in New Zealand in 1995. He worked at the Maldives College of Higher Education and its successor, the Maldives National University (MNU), from 1998, served as Rector of the college, and was elected the university's Vice-Chancellor in 2011. He resigned in July 2015 after amendments to the national university law. In August 2019 he was appointed Chancellor of MNU.",
 			"Hameed began making Thaana fonts in the mid-1990s, working with Hassan Shujau and the calligrapher Abdulla Waheed of the President's Office. Their pre-Unicode fonts from 1995 and 1996, such as A_Faseyha, A_Randhoo, A_Utheem and A_Waheed, were based on Waheed's handwriting. From 2015 he reworked these designs as Unicode fonts with OpenType features under the MV prefix, among them MV A Waheed and MV Aammu FK, a heavy display face widely used for newspaper headlines.",
 			'He has released about 35 fonts over some 30 years, and his fonts are widely used by Maldivian online newspapers. MV Funa began as a font he released in 1999 with a Thaana word-processing program and later used for MNU publications; it was later published in four weights. He also made the Thaana for MV Oswald and MV Open Condensed, pairing it with existing Latin typefaces.',
 			'Beyond type design, Hameed writes on the Dhivehi language, the history of Thaana and Thaana typography, engineering, education and the history of MNU, and publishes much of this work on his website. In 2000 he presented the paper "Gabulhi Thaana: A challenge for information technology" at a writers\' conference held by the National Centre for Linguistic and Historical Research.'
 		],
 		excerpt:
-			'Hassan Hameed, usually credited as Dr Hassan Hameed, is a Maldivian educator, writer and Thaana type designer. He began making Thaana fonts in the mid-1990s, and his designs include MV A Waheed, MV Aammu FK, MV Faseyha and MV Funa.',
+			'Dr Hassan Hameed is a Maldivian educator, writer and Thaana type designer. He began making Thaana fonts in the mid-1990s, and his designs include MV A Waheed, MV Aammu FK, MV Faseyha and MV Funa.',
 		sources: [
 			{
 				title: 'Thaana fonts – hassanhameed.com',
