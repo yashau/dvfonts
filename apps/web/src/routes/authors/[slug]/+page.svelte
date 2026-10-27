@@ -32,7 +32,7 @@
 		<aside class="lg:order-2">
 			<Card.Root class="gap-4 lg:sticky lg:top-20">
 				<Card.Header class="items-center text-center">
-					<Avatar.Root class="mx-auto size-40 rounded-lg">
+					<Avatar.Root class="mx-auto size-40 rounded-lg after:rounded-lg">
 						<Avatar.Fallback class="rounded-lg"><UserRoundIcon class="size-16 text-muted-foreground" /></Avatar.Fallback
 						>
 					</Avatar.Root>
@@ -45,7 +45,7 @@
 					<Table.Root>
 						<Table.Body>
 							<Table.Row>
-								<Table.Head class="pl-6 align-top">Known as</Table.Head>
+								<Table.Head class="pl-6 align-top">Occupation</Table.Head>
 								<Table.Cell class="pr-6 whitespace-normal">{bio.role}</Table.Cell>
 							</Table.Row>
 							{#if bio.born}

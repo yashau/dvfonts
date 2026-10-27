@@ -52,7 +52,7 @@
 							<a href="/authors/{a.bio!.slug}" class="after:absolute after:inset-0">{a.name}</a>
 						</Card.Title>
 						{#if a.bio!.thaana}
-							<p class="mt-1 text-lg leading-snug" dir="rtl" lang="dv" style:font-family={THAANA_NAME_FONT}>
+							<p class="mt-1 text-left text-xl leading-snug" dir="rtl" lang="dv" style:font-family={THAANA_NAME_FONT}>
 								{a.bio!.thaana}
 							</p>
 						{/if}
