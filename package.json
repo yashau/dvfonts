@@ -1,17 +1,17 @@
 {
-	"name": "dvfonts",
+	"name": "fonts.mv",
 	"private": true,
 	"description": "Open Dhivehi fonts for the web, and the @yashau/thaana packages that make Thaana work everywhere.",
 	"type": "module",
 	"scripts": {
-		"build": "pnpm -r --filter './packages/*' run build && pnpm --filter @dvfonts/web run build",
+		"build": "pnpm -r --filter './packages/*' run build && pnpm --filter @fonts.mv/web run build",
 		"build:packages": "pnpm -r --filter './packages/*' run build",
-		"check": "pnpm run build:packages && pnpm --filter @dvfonts/web run check",
+		"check": "pnpm run build:packages && pnpm --filter @fonts.mv/web run check",
 		"test": "pnpm -r --filter './packages/*' run test",
 		"lint": "oxlint && oxfmt --check",
 		"format": "oxfmt",
-		"dev": "pnpm run build:packages && pnpm --filter @dvfonts/web run dev",
-		"deploy": "pnpm run build && pnpm --filter @dvfonts/web run deploy"
+		"dev": "pnpm run build:packages && pnpm --filter @fonts.mv/web run dev",
+		"deploy": "pnpm run build && pnpm --filter @fonts.mv/web run deploy"
 	},
 	"devDependencies": {
 		"oxfmt": "^0.74.0",

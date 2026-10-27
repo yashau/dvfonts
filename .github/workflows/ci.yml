@@ -145,7 +145,7 @@ jobs:
           print(len(entries), "objects")
           PY
           cd apps/web
-          pnpm exec wrangler r2 bulk put dvfonts-static --filename ../../fonts/build/r2-bulk.json --local --force
+          pnpm exec wrangler r2 bulk put fonts-mv-static --filename ../../fonts/build/r2-bulk.json --local --force
 
       # No browser install: Playwright drives the Google Chrome that GitHub's
       # ubuntu-24.04 image already has (channel: 'chrome' in playwright.config.ts).
@@ -153,7 +153,7 @@ jobs:
         timeout-minutes: 8
         run: |
           google-chrome --version
-          pnpm --filter @dvfonts/web run test:e2e
+          pnpm --filter @fonts.mv/web run test:e2e
 
       - name: Upload screenshots
         if: always()

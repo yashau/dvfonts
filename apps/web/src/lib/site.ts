@@ -3,7 +3,7 @@
 export const SITE_ORIGIN = 'https://fonts.mv';
 
 /** The open-source repository behind the site, fonts pipeline and packages. */
-export const REPO_URL = 'https://github.com/yashau/dvfonts';
+export const REPO_URL = 'https://github.com/yashau/fonts.mv';
 
 /** Google-Fonts-style CSS API URL: /css2?family=Name:wght@400;700&display=swap */
 export function cssApiUrl(

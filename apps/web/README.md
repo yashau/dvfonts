@@ -1,4 +1,4 @@
-# @dvfonts/web
+# @fonts.mv/web
 
 The fonts.mv site: SvelteKit 3 on a Cloudflare Worker (static assets for pages and fonts, Worker routes for the `/css2` API and `/downloads` from R2).
 

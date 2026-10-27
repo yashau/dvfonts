@@ -18,7 +18,7 @@
 	"author": "Ibrahim Yashau",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/yashau/dvfonts.git",
+		"url": "git+https://github.com/yashau/fonts.mv.git",
 		"directory": "packages/vue"
 	},
 	"files": [
