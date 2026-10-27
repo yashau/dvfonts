@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { authorBio, correctionsMailto, THAANA_NAME_CSS, THAANA_NAME_FONT } from '#lib/authors.js';
+	import { authorBio, correctionsMailto } from '#lib/authors.js';
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as Avatar from '#lib/components/ui/avatar/index.js';
 	import { Badge } from '#lib/components/ui/badge/index.js';
@@ -29,7 +29,6 @@
 <svelte:head>
 	<title>Authors — fonts.mv</title>
 	<meta name="description" content="The designers, calligraphers and studios behind the Dhivehi fonts on fonts.mv." />
-	<link rel="stylesheet" href={THAANA_NAME_CSS} />
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -51,11 +50,6 @@
 							<!-- Stretched link: the whole tile opens the page. -->
 							<a href="/authors/{a.bio!.slug}" class="after:absolute after:inset-0">{a.name}</a>
 						</Card.Title>
-						{#if a.bio!.thaana}
-							<p class="mt-1 text-left text-xl leading-snug" dir="rtl" lang="dv" style:font-family={THAANA_NAME_FONT}>
-								{a.bio!.thaana}
-							</p>
-						{/if}
 					</div>
 				</Card.Header>
 				<Card.Content class="flex flex-1 flex-col gap-3">
