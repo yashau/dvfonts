@@ -244,6 +244,20 @@ test('a non-default category set opens the categories', async ({ page, isMobile 
 	await expect(page.getByRole('button', { name: 'Categories' }).last()).toHaveAttribute('aria-expanded', 'true');
 });
 
+test('sitemap lists the pages, fonts and authors', async ({ request }) => {
+	const res = await request.get('/sitemap.xml');
+	expect(res.ok()).toBe(true);
+	const xml = await res.text();
+	for (const loc of [
+		'https://fonts.mv/',
+		'https://fonts.mv/fonts/faruma',
+		'https://fonts.mv/authors/hassan-hameed',
+		'https://fonts.mv/docs/thaana'
+	])
+		expect(xml).toContain(`<loc>${loc}</loc>`);
+	expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://fonts.mv/sitemap.xml');
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
