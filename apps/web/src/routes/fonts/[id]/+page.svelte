@@ -92,7 +92,11 @@
 		(
 			[
 				['Designer', family.designer],
-				['First released', family.firstYear ? String(family.firstYear) : null],
+				// The first release only when it differs from this one.
+				[
+					'First released',
+					family.firstYear && family.firstYear !== family.versionYear ? String(family.firstYear) : null
+				],
 				['Release date', family.versionYear ? String(family.versionYear) : null],
 				['Manufacturer', family.manufacturer],
 				['Copyright', family.copyright],
@@ -147,7 +151,9 @@
 				<Badge variant="outline">{family.license}</Badge>
 				<span class="text-sm text-muted-foreground"
 					>{family.styles.length}
-					{family.styles.length === 1 ? 'style' : 'styles'}{#if family.firstYear}{' · '}first released {family.firstYear}{/if}{#if family.versionYear && family.versionYear !== family.firstYear}{' · '}released
+					{family.styles.length === 1
+						? 'style'
+						: 'styles'}{#if family.firstYear && family.firstYear !== family.versionYear}{' · '}first released {family.firstYear}{/if}{#if family.versionYear}{' · '}released
 						{family.versionYear}{/if}</span
 				>
 				{#if family.aliases.length}
