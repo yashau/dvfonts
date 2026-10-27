@@ -116,7 +116,7 @@ useDhivehiFont('Faruma');
 - **Sorted by use:** Official (document faces in the Faruma tradition), Handwriting, Artistic, Modern and Novelty. The browse page opens on Official and Handwriting; a search looks in every category.
 - **Search by any name.** Old names and duplicates are aliases (`A_Waheed` finds MV A Waheed).
 - **Type tester** with live preview, like Google Fonts, that gets RTL, punctuation and brackets right, and can show every font at the same letter size.
-- **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits), plus a Legacy bundle of the original pre-Unicode files for opening old documents.
+- **Download anything:** single styles (TTF/OTF/WOFF2), whole families, or bundles (Essentials, Full suite, Unicode originals, Openly licensed, by category, webfont kits), plus a Legacy bundle of the original pre-Unicode files for opening old documents. Desktop bundles also install with one command: `curl -fsSL https://fonts.mv/install/essentials.sh | sh` on macOS and Linux, `irm https://fonts.mv/install/essentials.ps1 | iex` in PowerShell.
 
 </td>
 <td width="50%" valign="top">
