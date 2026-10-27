@@ -29,6 +29,7 @@ fonts = { 400 = "faruma.ttf" }
 
 [families.mv-a-waheed]
 name = "MV A Waheed"
+designer = "Hassan Hameed (calligraphy by Abdulla Waheed)"
 unmodified = true
 category = "official"
 aliases = ["A_Waheed", "MV Waheed", "Mv Eamaan XP"]
@@ -36,6 +37,7 @@ fonts = { 400 = "mvawaheed.ttf" }
 
 [families.mv-funa]
 name = "MV Funa"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 notes = "Based on the handwriting in Viyafaari Miadhu (1968). Its OpenType features are tested in Microsoft Word; some, like the raised Thaana full stop, don't work in Adobe InDesign or other apps."
@@ -43,6 +45,7 @@ fonts = { 300 = "mv-funa-light.ttf", 400 = "mv-funa-regular.ttf", 700 = "mv-funa
 
 [families.mv-faseyha]
 name = "MV Faseyha"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 aliases = ["A_Faseyha", "AFaseyha", "Dhivehi", "Mv Amaan XP"]
@@ -50,6 +53,7 @@ fonts = { 400 = "faseyha-reg-hinted-v2.ttf", 700 = "faseyha-bld-hinted-v2.ttf" }
 
 [families.mv-faseyha-au]
 name = "MV Faseyha Au"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 notes = "Hassan Hameed's revision of MV Faseyha with an improved fili system."
@@ -57,6 +61,7 @@ fonts = { 400 = "mv-faseyha-au-rgl-h.ttf" }
 
 [families.mv-ilham]
 name = "MV Ilham"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 aliases = ["A_Ilham", "AIlham"]
@@ -64,6 +69,7 @@ fonts = { 400 = "mvilhamregular.ttf", 700 = "mvilhambold.ttf" }
 
 [families.mv-randhoo]
 name = "MV Randhoo"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 aliases = ["A_Randhoo", "RandhooP"]
@@ -71,6 +77,7 @@ fonts = { 400 = "randhoo-reg-hinted.ttf" }
 
 [families.mv-utheemu]
 name = "MV Utheemu"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 aliases = ["A_Utheem"]
@@ -85,6 +92,7 @@ fonts = { 400 = "reethi.ttf" }
 
 [families.mv-aammu-fk]
 name = "MV Aammu FK"
+designer = "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)"
 unmodified = true
 category = "official"
 aliases = ["AammuFK", "Aammu F Thedhu", "Aammu F Rasmy"]
@@ -92,18 +100,21 @@ fonts = { 700 = "aammufkf.ttf" }
 
 [families.mv-kelaa]
 name = "MV Kelaa"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 fonts = { 400 = "mv-kelaa-reg-v1-h.ttf", 700 = "mv-kelaa-bold-v1-h.ttf" }
 
 [families.mv-vaadhoo]
 name = "MV Vaadhoo"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 fonts = { 400 = "mv-vaadhoo-reg-v1.0-hinted.ttf", 700 = "mv-vaadhoo-bd-v1.0-hinted.ttf" }
 
 [families.mv-typewriter]
 name = "MV Typewriter"
+designer = "Hassan Hameed"
 unmodified = true
 category = "official"
 fonts = { 400 = "mvtyper.ttf", 600 = "mvtypewriter-semibold.ttf", 700 = "mvtypebold.ttf" }
@@ -271,6 +282,7 @@ fonts = { 100 = "fanaragolhi-thin.ttf", 200 = "fanaragolhi-extralight.ttf", 300 
 
 [families.mv-koagannu]
 name = "MV Koagannu"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 aliases = ["A_Koagannu"]
@@ -278,6 +290,7 @@ fonts = { 700 = "mvkoagannu.ttf" }
 
 [families.mv-midhili]
 name = "MV Midhili"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 aliases = ["A_Midhili"]
@@ -285,6 +298,7 @@ fonts = { 700 = "midhilibold.ttf" }
 
 [families.mv-raadhavalhi]
 name = "MV Raadhavalhi"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 aliases = ["A_Raadhavalhi"]
@@ -292,48 +306,56 @@ fonts = { 400 = "mvraadha-regular.ttf", 700 = "mvraadha-bold.ttf" }
 
 [families.mv-nasri]
 name = "MV Nasri"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvnasri-reg.ttf", 700 = "mvnasri-bld.ttf" }
 
 [families.mv-uligamu]
 name = "MV Uligamu"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvuligamu.ttf" }
 
 [families.mv-open-condensed]
 name = "MV Open Condensed"
+designer = "Hassan Hameed (Thaana)"
 unmodified = true
 category = "modern"
 fonts = { 700 = "mvopencondensed-bold.ttf" }
 
 [families.mv-aka-light]
 name = "MV Aka Light"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 300 = "mv-akalight-regular.ttf" }
 
 [families.mv-oswald]
 name = "MV Oswald"
+designer = "Hassan Hameed (Thaana), Vernon Adams (Latin)"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mv-oswald-reg.ttf" }
 
 [families.mv-thuththu-neo]
 name = "MV Thuththu Neo"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
 
 [families.mv-maliku]
 name = "MV Maliku"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mv-maliku.ttf" }
 
 [families.mv-thuththu]
 name = "MV Thuththu"
+designer = "Hassan Hameed"
 unmodified = true
 category = "modern"
 fonts = { 700 = "mvthuththu-bld.ttf" }
@@ -464,12 +486,14 @@ fonts = { 400 = "lcdthaana-regular.ttf" }
 
 [families.mv-thaana-matrix-8]
 name = "MV Thaana Matrix 8"
+designer = "Hassan Hameed"
 unmodified = true
 category = "artistic"
 fonts = { 400 = "mv-thaana-dotmatrix-8.ttf" }
 
 [families.mv-thaana-matrix-16]
 name = "MV Thaana Matrix 16"
+designer = "Hassan Hameed"
 unmodified = true
 category = "artistic"
 fonts = { 400 = "mv-thaana-dotmatrix-16.ttf" }

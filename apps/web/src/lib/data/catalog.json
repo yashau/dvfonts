@@ -3372,7 +3372,7 @@
    "upstream": "https://www.hassanhameed.com/thaana-fonts/a_waheed/",
    "attribution": "[catalogue page](https://www.hassanhameed.com/thaana-fonts/a_waheed/)",
    "copyright": "The Thaana outlines are copyright.",
-   "designer": "Dr Hassan Hameed",
+   "designer": "Hassan Hameed (calligraphy by Abdulla Waheed)",
    "manufacturer": "Hassan Hameed. Reworked in November 2015",
    "description": "This font is suitable for writing between 18 and 50 points. For large sizes use Aammu FK. In elegant typography, fonts have to be made for specific sizes.",
    "vendorUrl": "www.hassanhameed.com",
@@ -3409,7 +3409,7 @@
      "sizeAdjust": 0.978
     }
    ],
-   "zipSize": 40695
+   "zipSize": 40704
   },
   {
    "id": "mv-aammu-fk",
@@ -3429,7 +3429,7 @@
    "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-aammufk/",
    "attribution": "[catalogue page](https://www.hassanhameed.com/thaana-fonts/mv-aammufk/)",
    "copyright": "© 2000 Hassan Hameed.",
-   "designer": "Calligraphy: Abdulla Waheed, Eydhafushi",
+   "designer": "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)",
    "manufacturer": "Hassan Hameed",
    "description": "Copyright (c) 1996-2015 by Hassan Hameed. All rights reserved.",
    "vendorUrl": "www.hassanhameed.com",
@@ -3466,7 +3466,7 @@
      "sizeAdjust": 0.913
     }
    ],
-   "zipSize": 40687
+   "zipSize": 40692
   },
   {
    "id": "mv-aka-light",
@@ -3482,7 +3482,7 @@
    "upstream": "https://www.hassanhameed.com/?page_id=17283",
    "attribution": "[catalogue page](https://www.hassanhameed.com/?page_id=17283)",
    "copyright": "http://www.hassanhameed.com",
-   "designer": "Thaana glyphs designed by Hassan Hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "http://www.hassanhameed.com",
    "description": "MV Aka is a square-based Thaana font meant for body text. This font is a precursor to promote an improved method of writing.",
    "vendorUrl": "http://www.hassanhameed.com",
@@ -3519,7 +3519,7 @@
      "sizeAdjust": 0.803
     }
    ],
-   "zipSize": 92121
+   "zipSize": 92106
   },
   {
    "id": "mv-akson",
@@ -6137,7 +6137,7 @@
    "upstream": "https://www.hassanhameed.com/?page_id=1691",
    "attribution": "[catalogue page](https://www.hassanhameed.com/?page_id=1691)",
    "copyright": "© 2000 Hassan Hameed.",
-   "designer": "hassan hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "Hassan Hameed",
    "description": "Copyright (c) 1995 — 2016 Hassan Hameed All rights reserved.",
    "vendorUrl": null,
@@ -6169,7 +6169,7 @@
      "sizeAdjust": 0.792
     }
    ],
-   "zipSize": 32935
+   "zipSize": 32930
   },
   {
    "id": "mv-lady-luck",
@@ -6690,7 +6690,7 @@
    "upstream": "https://www.dhivehi.mv/fonts/data/et/A_Midhili.otf",
    "attribution": "[catalogue page](https://www.dhivehi.mv/fonts/data/et/A_Midhili.otf)",
    "copyright": "© 1995 Hassan Hameed.",
-   "designer": "hassan hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "Hassan Hameed",
    "description": "Copyright (c) 1998 — 2016 Hassan Hameed All rights reserved.",
    "vendorUrl": null,
@@ -6722,7 +6722,7 @@
      "sizeAdjust": 0.943
     }
    ],
-   "zipSize": 34222
+   "zipSize": 34218
   },
   {
    "id": "mv-nasri",
@@ -6916,7 +6916,7 @@
    "upstream": "https://bit.ly/2M4IetM",
    "attribution": "[catalogue page](https://bit.ly/2M4IetM)",
    "copyright": "Thaana created by Hassan Hameed May 2020",
-   "designer": null,
+   "designer": "Hassan Hameed (Thaana)",
    "manufacturer": "Thaana created by Hassan Hameed",
    "description": null,
    "vendorUrl": "www.hassanhameed.com",
@@ -6948,7 +6948,7 @@
      "sizeAdjust": 0.894
     }
    ],
-   "zipSize": 27503
+   "zipSize": 27515
   },
   {
    "id": "mv-osho",
@@ -7018,7 +7018,7 @@
    "upstream": "https://www.hassanhameed.com/?page_id=12764",
    "attribution": "[catalogue page](https://www.hassanhameed.com/?page_id=12764)",
    "copyright": "© 2010-13 Vernon Adams. Thaana glyphs added by Dr Hassan Hameed, 28th August 2018.",
-   "designer": "Vernon Adams",
+   "designer": "Hassan Hameed (Thaana), Vernon Adams (Latin)",
    "manufacturer": "Vernon Adams",
    "description": "Copyright (c) 2010-13 by Vernon Adam. Thaana glyphs added by Dr Hassan Hameed, 28th August 2018.",
    "vendorUrl": "code.newtypography.co.uk",
@@ -7050,7 +7050,7 @@
      "sizeAdjust": 1.011
     }
    ],
-   "zipSize": 62236
+   "zipSize": 62246
   },
   {
    "id": "mv-prathama-dva",
@@ -7339,7 +7339,7 @@
    "upstream": "https://hassanhameed.com/thaana-fonts/thaana-font-mv-randhoo/",
    "attribution": "[catalogue page](https://www.hassanhameed.com/thaana-fonts/thaana-font-mv-randhoo/)",
    "copyright": "© 1998 Hassan Hameed.",
-   "designer": "H Hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "Hassan Hameed",
    "description": "MV Randhoo was released as version 2 in 1998. First released for Accent Express. This font is named after Addu Atoll Maarandhooo. The initial three letters were dropped for brevity. May 28, 1998 was the date on which the PageMaker version was released. This OpenType version is dated August 8, 2017. Rufiyaa symbol included 13 April 2025.",
    "vendorUrl": "www.hassanhameed.com",
@@ -7371,7 +7371,7 @@
      "sizeAdjust": 1.014
     }
    ],
-   "zipSize": 42399
+   "zipSize": 42395
   },
   {
    "id": "mv-reyo",
@@ -8120,7 +8120,7 @@
    "upstream": "https://www.hassanhameed.com/thaana-fonts/making-a-thaana-dot-matrix-font/",
    "attribution": "[catalogue page](https://www.hassanhameed.com/thaana-fonts/making-a-thaana-dot-matrix-font/)",
    "copyright": null,
-   "designer": null,
+   "designer": "Hassan Hameed",
    "manufacturer": null,
    "description": "Thaana text by Hassan Hameed",
    "vendorUrl": null,
@@ -8157,7 +8157,7 @@
      "sizeAdjust": 0.628
     }
    ],
-   "zipSize": 39736
+   "zipSize": 39743
   },
   {
    "id": "mv-thaanarabi",
@@ -8485,7 +8485,7 @@
    "upstream": "https://www.hassanhameed.com/?page_id=11718",
    "attribution": "[catalogue page](https://www.hassanhameed.com/?page_id=11718)",
    "copyright": "© 2018 Hassan Hameed",
-   "designer": "H Hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "Hassan Hameed",
    "description": null,
    "vendorUrl": "http://www.hassanhameed.com",
@@ -8539,7 +8539,7 @@
      "sizeAdjust": 0.938
     }
    ],
-   "zipSize": 63768
+   "zipSize": 63766
   },
   {
    "id": "mv-typewriter",
@@ -8697,7 +8697,7 @@
    "upstream": "https://www.hassanhameed.com/thaana-fonts/mv-utheemu/",
    "attribution": "[catalogue page](https://www.hassanhameed.com/thaana-fonts/mv-utheemu/)",
    "copyright": "© 1996 Hassan Hameed.",
-   "designer": "H Hameed",
+   "designer": "Hassan Hameed",
    "manufacturer": "Hassan Hameed",
    "description": "The bold version of this font was designed in 1996 for release with Accent Express. It is based on the calligraphy of Abdulla Waheed. The regular version is by Dr H Hameed. Some are glyphs of the bold form but most are optimized for screen departing from the bold form.",
    "vendorUrl": "www.hassanhameed.com",
@@ -8751,7 +8751,7 @@
      "sizeAdjust": 0.98
     }
    ],
-   "zipSize": 67112
+   "zipSize": 67109
   },
   {
    "id": "mv-vaadhoo",
