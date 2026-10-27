@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Displaying Thaana well — dvfonts</title>
+	<title>Displaying Thaana well — fonts.mv</title>
 	<meta
 		name="description"
 		content="Everything that goes wrong with Dhivehi (Thaana) on the web, and the fix for each: direction, numbers, brackets, punctuation, fonts, inputs, PDFs."
@@ -198,7 +198,7 @@
 			<CodeBlock
 				title="HTML"
 				lang="html"
-				code={`<script type="module" src="https://dvfonts.yashau.com/thaana.js">${SCRIPT_END}\n<input data-thaana>`}
+				code={`<script type="module" src="https://fonts.mv/thaana.js">${SCRIPT_END}\n<input data-thaana>`}
 			/>
 		</div>
 		<p class="mt-2 text-sm text-muted-foreground">

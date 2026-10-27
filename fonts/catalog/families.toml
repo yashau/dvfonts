@@ -1,4 +1,4 @@
-# dvfonts catalogue — the single hand-curated source of truth.
+# fonts.mv catalogue — the single hand-curated source of truth.
 #
 # Each [families.<id>] is one family on the site. `fonts` maps a CSS weight to a
 # file in sources/. Legacy (pre-Unicode, ASCII-slot) fonts are detected from

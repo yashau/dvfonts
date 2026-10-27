@@ -141,7 +141,7 @@ ${SCRIPT_END}
 </script>
 
 <svelte:head>
-	<title>Docs — dvfonts</title>
+	<title>Docs — fonts.mv</title>
 	<meta
 		name="description"
 		content="Embed Dhivehi fonts with one link tag, add a Thaana keyboard to any input, and the @yashau/thaana packages for React, Svelte and Vue."
@@ -327,7 +327,7 @@ ${SCRIPT_END}
 	<h3 id="own-files" class="mt-6 mb-3 scroll-mt-20 text-lg font-semibold tracking-tight">With the packages</h3>
 	<p class="mb-4 text-muted-foreground">
 		Pass the URLs of your copies by weight. The packages then register the font from your files and load nothing from
-		dvfonts. For <code>normalize</code>, also pass the family's <code>sizeAdjust</code> from
+		fonts.mv. For <code>normalize</code>, also pass the family's <code>sizeAdjust</code> from
 		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>.
 	</p>
 	<div class="flex flex-col gap-3">

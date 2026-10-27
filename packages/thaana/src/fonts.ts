@@ -1,9 +1,9 @@
 /**
- * Load Dhivehi fonts from dvfonts (Google-Fonts-compatible CSS API), or from
- * your own copies of the files (`files`), in which case nothing is fetched from dvfonts.
+ * Load Dhivehi fonts from fonts.mv (Google-Fonts-compatible CSS API), or from
+ * your own copies of the files (`files`), in which case nothing is fetched from fonts.mv.
  */
 
-export const DVFONTS_ORIGIN = 'https://dvfonts.yashau.com';
+export const DVFONTS_ORIGIN = 'https://fonts.mv';
 
 export interface FontRequest {
 	/** Family name, e.g. "Faruma" or "MV Faseyha" (old names like "A_Waheed" work too). */
@@ -12,7 +12,7 @@ export interface FontRequest {
 	weights?: number[];
 	/**
 	 * Your own copies of the font files, by weight: `{ 400: '/fonts/faruma-400.woff2' }`.
-	 * With these the family is registered from your URLs and nothing is loaded from dvfonts.
+	 * With these the family is registered from your URLs and nothing is loaded from fonts.mv.
 	 * Download the files from the family's page or fonts.json (WOFF2 recommended).
 	 */
 	files?: Record<number, string>;
@@ -23,7 +23,7 @@ export interface FontRequest {
 export interface FontCssOptions {
 	/** CSS font-display. Default: 'swap'. */
 	display?: string;
-	/** Where dvfonts lives. Default: https://dvfonts.yashau.com */
+	/** Where fonts.mv lives. Default: https://fonts.mv */
 	origin?: string;
 	/** Scale each family (CSS size-adjust) so its Thaana letters are as tall as
 	 *  Faruma's at the same font-size. The font files are unchanged. Default: false. */
@@ -64,7 +64,7 @@ function source(url: string): string {
 
 /**
  * @font-face CSS for your own copies of the files (requests with `files`), to put in a
- * stylesheet instead of loading anything from dvfonts.
+ * stylesheet instead of loading anything from fonts.mv.
  *
  *   fontFaceCss({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })
  */
@@ -111,7 +111,7 @@ function addFace(req: FontRequest, weight: number, url: string, display: string,
 
 /**
  * Load the given families and resolve when they're ready to draw with. Families with
- * `files` are registered from your URLs; the others come from the dvfonts stylesheet,
+ * `files` are registered from your URLs; the others come from the fonts.mv stylesheet,
  * added to <head> once per URL. Use the family name in CSS afterwards:
  * font-family: 'Faruma', system-ui, sans-serif.
  */

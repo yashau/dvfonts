@@ -10,8 +10,25 @@
 	},
 	// All binaries (fonts/…, downloads/…) live in R2; built by fonts/scripts, uploaded by deploy.yml.
 	"r2_buckets": [{ "binding": "STATIC", "bucket_name": "dvfonts-static" }],
-	// Must match SITE_ORIGIN in src/lib/site.ts and DVFONTS_ORIGIN in @yashau/thaana.
-	"routes": [{ "pattern": "dvfonts.yashau.com", "custom_domain": true }],
+	// fonts.mv must match SITE_ORIGIN in src/lib/site.ts and DVFONTS_ORIGIN in @yashau/thaana.
+	// dvfonts.yashau.com, the old domain, stays attached so its DNS record lives on; a Cloudflare
+	// redirect rule (301) sends it to fonts.mv. Prerendered pages are static assets the Worker
+	// never sees, so the redirect can't live here.
+	"routes": [
+		{ "pattern": "fonts.mv", "custom_domain": true },
+		{ "pattern": "dvfonts.yashau.com", "custom_domain": true }
+	],
+	// `wrangler deploy --env preview` (.github/workflows/preview.yml): a separate Worker for
+	// trying a PR at br-dvfonts.yashau.com. It reads the production bucket and never writes it.
+	"env": {
+		"preview": {
+			"name": "dvfonts-preview",
+			"routes": [{ "pattern": "br-dvfonts.yashau.com", "custom_domain": true }],
+			"r2_buckets": [{ "binding": "STATIC", "bucket_name": "dvfonts-static" }],
+			"workers_dev": false,
+			"preview_urls": false
+		}
+	},
 	"workers_dev": true,
 	"preview_urls": true,
 	"observability": { "enabled": true }

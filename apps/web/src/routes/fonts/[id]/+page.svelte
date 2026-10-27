@@ -116,7 +116,7 @@
 </script>
 
 <svelte:head>
-	<title>{family.name} — dvfonts</title>
+	<title>{family.name} — fonts.mv</title>
 	<meta
 		name="description"
 		content="{family.name}: free Dhivehi font{family.styles.length > 1
@@ -250,8 +250,8 @@
 				<CodeBlock title="Then use" lang="css" code={cssSnippet} />
 				<CodeBlock title="Or host the files yourself" lang="javascript" code={ownSnippet} />
 				<p class="text-sm text-muted-foreground">
-					Download the WOFF2 files above and the packages load them from your server, with nothing from dvfonts. More in
-					the <a class="underline underline-offset-4" href="/docs#own-files">docs</a>.
+					Download the WOFF2 files above and the packages load them from your server, with nothing from fonts.mv. More
+					in the <a class="underline underline-offset-4" href="/docs#own-files">docs</a>.
 				</p>
 			</Card.Content>
 		</Card.Root>
@@ -292,7 +292,7 @@
 
 				<Alert.Root>
 					<WrenchIcon />
-					<Alert.Title>What dvfonts changed</Alert.Title>
+					<Alert.Title>What fonts.mv changed</Alert.Title>
 					<Alert.Description>
 						<ul class="list-disc space-y-1 pl-4">
 							{#each changes as c (c)}<li>{c}</li>{/each}

@@ -1,7 +1,7 @@
 """Legacy (pre-Unicode) Thaana keyboard layouts: ASCII char -> Unicode char.
 
 Single source of truth is packages/thaana/src/legacy-layouts.json, shared with
-the JS legacy-text converter (@dvfonts/thaana convertLegacy).
+the JS legacy-text converter (@yashau/thaana convertLegacy).
 
 typewriter: the "A_" font layout. Recovered by matching A_Waheed's outlines
             against MV A Waheed (scripts/combo_match.py) and checked visually.

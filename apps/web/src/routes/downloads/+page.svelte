@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head>
-	<title>Downloads — dvfonts</title>
+	<title>Downloads — fonts.mv</title>
 	<meta
 		name="description"
 		content="Download Dhivehi font collections as zip files: essentials, full suite, by category, as a webfont kit, or the original pre-Unicode fonts."

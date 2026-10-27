@@ -9,6 +9,7 @@
 	import Logo from '#lib/components/logo.svelte';
 	import { REPO_URL } from '#lib/site.js';
 	import MenuIcon from '@lucide/svelte/icons/menu';
+	import XIcon from '@lucide/svelte/icons/x';
 
 	const links = [
 		{ href: '/', label: 'Fonts' },
@@ -23,12 +24,9 @@
 		href === '/' ? page.url.pathname === '/' : page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
 </script>
 
-<header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
+<header class="sticky top-0 border-b bg-background/85 backdrop-blur {open ? 'pointer-events-auto z-[60]' : 'z-40'}">
 	<div class="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-		<a href="/" class="shrink-0" aria-label="dvfonts home">
-			<Logo class="h-7 w-auto" />
-		</a>
-		<NavigationMenu.Root class="ml-auto hidden md:flex" viewport={false}>
+		<NavigationMenu.Root class="hidden md:flex" viewport={false}>
 			<NavigationMenu.List>
 				{#each links as link (link.href)}
 					<NavigationMenu.Item>
@@ -42,7 +40,7 @@
 				{/each}
 			</NavigationMenu.List>
 		</NavigationMenu.Root>
-		<div class="ml-auto flex items-center gap-1 md:ml-0">
+		<div class="flex items-center gap-1">
 			<Tooltip.Root>
 				<Tooltip.Trigger>
 					{#snippet child({ props })}
@@ -59,37 +57,59 @@
 				<Tooltip.Content>Source code on GitHub</Tooltip.Content>
 			</Tooltip.Root>
 			<ThemeMenu />
-			<Sheet.Root bind:open>
-				<Tooltip.Root>
-					<Tooltip.Trigger>
-						{#snippet child({ props: tip })}
-							<Sheet.Trigger {...tip}>
-								{#snippet child({ props })}
-									<Button {...props} variant="ghost" size="icon-sm" class="md:hidden" aria-label="Menu">
-										<MenuIcon />
-									</Button>
-								{/snippet}
-							</Sheet.Trigger>
-						{/snippet}
-					</Tooltip.Trigger>
-					<Tooltip.Content>Menu</Tooltip.Content>
-				</Tooltip.Root>
-				<Sheet.Content side="right" class="w-64">
-					<Sheet.Header>
-						<Sheet.Title>dvfonts</Sheet.Title>
-					</Sheet.Header>
-					<nav class="flex flex-col gap-1 px-4">
-						{#each links as link (link.href)}
-							<Button
-								href={link.href}
-								variant="ghost"
-								class="justify-start {active(link.href) ? 'bg-muted' : ''}"
-								onclick={() => (open = false)}>{link.label}</Button
-							>
-						{/each}
-					</nav>
-				</Sheet.Content>
-			</Sheet.Root>
 		</div>
+		<!-- On the right, where Thaana starts, inset 16px on desktop like the nav links' text
+		     (their padding) is on the left. The logo's box ends at the Thaana baseline (its lower fili hang below it). Desktop:
+		     24px tall from 13px down, baseline at 37px, a little under the nav text's. Phones
+		     (no nav text): 22px from 12px down, which centres the whole mark, fili included, so
+		     the lower fili clear the bar's bottom edge. -->
+		<a href="/" class="mt-[12px] ml-auto shrink-0 self-start md:mt-[13px] md:mr-4" aria-label="fonts.mv home">
+			<Logo class="block h-[22px] w-auto md:h-6" />
+		</a>
+		<!-- Phones: right of the logo. The menu opens from the right, below the header, which stays on top and
+		     clickable while it's open (the open sheet turns off pointer events on the body). The
+		     button toggles it. -->
+		<Sheet.Root bind:open>
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					{#snippet child({ props })}
+						<Button
+							{...props}
+							variant="ghost"
+							size="icon-sm"
+							class="md:hidden"
+							data-menu-toggle
+							aria-label={open ? 'Close menu' : 'Menu'}
+							aria-expanded={open}
+							onclick={() => (open = !open)}
+						>
+							{#if open}<XIcon />{:else}<MenuIcon />{/if}
+						</Button>
+					{/snippet}
+				</Tooltip.Trigger>
+				<Tooltip.Content>{open ? 'Close menu' : 'Menu'}</Tooltip.Content>
+			</Tooltip.Root>
+			<Sheet.Content
+				side="right"
+				showCloseButton={false}
+				class="top-14! h-auto! w-64 pt-4"
+				onInteractOutside={(e) => {
+					// The toggle button closes it itself; don't close here and reopen on its click.
+					if ((e.target as Element | null)?.closest('[data-menu-toggle]')) e.preventDefault();
+				}}
+			>
+				<Sheet.Title class="sr-only">Menu</Sheet.Title>
+				<nav class="flex flex-col gap-1 px-4">
+					{#each links as link (link.href)}
+						<Button
+							href={link.href}
+							variant="ghost"
+							class="justify-start {active(link.href) ? 'bg-muted' : ''}"
+							onclick={() => (open = false)}>{link.label}</Button
+						>
+					{/each}
+				</nav>
+			</Sheet.Content>
+		</Sheet.Root>
 	</div>
 </header>

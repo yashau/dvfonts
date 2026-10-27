@@ -1,5 +1,5 @@
 /** Sample sentences that each use all 24 native Thaana letters. Shown at
- *  random on dvfonts. */
+ *  random on fonts.mv. */
 export const PANGRAMS: readonly string[] = [
 	'ޗާލު ޒުވާން ކުއްޖާ، ފޮށިން ޕެކެޓެއް ކަނޑައި، ޏަމްޏަމް ގަހުގައި އިން ބުޅަލަށް މަސްދީ، ރީތި ލަވައެއް ކިޔައިދިނެވެ.',
 	'ކުޑަ ޗުއްޓީއެއްގައި ޏ. އަތޮޅަށް ފުރަން ޓިކެޓާއި ބޮޑު ފޮށި ހިފައިގެން، ޒުވާން ޕައިލެޓް މަޖާ ލަވައެއް ސަކަރާތާއެކު ކިޔަމުން ދިޔައެވެ.',

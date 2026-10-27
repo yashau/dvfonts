@@ -31,7 +31,7 @@ jobs:
     timeout-minutes: 20
     environment:
       name: production
-      url: https://dvfonts.yashau.com
+      url: https://fonts.mv
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -141,7 +141,7 @@ jobs:
       - name: Smoke-test production
         run: |
           set -euo pipefail
-          base=https://dvfonts.yashau.com
+          base=https://fonts.mv
           # A new custom domain can take a minute to resolve on the first deploy.
           curl -s -o /dev/null --retry 12 --retry-delay 10 --retry-all-errors -f "${base}/"
           for path in / /fonts/faruma /docs /llms.txt /fonts.json /thaana.js "/css2?family=Faruma" /fonts/faruma/faruma-400.thaana.woff2 /downloads; do
@@ -164,5 +164,5 @@ jobs:
             echo
             echo "- commit: \`${COMMIT}\`"
             echo "- fonts uploaded to R2: ${FONTS_CHANGED}"
-            echo "- url: https://dvfonts.yashau.com"
+            echo "- url: https://fonts.mv"
           } >> "$GITHUB_STEP_SUMMARY"
