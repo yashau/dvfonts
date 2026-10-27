@@ -1,15 +1,9 @@
-import { browser } from '$app/env';
-
-/** Canonical public origin, used in embed snippets on prerendered pages.
- *  In the browser the actual origin wins, so preview deployments show working URLs. */
+/** Public origin. Embed snippets, canonical links and the JSON APIs always use it,
+ *  whichever host serves the page. */
 export const SITE_ORIGIN = 'https://fonts.mv';
 
 /** The open-source repository behind the site, fonts pipeline and packages. */
 export const REPO_URL = 'https://github.com/yashau/fonts.mv';
-
-export function origin(): string {
-	return browser ? location.origin : SITE_ORIGIN;
-}
 
 /** Google-Fonts-style CSS API URL: /css2?family=Name:wght@400;700&display=swap */
 export function cssApiUrl(

@@ -18,17 +18,6 @@
 		{ "pattern": "fonts.mv", "custom_domain": true },
 		{ "pattern": "dvfonts.yashau.com", "custom_domain": true }
 	],
-	// `wrangler deploy --env preview` (.github/workflows/preview.yml): a separate Worker for
-	// trying a PR at br-dvfonts.yashau.com. It reads the production bucket and never writes it.
-	"env": {
-		"preview": {
-			"name": "dvfonts-preview",
-			"routes": [{ "pattern": "br-dvfonts.yashau.com", "custom_domain": true }],
-			"r2_buckets": [{ "binding": "STATIC", "bucket_name": "dvfonts-static" }],
-			"workers_dev": false,
-			"preview_urls": false
-		}
-	},
 	"workers_dev": true,
 	"preview_urls": true,
 	"observability": { "enabled": true }
