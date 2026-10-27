@@ -163,6 +163,8 @@ test('downloads page lists the bundles', async ({ page }) => {
 	await page.goto('/downloads');
 	await expect(page.locator('a[href="/downloads/fonts-mv-essentials.zip"]')).toBeVisible();
 	await expect(page.locator('a[href="/downloads/fonts-mv-full.zip"]')).toBeVisible();
+	// The page opens on the visitor's OS (Playwright's desktop Chrome reports Windows), so pick each tab.
+	await page.getByRole('tab', { name: 'macOS / Linux' }).click();
 	await expect(page.getByRole('tabpanel')).toContainText('curl -fsSL https://fonts.mv/install/essentials.sh | sh');
 	await page.getByRole('tab', { name: 'Windows' }).click();
 	await expect(page.getByRole('tabpanel')).toContainText('irm https://fonts.mv/install/essentials.ps1 | iex');
