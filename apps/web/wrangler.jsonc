@@ -18,6 +18,18 @@
 		{ "pattern": "fonts.mv", "custom_domain": true },
 		{ "pattern": "dvfonts.yashau.com", "custom_domain": true }
 	],
+	// `wrangler deploy --env beta` (.github/workflows/beta.yml, on pushes to the `beta` branch):
+	// a separate Worker for trying features at beta.fonts.mv before they reach main. It reads
+	// the production bucket and never writes it.
+	"env": {
+		"beta": {
+			"name": "fonts-mv-beta",
+			"routes": [{ "pattern": "beta.fonts.mv", "custom_domain": true }],
+			"r2_buckets": [{ "binding": "STATIC", "bucket_name": "fonts-mv-static" }],
+			"workers_dev": false,
+			"preview_urls": false
+		}
+	},
 	"workers_dev": true,
 	"preview_urls": true,
 	"observability": { "enabled": true }

@@ -13,6 +13,7 @@
 
 	const links = [
 		{ href: '/', label: 'Fonts' },
+		{ href: '/authors', label: 'Authors' },
 		{ href: '/docs', label: 'Docs' },
 		{ href: '/downloads', label: 'Downloads' },
 		{ href: '/about', label: 'About' }

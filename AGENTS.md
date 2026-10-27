@@ -83,6 +83,7 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
   - `mise run release:site` tags `site-v*`, which triggers `.github/workflows/deploy.yml`.
   - `mise run release:packages` tags `packages-v*`, which triggers `.github/workflows/release-packages.yml`.
 - Versions are CalVer: `YYYY.MMDD.N`.
+- **Beta:** the long-lived `beta` branch is for trying larger features before they ship. Every push to it deploys https://beta.fonts.mv (`.github/workflows/beta.yml`, wrangler env `beta`, Worker `fonts-mv-beta`, reading the production R2 bucket). Beta builds set `FONTS_MV_BETA=1`, which adds `noindex`. Keep `beta` current by merging `main` into it; when a beta feature is ready, open a PR from `beta` to `main` and merge it without deleting the branch.
 - Workflows pin actions by SHA and pin the mise version. Jobs that hold credentials (Cloudflare, npm OIDC) run with caching disabled. Keep it that way.
 
 ## Gotchas already hit

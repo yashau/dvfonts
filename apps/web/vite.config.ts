@@ -4,6 +4,8 @@ import adapter from '@sveltejs/adapter-cloudflare';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
+	// The beta deploy (.github/workflows/beta.yml) builds with FONTS_MV_BETA=1.
+	define: { __FONTS_MV_BETA__: JSON.stringify(process.env.FONTS_MV_BETA === '1') },
 	plugins: [
 		tailwindcss(),
 		sveltekit({
