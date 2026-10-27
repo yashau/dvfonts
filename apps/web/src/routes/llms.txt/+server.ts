@@ -118,7 +118,7 @@ Behaviour you can rely on:
 
 ## 3. Getting RTL text right (common mistakes)
 
-Full guide with live examples: ${O}/guide
+Full guide with live examples: ${O}/docs/thaana
 
 - Always set \`dir="rtl"\` and \`lang="dv"\` on Thaana text and inputs (or \`<html lang="dv" dir="rtl">\`). Without dir="rtl", trailing punctuation (".", "،", "؟") appears on the wrong side.
 - \`dir="auto"\` takes the direction from the first letter, so Thaana text that starts with any Latin word turns left-to-right ("Apple ގެ ފޯނު"). If text contains any Thaana, render it RTL: \`resolveDirection(text)\`. For displayed multi-paragraph user content use \`unicode-bidi: plaintext\`, but never on inputs, textareas or contenteditable: an empty field becomes left-to-right and the caret starts on the left. Give inputs \`dir\` from \`resolveDirection(value, null, keyboardOn ? 'rtl' : 'ltr')\` (attachKeyboard and the Thaana inputs do this). In Svelte, don't also set a static \`dir\` on an element using the attachment.
@@ -136,7 +136,7 @@ Full guide with live examples: ${O}/guide
 
 - Text typed with old pre-Unicode A_ fonts shows as Latin gibberish (e.g. "cswb ihevid" for ދިވެހި ބަސް): \`convertLegacy(text, { layout: 'typewriter' })\`; for the older casual fonts (Thaana, Akko, Athu Casual) use \`layout: 'phonetic'\`.
 - Thaana copied out of a PDF has reversed dates/times ("2026/1/14" for 14/1/2026) and stray spaces: \`repairPdfText(text)\`. Never run it on typed text.
-- Interactive converter: ${O}/convert
+- Interactive converter: ${O}/docs/tools#convert
 
 ## 4. Sample text
 
