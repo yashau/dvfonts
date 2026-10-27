@@ -1,6 +1,7 @@
 import { CATEGORIES } from '#lib/catalog.js';
 import { apiFamilies } from '#lib/server/api.js';
 import { SITE_ORIGIN as O } from '#lib/site.js';
+import { INSTALLABLE } from '#lib/install.js';
 import { PANGRAMS } from '#lib/thaana.js';
 
 export const prerender = true;
@@ -150,6 +151,7 @@ ${PANGRAMS.map((p) => `- ${p}`).join('\n')}
 - For the other fonts, metrics were repaired (no clipped fili), names and weights normalised, and Thaana/Latin subsets generated. Glyph outlines are never changed.
 - Fonts under CC BY-ND, and fonts whose designer requires it (all of Hassan Hameed's), are shipped unmodified: only converted to WOFF/WOFF2, with no subsets; the CSS API fixes their line spacing with ascent/descent overrides instead. OFL fonts include OFL.txt in the download.
 - The original pre-Unicode files (Thaana on Latin keys), including those not listed here, are only in the legacy bundle, byte for byte, for opening old documents: ${O}/downloads/fonts-mv-legacy.zip. Convert their text with \`convertLegacy()\`.
+- To install a desktop bundle on a computer for the current user (no admin rights): \`curl -fsSL ${O}/install/<bundle>.sh | sh\` on macOS/Linux, \`irm ${O}/install/<bundle>.ps1 | iex\` in PowerShell. Bundles: ${INSTALLABLE.map((b) => b.id).join(', ')}.
 - Licenses vary per family; check \`license\` in fonts.json before redistributing.
 
 ## Families
