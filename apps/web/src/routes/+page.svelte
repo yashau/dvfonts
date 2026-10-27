@@ -76,10 +76,14 @@
 		Object.fromEntries(CATEGORIES.map((c) => [c.id, shelf.filter((f) => f.category === c.id).length]))
 	);
 
+	// Search ignores case, spaces, underscores, hyphens and dots: "a_nishan", "A Nishan" and
+	// "anishan" all find A_Nishan.
+	const fold = (s: string | null | undefined) => (s ?? '').toLowerCase().replace(/[\s_.-]+/g, '');
+
 	const visible = $derived.by(() => {
-		const q = query.trim().toLowerCase();
+		const q = fold(query);
 		const named = (f: (typeof data.families)[number]) =>
-			f.name.toLowerCase().includes(q) || f.aliases.some((a) => a.toLowerCase().includes(q));
+			fold(f.name).includes(q) || f.aliases.some((a) => fold(a).includes(q));
 		const list = data.families.filter(
 			(f) =>
 				// Hidden families (symbol fonts) only turn up when searched for by name.
@@ -87,11 +91,7 @@
 				// A typed search or an author looks in every category; the filter narrows browsing.
 				(!!q || !!author || categories.length === 0 || categories.includes(f.category)) &&
 				(!author || authorsOrUnknown(f).includes(author)) &&
-				(!q ||
-					f.name.toLowerCase().includes(q) ||
-					f.aliases.some((a) => a.toLowerCase().includes(q)) ||
-					(credit(f) ?? '').toLowerCase().includes(q) ||
-					(f.source ?? '').toLowerCase().includes(q))
+				(!q || named(f) || fold(credit(f)).includes(q) || fold(f.source).includes(q))
 		);
 		if (sort === 'name') return list.toSorted(byName);
 		if (sort === 'styles') return list.toSorted((a, b) => b.styles.length - a.styles.length || byName(a, b));

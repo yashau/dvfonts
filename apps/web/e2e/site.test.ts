@@ -272,8 +272,10 @@ test('hidden symbol fonts turn up when searched for', async ({ page }) => {
 	await expect(page.getByRole('link', { name: 'Bismi', exact: true })).toHaveCount(0);
 	await page.getByLabel('Search').fill('bismi');
 	await expect(page.getByRole('link', { name: 'Bismi', exact: true })).toBeVisible();
-	await page.getByLabel('Search').fill('nishan');
-	await expect(page.getByRole('link', { name: 'A_Nishan', exact: true })).toBeVisible();
+	for (const q of ['nishan', 'A_NISHAN', 'a nishan', 'anishan']) {
+		await page.getByLabel('Search').fill(q);
+		await expect(page.getByRole('link', { name: 'A_Nishan', exact: true }), q).toBeVisible();
+	}
 });
 
 test('guide renders its demos', async ({ page }) => {
