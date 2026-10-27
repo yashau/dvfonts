@@ -5,7 +5,8 @@
 	import { Button } from '#lib/components/ui/button/index.js';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 
-	// shadcn-svelte's combobox (Popover + Command): pick one author, or any.
+	// shadcn-svelte's combobox (Popover + Command): pick one author, or any. The trigger takes
+	// the Select trigger's look so it matches the Sort dropdown beside it.
 	let { value = $bindable(), authors }: { value: string | null; authors: { name: string; count: number }[] } = $props();
 
 	let open = $state(false);
@@ -24,7 +25,7 @@
 			<Button
 				{...props}
 				variant="outline"
-				class="w-full justify-between font-normal"
+				class="w-full justify-between border-input bg-transparent font-normal hover:bg-transparent aria-expanded:bg-transparent dark:bg-input/30 dark:hover:bg-input/50 dark:aria-expanded:bg-input/50"
 				role="combobox"
 				aria-expanded={open}
 				aria-label="Author"
