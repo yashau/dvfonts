@@ -55,6 +55,13 @@
 	} = $props();
 
 	let categoriesOpen = $state(false);
+	// Open whenever the categories aren't the default set, so a changed filter is never folded away.
+	const defaultCategories = $derived(
+		categories.length === DEFAULT_CATEGORIES.length && DEFAULT_CATEGORIES.every((c) => categories.includes(c))
+	);
+	$effect(() => {
+		if (!defaultCategories) categoriesOpen = true;
+	});
 	const categorySummary = $derived(
 		categories.length === 0 || categories.length === CATEGORIES.filter((c) => counts[c.id] > 0).length
 			? 'All categories'

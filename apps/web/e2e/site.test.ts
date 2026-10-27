@@ -236,6 +236,14 @@ test('categories start collapsed and expand', async ({ page, isMobile }) => {
 	await expect(page.getByRole('group', { name: 'Categories' }).last().getByText('Novelty')).toBeVisible();
 });
 
+test('a non-default category set opens the categories', async ({ page, isMobile }) => {
+	await page.goto('/');
+	await page.getByLabel('Search').fill('zzzz no such font');
+	await page.getByRole('button', { name: 'Clear search and filters' }).click();
+	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
+	await expect(page.getByRole('button', { name: 'Categories' }).last()).toHaveAttribute('aria-expanded', 'true');
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();
