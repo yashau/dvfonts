@@ -18,7 +18,14 @@
 	// Symbol fonts keep their glyphs on ASCII keys, so typed Thaana would only
 	// show fallback text; preview their own glyphs unless the user typed Latin.
 	const content = $derived(
-		text ?? (symbols ? (tester.text && !tester.dv ? tester.text : SYMBOL_SAMPLE) : tester.preview)
+		text ??
+			(symbols
+				? tester.text && !tester.dv
+					? tester.text
+					: family.chars
+						? [...family.chars].join(' ')
+						: SYMBOL_SAMPLE
+				: tester.preview)
 	);
 	const style = $derived(family.styles.find((s) => s.weight === weight));
 	const normalized = $derived(tester.normalize && !!style?.sizeAdjust);

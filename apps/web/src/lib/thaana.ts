@@ -15,28 +15,6 @@ export {
 /** Sample for symbol fonts (Bismi): its glyphs live on ASCII keys. */
 export const SYMBOL_SAMPLE = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
-export const DIGITS_PUNCT = [
-	'0',
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'،',
-	'؛',
-	'؟',
-	'.',
-	'(',
-	')',
-	'!',
-	'-',
-	'ﷲ'
-];
-
 export function randomPangram(): string {
 	return PANGRAMS_LIST[Math.floor(Math.random() * PANGRAMS_LIST.length)];
 }

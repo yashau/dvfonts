@@ -2,7 +2,7 @@
 	import { CATEGORIES, WEIGHT_NAMES, authors, defaultStyle, fontUrl, formatBytes } from '#lib/catalog.js';
 	import { registerFamily, previewFamily } from '#lib/fonts.js';
 	import { tester } from '#lib/tester.svelte.js';
-	import { DIGITS_PUNCT, FILI, LETTERS_ARABIC, LETTERS_NATIVE } from '#lib/thaana.js';
+	import { glyphGroups } from '#lib/glyphs.js';
 	import { CONTACT_EMAIL, cssApiUrl, SITE_ORIGIN } from '#lib/site.js';
 	import FontPreview from '#lib/components/font-preview.svelte';
 	import RichTester from '#lib/components/rich-tester.svelte';
@@ -17,6 +17,7 @@
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
 	import * as Select from '#lib/components/ui/select/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
+	import { Kbd } from '#lib/components/ui/kbd/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
 	import DownloadIcon from '@lucide/svelte/icons/download';
 	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
@@ -111,12 +112,7 @@
 		).filter((d): d is [string, string] => Boolean(d[1]))
 	);
 
-	const glyphSets = $derived([
-		{ title: 'Letters', chars: LETTERS_NATIVE },
-		{ title: 'Arabic-derived letters', chars: LETTERS_ARABIC },
-		{ title: 'Fili', chars: FILI.map((f) => 'އ' + f) },
-		{ title: 'Digits & punctuation', chars: DIGITS_PUNCT }
-	]);
+	const glyphSets = $derived(glyphGroups(family.chars, family.keyGlyphs, symbols));
 </script>
 
 <svelte:head>
@@ -213,29 +209,38 @@
 		<RichTester {family} />
 	</section>
 
-	{#if !symbols}
-		<section class="mt-10">
-			<h2 class="mb-4 text-xl font-semibold tracking-tight">Glyphs</h2>
-			{#each glyphSets as set (set.title)}
-				<h3 class="mt-6 mb-2 text-sm font-medium text-muted-foreground">{set.title}</h3>
-				<div
-					class="grid grid-cols-[repeat(auto-fill,minmax(2.25rem,1fr))] gap-1.5 sm:grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] sm:gap-2"
-				>
-					{#each set.chars as ch (ch)}
-						<Card.Root size="sm" class="aspect-square justify-center rounded-md py-0 sm:rounded-xl">
-							<Card.Content
-								class="flex items-center justify-center px-0 text-2xl sm:text-4xl"
-								dir="rtl"
-								style="font-family: '{previewFamily(family)}', 'dv-ui', sans-serif; font-weight: {main.weight}"
-							>
-								{ch}
-							</Card.Content>
-						</Card.Root>
-					{/each}
-				</div>
-			{/each}
-		</section>
-	{/if}
+	<section class="mt-10">
+		<h2 class="mb-4 text-xl font-semibold tracking-tight">Glyphs</h2>
+		{#each glyphSets as set (set.title)}
+			<h3 class="mt-6 mb-2 text-sm font-medium text-muted-foreground">{set.title}</h3>
+			<div
+				class="grid grid-cols-[repeat(auto-fill,minmax(2.25rem,1fr))] gap-1.5 sm:grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] sm:gap-2"
+			>
+				{#each set.cells as cell (cell.text)}
+					<Card.Root
+						size="sm"
+						class={[
+							'justify-center gap-1 rounded-md py-0 sm:rounded-xl',
+							cell.wide ? 'col-span-4 py-2 sm:col-span-3' : 'aspect-square'
+						]}
+					>
+						<Card.Content
+							class="flex items-center justify-center px-0 text-2xl sm:text-4xl"
+							dir="rtl"
+							style="font-family: '{previewFamily(family)}', sans-serif; font-weight: {main.weight}"
+						>
+							{cell.text}
+						</Card.Content>
+						{#if cell.label}
+							<Card.Footer class="justify-center px-0 text-xs text-muted-foreground">
+								<span>key <Kbd>{cell.label}</Kbd></span>
+							</Card.Footer>
+						{/if}
+					</Card.Root>
+				{/each}
+			</div>
+		{/each}
+	</section>
 
 	<!-- min-w-0 on the columns: grid items default to min-width:auto, so the code
 	     blocks' long URLs would stretch the page instead of scrolling inside. -->

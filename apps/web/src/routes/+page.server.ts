@@ -11,6 +11,8 @@ export const load: PageServerLoad = () => ({
 			...f,
 			licenseText: null,
 			description: null,
+			chars: '',
+			keyGlyphs: '',
 			styles: f.styles.map((s) => ({ ...s, upstream: null }))
 		}))
 });

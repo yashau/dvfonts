@@ -928,6 +928,17 @@ aliases = ["A_Bismillah", "ABismillah"]
 notes = "Arabic calligraphy symbols (Bismillah, honorifics, Hijri months) on ASCII keys. Not a Thaana font, but widely used in the Maldives."
 fonts = { 400 = "bismi.ttf" }
 
+[families.a-nishan]
+name = "A_Nishan"
+# Shipped as published: no source names its maker, and A_ fonts of that time are mostly
+# Hassan Hameed's, whose fonts ship unmodified.
+unmodified = true
+hidden = true
+category = "symbols"
+aliases = ["A Nishan", "Nishan"]
+notes = "The state emblem of the Maldives on the D key. Not a Thaana font, but used in official documents."
+fonts = { 400 = "a-nishan.ttf" }
+
 # ─── Not published ───────────────────────────────────────────────────────────
 # Files in sources/ that are deliberately left out, and why.
 #
@@ -967,7 +978,6 @@ fonts = { 400 = "bismi.ttf" }
 "ilham.ttf" = "Legacy A_ font; the modern Unicode MV Ilham is the same design."
 "faseyha.ttf" = "Legacy A_ font; the modern Unicode MV Faseyha is the same design."
 "waheed.ttf" = "Legacy A_ font; the modern Unicode MV A Waheed is the same design."
-"a-nishan.ttf" = "Single state-emblem dingbat, not a text font."
 "dhives.ttf" = "Dhives Akuru (historic script) on Thaana keys: letters only, with no vowel signs or virama, so it cannot set Unicode Dives Akuru. Legacy bundle only."
 "aa-randhoo.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."
 "randhoo-p.ttf" = "Unknown 'P' legacy encoding; same design as A Randhoo."

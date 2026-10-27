@@ -258,6 +258,15 @@ test('sitemap lists the pages, fonts and authors', async ({ request }) => {
 	expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://fonts.mv/sitemap.xml');
 });
 
+test('the glyph list shows everything a font draws, keys included', async ({ page }) => {
+	await page.goto('/fonts/faruma');
+	await expect(page.getByRole('heading', { name: 'Drawn on keyboard keys' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Arabic ligatures' })).toBeVisible();
+	await page.goto('/fonts/a-nishan');
+	await expect(page.getByRole('heading', { name: 'Characters' })).toBeVisible();
+	await expect(page.getByText('key D')).toBeVisible();
+});
+
 test('guide renders its demos', async ({ page }) => {
 	await page.goto('/docs/thaana');
 	await expect(page.getByRole('heading', { name: 'Displaying Thaana well' })).toBeVisible();

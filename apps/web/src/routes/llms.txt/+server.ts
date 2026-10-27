@@ -14,7 +14,8 @@ export const GET = () => {
 		artistic: 'Display and calligraphic faces for headings.',
 		modern: 'Contemporary designs.',
 		novelty: 'Decorative one-offs.',
-		symbols: 'Symbol fonts such as Bismi (bismillah calligraphy), with their glyphs on ASCII keys.'
+		symbols:
+			'Symbol fonts with their glyphs on ASCII keys: Bismi (bismillah calligraphy) and A_Nishan (the state emblem, on D).'
 	};
 	const index = CATEGORIES.map((c) => {
 		const rows = fams
