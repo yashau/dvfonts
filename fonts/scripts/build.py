@@ -478,6 +478,7 @@ def main(only: set[str] | None = None) -> None:
     FONTS_OUT.mkdir(parents=True, exist_ok=True)
     CATALOG_OUT.parent.mkdir(parents=True, exist_ok=True)
     families = []
+    older = predecessors(catalog)
     for fid, fam in catalog["families"].items():
         if only and fid not in only:
             continue
@@ -592,7 +593,7 @@ def main(only: set[str] | None = None) -> None:
                 **display_meta(fam, meta),
                 "styles": styles,
                 "zipSize": len(zipbuf.getvalue()),
-                **dict(zip(("firstYear", "versionYear"), release_years(fam, files), strict=True)),
+                **dict(zip(("firstYear", "versionYear"), release_years(fam, files, older.get(fid, [])), strict=True)),
             }
         )
         flags = []
@@ -642,30 +643,58 @@ GENERATED = re.compile(r"generated in (\d{4})[^.]*", re.I)
 HEAD_EPOCH = datetime.datetime(1904, 1, 1)  # the head table counts seconds from here
 
 
-def release_years(fam: dict, files: list[tuple[str, str]]) -> tuple[int | None, int | None]:
+def file_years(fname: str) -> tuple[list[int], list[int], list[int]]:
+    """Years a source file mentions (copyright, version, description), its editor
+    "Generated in" stamps, and its creation year if before 2014 (later ones are archive
+    re-saves or repairs)."""
+    font = TTFont(SOURCES / fname, lazy=True)
+    years, stamps = [], []
+    for nid in (0, 3, 5, 10):
+        text = name_value(font, nid, True) or ""
+        stamps += [int(y) for y in GENERATED.findall(text)]
+        years += [int(y) for y in YEAR.findall(GENERATED.sub("", text))]
+    try:
+        created = (HEAD_EPOCH + datetime.timedelta(seconds=font["head"].created)).year
+    except OverflowError:
+        created = None
+    return years, stamps, [created] if created and 1990 <= created <= 2013 else []
+
+
+def predecessors(catalog: dict) -> dict[str, list[str]]:
+    """Family id -> excluded source files of the same design under an older name. By the
+    legacy policy an old A_ font's name becomes an alias on its modern family, so a file
+    whose own family name is one of those aliases is that family's predecessor."""
+    norm = lambda s: re.sub(r"[^a-z0-9]", "", (s or "").lower())  # noqa: E731
+    by_alias = {norm(a): fid for fid, fam in catalog["families"].items() for a in fam.get("aliases", [])}
+    out: dict[str, list[str]] = {}
+    for fname in sorted(catalog.get("excluded", {})):
+        if not (SOURCES / fname).exists():
+            continue
+        font = TTFont(SOURCES / fname, lazy=True)
+        names = {norm(name_value(font, nid, True)) for nid in (1, 4, 16)}
+        hits = sorted({by_alias[n] for n in names if n in by_alias})
+        for fid in hits:
+            out.setdefault(fid, []).append(fname)
+    return out
+
+
+def release_years(fam: dict, files: list[tuple[str, str]], older: list[str]) -> tuple[int | None, int | None]:
     """(first release, this version) for a family.
 
-    First release: `year` in families.toml, else the earliest year the source files
-    mention (copyright, version, description), else a creation date before 2014 (later
-    ones are archive re-saves or repairs). Editor stamps like "Generated in 2014 by
-    FontLab" don't count, since they date a save, not the design.
+    First release: `year` in families.toml, else the earliest year its files, or the
+    older files of the same design (`older`, e.g. A_Faseyha for MV Faseyha), mention,
+    else a creation date before 2014. Editor stamps like "Generated in 2014 by FontLab"
+    don't count, since they date a save, not the design.
 
-    This version: `versionYear` in families.toml, else the latest year the files
-    mention, editor stamps included, never earlier than the first release."""
-    years, stamps, created = [], [], []
-    for _, fname in files:
-        font = TTFont(SOURCES / fname, lazy=True)
-        for nid in (0, 3, 5, 10):
-            text = name_value(font, nid, True) or ""
-            stamps += [int(y) for y in GENERATED.findall(text)]
-            years += [int(y) for y in YEAR.findall(GENERATED.sub("", text))]
-        try:
-            created.append((HEAD_EPOCH + datetime.timedelta(seconds=font["head"].created)).year)
-        except OverflowError:
-            pass
-    created = [y for y in created if 1990 <= y <= 2013]
+    This version: `versionYear` in families.toml, else the latest year the family's own
+    files mention, editor stamps included, never earlier than the first release."""
+    own = [file_years(fname) for _, fname in files]
+    old = [file_years(fname) for fname in older]
+    years = [y for ys, _, _ in own + old for y in ys]
+    created = [y for _, _, cs in own + old for y in cs]
     first = fam.get("year") or (min(years) if years else min(created) if created else None)
-    version = fam.get("versionYear") or max(years + stamps + ([first] if first else []), default=None)
+    latest = [y for ys, stamps, _ in own for y in ys + stamps]
+    version = fam.get("versionYear") or max(latest + ([first] if first else []), default=None)
     return first, version
 
 
