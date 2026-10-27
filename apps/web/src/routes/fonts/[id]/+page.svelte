@@ -279,7 +279,7 @@
 											href={family.upstream}
 											variant="link"
 											size="sm"
-											class="h-auto p-0 align-top has-[>svg]:px-0"
+											class="h-auto p-0 text-left align-top break-words whitespace-normal has-[>svg]:px-0"
 											rel="noopener noreferrer"
 											target="_blank">{family.source} <ExternalLinkIcon /></Button
 										>
