@@ -11,6 +11,7 @@
 	import * as Card from '#lib/components/ui/card/index.js';
 	import * as Select from '#lib/components/ui/select/index.js';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import { toggleOn } from '#lib/toggle.js';
 	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
 	import * as ButtonGroup from '#lib/components/ui/button-group/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
@@ -219,10 +220,10 @@
 				onValueChange={(v) => v && (active.align = v as Align)}
 				aria-label="Alignment"
 			>
-				<ToggleGroup.Item value="left" aria-label="Align left"><AlignLeftIcon /></ToggleGroup.Item>
-				<ToggleGroup.Item value="center" aria-label="Centre"><AlignCenterIcon /></ToggleGroup.Item>
-				<ToggleGroup.Item value="right" aria-label="Align right"><AlignRightIcon /></ToggleGroup.Item>
-				<ToggleGroup.Item value="justify" aria-label="Justify"><AlignJustifyIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item class={toggleOn} value="left" aria-label="Align left"><AlignLeftIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item class={toggleOn} value="center" aria-label="Centre"><AlignCenterIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item class={toggleOn} value="right" aria-label="Align right"><AlignRightIcon /></ToggleGroup.Item>
+				<ToggleGroup.Item class={toggleOn} value="justify" aria-label="Justify"><AlignJustifyIcon /></ToggleGroup.Item>
 			</ToggleGroup.Root>
 
 			<DropdownMenu.Root>

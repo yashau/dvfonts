@@ -15,6 +15,8 @@
 	import * as Alert from '#lib/components/ui/alert/index.js';
 	import WrenchIcon from '@lucide/svelte/icons/wrench';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import { toggleOn } from '#lib/toggle.js';
+	import { cn } from '#lib/utils.js';
 	import * as Select from '#lib/components/ui/select/index.js';
 	import { Switch } from '#lib/components/ui/switch/index.js';
 	import { Kbd } from '#lib/components/ui/kbd/index.js';
@@ -267,7 +269,9 @@
 				{#if family.styles.length > 1}
 					<ToggleGroup.Root type="multiple" variant="outline" size="sm" bind:value={selected} class="flex-wrap">
 						{#each family.styles as style (style.weight)}
-							<ToggleGroup.Item value={String(style.weight)} class="px-3">{style.weight}</ToggleGroup.Item>
+							<ToggleGroup.Item value={String(style.weight)} class={cn('px-3', toggleOn)}
+								>{style.weight}</ToggleGroup.Item
+							>
 						{/each}
 					</ToggleGroup.Root>
 				{/if}
