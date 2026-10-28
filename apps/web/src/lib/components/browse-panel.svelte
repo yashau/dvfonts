@@ -22,6 +22,8 @@
 	import { CATEGORIES, DEFAULT_CATEGORIES, type Category } from '#lib/catalog.js';
 	import * as InputGroup from '#lib/components/ui/input-group/index.js';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
+	import { toggleOn } from '#lib/toggle.js';
+	import { cn } from '#lib/utils.js';
 	import * as Select from '#lib/components/ui/select/index.js';
 	import * as Tooltip from '#lib/components/ui/tooltip/index.js';
 	import { Button } from '#lib/components/ui/button/index.js';
@@ -202,7 +204,7 @@
 					aria-label="Categories"
 				>
 					{#each CATEGORIES.filter((c) => counts[c.id] > 0) as c (c.id)}
-						<ToggleGroup.Item value={c.id} class="w-full justify-between px-3">
+						<ToggleGroup.Item value={c.id} class={cn('w-full justify-between px-3', toggleOn)}>
 							{c.label}
 							<span class="text-xs text-muted-foreground tabular-nums">{counts[c.id]}</span>
 						</ToggleGroup.Item>
