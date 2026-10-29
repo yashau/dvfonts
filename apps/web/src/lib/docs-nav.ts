@@ -15,6 +15,7 @@ export const DOCS: DocsPage[] = [
 			{ id: 'keyboard', label: 'Thaana keyboard' },
 			{ id: 'packages', label: 'Packages' },
 			{ id: 'same-size', label: 'Same size for every font' },
+			{ id: 'thaana-only', label: 'Thaana only' },
 			{ id: 'helpers', label: 'Helpers' },
 			{ id: 'self-hosting', label: 'Self-hosting' },
 			{ id: 'data', label: 'For tools and agents' }

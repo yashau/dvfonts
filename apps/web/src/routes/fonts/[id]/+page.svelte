@@ -48,24 +48,49 @@
 	// Opt-in: size-adjust so the letters look as big as Faruma's (the files are unchanged).
 	let normalize = $state(false);
 	const canNormalize = $derived(family.styles.some((s) => s.sizeAdjust && s.sizeAdjust !== 1));
+	// Opt-in: limit the font to Thaana so it can lead a site-wide stack. Not for symbol
+	// fonts, whose glyphs sit on ASCII keys.
+	let thaanaOnly = $state(false);
+	const canThaanaOnly = $derived(family.category !== 'symbols');
 	const href = $derived(
-		cssApiUrl(SITE_ORIGIN, [{ name: family.name, weights }], { normalize: normalize && canNormalize })
+		cssApiUrl(SITE_ORIGIN, [{ name: family.name, weights }], {
+			normalize: normalize && canNormalize,
+			thaanaOnly: thaanaOnly && canThaanaOnly
+		})
 	);
 	const linkSnippet = $derived(`<link rel="stylesheet" href="${href}">`);
 	const importSnippet = $derived(`@import url('${href}');`);
 	// Self-hosting: the same weights from your own copies of the files (the WOFF2s above).
 	const ownSnippet = $derived.by(() => {
 		const scaled = normalize && canNormalize;
-		const lines = [
-			`  family: '${family.name}',`,
-			'  files: {',
-			...weights.map((w, i) => `    ${w}: '/fonts/${family.id}-${w}.woff2'${i < weights.length - 1 ? ',' : ''}`),
-			scaled ? '  },' : '  }',
-			...(scaled ? [`  sizeAdjust: ${main.sizeAdjust}`] : [])
+		const list = (items: string[], indent: string) =>
+			items.map((line, i) => `${indent}${line}${i < items.length - 1 ? ',' : ''}`);
+		// Unmodified fonts get their line spacing fixed in CSS; self-hosting needs the same fix.
+		const fixes = weights.flatMap((w) => {
+			const o = family.styles.find((s) => s.weight === w)?.cssOverrides;
+			return o ? [`${w}: { ascent: ${o.ascent}, descent: ${o.descent}, lineGap: ${o.lineGap} }`] : [];
+		});
+		const fields = [
+			`family: '${family.name}'`,
+			`files: {\n${list(
+				weights.map((w) => `${w}: '/fonts/${family.id}-${w}.woff2'`),
+				'    '
+			).join('\n')}\n  }`,
+			...(fixes.length ? [`cssOverrides: {\n${list(fixes, '    ').join('\n')}\n  }`] : []),
+			...(scaled ? [`sizeAdjust: ${main.sizeAdjust}`] : [])
 		];
-		return `import { loadFonts } from '@yashau/thaana';\n\nawait loadFonts({\n${lines.join('\n')}\n}${scaled ? ', { normalize: true }' : ''});`;
+		const options = [
+			...(scaled ? ['normalize: true'] : []),
+			...(thaanaOnly && canThaanaOnly ? ['thaanaOnly: true'] : [])
+		];
+		return `import { loadFonts } from '@yashau/thaana';\n\nawait loadFonts({\n${list(fields, '  ').join('\n')}\n}${options.length ? `, { ${options.join(', ')} }` : ''});`;
 	});
-	const cssSnippet = $derived(`:lang(dv) {\n  font-family: '${family.name}', sans-serif;\n}`);
+	// Thaana-only fonts can lead the whole page's stack; otherwise use them for Dhivehi text.
+	const cssSnippet = $derived(
+		thaanaOnly && canThaanaOnly
+			? `body {\n  font-family: '${family.name}', system-ui, sans-serif;\n}`
+			: `:lang(dv) {\n  font-family: '${family.name}', sans-serif;\n}`
+	);
 
 	const changes = $derived.by(() => {
 		const out: string[] = [];
@@ -280,6 +305,14 @@
 						<Switch id="embed-normalize" bind:checked={normalize} />
 						<Label for="embed-normalize" class="font-normal text-muted-foreground">
 							Same size as Faruma (scales this font {Math.round((main.sizeAdjust ?? 1) * 100)}%)
+						</Label>
+					</div>
+				{/if}
+				{#if canThaanaOnly}
+					<div class="flex items-center gap-2">
+						<Switch id="embed-thaana-only" bind:checked={thaanaOnly} />
+						<Label for="embed-thaana-only" class="font-normal text-muted-foreground">
+							Thaana only (Latin letters, digits and spaces use the next font)
 						</Label>
 					</div>
 				{/if}

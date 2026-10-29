@@ -76,7 +76,9 @@ fonts.mv fixes all of that in one place.
 
 Dhivehi fonts vary a lot in size at the same `font-size`. Add `&normalize=1` to scale each font (CSS `size-adjust`) so its Thaana letters look as big as Faruma's. The font files stay untouched.
 
-Rather host the files yourself? Download them and give the packages their URLs: `loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })`, or `fontFaceCss()` for a stylesheet. Nothing is then loaded from fonts.mv.
+Want the Thaana font first in your whole page's font stack? Add `&subset=thaana`: every `@font-face` is then limited to Thaana (letters, `،` `؛` `؟`, `ﷲ`, joiner and direction marks), so Latin letters, digits, punctuation and spaces fall through to the next font. It works for fonts shipped unmodified too.
+
+Rather host the files yourself? Download them and give the packages their URLs: `loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })`, or `fontFaceCss()` for a stylesheet. Nothing is then loaded from fonts.mv. For fonts shipped unmodified, also pass each file's `cssOverrides` from [`fonts.json`](https://fonts.mv/fonts.json) so your copies get the same line-spacing fix. `fonts.json` has a `version` that changes whenever any font file may have.
 
 **Let people type Thaana on any keyboard,** with no build step:
 
@@ -126,7 +128,7 @@ useDhivehiFont('Faruma');
 - **Phonetic keyboard** for any input, textarea or contenteditable, using Microsoft's standard Divehi Phonetic layout. Works with controlled inputs, keeps undo, never touches IME or paste.
 - **Bidi helpers:** keep `+960 333-1234`, `-5`, `9:00` and `50%` readable inside Thaana; isolate names and URLs.
 - **Text repair:** convert old A_-font text to Unicode, fix Thaana copied out of PDFs, tidy punctuation.
-- **Font loading and stacks,** from fonts.mv or your own copies of the files (`files`), with optional size normalisation (`{ normalize: true }`), plus CSS defaults that stop fili clipping.
+- **Font loading and stacks,** from fonts.mv or your own copies of the files (`files`, with `cssOverrides` for line spacing), with optional size normalisation (`{ normalize: true }`) and Thaana-only ranges (`{ thaanaOnly: true }`), plus CSS defaults that stop fili clipping.
 
 </td>
 </tr>
