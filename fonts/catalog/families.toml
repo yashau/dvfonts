@@ -252,6 +252,12 @@ category = "official"
 designer = "M.A. Gadir"
 fonts = { 400 = "mv-elaaf-formal.ttf" }
 
+[families.yuu-thaana-kufi]
+name = "YUU Thaana Kufi"
+category = "official"
+designer = "Y.U.U (@miukumauku_)"
+fonts = { 400 = "yuu-thaana-kufi.ttf" }
+
 # ─── Modern / geometric ──────────────────────────────────────────────────────
 
 [families.noto-sans-thaana]
@@ -374,6 +380,18 @@ unmodified = true
 category = "modern"
 fonts = { 700 = "mvthuththu-bld.ttf" }
 
+[families.masnooee-mono]
+name = "Masnooee Mono"
+category = "modern"
+year = 2020
+fonts = { 400 = "masnooeemono-regular.ttf" }
+
+[families.lcd-thaana]
+name = "LCD Thaana"
+category = "modern"
+year = 2021
+fonts = { 400 = "lcdthaana-regular.ttf" }
+
 # ─── Artistic (decorative, display) ──────────────────────────────────────────
 
 [families.mv-kashi]
@@ -477,12 +495,6 @@ designer = "Hussain Niyaz"
 category = "artistic"
 fonts = { 400 = "mv-karudhas-outline.ttf" }
 
-[families.faagathi-neon]
-name = "Faagathi Neon"
-designer = "Ayeshath Fadwa, Shahee Ilyas"
-category = "artistic"
-fonts = { 200 = "faagathineon-extralight.ttf", 300 = "faagathineon-light.ttf", 400 = "faagathineon-regular.ttf", 700 = "faagathineon-bold.ttf" }
-
 [families.fiyuzu]
 name = "Fiyuzu"
 category = "artistic"
@@ -492,18 +504,6 @@ fonts = { 400 = "fiyuzu-regular.ttf" }
 name = "MV Lhaiy"
 category = "artistic"
 fonts = { 400 = "mv-lhaiy.otf", 700 = "mv-lhaiy-bold.otf" }
-
-[families.masnooee-mono]
-name = "Masnooee Mono"
-category = "artistic"
-year = 2020
-fonts = { 400 = "masnooeemono-regular.ttf" }
-
-[families.lcd-thaana]
-name = "LCD Thaana"
-category = "artistic"
-year = 2021
-fonts = { 400 = "lcdthaana-regular.ttf" }
 
 [families.mv-thaana-matrix-8]
 name = "MV Thaana Matrix 8"
@@ -534,12 +534,6 @@ fonts = { 400 = "suruhee-outlined.ttf" }
 name = "Akuro"
 category = "artistic"
 fonts = { 400 = "akuro2w2.ttf" }
-
-[families.yuu-thaana-kufi]
-name = "YUU Thaana Kufi"
-category = "artistic"
-designer = "Y.U.U (@miukumauku_)"
-fonts = { 400 = "yuu-thaana-kufi.ttf" }
 
 [families.novel03]
 name = "Novel03"
@@ -751,6 +745,12 @@ fonts = { 400 = "sehga-casual.ttf" }
 name = "Nooru"
 category = "handwriting"
 fonts = { 300 = "nooru-light.ttf" }
+
+[families.faagathi-neon]
+name = "Faagathi Neon"
+designer = "Ayeshath Fadwa, Shahee Ilyas"
+category = "handwriting"
+fonts = { 200 = "faagathineon-extralight.ttf", 300 = "faagathineon-light.ttf", 400 = "faagathineon-regular.ttf", 700 = "faagathineon-bold.ttf" }
 
 # ─── Novelty (experimental, constructed) ─────────────────────────────────────
 

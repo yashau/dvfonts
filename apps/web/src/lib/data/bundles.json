@@ -49,10 +49,10 @@
   "description": "Geometric and sans-style Thaana families.",
   "format": "ttf",
   "file": "fonts-mv-modern.zip",
-  "families": 18,
-  "styles": 64,
-  "size": 3243121,
-  "sha256": "26be07becc10a16470c65ea7dbea5dc7d14676860f6557ba76f1460627b45ff9"
+  "families": 20,
+  "styles": 66,
+  "size": 3321404,
+  "sha256": "93d2ca3a1dcdc9315a57a2a921ac68463a298be7941648af1f3aca50eadcf5de"
  },
  {
   "id": "official",
@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "fonts-mv-official.zip",
-  "families": 37,
-  "styles": 51,
-  "size": 1356817,
-  "sha256": "f76b51462f76a969ec697b08baffa3f7b82b1a046269c0d23453b20c7ab8a164"
+  "families": 38,
+  "styles": 52,
+  "size": 1362399,
+  "sha256": "f0b46c6285c7785665727875585ea6203e9b4b632beac156b0d747aa76f85a57"
  },
  {
   "id": "artistic",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "fonts-mv-artistic.zip",
-  "families": 31,
-  "styles": 35,
-  "size": 832626,
-  "sha256": "2660dd19ec75a6aa4efdd583c6f6e557c12e5ad39274618ca4100c3163620a21"
+  "families": 27,
+  "styles": 28,
+  "size": 696943,
+  "sha256": "a5281604e067ee9a95b79a39380503130b2628fd74e7ba9bd27de9157624ede7"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "fonts-mv-handwriting.zip",
-  "families": 38,
-  "styles": 42,
-  "size": 1203521,
-  "sha256": "8f4184e099c0e73b5b7c68117e4b46bcc5b64ffec42a19d88533e0699f68c962"
+  "families": 39,
+  "styles": 46,
+  "size": 1255343,
+  "sha256": "5ec5fcd55b099a4792c6118b0196b556b3e351040cb577e09bb88da926e8d857"
  },
  {
   "id": "novelty",
