@@ -26,6 +26,8 @@ export {
 	fontFaceCss,
 	FONTS_MV_ORIGIN,
 	DVFONTS_ORIGIN,
+	THAANA_ONLY_RANGE,
+	type CssOverrides,
 	type FontRequest,
 	type FontCssOptions
 } from './fonts.js';

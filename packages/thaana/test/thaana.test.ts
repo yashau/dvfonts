@@ -10,6 +10,7 @@ import {
 	fontFaceCss,
 	FONTS_MV_ORIGIN,
 	loadFonts,
+	THAANA_ONLY_RANGE,
 	isolate,
 	KEYMAP,
 	LETTERS,
@@ -148,6 +149,11 @@ describe('fontCssUrl', () => {
 			'https://fonts.mv/css2?family=Bolhu&display=swap&normalize=1'
 		);
 	});
+	it('asks for Thaana-only rules with thaanaOnly', () => {
+		expect(fontCssUrl({ family: 'Faruma' }, { thaanaOnly: true })).toBe(
+			'https://fonts.mv/css2?family=Faruma&display=swap&subset=thaana'
+		);
+	});
 });
 
 describe('hosted fonts', () => {
@@ -179,8 +185,38 @@ describe('own font files', () => {
 		expect(() => fontFaceCss({ ...own, weights: [300] })).toThrow(/weight 300/);
 	});
 
+	it('limits your files to Thaana with thaanaOnly', () => {
+		expect(THAANA_ONLY_RANGE).not.toMatch(/U\+00|U\+0020/);
+		for (const ch of ['ދ', '،', '؛', '؟', 'ﷲ']) {
+			const cp = ch.codePointAt(0)!;
+			const inRange = THAANA_ONLY_RANGE.split(', ').some((r) => {
+				const [a, b = a] = r
+					.slice(2)
+					.split('-')
+					.map((h) => parseInt(h, 16));
+				return cp >= a && cp <= b;
+			});
+			expect(inRange, ch).toBe(true);
+		}
+		const css = fontFaceCss(own, { thaanaOnly: true });
+		expect(css.split(`unicode-range: ${THAANA_ONLY_RANGE};`)).toHaveLength(3);
+		expect(fontFaceCss(own)).not.toContain('unicode-range');
+	});
+
+	it('writes the line-spacing fixes, for every weight or per weight', () => {
+		const fix = { ascent: 0.9, descent: -0.35, lineGap: 0 };
+		const all = fontFaceCss({ ...own, cssOverrides: fix });
+		expect(all.match(/ascent-override: 90%;/g)).toHaveLength(2);
+		expect(all).toContain('descent-override: 35%;');
+		expect(all).toContain('line-gap-override: 0%;');
+		const one = fontFaceCss({ ...own, cssOverrides: { 700: fix, 400: null } });
+		expect(one.match(/ascent-override/g)).toHaveLength(1);
+		expect(one.split('@font-face')[2]).toContain('ascent-override: 90%;');
+	});
+
 	it('loadFonts registers your files and fetches nothing from fonts.mv', async () => {
-		const added: { family: string; source: string; weight?: string }[] = [];
+		const added: { family: string; source: string; weight?: string; unicodeRange?: string; ascentOverride?: string }[] =
+			[];
 		class FakeFontFace {
 			constructor(
 				public family: string,
@@ -195,7 +231,14 @@ describe('own font files', () => {
 		Object.defineProperty(document, 'fonts', {
 			configurable: true,
 			value: {
-				add: (f: FakeFontFace) => added.push({ family: f.family, source: f.source, weight: f.descriptors.weight })
+				add: (f: FakeFontFace) =>
+					added.push({
+						family: f.family,
+						source: f.source,
+						weight: f.descriptors.weight,
+						...(f.descriptors.unicodeRange ? { unicodeRange: f.descriptors.unicodeRange } : {}),
+						...(f.descriptors.ascentOverride ? { ascentOverride: f.descriptors.ascentOverride } : {})
+					})
 			}
 		});
 		await loadFonts(own);
@@ -205,6 +248,20 @@ describe('own font files', () => {
 			{ family: 'Faruma', source: `url("https://cdn.example/f-700.ttf?v=2") format('truetype')`, weight: '700' }
 		]);
 		expect(document.querySelector('link[data-fonts-mv]')).toBeNull();
+		added.length = 0;
+		await loadFonts(
+			{ ...own, weights: [400], cssOverrides: { ascent: 0.9, descent: -0.35, lineGap: 0 } },
+			{ thaanaOnly: true }
+		);
+		expect(added).toEqual([
+			{
+				family: 'Faruma',
+				source: `url("/fonts/faruma-400.woff2") format('woff2')`,
+				weight: '400',
+				unicodeRange: THAANA_ONLY_RANGE,
+				ascentOverride: '90%'
+			}
+		]);
 		vi.unstubAllGlobals();
 	});
 });

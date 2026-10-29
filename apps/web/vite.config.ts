@@ -10,7 +10,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 // entry under the same URL (src/lib/server/r2.ts).
 const dataDir = new URL('src/lib/data/', import.meta.url);
 const dataHash = createHash('sha256');
-for (const f of readdirSync(dataDir).sort()) dataHash.update(f).update(readFileSync(new URL(f, dataDir)));
+for (const f of readdirSync(dataDir).toSorted()) dataHash.update(f).update(readFileSync(new URL(f, dataDir)));
 
 // Hard-coded /fonts/… URLs (the UI font in layout.css) must name a file the
 // pipeline still produces: MV Faseyha going unmodified once removed its

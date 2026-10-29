@@ -12,7 +12,7 @@ export const CONTACT_EMAIL = 'contact@fonts.mv';
 export function cssApiUrl(
 	base: string,
 	families: { name: string; weights: number[] }[],
-	{ normalize = false }: { normalize?: boolean } = {}
+	{ normalize = false, thaanaOnly = false }: { normalize?: boolean; thaanaOnly?: boolean } = {}
 ): string {
 	const params = families
 		.map(
@@ -20,5 +20,5 @@ export function cssApiUrl(
 				`family=${encodeURIComponent(f.name).replace(/%20/g, '+')}:wght@${f.weights.toSorted((a, b) => a - b).join(';')}`
 		)
 		.join('&');
-	return `${base}/css2?${params}&display=swap${normalize ? '&normalize=1' : ''}`;
+	return `${base}/css2?${params}&display=swap${normalize ? '&normalize=1' : ''}${thaanaOnly ? '&subset=thaana' : ''}`;
 }
