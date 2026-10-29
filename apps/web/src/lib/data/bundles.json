@@ -16,10 +16,10 @@
   "description": "Every family in the catalogue.",
   "format": "ttf",
   "file": "fonts-mv-full.zip",
-  "families": 158,
-  "styles": 227,
-  "size": 6897833,
-  "sha256": "c05bc9ad3974e8685dfead08a71d639c359a8790b16df0ad80d51abeeb80bb74"
+  "families": 157,
+  "styles": 226,
+  "size": 6796687,
+  "sha256": "e737255671c7763d3e9a38e0cd36e71de11dd0fb550b7b728a19cff063e92fcb"
  },
  {
   "id": "unicode-originals",
@@ -27,10 +27,10 @@
   "description": "Everything except the pre-Unicode fonts fonts.mv remapped (old A_ fonts and similar).",
   "format": "ttf",
   "file": "fonts-mv-unicode-originals.zip",
-  "families": 133,
-  "styles": 201,
-  "size": 6392517,
-  "sha256": "2ada8b528e797a47fab656942bd9d021ee608ce75eca5f5fd16fb7488b323ac3"
+  "families": 132,
+  "styles": 200,
+  "size": 6291319,
+  "sha256": "6420d6e9dfb436569e7ef1ba8b94d5a2af37f142714823f7ae2a594260a6a2b9"
  },
  {
   "id": "open-licensed",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "fonts-mv-artistic.zip",
-  "families": 27,
-  "styles": 28,
-  "size": 696943,
-  "sha256": "a5281604e067ee9a95b79a39380503130b2628fd74e7ba9bd27de9157624ede7"
+  "families": 26,
+  "styles": 27,
+  "size": 595781,
+  "sha256": "f71f05b6e45cd4653c15eb4cd7bc1c51f809f6c3f238da3cc0f2a09397713813"
  },
  {
   "id": "handwriting",
@@ -115,10 +115,10 @@
   "description": "Every family as WOFF2 with a ready-made fonts.css, for self-hosting.",
   "format": "woff2",
   "file": "fonts-mv-webfonts-full.zip",
-  "families": 158,
-  "styles": 227,
-  "size": 5378020,
-  "sha256": "7676014b9265368497cdbe3e11525dd4c3ebc8fee2ecb49d6c2d4f01f2d99ed3"
+  "families": 157,
+  "styles": 226,
+  "size": 5304694,
+  "sha256": "a9255962028d236d8679d8dbcd8ebe3f6ae3f6bc588721b19fa8774894e56ef1"
  },
  {
   "id": "legacy",

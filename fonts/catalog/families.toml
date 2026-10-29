@@ -524,12 +524,6 @@ name = "Nasr"
 category = "artistic"
 fonts = { 300 = "nasr-light.otf" }
 
-[families.suruhee-outlined]
-name = "Suruhee Outlined"
-category = "artistic"
-designer = "Hasan Shazil"
-fonts = { 400 = "suruhee-outlined.ttf" }
-
 [families.akuro]
 name = "Akuro"
 category = "artistic"
@@ -949,6 +943,10 @@ fonts = { 400 = "a-nishan.ttf" }
 # Not in the repo at all (commercially licensed, so not redistributable):
 #   MV Boli (Microsoft/Monotype, ships with Windows)
 #   Faruma Arabic (bundles glyphs from Microsoft's Traditional Arabic)
+
+# Removed, not excluded: Suruhee Outlined (Hasan Shazil). It came from a personal GitHub
+# collection with no licence, and the designer sells Sangu Suruhee Outline through Akuru Type.
+# Don't add it back without his written permission.
 
 [excluded]
 "ahmed2wn.ttf" = "Pre-Unicode (unnamed): a lighter cut of the MV Kelaa design. Legacy bundle only."

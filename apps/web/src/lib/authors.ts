@@ -323,15 +323,15 @@ export const AUTHORS: AuthorBio[] = [
 		thaana: 'ހަސަން ޝާޒިލް',
 		thaanaVerified: false,
 		role: 'Type designer',
-		knownFor: 'Haluvidhaa, Hawwa and Sangu Suruhee (Thaana Type Foundry, 2021), and Suruhee Outlined',
+		knownFor: 'Haluvidhaa, Hawwa and Sangu Suruhee (Thaana Type Foundry, 2021)',
 		links: [
 			{
 				label: 'Instagram (@has_n)',
 				url: 'https://www.instagram.com/has_n/'
 			},
 			{
-				label: 'GitHub (hshazil84)',
-				url: 'https://github.com/hshazil84/Dhivehi-fonts'
+				label: 'Akuru Type',
+				url: 'https://www.akurutype.com/profile/hasanshazil'
 			},
 			{
 				label: 'Thaana Type Foundry',
@@ -340,7 +340,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
-			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. It is a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. A second version was released in 2026. He has also published Suruhee Outlined (2026) on GitHub.'
+			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. It is a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. A second version was released in 2026. He sells Sangu Suruhee Outline, a heading variant with an outline and an extruded shadow, through Akuru Type.'
 		],
 		excerpt:
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
@@ -358,8 +358,8 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://thaana.com/sangu-suruhee/'
 			},
 			{
-				title: 'GitHub: hshazil84/Dhivehi-fonts',
-				url: 'https://github.com/hshazil84/Dhivehi-fonts'
+				title: 'Akuru Type: Sangu Suruhee Outline',
+				url: 'https://www.akurutype.com/fonts/suruheeoutline'
 			}
 		],
 		page: true

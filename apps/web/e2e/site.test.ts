@@ -77,6 +77,14 @@ test('CSS API can limit every font to Thaana', async ({ request }) => {
 	expect((await request.get('/css2?family=Bolhu&subset=latin')).status()).toBe(400);
 });
 
+test('font files are served only for families in the catalogue', async ({ request }) => {
+	expect((await request.get('/fonts/bolhu/bolhu-400.woff2')).status()).toBe(200);
+	// Suruhee Outlined was taken down; its files may still be in R2 but must not be served.
+	expect((await request.get('/fonts/suruhee-outlined/suruhee-outlined-400.woff2')).status()).toBe(404);
+	expect((await request.get('/fonts/suruhee-outlined/suruhee-outlined.zip')).status()).toBe(404);
+	expect((await request.get('/fonts/suruhee-outlined')).status()).toBe(404);
+});
+
 test('CSS API rejects unknown families with a helpful message', async ({ request }) => {
 	const res = await request.get('/css2?family=Nope');
 	expect(res.status()).toBe(400);
