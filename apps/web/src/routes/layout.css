@@ -181,6 +181,11 @@
 	white-space: pre-line;
 	overflow-wrap: anywhere;
 	line-height: 1.6;
+	/* Slanted and script fonts draw past their first and last letters' boxes, and the
+	   list clamps previews (overflow: hidden). Widen the box by the same amount it's
+	   pulled out, so overhangs have room while the text stays aligned with the name. */
+	padding-inline: 0.3em;
+	margin-inline: -0.3em;
 }
 
 /* Code blocks (code-block.svelte): the plain and the Shiki-highlighted <pre>
