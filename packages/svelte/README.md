@@ -32,3 +32,5 @@ Show Thaana text correctly (RTL even when it starts with a Latin word, numbers i
 Fonts vary a lot in size at the same `font-size`. `loadFonts({ family: 'Faruma' }, { normalize: true })` scales a family so its Thaana letters look as big as Faruma's; the font files are unchanged.
 
 To serve the font files yourself instead of from fonts.mv, pass them by weight: `loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } })`. `fontFaceCss()` writes the `@font-face` rules for a stylesheet. See [@yashau/thaana](https://www.npmjs.com/package/@yashau/thaana#your-own-font-files).
+
+To put the Thaana font first in your whole page's font stack, `loadFonts({ family: 'MV Faseyha' }, { thaanaOnly: true })` limits it to Thaana, so Latin letters, digits, punctuation and spaces fall through to the next font. For fonts shipped unmodified, also pass each file's `cssOverrides` from [fonts.json](https://fonts.mv/fonts.json) when you host the files yourself, so they get the same line-spacing fix. See [@yashau/thaana](https://www.npmjs.com/package/@yashau/thaana#thaana-only).

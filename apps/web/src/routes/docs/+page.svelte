@@ -127,12 +127,16 @@ ${SCRIPT_END}
 			'First-strong (like dir="auto") vs rihaPDF\'s rule: any Thaana → RTL; no letters → fallback.'
 		],
 		[
-			'loadFonts({ family, weights, files }, { normalize })',
-			'Load a font; resolves when it can be drawn (canvas, SVG). Options: same size (above) and self-hosting (below).'
+			'loadFonts({ family, weights, files }, { normalize, thaanaOnly })',
+			'Load a font; resolves when it can be drawn (canvas, SVG). Options: same size and Thaana only (above), self-hosting (below).'
 		],
 		['fontStack(family)', 'A font-family with a Latin fallback and installed Thaana fonts.'],
 		['PANGRAMS · LETTERS · ARABIC_LETTERS · FILI', 'Sample text and the alphabet.'],
-		['fontFaceCss({ family, files })', '@font-face CSS for your own copies of the files (self-hosting).']
+		[
+			'fontFaceCss({ family, files, cssOverrides }, { thaanaOnly })',
+			'@font-face CSS for your own copies of the files (self-hosting).'
+		],
+		['THAANA_ONLY_RANGE', 'The unicode-range thaanaOnly applies: Thaana, ، ؛ ؟, ﷲ and the joiner/direction marks.']
 	];
 </script>
 
@@ -172,6 +176,10 @@ ${SCRIPT_END}
 				class="underline underline-offset-4"
 				href="#same-size">below</a
 			>).
+		</li>
+		<li>
+			Optional: <code>&amp;subset=thaana</code> limits the font to Thaana, so it can go first in your whole page's font
+			stack (<a class="underline underline-offset-4" href="#thaana-only">below</a>).
 		</li>
 	</ul>
 
@@ -291,6 +299,32 @@ ${SCRIPT_END}
 		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a> (<code>sizeAdjust</code>).
 	</p>
 
+	<h2 id="thaana-only" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Thaana only</h2>
+	<p class="mb-4 text-muted-foreground">
+		Want one font stack for a whole bilingual page, with the Thaana font first? Many Dhivehi fonts include their own
+		digits, Latin letters or punctuation, which would then win over your Latin font. Ask for <code>subset=thaana</code>
+		and every <code>@font-face</code> is limited to Thaana (letters, <code>،</code> <code>؛</code> <code>؟</code>,
+		<code>ﷲ</code> and the joiner and direction marks). Latin letters, digits, punctuation and spaces fall through to the
+		next font. Fonts shipped unmodified get the same limit, even though their file can't be split.
+	</p>
+	<div class="flex flex-col gap-3">
+		<CodeBlock
+			title="HTML"
+			lang="html"
+			code={`<link rel="stylesheet" href="${SITE_ORIGIN}/css2?family=MV+Faseyha&display=swap&subset=thaana">\n\n<style>\n  body { font-family: 'MV Faseyha', system-ui, sans-serif; }\n</style>`}
+		/>
+		<CodeBlock
+			title="JS"
+			lang="javascript"
+			code={`import { loadFonts } from '@yashau/thaana';\n\nawait loadFonts({ family: 'MV Faseyha' }, { thaanaOnly: true });`}
+		/>
+		<CodeBlock title="React / Vue" lang="jsx" code={`useDhivehiFont('MV Faseyha', [400], { thaanaOnly: true });`} />
+	</div>
+	<p class="mt-3 text-sm text-muted-foreground">
+		Each font's page has a switch that adds it to the embed code. Don't use it for symbol fonts: their symbols sit on
+		Latin keys.
+	</p>
+
 	<h2 id="helpers" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">Helpers</h2>
 	<Card.Root class="py-0">
 		<!-- A dense reference list: no group gap (gap-0! beats the group's own gap for
@@ -323,14 +357,23 @@ ${SCRIPT_END}
 	<h3 id="own-files" class="mt-6 mb-3 scroll-mt-20 text-lg font-semibold tracking-tight">With the packages</h3>
 	<p class="mb-4 text-muted-foreground">
 		Pass the URLs of your copies by weight. The packages then register the font from your files and load nothing from
-		fonts.mv. For <code>normalize</code>, also pass the family's <code>sizeAdjust</code> from
-		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>.
+		fonts.mv. <code>thaanaOnly</code> works the same way. From
+		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>, also pass:
 	</p>
+	<ul class="mb-4 list-disc space-y-1 pl-5 text-muted-foreground">
+		<li>
+			<code>cssOverrides</code>, for fonts shipped unmodified: their line spacing is fixed in CSS (<code
+				>ascent-override</code
+			>, <code>descent-override</code>, <code>line-gap-override</code>), and your copies need the same fix. One object
+			for every weight, or one per weight.
+		</li>
+		<li><code>sizeAdjust</code>, if you use <code>normalize</code>.</li>
+	</ul>
 	<div class="flex flex-col gap-3">
 		<CodeBlock
 			title="JS"
 			lang="javascript"
-			code={`import { loadFonts, fontFaceCss } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } });\n\n// Or the @font-face rules for your own stylesheet:\nfontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fonts/bolhu-700.woff2' } });`}
+			code={`import { loadFonts, fontFaceCss } from '@yashau/thaana';\n\nawait loadFonts({ family: 'Faruma', files: { 400: '/fonts/faruma-400.woff2' } });\n\n// Or the @font-face rules for your own stylesheet:\nfontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fonts/bolhu-700.woff2' } });\n\n// An unmodified font, with its line-spacing fix, for Thaana only:\nfontFaceCss(\n  {\n    family: 'MV Faseyha',\n    files: { 400: '/fonts/mv-faseyha-400.woff2' },\n    cssOverrides: { 400: { ascent: 0.8647, descent: -0.458, lineGap: 0 } }\n  },\n  { thaanaOnly: true }\n);`}
 		/>
 		<CodeBlock
 			title="React / Vue"
@@ -338,6 +381,12 @@ ${SCRIPT_END}
 			code={`useDhivehiFont('Faruma', [400], { files: { 400: '/fonts/faruma-400.woff2' } });`}
 		/>
 	</div>
+	<p class="mt-3 text-sm text-muted-foreground">
+		To know when to download again, watch <code>version</code> in
+		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>: it changes whenever any font file may
+		have, and the file URLs there carry it as <code>?v=</code>. Each file also has its size in bytes (<code>bytes</code
+		>), to check a download and skip files that haven't changed.
+	</p>
 
 	<h2 id="data" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">For tools and agents</h2>
 	<ul class="list-disc space-y-1 pl-5 text-muted-foreground">
@@ -347,7 +396,7 @@ ${SCRIPT_END}
 		</li>
 		<li>
 			<a class="underline underline-offset-4" href="/fonts.json">/fonts.json</a>: every family with weights, license,
-			CSS URL and file URLs.
+			CSS URLs, versioned file URLs and each file's line-spacing fixes.
 		</li>
 		<li><a class="underline underline-offset-4" href="/keymap.json">/keymap.json</a>: the keyboard layout as data.</li>
 	</ul>
