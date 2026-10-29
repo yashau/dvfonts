@@ -111,6 +111,7 @@ test('agent and package endpoints are served', async ({ request }) => {
 	const faruma = fonts.families.find((f: { id: string }) => f.id === 'faruma');
 	expect(faruma.files[0].woff2).toMatch(new RegExp(`/fonts/faruma/faruma-\\d+\\.woff2\\?v=${fonts.version}$`));
 	expect(faruma.files[0]).toHaveProperty('cssOverrides');
+	expect(faruma.files[0].bytes.woff2).toBeGreaterThan(1000);
 	expect(faruma.cssThaanaOnly).toContain('&subset=thaana');
 });
 

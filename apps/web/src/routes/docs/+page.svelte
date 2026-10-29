@@ -384,7 +384,8 @@ ${SCRIPT_END}
 	<p class="mt-3 text-sm text-muted-foreground">
 		To know when to download again, watch <code>version</code> in
 		<a class="underline underline-offset-4" href="/fonts.json">fonts.json</a>: it changes whenever any font file may
-		have, and the file URLs there carry it as <code>?v=</code>.
+		have, and the file URLs there carry it as <code>?v=</code>. Each file also has its size in bytes (<code>bytes</code
+		>), to check a download and skip files that haven't changed.
 	</p>
 
 	<h2 id="data" class="mt-12 mb-3 scroll-mt-20 text-xl font-semibold tracking-tight">For tools and agents</h2>

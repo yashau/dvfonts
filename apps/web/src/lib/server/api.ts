@@ -39,6 +39,8 @@ export function apiFamily(f: Family) {
 			...Object.fromEntries(
 				Object.keys(s.sizes).map((k) => [k, `${SITE_ORIGIN}${fontUrl(f, s.weight, k)}?v=${DATA_VERSION}`])
 			),
+			/** Size in bytes of each format above, to check a download and skip unchanged files. */
+			bytes: s.sizes,
 			/** Line-spacing fixes in em (descent negative), for ascent-/descent-/line-gap-override.
 			 *  /css2 applies them; pass them as `cssOverrides` to fontFaceCss/loadFonts when self-hosting. */
 			cssOverrides: s.cssOverrides
