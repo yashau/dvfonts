@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "fonts-mv-artistic.zip",
-  "families": 26,
-  "styles": 27,
-  "size": 601792,
-  "sha256": "2a788a49a498a1572bb5bb925fed369a36995eb0b372179b7c36441c786818e0"
+  "families": 21,
+  "styles": 22,
+  "size": 512536,
+  "sha256": "835a2915236414129c65399291a97b7181746c08d7503d957734383b0cb76c0c"
  },
  {
   "id": "handwriting",
@@ -93,10 +93,10 @@
   "description": "Experimental and constructed designs: pixel, geometric and other unusual takes on Thaana.",
   "format": "ttf",
   "file": "fonts-mv-novelty.zip",
-  "families": 33,
-  "styles": 34,
-  "size": 208514,
-  "sha256": "84a382b7a7f0101463b9d196a2b3b4cb97784c7e754dd6cd4017defee6b52b18"
+  "families": 38,
+  "styles": 39,
+  "size": 297753,
+  "sha256": "6829f5b060b2446ad4ce69fd18e15b6e881a12601c7e5e5aa89deeeabfd6686b"
  },
  {
   "id": "webfonts-essentials",

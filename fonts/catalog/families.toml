@@ -422,45 +422,20 @@ designer = "M.A. Gadir"
 category = "artistic"
 fonts = { 400 = "mv-sehga-old.otf" }
 
-[families.a-haleem-bolhu]
-name = "A Haleem Bolhu"
-category = "artistic"
-fonts = { 700 = "a-haleem-bolhu-bold.otf" }
-
 [families.a-haleem-faseyha]
 name = "A Haleem Faseyha"
 category = "artistic"
 fonts = { 400 = "a-haleem-faseyha.otf" }
-
-[families.a-haleem-kb]
-name = "A Haleem KB"
-category = "artistic"
-fonts = { 400 = "a-haleem-kb.otf" }
 
 [families.a-haleem-kirudhooni]
 name = "A Haleem Kirudhooni"
 category = "artistic"
 fonts = { 400 = "a-haleem-kirudhooni.otf" }
 
-[families.a-haleem-mathi]
-name = "A Haleem Mathi"
-category = "artistic"
-fonts = { 700 = "a-haleem-mathi-bold.otf" }
-
 [families.a-haleem-raaveri]
 name = "A Haleem Raaveri"
 category = "artistic"
 fonts = { 400 = "a-haleem-raaveri.otf" }
-
-[families.a-haleem-thangi]
-name = "A Haleem Thangi"
-category = "artistic"
-fonts = { 700 = "a-haleem-thangi-bold.otf" }
-
-[families.a-haleem-thiki]
-name = "A Haleem Thiki"
-category = "artistic"
-fonts = { 700 = "a-haleem-thiki-bold.otf" }
 
 [families.a-haleem-uivashaa]
 name = "A Haleem Uivashaa"
@@ -910,6 +885,31 @@ fonts = { 400 = "mv-sishisozo.otf" }
 name = "A Haleem SH"
 category = "novelty"
 fonts = { 700 = "a-haleem-sh-bold-italic.otf" }
+
+[families.a-haleem-bolhu]
+name = "A Haleem Bolhu"
+category = "novelty"
+fonts = { 700 = "a-haleem-bolhu-bold.otf" }
+
+[families.a-haleem-kb]
+name = "A Haleem KB"
+category = "novelty"
+fonts = { 400 = "a-haleem-kb.otf" }
+
+[families.a-haleem-mathi]
+name = "A Haleem Mathi"
+category = "novelty"
+fonts = { 700 = "a-haleem-mathi-bold.otf" }
+
+[families.a-haleem-thangi]
+name = "A Haleem Thangi"
+category = "novelty"
+fonts = { 700 = "a-haleem-thangi-bold.otf" }
+
+[families.a-haleem-thiki]
+name = "A Haleem Thiki"
+category = "novelty"
+fonts = { 700 = "a-haleem-thiki-bold.otf" }
 
 # ─── Symbols ─────────────────────────────────────────────────────────────────
 
