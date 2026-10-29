@@ -254,7 +254,7 @@ test('fonts show and sort by release year', async ({ page, isMobile }) => {
 	await page.getByRole('combobox', { name: 'Sort' }).last().click();
 	await page.getByRole('option', { name: 'First released, oldest' }).click();
 	if (isMobile) await page.keyboard.press('Escape');
-	// Novel03 (1994) is the oldest family on the default shelves (Official, Artistic, Handwriting).
+	// Novel03 (1994) is the oldest family on the default shelves (Official, Handwriting, Artistic).
 	const first = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])').first();
 	await expect(first).toHaveAttribute('href', '/fonts/novel03');
 });
@@ -272,7 +272,7 @@ test('categories start collapsed and expand', async ({ page, isMobile }) => {
 	if (isMobile) await page.getByRole('button', { name: 'Filters' }).click();
 	const toggle = page.getByRole('button', { name: 'Categories' }).last();
 	await expect(toggle).toHaveAttribute('aria-expanded', 'false');
-	await expect(page.getByText('Official, Artistic, Handwriting').last()).toBeVisible();
+	await expect(page.getByText('Official, Handwriting, Artistic').last()).toBeVisible();
 	await toggle.click();
 	await expect(toggle).toHaveAttribute('aria-expanded', 'true');
 	await expect(page.getByRole('group', { name: 'Categories' }).last().getByText('Novelty')).toBeVisible();
