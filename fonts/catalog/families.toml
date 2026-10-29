@@ -452,11 +452,6 @@ name = "A Haleem Raaveri"
 category = "artistic"
 fonts = { 400 = "a-haleem-raaveri.otf" }
 
-[families.a-haleem-sh]
-name = "A Haleem SH"
-category = "artistic"
-fonts = { 700 = "a-haleem-sh-bold-italic.otf" }
-
 [families.a-haleem-thangi]
 name = "A Haleem Thangi"
 category = "artistic"
@@ -910,6 +905,11 @@ fonts = { 400 = "mv-runa-us.otf" }
 name = "MV Sishisozo"
 category = "novelty"
 fonts = { 400 = "mv-sishisozo.otf" }
+
+[families.a-haleem-sh]
+name = "A Haleem SH"
+category = "novelty"
+fonts = { 700 = "a-haleem-sh-bold-italic.otf" }
 
 # ─── Symbols ─────────────────────────────────────────────────────────────────
 
