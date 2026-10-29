@@ -211,11 +211,6 @@ name = "Gurafiku"
 category = "official"
 fonts = { 400 = "gurafiku-regular.ttf" }
 
-[families.haluvidhaa]
-name = "Haluvidhaa"
-category = "official"
-fonts = { 400 = "haluvidhaa-regular.ttf" }
-
 [families.faiy]
 name = "Faiy"
 category = "official"
@@ -533,6 +528,11 @@ fonts = { 400 = "akuro2w2.ttf" }
 name = "Novel03"
 category = "artistic"
 fonts = { 700 = "novel03-bold.ttf" }
+
+[families.haluvidhaa]
+name = "Haluvidhaa"
+category = "artistic"
+fonts = { 400 = "haluvidhaa-regular.ttf" }
 
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
