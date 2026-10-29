@@ -60,10 +60,10 @@
   "description": "Text faces in the Faruma tradition, for documents: letters, notices, books and reports.",
   "format": "ttf",
   "file": "fonts-mv-official.zip",
-  "families": 38,
-  "styles": 52,
-  "size": 1362399,
-  "sha256": "f0b46c6285c7785665727875585ea6203e9b4b632beac156b0d747aa76f85a57"
+  "families": 37,
+  "styles": 51,
+  "size": 1346342,
+  "sha256": "48e08f8162c01bddcde597289bc5639b161ca243de955cf4369984b61aef0ccc"
  },
  {
   "id": "artistic",
@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "fonts-mv-artistic.zip",
-  "families": 26,
-  "styles": 27,
-  "size": 595781,
-  "sha256": "f71f05b6e45cd4653c15eb4cd7bc1c51f809f6c3f238da3cc0f2a09397713813"
+  "families": 27,
+  "styles": 28,
+  "size": 611840,
+  "sha256": "96429c4ed1d6778d68b4dd525d4b7c3cd2eec816b880389e9597445607d49033"
  },
  {
   "id": "handwriting",

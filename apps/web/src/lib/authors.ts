@@ -340,7 +340,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
-			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. It is a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. A second version was released in 2026. He sells Sangu Suruhee Outline, a heading variant with an outline and an extruded shadow, through Akuru Type.'
+			'Sangu Suruhee revives the headline lettering of Sangu, a 1990 news magazine. That lettering was first made as a stencil by Adam Ibrahim (Fankaa) for Studio-1, and Shazil redrew and digitised it. It is a tribute to the layout artists of the independent press that appeared after the political liberalisation of 1989. Sangu Suruhee Outline, a heading variant with an outline and an extruded shadow, is available from Akuru Type.'
 		],
 		excerpt:
 			'Hasan Shazil is a Maldivian type designer. In 2021 he contributed three fonts to Thaana Type Foundry: Haluvidhaa, a slanted, bubbly display face; Hawwa, a brush font that imitates ink handwriting; and Sangu Suruhee.',
