@@ -10132,65 +10132,6 @@
    "versionYear": null
   },
   {
-   "id": "suruhee-outlined",
-   "name": "Suruhee Outlined",
-   "category": "artistic",
-   "aliases": [],
-   "notes": null,
-   "sample": null,
-   "hidden": false,
-   "license": "Unspecified",
-   "unmodified": false,
-   "unmodifiedReason": null,
-   "source": "GitHub",
-   "upstream": "https://github.com/hshazil84/Dhivehi-fonts",
-   "attribution": "[catalogue page](https://github.com/hshazil84/Dhivehi-fonts)",
-   "copyright": null,
-   "designer": "Hasan Shazil",
-   "manufacturer": "Hasan Shazil",
-   "description": "Copyright (c) 2026 by Hasan Shazil. All rights reserved.",
-   "vendorUrl": ".",
-   "designerUrl": null,
-   "licenseText": null,
-   "licenseUrl": null,
-   "version": "Version 1.000; fonts.mv",
-   "styles": [
-    {
-     "weight": 400,
-     "source": "suruhee-outlined.ttf",
-     "desktopFile": "SuruheeOutlined-Regular.ttf",
-     "sizes": {
-      "ttf": 178460,
-      "woff2": 73568,
-      "woff": 100536
-     },
-     "subsets": {
-      "thaana": 41144,
-      "latin": 48476
-     },
-     "upstream": "https://github.com/hshazil84/Dhivehi-fonts",
-     "legacyLayout": null,
-     "metrics": {
-      "repaired": true,
-      "ascent": 0.849609375,
-      "descent": -0.47119140625,
-      "lineGap": 0.0
-     },
-     "glyphs": 300,
-     "thaana": 50,
-     "latin": 52,
-     "codepoints": 282,
-     "cssOverrides": null,
-     "sizeAdjust": 1.004
-    }
-   ],
-   "zipSize": 101105,
-   "chars": "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿıŒœŠšŸŽžƒˆˇ˘˙˚˛˜˝،؛؟ހށނރބޅކއވމފދތލގޏސޑޒޓޔޕޖޗޘޙޚޛޜޝޞޟޠޡޢޣޤޥަާިީުޫެޭޮޯްޱ–—‘’‚“”„†‡•…‰‹›⁄⁴€™◌ﷲ",
-   "keyGlyphs": "",
-   "firstYear": 2026,
-   "versionYear": 2026
-  },
-  {
    "id": "thaana",
    "name": "Thaana",
    "category": "official",
