@@ -56,12 +56,12 @@ Or with no build step at all:
 | `hasThaana`, `hasRtl`, `isMixedScript`, `detectDirection`, `resolveDirection` | Script and direction detection.                                                                                                                                                             |
 | `fontStack('Faruma')`                                                         | `'Faruma', system-ui, 'Noto Sans Thaana', 'MV Boli', sans-serif`                                                                                                                            |
 | `loadFonts({ family: 'Faruma' })`                                             | Loads a font from [fonts.mv](https://fonts.mv), or from your own `files`, and resolves when it can be drawn. `{ normalize: true }` scales it so its Thaana letters look as big as Faruma's. |
-| `fontFaceCss({ family, files })`                                              | `@font-face` CSS for your own copies of the files.                                                                                                                                          |
+| `fontFaceCss({ family, files })`                                              | `@font-face` CSS for your own copies of the files. `{ thaanaOnly: true }` limits them to Thaana.                                                                                            |
 | `PANGRAMS`, `LETTERS`, `FILI`, …                                              | Sample text and the alphabet.                                                                                                                                                               |
 
 ## Your own font files
 
-Don't want to depend on fonts.mv's hosting? Download the files (each family's page, the [downloads](https://fonts.mv/downloads) page, or `fonts.json`), serve them yourself and pass `files`, by weight. Nothing is then loaded from dvfonts:
+Don't want to depend on fonts.mv's hosting? Download the files (each family's page, the [downloads](https://fonts.mv/downloads) page, or `fonts.json`), serve them yourself and pass `files`, by weight. Nothing is then loaded from fonts.mv:
 
 ```js
 import { loadFonts, fontFaceCss } from '@yashau/thaana';
@@ -73,6 +73,24 @@ fontFaceCss({ family: 'Bolhu', files: { 400: '/fonts/bolhu-400.woff2', 700: '/fo
 ```
 
 For `{ normalize: true }` with your own files, also pass the family's `sizeAdjust` from `fonts.json`. Families with and without `files` can be mixed in one `loadFonts` call.
+
+Fonts that ship unmodified get their line spacing fixed in CSS. Pass each file's `cssOverrides` from `fonts.json` (one object, or one per weight) and the rules get the same `ascent-override`, `descent-override` and `line-gap-override` that fonts.mv's stylesheet uses. `fonts.json` has a `version` that changes whenever any font file may have, and its file URLs carry it as `?v=`, so you can tell when to download again.
+
+## Thaana only
+
+To put a Thaana font first in a site-wide font stack, pass `{ thaanaOnly: true }` (to `loadFonts`, `fontFaceCss`, `fontCssUrl` or `useDhivehiFont`; `&subset=thaana` on the CSS API). Every `@font-face` then gets `unicode-range: THAANA_ONLY_RANGE` (Thaana, `،` `؛` `؟`, `ﷲ`, ZWNJ/ZWJ/LRM/RLM), so Latin letters, digits, punctuation and spaces fall through to the next font:
+
+```js
+fontFaceCss(
+	{
+		family: 'MV Faseyha',
+		files: { 400: '/fonts/mv-faseyha-400.woff2' },
+		cssOverrides: { 400: { ascent: 0.865, descent: -0.458, lineGap: 0 } }
+	},
+	{ thaanaOnly: true }
+);
+// :root { --font-sans: 'MV Faseyha', system-ui, sans-serif; }
+```
 
 ## CSS defaults
 

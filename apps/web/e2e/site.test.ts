@@ -62,6 +62,21 @@ test('family page has styles, glyphs and a working embed URL', async ({ page, re
 	expect(font.headers()['access-control-allow-origin']).toBe('*');
 });
 
+test('CSS API can limit every font to Thaana', async ({ request }) => {
+	const only = 'unicode-range: U+0780-07BF, U+060C, U+061B, U+061F, U+FDF2, U+200C-200F;';
+	// A subset font: only the Thaana file, with no ASCII in its range.
+	const bolhu = await (await request.get('/css2?family=Bolhu:wght@400;700&subset=thaana')).text();
+	expect(bolhu.match(/@font-face/g)).toHaveLength(2);
+	expect(bolhu.split(only)).toHaveLength(3);
+	expect(bolhu).toContain('bolhu-400.thaana.woff2');
+	expect(bolhu).not.toContain('latin.woff2');
+	// An unmodified font: the whole file, still limited to Thaana, with its line-spacing fix.
+	const faseyha = await (await request.get('/css2?family=MV+Faseyha&subset=thaana')).text();
+	expect(faseyha).toContain('mv-faseyha-400.woff2');
+	expect(faseyha).toContain(only);
+	expect((await request.get('/css2?family=Bolhu&subset=latin')).status()).toBe(400);
+});
+
 test('CSS API rejects unknown families with a helpful message', async ({ request }) => {
 	const res = await request.get('/css2?family=Nope');
 	expect(res.status()).toBe(400);
@@ -91,6 +106,12 @@ test('agent and package endpoints are served', async ({ request }) => {
 	expect(llms).toContain('ދިވެހި');
 	const fonts = await (await request.get('/fonts.json')).json();
 	expect(fonts.families.length).toBeGreaterThan(100);
+	// Self-hosting: a version, versioned file URLs, and the line-spacing fixes per file.
+	expect(fonts.version).toMatch(/^[0-9a-f]{16}$/);
+	const faruma = fonts.families.find((f: { id: string }) => f.id === 'faruma');
+	expect(faruma.files[0].woff2).toMatch(new RegExp(`/fonts/faruma/faruma-\\d+\\.woff2\\?v=${fonts.version}$`));
+	expect(faruma.files[0]).toHaveProperty('cssOverrides');
+	expect(faruma.cssThaanaOnly).toContain('&subset=thaana');
 });
 
 test('/thaana.js can be loaded cross-origin', async ({ request }) => {

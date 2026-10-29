@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { loadFonts, type FontRequest, type FontCssOptions } from '@yashau/thaana';
 
-/** CSS options, plus `files` (your own copies, by weight) and `sizeAdjust` to skip fonts.mv's hosting. */
-export type DhivehiFontOptions = FontCssOptions & Pick<FontRequest, 'files' | 'sizeAdjust'>;
+/** CSS options (including `thaanaOnly`), plus `files` (your own copies, by weight), `sizeAdjust`
+ *  and `cssOverrides` from fonts.json to skip fonts.mv's hosting. */
+export type DhivehiFontOptions = FontCssOptions & Pick<FontRequest, 'files' | 'sizeAdjust' | 'cssOverrides'>;
 
 /**
  * Load a Dhivehi font from fonts.mv, or from your own files, and report when it's ready.
@@ -17,8 +18,8 @@ export function useDhivehiFont(family: string, weights?: number[], options?: Dhi
 	useEffect(() => {
 		let live = true;
 		setReady(false);
-		const { files, sizeAdjust, ...css } = options ?? {};
-		const req: FontRequest = { family, weights, files, sizeAdjust };
+		const { files, sizeAdjust, cssOverrides, ...css } = options ?? {};
+		const req: FontRequest = { family, weights, files, sizeAdjust, cssOverrides };
 		loadFonts(req, css).then(
 			() => live && setReady(true),
 			() => live && setReady(false)
