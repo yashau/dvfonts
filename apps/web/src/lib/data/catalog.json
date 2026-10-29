@@ -1941,7 +1941,7 @@
   {
    "id": "faagathi-neon",
    "name": "Faagathi Neon",
-   "category": "artistic",
+   "category": "handwriting",
    "aliases": [],
    "notes": null,
    "sample": null,
@@ -3290,7 +3290,7 @@
   {
    "id": "lcd-thaana",
    "name": "LCD Thaana",
-   "category": "artistic",
+   "category": "modern",
    "aliases": [],
    "notes": null,
    "sample": null,
@@ -3408,7 +3408,7 @@
   {
    "id": "masnooee-mono",
    "name": "Masnooee Mono",
-   "category": "artistic",
+   "category": "modern",
    "aliases": [],
    "notes": null,
    "sample": null,
@@ -10711,7 +10711,7 @@
   {
    "id": "yuu-thaana-kufi",
    "name": "YUU Thaana Kufi",
-   "category": "artistic",
+   "category": "official",
    "aliases": [],
    "notes": null,
    "sample": null,
