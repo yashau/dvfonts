@@ -22,11 +22,13 @@
 
 [families.modfaruma]
 name = "ModFaruma"
+designer = "Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
 category = "official"
 fonts = { 400 = "modfaruma.ttf" }
 
 [families.faruma]
 name = "Faruma"
+designer = "Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
 category = "official"
 aliases = ["A_Faruma", "AFaruma"]
 fonts = { 400 = "faruma.ttf" }
@@ -66,7 +68,7 @@ fonts = { 400 = "mv-faseyha-au-rgl-h.ttf" }
 
 [families.mv-ilham]
 name = "MV Ilham"
-designer = "Hassan Hameed"
+designer = "Hassan Hameed (begun by Ilham)"
 unmodified = true
 category = "official"
 aliases = ["A_Ilham", "AIlham"]
@@ -82,7 +84,7 @@ fonts = { 400 = "randhoo-reg-hinted.ttf" }
 
 [families.mv-utheemu]
 name = "MV Utheemu"
-designer = "Hassan Hameed"
+designer = "Hassan Hameed (calligraphy by Abdulla Waheed)"
 unmodified = true
 category = "official"
 aliases = ["A_Utheem"]
@@ -90,7 +92,7 @@ fonts = { 400 = "mvutheemuregular.ttf", 700 = "mvutheemubold.ttf" }
 
 [families.a-reethi]
 name = "A Reethi"
-designer = "Ibrahim Yasir"
+designer = "Abdul Sattar, Abdulla Waheed, Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
 category = "official"
 aliases = ["MV Reethi"]
 fonts = { 400 = "reethi.ttf" }
@@ -162,7 +164,7 @@ fonts = { 400 = "mv-galan-normal.otf" }
 
 [families.mv-radhun]
 name = "MV Radhun"
-designer = "M.A. Gadir"
+designer = "M.A. Gadir (with Hassan Saeed and Abdulla Waheed)"
 category = "official"
 fonts = { 400 = "radhun.ttf" }
 
@@ -320,7 +322,7 @@ fonts = { 400 = "mvraadha-regular.ttf", 700 = "mvraadha-bold.ttf" }
 
 [families.mv-nasri]
 name = "MV Nasri"
-designer = "Hassan Hameed"
+designer = "Hassan Hameed (after Nasri Khattar)"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvnasri-reg.ttf", 700 = "mvnasri-bld.ttf" }
@@ -356,7 +358,7 @@ fonts = { 400 = "mv-oswald-reg.ttf" }
 
 [families.mv-thuththu-neo]
 name = "MV Thuththu Neo"
-designer = "Hassan Hameed"
+designer = "Hassan Hameed (after Abdulla Ismail)"
 unmodified = true
 category = "modern"
 fonts = { 400 = "mvthuththu-neo-reg.ttf", 700 = "mvthuththu-neo-bold.ttf" }
@@ -370,7 +372,7 @@ fonts = { 400 = "mv-maliku.ttf" }
 
 [families.mv-thuththu]
 name = "MV Thuththu"
-designer = "Hassan Hameed"
+designer = "Hassan Hameed (after Abdulla Ismail)"
 unmodified = true
 category = "modern"
 fonts = { 700 = "mvthuththu-bld.ttf" }
@@ -383,6 +385,7 @@ fonts = { 400 = "masnooeemono-regular.ttf" }
 
 [families.lcd-thaana]
 name = "LCD Thaana"
+designer = "Ayeshath Fadwa (Thaana), Fredrick Brennan (Latin)"
 category = "modern"
 year = 2021
 fonts = { 400 = "lcdthaana-regular.ttf" }
@@ -424,21 +427,25 @@ fonts = { 400 = "mv-sehga-old.otf" }
 
 [families.a-haleem-faseyha]
 name = "A Haleem Faseyha"
+designer = "Haleem"
 category = "artistic"
 fonts = { 400 = "a-haleem-faseyha.otf" }
 
 [families.a-haleem-kirudhooni]
 name = "A Haleem Kirudhooni"
+designer = "Haleem"
 category = "artistic"
 fonts = { 400 = "a-haleem-kirudhooni.otf" }
 
 [families.a-haleem-raaveri]
 name = "A Haleem Raaveri"
+designer = "Haleem"
 category = "artistic"
 fonts = { 400 = "a-haleem-raaveri.otf" }
 
 [families.a-haleem-uivashaa]
 name = "A Haleem Uivashaa"
+designer = "Haleem"
 category = "artistic"
 fonts = { 400 = "a-haleem-uivashaa.otf" }
 
@@ -725,6 +732,7 @@ fonts = { 400 = "thiki.ttf" }
 
 [families.a-haleem-riveli]
 name = "A Haleem Riveli"
+designer = "Haleem"
 category = "novelty"
 fonts = { 400 = "a-haleem-riveli.otf" }
 
@@ -883,31 +891,37 @@ fonts = { 400 = "mv-sishisozo.otf" }
 
 [families.a-haleem-sh]
 name = "A Haleem SH"
+designer = "Haleem"
 category = "novelty"
 fonts = { 700 = "a-haleem-sh-bold-italic.otf" }
 
 [families.a-haleem-bolhu]
 name = "A Haleem Bolhu"
+designer = "Haleem"
 category = "novelty"
 fonts = { 700 = "a-haleem-bolhu-bold.otf" }
 
 [families.a-haleem-kb]
 name = "A Haleem KB"
+designer = "Haleem"
 category = "novelty"
 fonts = { 400 = "a-haleem-kb.otf" }
 
 [families.a-haleem-mathi]
 name = "A Haleem Mathi"
+designer = "Haleem"
 category = "novelty"
 fonts = { 700 = "a-haleem-mathi-bold.otf" }
 
 [families.a-haleem-thangi]
 name = "A Haleem Thangi"
+designer = "Haleem"
 category = "novelty"
 fonts = { 700 = "a-haleem-thangi-bold.otf" }
 
 [families.a-haleem-thiki]
 name = "A Haleem Thiki"
+designer = "Haleem"
 category = "novelty"
 fonts = { 700 = "a-haleem-thiki-bold.otf" }
 

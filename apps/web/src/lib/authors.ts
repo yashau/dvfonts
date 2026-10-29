@@ -40,6 +40,61 @@ export function correctionsMailto(name: string): string {
 // carry thaanaVerified: false.
 export const AUTHORS: AuthorBio[] = [
 	{
+		name: 'Abdul Sattar',
+		slug: 'abdul-sattar',
+		thaana: 'ޢަބްދުއްސައްތާރު މުޙައްމަދު',
+		role: 'Calligrapher',
+		knownFor: 'Calligraphy in A Reethi (2002), the first version of Faruma',
+		bio: [
+			"Abdul Sattar Mohamed, of Mulee in Meemu Atoll, is a calligrapher who worked at the President's Office alongside Musthafa Mohamed while Faruma was being designed in 2002. The font files of A Reethi, the first version of that design, credit his calligraphy together with that of Abdulla Waheed and Musthafa Mohamed.",
+			'Musthafa Mohamed thanks him in his account of making Faruma, as a colleague who worked with him at the time.'
+		],
+		excerpt:
+			'Abdul Sattar Mohamed is a calligrapher from Mulee, Meemu Atoll, credited for the calligraphy of A Reethi (2002), the first version of Faruma.',
+		sources: [
+			{
+				title: "Farumaa — from the designer's pen (Musthafa Mohamed, 17 May 2023), hassanhameed.com",
+				url: 'https://hassanhameed.com/thaana-fonts/farumaa-from-the-designers-pen/'
+			},
+			{
+				title:
+					"Font name tables: A Reethi ('Calligraphy by Abdul Sattar, Abdulla Waheed, Musthafa Mohamed, created by Ibrahim Yasir, assisted by Ahmed Asif. Office of the President 2002')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
+		name: 'Abdulla Ismail',
+		slug: 'abdulla-ismail',
+		thaana: 'ޢަބްދުﷲ އިސްމާޢީލް',
+		thaanaVerified: false,
+		role: 'Letter designer',
+		knownFor: 'Athireege (Vadifathi) Thaana, the basis of MV Thuththu',
+		bio: [
+			'Abdulla Ismail, known as Thuththu Sahib, was from Asurumuaage in Malé, a son of the well-known mathematician Himithee Ismail Kaleyfaanu. In the 1960s he designed a new form of Thaana letters, known as Athireege Thaana or Vadifathi Thaana, had a sheet of them printed abroad and distributed it. Some schools used the letters in their badges. He died in 1970.',
+			"In March 1970 he gave a copy of the sheet to Abdurraheem Abdulmajeed, through whom it reached Hassan Hameed. Hameed based the bold font MV Thuththu on it, rounding some letters to bring them closer to today's Thaana, and named it after him to honour the work. MV Thuththu Neo (2018) adapts the same letters further for today's readers."
+		],
+		excerpt:
+			'Abdulla Ismail, known as Thuththu Sahib, designed Athireege (Vadifathi) Thaana in the 1960s, the letters MV Thuththu and MV Thuththu Neo are based on.',
+		sources: [
+			{
+				title: 'MV Thuththu – hassanhameed.com',
+				url: 'https://hassanhameed.com/thaana-fonts/mv-thuththu/'
+			},
+			{
+				title: 'MV Thuththu Neo – hassanhameed.com',
+				url: 'https://www.hassanhameed.com/?page_id=11718'
+			},
+			{
+				title:
+					"Font name table: MV Thuththu ('based on the work of Abdulla Ismail, Thuththu Sahib of Asurumuaage, Male … He passed away in 1970')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
 		name: 'Abdulla Waheed',
 		slug: 'abdulla-waheed',
 		thaana: 'ޢަބްދުﷲ ވަޙީދު',
@@ -48,7 +103,7 @@ export const AUTHORS: AuthorBio[] = [
 			"Thaana calligraphy at the President's Office, the basis of the A_Waheed / MV A Waheed and Aammu FK / MV Aammu FK fonts",
 		bio: [
 			"Abdulla Waheed is a Maldivian calligrapher from Eydhafushi in Baa Atoll who worked at the Office of the President. He studied in the government's Thaana calligraphy class alongside Musthafa Mohamed, later the designer of Faruma, and for a time wrote out by hand the official documents the President signed.",
-			"Hassan Hameed based his 1996 font A_Waheed, later MV A Waheed, on Waheed's lettering in a 1995 calendar of the Supreme Council for Islamic Affairs. Waheed reviewed the glyphs through Hassan Shujau, and the font is named after him. Hameed's bold display font Aammu FK, later MV Aammu FK, was made from a set of bold letters Waheed had drawn for stencil-cut banners. Waheed advised on the 2015 revisions of both fonts. His calligraphy is also credited in A_Faseyha, A_Utheem, Aammu FalaRasmee and A_Randhoo (1995), and in A Reethi (2002), made at the President's Office."
+			"Hassan Hameed based his 1996 font A_Waheed, later MV A Waheed, on Waheed's lettering in a 1995 calendar of the Supreme Council for Islamic Affairs. Waheed reviewed the glyphs through Hassan Shujau, and the font is named after him. Hameed's bold display font Aammu FK, later MV Aammu FK, was made from a set of bold letters Waheed had drawn for stencil-cut banners. Waheed advised on the 2015 revisions of both fonts. His calligraphy is also credited in A_Faseyha, A_Utheem, Aammu FalaRasmee and A_Randhoo (1995), and in A Reethi (2002), made at the President's Office. He also worked with M.A. Gadir on MV Radhun (2005)."
 		],
 		excerpt:
 			'Abdulla Waheed is a Maldivian calligrapher from Eydhafushi in Baa Atoll who worked at the Office of the President. His Thaana lettering is the basis of MV A Waheed and MV Aammu FK.',
@@ -177,6 +232,31 @@ export const AUTHORS: AuthorBio[] = [
 		page: true
 	},
 	{
+		name: 'Ahmed Asif',
+		slug: 'ahmed-asif',
+		thaana: 'އަޙްމަދު ޢާޞިފް',
+		role: "Head of IT, President's Office",
+		knownFor: 'Starting and guiding the Faruma project (2002); Com-Thaana (1987)',
+		bio: [
+			"Ahmed Asif was the head of IT at the Maldivian President's Office. On 31 October 1987 he completed Com-Thaana, software that turned text typed in Latin letters into Thaana on a computer.",
+			"In 2002, after Windows XP brought Unicode Thaana and the office's MLS font began causing problems, he asked Musthafa Mohamed to design a new font and assigned Ibrahim Yasir to build it. Each stage went ahead on his advice. He named the first version A_Reethi, and added the A_ prefix so the fonts would sort to the top of alphabetical font lists. On the advice of Ibrahim Naeem (Saikuraa), the font's ﷲ was drawn the way it is written by hand.",
+			"Faruma's font files credit him as assisting, and Musthafa Mohamed's account of the font singles out his part in it."
+		],
+		excerpt:
+			"Ahmed Asif was the head of IT at the Maldivian President's Office, who started and guided the work on Faruma in 2002.",
+		sources: [
+			{
+				title: "Farumaa — from the designer's pen (Musthafa Mohamed, 17 May 2023), hassanhameed.com",
+				url: 'https://hassanhameed.com/thaana-fonts/farumaa-from-the-designers-pen/'
+			},
+			{
+				title: "Font name tables: Faruma, A Reethi ('… assisted by Ahmed Asif')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
 		name: 'Ashrag Rasheed',
 		slug: 'ashrag-rasheed',
 		thaana: 'އަޝްރަގު ރަޝީދު',
@@ -209,7 +289,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://github.com/Viennnaa/dhivehi-muraka'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Ayeshath Fadwa',
@@ -315,7 +395,56 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://github.com/notofonts/thaana/blob/main/documentation/NotoSansThaana.article.html'
 			}
 		],
-		page: false
+		page: true
+	},
+	{
+		name: 'Fredrick Brennan',
+		slug: 'fredrick-brennan',
+		thaana: null,
+		role: 'Software developer and type designer',
+		knownFor: 'LCD Italics, the Latin of LCD Thaana',
+		bio: [
+			'Fredrick Brennan is an American software developer and type designer who has released a number of open-source fonts, among them LCD Italics, a font in the style of segmented LCD displays.',
+			"Thaana Type Foundry's LCD Thaana (2021), designed by Ayeshath Fadwa, uses LCD Italics for its non-Thaana characters."
+		],
+		excerpt:
+			'Fredrick Brennan is an American type designer whose LCD Italics supplies the Latin characters of LCD Thaana.',
+		sources: [
+			{
+				title: 'LCD Thaana – Thaana Type Foundry',
+				url: 'https://thaana.com/lcd-thaana/'
+			},
+			{
+				title: 'Fredrick Brennan – Wikipedia',
+				url: 'https://en.wikipedia.org/wiki/Fredrick_Brennan'
+			}
+		],
+		page: true
+	},
+	{
+		name: 'Haleem',
+		slug: 'haleem',
+		thaana: 'ހަލީމް',
+		thaanaVerified: false,
+		role: 'Type designer',
+		knownFor: 'The A_Haleem fonts',
+		bio: [
+			"No information about Haleem could be found. Eleven fonts carry the name: A_Haleem Bolhu, Faseyha, KB, Kirudhooni, Mathi, Raaveri, Riveli, SH, Thangi, Thiki and Uivashaa. The copies on fonts.mv come from the dhivehi.mv archive, which converted them to OpenType in 2014; their copyright notice still reads ‘Copyright info pending’, and they credit no one, so it isn't known whether Haleem drew the letters, digitised them, or both.",
+			'If you know who Haleem is, worked with him, or have the original fonts or anything written about them, please email us so this page can tell his story and credit him properly.'
+		],
+		excerpt:
+			'Eleven fonts carry the name A_Haleem, but nothing else about Haleem could be found. If you know who he is, please get in touch.',
+		sources: [
+			{
+				title: 'Dhivehi fonts – dhivehi.mv',
+				url: 'https://www.dhivehi.mv/fonts/'
+			},
+			{
+				title: "Font name tables: the A_Haleem fonts ('Generated in 2014 by FontLab Studio. Copyright info pending.')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
 	},
 	{
 		name: 'Hasan Shazil',
@@ -427,6 +556,27 @@ export const AUTHORS: AuthorBio[] = [
 			},
 			{
 				title: 'fonts/sources name tables (A_Waheed, A_Faseyha, A_Randhoo, MV Oswald)',
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
+		name: 'Hassan Saeed',
+		slug: 'hassan-saeed',
+		thaana: 'ޙަސަން ސަޢީދު',
+		thaanaVerified: false,
+		role: "President's Office",
+		knownFor: 'Working with M.A. Gadir on MV Radhun (2005)',
+		bio: [
+			"Hassan Saeed worked at the President's Office. The font file of MV Radhun, dated March 2005, says M.A. Gadir developed it in collaboration with Hassan Saeed and Abdulla Waheed of the President's Office.",
+			'No other information about him could be found. If you know more, please email us so this page can tell his part properly.'
+		],
+		excerpt: "Hassan Saeed of the President's Office worked with M.A. Gadir and Abdulla Waheed on MV Radhun (2005).",
+		sources: [
+			{
+				title:
+					"Font name table: MV Radhun ('Developed by M.A. Gadir in relation with Hassan Saeed and Abdulla Waheed of Presidents Office. March 2005')",
 				url: 'https://fonts.mv'
 			}
 		],
@@ -601,6 +751,31 @@ export const AUTHORS: AuthorBio[] = [
 		page: true
 	},
 	{
+		name: 'Ilham',
+		slug: 'ilham',
+		thaana: 'އިލްހާމް',
+		role: 'Student font maker',
+		knownFor: 'Starting the font that became MV Ilham, as a GCE O-Level project',
+		bio: [
+			"Ilham was a student at Aminiyya School in the late 1980s, when Hassan Hameed was introducing computing in government schools. Aminiyya's students came to Majeediyya School for computer classes, which Hameed taught, and for Ilham's GCE O-Level computing project Hameed set him the task of making a Thaana font.",
+			"The letters came from Durūsul Akhlāq, a book by Muhammad Jameel printed by Novelty, written out by a Novelty calligrapher known as Dhonbe. Hameed later revised the font completely, issued it with Accent Express in the late 1990s, and released it as MV Ilham, with a bold weight, about twenty years after it first appeared. His father was a school friend of Hameed's, who suggested the name Ilham, ‘inspiration’, when he was born."
+		],
+		excerpt:
+			'Ilham began the font that became MV Ilham as a GCE O-Level computing project at Aminiyya School in the late 1980s.',
+		sources: [
+			{
+				title: 'MV Ilham – hassanhameed.com',
+				url: 'https://www.hassanhameed.com/?page_id=5172'
+			},
+			{
+				title:
+					"Font name table: MV Ilham ('A_Ilham was initially started by Ilham as a GCE OL Project. Completely revised by Hassan Hameed.')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
 		name: 'Loopcraft',
 		slug: 'loopcraft',
 		thaana: 'ލޫޕްކްރާފްޓް',
@@ -688,7 +863,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://fonts.mv'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Maldivian Internet Task Force',
@@ -764,7 +939,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://dhivehifont.com/myfonts'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Mohamed Azheel',
@@ -791,7 +966,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://dhivehifont.com/myfonts'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Mohamed Faiz',
@@ -841,7 +1016,63 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://dhivehi.mv/fonts/'
 			}
 		],
-		page: false
+		page: true
+	},
+	{
+		name: 'Musthafa Mohamed',
+		slug: 'musthafa-mohamed',
+		thaana: 'މުޞްޠަފާ މުޙައްމަދު',
+		role: 'Calligrapher and type designer',
+		knownFor: 'Designing Faruma (2002), the font of most official Maldivian documents',
+		bio: [
+			"Musthafa Mohamed is a Maldivian calligrapher who designed Faruma, the font most official documents in the Maldives are written in. His father, Muhammad Adam of Kaashidhoo, taught him to write Thaana as a child. In 1979 he joined the government's class in Arabic and Thaana calligraphy, where he was taught by Muhammad Saadiq, and he studied alongside Abdulla Waheed.",
+			"He joined the President's Office in 1980, at 18. He wrote the President's foreword to Dhivehiraajjeyge Qaanooni Hayaath, published in 1981 for the 50th anniversary of the People's Majlis, and for many years wrote the President's annual addresses by hand. He also taught calligraphy to colleagues at the office.",
+			"In 2002, while working in the President's protocol section, he took on a new font for the office's documents to replace the MLS font, which had problems on Windows XP. The head of IT, Ahmed Asif, assigned Ibrahim Yasir to build it, and Musthafa directed the letterforms, sitting beside him at his workstation in the IT unit. A first version, A_Reethi, was usable within about three months. He named the refined version Faruma, from ‘designed’ or ‘shaped’, because its letters were shaped by design rather than copied from his own handwriting. He kept them close to handwriting, with the slight pen tick at the end of each stroke, at the size of ordinary writing at 12 points.",
+			"Faruma came into use in the office's typing pool and spread to government offices, the public and printers. He wrote his own account of making it in May 2023."
+		],
+		excerpt:
+			'Musthafa Mohamed is a Maldivian calligrapher who designed Faruma (2002), the font most official documents in the Maldives are written in.',
+		sources: [
+			{
+				title: "Farumaa — from the designer's pen (Musthafa Mohamed, 17 May 2023), hassanhameed.com",
+				url: 'https://hassanhameed.com/thaana-fonts/farumaa-from-the-designers-pen/'
+			},
+			{
+				title:
+					"Font name tables: Faruma ('Created by Ibrahim Yasir, Calligraphy by Musthafa Mohamed, Assisted by Ahmed Asif. The President's Office 2002'), A Reethi",
+				url: 'https://fonts.mv'
+			},
+			{
+				title: 'Luc Devroye, Maldives (Type Design Information Page)',
+				url: 'https://luc.devroye.org/maldives.html'
+			}
+		],
+		page: true
+	},
+	{
+		name: 'Nasri Khattar',
+		slug: 'nasri-khattar',
+		thaana: null,
+		role: 'Architect and type designer',
+		knownFor: 'Unified Arabic, the basis of MV Nasri',
+		bio: [
+			"Nasri Khattar (1911–1998) was a Lebanese architect and type designer, best known for Unified Arabic, a typeface that reduced each Arabic letter's several joined forms to one, making the script easier to set with the printing technology of his time. He was nominated for the Nobel Peace Prize in 1986 for his lifelong work on the project.",
+			"Hassan Hameed's MV Nasri (2018) applies his approach to Thaana; its font file says it is based on Khattar's work."
+		],
+		excerpt:
+			"Nasri Khattar (1911–1998) was a Lebanese architect and type designer whose Unified Arabic is the basis of Hassan Hameed's MV Nasri.",
+		sources: [
+			{
+				title: 'Nasri Khattar – Wikipedia',
+				url: 'https://en.wikipedia.org/wiki/Nasri_Khattar'
+			},
+			{
+				title:
+					"Font name table: MV Nasri ('This font is based on the work of Nasri Khattar. Designed by Hassan Hameed, 21 October 2018.')",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
 	},
 	{
 		name: 'Nexus Maldives Pvt. Ltd',
@@ -875,7 +1106,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://fonts.mv'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Sappe',
@@ -893,7 +1124,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://fonts.mv'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Shahee Ilyas',
@@ -1063,7 +1294,7 @@ export const AUTHORS: AuthorBio[] = [
 				url: 'https://www.behance.net/yuuh1e81'
 			}
 		],
-		page: false
+		page: true
 	},
 	{
 		name: 'Zillon',
@@ -1142,7 +1373,11 @@ export const AUTHORS: AuthorBio[] = [
 export const AUTHOR_ORDER = [
 	'Hassan Hameed',
 	'Abdulla Waheed',
+	'Musthafa Mohamed',
 	'Ibrahim Yasir',
+	'Abdul Sattar',
+	'Ahmed Asif',
+	'Abdulla Ismail',
 	'Shahee Ilyas',
 	'Ayeshath Fadwa',
 	'M.A. Gadir',
@@ -1152,6 +1387,7 @@ export const AUTHOR_ORDER = [
 	'Mohamed Mazeed',
 	'David Williams',
 	'Nexus Maldives Pvt. Ltd',
+	'Haleem',
 	'Hasan Shazil',
 	'Adnan Ali',
 	'Adam Zubin',
@@ -1163,7 +1399,11 @@ export const AUTHOR_ORDER = [
 	'Mohamed Azheel',
 	'Ashrag Rasheed',
 	'Y.U.U',
-	'Vernon Adams'
+	'Ilham',
+	'Hassan Saeed',
+	'Vernon Adams',
+	'Nasri Khattar',
+	'Fredrick Brennan'
 ];
 
 export function byImportance(a: string, b: string): number {

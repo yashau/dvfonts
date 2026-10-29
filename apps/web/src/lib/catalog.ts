@@ -127,7 +127,7 @@ export function credit(f: Family): string | null {
 }
 
 /** The people (or studios) a designer credit names: each comma-separated designer, plus
- *  any calligrapher. "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)" names
+ *  anyone credited in brackets (calligraphy by, assisted by, begun by, after, with). "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)" names
  *  Hassan Hameed and Abdulla Waheed; places and notes in brackets are skipped. */
 export function authors(f: Family): string[] {
 	const out: string[] = [];
@@ -135,8 +135,10 @@ export function authors(f: Family): string[] {
 		const m = /^([^(]+?)\s*(?:\((.*)\))?$/.exec(part);
 		if (!m) continue;
 		out.push(m[1]);
-		const calligrapher = /^calligraphy by ([^,]+)/.exec(m[2] ?? '');
-		if (calligrapher) out.push(calligrapher[1].trim());
+		// "calligraphy by X", "assisted by X", "begun by X", "after X", "with X and Y";
+		// anything after a comma is a place or a note.
+		const credited = /^(?:(?:calligraphy|assisted|begun) by|after|with) ([^,;]+)/.exec(m[2] ?? '');
+		if (credited) for (const name of credited[1].split(/ and /)) out.push(name.trim());
 	}
 	return [...new Set(out.filter(Boolean))];
 }
