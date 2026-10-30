@@ -512,6 +512,11 @@ designer = "Mohamed Mazeed"
 category = "artistic"
 fonts = { 400 = "dam-kathivalhi.otf" }
 
+[families.hawwa]
+name = "Hawwa"
+category = "artistic"
+fonts = { 400 = "hawwa-regular.ttf" }
+
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
 [families.mv-izyan]
@@ -587,11 +592,6 @@ designer = "Hussain Niyaz"
 category = "handwriting"
 year = 2021
 fonts = { 700 = "mv-karudhas.ttf" }
-
-[families.hawwa]
-name = "Hawwa"
-category = "handwriting"
-fonts = { 400 = "hawwa-regular.ttf" }
 
 [families.mv-groupx-avas]
 name = "MV GroupX Avas"

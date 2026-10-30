@@ -71,10 +71,10 @@
   "description": "Decorative and headline fonts: outlines, shadows, pixel and stylised Thaana.",
   "format": "ttf",
   "file": "fonts-mv-artistic.zip",
-  "families": 23,
-  "styles": 24,
-  "size": 549092,
-  "sha256": "c7d2c5b95079d0d226e88f3f96d513a1518488cc634b803fc5ca24d4033d200f"
+  "families": 24,
+  "styles": 25,
+  "size": 565093,
+  "sha256": "0b70eabef66acc99b8bdec1cd223745ed478850442e6061579184fd2b0d543f0"
  },
  {
   "id": "handwriting",
@@ -82,10 +82,10 @@
   "description": "Casual, calligraphic and handwritten styles.",
   "format": "ttf",
   "file": "fonts-mv-handwriting.zip",
-  "families": 39,
-  "styles": 46,
-  "size": 1255389,
-  "sha256": "6f0c2244cacb00605c9e88ffcc98fb60f86a5ccf2bd6695c49586b3a85eafe94"
+  "families": 38,
+  "styles": 45,
+  "size": 1239367,
+  "sha256": "c92f167f4f2726d252dfd054f4da4fac51d68205b5003c9753eae81718a51bd5"
  },
  {
   "id": "novelty",
