@@ -22,13 +22,13 @@
 
 [families.modfaruma]
 name = "ModFaruma"
-designer = "Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
+designer = "Musthafa Mohamed (digitised by Ibrahim Yasir; assisted by Ahmed Asif)"
 category = "official"
 fonts = { 400 = "modfaruma.ttf" }
 
 [families.faruma]
 name = "Faruma"
-designer = "Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
+designer = "Musthafa Mohamed (digitised by Ibrahim Yasir; assisted by Ahmed Asif)"
 category = "official"
 aliases = ["A_Faruma", "AFaruma"]
 fonts = { 400 = "faruma.ttf" }
@@ -92,7 +92,7 @@ fonts = { 400 = "mvutheemuregular.ttf", 700 = "mvutheemubold.ttf" }
 
 [families.a-reethi]
 name = "A Reethi"
-designer = "Abdul Sattar, Abdulla Waheed, Musthafa Mohamed, Ibrahim Yasir (assisted by Ahmed Asif)"
+designer = "Musthafa Mohamed, Abdulla Waheed, Abdul Sattar (calligraphy; digitised by Ibrahim Yasir; assisted by Ahmed Asif)"
 category = "official"
 aliases = ["MV Reethi"]
 fonts = { 400 = "reethi.ttf" }
@@ -230,6 +230,7 @@ fonts = { 400 = "dhivehi-muraka.ttf" }
 
 [families.tharujamaanu]
 name = "Tharujamaanu"
+designer = "Hassaan Abdul Razzaq (based on Faruma by Musthafa Mohamed)"
 category = "official"
 fonts = { 300 = "tharujamaanu-light.ttf", 700 = "tharujamaanu-bold.ttf" }
 
@@ -605,7 +606,7 @@ fonts = { 700 = "mvizyanboduakuru3d-bold.ttf" }
 
 [families.mv-izyan-reethi]
 name = "MV Izyan Reethi"
-designer = "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)"
+designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
 category = "handwriting"
 fonts = { 700 = "mvizyanreethi-bold.ttf" }
 
@@ -621,7 +622,7 @@ fonts = { 400 = "mv-izyan-liyun-regular.ttf" }
 
 [families.mv-izyan-lhohi]
 name = "MV Izyan Lhohi"
-designer = "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)"
+designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
 category = "handwriting"
 fonts = { 700 = "mv-izyan-lhohi.ttf" }
 
@@ -659,13 +660,13 @@ fonts = { 400 = "mvedhuru.ttf" }
 
 [families.mv-meemu-ali]
 name = "MV Meemu Ali"
-designer = "Hussain Niyaz (Noonu Lhohi), Mohamed Ali (Laamu Maavah)"
+designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
 category = "handwriting"
 fonts = { 400 = "mv-mohamed-ali-final.ttf" }
 
 [families.mv-azheel]
 name = "MV Azheel"
-designer = "Hussain Niyaz (Noonu Lhohi), Mohamed Azheel"
+designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Azheel)"
 category = "handwriting"
 fonts = { 400 = "mv-azheel.ttf" }
 

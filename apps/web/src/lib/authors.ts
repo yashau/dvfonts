@@ -494,6 +494,35 @@ export const AUTHORS: AuthorBio[] = [
 		page: true
 	},
 	{
+		name: 'Hassaan Abdul Razzaq',
+		slug: 'hassaan-abdul-razzaq',
+		thaana: 'ޙައްސާން ޢަބްދުއްރައްޒާޤް',
+		role: 'Font maker and translator',
+		knownFor: 'Tharujamaanu (2013–2014), a light and bold family based on Faruma',
+		bio: [
+			'Hassaan Abdul Razzaq, from Veymandoo in Thaa Atoll, made Tharujamaanu, a Thaana font family in light and bold weights, in 2013 and 2014. Its letters follow Faruma, the font Musthafa Mohamed designed, closely in proportion and spacing, with redrawn outlines. He published the fonts, with web versions and sample pages, on GitHub.',
+			"He publishes Dhivehi translations of Islamic works on his website. Tharujamaanu's font file also lists Ibrahim Yasir, who digitised Faruma, in its designer field."
+		],
+		excerpt:
+			'Hassaan Abdul Razzaq, from Veymandoo in Thaa Atoll, made Tharujamaanu (2013–2014), a light and bold Thaana family based on Faruma.',
+		sources: [
+			{
+				title: 'maaldheefee/thaana-fonts – GitHub',
+				url: 'https://github.com/maaldheefee/thaana-fonts'
+			},
+			{
+				title: 'hassaanmv.com',
+				url: 'https://hassaanmv.com'
+			},
+			{
+				title:
+					"Font name tables: Tharujamaanu ('Copyright (c) 2013 by Hassaan', 'Copyright (c) 2014 by Hassaan', manufacturer Hassaan)",
+				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
 		name: 'Hassan Hameed',
 		slug: 'hassan-hameed',
 		thaana: 'ޙަސަން ޙަމީދު',
@@ -921,10 +950,10 @@ export const AUTHORS: AuthorBio[] = [
 		slug: 'mohamed-ali',
 		thaana: 'މުޙައްމަދު އަލީ',
 		thaanaVerified: false,
-		role: 'Co-credited contributor; his handwriting is the basis of MV Meemu Ali',
+		role: 'His handwriting is the basis of MV Meemu Ali',
 		knownFor: 'The handwriting behind MV Meemu Ali by Hussain Niyaz',
 		bio: [
-			'Mohamed Ali, from Maavah in Laamu Atoll, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi. MV Meemu Ali is modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters.'
+			"Mohamed Ali, from Maavah in Laamu Atoll, is credited for the handwriting of Hussain Niyaz's MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi. MV Meemu Ali is modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters."
 		],
 		excerpt:
 			'Mohamed Ali, from Maavah in Laamu Atoll, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi.',
@@ -946,7 +975,7 @@ export const AUTHORS: AuthorBio[] = [
 		slug: 'mohamed-azheel',
 		thaana: 'މުޙައްމަދު އަޒްހީލް',
 		thaanaVerified: false,
-		role: 'Co-credited contributor; his handwriting is the basis of MV Azheel',
+		role: 'His handwriting is the basis of MV Azheel',
 		knownFor: 'The handwriting behind MV Azheel and MV Azheel Rasmee by Hussain Niyaz',
 		bio: [
 			'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel. Hussain Niyaz scanned the writing into Illustrator and redrew the letters there. He is a teacher of the Quran, also known as Azheel Ahmed (Fiyoaree), and supports the font project. The font file credits him as Mohamed Azheel. A second font from his handwriting, MV Azheel Rasmee, followed in 2024.'
@@ -1374,14 +1403,14 @@ export const AUTHOR_ORDER = [
 	'Hassan Hameed',
 	'Abdulla Waheed',
 	'Musthafa Mohamed',
-	'Ibrahim Yasir',
-	'Abdul Sattar',
-	'Ahmed Asif',
 	'Abdulla Ismail',
 	'Shahee Ilyas',
 	'Ayeshath Fadwa',
 	'M.A. Gadir',
 	'Hussain Niyaz',
+	'Ibrahim Yasir',
+	'Ahmed Asif',
+	'Abdul Sattar',
 	'Maldivian Internet Task Force',
 	'Zillon',
 	'Mohamed Mazeed',
@@ -1395,6 +1424,7 @@ export const AUTHOR_ORDER = [
 	'Mohamed Faiz',
 	'Hussain Shameem',
 	'Sappe',
+	'Hassaan Abdul Razzaq',
 	'Mohamed Ali',
 	'Mohamed Azheel',
 	'Ashrag Rasheed',

@@ -7,8 +7,8 @@
   "file": "fonts-mv-essentials.zip",
   "families": 9,
   "styles": 11,
-  "size": 380595,
-  "sha256": "17c16fbe520c59f98a7a405ac74e08a58fd8078bff15ba1d7adcfd6128fc69bf"
+  "size": 380612,
+  "sha256": "92714b7e17fca7d4d764efd00a4a34cf3828283104dc7b3c6c29f1f3eee965d0"
  },
  {
   "id": "full",
@@ -18,8 +18,8 @@
   "file": "fonts-mv-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 6796902,
-  "sha256": "71d8feea662aa872aad2f68b86003b2dbdf9b707c523dae06559c7f8d3d8f64c"
+  "size": 6797000,
+  "sha256": "f70a795446e25b721699800180e01eb34f66f95494932f29929b6883c94c946e"
  },
  {
   "id": "unicode-originals",
@@ -29,8 +29,8 @@
   "file": "fonts-mv-unicode-originals.zip",
   "families": 132,
   "styles": 200,
-  "size": 6291453,
-  "sha256": "13765261f119e3e2788f33be11803520f62c6608262e63f662ede0bb9d3c04ec"
+  "size": 6291551,
+  "sha256": "0d6617431135a092af345f19600cddbffb322506986def1e316ad4b57ce461e2"
  },
  {
   "id": "open-licensed",
@@ -62,8 +62,8 @@
   "file": "fonts-mv-official.zip",
   "families": 37,
   "styles": 51,
-  "size": 1346415,
-  "sha256": "f3772730fd46a44732d446fceeccc123d35312dfdf1fd88f3bfd1090bb9a064d"
+  "size": 1346477,
+  "sha256": "5e5ca44f9690e16414f5e10c05a83985ecab6ec77a1db5e157cdc607f6b77da4"
  },
  {
   "id": "artistic",
@@ -84,8 +84,8 @@
   "file": "fonts-mv-handwriting.zip",
   "families": 39,
   "styles": 46,
-  "size": 1255343,
-  "sha256": "5ec5fcd55b099a4792c6118b0196b556b3e351040cb577e09bb88da926e8d857"
+  "size": 1255379,
+  "sha256": "f98cf6e9dbace5c3cd22121216fa1d128354e2ebd360326151529d2f7672350e"
  },
  {
   "id": "novelty",
@@ -106,8 +106,8 @@
   "file": "fonts-mv-webfonts-essentials.zip",
   "families": 9,
   "styles": 11,
-  "size": 306934,
-  "sha256": "a6fab7bfc1a10643388a44d86f2580ad72aa758967aaedc3aca4c4e561b90317"
+  "size": 306951,
+  "sha256": "c58424b52f2b6979aa2d8b3511f1b455f91f06908a2a28e2f67f98ae9c572fca"
  },
  {
   "id": "webfonts-full",
@@ -117,8 +117,8 @@
   "file": "fonts-mv-webfonts-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 5304909,
-  "sha256": "9ec1f5ee09bc62088ac1b4865c9b40fe10fb4436b337768fbec9578e4078bd35"
+  "size": 5305007,
+  "sha256": "aab892472afbc35bcf5eab38136489b4d462b48ddcb9109c8f1cc92846c1e789"
  },
  {
   "id": "legacy",
