@@ -60,10 +60,6 @@ run = [
 	"cd apps/web && pnpm exec wrangler r2 bulk put fonts-mv-static --filename ../../fonts/build/r2-bulk.json --local --force"
 ]
 
-[tasks."release:site"]
-description = "Tag and deploy the site (site-vYYYY.MMDD.N)"
-run = "node scripts/release.mjs site"
-
 [tasks."release:packages"]
 description = "Tag and publish the npm packages (packages-vYYYY.MMDD.N)"
 run = "node scripts/release.mjs packages"

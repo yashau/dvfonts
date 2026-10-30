@@ -1,14 +1,16 @@
 name: Deploy site
 
-# Pushing a site-vYYYY.MMDD.N tag (`mise run release:site`) is the only way the
-# site ships, so every deployed state has a version and an author.
+# Every push to main deploys https://fonts.mv and tags it site-vYYYY.MMDD.N. main
+# only changes through PRs that passed CI (and were previewed on beta.fonts.mv, see
+# beta.yml), so merging a PR is the release.
 on:
   push:
-    tags:
-      - 'site-v*'
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  # To push the site-v* tag for each deploy.
+  contents: write
 
 # Serialise deploys and never cancel one: killing `wrangler deploy` between the
 # asset manifest and the asset upload publishes a broken version.
@@ -44,16 +46,19 @@ jobs:
           # so a lower-privilege run can't poison what gets deployed.
           cache: false
 
-      - name: Validate tag
+      # CalVer: site-vYYYY.MMDD.N, N counting today's deploys from 0. Deploys are
+      # serialised (concurrency above), so two can't pick the same number.
+      - name: Version
+        id: version
         env:
-          REF_NAME: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          version="${REF_NAME#site-v}"
-          if ! printf '%s' "$version" | grep -Eq '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'; then
-            echo "::error::${REF_NAME} is not a site-vYYYY.MMDD.N tag."
-            exit 1
-          fi
+          day="$(date -u +%Y).$((10#$(date -u +%m) * 100 + 10#$(date -u +%d)))"
+          last="$(gh api "repos/${GITHUB_REPOSITORY}/git/matching-refs/tags/site-v${day}." --jq '.[].ref' | sed "s#refs/tags/site-v${day}.##" | sort -n | tail -1)"
+          if [ -z "$last" ]; then n=0; else n=$((last + 1)); fi
+          echo "tag=site-v${day}.${n}" >> "$GITHUB_OUTPUT"
+          echo "This deploy is site-v${day}.${n}"
 
       - name: Install
         run: pnpm install --frozen-lockfile
@@ -134,9 +139,9 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          REF_NAME: ${{ github.ref_name }}
+          TAG: ${{ steps.version.outputs.tag }}
         working-directory: apps/web
-        run: pnpm exec wrangler deploy --tag "$REF_NAME" --message "$REF_NAME"
+        run: pnpm exec wrangler deploy --tag "$TAG" --message "$TAG"
 
       - name: Smoke-test production
         run: |
@@ -153,14 +158,21 @@ jobs:
           curl -sfI "${base}/fonts/faruma/faruma.zip" | grep -i '^content-type: application/zip'
           curl -sfI "${base}/downloads/${first}" | grep -i '^content-type: application/zip'
 
+      # Only a deploy that passed the smoke test gets its tag.
+      - name: Tag the deployed commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: gh api "repos/${GITHUB_REPOSITORY}/git/refs" -f "ref=refs/tags/${TAG}" -f "sha=${GITHUB_SHA}" --silent
+
       - name: Summary
         env:
-          REF_NAME: ${{ github.ref_name }}
+          TAG: ${{ steps.version.outputs.tag }}
           COMMIT: ${{ github.sha }}
           FONTS_CHANGED: ${{ steps.fonts.outputs.changed }}
         run: |
           {
-            echo "### Site ${REF_NAME#site-v} deployed"
+            echo "### Site ${TAG#site-v} deployed"
             echo
             echo "- commit: \`${COMMIT}\`"
             echo "- fonts uploaded to R2: ${FONTS_CHANGED}"
