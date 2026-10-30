@@ -99,7 +99,7 @@ fonts = { 400 = "reethi.ttf" }
 
 [families.mv-aammu-fk]
 name = "MV Aammu FK"
-designer = "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)"
+designer = "Abdulla Waheed (Eydhafushi; digitised by Hassan Hameed)"
 unmodified = true
 category = "official"
 aliases = ["AammuFK", "Aammu F Thedhu", "Aammu F Rasmy"]
@@ -572,6 +572,7 @@ fonts = { 700 = "mv-fathimath.ttf" }
 
 [families.mv-nevi-raheem]
 name = "MV Nevi Raheem"
+designer = "Abdul Raheem Abubakuru (N. Manadhoo; digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 400 = "mv-nevi-raheem.ttf" }
 
@@ -606,7 +607,7 @@ fonts = { 700 = "mvizyanboduakuru3d-bold.ttf" }
 
 [families.mv-izyan-reethi]
 name = "MV Izyan Reethi"
-designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
+designer = "Mohamed Ali (Laamu Maavah; digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 700 = "mvizyanreethi-bold.ttf" }
 
@@ -622,7 +623,7 @@ fonts = { 400 = "mv-izyan-liyun-regular.ttf" }
 
 [families.mv-izyan-lhohi]
 name = "MV Izyan Lhohi"
-designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
+designer = "Mohamed Ali (Laamu Maavah; digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 700 = "mv-izyan-lhohi.ttf" }
 
@@ -634,6 +635,7 @@ fonts = { 400 = "mv-gaa-lhohi.ttf" }
 
 [families.mv-alram]
 name = "MV Alram"
+designer = "Ali Rameez (N. Lhohi; digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 400 = "mv-alram.ttf" }
 
@@ -660,13 +662,13 @@ fonts = { 400 = "mvedhuru.ttf" }
 
 [families.mv-meemu-ali]
 name = "MV Meemu Ali"
-designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Ali, Laamu Maavah)"
+designer = "Mohamed Ali (Laamu Maavah; digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 400 = "mv-mohamed-ali-final.ttf" }
 
 [families.mv-azheel]
 name = "MV Azheel"
-designer = "Hussain Niyaz (Noonu Lhohi; handwriting by Mohamed Azheel)"
+designer = "Mohamed Azheel (digitised by Hussain Niyaz)"
 category = "handwriting"
 fonts = { 400 = "mv-azheel.ttf" }
 
@@ -694,13 +696,13 @@ fonts = { 500 = "mv-izyan-edge.ttf" }
 [families.dhanbumaa]
 name = "Dhanbumaa"
 category = "handwriting"
-designer = "Loopcraft (calligraphy by Mohamed Faiz)"
+designer = "Mohamed Faiz (digitised by Loopcraft)"
 fonts = { 400 = "dhanbumaa-regular.otf", 700 = "dhanbumaa-bold.otf" }
 
 [families.magey-huseynu]
 name = "Magey Huseynu"
 category = "handwriting"
-designer = "Loopcraft (calligraphy by Hussain Shameem)"
+designer = "Hussain Shameem (digitised by Loopcraft)"
 fonts = { 400 = "magey-huseynu.ttf" }
 
 [families.nayaa]

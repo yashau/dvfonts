@@ -18,8 +18,8 @@
   "file": "fonts-mv-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 6797000,
-  "sha256": "f70a795446e25b721699800180e01eb34f66f95494932f29929b6883c94c946e"
+  "size": 6797009,
+  "sha256": "214a01744f14d7ae7be40eeecc998cb8688fcfeed74a1aa1a77f77c236da0c61"
  },
  {
   "id": "unicode-originals",
@@ -29,8 +29,8 @@
   "file": "fonts-mv-unicode-originals.zip",
   "families": 132,
   "styles": 200,
-  "size": 6291551,
-  "sha256": "0d6617431135a092af345f19600cddbffb322506986def1e316ad4b57ce461e2"
+  "size": 6291560,
+  "sha256": "0b4f715366cb0f4b56629629606e3f4d4daec53f12369bd0f3b63b6c75abfbe0"
  },
  {
   "id": "open-licensed",
@@ -62,8 +62,8 @@
   "file": "fonts-mv-official.zip",
   "families": 35,
   "styles": 49,
-  "size": 1309949,
-  "sha256": "06d337fec23f8b0dfed168651c8b67d16b4906b5fc6dadea652912f09d8b6b68"
+  "size": 1309948,
+  "sha256": "e9c4589faa9b3c4cbe30bacafb9c245b1242830ec995de63c6b5c379679e116d"
  },
  {
   "id": "artistic",
@@ -84,8 +84,8 @@
   "file": "fonts-mv-handwriting.zip",
   "families": 39,
   "styles": 46,
-  "size": 1255379,
-  "sha256": "f98cf6e9dbace5c3cd22121216fa1d128354e2ebd360326151529d2f7672350e"
+  "size": 1255389,
+  "sha256": "6f0c2244cacb00605c9e88ffcc98fb60f86a5ccf2bd6695c49586b3a85eafe94"
  },
  {
   "id": "novelty",
@@ -117,8 +117,8 @@
   "file": "fonts-mv-webfonts-full.zip",
   "families": 157,
   "styles": 226,
-  "size": 5305007,
-  "sha256": "aab892472afbc35bcf5eab38136489b4d462b48ddcb9109c8f1cc92846c1e789"
+  "size": 5305016,
+  "sha256": "69fe71fb3eab081fded606fdcca818267cc06f743f2fb9d0406a5dd6bb44f758"
  },
  {
   "id": "legacy",
