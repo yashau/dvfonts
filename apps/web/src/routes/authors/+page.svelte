@@ -65,23 +65,26 @@
 		{/each}
 	</div>
 
-	<h2 class="mt-12 text-xl font-semibold tracking-tight">Also credited</h2>
-	<p class="mb-4 text-sm text-muted-foreground">Their fonts are here; their stories aren't yet.</p>
-	<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-		{#each others as a (a.name)}
-			<Card.Root size="sm" class="relative transition-colors hover:bg-muted/40">
-				<Card.Header class="flex items-center gap-3">
-					<Avatar.Root class="size-9">
-						<Avatar.Fallback class="text-xs">{initials(a.name)}</Avatar.Fallback>
-					</Avatar.Root>
-					<div class="min-w-0">
-						<Card.Title class="truncate text-sm">
-							<a href="/?author={encodeURIComponent(a.name)}" class="after:absolute after:inset-0">{a.name}</a>
-						</Card.Title>
-						<Card.Description>{a.families} {a.families === 1 ? 'family' : 'families'}</Card.Description>
-					</div>
-				</Card.Header>
-			</Card.Root>
-		{/each}
-	</div>
+	<!-- Credited people without a page of their own; hidden while everyone has one. -->
+	{#if others.length}
+		<h2 class="mt-12 text-xl font-semibold tracking-tight">Also credited</h2>
+		<p class="mb-4 text-sm text-muted-foreground">Their fonts are here; their stories aren't yet.</p>
+		<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+			{#each others as a (a.name)}
+				<Card.Root size="sm" class="relative transition-colors hover:bg-muted/40">
+					<Card.Header class="flex items-center gap-3">
+						<Avatar.Root class="size-9">
+							<Avatar.Fallback class="text-xs">{initials(a.name)}</Avatar.Fallback>
+						</Avatar.Root>
+						<div class="min-w-0">
+							<Card.Title class="truncate text-sm">
+								<a href="/?author={encodeURIComponent(a.name)}" class="after:absolute after:inset-0">{a.name}</a>
+							</Card.Title>
+							<Card.Description>{a.families} {a.families === 1 ? 'family' : 'families'}</Card.Description>
+						</div>
+					</Card.Header>
+				</Card.Root>
+			{/each}
+		</div>
+	{/if}
 </div>
