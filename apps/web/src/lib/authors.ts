@@ -40,6 +40,26 @@ export function correctionsMailto(name: string): string {
 // carry thaanaVerified: false.
 export const AUTHORS: AuthorBio[] = [
 	{
+		name: 'Abdul Raheem Abubakuru',
+		slug: 'abdul-raheem-abubakuru',
+		thaana: 'އަބްދުއްރަހީމް އަބޫބަކުރު',
+		role: 'Designer (from his handwriting) of MV Nevi Raheem',
+		knownFor: 'MV Nevi Raheem (2022), digitised by Hussain Niyaz',
+		bio: [
+			'Abdul Raheem Abubakuru, known as Abdurraheembe, was from Manadhoo in Noonu Atoll, where he worked for many years at the atoll office and was widely loved across the atoll. He died before the font was made.',
+			"MV Nevi Raheem (2022) is his handwriting, taken from a piece he wrote for the magazine Rasain about fishing in Noonu Atoll. Hussain Niyaz chose it for the consistency and finish of its letters, and digitised it after talking with his family, including his children Ali Maajid and Maajidha. The family chose the font's name."
+		],
+		excerpt:
+			'Abdul Raheem Abubakuru of N. Manadhoo wrote the letters of MV Nevi Raheem (2022), digitised from his handwriting by Hussain Niyaz.',
+		sources: [
+			{
+				title: 'dhivehifont.com: MV Nevi Raheem',
+				url: 'https://dhivehifont.com/archives/34696'
+			}
+		],
+		page: true
+	},
+	{
 		name: 'Abdul Sattar',
 		slug: 'abdul-sattar',
 		thaana: 'ޢަބްދުއްސައްތާރު މުޙައްމަދު',
@@ -252,6 +272,26 @@ export const AUTHORS: AuthorBio[] = [
 			{
 				title: "Font name tables: Faruma, A Reethi ('… assisted by Ahmed Asif')",
 				url: 'https://fonts.mv'
+			}
+		],
+		page: true
+	},
+	{
+		name: 'Ali Rameez',
+		slug: 'ali-rameez',
+		thaana: 'އަލީ ރަމީޒް',
+		role: 'Designer (from his handwriting) of MV Alram',
+		knownFor: 'MV Alram (2022), digitised by Hussain Niyaz',
+		bio: [
+			'Ali Rameez, of Finivaage in Lhohi, Noonu Atoll, has worked as a teacher and as principal of Lhohi School, then at the Lhohi council, and now at the council office of Velidhoo in Noonu Atoll.',
+			'MV Alram (2022) is his handwriting. Hussain Niyaz scanned it and redrew the letters in Illustrator, and Ali Rameez has since sent scans for more fonts.'
+		],
+		excerpt:
+			'Ali Rameez of N. Lhohi, a former teacher and principal of Lhohi School, wrote the letters of MV Alram (2022), digitised by Hussain Niyaz.',
+		sources: [
+			{
+				title: 'dhivehifont.com: MV Alram',
+				url: 'https://dhivehifont.com/archives/34697'
 			}
 		],
 		page: true
@@ -719,7 +759,7 @@ export const AUTHORS: AuthorBio[] = [
 		name: 'Hussain Shameem',
 		slug: 'hussain-shameem',
 		thaana: 'ޙުސައިން ޝަމީމު',
-		role: 'Calligrapher (handwriting basis of the Magey Huseynu font)',
+		role: 'Calligrapher; designer (from his handwriting) of Magey Huseynu',
 		knownFor: 'His handwriting, the basis of the Magey Huseynu font (Loopcraft / RaajjeType, 2024)',
 		links: [
 			{
@@ -828,7 +868,7 @@ export const AUTHORS: AuthorBio[] = [
 		],
 		bio: [
 			'Loopcraft is a design and technology company based in Malé, Maldives. It works in branding, software and app development, 3D and animation, and marketing. Its own products have included the augmented-reality education app Butterfly Story and the Foodies delivery app. Its chief executive is Mohamed Shamheel.',
-			"The company publishes Thaana fonts through its own foundry, RaajjeType. It set up the foundry because the lack of varied Dhivehi fonts made design work difficult. RaajjeType's fonts include Thundu (from calligraphy by Lazzath) and Fanvaiy, as well as two fonts based on the handwriting of individual calligraphers: Magey Huseynu, from the calligraphy of Hussain Shameem (launched in February 2024), and Dhanbumaa, from the handwriting of the late Mohamed Faiz (Dhanbumaa Faiz), launched on 10 August 2025 with his family. Both are free to use."
+			"The company publishes Thaana fonts through its own foundry, RaajjeType. It set up the foundry because the lack of varied Dhivehi fonts made design work difficult. RaajjeType's fonts include Thundu (from calligraphy by Lazzath) and Fanvaiy, as well as two fonts based on the handwriting of individual calligraphers: Magey Huseynu, from the calligraphy of Hussain Shameem (launched in February 2024), and Dhanbumaa, from the handwriting of the late Mohamed Faiz (Dhanbumaa Faiz), launched on 10 August 2025 with his family. Loopcraft's designers Shamheel and Jinan digitised both fonts, which credit the calligraphers as their designers. Both are free to use."
 		],
 		excerpt:
 			'Loopcraft is a design and technology company in Malé, Maldives. Through its foundry RaajjeType it publishes free Thaana fonts, including Magey Huseynu and Dhanbumaa.',
@@ -950,13 +990,13 @@ export const AUTHORS: AuthorBio[] = [
 		slug: 'mohamed-ali',
 		thaana: 'މުޙައްމަދު އަލީ',
 		thaanaVerified: false,
-		role: 'His handwriting is the basis of MV Meemu Ali',
-		knownFor: 'The handwriting behind MV Meemu Ali by Hussain Niyaz',
+		role: 'Designer (from his handwriting) of MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi',
+		knownFor: 'MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi, digitised by Hussain Niyaz',
 		bio: [
-			"Mohamed Ali, from Maavah in Laamu Atoll, is credited for the handwriting of Hussain Niyaz's MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi. MV Meemu Ali is modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters."
+			'Mohamed Ali, from Maavah in Laamu Atoll, wrote the letters of MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi, which Hussain Niyaz digitised; the font files name them both as designers. MV Meemu Ali is modelled on the quick handwriting Mohamed Ali used for meeting notes and draft letters.'
 		],
 		excerpt:
-			'Mohamed Ali, from Maavah in Laamu Atoll, is co-credited with Hussain Niyaz on MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi.',
+			'Mohamed Ali, from Maavah in Laamu Atoll, wrote the letters of MV Meemu Ali, MV Izyan Lhohi and MV Izyan Reethi, digitised by Hussain Niyaz.',
 		sources: [
 			{
 				title: 'dhivehifont.com: MV Meemu Ali (2023-07-24)',
@@ -975,12 +1015,12 @@ export const AUTHORS: AuthorBio[] = [
 		slug: 'mohamed-azheel',
 		thaana: 'މުޙައްމަދު އަޒްހީލް',
 		thaanaVerified: false,
-		role: 'His handwriting is the basis of MV Azheel',
-		knownFor: 'The handwriting behind MV Azheel and MV Azheel Rasmee by Hussain Niyaz',
+		role: 'Designer (from his handwriting) of MV Azheel',
+		knownFor: 'MV Azheel and MV Azheel Rasmee, digitised by Hussain Niyaz',
 		bio: [
-			'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel. Hussain Niyaz scanned the writing into Illustrator and redrew the letters there. He is a teacher of the Quran, also known as Azheel Ahmed (Fiyoaree), and supports the font project. The font file credits him as Mohamed Azheel. A second font from his handwriting, MV Azheel Rasmee, followed in 2024.'
+			'MV Azheel (2023) is made from the handwriting of a man named Azheel, which Hussain Niyaz digitised: he scanned the writing into Illustrator and redrew the letters there. He is a teacher of the Quran, also known as Azheel Ahmed (Fiyoaree), and supports the font project. The font file credits him as Mohamed Azheel. A second font from his handwriting, MV Azheel Rasmee, followed in 2024.'
 		],
-		excerpt: 'MV Azheel (2023) is a font by Hussain Niyaz, made from the handwriting of a man named Azheel.',
+		excerpt: 'MV Azheel (2023) is made from the handwriting of Mohamed Azheel, digitised by Hussain Niyaz.',
 		sources: [
 			{
 				title: 'dhivehifont.com: MV Azheel (2023-11-14)',
@@ -1001,7 +1041,7 @@ export const AUTHORS: AuthorBio[] = [
 		name: 'Mohamed Faiz',
 		slug: 'mohamed-faiz',
 		thaana: 'މުޙައްމަދު ފާއިޒް',
-		role: 'Calligrapher (handwriting basis of the Dhanbumaa font); businessman',
+		role: 'Calligrapher; designer (from his handwriting) of Dhanbumaa; businessman',
 		knownFor: 'His handwriting, the basis of the Dhanbumaa font; the Dhanbumaa hotaa (café) business in Malé',
 		links: [
 			{
@@ -1427,6 +1467,8 @@ export const AUTHOR_ORDER = [
 	'Hassaan Abdul Razzaq',
 	'Mohamed Ali',
 	'Mohamed Azheel',
+	'Abdul Raheem Abubakuru',
+	'Ali Rameez',
 	'Ashrag Rasheed',
 	'Y.U.U',
 	'Ilham',
