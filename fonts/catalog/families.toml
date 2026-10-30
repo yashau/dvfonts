@@ -168,23 +168,11 @@ designer = "M.A. Gadir (with Hassan Saeed and Abdulla Waheed)"
 category = "official"
 fonts = { 400 = "radhun.ttf" }
 
-[families.dam-kalhi]
-name = "DAM Kalhi"
-designer = "Mohamed Mazeed"
-category = "official"
-fonts = { 700 = "dam-kalhi.otf" }
-
 [families.dam-madheeh]
 name = "DAM Madheeh"
 designer = "Mohamed Mazeed"
 category = "official"
 fonts = { 700 = "dam-madheeh.otf" }
-
-[families.dam-kathivalhi]
-name = "DAM Kathivalhi"
-designer = "Mohamed Mazeed"
-category = "official"
-fonts = { 400 = "dam-kathivalhi.otf" }
 
 [families.athu-casual]
 name = "Athu Casual"
@@ -511,6 +499,18 @@ fonts = { 700 = "novel03-bold.ttf" }
 name = "Haluvidhaa"
 category = "artistic"
 fonts = { 400 = "haluvidhaa-regular.ttf" }
+
+[families.dam-kalhi]
+name = "DAM Kalhi"
+designer = "Mohamed Mazeed"
+category = "artistic"
+fonts = { 700 = "dam-kalhi.otf" }
+
+[families.dam-kathivalhi]
+name = "DAM Kathivalhi"
+designer = "Mohamed Mazeed"
+category = "artistic"
+fonts = { 400 = "dam-kathivalhi.otf" }
 
 # ─── Handwriting / calligraphic ──────────────────────────────────────────────
 
