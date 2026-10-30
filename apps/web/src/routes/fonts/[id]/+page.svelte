@@ -259,7 +259,7 @@
 			<h3 class="mt-6 mb-2 text-sm font-medium text-muted-foreground">{set.title}</h3>
 			{#if set.cells.some((c) => c.wide)}
 				<!-- Calligraphy and emblems: each tile grows to fit its drawing. -->
-				<div class="flex flex-wrap gap-2">
+				<div class="flex flex-wrap gap-2" dir={set.rtl ? 'rtl' : 'ltr'}>
 					{#each set.cells as cell (cell.text)}
 						<Card.Root size="sm" class="max-w-full min-w-24 gap-1 rounded-xl py-3 sm:min-w-32">
 							<Card.Content
@@ -280,6 +280,7 @@
 			{:else}
 				<div
 					class="grid grid-cols-[repeat(auto-fill,minmax(2.25rem,1fr))] gap-1.5 sm:grid-cols-[repeat(auto-fill,minmax(4.5rem,1fr))] sm:gap-2"
+					dir={set.rtl ? 'rtl' : 'ltr'}
 				>
 					{#each set.cells as cell (cell.text)}
 						<Card.Root size="sm" class="aspect-square justify-center rounded-md py-0 sm:rounded-xl">
