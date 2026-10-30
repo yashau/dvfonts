@@ -15,6 +15,9 @@ export interface GlyphCell {
 export interface GlyphGroup {
 	title: string;
 	cells: GlyphCell[];
+	/** Right-to-left scripts (Thaana, Arabic): the grid runs right to left, so the first
+	 *  letter of the alphabet sits top right, as Thaana is read. */
+	rtl?: boolean;
 }
 
 const WIDE = new Set(['﷽', 'ﷺ', 'ﷻ']);
@@ -44,15 +47,16 @@ export function glyphGroups(chars: string, keyGlyphs: string, symbols: boolean):
 	const cells = (list: string[]) => list.map((c) => ({ text: c, wide: WIDE.has(c) }));
 
 	const groups: GlyphGroup[] = [
-		{ title: 'Letters', cells: cells(ordered(LETTERS_NATIVE)) },
-		{ title: 'Arabic-derived letters', cells: cells(ordered(LETTERS_ARABIC)) },
-		{ title: 'Fili', cells: ordered(FILI).map((f) => ({ text: 'އ' + f })) },
-		{ title: 'Other Thaana', cells: cells(take((c) => between(c, 0x0780, 0x07bf))) },
+		{ title: 'Letters', cells: cells(ordered(LETTERS_NATIVE)), rtl: true },
+		{ title: 'Arabic-derived letters', cells: cells(ordered(LETTERS_ARABIC)), rtl: true },
+		{ title: 'Fili', cells: ordered(FILI).map((f) => ({ text: 'އ' + f })), rtl: true },
+		{ title: 'Other Thaana', cells: cells(take((c) => between(c, 0x0780, 0x07bf))), rtl: true },
 		{ title: 'Digits', cells: cells(take((c) => /\p{Nd}/u.test(c))) },
-		{ title: 'Arabic', cells: cells(take((c) => between(c, 0x0600, 0x06ff))) },
+		{ title: 'Arabic', cells: cells(take((c) => between(c, 0x0600, 0x06ff))), rtl: true },
 		{
 			title: 'Arabic ligatures',
-			cells: cells(take((c) => between(c, 0xfb50, 0xfdff) || between(c, 0xfe70, 0xfeff)))
+			cells: cells(take((c) => between(c, 0xfb50, 0xfdff) || between(c, 0xfe70, 0xfeff))),
+			rtl: true
 		},
 		{ title: 'Latin', cells: cells(take((c) => /\p{Script=Latin}/u.test(c))) },
 		{ title: 'Punctuation and symbols', cells: cells(take(() => true)) },
