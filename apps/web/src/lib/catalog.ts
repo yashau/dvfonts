@@ -150,6 +150,17 @@ export function authors(f: Family): string[] {
 	return [...new Set(out.filter(Boolean))];
 }
 
+/** The main credited names only: each comma-separated designer, without the people named in
+ *  brackets (calligraphy, handwriting, digitised by…). For short credits on cards. */
+export function leadAuthors(f: Family): string[] {
+	const out: string[] = [];
+	for (const part of splitTopLevel(f.designer ?? '')) {
+		const m = /^([^(]+?)\s*(?:\(.*\))?$/.exec(part);
+		if (m) out.push(m[1]);
+	}
+	return [...new Set(out.filter(Boolean))];
+}
+
 /** Stands in for an author in the filter when a font names nobody. Sites and archives the
  *  font came from (dhivehi.mv, dhivehifont.com) aren't authors. */
 export const UNKNOWN_AUTHOR = 'Unknown';
