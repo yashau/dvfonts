@@ -238,6 +238,8 @@ test('author names lead to their pages and filter the font list', async ({ page 
 	])
 		for (const link of await page.getByRole('link', { name, exact: true }).all())
 			await expect(link).toHaveAttribute('href', `/authors/${slug}`);
+	// The file's manufacturer field (Ibrahim Yasir, who digitised it) isn't repeated as a separate row.
+	await expect(page.getByRole('row', { name: /^Manufacturer/ })).toHaveCount(0);
 	await page.getByRole('link', { name: 'Musthafa Mohamed', exact: true }).first().click();
 	await expect(page).toHaveURL(/\/authors\/musthafa-mohamed$/);
 	await expect(page.getByRole('heading', { name: 'Musthafa Mohamed', level: 1 })).toBeVisible();

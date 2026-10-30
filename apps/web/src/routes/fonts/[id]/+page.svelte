@@ -116,6 +116,23 @@
 		return out;
 	});
 
+	// The font file's manufacturer field, shown only when it adds something to the credit: not
+	// when it repeats a credited name ("Originally by Hassan Hameed", Faruma's "Ibrahim Yasir",
+	// who digitised it) and not when it's just a website (FontStruct, hassanhameed.com).
+	const manufacturer = $derived.by(() => {
+		const m = family.manufacturer?.trim();
+		if (!m || /^(https?:\/\/|www\.)/i.test(m)) return null;
+		const lower = m.toLowerCase();
+		const named = authors(family).some((a) => {
+			const name = a.toLowerCase();
+			const last = name.split(/\s+/).at(-1) ?? '';
+			return (
+				lower.includes(name) || name.includes(lower.replace(/[.\s]+$/, '')) || (last.length > 3 && lower.includes(last))
+			);
+		});
+		return named ? null : m;
+	});
+
 	const details = $derived(
 		(
 			[
@@ -126,7 +143,7 @@
 					family.firstYear && family.firstYear !== family.versionYear ? String(family.firstYear) : null
 				],
 				['Release date', family.versionYear ? String(family.versionYear) : null],
-				['Manufacturer', family.manufacturer],
+				['Manufacturer', manufacturer],
 				['Copyright', family.copyright],
 				[
 					'License',
