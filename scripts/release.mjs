@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Cut a release by pushing a CalVer tag; the tag push is what triggers CI.
+// Cut an npm package release by pushing a CalVer tag; the tag push is what triggers CI.
+// (The site isn't released by hand: every push to main deploys it and tags it
+// site-vYYYY.MMDD.N, see deploy.yml.)
 //
-//   node scripts/release.mjs site       -> site-vYYYY.MMDD.N      (deploy.yml)
 //   node scripts/release.mjs packages   -> packages-vYYYY.MMDD.N  (release-packages.yml)
 //
 // N counts releases of that kind on the same UTC day, starting at 0. Versions
@@ -10,8 +11,8 @@ import { execFileSync } from 'node:child_process';
 import { createInterface } from 'node:readline/promises';
 
 const kind = process.argv[2];
-if (kind !== 'site' && kind !== 'packages') {
-	console.error('usage: release.mjs <site|packages>');
+if (kind !== 'packages') {
+	console.error('usage: release.mjs packages');
 	process.exit(1);
 }
 

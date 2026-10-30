@@ -79,11 +79,10 @@ Before you finish, run at least `pnpm lint`, `pnpm test` and `pnpm check`. Run t
 
 ## Releases and deploys
 
-- Don't deploy or publish from a laptop. Releases happen by pushing tags:
-  - `mise run release:site` tags `site-v*`, which triggers `.github/workflows/deploy.yml`.
-  - `mise run release:packages` tags `packages-v*`, which triggers `.github/workflows/release-packages.yml`.
-- Versions are CalVer: `YYYY.MMDD.N`.
-- **Beta:** the long-lived `beta` branch is for trying larger features before they ship. Every push to it deploys https://beta.fonts.mv (`.github/workflows/beta.yml`, wrangler env `beta`, Worker `fonts-mv-beta`, reading the production R2 bucket). Beta builds set `FONTS_MV_BETA=1`, which adds `noindex`. Keep `beta` current by merging `main` into it; when a beta feature is ready, open a PR from `beta` to `main` and merge it without deleting the branch.
+- Don't deploy or publish from a laptop.
+- **Site:** every push to `main` deploys https://fonts.mv (`.github/workflows/deploy.yml`): it uploads changed fonts and bundles to R2, deploys the Worker, smoke-tests production and tags the commit `site-vYYYY.MMDD.N` (CalVer, N counting the day's deploys from 0). `main` only changes through PRs, so merging a PR is the release; don't tag the site by hand.
+- **Beta:** every PR to `main` deploys a preview to https://beta.fonts.mv (`.github/workflows/beta.yml`, wrangler env `beta`, Worker `fonts-mv-beta`), built from the PR merged into `main`; the latest PR push wins. Beta reads the production R2 bucket and never uploads to it, so new or changed font files appear only once `main` deploys them. Beta builds set `FONTS_MV_BETA=1`, which adds `noindex`.
+- **Packages:** `mise run release:packages` tags `packages-v*`, which triggers `.github/workflows/release-packages.yml`. Versions are CalVer: `YYYY.MMDD.N`.
 - Workflows pin actions by SHA and pin the mise version. Jobs that hold credentials (Cloudflare, npm OIDC) run with caching disabled. Keep it that way.
 
 ## Gotchas already hit

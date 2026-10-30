@@ -192,10 +192,8 @@ mise run dev            # http://localhost:5173
 
 ## Releasing
 
-| Command                     | Tag                     | Workflow                                                                                     |
-| --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------- |
-| `mise run release:site`     | `site-vYYYY.MMDD.N`     | Builds the site, uploads fonts and bundles to R2, deploys the Worker, smoke-tests production |
-| `mise run release:packages` | `packages-vYYYY.MMDD.N` | Tests, packs and publishes all four npm packages with provenance                             |
+- **Site:** every pull request to `main` deploys a preview to [beta.fonts.mv](https://beta.fonts.mv). Merging to `main` deploys [fonts.mv](https://fonts.mv): it uploads changed fonts and bundles to R2, deploys the Worker, smoke-tests production and tags the commit `site-vYYYY.MMDD.N`.
+- **Packages:** `mise run release:packages` tags `packages-vYYYY.MMDD.N`, which tests, packs and publishes all four npm packages with provenance.
 
 ## Credits and rights
 
