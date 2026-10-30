@@ -244,8 +244,19 @@ test('author names lead to their pages and filter the font list', async ({ page 
 	await expect(page).toHaveURL(/\/authors\/musthafa-mohamed$/);
 	await expect(page.getByRole('heading', { name: 'Musthafa Mohamed', level: 1 })).toBeVisible();
 
-	// In the font list, a name on a card filters the list to that author.
-	await page.goto('/?q=aammu');
+	// In the font list, cards show up to three main names and "et al." for the rest; a name
+	// on a card filters the list to that author.
+	await page.goto('/?q=reethi');
+	const reethi = page
+		.locator('[data-slot="item"]')
+		.filter({ has: page.getByRole('link', { name: 'A Reethi', exact: true }) });
+	await expect(reethi.getByText('Musthafa Mohamed, Abdulla Waheed, Abdul Sattar et al.')).toBeVisible();
+	await page.goto('/?q=faruma');
+	const faruma = page
+		.locator('[data-slot="item"]')
+		.filter({ has: page.getByRole('link', { name: 'Faruma', exact: true }) });
+	await expect(faruma.getByText('Musthafa Mohamed et al.')).toBeVisible();
+	await page.goto('/?q=reethi');
 	await page.getByRole('link', { name: 'Abdulla Waheed' }).first().click();
 	await expect(page).toHaveURL(/\/\?author=Abdulla%20Waheed$/);
 	// Fonts crediting his calligraphy or collaboration: MV A Waheed, MV Aammu FK, MV Utheemu,

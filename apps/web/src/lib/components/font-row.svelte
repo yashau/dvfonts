@@ -29,7 +29,7 @@
 						>{family.name}</a
 					>
 				</Item.Title>
-				<Item.Description class="min-w-0 truncate"><CreditLine {family} raised /></Item.Description>
+				<Item.Description class="min-w-0 truncate"><CreditLine {family} raised compact /></Item.Description>
 			</div>
 			<Item.Actions>
 				<Badge variant="secondary">{category}</Badge>
