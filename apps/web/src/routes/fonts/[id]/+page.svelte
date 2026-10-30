@@ -116,6 +116,23 @@
 		return out;
 	});
 
+	// The font file's manufacturer field, shown only when it adds something to the credit: not
+	// when it repeats a credited name ("Originally by Hassan Hameed", Faruma's "Ibrahim Yasir",
+	// who digitised it) and not when it's just a website (FontStruct, hassanhameed.com).
+	const manufacturer = $derived.by(() => {
+		const m = family.manufacturer?.trim();
+		if (!m || /^(https?:\/\/|www\.)/i.test(m)) return null;
+		const lower = m.toLowerCase();
+		const named = authors(family).some((a) => {
+			const name = a.toLowerCase();
+			const last = name.split(/\s+/).at(-1) ?? '';
+			return (
+				lower.includes(name) || name.includes(lower.replace(/[.\s]+$/, '')) || (last.length > 3 && lower.includes(last))
+			);
+		});
+		return named ? null : m;
+	});
+
 	const details = $derived(
 		(
 			[
@@ -126,7 +143,7 @@
 					family.firstYear && family.firstYear !== family.versionYear ? String(family.firstYear) : null
 				],
 				['Release date', family.versionYear ? String(family.versionYear) : null],
-				['Manufacturer', family.manufacturer],
+				['Manufacturer', manufacturer],
 				['Copyright', family.copyright],
 				[
 					'License',
@@ -158,7 +175,7 @@
 	<header class="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
 		<div class="min-w-0">
 			<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{family.name}</h1>
-			<p class="mt-1 text-muted-foreground"><CreditLine {family} /></p>
+			<p class="mt-1 text-muted-foreground"><CreditLine {family} to="page" /></p>
 			{#if !authors(family).length}
 				<p class="mt-1 text-sm text-pretty text-muted-foreground">
 					We don't know who designed {family.name}. If you do,
@@ -338,7 +355,9 @@
 						{#each details as [label, value] (label)}
 							<Table.Row>
 								<Table.Head class="h-auto w-28 py-2 align-top text-muted-foreground">{label}</Table.Head>
-								<Table.Cell class="align-top break-words whitespace-normal">{value}</Table.Cell>
+								<Table.Cell class="align-top break-words whitespace-normal">
+									{#if label === 'Designer'}<CreditLine {family} to="page" />{:else}{value}{/if}
+								</Table.Cell>
 							</Table.Row>
 						{/each}
 						{#if family.source}

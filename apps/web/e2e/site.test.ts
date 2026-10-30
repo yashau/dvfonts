@@ -227,13 +227,31 @@ test('install scripts are plain text and check the bundle', async ({ request }) 
 	expect((await request.get('/install/essentials.bat')).status()).toBe(404);
 });
 
-test('author names filter the font list', async ({ page }) => {
-	await page.goto('/fonts/mv-a-waheed');
+test('author names lead to their pages and filter the font list', async ({ page }) => {
+	// On a font's page every credited name goes to that person's page, in the credit line
+	// and in the details table.
+	await page.goto('/fonts/faruma');
+	for (const [name, slug] of [
+		['Musthafa Mohamed', 'musthafa-mohamed'],
+		['Ibrahim Yasir', 'ibrahim-yasir'],
+		['Ahmed Asif', 'ahmed-asif']
+	])
+		for (const link of await page.getByRole('link', { name, exact: true }).all())
+			await expect(link).toHaveAttribute('href', `/authors/${slug}`);
+	// The file's manufacturer field (Ibrahim Yasir, who digitised it) isn't repeated as a separate row.
+	await expect(page.getByRole('row', { name: /^Manufacturer/ })).toHaveCount(0);
+	await page.getByRole('link', { name: 'Musthafa Mohamed', exact: true }).first().click();
+	await expect(page).toHaveURL(/\/authors\/musthafa-mohamed$/);
+	await expect(page.getByRole('heading', { name: 'Musthafa Mohamed', level: 1 })).toBeVisible();
+
+	// In the font list, a name on a card filters the list to that author.
+	await page.goto('/?q=aammu');
 	await page.getByRole('link', { name: 'Abdulla Waheed' }).first().click();
 	await expect(page).toHaveURL(/\/\?author=Abdulla%20Waheed$/);
-	// MV A Waheed and MV Aammu FK both credit his calligraphy; nothing else does.
+	// Fonts crediting his calligraphy or collaboration: MV A Waheed, MV Aammu FK, MV Utheemu,
+	// MV Radhun and A Reethi.
 	const rows = page.locator('[data-slot="item"] a[href^="/fonts/"]:not([href$=".zip"])');
-	await expect(rows).toHaveCount(2);
+	await expect(rows).toHaveCount(5);
 	await expect(page.getByRole('link', { name: 'MV Aammu FK', exact: true })).toBeVisible();
 	// The logo goes back to the whole list.
 	await page.getByRole('link', { name: 'fonts.mv home' }).click();

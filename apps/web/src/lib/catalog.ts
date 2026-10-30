@@ -127,7 +127,7 @@ export function credit(f: Family): string | null {
 }
 
 /** The people (or studios) a designer credit names: each comma-separated designer, plus
- *  any calligrapher. "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)" names
+ *  anyone credited in brackets (calligraphy, handwriting, digitised or assisted by; based on…by; after; with). "Hassan Hameed (calligraphy by Abdulla Waheed, Eydhafushi)" names
  *  Hassan Hameed and Abdulla Waheed; places and notes in brackets are skipped. */
 export function authors(f: Family): string[] {
 	const out: string[] = [];
@@ -135,8 +135,17 @@ export function authors(f: Family): string[] {
 		const m = /^([^(]+?)\s*(?:\((.*)\))?$/.exec(part);
 		if (!m) continue;
 		out.push(m[1]);
-		const calligrapher = /^calligraphy by ([^,]+)/.exec(m[2] ?? '');
-		if (calligrapher) out.push(calligrapher[1].trim());
+		// Roles in brackets, separated by semicolons: "calligraphy by X", "handwriting by X",
+		// "digitised by X", "assisted by X", "begun by X", "based on <font> by X", "after X",
+		// "with X and Y". Anything after a comma is a place or a note; a role with no name
+		// ("calligraphy", "Noonu Lhohi") names nobody.
+		for (const role of (m[2] ?? '').split(';')) {
+			const credited =
+				/^\s*(?:(?:calligraphy|handwriting|digitised|assisted|begun) by|based on [^;]*? by|after|with) ([^,]+)/.exec(
+					role
+				);
+			if (credited) for (const name of credited[1].split(/ and /)) out.push(name.trim());
+		}
 	}
 	return [...new Set(out.filter(Boolean))];
 }
